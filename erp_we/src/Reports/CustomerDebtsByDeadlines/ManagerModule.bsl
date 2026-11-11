@@ -1,0 +1,76 @@
+//@strict-types
+
+#If Server Or ThickClientOrdinaryApplication Or ExternalConnection Then
+
+#Region Public
+
+#Region InterfaceImplementation
+
+// Sets advanced report settings
+//
+// Parameters:
+//   Settings - See ReportsOptionsOverridable.CustomizeReportsOptions.Settings.
+//
+Procedure CustomizeReportOptions(Settings) Export
+	
+	DescriptionOfReport = ReportsOptions.DescriptionOfReport(Settings, Metadata.Reports.CustomerDebtsByDeadlines);
+	DescriptionOfReport.DefineFormSettings = True;
+	OptionDetails = ReportsOptions.OptionDetails(Settings, DescriptionOfReport, "");
+	OptionDetails.LongDesc = NStr("vi = 'Phân tích công nợ phải thu khách hàng theo khoảng nợ.
+		|Ví dụ: 0-7 ngày, 7-15 ngày, 15-30 ngày, hơn 30 ngày.';
+		|ru = 'Анализ задолженности клиентов с разбивкой по интервалам долга.
+		|Например, 0-7 дней, 7-15 дней, 15-30 дней, более 30 дней.';
+		|en = 'Customer receivables analysis by debt intervals. 
+		|For example, 0-7 days, 7-15 days, 15-30 days, over 30 days.'; fa = 'Customer receivables analysis by debt intervals. 
+		|For example, 0-7 days, 7-15 days, 15-30 days, over 30 days.';
+		|it = 'Анализ задолженности клиентов с разбивкой по интервалам долга.
+		|Например, 0-7 дней, 7-15 дней, 15-30 дней, более 30 дней.';
+		|pl = 'Analiza zobowiązania klientów z podziałem według interwałów zobowiązania. 
+		|Na przykład, 0-7 dni, 7-15 dni, 15-30 dni, więcej 30 dni.';
+		|tr = 'Müşteri alacaklarının/borçlarının borç aralıklarına göre analizi.
+		|Örneğin 0-7 gün, 7-15 gün, 15-30 gün, 30 günden fazla.'");
+	OptionDetails = ReportsOptions.OptionDetails(Settings, DescriptionOfReport, "CustomerDebtsByDeadlines");
+	OptionDetails.LongDesc = NStr("vi = 'Phân tích công nợ phải thu khách hàng theo khoảng nợ.
+		|Ví dụ: 0-7 ngày, 7-15 ngày, 15-30 ngày, hơn 30 ngày.';
+		|ru = 'Анализ задолженности клиентов с разбивкой по интервалам долга.
+		|Например, 0-7 дней, 7-15 дней, 15-30 дней, более 30 дней.';
+		|en = 'Customer receivables analysis by debt intervals. 
+		|For example, 0-7 days, 7-15 days, 15-30 days, over 30 days.'; fa = 'Customer receivables analysis by debt intervals. 
+		|For example, 0-7 days, 7-15 days, 15-30 days, over 30 days.';
+		|it = 'Анализ задолженности клиентов с разбивкой по интервалам долга.
+		|Например, 0-7 дней, 7-15 дней, 15-30 дней, более 30 дней.';
+		|pl = 'Analiza zobowiązania klientów z podziałem według interwałów zobowiązania. 
+		|Na przykład, 0-7 dni, 7-15 dni, 15-30 dni, więcej 30 dni.';
+		|tr = 'Müşteri alacaklarının/borçlarının borç aralıklarına göre analizi.
+		|Örneğin 0-7 gün, 7-15 gün, 15-30 gün, 30 günden fazla.'");
+	
+	OptionDetails = ReportsOptions.OptionDetails(Settings, DescriptionOfReport, "CustomerDueDatesMobileClient");
+	OptionDetails.LongDesc = NStr("vi = 'Phân tích công nợ phải thu khách hàng theo khoảng nợ.
+		|Ví dụ: 0-7 ngày, 7-15 ngày, 15-30 ngày, hơn 30 ngày.';
+		|ru = 'Анализ задолженности клиентов с разбивкой по интервалам долга.
+		|Например, 0-7 дней, 7-15 дней, 15-30 дней, более 30 дней.';
+		|en = 'Customer receivables analysis by debt intervals. 
+		|For example, 0-7 days, 7-15 days, 15-30 days, over 30 days.'; fa = 'Customer receivables analysis by debt intervals. 
+		|For example, 0-7 days, 7-15 days, 15-30 days, over 30 days.';
+		|it = 'Анализ задолженности клиентов с разбивкой по интервалам долга.
+		|Например, 0-7 дней, 7-15 дней, 15-30 дней, более 30 дней.';
+		|pl = 'Analiza zobowiązania klientów z podziałem według interwałów zobowiązania. 
+		|Na przykład, 0-7 dni, 7-15 dni, 15-30 dni, więcej 30 dni.';
+		|tr = 'Müşteri alacaklarının/borçlarının borç aralıklarına göre analizi.
+		|Örneğin 0-7 gün, 7-15 gün, 15-30 gün, 30 günden fazla.'");
+	OptionDetails.Description = NStr("vi = 'Nợ phải thu khách hàng theo thời hạn (di động)';
+									|ru = 'Задолженность клиентов по срокам (моб.)';
+									|en = 'Customer AR/AP open items aging (mob. client)'; fa = 'سن‌بندی اقلام باز دریافتنی/پرداختنی مشتری (کلاینت موبایل)';
+									|it = 'Задолженность клиентов по срокам (моб.)';
+									|pl = 'Zadłużenie klientów według terminów (mob.)';
+									|tr = 'Vadesine göre müşteri borçları (mob.)'");
+	OptionDetails.DefaultVisibility = True;
+	OptionDetails.Purpose = Enums.ReportOptionPurposes.ForSmartphones;
+	
+EndProcedure
+
+#EndRegion
+
+#EndRegion
+
+#EndIf

@@ -1,0 +1,1072 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>DataSource1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>AvailableStock</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Products</dataPath>
+			<field>Products</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Items</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>اقلام</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Articolo</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Pozycja</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номенклатура</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Öğe</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Mặt hàng</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Warehouse</dataPath>
+			<field>Warehouse</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Warehouse</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>انبار</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Magazzino</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Magazyn</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Склад</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Ambar</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Kho bãi</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Characteristic</dataPath>
+			<field>Characteristic</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Variant</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>گونه</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Caratteristica</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Charakterystyka</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Характеристика</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Varyant</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Đặc tính</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>ChoiceParameterLinks</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:ChoiceParameterLinks">
+						<dcscor:item>
+							<dcscor:choiceParameter>Products</dcscor:choiceParameter>
+							<dcscor:value>Products</dcscor:value>
+							<dcscor:mode xmlns:d8p1="http://v8.1c.ru/8.1/data/enterprise" xsi:type="d8p1:LinkedValueChangeMode">Clear</dcscor:mode>
+						</dcscor:item>
+					</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Count</dataPath>
+			<field>Count</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Quantity (available inventory)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>مقدار (موجودی در دسترس)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Quantità (Saldo libero)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Ilość (wolna reszta)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество (свободный остаток)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Miktar (serbest bakiye)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Số lượng (hàng tồn kho nhàn rỗi)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Products.ABCGrossProfit</dataPath>
+			<field>ABCGrossProfit</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>ABC (gross profit)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>ABC (سود ناخالص)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>ABC (profitto lordo)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>ABC (zysk brutto)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ABC (валовая прибыль)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>ABC (brüt kâr)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>ABC (lãi gộp)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Products.ABCRevenue</dataPath>
+			<field>ABCRevenue</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>ABC (revenue)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>ABC (درآمد)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>ABC (ricavo)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>ABC (utarg)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ABC (выручка)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>ABC (gelir)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>ABC (doanh thu)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Products.ABCCount</dataPath>
+			<field>ABCCount</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>ABC (quantity)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>ABC (مقدار)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>ABC (quantità)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>ABC (ilość)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ABC (количество)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>ABC (miktar)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>ABC (số lượng)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Products.XYZGrossProfit</dataPath>
+			<field>XYZGrossProfit</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>XYZ (gross profit)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>XYZ (سود ناخالص)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>XYZ (profitto lordo)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>XYZ (zysk brutto)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>XYZ (валовая прибыль)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>XYZ (brüt kâr)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>XYZ (lãi gộp)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Products.XYZRevenue</dataPath>
+			<field>XYZRevenue</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>XYZ (revenue)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>XYZ (درآمد)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>XYZ (ricavo)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>XYZ (utarg)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>XYZ (выручка)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>XYZ (gelir)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>XYZ (doanh thu)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Products.XYZCount</dataPath>
+			<field>XYZCount</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>XYZ (quantity)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>XYZ (مقدار)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>XYZ (quantità)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>XYZ (ilość)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>XYZ (количество)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>XYZ (miktar)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>XYZ (số lượng)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ProductSegment</dataPath>
+			<field>ProductSegment</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Inventory segment</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>بخش موجودی</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Segmento degli articoli</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Segment nomenklatury</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сегмент номенклатуры</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Stok segmenti</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Phân khúc mặt hàng</v8:content>
+				</v8:item>
+			</title>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>ChoiceParameters</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:ChoiceParameters">
+						<dcscor:item>
+							<dcscor:choiceParameter>Filter.GenerationMethod</dcscor:choiceParameter>
+							<dcscor:value xsi:type="dcscor:DesignTimeValue">Enum.SegmentGenerationMethods.GenerateManually</dcscor:value>
+							<dcscor:value xsi:type="dcscor:DesignTimeValue">Enum.SegmentGenerationMethods.UpdateRegularly</dcscor:value>
+						</dcscor:item>
+					</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ProductRange.ItemsCollection</dataPath>
+			<field>AssortmentCollectionOfProducts</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Product range.Items collection</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>سبد محصول.مجموعه اقلام</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Assortimento. Collezione articoli</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Asortyment.Kolekcja nomenklatury</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ассортимент.Коллекция номенклатуры</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Ürün gamı.Öğe koleksiyonu</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Danh điểm.Tập hợp mặt hàng</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ProductRange.StoreFormat</dataPath>
+			<field>AssortmentStoreFormat</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Product range.Store format</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>سبد محصول.قالب فروشگاه</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Assortimento.Formati del negozio</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Asortyment.Format sklepu</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ассортимент.Формат магазина</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Ürün gamı.Mağaza formatı</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Danh điểm.Khuôn dạng cửa hàng</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ProductRange.PriceKind</dataPath>
+			<field>PriceKind</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ProductRange.ControlProductRange</dataPath>
+			<field>ControlProductRange</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>MainDemandFulfillmentMethod</dataPath>
+			<field>MainDemandFulfillmentMethod</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Procurement strategy</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>راهبرد تدارکات</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Metodo di approvvigionamento</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Sposób zaspokojenia zapotrzebowania</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способ обеспечения потребностей</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Tedarik stratejisi</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Phương pháp chính đảm bảo nhu cầu</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ProductRange.PurchasesAreAllowed</dataPath>
+			<field>PurchasesAreAllowed</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ProductRange.SalesAreAllowed</dataPath>
+			<field>SalesAreAllowed</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ProductRange.ProductRangeRole</dataPath>
+			<field>ProductRangeRole</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ClassificationType</dataPath>
+			<field>ClassificationType</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ClassificationParameterType</dataPath>
+			<field>ClassificationParameterType</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>PlanningObject</dataPath>
+			<field>PlanningObject</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ClassificationSection</dataPath>
+			<field>ClassificationSection</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Purpose</dataPath>
+			<field>Purpose</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Series</dataPath>
+			<field>Series</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Premise</dataPath>
+			<field>Premise</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ControlledLotReference</dataPath>
+			<field>ControlledLotReference</field>
+		</field>
+		<dataSource>DataSource1</dataSource>
+		<query>SELECT ALLOWED
+	TableFormats.Warehouse          AS Warehouse,
+	TableFormats.StoreFormat AS StoreFormat
+INTO TTWarehouseFormats
+FROM
+	InformationRegister.HistoryOfStoreFormatChange.SliceLast(,
+	{Warehouse.* AS Warehouse}) AS TableFormats
+WHERE
+	TableFormats.StoreFormat &lt;&gt; VALUE(Catalog.StoreFormats.EmptyRef)
+INDEX BY
+	Warehouse
+;
+
+SELECT ALLOWED
+	CatalogProducts.Ref AS Products,
+	ISNULL(CatalogCharacteristics.Ref, VALUE(Catalog.ItemsCharacteristics.EmptyRef)) AS Characteristic
+INTO SelectionByProductSegment
+FROM
+	Catalog.Products AS CatalogProducts
+		LEFT JOIN Catalog.ItemsCharacteristics AS CatalogCharacteristics
+		ON (CatalogCharacteristics.Owner = CASE
+				WHEN CatalogProducts.UseVariants = VALUE(Enum.ItemVariantsUsageOptions.CommonForItemKind)
+					THEN CatalogProducts.ProductKind
+				WHEN CatalogProducts.UseVariants = VALUE(Enum.ItemVariantsUsageOptions.SpecialForItems)
+					THEN CatalogProducts.Ref
+				WHEN CatalogProducts.UseVariants = VALUE(Enum.ItemVariantsUsageOptions.CommonWithOtherItemKind)
+					THEN CatalogProducts.ItemVariantsOwner
+				ELSE FALSE
+			END)
+		{LEFT JOIN InformationRegister.SegmentProducts AS SegmentProducts
+		ON CatalogProducts.Ref = SegmentProducts.Products
+			AND (ISNULL(CatalogCharacteristics.Ref, VALUE(Catalog.ItemsCharacteristics.EmptyRef)) = SegmentProducts.Characteristic)}
+{WHERE
+	(ISNULL(SegmentProducts.Segment, VALUE(Catalog.ProductSegments.EmptyRef))) AS ProductSegment}
+;
+
+////////////////////////////////////////////////////////////////////////////////
+SELECT ALLOWED
+	Balance.Warehouse AS Warehouse,
+	Balance.Products AS Products,
+	Balance.Characteristic AS Characteristic,
+	Balance.Purpose AS Purpose,
+	Balance.InStockBalance AS Count
+FROM
+	AccumulationRegister.ProductStock.Balance(, {(Warehouse), ((Products, Characteristic) IN
+			    (SELECT
+			        SelectionByProductSegment.Products,
+			        SelectionByProductSegment.Characteristic
+			    FROM
+			        SelectionByProductSegment
+			    WHERE
+			        &amp;FilterByProductSegmentIsUsed = TRUE))}) AS Balance
+		{LEFT JOIN InformationRegister.ABCXYZInventoryClassification.SliceLast(
+			,
+			ClassificationParameterType = VALUE(Enum.TypesOfClassificationParameters.Revenue)
+				AND ClassificationType = VALUE(Enum.TypesOfClassification.ABC)) AS ABCRevenue
+	ON (ABCRevenue.ClassificationSection = Balance.Warehouse)
+		AND (ABCRevenue.Products = Balance.Products)
+		AND (ABCRevenue.Characteristic = Balance.Characteristic)}
+	{LEFT JOIN InformationRegister.ABCXYZInventoryClassification.SliceLast(
+			,
+			ClassificationParameterType = VALUE(Enum.TypesOfClassificationParameters.GrossProfit)
+				AND ClassificationType = VALUE(Enum.TypesOfClassification.ABC)) AS ABCGrossProfit
+	ON (ABCGrossProfit.ClassificationSection = Balance.Warehouse)
+		AND (ABCGrossProfit.Products = Balance.Products)
+		AND (ABCGrossProfit.Characteristic = Balance.Characteristic)}
+	{LEFT JOIN InformationRegister.ABCXYZInventoryClassification.SliceLast(
+			,
+			ClassificationParameterType = VALUE(Enum.TypesOfClassificationParameters.Count)
+				AND ClassificationType = VALUE(Enum.TypesOfClassification.ABC)) AS ABCCount
+	ON (ABCCount.ClassificationSection = Balance.Warehouse)
+		AND (ABCCount.Products = Balance.Products)
+		AND (ABCCount.Characteristic = Balance.Characteristic)}
+	{LEFT JOIN InformationRegister.ABCXYZInventoryClassification.SliceLast(
+			,
+			ClassificationParameterType = VALUE(Enum.TypesOfClassificationParameters.Revenue)
+				AND ClassificationType = VALUE(Enum.TypesOfClassification.XYZ)) AS XYZRevenue
+	ON (XYZRevenue.ClassificationSection = Balance.Warehouse)
+		AND (XYZRevenue.Products = Balance.Products)
+		AND (XYZRevenue.Characteristic = Balance.Characteristic)}
+	{LEFT JOIN InformationRegister.ABCXYZInventoryClassification.SliceLast(
+			,
+			ClassificationParameterType = VALUE(Enum.TypesOfClassificationParameters.GrossProfit)
+				AND ClassificationType = VALUE(Enum.TypesOfClassification.XYZ)) AS XYZGrossProfit
+	ON (XYZGrossProfit.ClassificationSection = Balance.Warehouse)
+		AND (XYZGrossProfit.Products = Balance.Products)
+		AND (XYZGrossProfit.Characteristic = Balance.Characteristic)}
+	{LEFT JOIN InformationRegister.ABCXYZInventoryClassification.SliceLast(
+			,
+			ClassificationParameterType = VALUE(Enum.TypesOfClassificationParameters.Count)
+				AND ClassificationType = VALUE(Enum.TypesOfClassification.XYZ)) AS XYZCount
+	ON (XYZCount.ClassificationSection = Balance.Warehouse)
+		AND (XYZCount.Products = Balance.Products)
+		AND (XYZCount.Characteristic = Balance.Characteristic)}
+	{LEFT JOIN InformationRegister.HistoryOfStoreFormatChange.SliceLast({(&amp;ProductRangeAsOfDate)}, {(Warehouse) AS Warehouse}) AS HistoryOfChangesToStoreFormatsCrossSection
+	ON Balance.Warehouse = HistoryOfChangesToStoreFormatsCrossSection.Warehouse
+	LEFT JOIN InformationRegister.ProductRange.SliceLast({(&amp;ProductRangeAsOfDate)}, ) AS ProductRangeSliceLast
+	ON (ISNULL(Balance.Products, VALUE(Catalog.Products.EmptyRef)) = ProductRangeSliceLast.Products)
+		AND (ISNULL(HistoryOfChangesToStoreFormatsCrossSection.StoreFormat, VALUE(Catalog.StoreFormats.EmptyRef)) = ProductRangeSliceLast.PlanningObject
+			OR Balance.Warehouse = ProductRangeSliceLast.PlanningObject)}
+	
+	{LEFT JOIN Catalog.ProcurementStrategies AS CatMethod
+	ON &amp;ActualBalancesSubstitutionOfMainMethodOfProvision}
+WHERE
+	Balance.InStockBalance &gt; 0
+		
+{WHERE
+	(CAST(ISNULL(ABCRevenue.Class, VALUE(Enum.ABCClassification.NotClassified)) AS Enum.ABCClassification)) AS ABCRevenue,
+	(CAST(ISNULL(ABCGrossProfit.Class, VALUE(Enum.ABCClassification.NotClassified)) AS Enum.ABCClassification)) AS ABCGrossProfit,
+	(CAST(ISNULL(ABCCount.Class, VALUE(Enum.ABCClassification.NotClassified)) AS Enum.ABCClassification)) AS ABCCount,
+	(CAST(ISNULL(XYZRevenue.Class, VALUE(Enum.XYZClassification.NotClassified)) AS Enum.XYZClassification)) AS XYZRevenue,
+	(CAST(ISNULL(XYZGrossProfit.Class, VALUE(Enum.XYZClassification.NotClassified)) AS Enum.XYZClassification)) AS XYZGrossProfit,
+	(CAST(ISNULL(XYZCount.Class, VALUE(Enum.XYZClassification.NotClassified)) AS Enum.XYZClassification)) AS XYZCount,
+	ProductRangeSliceLast.ProductRangeRole,
+	ProductRangeSliceLast.PurchasesAreAllowed,
+	ProductRangeSliceLast.SalesAreAllowed,
+	ProductRangeSliceLast.PriceKind.*,
+	ProductRangeSliceLast.ItemsCollection.* AS AssortmentCollectionOfProducts,
+	HistoryOfChangesToStoreFormatsCrossSection.StoreFormat.* AS AssortmentStoreFormat,
+	HistoryOfChangesToStoreFormatsCrossSection.ControlProductRange,
+	CatMethod.Ref.* AS MainDemandFulfillmentMethod}
+</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>Period</dataPath>
+		<expression>&amp;ActualBalanceReferToPeriod</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>دوره</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Periodo</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Okres</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Dönem</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Kỳ</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<totalField>
+		<dataPath>Count</dataPath>
+		<expression>Sum(Count)</expression>
+	</totalField>
+	<parameter>
+		<name>Period</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>دوره</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Periodo</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Okres</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Dönem</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Kỳ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>FilterByProductSegmentIsUsed</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Filter by item segment is used</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>فیلتر بر اساس بخش قلم استفاده می‌شود</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Viene utilizzata la selezione per segmento degli articoli</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Jest używany filtr wg segmentu pozycji</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Используется отбор по сегменту номенклатуры</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Stok segmentine göre filtre kullanılıyor</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Sử dụng lọc theo phân khúc mặt hàng</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ProductRangeAsOfDate</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Product range as of date</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>سبد محصولات در تاریخ</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Assortimento alla data</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Asortyment na datę</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Ассортимент на дату</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Ürün gamı tarihi</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Danh điểm mặt hàng tại ngày</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ActualBalanceReferToPeriod</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Actual balance refer to period</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>مانده واقعی مربوط به دوره</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Saldi effettivi attribuire al periodo</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Faktyczne pozostałości przypisz do okresu</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Фактические остатки отнести на период</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Gerçek bakiyeler döneme tahsis et</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Số dư thực tế quy cho kỳ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ActualBalancesSubstitutionOfMainMethodOfProvision</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Actual balance main procurement strategy substitution</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>جایگزینی راهبرد تدارکات اصلی مانده واقعی</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Saldi effettivi sostituzione del modo principale di garanzia</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Faktyczne pozostałości podstawienie podstawowego sposobu zaopatrzenia</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Фактические остатки подстановка основного способа обеспечения</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Gerçek bakiyeler ana tedarik yönteminin yerine geçen</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Số dư thực tế thay thế phương pháp chính cung cấp</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Main</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Main</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>اصلی</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Principale</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Podstawowej</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Основной</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Ana</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Chính</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Count</dcsset:field>
+				</dcsset:item>
+				<dcsset:userSettingID>9ee21e22-dbb4-44d1-9975-9fed5f25b09f</dcsset:userSettingID>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Warehouse</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Catalog.Warehouses.EmptyRef</dcsset:right>
+					<dcsset:userSettingID>3d4ca49b-dba5-4b7d-81a5-19a72d4e7a45</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Products</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Catalog.Products.EmptyRef</dcsset:right>
+					<dcsset:userSettingID>9216effd-1d8c-4327-9b2c-dbcb7a7097d9</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Characteristic</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Catalog.ItemsCharacteristics.EmptyRef</dcsset:right>
+					<dcsset:userSettingID>393e9dbe-4474-4f30-90a6-e05595accfd1</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ProductSegment</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Catalog.ProductSegments.EmptyRef</dcsset:right>
+					<dcsset:userSettingID>63e44fcd-e18d-42b4-92d0-51dc37e8a0f7</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Count</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					<dcsset:userSettingID>847ba013-8ffd-437b-b06e-3fe5d65c9b81</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">MainDemandFulfillmentMethod</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Catalog.ProcurementStrategies.EmptyRef</dcsset:right>
+					<dcsset:userSettingID>a24f9c7d-0d2d-4762-8aac-5c9f5e65b30b</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:userSettingID>943a99db-3a5d-4a7f-9d12-b5337451fb69</dcsset:userSettingID>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ProductRangeAsOfDate</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>64ec4ccc-c305-416f-81a0-9e33e64ec64c</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ActualBalanceReferToPeriod</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>6bab003c-f238-4823-a5b5-7c2e6ea55804</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Warehouse</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Products</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Characteristic</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+			<dcsset:itemsUserSettingID>dcb5d600-022f-4d12-89c1-bf434f61628b</dcsset:itemsUserSettingID>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

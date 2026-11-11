@@ -1,0 +1,4648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>DataSource1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>DataSet</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Products</dataPath>
+			<field>Products</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Items</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>اقلام</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Articolo</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Pozycja</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номенклатура</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Ürün</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Mặt hàng</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Characteristic</dataPath>
+			<field>Characteristic</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Variant</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>گونه</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Caratteristica</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Charakterystyka</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Характеристика</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Varyant</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Đặc tính</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>ChoiceParameterLinks</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:ChoiceParameterLinks">
+						<dcscor:item>
+							<dcscor:choiceParameter>Products</dcscor:choiceParameter>
+							<dcscor:value>Products</dcscor:value>
+							<dcscor:mode xmlns:d8p1="http://v8.1c.ru/8.1/data/enterprise" xsi:type="d8p1:LinkedValueChangeMode">Clear</dcscor:mode>
+						</dcscor:item>
+					</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ProductSegment</dataPath>
+			<field>ProductSegment</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Inventory segment</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>بخش موجودی</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Segmento degli articoli</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Segment nomenklatury</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сегмент номенклатуры</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Stok segmenti</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Phân khúc mặt hàng</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ProductSegments</v8:Type>
+			</valueType>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>ChoiceParameters</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:ChoiceParameters">
+						<dcscor:item>
+							<dcscor:choiceParameter>Filter.GenerationMethod</dcscor:choiceParameter>
+							<dcscor:value xsi:type="dcscor:DesignTimeValue">Enum.SegmentGenerationMethods.UpdateRegularly</dcscor:value>
+							<dcscor:value xsi:type="dcscor:DesignTimeValue">Enum.SegmentGenerationMethods.GenerateManually</dcscor:value>
+						</dcscor:item>
+					</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Purpose</dataPath>
+			<field>Purpose</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Assignment</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>تخصیص</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Destinazione</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Przeznaczenie</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Назначение</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Amaç</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Mục đích</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Series</dataPath>
+			<field>Series</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Batch</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>بچ</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Serie</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Seria</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Серия</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Parti</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Sê-ri</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ReceivedWeight</dataPath>
+			<field>ReceivedWeight</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total received, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>کل دریافتی، وزن</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поступило всего, вес</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Toplam giriş, ağırlık</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Total received, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Total received, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Total received, weight</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ReceivedVolume_</dataPath>
+			<field>ReceivedVolume_</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total received, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>کل دریافتی، حجم</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поступило всего, объем</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Toplam giriş, hacim</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Total received, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Total received, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Total received, volume</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>UnderControl</dataPath>
+			<field>UnderControl</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Follow up</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>پیگیری</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Sotto controllo</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>W trakcie kontroli</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>На контроле</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Takip et</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Chờ kiểm soát</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>OnWeightControl</dataPath>
+			<field>OnWeightControl</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Under control, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>تحت کنترل، وزن</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>На контроле, вес</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Kontrolde, ağırlık</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Under control, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Under control, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Under control, weight</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>VolumeIsUnderControl</dataPath>
+			<field>VolumeIsUnderControl</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Under control, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>تحت کنترل، حجم</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>На контроле, объем</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Kontrolde, hacim</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Under control, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Under control, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Under control, volume</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>WasPassed</dataPath>
+			<field>WasPassed</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Passed</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>تأییدشده</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пройден</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Geçti</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Passed</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Passed</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Passed</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>WeightPassed</dataPath>
+			<field>WeightPassed</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Passed, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>پذیرفته‌شده، وزن</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пройден, вес</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Geçti, ağırlık</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Passed, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Passed, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Passed, weight</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>VolumePassed</dataPath>
+			<field>VolumePassed</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Passed, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>پذیرفته‌شده، حجم</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пройден, объем</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Geçti, hacim</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Passed, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Passed, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Passed, volume</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ChangedQuality</dataPath>
+			<field>ChangeQuality</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Quality changed</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>کیفیت تغییر یافت</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменено качество</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Kalite değiştirildi</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Quality changed</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Quality changed</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Quality changed</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ChangedQualityWeight</dataPath>
+			<field>ChangeQualityWeight</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Quality changed, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>کیفیت تغییر یافت، وزن</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменено качество, вес</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Kalite değiştirildi, ağırlık</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Quality changed, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Quality changed, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Quality changed, weight</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ChangedQualityVolume</dataPath>
+			<field>ChangeQualityVolume</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Quality changed, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>کیفیت تغییر یافت، حجم</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменено качество, объем</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Kalite değiştirildi, hacim</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Quality changed, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Quality changed, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Quality changed, volume</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ReturnedToSupplier</dataPath>
+			<field>ToReturnToVendor</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Returned to vendor</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>مرجوع‌شده به فروشنده</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Возвращено поставщику</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Tedarikçiye iade edildi</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Returned to vendor</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Returned to vendor</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Returned to vendor</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>MarkIncomplete</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ReturnedToSupplierWeight</dataPath>
+			<field>ReturnWeightToSupplier</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Returned to vendor, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>مرجوع‌شده به فروشنده، وزن</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Возвращено поставщику, вес</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Tedarikçiye iade edildi, ağırlık</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Returned to vendor, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Returned to vendor, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Returned to vendor, weight</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>VolumeReturnedToSupplier</dataPath>
+			<field>ReturnVolumeToSupplier</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Returned to vendor, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>مرجوع‌شده به فروشنده، حجم</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Возвращено поставщику, объем</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Tedarikçiye iade edildi, hacim</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Returned to vendor, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Returned to vendor, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Returned to vendor, volume</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AwaitingDecision</dataPath>
+			<field>AwaitingDecision</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Awaiting decision</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>در انتظار تصمیم</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ожидает решения</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Karar bekleniyor</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Awaiting decision</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Awaiting decision</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Awaiting decision</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>WeightIsAwaitingDecision</dataPath>
+			<field>WeightIsAwaitingDecision</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Pending decision, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>در انتظار تصمیم، وزن</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ожидает решения, вес</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Karar bekleniyor, ağırlık</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Pending decision, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Pending decision, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Pending decision, weight</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AwaitingDecisionVolume</dataPath>
+			<field>AwaitingDecisionVolume</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Pending decision, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>در انتظار تصمیم، حجم</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ожидает решения, объем</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Karar bekleniyor, hacim</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Pending decision, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Pending decision, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Pending decision, volume</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Vendor</dataPath>
+			<field>Vendor</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Vendor</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>تأمین‌کننده</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Fornitore</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Dostawca</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поставщик</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Tedarikçi</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Nhà cung cấp</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Partners</v8:Type>
+			</valueType>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>ChoiceParameters</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:ChoiceParameters">
+						<dcscor:item>
+							<dcscor:choiceParameter>Filter.Vendor</dcscor:choiceParameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Contract</dataPath>
+			<field>Contract</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Contract</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>قرارداد</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Contratto</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Umowa</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договор</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Sözleşme</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Hợp đồng</v8:content>
+				</v8:item>
+			</title>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>ChoiceParameterLinks</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:ChoiceParameterLinks">
+						<dcscor:item>
+							<dcscor:choiceParameter>Filter.Partner</dcscor:choiceParameter>
+							<dcscor:value>Vendor</dcscor:value>
+							<dcscor:mode xmlns:d8p1="http://v8.1c.ru/8.1/data/enterprise" xsi:type="d8p1:LinkedValueChangeMode">Clear</dcscor:mode>
+						</dcscor:item>
+					</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Received</dataPath>
+			<field>Received</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Total received</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>کل دریافتی</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поступило всего</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Toplam giriş</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Total received</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Total received</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Total received</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DocumentInflow</dataPath>
+			<field>DocumentInflow</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Receipt document</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>سند دریافت</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Documento di arrivo</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Dokument wpływu</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ поступления</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Teslim alma belgesi</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Chứng từ tiếp nhận</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Recorder</dataPath>
+			<field>Recorder</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Recorder</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>ثبت‌کننده</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Registratore</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Rejestrator</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регистратор</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Kaydedici</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Nguồn ghi</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ControlledLotReference</dataPath>
+			<field>ControlledLotReference</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Controlled lot</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>بچ کنترل‌شده</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контролируемая партия</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Kontrole tabi lot</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Controlled lot</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Controlled lot</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Controlled lot</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DoNotReceiveGoods</dataPath>
+			<field>DoNotReceiveGoods</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Written off</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>اسقاط‌شده</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Stornati</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Rozchodowano</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Списано</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Kayıttan düşülen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Đã ghi giảm</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DoNotReceiveGoodsByWeight</dataPath>
+			<field>DoNotReceiveGoodsByWeight</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Written off, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>اسقاط‌شده، وزن</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Списано, вес</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Silindi, ağırlık</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Written off, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Written off, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Written off, weight</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DoNotReceiveGoodsVolume</dataPath>
+			<field>DoNotReceiveGoodsVolume</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Written off, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>اسقاط‌شده، حجم</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Списано, объем</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Silindi, hacim</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Written off, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Written off, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Written off, volume</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>MoveTo</dataPath>
+			<field>MoveTo</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Transferred</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>منتقل‌شده</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перемещено</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Transfer edildi</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Transferred</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Transferred</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Transferred</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>MoveWeight</dataPath>
+			<field>MoveWeight</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Transferred, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>منتقل‌شده، وزن</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перемещено, вес</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Transfer edildi, ağırlık</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Transferred, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Transferred, weight</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Transferred, weight</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>MoveVolume</dataPath>
+			<field>MoveVolume</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Transferred, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>منتقل‌شده، حجم</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перемещено, объем</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Transfer edildi, hacim</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Transferred, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Transferred, volume</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Transferred, volume</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MaxWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<dataSource>DataSource1</dataSource>
+		<query>// A role has been added to the Quality Management profile for the report to work
+// Readinginformation to partners
+
+SELECT ALLOWED DISTINCT
+	Segments.Products AS Products,
+	Segments.Characteristic AS Characteristic,
+	TRUE AS FilterByProductSegmentIsUsed
+INTO SelectionByProductSegment
+FROM
+	InformationRegister.SegmentProducts AS Segments
+{WHERE
+	Segments.Segment.* AS ProductSegment,
+	Segments.Products.* AS Products,
+	Segments.Characteristic.* AS Characteristic}
+
+INDEX BY
+	Products,
+	Characteristic,
+	FilterByProductSegmentIsUsed
+;
+
+////////////////////////////////////////////////////////////////////////////////
+SELECT ALLOWED
+	Register3.Ref AS Ref,
+	Register3.IBDocumentDate AS IBDocumentDate
+INTO ActsWithRegisteredRecords
+FROM
+	InformationRegister.DocumentsRegistry AS Register3
+WHERE
+	NOT Register3.AdditionalRecord
+	AND Register3.Posted
+	AND Register3.RefType = &amp;MetadataIdentifierQualityControlReport
+	AND Register3.Status &lt;&gt; VALUE(Enum.StatusesOfQualityControlCertificates.InProgress)
+{WHERE Register3.IBDocumentDate BETWEEN &amp;BeginOfPeriod AND &amp;EndOfPeriod}
+INDEX BY
+	Ref
+;
+
+////////////////////////////////////////////////////////////////////////////////
+SELECT ALLOWED
+	GoodsInWarehousesTurnover.Period AS Period,
+	GoodsInWarehousesTurnover.Products AS Products,
+	GoodsInWarehousesTurnover.Characteristic AS Characteristic,
+	GoodsInWarehousesTurnover.Purpose AS Purpose,
+	GoodsInWarehousesTurnover.Series AS Series,
+	GoodsInWarehousesTurnover.ControlledLotReference AS ControlledLotReference,
+	GoodsInWarehousesTurnover.Recorder AS Recorder,
+	GoodsInWarehousesTurnover.InStockTurnover AS InStockTurnover
+INTO GoodsInWarehousesTurnover
+FROM
+	AccumulationRegister.ProductStock.Turnovers({&amp;BeginOfPeriod}, {&amp;EndOfPeriod}, Recorder,
+		ControlledLotReference &lt;&gt; VALUE(Catalog.ControlledLots.EmptyRef)
+		{(Products, Characteristic) IN(
+				SELECT
+					FilterTable.Products AS Products,
+					FilterTable.Characteristic AS Characteristic
+				FROM
+					SelectionByProductSegment AS FilterTable
+				WHERE
+					FilterTable.FilterByProductSegmentIsUsed = &amp;FilterByProductSegmentIsUsed)}
+		{Products.* AS Products,
+			Characteristic.* AS Characteristic,
+			Purpose.* AS Purpose,
+			Series.* AS Series,
+			ControlledLotReference.* AS ControlledLotReference}) AS GoodsInWarehousesTurnover
+INDEX BY
+	Products, Characteristic, Purpose, Series, ControlledLotReference
+;
+/////////////////////////////////////////////////////////////
+SELECT ALLOWED
+	Table.Ref AS Ref,
+	Table.Warehouse AS Warehouse,
+	Table.Products AS Products,
+	Table.Characteristic AS Characteristic,
+	Table.Purpose AS Purpose,
+	Table.Package AS Package,
+	Table.Series AS Series,
+	Table.Action AS Action,
+	Table.Count Count
+INTO DocumentDataTableItems
+FROM
+	ActsWithRegisteredRecords AS ActsWithRegisteredRecords
+		
+		INNER JOIN Document.GoodsQualityControlCertificate.Goods AS Table
+		ON Table.Ref = ActsWithRegisteredRecords.Ref
+{WHERE
+	Table.Ref.ControlledLotReference.Partner.* AS Vendor,
+	Table.Ref.ControlledLotReference.Contract.* AS Contract,
+	Table.Ref.ControlledLotReference.Lot AS DocumentInflow}
+{WHERE
+	(Table.Products, Table.Characteristic) IN(
+		SELECT
+			FilterTable.Products AS Products,
+			FilterTable.Characteristic AS Characteristic
+		FROM
+			SelectionByProductSegment AS FilterTable
+		WHERE
+			FilterTable.FilterByProductSegmentIsUsed = &amp;FilterByProductSegmentIsUsed)}
+{WHERE
+	Table.Products.* AS Products,
+	Table.Characteristic.* AS Characteristic,
+	Table.Purpose.* AS Purpose,
+	Table.Series.* AS Series,
+	Table.Ref.ControlledLotReference.* AS ControlledLotReference}
+;
+
+/////////////////////////////////////////////////////////////
+SELECT
+	Goods.Ref AS Ref,
+	Goods.Warehouse AS Warehouse,
+	Goods.Products AS Products,
+	Goods.Characteristic AS Characteristic,
+	Goods.Purpose AS Purpose,
+	Goods.Series AS Series,
+	Goods.Action AS Action,
+	Goods.Count Count
+INTO DocumentDataGoodsTableCollapseProductLocations
+FROM
+	DocumentDataTableItems AS Goods
+WHERE
+	ISNULL(CAST(Goods.Package AS Catalog.PackagesAndUnitsOfMeasure).PackageType,
+		UNDEFINED) &lt;&gt; VALUE(Enum.TypesOfItemsPackages.CargoItem)
+
+UNION ALL
+
+SELECT
+	Components.Ref AS Ref,
+	Components.Warehouse AS Warehouse,
+	Components.Products AS Products,
+	Components.Characteristic AS Characteristic,
+	Components.Purpose AS Purpose,
+	Components.Series AS Series,
+	Components.Action AS Action,
+	MIN(Components.Count) AS Count
+FROM(
+	SELECT
+		Goods.Ref AS Ref,
+		Goods.Warehouse AS Warehouse,
+		Goods.Products AS Products,
+		Goods.Characteristic AS Characteristic,
+		Goods.Purpose AS Purpose,
+		Goods.Series AS Series,
+		Goods.Action AS Action,
+		SUM(Goods.Count) AS Count
+FROM
+	DocumentDataTableItems AS Goods
+WHERE
+	CAST(Goods.Package AS Catalog.PackagesAndUnitsOfMeasure).PackageType
+		= VALUE(Enum.TypesOfItemsPackages.CargoItem)
+	GROUP BY
+		Goods.Ref,
+		Goods.Warehouse,
+		Goods.Products,
+		Goods.Characteristic,
+		Goods.Purpose,
+		Goods.Series,
+		Goods.Action) AS Components
+	GROUP BY
+		Components.Ref,
+		Components.Warehouse,
+		Components.Products,
+		Components.Characteristic,
+		Components.Purpose,
+		Components.Series,
+		Components.Action
+INDEX BY
+	Products
+;
+
+/////////////////////////////////////////////////////////////
+SELECT ALLOWED
+	Table.Period AS Period,
+	Table.Products AS Products,
+	Table.Characteristic AS Characteristic,
+	Table.Purpose AS Purpose,
+	Table.Series AS Series,
+	Table.ControlledLotReference AS ControlledLotReference,
+	Table.ControlledLotReference.Partner AS Vendor,
+	Table.ControlledLotReference.Contract AS Contract,
+	Table.ControlledLotReference.Lot AS DocumentInflow,
+	Table.Recorder AS Recorder,
+	Table.InStockTurnover * &amp;TextOfQuantityUnit AS Received,
+	Table.InStockTurnover * &amp;QueryTextItemWeight AS ReceivedWeight,
+	Table.InStockTurnover * &amp;QueryTextTheVolumeOfTheItem AS ReceivedVolume_,
+	Table.InStockTurnover * &amp;TextOfQuantityUnit AS UnderControl,
+	Table.InStockTurnover * &amp;QueryTextItemWeight AS OnWeightControl,
+	Table.InStockTurnover * &amp;QueryTextTheVolumeOfTheItem AS VolumeIsUnderControl,
+	0 AS WasPassed,
+	0 AS WeightPassed,
+	0 AS VolumePassed,
+	0 AS ChangeQuality,
+	0 AS ChangeQualityWeight,
+	0 AS ChangeQualityVolume,
+	0 AS ToReturnToVendor,
+	0 AS ReturnWeightToSupplier,
+	0 AS ReturnVolumeToSupplier,
+	0 AS DoNotReceiveGoods,
+	0 AS DoNotReceiveGoodsByWeight,
+	0 AS DoNotReceiveGoodsVolume,
+	0 AS MoveTo,
+	0 AS MoveWeight,
+	0 AS MoveVolume,
+	0 AS AwaitingDecision,
+	0 AS WeightIsAwaitingDecision,
+	0 AS AwaitingDecisionVolume
+{SELECT
+	Products.* AS Products,
+	Characteristic.* AS Characteristic,
+	Purpose.* AS Purpose,
+	Series.* AS Series,
+	ControlledLotReference.* AS ControlledLotReference,
+	Vendor.* AS Vendor,
+	Contract.* AS Contract,
+	DocumentInflow AS DocumentInflow,
+	Recorder AS Recorder,
+	Received AS Received,
+	ReceivedWeight AS ReceivedWeight,
+	ReceivedVolume_ AS ReceivedVolume_,
+	UnderControl AS UnderControl,
+	OnWeightControl AS OnWeightControl,
+	VolumeIsUnderControl AS VolumeIsUnderControl,
+	WasPassed AS WasPassed,
+	WeightPassed AS WeightPassed,
+	VolumePassed AS VolumePassed,
+	ChangeQuality AS ChangeQuality,
+	ChangeQualityWeight AS ChangeQualityWeight,
+	ChangeQualityVolume AS ChangeQualityVolume,
+	ToReturnToVendor AS ToReturnToVendor,
+	ReturnWeightToSupplier AS ReturnWeightToSupplier,
+	ReturnVolumeToSupplier AS ReturnVolumeToSupplier,
+	DoNotReceiveGoods AS DoNotReceiveGoods,
+	DoNotReceiveGoodsByWeight AS DoNotReceiveGoodsByWeight,
+	DoNotReceiveGoodsVolume AS DoNotReceiveGoodsVolume,
+	MoveTo AS MoveTo,
+	MoveWeight AS MoveWeight,
+	MoveVolume AS MoveVolume,
+	AwaitingDecision AS AwaitingDecision,
+	WeightIsAwaitingDecision AS WeightIsAwaitingDecision,
+	AwaitingDecisionVolume AS AwaitingDecisionVolume}
+FROM
+	GoodsInWarehousesTurnover AS Table
+{WHERE
+	Table.ControlledLotReference.Partner.* AS Vendor,
+	Table.ControlledLotReference.Contract.* AS Contract,
+	Table.ControlledLotReference.Lot AS DocumentInflow}
+WHERE
+	NOT VALUETYPE(Table.Recorder) IN(
+		TYPE(Document.GoodsQualityControlCertificate),
+		TYPE(Document.GoodsDamage),
+		TYPE(Document.WriteOffOfGoodsShortages))
+	AND NOT TRUE IN(
+	SELECT TOP 1
+		TRUE ThisIsReturnOnQualityControlCertificate
+	FROM
+		Document.GoodsIssueNote AS Orders_3
+	WHERE
+		Orders_3.Ref = Table.Recorder
+			AND Orders_3.WarehouseOperation = VALUE(Enum.WarehouseTransactions.ShipmentUnderReturnToVendor))
+	
+UNION ALL
+
+SELECT
+	Table.Ref.Date AS Period,
+	Table.Products AS Products,
+	Table.Characteristic AS Characteristic,
+	Table.Purpose AS Purpose,
+	Table.Series AS Series,
+	Table.Ref.ControlledLotReference AS ControlledLotReference,
+	Table.Ref.ControlledLotReference.Partner AS Vendor,
+	Table.Ref.ControlledLotReference.Contract AS Contract,
+	Table.Ref.ControlledLotReference.Lot AS DocumentInflow,
+	Table.Ref AS Recorder,
+	0 AS Received,
+	0 AS ReceivedWeight,
+	0 AS ReceivedVolume_,
+	- Table.Count * &amp;TextOfQuantityUnit AS UnderControl,
+	- Table.Count * &amp;QueryTextItemWeight AS OnWeightControl,
+	- Table.Count * &amp;QueryTextTheVolumeOfTheItem AS VolumeIsUnderControl,
+	CASE
+		WHEN Table.Action = VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.Unlock)
+			THEN Table.Count * &amp;TextOfQuantityUnit
+		ELSE 0
+	END AS WasPassed,
+	CASE
+		WHEN Table.Action = VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.Unlock)
+			THEN Table.Count * &amp;QueryTextItemWeight
+		ELSE 0
+	END AS WeightPassed,
+	CASE
+		WHEN Table.Action = VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.Unlock)
+			THEN Table.Count * &amp;QueryTextTheVolumeOfTheItem
+		ELSE 0
+	END AS VolumePassed,
+	CASE
+		WHEN Table.Action IN(
+			VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.ChangeQuality),
+			VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.RegisterStockQualityChange))
+			THEN Table.Count * &amp;TextOfQuantityUnit
+		ELSE 0
+	END AS ChangeQuality,
+	CASE
+		WHEN Table.Action IN(
+			VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.ChangeQuality),
+			VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.RegisterStockQualityChange))
+			THEN Table.Count * &amp;QueryTextItemWeight
+		ELSE 0
+	END AS ChangeQualityWeight,
+	CASE
+		WHEN Table.Action IN(
+			VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.ChangeQuality),
+			VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.RegisterStockQualityChange))
+			THEN Table.Count * &amp;QueryTextTheVolumeOfTheItem
+		ELSE 0
+	END AS ChangeQualityVolume,
+	CASE
+		WHEN Table.Action IN(
+			VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.ToReturnToVendor),
+			VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.RegisterReturn))
+			THEN Table.Count * &amp;TextOfQuantityUnit
+		ELSE 0
+	END AS ToReturnToVendor,
+	CASE
+		WHEN Table.Action IN(
+			VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.ToReturnToVendor),
+			VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.RegisterReturn))
+			THEN Table.Count * &amp;QueryTextItemWeight
+		ELSE 0
+	END AS ReturnWeightToSupplier,
+	CASE
+		WHEN Table.Action IN(
+			VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.ToReturnToVendor),
+			VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.RegisterReturn))
+			THEN Table.Count * &amp;QueryTextTheVolumeOfTheItem
+		ELSE 0
+	END AS ReturnVolumeToSupplier,
+	CASE
+		WHEN Table.Action IN(
+			VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.DoNotReceiveGoods),
+			VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.MakeDebit))
+			THEN Table.Count * &amp;TextOfQuantityUnit
+		ELSE 0
+	END AS DoNotReceiveGoods,
+	CASE
+		WHEN Table.Action IN(
+			VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.DoNotReceiveGoods),
+			VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.MakeDebit))
+			THEN Table.Count * &amp;QueryTextItemWeight
+		ELSE 0
+	END AS DoNotReceiveGoodsByWeight,
+	CASE
+		WHEN Table.Action IN(
+			VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.DoNotReceiveGoods),
+			VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.MakeDebit))
+			THEN Table.Count * &amp;QueryTextTheVolumeOfTheItem
+		ELSE 0
+	END AS DoNotReceiveGoodsVolume,
+	CASE
+		WHEN Table.Action = VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.RegisterGoodsTransfer)
+			THEN Table.Count * &amp;TextOfQuantityUnit
+		ELSE 0
+	END AS MoveTo,
+	CASE
+		WHEN Table.Action = VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.RegisterGoodsTransfer)
+			THEN Table.Count * &amp;QueryTextItemWeight
+		ELSE 0
+	END AS MoveWeight,
+	CASE
+		WHEN Table.Action = VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.RegisterGoodsTransfer)
+			THEN Table.Count * &amp;QueryTextTheVolumeOfTheItem
+		ELSE 0
+	END AS MoveVolume,
+	CASE
+		WHEN Table.Action = VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.EmptyRef)
+			THEN Table.Count * &amp;TextOfQuantityUnit
+		ELSE 0
+	END AS AwaitingDecision,
+	CASE
+		WHEN Table.Action = VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.EmptyRef)
+			THEN Table.Count * &amp;QueryTextItemWeight
+		ELSE 0
+	END AS WeightIsAwaitingDecision,
+	CASE
+		WHEN Table.Action = VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.EmptyRef)
+			THEN Table.Count * &amp;QueryTextTheVolumeOfTheItem
+		ELSE 0
+	END AS AwaitingDecisionVolume
+FROM
+	ActsWithRegisteredRecords AS ActsWithRegisteredRecords
+		
+		INNER JOIN DocumentDataGoodsTableCollapseProductLocations AS Table
+		ON Table.Ref = ActsWithRegisteredRecords.Ref
+		
+UNION ALL
+
+// Actions to return, not to arrive, or to change the quality lead to discrepancies (non-delivery).
+// In non-random warehouses, the shortfall will be reflected by reducing the arrival of the item to the warehouse will be corrected by the act of discrepancies, direct reduction of the invoice, adjustment of the purchase, or recalculation in the warehouse.
+// It is necessary to increase the arrival at the warehouse and control.
+// In the order warehouse, the under-delivery is reflected by the quality control act.
+SELECT
+	Table.Ref.Date AS Period,
+	Table.Products AS Products,
+	Table.Characteristic AS Characteristic,
+	Table.Purpose AS Purpose,
+	Table.Series AS Series,
+	Table.Ref.ControlledLotReference AS ControlledLotReference,
+	Table.Ref.ControlledLotReference.Partner AS Vendor,
+	Table.Ref.ControlledLotReference.Contract AS Contract,
+	Table.Ref.ControlledLotReference.Lot AS DocumentInflow,
+	Table.Ref AS Recorder,
+	- Table.Count * &amp;TextOfQuantityUnit AS Received,
+	- Table.Count * &amp;QueryTextItemWeight AS ReceivedWeight,
+	- Table.Count * &amp;QueryTextTheVolumeOfTheItem AS ReceivedVolume_,
+	- Table.Count * &amp;TextOfQuantityUnit AS UnderControl,
+	- Table.Count * &amp;QueryTextItemWeight AS OnWeightControl,
+	- Table.Count * &amp;QueryTextTheVolumeOfTheItem AS VolumeIsUnderControl,
+	0 AS WasPassed,
+	0 AS WeightPassed,
+	0 AS VolumePassed,
+	0 AS ChangeQuality,
+	0 AS ChangeQualityWeight,
+	0 AS ChangeQualityVolume,
+	0 AS ToReturnToVendor,
+	0 AS ReturnWeightToSupplier,
+	0 AS ReturnVolumeToSupplier,
+	0 AS DoNotReceiveGoods,
+	0 AS DoNotReceiveGoodsByWeight,
+	0 AS DoNotReceiveGoodsVolume,
+	0 AS MoveTo,
+	0 AS MoveWeight,
+	0 AS MoveVolume,
+	0 AS AwaitingDecision,
+	0 AS WeightIsAwaitingDecision,
+	0 AS AwaitingDecisionVolume
+FROM
+	ActsWithRegisteredRecords AS ActsWithRegisteredRecords
+		
+		INNER JOIN DocumentDataGoodsTableCollapseProductLocations AS Table
+		ON Table.Ref = ActsWithRegisteredRecords.Ref
+WHERE
+	Table.Action IN(
+		VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.ToReturnToVendor),
+		VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.ChangeQuality),
+		VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.DoNotReceiveGoods))
+	AND Table.Warehouse.UseWarehouseManagemantSystemForGoodsReceipt
+	AND Table.Warehouse.StartDateOfWarehouseManagemantSystemForGoodsReceipt &lt;= Table.Ref.Date
+	
+UNION ALL
+	
+SELECT
+	Table.Ref.Date AS Period,
+	Table.Products AS Products,
+	Table.Characteristic AS Characteristic,
+	Table.Purpose AS Purpose,
+	Table.Series AS Series,
+	Table.Ref.ControlledLotReference AS ControlledLotReference,
+	Table.Ref.ControlledLotReference.Partner AS Vendor,
+	Table.Ref.ControlledLotReference.Contract AS Contract,
+	Table.Ref.ControlledLotReference.Lot AS DocumentInflow,
+	Table.Ref AS Recorder,
+	Table.Count * &amp;TextOfQuantityUnit AS Received,
+	Table.Count * &amp;QueryTextItemWeight AS ReceivedWeight,
+	Table.Count * &amp;QueryTextTheVolumeOfTheItem AS ReceivedVolume_,
+	Table.Count * &amp;TextOfQuantityUnit AS UnderControl,
+	Table.Count * &amp;QueryTextItemWeight AS OnWeightControl,
+	Table.Count * &amp;QueryTextTheVolumeOfTheItem AS VolumeIsUnderControl,
+	0 AS WasPassed,
+	0 AS WeightPassed,
+	0 AS VolumePassed,
+	0 AS ChangeQuality,
+	0 AS ChangeQualityWeight,
+	0 AS ChangeQualityVolume,
+	0 AS ToReturnToVendor,
+	0 AS ReturnWeightToSupplier,
+	0 AS ReturnVolumeToSupplier,
+	0 AS DoNotReceiveGoods,
+	0 AS DoNotReceiveGoodsByWeight,
+	0 AS DoNotReceiveGoodsVolume,
+	0 AS MoveTo,
+	0 AS MoveWeight,
+	0 AS MoveVolume,
+	0 AS AwaitingDecision,
+	0 AS WeightIsAwaitingDecision,
+	0 AS AwaitingDecisionVolume
+FROM
+	ActsWithRegisteredRecords AS ActsWithRegisteredRecords
+		
+		INNER JOIN DocumentDataGoodsTableCollapseProductLocations AS Table
+		ON Table.Ref = ActsWithRegisteredRecords.Ref
+WHERE
+	Table.Action IN(
+		VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.ToReturnToVendor),
+		VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.ChangeQuality),
+		VALUE(Enum.ActionsOnGoodsInQualityControlCertificate.DoNotReceiveGoods))</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<calculatedField>
+		<dataPath>Products.UnitOfMeasure</dataPath>
+		<expression>Case
+	When &amp;QuantityUnits = 0 Then
+		Products.UnitOfMeasure
+	When &amp;QuantityUnits = 1 Then
+		Products.UnitForReports
+End</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Unit</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>واحد</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Unità di misura</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>J. m.</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Ед. изм.</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Ölçü birimi</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>ĐVT</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ReportUnit</dataPath>
+		<expression>Case
+	When &amp;QuantityUnits = 0 Then
+		Products.UnitOfMeasure
+	When &amp;QuantityUnits = 1 Then
+		Products.UnitForReports
+End</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Report unit</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>واحد گزارش</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Unità del report</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Jednostka raportu</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Единица отчета</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Rapor birimi</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Đơn vị báo cáo</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<field>true</field>
+			<condition>true</condition>
+			<group>true</group>
+			<order>true</order>
+		</useRestriction>
+	</calculatedField>
+	<totalField>
+		<dataPath>Received</dataPath>
+		<expression>Case
+	When &amp;QuantitativeResultsForUnits And Count(Distinct ReportUnit) &gt; 1
+		Then 0
+	Else Sum(Received)
+End</expression>
+	</totalField>
+	<totalField>
+		<dataPath>UnderControl</dataPath>
+		<expression>Case
+	When &amp;QuantitativeResultsForUnits And Count(Distinct ReportUnit) &gt; 1
+		Then 0
+	Else Sum(UnderControl)
+End</expression>
+	</totalField>
+	<totalField>
+		<dataPath>WasPassed</dataPath>
+		<expression>Case
+	When &amp;QuantitativeResultsForUnits And Count(Distinct ReportUnit) &gt; 1
+		Then 0
+	Else Sum(WasPassed)
+End</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ChangedQuality</dataPath>
+		<expression>Case
+	When &amp;QuantitativeResultsForUnits And Count(Distinct ReportUnit) &gt; 1
+		Then 0
+	Else Sum(ChangedQuality)
+End</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ReturnedToSupplier</dataPath>
+		<expression>Case
+	When &amp;QuantitativeResultsForUnits And Count(Distinct ReportUnit) &gt; 1
+		Then 0
+	Else Sum(ReturnedToSupplier)
+End</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ReceivedWeight</dataPath>
+		<expression>Sum(ReceivedWeight)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>OnWeightControl</dataPath>
+		<expression>Sum(OnWeightControl)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>WeightPassed</dataPath>
+		<expression>Sum(WeightPassed)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ChangedQualityWeight</dataPath>
+		<expression>Sum(ChangedQualityWeight)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ReturnedToSupplierWeight</dataPath>
+		<expression>Sum(ReturnedToSupplierWeight)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ReceivedVolume_</dataPath>
+		<expression>Sum(ReceivedVolume_)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>VolumeIsUnderControl</dataPath>
+		<expression>Sum(VolumeIsUnderControl)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>VolumePassed</dataPath>
+		<expression>Sum(VolumePassed)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ChangedQualityVolume</dataPath>
+		<expression>Sum(ChangedQualityVolume)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>VolumeReturnedToSupplier</dataPath>
+		<expression>Sum(VolumeReturnedToSupplier)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>AwaitingDecision</dataPath>
+		<expression>Case
+	When &amp;QuantitativeResultsForUnits And Count(Distinct ReportUnit) &gt; 1
+		Then 0
+	Else Sum(AwaitingDecision)
+End</expression>
+	</totalField>
+	<totalField>
+		<dataPath>WeightIsAwaitingDecision</dataPath>
+		<expression>Sum(WeightIsAwaitingDecision)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>AwaitingDecisionVolume</dataPath>
+		<expression>Sum(AwaitingDecisionVolume)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>DoNotReceiveGoods</dataPath>
+		<expression>Case
+	When &amp;QuantitativeResultsForUnits And Count(Distinct ReportUnit) &gt; 1
+		Then 0
+	Else Sum(DoNotReceiveGoods)
+End</expression>
+	</totalField>
+	<totalField>
+		<dataPath>DoNotReceiveGoodsByWeight</dataPath>
+		<expression>Sum(DoNotReceiveGoodsByWeight)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>DoNotReceiveGoodsVolume</dataPath>
+		<expression>Sum(DoNotReceiveGoodsVolume)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>MoveTo</dataPath>
+		<expression>Case
+	When &amp;QuantitativeResultsForUnits And Count(Distinct ReportUnit) &gt; 1
+		Then 0
+	Else Sum(MoveTo)
+End</expression>
+	</totalField>
+	<totalField>
+		<dataPath>MoveWeight</dataPath>
+		<expression>Sum(MoveWeight)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>MoveVolume</dataPath>
+		<expression>Sum(MoveVolume)</expression>
+	</totalField>
+	<parameter>
+		<name>Period</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>دوره</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Periodo</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Okres</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Dönem</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Kỳ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Today</v8:variant>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>QuantitativeResultsForUnits</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Quantitative results</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>نتایج کمّی</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Risultati quantitativi</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Wyniki ilościowe</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количественные итоги</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Nicel toplam</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Tổng số lượng</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">true</value>
+		<useRestriction>false</useRestriction>
+		<availableValue>
+			<value xsi:type="xs:boolean">true</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Including units of measure</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>شامل واحدهای اندازه‌گیری</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Considerando le unità di misura</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Z uwzględnieniem jednostek miar</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>С учетом единиц измерения</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Ölçü birimi hesabıyla</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Có tính đến đơn vị tính</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<availableValue>
+			<value xsi:type="xs:boolean">false</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Excluding units of measure</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>بدون واحدهای اندازه‌گیری</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Senza considerazione delle unità di misura</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Bez uwzględnienia jednostek miar</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Без учета единиц измерения</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Ölçü birimi hariç</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Không tính đơn vị tính</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>TextOfQuantityUnit</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Quantity unit text</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>متن واحد مقدار</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Текст единицы количества</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Miktar birimi metni</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Quantity unit text</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Quantity unit text</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Quantity unit text</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>QueryTextItemWeight</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Query text items weight</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>متن پرس‌وجو وزن اقلام</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Testo della query peso articoli</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Tekst zapytania waga nomenklatury</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Текст запроса вес номенклатуры</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Öğe ağırlığı sorgu metni</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Nội dung truy vấn trọng lượng mặt hàng</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>FilterByProductSegmentIsUsed</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Filter by item segment is used</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>فیلتر بر اساس بخش قلم استفاده می‌شود</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Viene utilizzata la selezione per segmento degli articoli</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Jest używany filtr wg segmentu wierszy pozycji</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Используется отбор по сегменту номенклатуры</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Stok segmentine göre filtre kullanılmaktadır</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Sử dụng lọc theo phân khúc mặt hàng</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>QueryTextTheVolumeOfTheItem</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Query text items volume</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>متن پرس‌وجوی حجم اقلام</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Testo della query volume articoli</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Tekst zapytania objętość nomenklatury</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Текст запроса объем номенклатуры</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Sorgu metni öğe hacmi</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Nội dung truy vấn khối lượng mặt hàng</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>QuantityUnits</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Goods quantity</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>مقدار کالا</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Quantità della merce</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Ilość towarów</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество товаров</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Ürün miktarı</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Số lượng hàng hóa</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>1</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<availableValue>
+			<value xsi:type="xs:decimal">0</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>In stock UOM</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>به واحد اندازه‌گیری انبار</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>In unità di stoccaggio</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>W jednostkach magazynowych</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>В единицах хранения</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Stok ölçü biriminde</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Theo đơn vị lưu kho</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<availableValue>
+			<value xsi:type="xs:decimal">1</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>In units for reports</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>به واحدهای گزارش</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>In unità per i report</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>W jednostkach do sprawozdań</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>В единицах для отчетов</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Raporlara yönelik birim cinsinden</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Theo đơn vị để báo cáo</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>BeginOfPeriod</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period start</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>شروع دوره</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Inizio del periodo</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Początek okresu</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Dönem başı</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Đầu kỳ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Period.StartDate</expression>
+		<inputParameters>
+			<dcscor:item>
+				<dcscor:parameter>QuickChoice</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+			</dcscor:item>
+		</inputParameters>
+	</parameter>
+	<parameter>
+		<name>EndOfPeriod</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period end</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>پایان دوره</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Fine del periodo</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Koniec okresu</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Dönem sonu</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Cuối kỳ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Period.EndDate</expression>
+		<inputParameters>
+			<dcscor:item>
+				<dcscor:parameter>QuickChoice</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+			</dcscor:item>
+		</inputParameters>
+	</parameter>
+	<parameter>
+		<name>MetadataIdentifierQualityControlReport</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Metadata ID quality control certificate</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>شناسه فراداده گواهی کنترل کیفیت</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Идентификатор метаданных акт контроля качества</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Kalite kontrol tutanağı meta veri tanımlayıcısı</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Metadata ID quality control certificate</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Metadata ID quality control certificate</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Metadata ID quality control certificate</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.MetadataObjectIDs</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<expression>Common.MetadataObjectID("Document.GoodsQualityControlCertificate")</expression>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>AnalysisOfPassingGoodsQualityControl</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Analysis of passing goods quality control</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>تحلیل گذر کالا از کنترل کیفیت</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Анализ прохождения контроля качества товаров</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Ürün kalite kontrol geçiş analizi</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Analysis of passing goods quality control</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Analysis of passing goods quality control</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Analysis of passing goods quality control</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Products.SKU</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Item ID</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>شناسه قلم</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Артикул</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Ürün kodu</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Item ID</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Item ID</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Item ID</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Received</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>ReceivedWeight</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Received %12%</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>دریافت‌شده %12 درصد</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поступило %12%</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Giriş yapıldı %12%</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Received %12%</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Received %12%</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Received %12%</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>ReceivedVolume_</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Received %13%</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>دریافت‌شده %13 درصد</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поступило %13%</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Giriş yapıldı %13%</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Received %13%</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Received %13%</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Received %13%</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>UnderControl</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>OnWeightControl</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Under control %12%</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>تحت کنترل %12 درصد</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>На контроле %12%</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Kontrolde %12%</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Under control %12%</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Under control %12%</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Under control %12%</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>VolumeIsUnderControl</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Under control %13%</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>تحت کنترل %13 درصد</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>На контроле %13%</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Kontrolde %13%</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Under control %13%</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Under control %13%</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Under control %13%</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Control is completed</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>کنترل تکمیل شد</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Контроль завершен</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Kontrol tamamlandı</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Control is completed</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Control is completed</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Control is completed</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>AwaitingDecision</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>WeightIsAwaitingDecision</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Pending decision %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>در انتظار تصمیم %12 درصد</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Ожидает решения %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Karar bekleniyor %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>Pending decision %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Pending decision %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Pending decision %12%</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>AwaitingDecisionVolume</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Pending decision %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>در انتظار تصمیم %13 درصد</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Ожидает решения %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Karar bekleniyor %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>Pending decision %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Pending decision %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Pending decision %13%</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>WasPassed</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>WeightPassed</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Passed %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>پذیرفته‌شده %12 درصد</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Пройден %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Geçti %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>Passed %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Passed %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Passed %12%</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>VolumePassed</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Passed %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>پذیرفته‌شده %13 درصد</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Пройден %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Geçti %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>Passed %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Passed %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Passed %13%</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ChangedQuality</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ChangedQualityWeight</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Quality changed %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>کیفیت تغییر یافت %12 درصد</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Изменено качество %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Kalite değiştirildi %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>Quality changed %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Quality changed %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Quality changed %12%</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ChangedQualityVolume</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Quality changed %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>کیفیت تغییر یافت %13 درصد</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Изменено качество %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Kalite değiştirildi %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>Quality changed %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Quality changed %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Quality changed %13%</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>MoveTo</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>MoveWeight</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Transferred %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>منتقل‌شده %12 درصد</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Перемещено %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Transfer edildi %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>Transferred %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Transferred %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Transferred %12%</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>MoveVolume</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Transferred %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>منتقل‌شده %13 درصد</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Перемещено %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Transfer edildi%13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>Transferred %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Transferred %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Transferred %13%</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ReturnedToSupplier</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ReturnedToSupplierWeight</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Returned to vendor %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>مرجوع‌شده به فروشنده %12 درصد</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Возвращено поставщику %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Tedarikçiye iade edildi %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>Returned to vendor %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Returned to vendor %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Returned to vendor %12%</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>VolumeReturnedToSupplier</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Returned to vendor %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>مرجوع‌شده به فروشنده %13 درصد</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Возвращено поставщику %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Tedarikçiye iade edildi %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>Returned to vendor %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Returned to vendor %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Returned to vendor %13%</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>DoNotReceiveGoods</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>DoNotReceiveGoodsByWeight</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Written off %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>اسقاط‌شده %12 درصد</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Списано %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Silindi %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>Written off %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Written off %12%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Written off %12%</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>DoNotReceiveGoodsVolume</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Written off %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>اسقاط‌شده %13 درصد</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Списано %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Silindi %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>Written off %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Written off %13%</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Written off %13%</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>984c8826-53d2-4a7f-9863-68507bcdc7a3</dcsset:userSettingID>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Vendor</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>4eb63638-340a-4591-a7c0-f498b159af2e</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Products.SKU</dcsset:left>
+					<dcsset:comparisonType>Contains</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string"/>
+					<dcsset:userSettingID>3b3014bf-5e19-43b4-ae0f-7993d6f9d371</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Item ID</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>شناسه قلم</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Articolo</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Artykuł</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Артикул</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Ürün kodu</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Mã hiệu</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Products</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="v8:ValueListType">
+						<v8:valueType/>
+						<v8:lastId xsi:type="xs:decimal">-1</v8:lastId>
+					</dcsset:right>
+					<dcsset:userSettingID>bd4db467-bfe2-4b22-9c5a-97a5a4887471</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Series</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>190f49d9-0aac-45c2-ab15-a35cbc477a90</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Purpose</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>051091be-6324-4639-9241-5e2774ab6250</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ControlledLotReference</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>d32a3435-41a0-4bc4-b1c5-c1aabcd0ce47</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ProductSegment</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>845db55c-f125-412a-8956-2979e3e746a7</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">DocumentInflow</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>07fac840-d6bc-4b39-bfe0-faa1c073f6b6</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Contract</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>113dff38-ef7f-4e24-b312-4331aac59b12</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>d0ed0e62-66c7-4b65-9594-d093d6ae3f3d</dcsset:userSettingID>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Period</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>eade7e96-2b33-4666-bbfe-e749cdc8f89b</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>QuantitativeResultsForUnits</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>QuantityUnits</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">0</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>115da9c0-fc84-4e71-86df-96397de239c5</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Recorder</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>f9da4fbf-838c-4e6d-b18b-4df7ae4ade8f</dcsset:userSettingID>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Title</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Analysis of passing quality control</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>تحلیل گذر از کنترل کیفیت</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Анализ прохождения контроля качества</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Kalite kontrol geçiş analizi</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Analysis of passing quality control</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Analysis of passing quality control</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Analysis of passing quality control</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Vendor</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Contract</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Products</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Characteristic</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Series</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Products.SKU</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Item ID</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>fa</v8:lang>
+									<v8:content>شناسه قلم</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>it</v8:lang>
+									<v8:content>Articolo</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>pl</v8:lang>
+									<v8:content>Artykuł</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Артикул</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>tr</v8:lang>
+									<v8:content>Ürün kodu</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>vi</v8:lang>
+									<v8:content>Mã hiệu</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Products</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Characteristic</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Series</dcsset:field>
+							</dcsset:item>
+							<dcsset:placement>Together</dcsset:placement>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Products.UnitOfMeasure</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Unit</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>fa</v8:lang>
+									<v8:content>واحد</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>it</v8:lang>
+									<v8:content>Unità di misura</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>pl</v8:lang>
+									<v8:content>J. m.</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ед. изм.</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>tr</v8:lang>
+									<v8:content>Ölçü birimi</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>vi</v8:lang>
+									<v8:content>Đơn vị tính</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Recorder</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+						<dcsset:userSettingID>0aa40f8c-f84d-471c-934d-a28047daeced</dcsset:userSettingID>
+						<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Itemize to recorder</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>تفکیک تا ثبت‌کننده</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>Specificazione fino al registratore</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Szczegóły do rejestratora</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Детализация до регистратора</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Kaydediciye kadar detaylandırma</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Chi tiết đến biểu ghi</v8:content>
+							</v8:item>
+						</dcsset:userSettingPresentation>
+						<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					</dcsset:item>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+				</dcsset:item>
+				<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+			</dcsset:item>
+			<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

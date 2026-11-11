@@ -1,0 +1,3054 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>DataSource1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>DataSet1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Scenario</dataPath>
+			<field>Scenario</field>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>ChoiceParameters</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:ChoiceParameters">
+						<dcscor:item>
+							<dcscor:choiceParameter>Filter.UseInAssemblyDisassemblyPlanning</dcscor:choiceParameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Products</dataPath>
+			<field>Products</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Items</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>اقلام</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Articolo</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Pozycja</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номенклатура</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Öğe</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Mặt hàng</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Characteristic</dataPath>
+			<field>Characteristic</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Warehouse</dataPath>
+			<field>Warehouse</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Warehouse</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>انبار</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Magazzino</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Magazyn</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Склад</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Ambar</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Kho bãi</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Warehouses</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ordered.Count</dataPath>
+			<field>OrderedQuantity</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Quantity</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>مقدار</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Quantità</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Ilość</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Miktar</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Số lượng</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DynamicPeriod</dataPath>
+			<field>DynamicPeriod</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Dynamic period</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>دوره پویا</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Periodo dinamico</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Okres dynamiczny</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Динамический период</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Dinamik dönem</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Kỳ biến động</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Organization</dataPath>
+			<field>Organization</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Company</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>شرکت</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Azienda</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Firma</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>İş yeri</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Doanh nghiệp</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Plan.Count</dataPath>
+			<field>PlanQuantity</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Quantity</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>مقدار</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Quantità</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Ilość</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Miktar</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Số lượng</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Real.Count</dataPath>
+			<field>FactQuantity</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Quantity</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>مقدار</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Quantità</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Ilość</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Miktar</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Số lượng</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>ND=3; NFD=0</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>ND=15; NFD=3</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MarkNegatives</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ProductSegment</dataPath>
+			<field>ProductSegment</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ItemsLocationAttributes</dataPath>
+			<field>ItemsLocationAttributes</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>InventoryOwnerAttribute</dataPath>
+			<field>InventoryOwnerAttribute</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AssemblyDisassemblyPlan</dataPath>
+			<field>AssemblyDisassemblyPlan</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Kitting plan</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>برنامه کیت‌سازی</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Piano di assemblaggio (disassemblaggio)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Plan montażu (demontażu)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>План сборки (разборки)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Montaj (demontaj) planı</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Kế hoạch đóng bộ (tách bộ)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ProductKit</dataPath>
+			<field>ProductKit</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Status</dataPath>
+			<field>Status</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>BusinessOperation</dataPath>
+			<field>BusinessOperation</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CCDNumber</dataPath>
+			<field>CCDNumber</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Purpose</dataPath>
+			<field>Purpose</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Assignment</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>تخصیص</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Assegnazione</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Przeznaczenie</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Назначение</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Atama</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Ấn định</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>PlanProfile</dataPath>
+			<field>PlanProfile</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Recorder</dataPath>
+			<field>Recorder</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Recorder</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>ثبت‌کننده</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Registratore</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Rejestrator</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регистратор</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Kaydedici</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Nguồn ghi</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>PlanExecution.Count</dataPath>
+			<field>ExecutionOfPlanQuantity</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Quantity</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>مقدار</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Quantità</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Ilość</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Miktar</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Số lượng</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>MinWidth</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ByAssemblyDisassemblyOrder</dataPath>
+			<field>ByAssemblyDisassemblyOrder</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Series</dataPath>
+			<field>Series</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>RowCode</dataPath>
+			<field>RowCode</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AssemblyType</dataPath>
+			<field>AssemblyType</field>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>Ordered</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Ordered</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>سفارش‌داده‌شده</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Ordinato</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Zamówiono</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказано</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Sipariş edilen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Đã đặt hàng</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>Plan</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Plan</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>برنامه</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Piano</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Plan</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>План</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Plan</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Kế hoạch</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>Real</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Actual</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>واقعی</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Fatto</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Fakt</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Факт</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Gerçekleşen</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Thực tế</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>PlanExecution</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Plan fulfillment</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>اجرای برنامه</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>ИсполнениеПлана</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>ИсполнениеПлана</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ИсполнениеПлана</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>ИсполнениеПлана</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>ThựcHiệnKếHoạch</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>DataSource1</dataSource>
+		<query>SELECT ALLOWED DISTINCT
+	Segments.Products AS Products,
+	Segments.Characteristic AS Characteristic,
+	TRUE AS FilterByProductSegmentIsUsed
+INTO SelectionByProductSegment
+FROM
+	InformationRegister.SegmentProducts AS Segments
+{WHERE
+	Segments.Segment.* AS ProductSegment,
+	Segments.Products.* AS Products,
+	Segments.Characteristic.* AS Characteristic}
+
+INDEX BY
+	Products,
+	Characteristic,
+	FilterByProductSegmentIsUsed
+;
+
+////////////////////////////////////////////////////////////////////////////////
+SELECT ALLOWED
+	CASE &amp;Periodicity
+		WHEN VALUE(Enum.Periodicity.WEEK)
+			THEN ENDOFPERIOD(AssemblyPlansDisassemblyRevolutions.WeekPeriod, WEEK)
+		WHEN VALUE(Enum.Periodicity.TENDAYS)
+			THEN ENDOFPERIOD(AssemblyPlansDisassemblyRevolutions.TenDaysPeriod, TENDAYS)
+		WHEN VALUE(Enum.Periodicity.MONTH)
+			THEN ENDOFPERIOD(AssemblyPlansDisassemblyRevolutions.MonthPeriod, MONTH)
+		WHEN VALUE(Enum.Periodicity.QUARTER)
+			THEN ENDOFPERIOD(AssemblyPlansDisassemblyRevolutions.QuarterPeriod, QUARTER)
+		WHEN VALUE(Enum.Periodicity.HALFYEAR)
+			THEN ENDOFPERIOD(AssemblyPlansDisassemblyRevolutions.HalfYearPeriod, HALFYEAR)
+		WHEN VALUE(Enum.Periodicity.YEAR)
+			THEN ENDOFPERIOD(AssemblyPlansDisassemblyRevolutions.YearPeriod, YEAR)
+		ELSE ENDOFPERIOD(AssemblyPlansDisassemblyRevolutions.DayPeriod, DAY)
+	END AS DynamicPeriod,
+	AssemblyPlansDisassemblyRevolutions.Warehouse AS Warehouse,
+	AssemblyPlansDisassemblyRevolutions.Products AS Products,
+	AssemblyPlansDisassemblyRevolutions.Characteristic AS Characteristic,
+	CASE
+		WHEN &amp;SpecifyTargets
+			THEN AssemblyPlansDisassemblyRevolutions.Purpose
+		ELSE VALUE(Catalog.Assignments.EmptyRef)
+	END AS Purpose,
+	AssemblyPlansDisassemblyRevolutions.BusinessOperation AS BusinessOperation,
+	AssemblyPlansDisassemblyRevolutions.Recorder AS Recorder,
+	SUM(AssemblyPlansDisassemblyRevolutions.CountTurnover) AS Count
+INTO AssemblyDisassemblyPlan
+{SELECT
+	Warehouse.*}
+FROM
+	AccumulationRegister.AssemblyDisassemblyPlans.Turnovers(
+		,
+		,
+		Auto,
+		Scenario = &amp;Scenario
+		{(Warehouse), ((Products, Characteristic) IN
+			(SELECT
+					SelectionByProductSegment.Products,
+					SelectionByProductSegment.Characteristic
+				FROM
+					SelectionByProductSegment AS SelectionByProductSegment
+				WHERE
+					SelectionByProductSegment.FilterByProductSegmentIsUsed = &amp;FilterByProductSegmentIsUsed))
+		}) AS AssemblyPlansDisassemblyRevolutions
+
+GROUP BY
+	AssemblyPlansDisassemblyRevolutions.Products,
+	AssemblyPlansDisassemblyRevolutions.Characteristic,
+	CASE
+		WHEN &amp;SpecifyTargets
+			THEN AssemblyPlansDisassemblyRevolutions.Purpose
+		ELSE VALUE(Catalog.Assignments.EmptyRef)
+	END,
+	AssemblyPlansDisassemblyRevolutions.Warehouse,
+	CASE &amp;Periodicity
+		WHEN VALUE(Enum.Periodicity.WEEK)
+			THEN ENDOFPERIOD(AssemblyPlansDisassemblyRevolutions.WeekPeriod, WEEK)
+		WHEN VALUE(Enum.Periodicity.TENDAYS)
+			THEN ENDOFPERIOD(AssemblyPlansDisassemblyRevolutions.TenDaysPeriod, TENDAYS)
+		WHEN VALUE(Enum.Periodicity.MONTH)
+			THEN ENDOFPERIOD(AssemblyPlansDisassemblyRevolutions.MonthPeriod, MONTH)
+		WHEN VALUE(Enum.Periodicity.QUARTER)
+			THEN ENDOFPERIOD(AssemblyPlansDisassemblyRevolutions.QuarterPeriod, QUARTER)
+		WHEN VALUE(Enum.Periodicity.HALFYEAR)
+			THEN ENDOFPERIOD(AssemblyPlansDisassemblyRevolutions.HalfYearPeriod, HALFYEAR)
+		WHEN VALUE(Enum.Periodicity.YEAR)
+			THEN ENDOFPERIOD(AssemblyPlansDisassemblyRevolutions.YearPeriod, YEAR)
+		ELSE ENDOFPERIOD(AssemblyPlansDisassemblyRevolutions.DayPeriod, DAY)
+	END,
+	AssemblyPlansDisassemblyRevolutions.BusinessOperation,
+	AssemblyPlansDisassemblyRevolutions.Recorder
+;
+
+////////////////////////////////////////////////////////////////////////////////
+SELECT ALLOWED
+	CASE &amp;Periodicity
+		WHEN VALUE(Enum.Periodicity.WEEK)
+			THEN ENDOFPERIOD(CompanyGoods.WeekPeriod, WEEK)
+		WHEN VALUE(Enum.Periodicity.TENDAYS)
+			THEN ENDOFPERIOD(CompanyGoods.TenDaysPeriod, TENDAYS)
+		WHEN VALUE(Enum.Periodicity.MONTH)
+			THEN ENDOFPERIOD(CompanyGoods.MonthPeriod, MONTH)
+		WHEN VALUE(Enum.Periodicity.QUARTER)
+			THEN ENDOFPERIOD(CompanyGoods.QuarterPeriod, QUARTER)
+		WHEN VALUE(Enum.Periodicity.HALFYEAR)
+			THEN ENDOFPERIOD(CompanyGoods.HalfYearPeriod, HALFYEAR)
+		WHEN VALUE(Enum.Periodicity.YEAR)
+			THEN ENDOFPERIOD(CompanyGoods.YearPeriod, YEAR)
+		ELSE ENDOFPERIOD(CompanyGoods.DayPeriod, DAY)
+	END AS DynamicPeriod,
+	CompanyGoods.ItemsLocationAttributes.StorageLocation AS Warehouse,
+	CompanyGoods.ItemsLocationAttributes.Products AS Products,
+	CompanyGoods.ItemsLocationAttributes.Characteristic AS Characteristic,
+	CASE
+		WHEN &amp;SpecifyTargets
+			THEN CompanyGoods.ItemsLocationAttributes.Purpose
+		ELSE VALUE(Catalog.Assignments.EmptyRef)
+	END AS Purpose,
+	Assembly.BusinessOperation AS BusinessOperation,
+	CompanyGoods.Recorder AS Recorder,
+	SUM(CompanyGoods.CountReceipt) AS FactQuantity
+INTO ActualAssemblyDisassembly
+FROM
+	AccumulationRegister.CompanyGoods.Turnovers(
+		,
+		,
+		Auto,
+		{(CASE
+			WHEN &amp;SelectionAccordingToProductOfPlansIsUsed
+				THEN ItemsLocationAttributes IN
+					(SELECT DISTINCT
+							ItemsLocationAttributes.DimensionKey
+						FROM
+							AssemblyDisassemblyPlan AS AssemblyDisassemblyPlan
+							INNER JOIN InformationRegister.ItemsLocationAttributes AS ItemsLocationAttributes
+							ON AssemblyDisassemblyPlan.Products = ItemsLocationAttributes.Products
+							 AND AssemblyDisassemblyPlan.Characteristic = ItemsLocationAttributes.Characteristic)
+			ELSE TRUE
+		END)}) AS CompanyGoods
+		INNER JOIN Document.AssemblyFromComponents AS Assembly
+		ON (Assembly.Ref = CompanyGoods.Recorder)
+{WHERE
+	CompanyGoods.Organization.* AS Organization,
+	CompanyGoods.ItemsLocationAttributes.Products.* AS Products,
+	CompanyGoods.ItemsLocationAttributes.StorageLocation.* AS Warehouse}
+
+GROUP BY
+	CompanyGoods.ItemsLocationAttributes.StorageLocation,
+	CompanyGoods.ItemsLocationAttributes.Characteristic,
+	CompanyGoods.ItemsLocationAttributes.Products,
+	CASE
+		WHEN &amp;SpecifyTargets
+			THEN CompanyGoods.ItemsLocationAttributes.Purpose
+		ELSE VALUE(Catalog.Assignments.EmptyRef)
+	END,
+	CASE &amp;Periodicity
+		WHEN VALUE(Enum.Periodicity.WEEK)
+			THEN ENDOFPERIOD(CompanyGoods.WeekPeriod, WEEK)
+		WHEN VALUE(Enum.Periodicity.TENDAYS)
+			THEN ENDOFPERIOD(CompanyGoods.TenDaysPeriod, TENDAYS)
+		WHEN VALUE(Enum.Periodicity.MONTH)
+			THEN ENDOFPERIOD(CompanyGoods.MonthPeriod, MONTH)
+		WHEN VALUE(Enum.Periodicity.QUARTER)
+			THEN ENDOFPERIOD(CompanyGoods.QuarterPeriod, QUARTER)
+		WHEN VALUE(Enum.Periodicity.HALFYEAR)
+			THEN ENDOFPERIOD(CompanyGoods.HalfYearPeriod, HALFYEAR)
+		WHEN VALUE(Enum.Periodicity.YEAR)
+			THEN ENDOFPERIOD(CompanyGoods.YearPeriod, YEAR)
+		ELSE ENDOFPERIOD(CompanyGoods.DayPeriod, DAY)
+	END,
+	Assembly.BusinessOperation,
+	CompanyGoods.Recorder
+;
+
+////////////////////////////////////////////////////////////////////////////////
+SELECT ALLOWED
+	CASE &amp;Periodicity
+		WHEN VALUE(Enum.Periodicity.WEEK)
+			THEN ENDOFPERIOD(Orders.AssemblyDisassemblyEnd, WEEK)
+		WHEN VALUE(Enum.Periodicity.TENDAYS)
+			THEN ENDOFPERIOD(Orders.AssemblyDisassemblyEnd, TENDAYS)
+		WHEN VALUE(Enum.Periodicity.MONTH)
+			THEN ENDOFPERIOD(Orders.AssemblyDisassemblyEnd, MONTH)
+		WHEN VALUE(Enum.Periodicity.QUARTER)
+			THEN ENDOFPERIOD(Orders.AssemblyDisassemblyEnd, QUARTER)
+		WHEN VALUE(Enum.Periodicity.HALFYEAR)
+			THEN ENDOFPERIOD(Orders.AssemblyDisassemblyEnd, HALFYEAR)
+		WHEN VALUE(Enum.Periodicity.YEAR)
+			THEN ENDOFPERIOD(Orders.AssemblyDisassemblyEnd, YEAR)
+		ELSE ENDOFPERIOD(Orders.AssemblyDisassemblyEnd, DAY)
+	END AS DynamicPeriod,
+	Orders.Warehouse AS Warehouse,
+	Orders.Products AS Products,
+	Orders.Characteristic AS Characteristic,
+	CASE
+		WHEN &amp;SpecifyTargets
+			THEN Orders.Purpose
+		ELSE VALUE(Catalog.Assignments.EmptyRef)
+	END AS Purpose,
+	Orders.BusinessOperation AS BusinessOperation,
+	Orders.Ref AS Recorder,
+	SUM(CASE
+		WHEN OrdersToBeRegistered.ByAssemblyDisassemblyOrder IS NULL
+			THEN Orders.Count
+		ELSE ISNULL(OrdersToBeRegistered.ToRegisterBalance, 0)
+	END) AS OrderedQuantity
+INTO Orders
+FROM
+	Document.ByAssemblyDisassemblyOrder AS Orders
+		
+		LEFT JOIN AccumulationRegister.AssemblyOrders.Balance(
+			,
+			CASE
+				WHEN &amp;SelectionAccordingToProductOfPlansIsUsed
+					THEN (Products, Characteristic) IN
+						(SELECT
+							AssemblyDisassemblyPlan.Products AS Products,
+							AssemblyDisassemblyPlan.Characteristic AS Characteristic
+						FROM
+							AssemblyDisassemblyPlan AS AssemblyDisassemblyPlan)
+				ELSE TRUE
+			END) AS OrdersToBeRegistered
+		ON Orders.Ref         = OrdersToBeRegistered.ByAssemblyDisassemblyOrder
+		 AND Orders.Products   = OrdersToBeRegistered.Products
+		 AND Orders.Characteristic = OrdersToBeRegistered.Characteristic
+WHERE
+	Orders.Posted
+	AND Orders.Status IN (VALUE(Enum.InternalOrderStatuses.ForCompletion), VALUE(Enum.InternalOrderStatuses.Closed))
+	AND Orders.AssemblyDisassemblyEnd &gt;= &amp;BeginOfPeriod
+	AND Orders.AssemblyDisassemblyEnd &lt;= &amp;EndOfPeriod
+	AND CASE
+		WHEN &amp;SelectionAccordingToProductOfPlansIsUsed
+			THEN (Orders.Products, Orders.Characteristic) IN
+				(SELECT DISTINCT
+						AssemblyDisassemblyPlan.Products,
+						AssemblyDisassemblyPlan.Characteristic
+					FROM
+						AssemblyDisassemblyPlan AS AssemblyDisassemblyPlan)
+		ELSE TRUE
+	END
+	
+GROUP BY
+	Orders.Warehouse,
+	Orders.Products,
+	Orders.Characteristic,
+	CASE
+		WHEN &amp;SpecifyTargets
+			THEN Orders.Purpose
+		ELSE VALUE(Catalog.Assignments.EmptyRef)
+	END,
+	CASE &amp;Periodicity
+		WHEN VALUE(Enum.Periodicity.WEEK)
+			THEN ENDOFPERIOD(Orders.AssemblyDisassemblyEnd, WEEK)
+		WHEN VALUE(Enum.Periodicity.TENDAYS)
+			THEN ENDOFPERIOD(Orders.AssemblyDisassemblyEnd, TENDAYS)
+		WHEN VALUE(Enum.Periodicity.MONTH)
+			THEN ENDOFPERIOD(Orders.AssemblyDisassemblyEnd, MONTH)
+		WHEN VALUE(Enum.Periodicity.QUARTER)
+			THEN ENDOFPERIOD(Orders.AssemblyDisassemblyEnd, QUARTER)
+		WHEN VALUE(Enum.Periodicity.HALFYEAR)
+			THEN ENDOFPERIOD(Orders.AssemblyDisassemblyEnd, HALFYEAR)
+		WHEN VALUE(Enum.Periodicity.YEAR)
+			THEN ENDOFPERIOD(Orders.AssemblyDisassemblyEnd, YEAR)
+		ELSE ENDOFPERIOD(Orders.AssemblyDisassemblyEnd, DAY)
+	END,
+	Orders.BusinessOperation,
+	Orders.Ref
+;
+
+////////////////////////////////////////////////////////////////////////////////
+SELECT
+	NestedQuery.DynamicPeriod AS DynamicPeriod,
+	NestedQuery.Warehouse AS Warehouse,
+	NestedQuery.Products AS Products,
+	NestedQuery.Characteristic AS Characteristic,
+	NestedQuery.Purpose AS Purpose,
+	NestedQuery.BusinessOperation AS BusinessOperation,
+	NestedQuery.Recorder AS Recorder,
+	SUM(NestedQuery.PlanQuantity) AS PlanQuantity,
+	SUM(NestedQuery.FactQuantity) AS FactQuantity,
+	SUM(NestedQuery.OrderedQuantity) AS OrderedQuantity
+INTO AssemblyDisassemblyPlanFact
+FROM
+	(SELECT
+		AssemblyDisassemblyPlan.DynamicPeriod AS DynamicPeriod,
+		AssemblyDisassemblyPlan.Warehouse AS Warehouse,
+		AssemblyDisassemblyPlan.Products AS Products,
+		AssemblyDisassemblyPlan.Characteristic AS Characteristic,
+		AssemblyDisassemblyPlan.Purpose AS Purpose,
+		AssemblyDisassemblyPlan.BusinessOperation AS BusinessOperation,
+		AssemblyDisassemblyPlan.Recorder AS Recorder,
+		AssemblyDisassemblyPlan.Count AS PlanQuantity,
+		0 AS FactQuantity,
+		0 AS OrderedQuantity
+	FROM
+		AssemblyDisassemblyPlan AS AssemblyDisassemblyPlan
+	
+	UNION ALL
+	
+	SELECT
+		ActualAssemblyDisassembly.DynamicPeriod,
+		ActualAssemblyDisassembly.Warehouse,
+		ActualAssemblyDisassembly.Products,
+		ActualAssemblyDisassembly.Characteristic,
+		ActualAssemblyDisassembly.Purpose,
+		ActualAssemblyDisassembly.BusinessOperation,
+		ActualAssemblyDisassembly.Recorder,
+		0,
+		ActualAssemblyDisassembly.FactQuantity,
+		0
+	FROM
+		ActualAssemblyDisassembly AS ActualAssemblyDisassembly
+	
+	UNION ALL
+	
+	SELECT
+		Orders.DynamicPeriod,
+		Orders.Warehouse,
+		Orders.Products,
+		Orders.Characteristic,
+		Orders.Purpose,
+		Orders.BusinessOperation,
+		Orders.Recorder,
+		0,
+		0,
+		Orders.OrderedQuantity
+	FROM
+		Orders AS Orders) AS NestedQuery
+
+GROUP BY
+	NestedQuery.DynamicPeriod,
+	NestedQuery.Characteristic,
+	NestedQuery.Products,
+	NestedQuery.Purpose,
+	NestedQuery.Warehouse,
+	NestedQuery.BusinessOperation,
+	NestedQuery.Recorder
+;
+
+////////////////////////////////////////////////////////////////////////////////
+SELECT
+	AssemblyDisassemblyPlanFact.DynamicPeriod,
+	AssemblyDisassemblyPlanFact.Warehouse AS Warehouse,
+	AssemblyDisassemblyPlanFact.Products,
+	AssemblyDisassemblyPlanFact.Characteristic,
+	AssemblyDisassemblyPlanFact.Purpose,
+	AssemblyDisassemblyPlanFact.BusinessOperation,
+	AssemblyDisassemblyPlanFact.Recorder,
+	SUM(AssemblyDisassemblyPlanFact.PlanQuantity) AS PlanQuantity,
+	SUM(AssemblyDisassemblyPlanFact.FactQuantity) AS FactQuantity,
+	100 * (CASE
+		WHEN SUM(AssemblyDisassemblyPlanFact.PlanQuantity) = 0
+			THEN 0
+		ELSE SUM(AssemblyDisassemblyPlanFact.FactQuantity) / SUM(AssemblyDisassemblyPlanFact.PlanQuantity)
+	END) AS ExecutionOfPlanQuantity,
+	SUM(AssemblyDisassemblyPlanFact.OrderedQuantity) AS OrderedQuantity
+FROM
+	AssemblyDisassemblyPlanFact AS AssemblyDisassemblyPlanFact
+WHERE
+	AssemblyDisassemblyPlanFact.DynamicPeriod BETWEEN &amp;BeginOfPeriod AND &amp;EndOfPeriod
+
+GROUP BY
+	AssemblyDisassemblyPlanFact.DynamicPeriod,
+	AssemblyDisassemblyPlanFact.Products,
+	AssemblyDisassemblyPlanFact.Characteristic,
+	AssemblyDisassemblyPlanFact.Purpose,
+	AssemblyDisassemblyPlanFact.BusinessOperation,
+	AssemblyDisassemblyPlanFact.Recorder,
+	AssemblyDisassemblyPlanFact.Warehouse</query>
+	</dataSet>
+	<totalField>
+		<dataPath>Ordered.Count</dataPath>
+		<expression>Sum(Ordered.Count)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>PlanExecution.Count</dataPath>
+		<expression>100 * (Case When Sum(Plan.Count) = 0 Then 0 Else Sum(Real.Count) / Sum(Plan.Count) End)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Plan.Count</dataPath>
+		<expression>Sum(Plan.Count)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Real.Count</dataPath>
+		<expression>Sum(Real.Count)</expression>
+	</totalField>
+	<parameter>
+		<name>ReleasePeriod</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Release period</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>دوره خروجی</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Periodo di emissione</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Okres produkcji</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период выпуска</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Çıkış dönemi</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Kỳ xuất xưởng</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+		</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>BeginOfPeriod</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period start</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>شروع دوره</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Inizio del periodo</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Początek okresu</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Dönem başı</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Đầu kỳ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ReleasePeriod.StartDate</expression>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>EndOfPeriod</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period end</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>پایان دوره</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Fine del periodo</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Koniec okresu</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Dönem sonu</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Cuối kỳ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ReleasePeriod.EndDate</expression>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Scenario</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Scenario</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>سناریو</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Scenario</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Scenariusz</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Сценарий</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Senaryo</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Kịch bản</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.SalesOperationsPlanningScenarios</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<inputParameters>
+			<dcscor:item>
+				<dcscor:parameter>ChoiceParameters</dcscor:parameter>
+				<dcscor:value xsi:type="dcscor:ChoiceParameters">
+					<dcscor:item>
+						<dcscor:choiceParameter>Filter.UseInAssemblyDisassemblyPlanning</dcscor:choiceParameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcscor:value>
+			</dcscor:item>
+		</inputParameters>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Periodicity</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Frequency</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>تناوب</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Periodicità</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Okresowość</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Периодичность</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Sıklık</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Tính định kỳ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:EnumRef.Periodicity</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Enum.Periodicity.EmptyRef</value>
+		<useRestriction>true</useRestriction>
+		<expression>Common.ObjectAttributeValue(&amp;Scenario, "Periodicity")</expression>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>AcceptableDeviationsPercentage</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Allowed quantity variance, %</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>انحراف مجاز مقدار، درصد</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Tolleranza quantitativa, %</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Dopuszczalne tolerancje ilości, %</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Допустимые отклонения количества, %</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Ulaşılabilir fark miktarı, %</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Sai lệch cho phép của số lượng, %</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>15</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">5</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>FilterByProductSegmentIsUsed</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Filter by item segment is used</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>فیلتر بر اساس بخش قلم استفاده می‌شود</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Viene utilizzata la selezione per segmento degli articoli</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Jest używany filtr wg segmentu wierszy pozycji</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Используется отбор по сегменту номенклатуры</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Stok segmentine göre filtre kullanılıyor</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Sử dụng lọc theo phân nhóm mặt hàng</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>SpecifyTargets</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Use assignments</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>استفاده از تخصیص‌ها</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Utilizzare assegnazioni</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Używaj przeznaczeń</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Использовать назначения</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Atamaları kullan</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Sử dụng điểm đến</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>SelectionAccordingToProductOfPlansIsUsed</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Items from plans only</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>فقط اقلام برنامه‌ها</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Solo nomenclatura dei piani</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Tylko pozycje z planów</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Только номенклатура из планов</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Sadece planlardaki öğelerden</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Chỉ mặt hàng từ kế hoạch</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">true</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Period</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>دوره</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Periodo</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Okres</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Dönem</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Kỳ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ReportVariant</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Report option</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>گزینه گزارش</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Versione report</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Wariant raportu</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вариант отчета</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Rapor seçeneği</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Phương án báo cáo</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>0</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string">ByWarehouses</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>ExecutionOfPlanOfAssemblyDisassemblyByWarehouses</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Kitting plan by warehouses</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>برنامه کیت‌سازی بر اساس انبارها</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Esecuzione del piano di assemblagio (disassemblaggio) per magazzini</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Wykonanie planu montażu (demontażu) wg magazynów</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Исполнение плана сборки (разборки) по складам</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Ambarlara göre montaj (demontaj) planı uygulaması</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Thực hiện kế hoạch đóng bộ (tách bộ) theo kho</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:userFields>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>UserFields.Field1</dcsset:dataPath>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Plan fulfillment (variance)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>اجرای برنامه (انحراف)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Esecuzione del piano (variazione)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Realizacja planu (odchylenie)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Исполнение плана (отклонение)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Planın uygulanması (fark)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Thực hiện kế hoạch (chênh lệch)</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:detailExpression>Case
+	When Plan.Count = 0 And Real.Count = 0
+		Then 0
+	When PlanExecution.Count &gt; 100
+		Then PlanExecution.Count - 100
+	Else 100 - PlanExecution.Count
+End</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>Case
+	When Plan.Count = 0 And Real.Count = 0
+		Then 0
+	When PlanExecution.Count &gt; 100
+		Then PlanExecution.Count - 100
+	Else 100 - PlanExecution.Count
+End</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression>Cast(Case
+		When Plan.Count = 0 And Real.Count = 0
+			Then 0
+		When PlanExecution.Count &gt; 100
+			Then PlanExecution.Count - 100
+		Else 100 - PlanExecution.Count
+	End, "Number(15,2)")</dcsset:totalExpression>
+					<dcsset:totalExpressionPresentation>Cast(Case
+		When Plan.Count = 0 And Real.Count = 0
+			Then 0
+		When PlanExecution.Count &gt; 100
+			Then PlanExecution.Count - 100
+		Else 100 - PlanExecution.Count
+	End, "Number(15,2)")</dcsset:totalExpressionPresentation>
+				</dcsset:item>
+			</dcsset:userFields>
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:field>Plan</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Plan</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>برنامه</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Piano</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Plan</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>План</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Plan</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Kế hoạch</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Plan.Count</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Quantity</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>مقدار</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>Quantità</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Ilość</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количество</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Miktar</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Số lượng</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:field>Real</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Actual</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>واقعی</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Fatto</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Fakt</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Факт</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Gerçekleşen</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Thực tế</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Real.Count</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Quantity</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>مقدار</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>Quantità</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Ilość</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количество</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Miktar</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Số lượng</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Plan fulfillment, %</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>اجرای برنامه، درصد</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Esecuzione del piano, %</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Wykonanie planu, %</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Исполнение плана, %</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Planın yürütülmesi, %</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Thực hiện kế hoạch, %</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>PlanExecution.Count</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Quantity</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>مقدار</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>Quantità</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Ilość</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количество</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Miktar</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Số lượng</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>UserFields.Field1</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Kitting orders</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>سفارش‌های کیت‌سازی</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Ordini di assemblaggio (disassemblaggio)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Zamówienia na montaż (demontaż)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заказы на сборку (разборку)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Montaj için siparişler (demontaj)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Đơn hàng đóng bộ (tách bộ)</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Ordered.Count</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Quantity</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>مقدار</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>Quantità</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Ilość</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количество</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Miktar</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Số lượng</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>06ed6d87-ddfd-4036-8b4a-7967d75871fd</dcsset:userSettingID>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Status</dcsset:left>
+					<dcsset:comparisonType>InList</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Enum.PlanStatuses.Upholded</dcsset:right>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>795df3ea-45ff-48f6-858a-4f4fe9202d6f</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Organization</dcsset:left>
+					<dcsset:comparisonType>InListByHierarchy</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>39a89b3a-fe0d-411f-a0a9-28428e08308e</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">AssemblyDisassemblyPlan</dcsset:left>
+					<dcsset:comparisonType>InList</dcsset:comparisonType>
+					<dcsset:right xsi:type="v8:ValueListType">
+						<v8:valueType/>
+						<v8:lastId xsi:type="xs:decimal">-1</v8:lastId>
+					</dcsset:right>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>050a3974-4c01-40c6-bd6c-ee40e0a10750</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Products</dcsset:left>
+					<dcsset:comparisonType>InListByHierarchy</dcsset:comparisonType>
+					<dcsset:right xsi:nil="true"/>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>05448c3e-5a1e-4c64-843c-14aefcee0eae</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Products.SKU</dcsset:left>
+					<dcsset:comparisonType>Contains</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string"/>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>4a2910ef-ac4a-414a-88c5-3caece0e7abd</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Item ID</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>شناسه قلم</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Articolo</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Artykuł</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Артикул</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Ürün kodu</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Mã hiệu</v8:content>
+						</v8:item>
+					</dcsset:userSettingPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">UserFields.Field1</dcsset:left>
+					<dcsset:comparisonType>LessOrEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:Field">DataParameters.AcceptableDeviationsPercentage</dcsset:right>
+					<dcsset:presentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Allowed quantity deviations only</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>فقط انحرافات مجاز مقدار</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Solo variazioni di quantità disponibili</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Tylko dopuszczalne odchylenia ilości</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Только допустимые отклонения количества</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Sadece ulaşılabilir miktar farkı</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Chỉ sai lệch về số lượng</v8:content>
+						</v8:item>
+					</dcsset:presentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemGroup">
+					<dcsset:groupType>OrGroup</dcsset:groupType>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:groupType>AndGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">PlanExecution.Count</dcsset:left>
+							<dcsset:comparisonType>Less</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:decimal">100</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Plan.Count</dcsset:left>
+							<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+						</dcsset:item>
+						<dcsset:presentation xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Only underproduction by quantity</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>فقط کم‌تولیدی بر اساس مقدار</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>Solo i piani non completato per quantità</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Tylko niewykonanie planu wg ilości</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Только недовыполнение плана по количеству</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Sadece tamamlanmamış miktara göre plan</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Chỉ thực hiện không đầy đủ kế hoạch về số lượng</v8:content>
+							</v8:item>
+						</dcsset:presentation>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>09107e0c-f395-4c1c-8ff7-4ee08e944853</dcsset:userSettingID>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:groupType>AndGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">PlanExecution.Count</dcsset:left>
+							<dcsset:comparisonType>Greater</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:decimal">100</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Plan.Count</dcsset:left>
+							<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+						</dcsset:item>
+						<dcsset:presentation xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Only plan excess by quantity</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>فقط مازاد برنامه بر اساس مقدار</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>Solo i piani superati per quantità</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Tylko przekroczenie planu wg ilości</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Только превышение плана по количеству</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Sadece fazlalık miktara göre plan</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Chỉ vượt kế hoạch theo số lượng</v8:content>
+							</v8:item>
+						</dcsset:presentation>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>97a9bb94-9462-46b8-af11-5bfb151f06e7</dcsset:userSettingID>
+					</dcsset:item>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>ee6e305d-7fb6-43c7-85b8-541b6d956729</dcsset:userSettingID>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ReleasePeriod</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>c76eec9b-b3cf-464d-bd72-ab5bcef30f84</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Scenario</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DesignTimeValue">Catalog.SalesOperationsPlanningScenarios.EmptyRef</dcscor:value>
+					<dcsset:userSettingID>2f0f1b6e-0908-4c21-bbf5-c4480be4d186</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>SelectionAccordingToProductOfPlansIsUsed</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>6c7d83c0-e5be-4de0-a27c-0813861b5342</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>AcceptableDeviationsPercentage</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">5</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>85e3ac6c-f7af-42aa-b934-a87e37846968</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>DynamicPeriod</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>PlanExecution.Count</dcsset:field>
+					<dcsset:orderType>Desc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>67f99a39-78e8-48de-8b91-966073f79ce3</dcsset:userSettingID>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>DynamicPeriod</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">DataParameters.Periodicity</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Enum.Periodicity.Day</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Format</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>L=en; DLF=D</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>fa</v8:lang>
+									<v8:content>L=en; DLF=D</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>it</v8:lang>
+									<v8:content>L=it; DLF=D</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>pl</v8:lang>
+									<v8:content>L=pl; DLF=D</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>L=ru; DLF=D</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>tr</v8:lang>
+									<v8:content>L=tr; DLF=G</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>vi</v8:lang>
+									<v8:content>L=vi; DLF=D</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>DynamicPeriod</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">DataParameters.Periodicity</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Enum.Periodicity.Week</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Format</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>L=en; DLF=D</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>fa</v8:lang>
+									<v8:content>L=en; DLF=D</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>it</v8:lang>
+									<v8:content>L=it; DLF=D</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>pl</v8:lang>
+									<v8:content>L=pl; DLF=D</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>L=ru; DLF=D</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>tr</v8:lang>
+									<v8:content>L=tr; DLF=G</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>vi</v8:lang>
+									<v8:content>L=vi; DLF=D</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>DynamicPeriod</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">DataParameters.Periodicity</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Enum.Periodicity.TenDays</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Format</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>L=en; DLF=D</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>fa</v8:lang>
+									<v8:content>L=en; DLF=D</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>it</v8:lang>
+									<v8:content>L=it; DLF=D</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>pl</v8:lang>
+									<v8:content>L=pl; DLF=D</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>L=ru; DLF=D</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>tr</v8:lang>
+									<v8:content>L=tr; DLF=G</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>vi</v8:lang>
+									<v8:content>L=vi; DLF=D</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>DynamicPeriod</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">DataParameters.Periodicity</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Enum.Periodicity.Month</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Format</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>L=en; DF='MMMM yyyy'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>fa</v8:lang>
+									<v8:content>L=en; DF='MMMM yyyy'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>it</v8:lang>
+									<v8:content>L=ru; FD='MMMM aaaa "a."'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>pl</v8:lang>
+									<v8:content>L=ru; DF='MMMM yyyy "r."'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>L=ru; DF='MMMM yyyy "г."'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>tr</v8:lang>
+									<v8:content>L=tr; DF='MMMM yyyy "yıl."'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>vi</v8:lang>
+									<v8:content>L=vi; DF='MMMM yyyy'</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>DynamicPeriod</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">DataParameters.Periodicity</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Enum.Periodicity.Quarter</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Format</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>L=en; DF='"Q"q yyyy'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>fa</v8:lang>
+									<v8:content>L=en; DF='"Q"q yyyy'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>it</v8:lang>
+									<v8:content>L=ru; FD='t "trimestre" aaaa "a."'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>pl</v8:lang>
+									<v8:content>L=pl; DF='q "kwartał"' yyyy "r."'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>L=ru; DF='q "квартал" yyyy "г."'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>tr</v8:lang>
+									<v8:content>L=tr; DF='q "çeyrek" yyyy "yıl."'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>vi</v8:lang>
+									<v8:content>L=vi; DF='"quý" q "năm" yyyy'</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>DynamicPeriod</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">DataParameters.Periodicity</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Enum.Periodicity.HalfYear</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Format</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>L=en; DF='MM/yyyy'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>fa</v8:lang>
+									<v8:content>L=en; DF='MM/yyyy'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>it</v8:lang>
+									<v8:content>L=ru; FD='MM.aaaa "a."'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>pl</v8:lang>
+									<v8:content>L=ru; DF='MM.yyyy "r."'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>L=ru; DF='MM.yyyy "г."'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>tr</v8:lang>
+									<v8:content>L=tr; DF='MM.yyyy "yıl."'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>vi</v8:lang>
+									<v8:content>L=vi; DF='MM.yyyy'</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>DynamicPeriod</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">DataParameters.Periodicity</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Enum.Periodicity.Year</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Format</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>L=en; DF='yyyy'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>fa</v8:lang>
+									<v8:content>L=en; DF='yyyy'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>it</v8:lang>
+									<v8:content>L=ru; FD='aaaa "a."'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>pl</v8:lang>
+									<v8:content>L=ru; DF='yyyy "r."'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>L=ru; DF='yyyy "г."'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>tr</v8:lang>
+									<v8:content>L=tr; DF='yyyy "yıl."'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>vi</v8:lang>
+									<v8:content>L=vi; DF='yyyy'</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>UserFields.Field1</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Format</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>NFD=2</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>fa</v8:lang>
+									<v8:content>NFD=2</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>it</v8:lang>
+									<v8:content>NFD=2</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>pl</v8:lang>
+									<v8:content>NFD=2</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>NFD=2</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>tr</v8:lang>
+									<v8:content>NFD=2</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>vi</v8:lang>
+									<v8:content>NFD=2</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>MinWidth</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>PlanExecution.Count</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>UserFields.Field1</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">PlanExecution.Count</dcsset:left>
+							<dcsset:comparisonType>Greater</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:decimal">100</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>TextColor</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">style:PositiveTaskCompletionFlag</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:presentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Select positive quantity variances</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>انتخاب انحرافات مثبت مقدار</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Evidenziare le variazioni positive per quantità</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Wyróżniać dodatnie odchylenia wg ilości</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выделять положительные отклонения по количеству</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Miktara göre olumlu farkı ayır</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Chọn chênh lệch âm theo số lượng</v8:content>
+						</v8:item>
+					</dcsset:presentation>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>PlanExecution.Count</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>UserFields.Field1</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">PlanExecution.Count</dcsset:left>
+							<dcsset:comparisonType>Less</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:decimal">100</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>TextColor</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">style:NegativeTaskCompletionFlag</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:presentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Select negative quantity variances</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>انتخاب انحرافات منفی مقدار</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Evidenziare le variazione negative per quantità</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Wyróżniać ujemne odchylenia wg ilości</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выделять отрицательные отклонения по количеству</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Miktara göre olumsuz farkı ayır</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Xác định độ lệch dương trong số lượng</v8:content>
+						</v8:item>
+					</dcsset:presentation>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Warehouse</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Warehouse</dcsset:left>
+							<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Text</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>&lt;Other warehouses&gt;</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>fa</v8:lang>
+									<v8:content>&lt;سایر انبارها&gt;</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>it</v8:lang>
+									<v8:content>&lt; Altri magazzini&gt;</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>pl</v8:lang>
+									<v8:content>&lt;Inne magazyny&gt;</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;Прочие склады&gt;</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>tr</v8:lang>
+									<v8:content>&lt;Diğer ambarlar&gt;</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>vi</v8:lang>
+									<v8:content>&lt;Kho khác&gt;</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>HorizontalOverallPlacement</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">Begin</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>VerticalOverallPlacement</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">Begin</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>TitleOutput</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Title</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Kitting plan by warehouses</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>برنامه کیت‌سازی بر اساس انبارها</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Esecuzione del piano di assemblagio (disassemblaggio) per magazzini</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Wykonanie planu montażu (demontażu) wg magazynów</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Исполнение плана сборки (разборки) по складам</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Ambarlara göre montaj (demontaj) planı uygulaması</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Thực hiện kế hoạch đóng bộ (tách bộ) theo kho</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>DynamicPeriod</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Warehouse</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">Warehouse</dcsset:left>
+							<dcsset:comparisonType>InHierarchy</dcsset:comparisonType>
+							<dcsset:userSettingID>f36c0b23-8d26-4caa-a28a-6e4f73af221e</dcsset:userSettingID>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:outputParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>FilterOutput</dcscor:parameter>
+							<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+						</dcscor:item>
+					</dcsset:outputParameters>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Products</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Characteristic</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Purpose</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>BusinessOperation</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Products.SKU</dcsset:field>
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Item ID</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>fa</v8:lang>
+										<v8:content>شناسه قلم</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>it</v8:lang>
+										<v8:content>Articolo</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>pl</v8:lang>
+										<v8:content>Artykuł</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Артикул</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>tr</v8:lang>
+										<v8:content>Ürün kodu</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>vi</v8:lang>
+										<v8:content>Mã hiệu</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Products</dcsset:field>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Characteristic</dcsset:field>
+								</dcsset:item>
+								<dcsset:placement>Together</dcsset:placement>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Purpose</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Products.UnitOfMeasure</dcsset:field>
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Unit</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>fa</v8:lang>
+										<v8:content>واحد</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>it</v8:lang>
+										<v8:content>Unità di misura</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>pl</v8:lang>
+										<v8:content>Jednostka miary</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Ед. изм.</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>tr</v8:lang>
+										<v8:content>Ölçü birimi</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>vi</v8:lang>
+										<v8:content>Đơn vị tính</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>BusinessOperation</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							<dcsset:viewMode>Normal</dcsset:viewMode>
+						</dcsset:selection>
+						<dcsset:conditionalAppearance>
+							<dcsset:item>
+								<dcsset:selection>
+									<dcsset:item>
+										<dcsset:field>Purpose</dcsset:field>
+									</dcsset:item>
+								</dcsset:selection>
+								<dcsset:filter>
+									<dcsset:item xsi:type="dcsset:FilterItemComparison">
+										<dcsset:left xsi:type="dcscor:Field">DataParameters.SpecifyTargets</dcsset:left>
+										<dcsset:comparisonType>Equal</dcsset:comparisonType>
+										<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+									</dcsset:item>
+								</dcsset:filter>
+								<dcsset:appearance>
+									<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+										<dcscor:parameter>MinWidth</dcscor:parameter>
+										<dcscor:value xsi:type="xs:decimal">0</dcscor:value>
+									</dcscor:item>
+									<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+										<dcscor:parameter>MaxWidth</dcscor:parameter>
+										<dcscor:value xsi:type="xs:decimal">0.001</dcscor:value>
+									</dcscor:item>
+								</dcsset:appearance>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:selection>
+									<dcsset:item>
+										<dcsset:field>Purpose</dcsset:field>
+									</dcsset:item>
+								</dcsset:selection>
+								<dcsset:filter>
+									<dcsset:item xsi:type="dcsset:FilterItemComparison">
+										<dcsset:left xsi:type="dcscor:Field">DataParameters.SpecifyTargets</dcsset:left>
+										<dcsset:comparisonType>Equal</dcsset:comparisonType>
+										<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+									</dcsset:item>
+								</dcsset:filter>
+								<dcsset:appearance>
+									<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+										<dcscor:parameter>MinWidth</dcscor:parameter>
+										<dcscor:value xsi:type="xs:decimal">16</dcscor:value>
+									</dcscor:item>
+									<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+										<dcscor:parameter>MaxWidth</dcscor:parameter>
+										<dcscor:value xsi:type="xs:decimal">16</dcscor:value>
+									</dcscor:item>
+								</dcsset:appearance>
+							</dcsset:item>
+						</dcsset:conditionalAppearance>
+						<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					</dcsset:item>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+				</dcsset:row>
+				<dcsset:columnsViewMode>Normal</dcsset:columnsViewMode>
+				<dcsset:rowsViewMode>Normal</dcsset:rowsViewMode>
+			</dcsset:item>
+			<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

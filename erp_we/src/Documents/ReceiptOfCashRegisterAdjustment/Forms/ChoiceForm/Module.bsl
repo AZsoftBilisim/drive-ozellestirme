@@ -1,0 +1,159 @@
+
+#Region FormEventHandlers
+
+&AtServer
+Procedure OnCreateAtServer(Cancel, StandardProcessing)
+	
+	SetConditionalAppearance();
+	
+	SupportedPeripheralTypes = "BarcodeScanner";
+	TMCommonUse.CustomizePeripherals(ThisForm);
+	
+	If Parameters.Property("AutoTest_2") Then
+		Return;
+	EndIf;
+	
+	// StandardSubsystems.AttachableCommands
+	AttachableCommands.OnCreateAtServer(ThisObject);
+	// End StandardSubsystems.AttachableCommands
+
+	FormEvents.OnCreateAtServer(ThisForm, Cancel, StandardProcessing);
+
+	ObjectsVersioning.OnCreateAtServer(ThisObject);
+	
+EndProcedure
+
+&AtServer
+Procedure SetConditionalAppearance()
+	
+	ConditionalAppearance.Items.Clear();
+	
+	If Items.List.ChildItems.Find("Status")<>Undefined Then
+	
+		Item = ConditionalAppearance.Items.Add();
+	
+		ItemField = Item.Fields.Items.Add();
+		ItemField.Field = New DataCompositionField(Items.List.ChildItems.Status.Name);
+		
+		ItemFilter = Item.Filter.Items.Add(Type("DataCompositionFilterItem"));
+		ItemFilter.LeftValue = New DataCompositionField("List.Status");
+		ItemFilter.ComparisonType = DataCompositionComparisonType.Equal;
+		ItemFilter.RightValue = Enums.CashRegisterReceiptStatuses.DeferredWithoutReservation;
+	
+		StatusBar_ =  NStr("vi = 'Phiếu chưa đánh';
+							|ru = 'Чек не пробит';
+							|en = 'Receipt is not issued'; fa = 'رسید صادر نشده است';
+							|it = 'Lo scontrino non è stato emesso';
+							|pl = 'Nie wydrukowano paragonu';
+							|tr = 'Makbuz kesilmedi'");
+	
+		Item.Appearance.SetParameterValue("Text",StatusBar_); 
+
+		Item = ConditionalAppearance.Items.Add();
+	EndIf;
+	
+EndProcedure
+
+
+&AtClient
+Procedure OnOpen(Cancel)
+	
+	EquipmentManagerClient.StartConnectingDevicesWhenYouOpenForm(Undefined, ThisForm, SupportedPeripheralTypes);
+	
+EndProcedure
+
+&AtClient
+Procedure OnClose()
+	
+	EquipmentManagerClient.StartDisablingHardwareWhenClosingForm(Undefined, ThisForm);
+	
+EndProcedure
+
+&AtClient
+Procedure NotificationProcessing(EventName, Parameter, Source)
+	
+	// Peripherals
+	If Source = "Peripherals" And IsInputAvailable() Then
+		If EventName = "ScanData" And EquipmentManagerTMClient.ThereIsRawEvent() Then
+			ProcessBarcodes(EquipmentManagerTMClient.ConvertDataFromScannerToStructure(Parameter));
+		EndIf;
+	EndIf;
+	// End Peripherals
+	
+EndProcedure
+
+#EndRegion
+
+#Region FormTableItemsEventHandlersList
+
+&AtClient
+Procedure ListOnActivateRow(Item)
+	
+	// StandardSubsystems.AttachableCommands
+	AttachableCommandsClient.StartCommandUpdate(ThisObject);
+	// End StandardSubsystems.AttachableCommands
+	
+EndProcedure
+
+#EndRegion
+
+#Region FormCommandsEventHandlers
+
+// StandardSubsystems.AttachableCommands
+&AtClient
+Procedure Attachable_ExecuteCommand(Command)
+	AttachableCommandsClient.ExecuteCommand(ThisObject, Command, Items.List);
+EndProcedure
+
+&AtServer
+Procedure Attachable_ExecuteCommandAtServer(Context, Result) Export
+	AttachableCommands.ExecuteCommand(ThisObject, Context, Items.List, Result);
+EndProcedure
+
+&AtClient
+Procedure Attachable_UpdateCommands()
+	AttachableCommandsClientServer.UpdateCommands(ThisObject, Items.List);
+EndProcedure
+// End StandardSubsystems.AttachableCommands
+
+&AtClient
+Procedure Attachable_ExecuteOverridableCommand(Command)
+	
+	FormEventsClient.ExecuteOverridableCommand(ThisForm, Command);
+	
+EndProcedure
+
+#EndRegion
+
+#Region Private
+
+#Region BarcodesAndTradeEquipment
+
+&AtClient
+Function LinkToListItemByBarcode(Barcode)
+	
+	Managers = New Array();
+	Managers.Add(PredefinedValue("Document.CashRegisterReceipt.EmptyRef"));
+	Return BarcodingOfPrintFormsClient.GetLinkFromBarcodeOfTabularDocument(Barcode, Managers);
+	
+EndFunction
+
+&AtClient
+Procedure ProcessBarcodes(Data)
+	
+	If Not BarcodingOfItemsClient.BarcodesAreValid(Data) Then
+		Return;
+	EndIf;
+	
+	ReferencesArrray = LinkToListItemByBarcode(Data.Barcode);
+	If ReferencesArrray.Count() > 0 Then
+		Items.List.CurrentRow = ReferencesArrray[0];
+	Else
+		BarcodingOfPrintFormsClient.ObjectIsNotFound(Data.Barcode);
+	EndIf;
+	
+EndProcedure
+
+#EndRegion
+
+#EndRegion

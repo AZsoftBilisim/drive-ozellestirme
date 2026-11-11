@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e7a9b904-b4af-4c6c-ba29-13fa4bcbcb9a">
+  <producedTypes>
+    <objectType typeId="e6d8fcd5-266b-4398-8d94-b4057ab2662a" valueTypeId="d230d067-c1f6-4897-9c52-0b8fa1cc5d81"/>
+    <managerType typeId="d7c707bc-7757-4b84-996f-34e80925456f" valueTypeId="11e8adff-0d90-4dd4-9e61-d4359b25a723"/>
+  </producedTypes>
+  <name>PrintLabelsOfInventoryInOperation</name>
+  <synonym>
+    <key>en</key>
+    <value>Print labels of inventory in operation</value>
+  </synonym>
+  <synonym>
+    <key>fa</key>
+    <value>چاپ برچسب‌های موجودی در حال بهره‌برداری</value>
+  </synonym>
+  <synonym>
+    <key>it</key>
+    <value>Stampare etichette dei beni materiali in lavorazione</value>
+  </synonym>
+  <synonym>
+    <key>pl</key>
+    <value>Drukowanie etykiet zapasy w eksploatacji</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>Печать этикеток ТМЦ в эксплуатации</value>
+  </synonym>
+  <synonym>
+    <key>tr</key>
+    <value>Kullanımdaki stok etiketlerinin basılması</value>
+  </synonym>
+  <synonym>
+    <key>vi</key>
+    <value>In nhãn tem vật tư đang sử dụng</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.PrintLabelsOfInventoryInOperation.Form.PrintForm_2</defaultForm>
+  <attributes uuid="d60413d7-4612-43a8-9ec8-638a811fba4f">
+    <name>LabelsTemplate</name>
+    <synonym>
+      <key>en</key>
+      <value>Template</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>الگو</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Modello</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Szablon</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Шаблон</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Şablon</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Khuôn mẫu</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.LabelAndPriceTagTemplates</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Filter.Purpose</name>
+      <value xsi:type="core:FixedArrayValue">
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.AssignmentsOfTemplatesOfPriceTagsAndLabels.EnumValue.LabelInventoryInOperationTape</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.AssignmentsOfTemplatesOfPriceTagsAndLabels.EnumValue.LabelInventoryInOperationPaper</value>
+        </values>
+      </value>
+    </choiceParameters>
+    <quickChoice>DontUse</quickChoice>
+    <createOnInput>Use</createOnInput>
+  </attributes>
+  <attributes uuid="72726045-6496-4608-8963-7f900e810400">
+    <name>Copies</name>
+    <synonym>
+      <key>en</key>
+      <value>Number of copies</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>تعداد نسخه</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Quantità dei esemplari</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Ilość egzemplarzy</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Количество экземпляров</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Nüsha miktarı</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Số lượng bản gốc (chính)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>Number of label (price tags) copies sent to print.</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>تعداد نسخه‌های برچسب (برچسب قیمت) ارسال‌شده برای چاپ.</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Numero di copie delle etichette (cartellini dei prezzi), inviati alla stampa.</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Ilość egzemplarzy etykiet (cenników), wysyłanych do wydruku.</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество экземпляров этикеток(ценников), выводимых на печать.</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Yazdırılacak etiketlerin (fiyat etiketlerinin) nüsha miktarı.</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Số lượng bản nhãn tem (nhãn giá) hiển thị để in.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="cfdd7079-d4ce-4343-b781-3015788c82f1">
+    <name>Ref</name>
+    <synonym>
+      <key>en</key>
+      <value>Reference</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>مرجع</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Link</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Odnośnik</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Ссылка</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Bağlantı</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Tham chiếu</value>
+    </synonym>
+    <type/>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="ea01e0a8-49a8-4cc4-ac09-d39c53a1a26b">
+    <producedTypes>
+      <objectType typeId="01fb8be1-9334-4bf3-96b5-1cf0ddde048c" valueTypeId="bc527308-7ade-4edb-9ed4-0870b8a5a7f3"/>
+      <rowType typeId="57886045-7d11-439d-9e03-2abba501b6f1" valueTypeId="d5f92761-ee1e-45f1-ab2e-448171faf2ae"/>
+    </producedTypes>
+    <name>InventoryInOperation</name>
+    <synonym>
+      <key>en</key>
+      <value>Inventory in operation</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>موجودی در حال بهره‌برداری</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Beni materiali in uso</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Dobra towarowo-materiałowe w eksploatacji</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>ТМЦ в эксплуатации</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Kullanımdaki stok</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Vật tư đang sử dụng</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="22d4b88f-f169-4629-bdef-9639ccd8797d">
+      <name>Products</name>
+      <synonym>
+        <key>en</key>
+        <value>Items</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>اقلام</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Nomenclatura</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Produkt</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Ürün</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Mặt hàng</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Products</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Select items of the Goods kind.</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>اقلامی از نوع کالا را انتخاب کنید.</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>È necessario selezionare un elenco di articoli con il tipo di prodotto.</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Należy wybrać produkt z rodzajem Towar.</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Необходимо выбрать номенклатуру с видом Товар.</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Türü ürün olan öğeler seçilmeli.</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Cần chọn mặt hàng có dạng Hàng hóa.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameters>
+        <name>Filter.ItemsType</name>
+        <value xsi:type="core:FixedArrayValue">
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ItemsTypes.EnumValue.OwnGoods</value>
+          </values>
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ItemsTypes.EnumValue.ReusablePackage</value>
+          </values>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c33860ef-ba3a-4490-a7ca-38971e550e9c">
+      <name>Characteristic</name>
+      <synonym>
+        <key>en</key>
+        <value>Variant</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>گونه</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Caratteristica</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Charakterystyka</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Varyant</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Đặc tính</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ItemsCharacteristics</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>If variants are used for the selected item, select a variant.</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>اگر برای قلم انتخاب‌شده گونه‌ها استفاده می‌شوند، یک گونه انتخاب کنید.</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Se le caratteristiche dell'articolo selezionato sono in uso, è necessario selezionare la caratteristica dell'articolo.</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Jeśli dla wybranego towaru używane są charakterystyki, należy wybrać charakterystykę towaru.</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Если у выбранной номенклатуры используются характеристики, то необходимо выбрать характеристику номенклатуры.</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Seçili ürün için varyantlar kullanılıyorsa, o halde ürün varyantları seçilmesi gerekmektedir.</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Nếu mặt hàng đã chọn có sử dụng đặc tính thì cần chọn đặc tính mặt hàng.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameterLinks>
+        <name>Products</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.PrintLabelsOfInventoryInOperation.TabularSection.InventoryInOperation.Attribute.Products</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d6fb5758-97da-4b91-bc7c-926b8f2ff36b">
+      <name>Series</name>
+      <synonym>
+        <key>en</key>
+        <value>Batch</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>بچ</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Serie</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Seria</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Серия</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Parti</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Sê-ri</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ItemsBatches</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameterLinks>
+        <name>Products</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.PrintLabelsOfInventoryInOperation.TabularSection.InventoryInOperation.Attribute.Products</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <choiceHistoryOnInput>DontUse</choiceHistoryOnInput>
+    </attributes>
+    <attributes uuid="69faf674-02ad-4f87-adef-b4c968c26403">
+      <name>Individual</name>
+      <synonym>
+        <key>en</key>
+        <value>Person</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>شخص</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Persona fisica</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Osoba fizyczna</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Физическое лицо</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Gerçek kişi</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Cá nhân</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Persons</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Responsible employee</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>کارمند مسئول</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Persona finanziariamente responsabile</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Osoba odpowiedzialna materialnie</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Материально ответственное лицо</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Mali açıdan sorumlu kişi</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Chịu trách nhiệm vật tư</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b27dc62c-a950-4cb9-a64a-2c3018da8b53">
+      <name>AssetID</name>
+      <synonym>
+        <key>en</key>
+        <value>Inv. No.</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>شماره اموال</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>№ d'Inventario </value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Nr inwentarzowy</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Инв. №</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Env. No.</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Số kiểm kê</value>
+      </synonym>
+      <type>
+        <types>DefinedType.InventoryNumberOfInventoryInOperation</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7270efcc-f73f-46b4-a92e-cc7aadea98f6">
+      <name>Lot</name>
+      <synonym>
+        <key>en</key>
+        <value>Lot</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>بچ</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Lotto</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Partia</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Партия</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Lot</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Lô hàng</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.LotsOfInventoryInOperation</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameterLinks>
+        <name>Products</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.PrintLabelsOfInventoryInOperation.TabularSection.InventoryInOperation.Attribute.Products</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Characteristic</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.PrintLabelsOfInventoryInOperation.TabularSection.InventoryInOperation.Attribute.Characteristic</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Series</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.PrintLabelsOfInventoryInOperation.TabularSection.InventoryInOperation.Attribute.Series</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>AssetID</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.PrintLabelsOfInventoryInOperation.TabularSection.InventoryInOperation.Attribute.AssetID</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Individual</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.PrintLabelsOfInventoryInOperation.TabularSection.InventoryInOperation.Attribute.Individual</field>
+      </choiceParameterLinks>
+      <choiceParameters>
+        <name>ReturnStructureWhenSelecting</name>
+        <value xsi:type="core:BooleanValue">
+          <value>true</value>
+        </value>
+      </choiceParameters>
+      <choiceForm>Catalog.LotsOfInventoryInOperation.Form.PickForm</choiceForm>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <choiceHistoryOnInput>DontUse</choiceHistoryOnInput>
+    </attributes>
+    <attributes uuid="928b9c26-eccb-4be3-a9c1-c75f9e80cfbc">
+      <name>BatchesIndicationStatus</name>
+      <synonym>
+        <key>en</key>
+        <value>Batch specification status</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>وضعیت تعیین بچ</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Stato indicazione della serie</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Status wskazania serii</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Статус указания серий</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Parti belirtme durumu</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Trạng thái chỉ ra sê-ri </value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>2</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Service attribute that determines the batch input state for a table row. It is generated automatically, not user-editable.</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>ویژگی سرویس که وضعیت ورود بچ را برای سطر جدول تعیین می‌کند. به‌طور خودکار ایجاد می‌شود و توسط کاربر قابل ویرایش نیست.</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Il requisito di servizio che determina lo stato di inserimento delle serie per la riga della tabella. Viene generato automaticamente, non viene modificato dall'utente.</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Atrybut pomocniczy, określający stan wprowadzania serii dla wiersza sekcji tabelarycznej. Jest tworzony automatycznie, bez możliwości edycji przez użytkownika.</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Служебный реквизит который определяет состояние ввода серий для строки ТЧ. Формируется автоматически, пользователем не редактируется.</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>TB satırının parti giriş durumunu belirleyen hizmet özniteliği. Otomatik olarak oluşturulur, kullanıcı tarafından düzenlenmez.</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Mục tin phụ trợ xác định trạng thái nhập sê-ri đối với dòng phần bảng. Đây là mục tin được đặt tự động, người sử dụng không thể chỉnh sửa.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="caf78706-28b1-48aa-94ea-c8bab8f5b24a">
+      <name>Count</name>
+      <synonym>
+        <key>en</key>
+        <value>Quantity</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>مقدار</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Quantità</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Ilość</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Miktar</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Số lượng</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Quantity of inventory item units</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>تعداد واحدهای قلم موجودی</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Quantità unità di posizione dei beni materiali</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Ilość jednostek pozycji zapasów</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество единиц позиции ТМЦ</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Stok kalemi sayısı</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Số lượng đơn vị vật tư</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="3c1e50ba-bf78-48df-bf81-e00127b31681">
+    <name>PrintForm_2</name>
+    <synonym>
+      <key>en</key>
+      <value>Print form</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>فرم چاپی</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Modulo di stampa</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Formularz wydruku</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Форма печати</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Yazdırma formu</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Mẫu in</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="c03870f9-e577-4554-98c8-11ab78637791">
+    <name>TemplateFieldsOfInventoryInOperation</name>
+    <synonym>
+      <key>en</key>
+      <value>Template fields of inventory in operation</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>فیلدهای الگوی موجودی در بهره‌برداری</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Campo modello bene materiale in lavorazione</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Pola szablonu zapasy w eksploatacji</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Поля шаблона ТМЦ в эксплуатации</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Kullanımdaki stok şablon alanları</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Các trường của khuôn mẫu vật tư đang sử dụng</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+</mdclass:DataProcessor>

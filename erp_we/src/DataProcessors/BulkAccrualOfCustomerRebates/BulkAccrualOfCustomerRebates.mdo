@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1d1bc597-7ba4-4366-b1f4-5bd2841bff94">
+  <producedTypes>
+    <objectType typeId="8b45c516-7789-4b96-a62d-54e1620bcc83" valueTypeId="eb1f0acd-5e02-4bc2-81eb-d11edbd0a326"/>
+    <managerType typeId="e530fca3-781a-4fb8-8fc8-74e4b4ac2020" valueTypeId="0ef5faf0-4061-450c-b4f9-98f8a8e7bfa7"/>
+  </producedTypes>
+  <name>BulkAccrualOfCustomerRebates</name>
+  <synonym>
+    <key>en</key>
+    <value>Bulk accrual of customer rebates</value>
+  </synonym>
+  <synonym>
+    <key>fa</key>
+    <value>محاسبه گروهی تخفیف‌های برگشتی مشتری</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>Групповое начисление ретро-бонусов клиентов</value>
+  </synonym>
+  <synonym>
+    <key>tr</key>
+    <value>Müşterilerin retro-bonusların grup tahakkuku</value>
+  </synonym>
+  <synonym>
+    <key>vi</key>
+    <value>Tính thưởng lũy kế cho khách hàng theo nhóm</value>
+  </synonym>
+  <synonym>
+    <key>it</key>
+    <value>Bulk accrual of customer rebates</value>
+  </synonym>
+  <synonym>
+    <key>pl</key>
+    <value>Bulk accrual of customer rebates</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.BulkAccrualOfCustomerRebates.Form.Form</defaultForm>
+  <attributes uuid="6acefc3f-230a-4ece-841d-619450c7d732">
+    <name>TermDocument</name>
+    <synonym>
+      <key>en</key>
+      <value>Condition document</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>سند شرایط</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Документ условий</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Документ условий</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Koşullar Belgesi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Chứng từ điều kiện</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Condition document</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ConditionsOfCustomerRebates</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Filter.AccrueImmediately</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <choiceParameters>
+      <name>Filter.Posted</name>
+      <value xsi:type="core:BooleanValue">
+        <value>true</value>
+      </value>
+    </choiceParameters>
+    <choiceParameters>
+      <name>Filter.Status</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Enum.RebatesDocumentStatuses.EnumValue.Approved</value>
+      </value>
+    </choiceParameters>
+    <choiceParameters>
+      <name>Filter.Patch</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <quickChoice>DontUse</quickChoice>
+  </attributes>
+  <attributes uuid="c4f2ed9b-8a67-4d24-8f6e-25fe024e2c19">
+    <name>Organization</name>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>شرکت</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Azienda</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Firma</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>İş yeri</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Doanh nghiệp</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Companies</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="cdfcccde-cf67-4d96-8e38-e41e2195ca60">
+    <name>BeginOfPeriod</name>
+    <synonym>
+      <key>en</key>
+      <value>Period start</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>شروع دوره</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Inizio del periodo</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Początek okresu</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Начало периода</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Dönem başı</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Đầu kỳ</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="d8590127-d209-47b1-ba07-4a8b23cf4925">
+    <name>PeriodEnding</name>
+    <synonym>
+      <key>en</key>
+      <value>Period end</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>پایان دوره</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Fine del periodo</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Koniec okresu</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Окончание периода</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Dönem sonu</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Cuối kỳ</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="8643d209-7c30-4c5b-a64e-7a5fbdf83b2d">
+    <name>Currency</name>
+    <synonym>
+      <key>en</key>
+      <value>Currency</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>ارز</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Valuta</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Waluta</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Para birimi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Tiền tệ</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Currencies</types>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>Document currency</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>ارز سند</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Valuta del documento</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Waluta dokumentu</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Валюта документа</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Belge para birimi</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Tiền tệ chứng từ</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="e4091ffd-a2ec-4b0d-a0d0-a5d1fbf53ece">
+    <name>DocumentsCreationDate</name>
+    <synonym>
+      <key>en</key>
+      <value>Document creation date</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>تاریخ ایجاد سند</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Дата создания документов</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Belge oluşturma tarihi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Ngày tạo chứng từ</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Document creation date</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Document creation date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <tabularSections uuid="c5900a6f-f332-43dc-a502-3d5d7a94138e">
+    <producedTypes>
+      <objectType typeId="9130ba5e-cc2b-408b-9d1d-375fffd889e5" valueTypeId="59a1758e-5b49-4c47-acfa-c3bb8a17d9b6"/>
+      <rowType typeId="6bb8b8d9-6dda-44af-8ea7-14f9a2a8b6fc" valueTypeId="d234bc55-6ca8-4b7a-91c5-cedbc57c1233"/>
+    </producedTypes>
+    <name>AccrualDocuments</name>
+    <synonym>
+      <key>en</key>
+      <value>Accrual documents</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>اسناد محاسبه</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Документы начисления</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Tahakkuk belgesi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Chứng từ tính toán</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Accrual documents</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Accrual documents</value>
+    </synonym>
+    <fillChecking>ShowError</fillChecking>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="aa300cfe-8f50-404e-9f30-30d348e855f2">
+      <name>Check</name>
+      <synonym>
+        <key>en</key>
+        <value>Mark</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>علامت</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Пометка</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>İşaret</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Đánh dấu</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Mark</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Mark</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="bf944463-4706-4f64-bff9-d4f5a5815c8c">
+      <name>Counterparty</name>
+      <synonym>
+        <key>en</key>
+        <value>Counterparty</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>طرف حساب</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Controparte</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Kontrahent</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Контрагент</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Cari hesap</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Đối tác</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Counterparties</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="77850b05-5032-4fcf-9da0-bbbb2e0e6d60">
+      <name>Partner</name>
+      <synonym>
+        <key>en</key>
+        <value>Customer</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>مشتری</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Клиент</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Klient</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Клиент</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Müşteri</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Khách hàng</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Partners</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3e06b590-23db-4224-97cb-fcf8d9fec7a1">
+      <name>DocumentAccruals</name>
+      <synonym>
+        <key>en</key>
+        <value>Accrual document</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>سند محاسبه</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Документ начисления</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Tahakkuk belgesi</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Chứng từ tính toán</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Accrual document</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Accrual document</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.AccrualOfCustomerRebates</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="59f66cfe-1b8c-4884-9884-2587a637601b">
+      <name>AmountToAccrue</name>
+      <synonym>
+        <key>en</key>
+        <value>Amount to accrue</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>مبلغ قابل محاسبه</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма к начислению</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Tahakkuk edilecek tutar</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Số tiền cần tính</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Amount to accrue</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Amount to accrue</value>
+      </synonym>
+      <type>
+        <types>DefinedType.MonetaryAmountPositiveNegative</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4175455b-6994-4e5f-9531-02c28257a21d">
+      <name>AmountAccrued</name>
+      <synonym>
+        <key>en</key>
+        <value>Amount (accrued)</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>مبلغ (محاسبه‌شده)</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма (начисленная)</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Tutar (tahakkuk eden)</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Số tiền (đã tính)</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Amount (accrued)</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Amount (accrued)</value>
+      </synonym>
+      <type>
+        <types>DefinedType.MonetaryAmountPositiveNegative</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f8a7718c-270a-42d7-9652-c784822917b7">
+      <name>SettlementAmount_</name>
+      <synonym>
+        <key>en</key>
+        <value>Amount (calculated)</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>مبلغ (برآوردشده)</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма (расчетная)</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Tutar (tahmini)</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Số tiền (đã hạch toán)</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Amount (calculated)</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Amount (calculated)</value>
+      </synonym>
+      <type>
+        <types>DefinedType.MonetaryAmountPositiveNegative</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="1ebd4b3e-0b92-4f32-9d67-0785a01ea093">
+    <name>Form</name>
+    <synonym>
+      <key>en</key>
+      <value>Form</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>فرم</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Modulo</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Formularz</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Form</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Biểu mẫu</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

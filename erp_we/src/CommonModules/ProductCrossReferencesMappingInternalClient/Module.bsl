@@ -1,0 +1,17 @@
+////////////////////////////////////////////////////////////////////////////////////////
+// Comparison of the nomenclature of the Counteragent Service Client:
+// a mechanism for comparing the nomenclature of counterparties with the nomenclature of the information base.
+//
+///////////////////////////////////////////////////////////////////////////////////////
+//
+
+#Region Internal
+
+
+#EndRegion
+
+#Region Private
+
+
+#EndRegion
+

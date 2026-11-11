@@ -1,0 +1,2632 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c9ae10e1-1227-4170-8e97-886addde7690">
+  <producedTypes>
+    <objectType typeId="e960a05c-0b76-491c-8612-f44b42293f69" valueTypeId="fa2dde9c-d037-4c5a-8a36-38e301612da5"/>
+    <managerType typeId="e9749aee-d30a-4531-bb7f-ad4b7ab5e565" valueTypeId="676aba26-6d1d-48d8-8cdd-0228ea476f2d"/>
+  </producedTypes>
+  <name>WizardOfCorrectingCompanyStockBalance</name>
+  <synonym>
+    <key>en</key>
+    <value>Company stock balance correction wizard</value>
+  </synonym>
+  <synonym>
+    <key>fa</key>
+    <value>دستیار اصلاح مانده موجودی شرکت</value>
+  </synonym>
+  <synonym>
+    <key>it</key>
+    <value>Assistente di correzione delle giacenze di merci delle società</value>
+  </synonym>
+  <synonym>
+    <key>pl</key>
+    <value>Asystent poprawiania ostatków towarów firm</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>Помощник исправления остатков товаров организаций</value>
+  </synonym>
+  <synonym>
+    <key>tr</key>
+    <value>İş yerlerinin bakiyesini düzenleme sihirbazı</value>
+  </synonym>
+  <synonym>
+    <key>vi</key>
+    <value>Trợ giúp sửa số dư hàng hóa của doanh nghiệp</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.WizardOfCorrectingCompanyStockBalance.Form.DefaultForm</defaultForm>
+  <attributes uuid="8d8360ba-f40f-46e6-9970-45292d0d7f84">
+    <name>MonthOfCorrection</name>
+    <synonym>
+      <key>en</key>
+      <value>Month of correction</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>ماه اصلاح</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Mese di correzione</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Miesiąc korekty</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Месяц исправления</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Düzeltme ayı</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Tháng điều chỉnh</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <format>
+      <key>en</key>
+      <value>DF=MMMM/yyyy</value>
+    </format>
+    <format>
+      <key>fa</key>
+      <value>DF=MMMM/yyyy</value>
+    </format>
+    <format>
+      <key>it</key>
+      <value>DF=MMMM.yyyy</value>
+    </format>
+    <format>
+      <key>pl</key>
+      <value>DF=MMMM.yyyy</value>
+    </format>
+    <format>
+      <key>ru</key>
+      <value>DF=MMMM.yyyy</value>
+    </format>
+    <format>
+      <key>tr</key>
+      <value>DF=MMMM.yyyy</value>
+    </format>
+    <format>
+      <key>vi</key>
+      <value>DF=MMMM.yyyy</value>
+    </format>
+    <editFormat>
+      <key>en</key>
+      <value>DF=MMMM/yyyy</value>
+    </editFormat>
+    <editFormat>
+      <key>fa</key>
+      <value>DF=MMMM/yyyy</value>
+    </editFormat>
+    <editFormat>
+      <key>it</key>
+      <value>DF=MMMM.yyyy</value>
+    </editFormat>
+    <editFormat>
+      <key>pl</key>
+      <value>DF=MMMM.yyyy</value>
+    </editFormat>
+    <editFormat>
+      <key>ru</key>
+      <value>DF=MMMM.yyyy</value>
+    </editFormat>
+    <editFormat>
+      <key>tr</key>
+      <value>DF=MMMM.yyyy</value>
+    </editFormat>
+    <editFormat>
+      <key>vi</key>
+      <value>DF=MMMM.yyyy</value>
+    </editFormat>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="e809d571-d95f-47f0-9740-81889afaa20d">
+    <name>NumberOfPositionsNegativeBalance</name>
+    <synonym>
+      <key>en</key>
+      <value>Positions with negative balance</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>موقعیت‌های دارای مانده منفی</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Posizioni con giacenze negative</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Pozycji o stanie ujemnym</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Позиций с отрицательным остатком</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Eksi bakiyeli pozisyonlar</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Mục cân đối âm</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9c82ef2c-247f-4988-b40d-af559d442cd0">
+    <name>NumberOfPositionsNegativeBalanceOther</name>
+    <synonym>
+      <key>en</key>
+      <value>Items with negative balance that can be corrected using other month-end closing operations</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>اقلام دارای مانده منفی که با سایر عملیات بستن پایان ماه قابل اصلاح هستند</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Позиций с отрицательным остатком, которые могут быть исправлены другими операциями закрытия месяца</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Diğer ay sonu kapanış işlemleriyle düzeltilebilecek eksi bakiyeli pozisyonlar</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Có thể chỉnh sửa các mặt hàng có số dư âm bằng các thao tác khác khi đóng tháng</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Items with negative balance that can be corrected using other month-end closing operations</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Items with negative balance that can be corrected using other month-end closing operations</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="61f0b872-7dfa-41e7-8e97-a39f96e52307">
+    <name>ItemQuantitySidedBalance</name>
+    <synonym>
+      <key>en</key>
+      <value>Positions with detailed balance</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>موقعیت‌های دارای مانده تفصیلی</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Posizioni con saldo esplicativo </value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Pozycji z saldem rozwartym</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Позиций с развернутым сальдо</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ayrıntılı bakiyeli pozisyonlar</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Mục cân đối mở rộng</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="15c59b1f-6818-4da6-abe2-902410d86753">
+    <name>NumberOfPositionsNegativeBalanceBefore</name>
+    <synonym>
+      <key>en</key>
+      <value>Positions with negative balance before correction</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>موقعیت‌های دارای مانده منفی پیش از اصلاح</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Posizioni con giacenze negative prima della correzione</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Pozycji o stanie ujemnym do korekty</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Позиций с отрицательным остатком до исправления</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Düzeltme öncesi eksi bakiyeli pozisyonlar</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Mục cân bằng âm trước khi điều chỉnh</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="41d338ff-447d-4054-8fbf-a71d33168ef3">
+    <name>ItemQuantitySidedBalanceBeforeCorrection</name>
+    <synonym>
+      <key>en</key>
+      <value>Positions with detailed balance before correction</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>موقعیت‌های دارای مانده تفصیلی پیش از اصلاح</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Posizioni con saldo esplicativo prima della correzione</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Pozycji z saldem rozwartym do korekty</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Позиций с развернутым сальдо до исправления</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Düzeltme öncesi ayrıntılı bakiyeli pozisyonlar</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Vị trí cân bằng mở rộng trước khi sửa</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="73b729cf-3aea-4638-b705-32ebfec101be">
+    <name>RecalculationOfReservesRequired</name>
+    <synonym>
+      <key>en</key>
+      <value>Rebuilding reserves is required</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>بازسازی ذخایر الزامی است</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>È necessaria la riformazione delle scorte</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Wymagane jest ponowne sformowanie rezerw</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Требуется переформирование резервов</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Rezervlerin yeniden düzenlenmesi gerekmektedir</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Dự trữ bắt buộc</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="405a238d-6faf-43df-a211-239b941c3be8">
+    <name>SidedBalanceCorrectionIsRequired</name>
+    <synonym>
+      <key>en</key>
+      <value>Detailed balance correction is required</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>اصلاح مانده تفصیلی الزامی است</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>È necessaria la correzione del saldo esplicativo</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Wymagana jest korekta salda detalizowanego</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Требуется исправление развернутого сальдо</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ayrıntılı bakiyenin düzeltilmesi gerekmektedir</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Cần điều chỉnh số dư mở rộng</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="e83475bd-345d-4c81-986d-c645940bdb98">
+    <name>RefillInventoryOwnerAttributes</name>
+    <synonym>
+      <key>en</key>
+      <value>Refill inventory owner attributes</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>تکمیل مجدد ویژگی‌های مالک موجودی</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Требуется перезаполнить виды запасов</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Stok sahibinin özniteliklerinin yeniden doldurulması gerekmektedir</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Cần điền lại dạng vật tư</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Refill inventory owner attributes</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Refill inventory owner attributes</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2eae312e-4571-49fa-9914-8e4cd637d826">
+    <name>SidedBalanceDimension</name>
+    <synonym>
+      <key>en</key>
+      <value>Detailed balance dimension</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>بُعد مانده تفصیلی</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Analisi del saldo esplicativo</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Analiza salda detalizowanego</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика развернутого сальдо</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ayrıntılı bakiye boyutu</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Chỉ số số dư mở rộng</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.InventoryLocationAttributeKeys</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2f501a48-a88a-43cc-a8ab-24c706d3097b">
+    <name>SidedBalanceCompany</name>
+    <synonym>
+      <key>en</key>
+      <value>Detailed balance structure</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>ساختار مانده تفصیلی</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Società del saldo esplicativo</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Firma salda detalizowanego</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Организация развернутого сальдо</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ayrıntılı bakiyenin iş yeri</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Doanh nghiệp cân bằng mở rộng</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Companies</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9d00c717-83f3-46b7-acda-6bd343f514a4">
+    <name>RegistrationControlResult</name>
+    <synonym>
+      <key>en</key>
+      <value>Registration control result</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>نتیجه کنترل ثبت</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Risultato della verifica di formattazione</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Wynik kontroli sporządzania</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Результат контроля оформления</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Düzenleme kontrolü sonucu</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Kết quả kiểm soát thiết kế</value>
+    </synonym>
+    <type>
+      <types>SpreadsheetDocument</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="00149f58-b0ca-48e6-a16c-bafda4dffca8">
+    <producedTypes>
+      <objectType typeId="af04bb97-d0d9-4bab-9d44-366fcb494768" valueTypeId="45edadb5-677d-4c5a-8b2f-056dda4803ae"/>
+      <rowType typeId="59f9c951-5385-487f-8877-34ccc0123849" valueTypeId="7c6e4843-60a7-4016-b87c-2e870e147dab"/>
+    </producedTypes>
+    <name>ReserveAdjustments</name>
+    <synonym>
+      <key>en</key>
+      <value>Reserve adjustments</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>تعدیل‌های ذخیره</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Correzione delle scorte</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Korekty rezerw</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Корректировки резервов</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Rezerv düzeltmeleri</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Điều chỉnh dự trữ</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="8dc037a8-22ea-444e-b393-6ccaff9c2700">
+      <name>Document</name>
+      <synonym>
+        <key>en</key>
+        <value>Document</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>سند</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Documento</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Dokument</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Документ</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Belge</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Chứng từ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.RegisterAdjustment</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="0dd4f71e-d659-4bf8-a9fc-03fec343d105">
+    <producedTypes>
+      <objectType typeId="aaab1c26-2584-4d1e-b38f-d33a161df769" valueTypeId="5d92fcf0-44ac-4852-8ee7-f129921c2a70"/>
+      <rowType typeId="e120a80f-3ee7-4ab5-b28b-686c3e121a19" valueTypeId="1fc848b4-ebcc-4747-92e0-b4da7074cb88"/>
+    </producedTypes>
+    <name>CorrectionsOfStockBalanceOfCompanies</name>
+    <synonym>
+      <key>en</key>
+      <value>Corrections of stock balance of companies</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>اصلاحات مانده موجودی شرکت‌ها</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Correzioni delle giacenze di merce delle società</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Korekty stanów magazynowych firm</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Исправления остатков товаров организаций</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>İş yerleri bakiyelerinin düzenlenmesi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Điều chỉnh số dư hàng hóa của các doanh nghiệp</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="f72042be-b1e2-4424-a783-5ffaf4a46847">
+      <name>Document</name>
+      <synonym>
+        <key>en</key>
+        <value>Document</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>سند</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Documento</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Dokument</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Документ</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Belge</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Chứng từ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.CorrectionOfSidedBalanceInCompanyGoodsAccounting</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="d3a743f8-7caa-4503-9fe1-30f9badb7c83">
+    <producedTypes>
+      <objectType typeId="4043050c-fdbc-45cc-9875-7ae843bbde35" valueTypeId="0cbb63b3-0748-4ffd-970f-367c798c1bd4"/>
+      <rowType typeId="44109862-da2f-45d2-9e5f-f441c0197a65" valueTypeId="0c2aebb1-93df-47b4-9071-570464775c07"/>
+    </producedTypes>
+    <name>ModifiedDocuments</name>
+    <synonym>
+      <key>en</key>
+      <value>Changed documents</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>اسناد تغییریافته</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Documenti modificati</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Zmienione dokumenty</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Измененные документы</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Değiştirilen belgeler</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Chứng từ sửa đổi</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="0f654289-bfd1-40df-8cff-b8db95d243f8">
+      <name>Document</name>
+      <synonym>
+        <key>en</key>
+        <value>Document</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>سند</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Documento</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Dokument</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Документ</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Belge</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Chứng từ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="84e3070d-bfd1-4edf-8d75-88414ef10098">
+      <name>Organization</name>
+      <synonym>
+        <key>en</key>
+        <value>Company</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>شرکت</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Azienda</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Firma</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Организация</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>İş yeri</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Doanh nghiệp</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Companies</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="10308071-cd38-46c5-a0da-c5a5034d130c">
+      <name>Date</name>
+      <synonym>
+        <key>en</key>
+        <value>Date</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>تاریخ</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Data</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Data</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Дата</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Tarih</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Ngày</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a439125b-483c-423c-8a8f-deb2869beb62">
+      <name>EmployeeResponsible</name>
+      <synonym>
+        <key>en</key>
+        <value>Person responsible</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>شخص مسئول</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Responsabile</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Osoba odpowiedzialna</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Ответственный</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Sorumlu</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Người chịu trách nhiệm</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Users</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="57636173-8ff0-41e8-aac5-ae987af93dd1">
+      <name>TaxInvoiceIsIssued</name>
+      <synonym>
+        <key>en</key>
+        <value>Tax invoice is issued</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>فاکتور مالیاتی صادر شده است</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Emessa fattura</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Wydano fakturę VAT</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Выдан счет фактура</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Düzenlenmiş vergi faturası</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Hóa đơn phát hành</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b423f061-a375-45da-9631-62e2df0769a1">
+      <name>CCDNumbersChanged</name>
+      <synonym>
+        <key>en</key>
+        <value>CCD numbers Changed</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>شماره‌های CCD تغییر کرد</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Numeri GTDModificati    </value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Numery deklaracji celnych zostały zmienione</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Номера ГТДИзменились</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>GKB numarasıDeğişti</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Số ГТДИзменились</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="f8ecf284-6642-470e-8954-04189444a9a6">
+    <producedTypes>
+      <objectType typeId="69f89f1b-a5a2-4d2d-9b47-5e91f71a21fc" valueTypeId="ddaeae95-2256-4947-a229-def319f232ae"/>
+      <rowType typeId="b5299d7e-8851-486c-8694-205c0e91d654" valueTypeId="d60d3997-74a2-405c-85c5-089249ddaec4"/>
+    </producedTypes>
+    <name>NewCustomizationCustomerInvoiceIntercompany</name>
+    <synonym>
+      <key>en</key>
+      <value>New intercompany invoice settings</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>تنظیمات جدید فاکتور درون‌گروهی</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Nuove impostazioni di trasferimento fra le società</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Nowe ustawienia przesyłania pomiędzy firmami</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Новые настройки передачи между организациями</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>İş yerleri arasında yeni transfer ayarları</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Cài đặt chuyển giao liên doanh nghiệp mới</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="c61a3b09-4454-4e27-9fd5-7508055dfd77">
+      <name>Owner</name>
+      <synonym>
+        <key>en</key>
+        <value>Owner</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>مالک</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Titolare</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Właściciel</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Владелец</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Sahip</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Đối tượng chủ</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Companies</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0724a620-f86d-49e4-949c-58cc6df0f63d">
+      <name>Seller</name>
+      <synonym>
+        <key>en</key>
+        <value>Seller</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>فروشنده</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Venditore</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Sprzedawca</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Продавец</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Satıcı</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Người bán</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Companies</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="27298173-a23d-4fe3-b946-b3aaffce2e29">
+      <name>InventoryTypeOfOwner</name>
+      <synonym>
+        <key>en</key>
+        <value>Inventory type of owner</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>نوع موجودی مالک</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Tipo di scorte del proprietario</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Typ zapasów właściciela</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Тип запасов владельца</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Sahibinin stok tipi</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Kiểu vật tư của người sở hữu</value>
+      </synonym>
+      <type>
+        <types>EnumRef.InventoryTypes</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="606c251f-19b8-4cad-8573-1a7dc372797c">
+      <name>TransferSetting</name>
+      <synonym>
+        <key>en</key>
+        <value>Transfer setting</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>تنظیم انتقال</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Impostazioni di trasferimento</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Konfiguracja przekazywania</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Настройка передачи</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Transfer ayarı</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Cài đặt chuyển</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="a2c69bc0-2f47-4383-833a-7ef919f08507">
+    <producedTypes>
+      <objectType typeId="3ade2fe4-29ec-45a4-91c3-100225d188e6" valueTypeId="5464f928-8264-4eba-aa7b-2e776e1f5d74"/>
+      <rowType typeId="3e1c8646-b11e-40e9-b6f5-8ae9fcc61b4c" valueTypeId="cfec7d2a-4573-48d7-b1cb-bc3037052854"/>
+    </producedTypes>
+    <name>ReserveAdjustmentsByNewSettings</name>
+    <synonym>
+      <key>en</key>
+      <value>Reserve adjustments by new settings</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>تعدیل‌های ذخیره بر اساس تنظیمات جدید</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Correzioni di scorte in base alle nuove impostazioni</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Korekty rezerw zgodnie z nowymi ustawieniami</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Корректировки резервов по новым настройкам</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Yeni ayarlara göre rezerv düzeltme</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Điều chỉnh dự trữ cho các cài đặt mới</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="b7b4f28d-2a51-49d0-ab32-4dca99305cea">
+      <name>Document</name>
+      <synonym>
+        <key>en</key>
+        <value>Document</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>سند</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Documento</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Dokument</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Документ</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Belge</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Chứng từ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.RegisterAdjustment</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="50250ea4-4646-4bca-b88d-a7d1f3750d3d">
+    <producedTypes>
+      <objectType typeId="77a9fba7-d708-4cdb-b94f-cd22ae9e2d5b" valueTypeId="1db766d2-0f6a-4c26-b6e9-c3fae4026e3c"/>
+      <rowType typeId="b1b20a7a-063a-4434-b062-03d91da75532" valueTypeId="f77726ab-bbca-4f38-b8c2-855bf2e94d33"/>
+    </producedTypes>
+    <name>ReferencesForGeneratingOfGoodsReceipt</name>
+    <synonym>
+      <key>en</key>
+      <value>References for registering receipts</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>مراجع برای ثبت رسیدها</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Disposizioni di registrazione in contabilità</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Zamówienia do rejestracji przychodów</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Распоряжения на оформление оприходований</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Envanterin düzenlenmesine ilişkin talimatlar</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Lệnh lập chứng từ nhập</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="43687d3b-00fa-4679-828d-589c8b8d1ee0">
+      <name>Organization</name>
+      <synonym>
+        <key>en</key>
+        <value>Company</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>شرکت</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Azienda</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Firma</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Организация</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>İş yeri</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Doanh nghiệp</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Companies</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6a224157-9dc9-47c2-a349-09a8cc7d9664">
+      <name>Warehouse</name>
+      <synonym>
+        <key>en</key>
+        <value>Warehouse</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>انبار</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Magazzino</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Magazyn</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Склад</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Ambar</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Kho bãi</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Warehouses</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0409bf5f-c10c-4fa5-bfa4-a711b818f24e">
+      <name>NumberOfRows</name>
+      <synonym>
+        <key>en</key>
+        <value>Item quantity</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>تعداد موقعیت‌ها</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Quantità articoli</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Ilość pozycji</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Количество позиций</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Pozisyon miktarı</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Số lượng vị trí</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="e6a15ccc-649d-4faa-995b-524d6e7eaea2">
+    <producedTypes>
+      <objectType typeId="437c075b-5903-4d7c-8316-ef09ee93f0ab" valueTypeId="73fabbb8-acb2-4491-967d-205bf894d16d"/>
+      <rowType typeId="acfb664f-9aeb-4a4d-a91e-ded00f52d8e4" valueTypeId="f471373a-e7cd-427b-81da-fc3cda03d9b9"/>
+    </producedTypes>
+    <name>DataForFillingReceipts</name>
+    <synonym>
+      <key>en</key>
+      <value>Data for filling receipts</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>داده‌ها برای تکمیل رسیدها</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Dati per la compilazione di registrazione di merci in contabilità</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Dane do wypełnienia przychodów</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Данные для заполнения оприходований</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Envanterin doldurulmasına yönelik veriler</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Dữ liệu để điền vào ghi hoa</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="ecb8d658-5277-4dd4-b166-c4166ee51c8f">
+      <name>Organization</name>
+      <synonym>
+        <key>en</key>
+        <value>Company</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>شرکت</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Azienda</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Firma</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Организация</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>İş yeri</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Doanh nghiệp</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Companies</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2b91f9b9-7a9f-4e27-a046-090a35f25a33">
+      <name>Warehouse</name>
+      <synonym>
+        <key>en</key>
+        <value>Warehouse</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>انبار</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Magazzino</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Magazyn</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Склад</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Ambar</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Kho bãi</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Warehouses</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="88e1939e-b385-4808-a60e-33d721e6e76b">
+      <name>ItemsLocationAttributes</name>
+      <synonym>
+        <key>en</key>
+        <value>Inventory location attributes</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>ویژگی‌های محل موجودی</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Analitica della registrazione degli articoli</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Analityka ewidencji nomenklatury</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Аналитика учета номенклатуры</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Stok konum öznitelikleri</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Chỉ số hạch toán mặt hàng</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.InventoryLocationAttributeKeys</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2806922f-2ecd-435b-b567-a9eeca50e74d">
+      <name>Products</name>
+      <synonym>
+        <key>en</key>
+        <value>Items</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>اقلام</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Articolo</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Pozycja</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Öğe</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Mặt hàng</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Products</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9843670e-982f-4515-bb99-a0c951d850ff">
+      <name>Characteristic</name>
+      <synonym>
+        <key>en</key>
+        <value>Variant</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>گونه</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Caratteristica</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Charakterystyka</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Varyant</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Đặc tính</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ItemsCharacteristics</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Products</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.WizardOfCorrectingCompanyStockBalance.TabularSection.DataForFillingReceipts.Attribute.Products</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f0b7e6fa-74d5-4fc5-be45-9f4c19c51b8a">
+      <name>Purpose</name>
+      <synonym>
+        <key>en</key>
+        <value>Assignment</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>تخصیص</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Destinazione</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Przeznaczenie</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Назначение</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Atama</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Ấn định</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Assignments</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="af62df56-971a-4a9e-9a1b-32bc6501b7b6">
+      <name>CCDNumber</name>
+      <synonym>
+        <key>en</key>
+        <value>CCD number</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>شماره اظهارنامه گمرکی (CCD)</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Numero della polizza doganale di carico</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Numer ŁDC (ładunkowej deklaracji celnej)</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Номер ГТД</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Gümrük kargo beyannamesi numarası</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Số tờ khai hải quan</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.CCDNumbers</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Products</name>
+        <field>DataProcessor.WizardOfCorrectingCompanyStockBalance.TabularSection.DataForFillingReceipts.Attribute.Products</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c7e2c82a-b6d4-4e24-b920-22579d3137b1">
+      <name>Series</name>
+      <synonym>
+        <key>en</key>
+        <value>Batch</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>بچ</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Serie</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Seria</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Серия</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Parti</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Sê-ri</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ItemsBatches</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Products</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.WizardOfCorrectingCompanyStockBalance.TabularSection.DataForFillingReceipts.Attribute.Products</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Characteristic</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.WizardOfCorrectingCompanyStockBalance.TabularSection.DataForFillingReceipts.Attribute.Characteristic</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Warehouse</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.WizardOfCorrectingCompanyStockBalance.TabularSection.DataForFillingReceipts.Attribute.Warehouse</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="cd176d27-ec03-4806-9b14-dc91d91a8e9a">
+      <name>InventoryOwnerAttribute</name>
+      <synonym>
+        <key>en</key>
+        <value>Inventory owner attributes</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>ویژگی‌های مالک موجودی</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Tipologia di scorte</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Rodzaj pozycji</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Вид запасов</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Stok sahibinin öznitelikleri</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Dạng hàng tồn kho</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.InventoryKinds</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="82111530-4421-46de-8274-575a8a9aa606">
+      <name>Count</name>
+      <synonym>
+        <key>en</key>
+        <value>Quantity</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>مقدار</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Quantità</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Ilość</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Miktar</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Số lượng</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="3d12ecc8-1e29-4a44-aef8-a804a1386280">
+    <producedTypes>
+      <objectType typeId="890ec32b-74d4-4bd9-b063-2d4a1e66dc3a" valueTypeId="b09454cf-908a-42f9-85d7-7e3126c6c992"/>
+      <rowType typeId="826d1951-7d5a-4baf-98ee-f744fa5f64cf" valueTypeId="8c80d360-6a8e-4d7c-a205-ffc5f9fec64e"/>
+    </producedTypes>
+    <name>CompaniesForTransferGeneration</name>
+    <synonym>
+      <key>en</key>
+      <value>Companies for transfer generation</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>شرکت‌ها برای ایجاد انتقال</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Società per la registrazione del trasferimento</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Organizcja do generowania przekazań</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Организации для формирования передач</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Transferin düzenleneceği iş yeri</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Doanh nghiệp phân bổ thiết bị</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="e4343cf7-a0b2-44f8-909b-f9bb0a3fdeb5">
+      <name>Organization</name>
+      <synonym>
+        <key>en</key>
+        <value>Receiving company</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>شرکت دریافت‌کننده</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Società-destinatario</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Firma-odbiorca</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Организация-получатель</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Alıcı iş yeri</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Doanh nghiệp-người nhận</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Companies</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d2306733-50ca-4ac4-882e-2d511787ff0d">
+      <name>InventoryType</name>
+      <synonym>
+        <key>en</key>
+        <value>Recipient inventory type</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>نوع موجودی گیرنده</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Tipo di scorte del destinatario</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Typ zapasów odbiorcy</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Тип запасов получателя</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Alıcının stok tipi</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Loại hàng tồn kho người nhận</value>
+      </synonym>
+      <type>
+        <types>EnumRef.InventoryTypes</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="70c0c01f-c511-457b-9fd0-8bef4b212813">
+    <producedTypes>
+      <objectType typeId="ca617dea-1e6f-48ac-9d58-689b5cb229e7" valueTypeId="b7c8b267-e07f-429b-b981-2fdb2f15a907"/>
+      <rowType typeId="6cda014d-758c-4b83-a0d7-93386f6c5fa3" valueTypeId="37516843-b850-44b4-9a68-ccb773a0cbd2"/>
+    </producedTypes>
+    <name>ReplacementTaxInvoices</name>
+    <synonym>
+      <key>en</key>
+      <value>Replacement tax invoices</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>فاکتورهای مالیاتی جایگزین</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Fatture di rettifica</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Korekty faktur</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Исправительные счета фактуры</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Düzeltici vergi faturaları</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Hóa đơn điều chỉnh</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="993a47c8-f368-4671-bc47-c6ff70f72fdf">
+      <name>Document</name>
+      <synonym>
+        <key>en</key>
+        <value>Document</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>سند</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Documento</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Dokument</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Документ</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Belge</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Chứng từ</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5280caa5-1233-48ff-b2cc-dfaea329d5b8">
+      <name>Basis</name>
+      <synonym>
+        <key>en</key>
+        <value>Base document</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Causale</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Основание</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Temel</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </synonym>
+      <type>
+        <types>DefinedType.BaseDocumentIssuedTaxInvoice</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="6cd81135-d1ec-485d-9e08-765967fd6352">
+    <producedTypes>
+      <objectType typeId="f74bc4cf-64f2-4e42-a9d1-54303ad65f98" valueTypeId="176eda4e-3d8c-442e-b65f-b82de5161b49"/>
+      <rowType typeId="05aa67dc-2fd2-4c54-a772-fe024a5b6273" valueTypeId="e62d99d3-dc36-44d7-b76a-1beb970517d1"/>
+    </producedTypes>
+    <name>DocumentsToRefill</name>
+    <synonym>
+      <key>en</key>
+      <value>Documents to refill</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>اسناد قابل تکمیل مجدد</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Documenti da ricompilare</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Dokumenty do ponownego wypełnienia</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Документы к перезаполнению</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Yeniden doldurulacak belgeler</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Chứng từ điền lại</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="9369b8dd-caf8-48ea-b0fa-40083a815665">
+      <name>Document</name>
+      <synonym>
+        <key>en</key>
+        <value>Document</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>سند</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Documento</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Dokument</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Документ</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Belge</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Chứng từ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="2b3eaf71-3474-4304-b97b-f0d5214bb0a9">
+    <producedTypes>
+      <objectType typeId="36c9d5e6-90de-478c-8b69-1ccb8bb9e787" valueTypeId="8bb5cdcf-616e-4760-8076-6241e1af69b0"/>
+      <rowType typeId="9a027758-9420-46c4-9c45-c60eb7c0b74c" valueTypeId="6ea51913-8e2a-4f12-8e07-ce8e8a300388"/>
+    </producedTypes>
+    <name>FiltersForTransferGeneration</name>
+    <synonym>
+      <key>en</key>
+      <value>Filters for transfer generation</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>فیلترها برای ایجاد انتقال</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Selezioni per generare i trasferimenti</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Filtr do generowania przekazań</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Отборы для формирования передач</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Transferin düzenleneceği filtreler</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Hình dạng bánh răng</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="dd382530-a2a4-41df-a1c7-54effd23f6b6">
+      <name>Organization</name>
+      <synonym>
+        <key>en</key>
+        <value>Receiving company</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>شرکت دریافت‌کننده</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Società-destinatario</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Firma-odbiorca</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Организация-получатель</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Alıcı iş yeri</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Doanh nghiệp-người nhận</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Companies</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d9f8964e-c69b-4527-9541-8d547a232ff4">
+      <name>InventoryType</name>
+      <synonym>
+        <key>en</key>
+        <value>Recipient inventory type</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>نوع موجودی گیرنده</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Tipo di scorte del destinatario</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Typ zapasów odbiorcy</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Тип запасов получателя</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Alıcının stok tipi</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Loại hàng tồn kho người nhận</value>
+      </synonym>
+      <type>
+        <types>EnumRef.InventoryTypes</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9e559854-c40b-4e7d-9e70-bd098fbefb65">
+      <name>Warehouse</name>
+      <synonym>
+        <key>en</key>
+        <value>Warehouse</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>انبار</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Magazzino</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Magazyn</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Склад</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Ambar</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Kho bãi</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Warehouses</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9f94dba4-08cc-480e-bb09-ae87483b692a">
+      <name>Products</name>
+      <synonym>
+        <key>en</key>
+        <value>Items</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>اقلام</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Articolo</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Pozycja</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Öğe</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Mặt hàng</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Products</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="621dcfb9-5c58-4cd2-a9c8-1a4415e32f8e">
+    <producedTypes>
+      <objectType typeId="7559c17a-62f3-4b66-b33b-a6b9629b18ec" valueTypeId="f0674476-aade-4e7e-8a43-b674d8e8a893"/>
+      <rowType typeId="1fa9bc7d-ac50-4b68-a388-baf17700b16d" valueTypeId="7856fc7c-8f71-4dff-b37b-a5e95f4fab7d"/>
+    </producedTypes>
+    <name>FiltersToGenerateControlReport</name>
+    <synonym>
+      <key>en</key>
+      <value>Filters to generate control report</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>فیلترها برای ایجاد گزارش کنترل</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Selezioni per emettere il report di verifica</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Filtr do generowania raportu kontroli</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Отборы для формирования отчета контроля</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Kontrol raporunun oluşturulmasına yönelik filtreler</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Lựa chọn sàng lọc</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="884977fc-ef24-43c0-9398-11ce8463ebf9">
+      <name>Products</name>
+      <synonym>
+        <key>en</key>
+        <value>Items</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>اقلام</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Articolo</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Pozycja</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Öğe</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Mặt hàng</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Products</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f16f092f-91c1-427c-9218-c5c30508883f">
+      <name>Characteristic</name>
+      <synonym>
+        <key>en</key>
+        <value>Variant</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>گونه</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Caratteristica</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Charakterystyka</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Varyant</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Đặc tính</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ItemsCharacteristics</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Products</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.WizardOfCorrectingCompanyStockBalance.TabularSection.FiltersToGenerateControlReport.Attribute.Products</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3b6a0853-dfe0-4c21-992b-7425c2e4e2bd">
+      <name>Series</name>
+      <synonym>
+        <key>en</key>
+        <value>Batch</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>بچ</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Serie</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Seria</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Серия</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Parti</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Sê-ri</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ItemsBatches</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Products</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.WizardOfCorrectingCompanyStockBalance.TabularSection.FiltersToGenerateControlReport.Attribute.Products</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Characteristic</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.WizardOfCorrectingCompanyStockBalance.TabularSection.FiltersToGenerateControlReport.Attribute.Characteristic</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Warehouse</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.WizardOfCorrectingCompanyStockBalance.TabularSection.FiltersToGenerateControlReport.Attribute.Warehouse</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e76beca1-dafd-4dd6-8552-6a20a099b6d0">
+      <name>Warehouse</name>
+      <synonym>
+        <key>en</key>
+        <value>Warehouse</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>انبار</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Magazzino</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Magazyn</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Склад</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Ambar</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Kho bãi</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Warehouses</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="794fb678-6198-4a2f-9362-0ff95f744f50">
+      <name>Purpose</name>
+      <synonym>
+        <key>en</key>
+        <value>Assignment</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>تخصیص</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Destinazione</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Przeznaczenie</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Назначение</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Atama</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Ấn định</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Assignments</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="d89a8aa5-7284-4997-b208-3bae44f5b078">
+    <name>DefaultForm</name>
+    <synonym>
+      <key>en</key>
+      <value>Default form</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>فرم پیش‌فرض</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Modulo principale</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Formularz podstawowy</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Основная форма</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ana form</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Biểu mẫu chính</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

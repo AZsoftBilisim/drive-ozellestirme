@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="db821e7a-ff22-4889-b166-1a1bc1118587">
+  <name>Billing</name>
+  <synonym>
+    <key>en</key>
+    <value>Billing</value>
+  </synonym>
+  <synonym>
+    <key>fa</key>
+    <value>صورتحساب‌دهی</value>
+  </synonym>
+  <synonym>
+    <key>it</key>
+    <value>Fatturazione</value>
+  </synonym>
+  <synonym>
+    <key>pl</key>
+    <value>Ustawienia rozliczeniowe</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>Биллинг</value>
+  </synonym>
+  <synonym>
+    <key>tr</key>
+    <value>Faturalandırma</value>
+  </synonym>
+  <synonym>
+    <key>vi</key>
+    <value>Lập hóa đơn điện tử</value>
+  </synonym>
+  <rootURL>billing</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="bbd4d7c8-2488-474c-b92c-8f689a56e62e">
+    <name>Version</name>
+    <synonym>
+      <key>en</key>
+      <value>Version</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>نسخه</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Versione</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Wersja</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Версия</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Sürüm</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Phiên bản</value>
+    </synonym>
+    <template>/version</template>
+    <methods uuid="f909d950-4db8-490c-aaf6-7a2e975a310d">
+      <name>Get</name>
+      <synonym>
+        <key>en</key>
+        <value>Get</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>دریافت</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Ricevere</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Otrzymaj</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Получить</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Al</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Nhận</value>
+      </synonym>
+      <handler>VersionGet</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="0696a18a-99b4-4f95-ab71-5cfb9c107b74">
+    <name>ProformaInvoice</name>
+    <synonym>
+      <key>en</key>
+      <value>Proforma invoice</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>پیش‌فاکتور</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Fattura di pagamento</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Rachunek do zapłaty</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Счет на оплату</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ticari fatura</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Hóa đơn thanh toán</value>
+    </synonym>
+    <template>/bill/{Version}/*</template>
+    <methods uuid="9a5ba47b-8383-471c-a759-5a152d4db574">
+      <name>Add</name>
+      <synonym>
+        <key>en</key>
+        <value>Add</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>افزودن</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Aggiungere</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Dodaj</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Добавить</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Ekle</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Thêm</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ProformaInvoiceAdd</handler>
+    </methods>
+    <methods uuid="31bc76d8-d2ee-40e9-8cd2-24e174fb04a4">
+      <name>Change</name>
+      <synonym>
+        <key>en</key>
+        <value>Edit</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>ویرایش</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Modificare</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Zmień</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Изменить</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Değiştir</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Thay đổi</value>
+      </synonym>
+      <httpMethod>PUT</httpMethod>
+      <handler>ProformaInvoiceChange</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="2d07a3e8-46fc-421b-a8b0-a7809e871cfd">
+    <name>SetSettings</name>
+    <synonym>
+      <key>en</key>
+      <value>Set settings</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>تعیین تنظیمات</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Impostare impostazioni</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Ustaw ustawienia</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Установить настройки</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ayarları kullan</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Thiết lập tùy chỉnh</value>
+    </synonym>
+    <template>/setup</template>
+    <methods uuid="fc3bd079-6491-436c-bb0d-7da15c511e1a">
+      <name>Add</name>
+      <synonym>
+        <key>en</key>
+        <value>Add</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>افزودن</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Aggiungere</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Dodaj</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Добавить</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Ekle</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Thêm</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>SetSettingsAdd</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="b4c0397c-174c-4e59-aeef-5a8fa5bf18bd">
+    <name>DeleteSettings</name>
+    <synonym>
+      <key>en</key>
+      <value>Delete settings</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>حذف تنظیمات</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Cancellare impostazioni</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Usuń ustawienia</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Удалить настройки</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ayarları sil</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Xóa tùy chỉnh</value>
+    </synonym>
+    <template>/uninstall</template>
+    <methods uuid="31fe5e93-5413-4956-82c4-d69274fb078c">
+      <name>Add</name>
+      <synonym>
+        <key>en</key>
+        <value>Add</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>افزودن</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Добавить</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Ekle</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Thêm</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Add</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Add</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>DeleteSettingsAdd</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="91584f81-4e1d-45b3-8b4e-6f0c04e5aba5">
+    <name>SetDeleteSettingsState</name>
+    <synonym>
+      <key>en</key>
+      <value>State of settings deletion setup</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>وضعیت راه‌اندازی حذف تنظیمات</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние установки удаления настроек</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ayarları silme kurulum durumu</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Trạng thái thiết lập xóa tùy chỉnh</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>State of settings deletion setup</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>State of settings deletion setup</value>
+    </synonym>
+    <template>/setup_result/{JobID}</template>
+    <methods uuid="44d99658-c0ed-4cc0-848a-a1314e7948cd">
+      <name>Get</name>
+      <synonym>
+        <key>en</key>
+        <value>Get</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>دریافت</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Получить</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Al</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Nhận</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Get</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Get</value>
+      </synonym>
+      <handler>SetDeleteSettingsStateGet</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

@@ -1,0 +1,1031 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7b92ae73-edc8-4e61-9dea-4afd144f438b">
+  <producedTypes>
+    <objectType typeId="12821dc0-0440-4974-a07a-b00dfe39bb05" valueTypeId="60c7a386-70a4-45e5-8876-2b94310feb19"/>
+    <managerType typeId="75e00bdd-f62d-4d57-9521-422b0fe4ce2c" valueTypeId="66fc044a-9b20-48cd-a377-f8a85602958a"/>
+  </producedTypes>
+  <name>SelectCCDNumbersToDocuments</name>
+  <synonym>
+    <key>en</key>
+    <value>Select CCD numbers to documents</value>
+  </synonym>
+  <synonym>
+    <key>fa</key>
+    <value>انتخاب شماره‌های CCD برای اسناد</value>
+  </synonym>
+  <synonym>
+    <key>it</key>
+    <value>Selezione numeri polizza doganale di carico nei documenti</value>
+  </synonym>
+  <synonym>
+    <key>pl</key>
+    <value>Wybór numerów ładunkowych deklaracji celnych do dokumentów</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>Подбор номеров ГТД в документы</value>
+  </synonym>
+  <synonym>
+    <key>tr</key>
+    <value>Belgelerde GTD numaralarının seçimi</value>
+  </synonym>
+  <synonym>
+    <key>vi</key>
+    <value>Chọn số tờ khai hải quan vào chứng từ</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.SelectCCDNumbersToDocuments.Form.Form</defaultForm>
+  <attributes uuid="0716262b-f794-4e57-b6fe-fcffd46d4a02">
+    <name>CCDNumberType</name>
+    <synonym>
+      <key>en</key>
+      <value>CCD number type</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>نوع شماره اظهارنامه گمرکی (CCD)</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Tipo di numero di polizza doganale di carico</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Typ numeru ładunkowej deklaracji celnej</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Тип номера ГТД</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Numara türü GKB</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Kiểu số tờ khai hải quan</value>
+    </synonym>
+    <type>
+      <types>EnumRef.CCDNumberTypes</types>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>Catalog item type.</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>نوع قلم فهرست.</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Tipo di elemento della directory.</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Typ elementu katalogu</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Тип элемента справочника.</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Öğe kataloğu tipi</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Kiểu phần tử của danh mục.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="47bea02f-1081-46c0-9c53-41203b412fff">
+    <name>Code</name>
+    <synonym>
+      <key>en</key>
+      <value>Customs declaration number</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>شماره اظهارنامه گمرکی</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Numero della dichiarazione doganale</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Numer deklaracji celnej</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Номер таможенной декларации</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Gümrük beyanname numarası</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Số tờ khai hải quan</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="e17b147f-9958-4c74-bfda-5f267789d25e">
+    <name>OriginCountry</name>
+    <synonym>
+      <key>en</key>
+      <value>Country of origin</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>کشور مبدأ</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Paese di origine</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Kraj pochodzenia</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Страна происхождения</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Menşei ülke</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Nước xuất xứ</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.WorldCountries</types>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>Country that imported a product item.</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>کشوری که قلم محصول را وارد کرده است.</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Il paese da cui è stata importata la posizione di articoli.</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Kraj, z którego została zaimportowana pozycja nomenklatury</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Страна, из которой ввезена позиция номенклатуры.</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Öğenin ithal edildiği ülke.</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Quốc gia mà mặt hàng đã được nhập khẩu.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="e1b3600d-52bf-40bc-a56f-1c07ee5a4e93">
+    <name>RegistrationNumber</name>
+    <synonym>
+      <key>en</key>
+      <value>Registration number</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>شماره ثبت</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Numero di registrazione</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Numer rejestracyjny</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Регистрационный номер</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Kayıt numarası</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Số đăng ký</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>29</length>
+      </stringQualifiers>
+    </type>
+    <mask>99999999/999999/NN999999</mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="3d16f386-9cbb-4416-b68b-5f1d44b385e6">
+    <name>ImportingCountryIsNotRF</name>
+    <synonym>
+      <key>en</key>
+      <value>Importing country is not the RF</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>کشور واردکننده فدراسیون روسیه نیست</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Il paese d'importazione non è la Federazione Russa</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Kraj importu nie RF</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Страна ввоза не РФ</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>İthalat ülkesi Rusya Federasyonu değil</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Nước nhập khẩu, không phải Việt Nam</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="6b58f64e-a397-48a2-b8bf-c24201f6d6a3">
+    <name>GoodsSequenceNumber</name>
+    <synonym>
+      <key>en</key>
+      <value>Goods sequence number</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>شماره ردیف کالا</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Numero ordinale della merce</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Numer produktu</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Порядковый номер товара</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ürünün sıra numarası</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Số thứ tự của hàng hóa</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>3</length>
+      </stringQualifiers>
+    </type>
+    <mask>999</mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="e67b8567-bb87-41eb-98b6-ee082b4e894c">
+    <name>NumberOfComponents_</name>
+    <synonym>
+      <key>en</key>
+      <value>Component quantity</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>مقدار اجزا</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Numero componenti</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Ilość komponentów</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Количество комплектующих</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Bileşen miktarı</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Số lượng thành phần chi tiết</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>Number of rows in the Traceable components table</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>تعداد سطرهای جدول اجزای قابل ردیابی</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Numero righe nella parte tabellare Componenti tracciabili</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Ilość wierszy w sekcji tabelarycznej Identyfikowalne komponenty</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество строк в табличной части Прослеживаемые комплектующие</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>İzlenebilir bileşenler tablo kısmında satır miktarı</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Số lượng dòng trong phần bảng Thành phần chi tiết có nguồn gốc xuất xứ</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ec060340-eeee-4ade-ba09-e1fa70059085">
+    <name>Products</name>
+    <synonym>
+      <key>en</key>
+      <value>Item</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>قلم</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Öğe</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Mặt hàng</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Item</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Item</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Products</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Filter.ItemsType</name>
+      <value xsi:type="core:FixedArrayValue">
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ItemsTypes.EnumValue.OwnGoods</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ItemsTypes.EnumValue.ReusablePackage</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ItemsTypes.EnumValue.Work_5</value>
+        </values>
+      </value>
+    </choiceParameters>
+    <choiceParameters>
+      <name>Filter.TracedGoods</name>
+      <value xsi:type="core:BooleanValue">
+        <value>true</value>
+      </value>
+    </choiceParameters>
+  </attributes>
+  <attributes uuid="1047db9e-3120-4686-8416-7604252a33b7">
+    <name>ProductName</name>
+    <synonym>
+      <key>en</key>
+      <value>Item name</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>نام قلم</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Nome dell'articolo</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Nazwa towaru</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Наименование номенклатуры</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Öğe tanımı</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Tên gọi mặt hàng</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>255</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5163a75a-4cc9-426a-bfe5-10fb6b0941b9">
+    <name>UnitOfMeasure</name>
+    <synonym>
+      <key>en</key>
+      <value>Unit of measure</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>واحد اندازه‌گیری</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Unità di misura</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Jednosta miary</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Единица измерения</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ölçü birimi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Đơn vị tính</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.PackagesAndUnitsOfMeasure</types>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>This unit of measure is used to account the balance of goods imported by company, which are subject to traceability.</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>این واحد اندازه‌گیری برای حسابداری مانده کالاهای وارداتی شرکت که مشمول ردیابی هستند استفاده می‌شود.</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>In questa unità di misura viene effettuata la contabilità dei saldi dei prodotti importati soggetti a tracciabilità dell'organizzazione.</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>W tej jednostce miary jest prowadzona ewidencja ostatków importowanych towarów firmy, podlegających identyfikowalności.</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>В этой единице измерения ведется учет остатков импортных товаров организации, подлежащих прослеживаемости.</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>İş yerinin izlenebilirliğe tabi ithal ürünleri bakiyelerinin muhasebesi bu ölçü biriminde tutuluyor.</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Đơn vị tính này theo dõi số dư hàng hóa nhập khẩu của doanh nghiệp phải truy xuất nguồn gốc.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Filter.Owner</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Catalog.PackagingGroups.BasicUnitsOfMeasure</value>
+      </value>
+    </choiceParameters>
+  </attributes>
+  <attributes uuid="0491c8b7-7668-40b7-b1b3-bacd1ab06c0d">
+    <name>AmountByProductBatchID</name>
+    <synonym>
+      <key>en</key>
+      <value>Cost</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>بهای تمام‌شده</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Maliyet</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Giá trị</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Cost</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Cost</value>
+    </synonym>
+    <type>
+      <types>DefinedType.MonetaryAmountNonNegative</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="32c1a0fa-d54d-4390-b15e-98016a05453e">
+    <producedTypes>
+      <objectType typeId="1199d1bf-4983-4cc6-9893-0c4214d2d1d4" valueTypeId="70e66f4f-889d-48bd-bbb8-8631aa09cbe4"/>
+      <rowType typeId="f4c458e3-0ca6-4ba8-b033-c254f39acb1c" valueTypeId="ee582abd-d021-469b-8dcb-16df1d90ab23"/>
+    </producedTypes>
+    <name>TraceableComponents</name>
+    <synonym>
+      <key>en</key>
+      <value>Traceable components</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>اجزای قابل ردیابی</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Componenti tracciabili</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Komponenty identyfikowalne</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Прослеживаемые комплектующие</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>İzlenebilir bileşenler</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Thành phần chi tiết có nguồn gốc xuất xứ</value>
+    </synonym>
+    <fillChecking>ShowError</fillChecking>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="10d81bcf-b9c1-4a3e-ba63-24eca0284989">
+      <name>ProductBatchIDNumber</name>
+      <synonym>
+        <key>en</key>
+        <value>RNPT</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>RNPT</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Numero di registrazione lotti prodotti</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Numer rejestracyjny partii towaru</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Номер РНПТ</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>RNPT numarası</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Số đăng ký lô hàng</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.CCDNumbers</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="887b28d0-5dba-46f5-adfa-7f1e7c865f22">
+      <name>Code</name>
+      <synonym>
+        <key>en</key>
+        <value>Code</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>کد</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Codice</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Kod</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Код</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Kod</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Mã</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e1f90e26-27cd-410e-a42a-1ff220054af4">
+      <name>QuantityByRNPTInADocument</name>
+      <synonym>
+        <key>en</key>
+        <value>Quantity by RNPT (in a document)</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>مقدار بر اساس RNPT (در سند)</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Quantità in base al numero di registrazione lotti prodotti (nel documento)</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Ilość według numerów rejestracyjnych partii towaru (w dokuencie)</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Количество по РНПТ (в документе)</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>RNTP'ye göre miktar (belgede)</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Số lượng theo số đăng ký lô hàng (trong chứng từ)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>23</precision>
+          <scale>11</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Quantity by a document in traceability units.</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>مقدار بر اساس سند به واحدهای قابل ردیابی.</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Quantità secondo il documento in unità di tracciabilità.</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Ilość według dokumentu w jednostkach identyfikowalności.</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество по документу в единицах прослеживаемости.</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>İzlenebilirlik birimleri cinsinden belge başına miktar.</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Số lượng trong chứng từ theo đơn vị truy xuất nguồn gốc.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7b89d4f6-75b7-4997-a397-bc5049f1782a">
+      <name>QuantityByGBRN</name>
+      <synonym>
+        <key>en</key>
+        <value>Quantity by RNPT</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>مقدار بر اساس RNPT</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Quantità per numero di registrazione lotti prodotti</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Ilość wg numeru rejestracyjnego partii towaru</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Количество по РНПТ</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>RNPT'ye göre miktar</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Số lượng theo số đăng ký lô hàng</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>23</precision>
+          <scale>11</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Quantity in traceability units.</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>مقدار به واحدهای ردیابی.</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Quantità in unità di tracciabilità.</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Ilość w jednostkach identyfikowalności.</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество в единицах прослеживаемости.</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>İzlenebilirlik birimi cinsinden miktar.</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Số lượng đơn vị truy xuất nguồn gốc</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6eb8684d-b608-4b21-94a3-fdcaa2ae4941">
+      <name>FEACNUnitOfMeasure</name>
+      <synonym>
+        <key>en</key>
+        <value>Unit of measure</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>واحد اندازه‌گیری</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Unità di misura</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Jednosta miary</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Единица измерения</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Ölçü birimi</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Đơn vị tính</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.PackagesAndUnitsOfMeasure</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>This unit of measure is used to account the balance of goods imported by company, which are subject to traceability.</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>این واحد اندازه‌گیری برای حسابداری مانده کالاهای وارداتی شرکت که مشمول ردیابی هستند استفاده می‌شود.</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>In questa unità di misura viene effettuata la contabilità dei saldi dei prodotti importati soggetti a tracciabilità dell'organizzazione.</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>W tej jednostce miary jest prowadzona ewidencja ostatków importowanych towarów firmy, podlegających identyfikowalności.</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>В этой единице измерения ведется учет остатков импортных товаров организации, подлежащих прослеживаемости.</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>İş yerinin izlenebilirliğe tabi ithal ürünleri bakiyelerinin muhasebesi bu ölçü biriminde tutuluyor.</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Đơn vị tính này theo dõi số dư hàng hóa nhập khẩu của doanh nghiệp phải truy xuất nguồn gốc.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a33242ad-4e6d-4f0b-b473-44d6e21fb3a9">
+      <name>AmountByProductBatchIDInDocument</name>
+      <synonym>
+        <key>en</key>
+        <value>Cost (in document)</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>بها (در سند)</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Стоимость (в документе)</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Maliyet (belgede)</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Giá trị (trong chứng từ)</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Cost (in document)</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Cost (in document)</value>
+      </synonym>
+      <type>
+        <types>DefinedType.MonetaryAmountNonNegative</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="eb867600-43f9-4d5a-b841-c81aff20a197">
+      <name>AmountByProductBatchID</name>
+      <synonym>
+        <key>en</key>
+        <value>Cost (in kit)</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>بها (در کیت)</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Стоимость (в комплекте)</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Maliyet (setteki)</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Giá trị (trong bộ đóng gói)</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Cost (in kit)</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Cost (in kit)</value>
+      </synonym>
+      <type>
+        <types>DefinedType.MonetaryAmountNonNegative</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="94c7228e-9ffe-467e-95d3-d642f082d365">
+    <name>Form</name>
+    <synonym>
+      <key>en</key>
+      <value>Form</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>فرم</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Modulo</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Formularz</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Form</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Biểu mẫu</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

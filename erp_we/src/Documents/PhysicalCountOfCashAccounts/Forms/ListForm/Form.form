@@ -1,0 +1,4493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form" xmlns:schema="http://g5.1c.ru/v8/dt/data-composition-system/schema">
+  <title>
+    <key>en</key>
+    <value>Petty cash audits</value>
+  </title>
+  <title>
+    <key>fa</key>
+    <value>حسابرسی‌های صندوق تنخواه</value>
+  </title>
+  <title>
+    <key>it</key>
+    <value>Inventarii del contante disponibile</value>
+  </title>
+  <title>
+    <key>pl</key>
+    <value>Inwentaryzacji gotówki</value>
+  </title>
+  <title>
+    <key>ru</key>
+    <value>Инвентаризации наличных денежных средств</value>
+  </title>
+  <title>
+    <key>tr</key>
+    <value>Nakit varlıkların fiziksel stok sayımı</value>
+  </title>
+  <title>
+    <key>vi</key>
+    <value>Kiểm kê tiền mặt</value>
+  </title>
+  <items xsi:type="form:FormGroup">
+    <name>Filters</name>
+    <id>28</id>
+    <items xsi:type="form:FormField">
+      <name>CompanyFilter</name>
+      <id>30</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Organization</segments>
+      </dataPath>
+      <handlers>
+        <event>OnChange</event>
+        <name>CompanyFilterOnChange</name>
+      </handlers>
+      <extendedTooltip>
+        <name>CompanyFilterExtendedTooltip</name>
+        <id>32</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>CompanyFilterContextMenu</name>
+        <id>31</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <width>28</width>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <horizontalStretch>false</horizontalStretch>
+        <wrap>true</wrap>
+        <clearButton>true</clearButton>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>CashRegisterSelection</name>
+      <id>54</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>CashBookPresentation</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>CashRegisterSelectionExtendedTooltip</name>
+        <id>56</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>CashRegisterSelectionContextMenu</name>
+        <id>55</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <handlers>
+          <event>StartChoice</event>
+          <name>CashRegisterSelectionStartChoice</name>
+        </handlers>
+        <handlers>
+          <event>Clearing</event>
+          <name>CashRegisterSelectionClearing</name>
+        </handlers>
+        <handlers>
+          <event>ChoiceProcessing</event>
+          <name>CashRegisterSelectionChoiceProcessing</name>
+        </handlers>
+        <width>28</width>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <horizontalStretch>false</horizontalStretch>
+        <wrap>true</wrap>
+        <dropListButton>true</dropListButton>
+        <choiceButton>true</choiceButton>
+        <clearButton>true</clearButton>
+        <quickChoice>false</quickChoice>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+        <choiceParameterLinks>
+          <name>Filter.Owner</name>
+          <datapath xsi:type="form:DataPath">
+            <segments>Organization</segments>
+          </datapath>
+        </choiceParameterLinks>
+        <choiceHistoryOnInput>DontUse</choiceHistoryOnInput>
+      </extInfo>
+    </items>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>en</key>
+      <value>Filters</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>فیلترها</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Selezioni</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Filtr</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Отборы</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Filtreler</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Lọc</value>
+    </title>
+    <extendedTooltip>
+      <name>FiltersExtendedTooltip</name>
+      <id>29</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>UsualGroup</type>
+    <extInfo xsi:type="form:UsualGroupExtInfo">
+      <showLeftMargin>true</showLeftMargin>
+      <united>true</united>
+      <throughAlign>Auto</throughAlign>
+      <currentRowUse>Auto</currentRowUse>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormGroup">
+    <name>SettingsComposerUserSettingsList</name>
+    <id>1</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>en</key>
+      <value>User settings group</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>گروه تنظیمات کاربر</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Gruppo delle impostazioni specifiche per l'utente</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Grupa ustawień użytkownika</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Группа пользовательских настроек</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Kullanıcı ayarları grubu</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Nhóm tùy chỉnh tự tạo</value>
+    </title>
+    <extendedTooltip>
+      <name>SettingsComposerUserSettingsListExtendedTooltip</name>
+      <id>2</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>UsualGroup</type>
+    <extInfo xsi:type="form:UsualGroupExtInfo">
+      <group>Vertical</group>
+      <representation>WeakSeparation</representation>
+      <showLeftMargin>true</showLeftMargin>
+      <united>true</united>
+      <throughAlign>Auto</throughAlign>
+      <currentRowUse>Auto</currentRowUse>
+    </extInfo>
+  </items>
+  <items xsi:type="form:Table">
+    <name>List</name>
+    <id>3</id>
+    <title>
+      <key>en</key>
+      <value>List</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>فهرست</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Elenco</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Lista</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Список</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Liste</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Danh sách</value>
+    </title>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <dataPath xsi:type="form:DataPath">
+      <segments>List</segments>
+    </dataPath>
+    <defaultItem>true</defaultItem>
+    <titleLocation>None</titleLocation>
+    <excludedCommands>Copy</excludedCommands>
+    <excludedCommands>Create</excludedCommands>
+    <excludedCommands>Delete</excludedCommands>
+    <items xsi:type="form:FormField">
+      <name>Number</name>
+      <id>25</id>
+      <title>
+        <key>en</key>
+        <value>Number</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>شماره</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Numero</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Numer</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Номер</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Numara</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Số</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>List.Number</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>NumberExtendedTooltip</name>
+        <id>27</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>NumberContextMenu</name>
+        <id>26</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>LabelField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:LabelFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>ReverseTransactionCorrection</name>
+      <id>96</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>List.ReverseTransactionCorrection</segments>
+      </dataPath>
+      <titleLocation>None</titleLocation>
+      <toolTip>
+        <key>en</key>
+        <value>Correction or storno</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>اصلاح یا استورنو</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Correzione o storno</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Korekta lub storno</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Исправление или сторно</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Düzeltme veya iptal</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Điều chỉnh hoặc đảo ngược</value>
+      </toolTip>
+      <extendedTooltip>
+        <name>ReverseTransactionCorrectionExtendedTooltip</name>
+        <id>98</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ReverseTransactionCorrectionContextMenu</name>
+        <id>97</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>CheckBoxField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerPicture xsi:type="core:PictureRef">
+        <picture>CommonPicture.ManualChangesWereMadeToWorkCenterTimetable</picture>
+      </headerPicture>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>Date</name>
+      <id>87</id>
+      <title>
+        <key>en</key>
+        <value>Date</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>تاریخ</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Data</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Data</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Дата</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Tarih</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Ngày</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>List.Date</segments>
+      </dataPath>
+      <defaultItem>true</defaultItem>
+      <extendedTooltip>
+        <name>DateExtendedTooltip</name>
+        <id>89</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>DateContextMenu</name>
+        <id>88</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>LabelField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:LabelFieldExtInfo">
+        <width>9</width>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>Organization</name>
+      <id>36</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>List.Organization</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>OrganizationExtendedTooltip</name>
+        <id>38</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>OrganizationContextMenu</name>
+        <id>37</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>LabelField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:LabelFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>CashBook</name>
+      <id>57</id>
+      <title>
+        <key>en</key>
+        <value>Cash book</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>دفتر صندوق</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Registro di cassa</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Księga gotówkowa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Кассовая книга</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Kasa defteri</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Sổ quỹ tiền mặt</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>List.CashBook</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>CashBookExtendedTooltip</name>
+        <id>59</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>CashBookContextMenu</name>
+        <id>58</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>LabelField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:LabelFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>Shortage_</name>
+      <id>68</id>
+      <title>
+        <key>en</key>
+        <value>Shortage</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>کسری</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Quantità mancante</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Brakująca dostawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Недостача</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Eksiklik</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Thiếu</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>List.Shortage_</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>Shortage_ExtendedTooltip</name>
+        <id>70</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>Shortage_ContextMenu</name>
+        <id>69</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>LabelField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:LabelFieldExtInfo">
+        <width>16</width>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>Surplus</name>
+      <id>65</id>
+      <title>
+        <key>en</key>
+        <value>Overage</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>مازاد</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Eccedenza</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Nadmiar</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Излишек</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Fazlalık</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Thừa</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>List.Surplus</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>SurplusExtendedTooltip</name>
+        <id>67</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>SurplusContextMenu</name>
+        <id>66</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>LabelField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:LabelFieldExtInfo">
+        <width>16</width>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>LocalAccountingCurrency</name>
+      <id>150</id>
+      <title>
+        <key>en</key>
+        <value>Local accounting currency</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>ارز حسابداری محلی</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Valuta della contabilità regolatoria</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Waluta podstawowa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Валюта регламентированного учета</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Yerel muhasebe para birimi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Tiền tệ kế toán tài chính</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>List.LocalAccountingCurrency</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>LocalAccountingCurrencyExtendedTooltip</name>
+        <id>152</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>LocalAccountingCurrencyContextMenu</name>
+        <id>151</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>ReversedCorrectedDocument</name>
+      <id>147</id>
+      <title>
+        <key>en</key>
+        <value>Corrected (reversed) document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند اصلاح‌شده (برگشت‌خورده)</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Documento da correggere (da stornare)</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Poprawiany (stornowany) dokument</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Исправляемый (сторнируемый) документ</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Düzeltilebilen (iptal edilebilen) belge</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Chứng từ điều chỉnh (đảo ngược)</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>List.ReversedCorrectedDocument</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>ReversedCorrectedDocumentExtendedTooltip</name>
+        <id>149</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ReversedCorrectedDocumentContextMenu</name>
+        <id>148</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>StatusPresentation</name>
+      <id>101</id>
+      <title>
+        <key>en</key>
+        <value>EDI state</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>وضعیت EDI</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Stato di flusso di documenti elettronici</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Stan elektronicznego obiegu dokumentów</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Состояние ЭДО</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>EDI durumu</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Trạng thái chứng từ điện tử</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>List.StatusPresentation</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>StatusPresentationExtendedTooltip</name>
+        <id>100</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>StatusPresentationContextMenu</name>
+        <id>99</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>LabelField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:LabelFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>Comment</name>
+      <id>42</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>List.Comment</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>CommentExtendedTooltip</name>
+        <id>44</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>CommentContextMenu</name>
+        <id>43</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>LabelField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:LabelFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>Author</name>
+      <id>144</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>List.Author</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>AuthorExtendedTooltip</name>
+        <id>146</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>AuthorContextMenu</name>
+        <id>145</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>LabelField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:LabelFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>Ref</name>
+      <id>62</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible/>
+      <dataPath xsi:type="form:DataPath">
+        <segments>List.Ref</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>RefExtendedTooltip</name>
+        <id>64</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>RefContextMenu</name>
+        <id>63</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>LabelField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:LabelFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+      </extInfo>
+    </items>
+    <autoCommandBar>
+      <name>ListCommandBar</name>
+      <id>5</id>
+      <items xsi:type="form:FormGroup">
+        <name>ListGroupCreateGenerated</name>
+        <id>155</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>Create</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>ایجاد</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Creare</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Utwórz</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Создать</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Oluştur</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Tạo mới</value>
+        </title>
+        <extendedTooltip>
+          <name>ListGroupCreateGeneratedExtendedTooltip</name>
+          <id>156</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <extInfo xsi:type="form:ButtonGroupExtInfo"/>
+      </items>
+      <items xsi:type="form:Button">
+        <name>ListHelp</name>
+        <id>71</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>ListHelpExtendedTooltip</name>
+          <id>72</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.StandardCommand.Help</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
+      <items xsi:type="form:Button">
+        <name>ListCustomizeForm</name>
+        <id>73</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>ListCustomizeFormExtendedTooltip</name>
+          <id>74</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.StandardCommand.CustomizeForm</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
+      <items xsi:type="form:Button">
+        <name>ListCopy</name>
+        <id>114</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>ListCopyExtendedTooltip</name>
+          <id>115</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.Command.ListCopy</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+        <locationInCommandBar>InCommandBarAndInAdditionalSubmenu</locationInCommandBar>
+      </items>
+      <items xsi:type="form:Button">
+        <name>ListSetDateInterval</name>
+        <id>153</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>ListSetDateIntervalExtendedTooltip</name>
+          <id>154</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.Command.SetDateInterval</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
+      <items xsi:type="form:FormGroup">
+        <name>CreateBasedOnSubmenu</name>
+        <id>77</id>
+        <items xsi:type="form:FormGroup">
+          <name>SubmenuGenerateImportant</name>
+          <id>90</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <title>
+            <key>en</key>
+            <value>Generate (Important)</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>ایجاد (مهم)</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Creare sulla base (Importante)</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Utwórz na podstawie (Ważne)</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Создать на основании (Важное)</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Yeni belgeye aktar (Önemli)</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Tạo trên cơ sở (Quan trọng)</value>
+          </title>
+          <extendedTooltip>
+            <name>SubmenuGenerateImportantExtendedTooltip</name>
+            <id>91</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <extInfo xsi:type="form:ButtonGroupExtInfo"/>
+        </items>
+        <items xsi:type="form:FormGroup">
+          <name>SubmenuGenerateStandard</name>
+          <id>92</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <title>
+            <key>en</key>
+            <value>Generate (Standard)</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>ایجاد (استاندارد)</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Creare sulla base (Standard)</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Utwórz na podstawie (Zwykłe)</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Создать на основании (Обычное)</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Yeni belgeye aktar (Normal)</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Tạo trên cơ sở (Thường)</value>
+          </title>
+          <extendedTooltip>
+            <name>SubmenuGenerateStandardExtendedTooltip</name>
+            <id>93</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <extInfo xsi:type="form:ButtonGroupExtInfo"/>
+        </items>
+        <items xsi:type="form:FormGroup">
+          <name>SubmenuCreateOnTheBasisSeeAlso</name>
+          <id>94</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <title>
+            <key>en</key>
+            <value>Generate (See also)</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>ایجاد (مرتبط)</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Creare sulla base (Vedi anche)</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Utwórz na podstawie (Zob. również)</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Создать на основании (См. также)</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Yeni belgeye aktar (Ayrıca bakınız)</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Tạo trên cơ sở (Xem thêm)</value>
+          </title>
+          <extendedTooltip>
+            <name>SubmenuCreateOnTheBasisSeeAlsoExtendedTooltip</name>
+            <id>95</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <extInfo xsi:type="form:ButtonGroupExtInfo"/>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>Generate</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>ایجاد</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Creare sulla base</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Utwórz na podstawie</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Создать на основании</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Yeni belgeye aktar</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Tạo trên cơ sở</value>
+        </title>
+        <extendedTooltip>
+          <name>CreateBasedOnSubmenuExtendedTooltip</name>
+          <id>78</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>Popup</type>
+        <extInfo xsi:type="form:PopupGroupExtInfo">
+          <picture xsi:type="core:PictureRef">
+            <picture>CommonPicture.FillFromTemplate</picture>
+          </picture>
+          <representation>Picture</representation>
+        </extInfo>
+      </items>
+      <items xsi:type="form:Button">
+        <name>ListOfAccountingRegisterInternationalTransactionsOfTheOperationalAccountingDocument</name>
+        <id>104</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>Items.List.CurrentData.Ref</segments>
+        </dataPath>
+        <extendedTooltip>
+          <name>ListOfAccountingRegisterInternationalTransactionsOfTheOperationalAccountingDocumentExtendedTooltip</name>
+          <id>105</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>DataProcessor.DocumentPostingInFinancialAccounting.Command.AccountingEntries</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
+      <items xsi:type="form:Button">
+        <name>ListProcessingReflectionOfDocumentsInReglAccountingReglAccountingTransactions</name>
+        <id>106</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>Items.List.CurrentData.Ref</segments>
+        </dataPath>
+        <extendedTooltip>
+          <name>ListProcessingReflectionOfDocumentsInReglAccountingReglAccountingTransactionsExtendedTooltip</name>
+          <id>107</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>0</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
+      <items xsi:type="form:FormGroup">
+        <name>GlobalCommandsGroup</name>
+        <id>60</id>
+        <items xsi:type="form:FormGroup">
+          <name>EDOSubmenu</name>
+          <id>102</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <title>
+            <key>en</key>
+            <value>EDI</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>EDI</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Flusso di documenti elettronici</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>EOD</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>ЭДО</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>EDI</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Quản lý văn bản điện tử</value>
+          </title>
+          <toolTip>
+            <key>en</key>
+            <value>Data interchange commands</value>
+          </toolTip>
+          <toolTip>
+            <key>fa</key>
+            <value>فرمان‌های تبادل داده</value>
+          </toolTip>
+          <toolTip>
+            <key>it</key>
+            <value>Comandi dell'interscambio di documenti elettronici</value>
+          </toolTip>
+          <toolTip>
+            <key>pl</key>
+            <value>Polecenia elektronicznego obiegu dokumentów</value>
+          </toolTip>
+          <toolTip>
+            <key>ru</key>
+            <value>Команды электронного документооборота</value>
+          </toolTip>
+          <toolTip>
+            <key>tr</key>
+            <value>Elektronik belge yönetimi komutları</value>
+          </toolTip>
+          <toolTip>
+            <key>vi</key>
+            <value>Các lệnh quản lý chứng từ điện tử</value>
+          </toolTip>
+          <extendedTooltip>
+            <name>EDOSubmenuExtendedTooltip</name>
+            <id>103</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <type>Popup</type>
+          <extInfo xsi:type="form:PopupGroupExtInfo">
+            <representation>Auto</representation>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormGroup">
+          <name>PrintSubmenu</name>
+          <id>75</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <title>
+            <key>en</key>
+            <value>Print</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>چاپ</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Stampa</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Drukuj</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Печать</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Yazdır</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>In</value>
+          </title>
+          <toolTip>
+            <key>en</key>
+            <value>Print commands</value>
+          </toolTip>
+          <toolTip>
+            <key>fa</key>
+            <value>فرمان‌های چاپ</value>
+          </toolTip>
+          <toolTip>
+            <key>it</key>
+            <value>Comandi di stampa</value>
+          </toolTip>
+          <toolTip>
+            <key>pl</key>
+            <value>Polecenia druku</value>
+          </toolTip>
+          <toolTip>
+            <key>ru</key>
+            <value>Команды печати</value>
+          </toolTip>
+          <toolTip>
+            <key>tr</key>
+            <value>Yazdırma komutları</value>
+          </toolTip>
+          <toolTip>
+            <key>vi</key>
+            <value>Lệnh in</value>
+          </toolTip>
+          <extendedTooltip>
+            <name>PrintSubmenuExtendedTooltip</name>
+            <id>76</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <type>Popup</type>
+          <extInfo xsi:type="form:PopupGroupExtInfo">
+            <picture xsi:type="core:PictureRef">
+              <picture>StdPicture.Print</picture>
+            </picture>
+            <representation>Auto</representation>
+          </extInfo>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>Form commands group</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>گروه فرمان‌های فرم</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Gruppo comandi moduli</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Grupa polecenia formularza</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Группа команды формы</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Form komut grubu</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Nhóm lệnh biểu mẫu</value>
+        </title>
+        <extendedTooltip>
+          <name>GlobalCommandsGroupExtendedTooltip</name>
+          <id>61</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <extInfo xsi:type="form:ButtonGroupExtInfo">
+          <commandSource>FormCommandPanelGlobalCommands</commandSource>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormGroup">
+        <name>SubmenuOrganizer</name>
+        <id>108</id>
+        <items xsi:type="form:Button">
+          <name>FormCommonCommandRemind</name>
+          <id>110</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Items.List.CurrentData.Ref</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>FormCommonCommandRemindExtendedTooltip</name>
+            <id>111</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <commandName>CommonCommand.Remind</commandName>
+          <representation>Auto</representation>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <placementArea>UserCmds</placementArea>
+          <representationInContextMenu>Auto</representationInContextMenu>
+        </items>
+        <items xsi:type="form:Button">
+          <name>FormGeneralCommandCreateANoteOnTheSubject</name>
+          <id>112</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Items.List.CurrentData.Ref</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>FormGeneralCommandCreateANoteOnTheSubjectExtendedTooltip</name>
+            <id>113</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <commandName>CommonCommand.CreateSubjectNote</commandName>
+          <representation>Auto</representation>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <placementArea>UserCmds</placementArea>
+          <representationInContextMenu>Auto</representationInContextMenu>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>Organizer</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>سازمان‌دهنده</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Agenda</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Terminarz</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Органайзер</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Düzenleyici</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Sổ tay</value>
+        </title>
+        <extendedTooltip>
+          <name>SubmenuOrganizerExtendedTooltip</name>
+          <id>109</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>Popup</type>
+        <extInfo xsi:type="form:PopupGroupExtInfo">
+          <picture xsi:type="core:PictureRef">
+            <picture>CommonPicture.Organizer</picture>
+          </picture>
+          <representation>Picture</representation>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormGroup">
+        <name>ReportsSubmenu</name>
+        <id>79</id>
+        <items xsi:type="form:FormGroup">
+          <name>ReportsImportantSubmenu</name>
+          <id>81</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <title>
+            <key>en</key>
+            <value>Important reports submenu</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>زیرمنوی گزارش‌های مهم</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Sottomenu dei report importante</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Podmenu raporty ważne</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Подменю отчеты важное</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Alt menü raporları önemli</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Menu con báo cáo quan trọng</value>
+          </title>
+          <extendedTooltip>
+            <name>ReportsImportantSubmenuExtendedTooltip</name>
+            <id>82</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <extInfo xsi:type="form:ButtonGroupExtInfo"/>
+        </items>
+        <items xsi:type="form:FormGroup">
+          <name>SubmenuReportsStandard</name>
+          <id>83</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <title>
+            <key>en</key>
+            <value>Standard reports submenu</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>زیرمنوی گزارش‌های استاندارد</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Sottomenu dei report standard</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Podmenu raporty zwykłe</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Подменю отчеты обычное</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Alt menü raporları normal</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Menu con báo cáo bình thường</value>
+          </title>
+          <toolTip>
+            <key>en</key>
+            <value>Important reports submenu</value>
+          </toolTip>
+          <toolTip>
+            <key>fa</key>
+            <value>زیرمنوی گزارش‌های مهم</value>
+          </toolTip>
+          <toolTip>
+            <key>it</key>
+            <value>Sottomenu dei report importante</value>
+          </toolTip>
+          <toolTip>
+            <key>pl</key>
+            <value>Podmenu raporty ważne</value>
+          </toolTip>
+          <toolTip>
+            <key>ru</key>
+            <value>Подменю отчеты важное</value>
+          </toolTip>
+          <toolTip>
+            <key>tr</key>
+            <value>Alt menü raporları önemli</value>
+          </toolTip>
+          <toolTip>
+            <key>vi</key>
+            <value>Menu con báo cáo quan trọng</value>
+          </toolTip>
+          <extendedTooltip>
+            <name>SubmenuReportsStandardExtendedTooltip</name>
+            <id>84</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <extInfo xsi:type="form:ButtonGroupExtInfo"/>
+        </items>
+        <items xsi:type="form:FormGroup">
+          <name>ReportsSubmenuSeeAlso</name>
+          <id>85</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <title>
+            <key>en</key>
+            <value>Submenu reports see also</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>زیرمنوی گزارش‌های مرتبط</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Sottomenu dei report, vedi anche</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Podmenu raporty zob. również</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Подменю отчеты см также</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Alt menü raporlar ayrıca bakınız</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Menu con báo cáo xem thêm</value>
+          </title>
+          <toolTip>
+            <key>en</key>
+            <value>Important reports submenu</value>
+          </toolTip>
+          <toolTip>
+            <key>fa</key>
+            <value>زیرمنوی گزارش‌های مهم</value>
+          </toolTip>
+          <toolTip>
+            <key>it</key>
+            <value>Sottomenu dei report importante</value>
+          </toolTip>
+          <toolTip>
+            <key>pl</key>
+            <value>Podmenu raporty ważne</value>
+          </toolTip>
+          <toolTip>
+            <key>ru</key>
+            <value>Подменю отчеты важное</value>
+          </toolTip>
+          <toolTip>
+            <key>tr</key>
+            <value>Alt menü raporları önemli</value>
+          </toolTip>
+          <toolTip>
+            <key>vi</key>
+            <value>Menu con báo cáo quan trọng</value>
+          </toolTip>
+          <extendedTooltip>
+            <name>ReportsSubmenuSeeAlsoExtendedTooltip</name>
+            <id>86</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <extInfo xsi:type="form:ButtonGroupExtInfo"/>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>Reports</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>گزارش‌ها</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Report</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Raporty</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Отчеты</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Raporlar</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Báo cáo</value>
+        </title>
+        <extendedTooltip>
+          <name>ReportsSubmenuExtendedTooltip</name>
+          <id>80</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>Popup</type>
+        <extInfo xsi:type="form:PopupGroupExtInfo">
+          <picture xsi:type="core:PictureRef">
+            <picture>CommonPicture.Reports</picture>
+          </picture>
+          <representation>Picture</representation>
+        </extInfo>
+      </items>
+      <items xsi:type="form:Button">
+        <name>ListGeneralCommandMoreInformationCommandPanel</name>
+        <id>116</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>Items.List.CurrentData.ReversedCorrectedDocument</segments>
+        </dataPath>
+        <extendedTooltip>
+          <name>ListGeneralCommandMoreInformationCommandPanelExtendedTooltip</name>
+          <id>117</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>CommonCommand.AdditionalInfoCommandBar</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
+      <horizontalAlign>Left</horizontalAlign>
+      <autoFill>true</autoFill>
+    </autoCommandBar>
+    <handlers>
+      <event>Selection</event>
+      <name>ListSelection</name>
+    </handlers>
+    <handlers>
+      <event>BeforeAddRow</event>
+      <name>ListBeforeAddRow</name>
+    </handlers>
+    <handlers>
+      <event>BeforeDeleteRow</event>
+      <name>ListBeforeDeleteRow</name>
+    </handlers>
+    <handlers>
+      <event>OnActivateRow</event>
+      <name>ListOnActivateRow</name>
+    </handlers>
+    <handlers>
+      <event>BeforeRowChange</event>
+      <name>ListBeforeRowChange</name>
+    </handlers>
+    <searchStringAddition>
+      <name>ListSearchString</name>
+      <id>7</id>
+      <extendedTooltip>
+        <name>ListSearchStringExtendedTooltip</name>
+        <id>11</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ListSearchStringContextMenu</name>
+        <id>10</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <source>List</source>
+      <extInfo xsi:type="form:SearchStringAdditionExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+      </extInfo>
+    </searchStringAddition>
+    <viewStatusAddition>
+      <name>ListViewStatus</name>
+      <id>12</id>
+      <extendedTooltip>
+        <name>ListViewStatusExtendedTooltip</name>
+        <id>16</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ListViewStatusContextMenu</name>
+        <id>15</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>ViewStatusAddition</type>
+      <source>List</source>
+      <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <horizontalLocation>Left</horizontalLocation>
+      </extInfo>
+    </viewStatusAddition>
+    <searchControlAddition>
+      <name>ListSearchControl</name>
+      <id>17</id>
+      <extendedTooltip>
+        <name>ListSearchControlExtendedTooltip</name>
+        <id>21</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ListSearchControlContextMenu</name>
+        <id>20</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>SearchControlAddition</type>
+      <source>List</source>
+      <extInfo xsi:type="form:SearchControlAdditionExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+      </extInfo>
+    </searchControlAddition>
+    <extendedTooltip>
+      <name>ListExtendedTooltip</name>
+      <id>6</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>ListContextMenu</name>
+      <id>4</id>
+      <items xsi:type="form:FormGroup">
+        <name>ListContextMenuGroupMain</name>
+        <id>118</id>
+        <items xsi:type="form:Button">
+          <name>ListContextMenuCopy</name>
+          <id>120</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <extendedTooltip>
+            <name>ListContextMenuCopyExtendedTooltip</name>
+            <id>121</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <commandName>Form.Command.ListCopy</commandName>
+          <representation>Auto</representation>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <placementArea>UserCmds</placementArea>
+          <representationInContextMenu>Auto</representationInContextMenu>
+        </items>
+        <items xsi:type="form:Button">
+          <name>ListContextMenuChange</name>
+          <id>122</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <extendedTooltip>
+            <name>ListContextMenuChangeExtendedTooltip</name>
+            <id>123</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <commandName>Form.StandardCommand.Change</commandName>
+          <representation>Auto</representation>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <placementArea>UserCmds</placementArea>
+          <representationInContextMenu>Auto</representationInContextMenu>
+        </items>
+        <items xsi:type="form:Button">
+          <name>ListContextMenuSetDeletionMark</name>
+          <id>124</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <extendedTooltip>
+            <name>ListContextMenuSetDeletionMarkExtendedTooltip</name>
+            <id>125</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <commandName>Form.Command.ListSetClearADeletionMark</commandName>
+          <representation>Auto</representation>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <placementArea>UserCmds</placementArea>
+          <representationInContextMenu>Auto</representationInContextMenu>
+        </items>
+        <items xsi:type="form:FormGroup">
+          <name>ListGroupSetIntervalContext</name>
+          <id>126</id>
+          <items xsi:type="form:Button">
+            <name>SetIntervalContextList</name>
+            <id>128</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <extendedTooltip>
+              <name>SetIntervalContextListExtendedTooltip</name>
+              <id>129</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <commandName>Form.Command.SetDateInterval</commandName>
+            <representation>Auto</representation>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <placementArea>UserCmds</placementArea>
+            <picture xsi:type="core:PictureRef">
+              <picture>StdPicture.SetDateInterval</picture>
+            </picture>
+            <representationInContextMenu>Auto</representationInContextMenu>
+          </items>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <title>
+            <key>en</key>
+            <value>List group set interval</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>بازه تنظیم گروه فهرست</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Elenco gruppo impostare intervallo</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Lista grupa ustaw interwał</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Список группа установить интервал</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Liste grup aralık ayarla</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Danh sách nhóm kỳ</value>
+          </title>
+          <extendedTooltip>
+            <name>ListGroupSetIntervalContextExtendedTooltip</name>
+            <id>127</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <extInfo xsi:type="form:ButtonGroupExtInfo"/>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>List context menu group main</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>گروه اصلی منوی زمینه فهرست</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Elenco menu contestuale gruppo principale</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Lista menu kontekstowe grupa podstawowe</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Список контекстное меню группа основное</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>İçerik menüsü listesi ana grup</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Danh sách nhóm ngữ cảnh chính</value>
+        </title>
+        <extendedTooltip>
+          <name>ListContextMenuGroupMainExtendedTooltip</name>
+          <id>119</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <extInfo xsi:type="form:ButtonGroupExtInfo"/>
+      </items>
+      <items xsi:type="form:FormGroup">
+        <name>ListContextMenuGroupMore</name>
+        <id>130</id>
+        <items xsi:type="form:Button">
+          <name>ListContextMenuPost</name>
+          <id>132</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <extendedTooltip>
+            <name>ListContextMenuPostExtendedTooltip</name>
+            <id>133</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <commandName>Form.Command.ListPost</commandName>
+          <representation>Auto</representation>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <placementArea>UserCmds</placementArea>
+          <representationInContextMenu>Auto</representationInContextMenu>
+        </items>
+        <items xsi:type="form:Button">
+          <name>ListContextMenuUndoPosting</name>
+          <id>134</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <extendedTooltip>
+            <name>ListContextMenuUndoPostingExtendedTooltip</name>
+            <id>135</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <commandName>Form.Command.ListUndoPosting</commandName>
+          <representation>Auto</representation>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <placementArea>UserCmds</placementArea>
+          <representationInContextMenu>Auto</representationInContextMenu>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>List context menu group more</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>گروه بیشتر منوی زمینه فهرست</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Elenco menu contestuale gruppo aggiuntivamente</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Lista menu kontekstowe grupa dodatkowo</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Список контекстное меню группа дополнительно</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>İçerik menüsü listesi ek grup</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Liệt kê nhóm menu ngữ cảnh tùy chọn</value>
+        </title>
+        <extendedTooltip>
+          <name>ListContextMenuGroupMoreExtendedTooltip</name>
+          <id>131</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <extInfo xsi:type="form:ButtonGroupExtInfo"/>
+      </items>
+      <items xsi:type="form:FormGroup">
+        <name>ListGroupSearchContext</name>
+        <id>136</id>
+        <items xsi:type="form:Button">
+          <name>ListSearchByCurrentValueContext</name>
+          <id>138</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <extendedTooltip>
+            <name>ListSearchByCurrentValueContextExtendedTooltip</name>
+            <id>139</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <commandName>Form.Item.List.StandardCommand.FindByCurrentValue</commandName>
+          <representation>Auto</representation>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <placementArea>UserCmds</placementArea>
+          <representationInContextMenu>Auto</representationInContextMenu>
+        </items>
+        <items xsi:type="form:Button">
+          <name>FindContextList</name>
+          <id>140</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <extendedTooltip>
+            <name>FindContextListExtendedTooltip</name>
+            <id>141</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <commandName>Form.Item.List.StandardCommand.Find</commandName>
+          <representation>Auto</representation>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <placementArea>UserCmds</placementArea>
+          <representationInContextMenu>Auto</representationInContextMenu>
+        </items>
+        <items xsi:type="form:Button">
+          <name>CancelSearchContextList</name>
+          <id>142</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <extendedTooltip>
+            <name>CancelSearchContextListExtendedTooltip</name>
+            <id>143</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <commandName>Form.Item.List.StandardCommand.CancelSearch</commandName>
+          <representation>Auto</representation>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <placementArea>UserCmds</placementArea>
+          <representationInContextMenu>Auto</representationInContextMenu>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>List group search</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>جستجوی گروه فهرست</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Elenco gruppo ricerca</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Lista grupa wyszukiwanie</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Список группа поиск</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Liste grup arama</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Danh sách nhóm tìm kiếm</value>
+        </title>
+        <extendedTooltip>
+          <name>ListGroupSearchContextExtendedTooltip</name>
+          <id>137</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <extInfo xsi:type="form:ButtonGroupExtInfo"/>
+      </items>
+    </contextMenu>
+    <changeRowSet>true</changeRowSet>
+    <changeRowOrder>true</changeRowOrder>
+    <autoMaxWidth>true</autoMaxWidth>
+    <autoMaxHeight>true</autoMaxHeight>
+    <autoMaxRowsCount>true</autoMaxRowsCount>
+    <selectionMode>MultiRow</selectionMode>
+    <header>true</header>
+    <headerHeight>1</headerHeight>
+    <footerHeight>1</footerHeight>
+    <horizontalScrollBar>AutoUse</horizontalScrollBar>
+    <verticalScrollBar>AutoUse</verticalScrollBar>
+    <horizontalLines>true</horizontalLines>
+    <verticalLines>true</verticalLines>
+    <useAlternationRowColor>true</useAlternationRowColor>
+    <searchOnInput>Auto</searchOnInput>
+    <initialListView>Auto</initialListView>
+    <initialTreeView>ExpandTopLevel</initialTreeView>
+    <horizontalStretch>true</horizontalStretch>
+    <verticalStretch>true</verticalStretch>
+    <enableStartDrag>true</enableStartDrag>
+    <rowPictureDataPath xsi:type="form:DataPath">
+      <segments>List.CustomPicture</segments>
+    </rowPictureDataPath>
+    <rowsPicture xsi:type="core:PictureRef">
+      <picture>CommonPicture.DocumentStates</picture>
+    </rowsPicture>
+    <extInfo xsi:type="form:DynamicListTableExtInfo">
+      <autoRefreshPeriod>60</autoRefreshPeriod>
+      <period>
+        <startDate>0001-01-01T00:00:00</startDate>
+        <endDate>0001-01-01T00:00:00</endDate>
+      </period>
+      <topLevelParent xsi:type="core:UndefinedValue"/>
+      <showRoot>true</showRoot>
+      <allowGettingCurrentRowURL>true</allowGettingCurrentRowURL>
+      <userSettingsGroup>SettingsComposerUserSettingsList</userSettingsGroup>
+    </extInfo>
+  </items>
+  <autoCommandBar>
+    <name>FormCommandBar</name>
+    <id>-1</id>
+    <horizontalAlign>Left</horizontalAlign>
+  </autoCommandBar>
+  <handlers>
+    <event>NotificationProcessing</event>
+    <name>NotificationProcessing</name>
+  </handlers>
+  <handlers>
+    <event>OnOpen</event>
+    <name>OnOpen</name>
+  </handlers>
+  <handlers>
+    <event>OnLoadDataFromSettingsAtServer</event>
+    <name>OnLoadDataFromSettingsAtServer</name>
+  </handlers>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>OnCreateAtServer</name>
+  </handlers>
+  <autoSaveDataInSettings>Use</autoSaveDataInSettings>
+  <saveDataInSettings>UseList</saveDataInSettings>
+  <saveWindowSettings>true</saveWindowSettings>
+  <group>Vertical</group>
+  <autoFillCheck>true</autoFillCheck>
+  <allowFormCustomize>true</allowFormCustomize>
+  <enabled>true</enabled>
+  <showTitle>true</showTitle>
+  <showCloseButton>true</showCloseButton>
+  <attributes>
+    <name>List</name>
+    <id>1</id>
+    <valueType>
+      <types>DynamicList</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>List.CashBook</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>List.DeletionMark</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>List.Organization</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>List.Posted</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>List.Ref</segments>
+    </notDefaultUseAlwaysAttributes>
+    <main>true</main>
+    <extInfo xsi:type="form:DynamicListExtInfo">
+      <queryText>SELECT
+	DocumentsRegistry.Ref AS Ref,
+	DocumentsRegistry.DeletionMark,
+	CASE
+		WHEN DocumentsRegistry.Posted
+			THEN 0
+		WHEN DocumentsRegistry.DeletionMark
+			THEN 1
+		ELSE 2
+	END AS CustomPicture,
+	DocumentsRegistry.Posted,
+	DocumentsRegistry.Organization,
+	DocumentsRegistry.Comment,
+	CASE
+		WHEN VALUETYPE(DocumentsRegistry.Ref) = TYPE(Document.ReversingEntry)
+			THEN CAST(DocumentsRegistry.ReversedDocument AS Document.PhysicalCountOfCashAccounts).CashBook
+		ELSE  CAST(DocumentsRegistry.Ref AS Document.PhysicalCountOfCashAccounts).CashBook
+	END AS CashBook,
+	DocumentsRegistry.IBDocumentNumber AS Number,
+	DocumentsRegistry.IBDocumentDate AS Date,
+	DocumentsRegistry.ReverseTransactionCorrection AS ReverseTransactionCorrection,
+	CASE
+		WHEN NOT DocumentsRegistry.ReverseTransactionCorrection
+			THEN UNDEFINED
+		ELSE DocumentsRegistry.ReversedDocument
+	END AS ReversedCorrectedDocument,
+	DocumentsRegistry.Author AS Author,
+	SUM(CASE 
+		WHEN Cash.RecordType = VALUE(AccumulationRecordType.Receipt)
+			THEN Cash.SumCompl
+				ELSE 0
+		END) AS Surplus,
+	SUM(CASE 
+		WHEN Cash.RecordType = VALUE(AccumulationRecordType.Expense)
+			THEN Cash.SumCompl
+				ELSE 0
+		END) AS Shortage_,
+  DocumentsRegistry.Organization.LocalAccountingCurrency AS LocalAccountingCurrency,
+	EDStates.EDIState,
+	EDStates.StatusPresentation
+FROM
+	InformationRegister.DocumentsRegistry AS DocumentsRegistry
+		LEFT JOIN AccumulationRegister.CashAccountBalance AS Cash
+			ON DocumentsRegistry.Ref = Cash.Recorder
+				AND NOT Cash.ReversingEntry
+		LEFT JOIN InformationRegister.StatesByEDIAccountingObjects AS EDStates
+		ON (EDStates.ObjectReference = DocumentsRegistry.Ref) 
+WHERE
+	NOT DocumentsRegistry.AdditionalRecord
+	AND DocumentsRegistry.RefType = &amp;RefType
+	
+GROUP BY
+	DocumentsRegistry.Ref,
+	DocumentsRegistry.DeletionMark,
+	CASE
+		WHEN DocumentsRegistry.Posted
+			THEN 0
+		WHEN DocumentsRegistry.DeletionMark
+			THEN 1
+		ELSE 2
+	END,
+	DocumentsRegistry.Posted,
+	DocumentsRegistry.Organization,
+	DocumentsRegistry.Comment,
+	CASE
+		WHEN VALUETYPE(DocumentsRegistry.Ref) = TYPE(Document.ReversingEntry)
+			THEN CAST(DocumentsRegistry.ReversedDocument AS Document.PhysicalCountOfCashAccounts).CashBook
+		ELSE  CAST(DocumentsRegistry.Ref AS Document.PhysicalCountOfCashAccounts).CashBook
+	END,
+	DocumentsRegistry.IBDocumentNumber,
+	DocumentsRegistry.IBDocumentDate,
+	DocumentsRegistry.ReverseTransactionCorrection,
+	CASE
+		WHEN NOT DocumentsRegistry.ReverseTransactionCorrection
+			THEN UNDEFINED
+		ELSE DocumentsRegistry.ReversedDocument
+	END,
+	DocumentsRegistry.Author,
+	EDStates.EDIState,
+	EDStates.StatusPresentation
+
+{WHERE
+	DocumentsRegistry.Ref.* AS Ref,
+	DocumentsRegistry.Organization.* AS Organization,
+  DocumentsRegistry.Author.* AS Author,
+	DocumentsRegistry.IBDocumentDate AS Date,
+	DocumentsRegistry.IBDocumentNumber AS Number,
+	DocumentsRegistry.Status AS Status,
+	DocumentsRegistry.RefType AS RefType,
+	DocumentsRegistry.Contract.* AS Contract,
+	DocumentsRegistry.More AS More,
+	DocumentsRegistry.Comment AS Comment,
+	DocumentsRegistry.Posted AS Posted,
+	DocumentsRegistry.DeletionMark AS DeletionMark,
+	((DocumentsRegistry.IBDocumentDate >= &amp;BeginOfPeriod
+		OR &amp;BeginOfPeriod = DATETIME(1, 1, 1))
+	AND (DocumentsRegistry.IBDocumentDate &lt;= &amp;EndOfPeriod
+		OR &amp;EndOfPeriod = DATETIME(1, 1, 1)))}</queryText>
+      <mainTable>InformationRegister.DocumentsRegistry</mainTable>
+      <autoFillAvailableFields>true</autoFillAvailableFields>
+      <customQuery>true</customQuery>
+      <autoSaveUserSettings>true</autoSaveUserSettings>
+      <getInvisibleFieldPresentations>true</getInvisibleFieldPresentations>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Number</dataPath>
+        <field>Number</field>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Number</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>شماره</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Numero</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Numer</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Номер</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Numara</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Số</value>
+            </content>
+          </localValue>
+        </title>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ReverseTransactionCorrection</dataPath>
+        <field>ReverseTransactionCorrection</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>SourceDocumentNumber</dataPath>
+        <field>SourceDocumentNumber</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>RefType1</dataPath>
+        <field>RefType1</field>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Reference type1</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>نوع مرجع1</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Тип ссылки1</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Bağlantı tipi1</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Kiểu tham chiếu1</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Reference type1</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Reference type1</value>
+            </content>
+          </localValue>
+        </title>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Counterparty</dataPath>
+        <field>Counterparty</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Organization</dataPath>
+        <field>Organization</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Author</dataPath>
+        <field>Author</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Ref</dataPath>
+        <field>Ref</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>SourceDocumentDate</dataPath>
+        <field>SourceDocumentDate</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Date</dataPath>
+        <field>Date</field>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Date</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>تاریخ</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Data</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Data</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Дата</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Tarih</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Ngày</value>
+            </content>
+          </localValue>
+        </title>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Surplus</dataPath>
+        <field>Surplus</field>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Surplus</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>مازاد</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Eccedenza</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Nadmiar</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Излишек</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Fazlalık</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Hàng thừa</value>
+            </content>
+          </localValue>
+        </title>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Status</dataPath>
+        <field>Status</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Contract</dataPath>
+        <field>Contract</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>RefType</dataPath>
+        <field>RefType</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>More</dataPath>
+        <field>More</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ReversedDocument</dataPath>
+        <field>ReversedDocument</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Comment</dataPath>
+        <field>Comment</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>IBDocumentDate</dataPath>
+        <field>IBDocumentDate</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Posted</dataPath>
+        <field>Posted</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>SourceDocumentName</dataPath>
+        <field>SourceDocumentName</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>DeletionMark</dataPath>
+        <field>DeletionMark</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>IBDocumentNumber</dataPath>
+        <field>IBDocumentNumber</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Currency</dataPath>
+        <field>Currency</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>EmployeeResponsible</dataPath>
+        <field>EmployeeResponsible</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>BusinessOperation</dataPath>
+        <field>BusinessOperation</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>AdditionalRecord</dataPath>
+        <field>AdditionalRecord</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>EDIState</dataPath>
+        <field>EDIState</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Sum</dataPath>
+        <field>Sum</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>LineOfBusiness</dataPath>
+        <field>LineOfBusiness</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>RecordingInAccountingDate</dataPath>
+        <field>RecordingInAccountingDate</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Priority</dataPath>
+        <field>Priority</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>CorrectedDocument</dataPath>
+        <field>CorrectedDocument</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>CustomPicture</dataPath>
+        <field>CustomPicture</field>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Custom picture</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>تصویر سفارشی</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Immagine personalizzata</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Obrazek niestandardowy</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Нестандартная картинка</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Standart olmayan resim</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Hình ảnh tùy chỉnh</value>
+            </content>
+          </localValue>
+        </title>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>CashBook</dataPath>
+        <field>CashBook</field>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Cash book</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>دفتر صندوق</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Registro di cassa</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Księga gotówkowa</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Кассовая книга</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Kasa defteri</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Sổ quỹ tiền mặt</value>
+            </content>
+          </localValue>
+        </title>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ReversedCorrectedDocument</dataPath>
+        <field>ReversedCorrectedDocument</field>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Reversed corrected document</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>سند اصلاح‌شده برگشت‌خورده</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Сторнируемый исправляемый документ</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>İptal edilebilir düzeltilebilir belge</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Chứng từ đảo ngược chỉnh sửa</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Reversed corrected document</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Reversed corrected document</value>
+            </content>
+          </localValue>
+        </title>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>StatusPresentation</dataPath>
+        <field>StatusPresentation</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Shortage_</dataPath>
+        <field>Shortage_</field>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Shortage</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>کسری</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Quantità mancante</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Brakująca dostawa</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Недостача</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Eksiklik</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Thiếu</value>
+            </content>
+          </localValue>
+        </title>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>LocalAccountingCurrency</dataPath>
+        <field>LocalAccountingCurrency</field>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Local accounting currency</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>ارز حسابداری محلی</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Valuta della contabilità regolatoria</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Waluta podstawowa</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Валюта регламентированного учета</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Yerel muhasebe para birimi</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Tiền tệ kế toán tài chính</value>
+            </content>
+          </localValue>
+        </title>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Department</dataPath>
+        <field>Department</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Partner</dataPath>
+        <field>Partner</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>StorageLocation</dataPath>
+        <field>StorageLocation</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>RecordSeparator</dataPath>
+        <field>RecordSeparator</field>
+      </fields>
+      <parameters>
+        <name>EndOfPeriod</name>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Period end</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>پایان دوره</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Fine del periodo</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Koniec okresu</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Конец периода</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Dönem sonu</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Cuối kỳ</value>
+            </content>
+          </localValue>
+        </title>
+        <valueType>
+          <types>Date</types>
+          <dateQualifiers/>
+        </valueType>
+        <values xsi:type="core:DateValue">
+          <value>0001-01-01T00:00:00</value>
+        </values>
+      </parameters>
+      <parameters>
+        <name>BeginOfPeriod</name>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Period start</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>شروع دوره</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Inizio del periodo</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Początek okresu</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Начало периода</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Dönem başı</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Đầu kỳ</value>
+            </content>
+          </localValue>
+        </title>
+        <valueType>
+          <types>Date</types>
+          <dateQualifiers/>
+        </valueType>
+        <values xsi:type="core:DateValue">
+          <value>0001-01-01T00:00:00</value>
+        </values>
+      </parameters>
+      <parameters>
+        <name>RefType</name>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Reference type</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>نوع مرجع</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Tipo di riferimento</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Typ odnośnika</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Тип ссылки</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Referans tipi</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Kiểu tham chiếu</value>
+            </content>
+          </localValue>
+        </title>
+        <valueType>
+          <types>CatalogRef.MetadataObjectIDs</types>
+        </valueType>
+        <values xsi:type="core:UndefinedValue"/>
+        <useRestriction>true</useRestriction>
+      </parameters>
+    </extInfo>
+  </attributes>
+  <attributes>
+    <name>Organization</name>
+    <title>
+      <key>en</key>
+      <value>Company</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>شرکت</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Azienda</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Firma</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Организация</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>İş yeri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Doanh nghiệp</value>
+    </title>
+    <id>2</id>
+    <valueType>
+      <types>CatalogRef.Companies</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <settingsSavedData xsi:type="form:DataPath">
+      <segments>Organization</segments>
+    </settingsSavedData>
+  </attributes>
+  <attributes>
+    <name>CashBook</name>
+    <title>
+      <key>en</key>
+      <value>Cash book</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>دفتر صندوق</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Registro di cassa</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Księga gotówkowa</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Кассовая книга</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Kasa defteri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Sổ quỹ tiền mặt</value>
+    </title>
+    <id>4</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <functionalOptions>FunctionalOption.RFPaymentsSupport</functionalOptions>
+    <settingsSavedData xsi:type="form:DataPath">
+      <segments>CashBook</segments>
+    </settingsSavedData>
+  </attributes>
+  <attributes>
+    <name>AttachableCommandsParameters</name>
+    <title>
+      <key>en</key>
+      <value>Attachable command parameters</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>پارامترهای فرمان قابل پیوست</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Parametri dei comandi da collegare</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Parametry podłączanych poleceń</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Параметры подключаемых команд</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Eklenebilir komutlar parametreleri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Tham số lệnh đã kết nối</value>
+    </title>
+    <id>5</id>
+    <valueType/>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>CashBookPresentation</name>
+    <title>
+      <key>en</key>
+      <value>Cash book</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>دفتر صندوق</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Registro di cassa</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Księga gotówkowa</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Кассовая книга</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Kasa defteri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Sổ quỹ tiền mặt</value>
+    </title>
+    <id>6</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <functionalOptions>FunctionalOption.RFPaymentsSupport</functionalOptions>
+    <settingsSavedData xsi:type="form:DataPath">
+      <segments>CashBookPresentation</segments>
+    </settingsSavedData>
+  </attributes>
+  <attributes>
+    <name>Period</name>
+    <title>
+      <key>en</key>
+      <value>Period</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>دوره</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Periodo</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Okres</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Период</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Dönem</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Kỳ</value>
+    </title>
+    <id>7</id>
+    <valueType>
+      <types>StandardPeriod</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <settingsSavedData xsi:type="form:DataPath">
+      <segments>Period</segments>
+    </settingsSavedData>
+    <settingsSavedData xsi:type="form:DataPath">
+      <segments>Period.Variant</segments>
+    </settingsSavedData>
+  </attributes>
+  <attributes>
+    <name>BusinessTransactionsAndDocuments</name>
+    <title>
+      <key>en</key>
+      <value>Business transactions and documents</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>عملیات تجاری و اسناد</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Operazioni economiche e documenti</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Operacje gospodarcze i dokumenty</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Хозяйственные операции и документы</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Ticari işlemler ve belgeler</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Giao dịch kinh tế và chứng từ</value>
+    </title>
+    <id>8</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>BusinessOperation</name>
+      <title>
+        <key>en</key>
+        <value>Business transaction</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>عملیات تجاری</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Operazione economica</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Operacja gospodarcza</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Хозяйственная операция</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Ticari işlem</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Giao dịch kinh tế</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>EnumRef.BusinessTransactions</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>MetadataObjectID</name>
+      <title>
+        <key>en</key>
+        <value>Metadata object ID</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>شناسه شیء فراداده</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Indicatore dell'oggetto metadati</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Identyfikator obiektu metadanych</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Идентификатор объекта метаданных</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Meta veri nesne tanımlayıcısı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Tên định danh đối tượng metadata</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>CatalogRef.MetadataObjectIDs</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Filter</name>
+      <title>
+        <key>en</key>
+        <value>Filter</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>فیلتر</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Selezione</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Filtr</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Отбор</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Filtre</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Lọc</value>
+      </title>
+      <id>3</id>
+      <valueType>
+        <types>Boolean</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>DocumentPresentation</name>
+      <title>
+        <key>en</key>
+        <value>Document presentation</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>نمایش سند</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Documento visualizzazione</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Dokument widok</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Документ представление</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Sunum belgesi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Chứng từ trình bày</value>
+      </title>
+      <id>4</id>
+      <valueType>
+        <types>String</types>
+        <stringQualifiers/>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>FullDocumentName</name>
+      <title>
+        <key>en</key>
+        <value>Full name of the document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>نام کامل سند</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Nome completo del documento</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Pełna nazwa dokumentu</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Полное имя документа</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Tam belge adı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Tên chứng từ đầy đủ</value>
+      </title>
+      <id>5</id>
+      <valueType>
+        <types>String</types>
+        <stringQualifiers/>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>PurposeUseKey</name>
+      <title>
+        <key>en</key>
+        <value>Assignment key</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>کلید تخصیص</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Chiave di assegnazione dell'uso</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Klucz przeznaczenia wykorzystania</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Ключ назначения использования</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Atama anahtarı kullanımı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Khóa mục đích sử dụng</value>
+      </title>
+      <id>13</id>
+      <valueType>
+        <types>String</types>
+        <stringQualifiers/>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>AccessRightInsert</name>
+      <title>
+        <key>en</key>
+        <value>Access right insert</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>حق دسترسی درج</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Diritto di accesso aggiunta</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Prawo dostępu dodawanie</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Право доступа добавление</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Erişim yetkisi ekleme</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Quyền truy cập thêm</value>
+      </title>
+      <id>14</id>
+      <valueType>
+        <types>Boolean</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>AccessRightUpdate</name>
+      <title>
+        <key>en</key>
+        <value>Access right interactive insert</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>حق دسترسی درج تعاملی</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Diritto di accesso aggiunta in modo interattivo</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Prawo dostępu dodawanie interaktywne</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Право доступа интерактивное добавление</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Etkileşimli erişim yetkisi ekleme</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Quyền truy cập thêm trực tác</value>
+      </title>
+      <id>16</id>
+      <valueType>
+        <types>Boolean</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>WorkplaceTitle</name>
+      <title>
+        <key>en</key>
+        <value>Workplace title</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>عنوان میز کار</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Impostazione della postazione</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Nagłówek miejsca pracy</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Заголовок рабочего места</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Çalışma alanı başlığı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Tiêu đề chỗ làm việc</value>
+      </title>
+      <id>20</id>
+      <valueType>
+        <types>String</types>
+        <stringQualifiers/>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ButtonGroup</name>
+      <title>
+        <key>en</key>
+        <value>Button group</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>گروه دکمه</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Gruppo di pulsanti</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Grupa przycisków</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Группа кнопок</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Buton grubu</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Nhóm nút lệnh</value>
+      </title>
+      <id>17</id>
+      <valueType>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>AddButtonCreate</name>
+      <title>
+        <key>en</key>
+        <value>Add button create</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>دکمه افزودن ایجاد</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Aggiungi il pulsante crea</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Dodaj przycisk utwórz</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Добавить кнопку создать</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Oluştur butonu ekle</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Thêm nút tạo mới</value>
+      </title>
+      <id>19</id>
+      <valueType>
+        <types>Boolean</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Order</name>
+      <title>
+        <key>en</key>
+        <value>Sequence</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>توالی</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Sequenza</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Tryb</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Порядок</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Sıra</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Thứ tự</value>
+      </title>
+      <id>6</id>
+      <valueType>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <formCommands>
+    <name>ListPost</name>
+    <title>
+      <key>en</key>
+      <value>Post</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>ثبت</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Registrare</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Zaksięguj</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Провести</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Kaydet</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Kết chuyển</value>
+    </title>
+    <id>1</id>
+    <toolTip>
+      <key>en</key>
+      <value>Post</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>ثبت</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Registrare</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Zaksięguj</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Провести</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Kaydet</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Kết chuyển</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <picture xsi:type="core:PictureRef">
+      <picture>StdPicture.Post</picture>
+    </picture>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ListPost</name>
+      </handler>
+    </action>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ListCopy</name>
+    <title>
+      <key>en</key>
+      <value>Copy</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>کپی</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Copiare</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Kopiuj</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Скопировать</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Kopyala</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Sao chép</value>
+    </title>
+    <id>2</id>
+    <toolTip>
+      <key>en</key>
+      <value>Copy</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>کپی</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Copiare</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Kopiuj</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Скопировать</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Kopyala</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Sao chép</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <shortcut>F9</shortcut>
+    <picture xsi:type="core:PictureRef">
+      <picture>StdPicture.CloneObject</picture>
+    </picture>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ListCopy</name>
+      </handler>
+    </action>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ListSetClearADeletionMark</name>
+    <title>
+      <key>en</key>
+      <value>Mark/Unmark for deletion</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>علامت‌گذاری/حذف علامت برای حذف</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Contrassegnare per l'eliminazione/ Togliere il contrassegno</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Zaznacz do usunięcia / Usuń zaznaczenie</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Пометить на удаление / Снять пометку</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Silmek için işaretle / İşareti kaldır</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Đánh dấu xóa / Bỏ dấu xóa</value>
+    </title>
+    <id>3</id>
+    <use>
+      <common>true</common>
+    </use>
+    <picture xsi:type="core:PictureRef">
+      <picture>StdPicture.MarkToDelete</picture>
+    </picture>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ListSetClearADeletionMark</name>
+      </handler>
+    </action>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>SetDateInterval</name>
+    <title>
+      <key>en</key>
+      <value>Set period...</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>تعیین دوره...</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Imposta il periodo...</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Ustaw okres...</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Установить период...</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Dönem belirle...</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Đặt kỳ...</value>
+    </title>
+    <id>4</id>
+    <toolTip>
+      <key>en</key>
+      <value>Set period...</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>تعیین دوره...</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Imposta il periodo...</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Ustaw okres...</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Установить период...</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Dönem belirle...</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Đặt kỳ...</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <picture xsi:type="core:PictureRef">
+      <picture>StdPicture.SetDateInterval</picture>
+    </picture>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>SetDateInterval</name>
+      </handler>
+    </action>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ListUndoPosting</name>
+    <title>
+      <key>en</key>
+      <value>Cancel posting</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>لغو ثبت</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Annullamento della registrazioine</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Anuluj księgowanie</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Отмена проведения</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Gönderim iptali</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Hủy bỏ</value>
+    </title>
+    <id>5</id>
+    <toolTip>
+      <key>en</key>
+      <value>Cancel posting</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>لغو ثبت</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Annullamento della registrazioine</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Anuluj księgowanie</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Отмена проведения</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Gönderim iptali</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Hủy bỏ</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <picture xsi:type="core:PictureRef">
+      <picture>StdPicture.UndoPosting</picture>
+    </picture>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ListUndoPosting</name>
+      </handler>
+    </action>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ListCreate</name>
+    <title>
+      <key>en</key>
+      <value>Create</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>ایجاد</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Creare</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Utwórz</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Создать</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Oluştur</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Tạo mới</value>
+    </title>
+    <id>6</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ListCreate</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <commandInterface>
+    <navigationPanel/>
+    <commandBar/>
+  </commandInterface>
+  <extInfo xsi:type="form:DynamicListFormExtInfo"/>
+</form:Form>

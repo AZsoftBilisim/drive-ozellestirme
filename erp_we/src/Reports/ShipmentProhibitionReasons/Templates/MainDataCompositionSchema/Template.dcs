@@ -1,0 +1,4845 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>DataSource1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetUnion">
+		<name>SettlementsCard</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AccountingDimensionByPartners</dataPath>
+			<field>AccountingDimensionByPartners</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Currency</dataPath>
+			<field>Currency</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Counterparty</dataPath>
+			<field>Counterparty</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+				<dcscom:parentDimension>AccountingDimensionByPartners</dcscom:parentDimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Organization</dataPath>
+			<field>Organization</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+				<dcscom:parentDimension>AccountingDimensionByPartners</dcscom:parentDimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Partner</dataPath>
+			<field>Partner</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Customer</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>مشتری</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Cliente</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Klient</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиент</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Müşteri</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Khách hàng</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+				<dcscom:parentDimension>AccountingDimensionByPartners</dcscom:parentDimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Period</dataPath>
+			<field>Period</field>
+			<role>
+				<dcscom:periodNumber>2</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>DLF=D</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>DLF=D</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>DLF=D</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>DLF=D</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>DLF=D</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>DLF=D</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>DLF=D</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Recorder</dataPath>
+			<field>Recorder</field>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+			<orderExpression>
+				<dcscom:expression>Period</dcscom:expression>
+				<dcscom:orderType>Asc</dcscom:orderType>
+				<dcscom:autoOrder>false</dcscom:autoOrder>
+			</orderExpression>
+			<orderExpression>
+				<dcscom:expression>Recorder</dcscom:expression>
+				<dcscom:orderType>Asc</dcscom:orderType>
+				<dcscom:autoOrder>false</dcscom:autoOrder>
+			</orderExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Sum</dataPath>
+			<field>Sum</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Amount</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>مبلغ</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Importo</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Wartość</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Tutar</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Tổng số</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CustomerAccountsReceivableOpeningBalance</dataPath>
+			<field>CustomerAccountsReceivableOpeningBalance</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<order>true</order>
+			</useRestriction>
+			<role>
+				<dcscom:balance>true</dcscom:balance>
+				<dcscom:balanceGroupName>CustomerAccountsReceivable</dcscom:balanceGroupName>
+				<dcscom:balanceType>OpeningBalance</dcscom:balanceType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AccountsPayableOfCompanyOpeningBalance</dataPath>
+			<field>AccountsPayableOfCompanyOpeningBalance</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<role>
+				<dcscom:balance>true</dcscom:balance>
+				<dcscom:balanceGroupName>AccountsPayableOfCompany</dcscom:balanceGroupName>
+				<dcscom:balanceType>OpeningBalance</dcscom:balanceType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AccountsPayableOfCompanyClosingBalance</dataPath>
+			<field>AccountsPayableOfCompanyClosingBalance</field>
+			<role>
+				<dcscom:balance>true</dcscom:balance>
+				<dcscom:balanceGroupName>AccountsPayableOfCompany</dcscom:balanceGroupName>
+				<dcscom:balanceType>ClosingBalance</dcscom:balanceType>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>OverdueCustomerDebtClosingBalance</dataPath>
+			<field>OverdueCustomerDebtClosingBalance</field>
+			<role>
+				<dcscom:balance>true</dcscom:balance>
+				<dcscom:balanceGroupName>OverdueCustomerDebt</dcscom:balanceGroupName>
+				<dcscom:balanceType>ClosingBalance</dcscom:balanceType>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>OverdueCustomerDebtOpeningBalance</dataPath>
+			<field>OverdueCustomerDebtOpeningBalance</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<role>
+				<dcscom:balance>true</dcscom:balance>
+				<dcscom:balanceGroupName>OverdueCustomerDebt</dcscom:balanceGroupName>
+				<dcscom:balanceType>OpeningBalance</dcscom:balanceType>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CustomerAccountsReceivableClosingBalance</dataPath>
+			<field>CustomerAccountsReceivableClosingBalance</field>
+			<role>
+				<dcscom:balance>true</dcscom:balance>
+				<dcscom:balanceGroupName>CustomerAccountsReceivable</dcscom:balanceGroupName>
+				<dcscom:balanceType>ClosingBalance</dcscom:balanceType>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>OurDebtOverdueClosingBalance</dataPath>
+			<field>OurDebtOverdueClosingBalance</field>
+			<role>
+				<dcscom:balance>true</dcscom:balance>
+				<dcscom:balanceGroupName>OurDebtOverdue</dcscom:balanceGroupName>
+				<dcscom:balanceType>ClosingBalance</dcscom:balanceType>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>OurDebtOverdueOpeningBalance</dataPath>
+			<field>OurDebtOverdueOpeningBalance</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<role>
+				<dcscom:balance>true</dcscom:balance>
+				<dcscom:balanceGroupName>OurDebtOverdue</dcscom:balanceGroupName>
+				<dcscom:balanceType>OpeningBalance</dcscom:balanceType>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Format</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>NFD=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ThisIsPaymentStageAccordingToSchedule</dataPath>
+			<field>ThisIsPaymentStageAccordingToSchedule</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ThisIsStageOfShipmentOnSchedule</dataPath>
+			<field>ThisIsStageOfShipmentOnSchedule</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Contract</dataPath>
+			<field>Contract</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+				<dcscom:parentDimension>AccountingDimensionByPartners</dcscom:parentDimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ARAPObject</dataPath>
+			<field>ARAPObject</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DeleteARAPObjectPurchaseOrder</dataPath>
+			<field>DeleteARAPObjectPurchaseOrder</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>SalesOrder</dataPath>
+			<field>SalesOrder</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Sales order</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>سفارش فروش</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Ordine del cliente</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Zamówienie klienta</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказ клиента</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Müşteri siparişi</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Đơn hàng của khách</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<item xsi:type="DataSetQuery">
+			<name>CustomersARAPAccounting</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>AccountingDimensionByPartners</dataPath>
+				<field>AccountingDimensionByPartners</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:required>true</dcscom:required>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Currency</dataPath>
+				<field>Currency</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:required>true</dcscom:required>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Counterparty</dataPath>
+				<field>Counterparty</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:parentDimension>AccountingDimensionByPartners</dcscom:parentDimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Organization</dataPath>
+				<field>Organization</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:parentDimension>AccountingDimensionByPartners</dcscom:parentDimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Partner</dataPath>
+				<field>Partner</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:parentDimension>AccountingDimensionByPartners</dcscom:parentDimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Period</dataPath>
+				<field>Period</field>
+				<role>
+					<dcscom:periodNumber>1</dcscom:periodNumber>
+					<dcscom:periodType>Main</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Recorder</dataPath>
+				<field>Recorder</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Sum</dataPath>
+				<field>Sum</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Amount</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>fa</v8:lang>
+						<v8:content>مبلغ</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>it</v8:lang>
+						<v8:content>Importo</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>pl</v8:lang>
+						<v8:content>Wartość</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сумма</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>tr</v8:lang>
+						<v8:content>Tutar</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>vi</v8:lang>
+						<v8:content>Tổng số</v8:content>
+					</v8:item>
+				</title>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Format</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>CustomerAccountsReceivableOpeningBalance</dataPath>
+				<field>CustomerAccountsReceivableOpeningBalance</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<order>true</order>
+				</useRestriction>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>CustomerAccountsReceivable</dcscom:balanceGroupName>
+					<dcscom:balanceType>OpeningBalance</dcscom:balanceType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>AccountsPayableOfCompanyOpeningBalance</dataPath>
+				<field>AccountsPayableOfCompanyOpeningBalance</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>AccountsPayableOfCompany</dcscom:balanceGroupName>
+					<dcscom:balanceType>OpeningBalance</dcscom:balanceType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>AccountsPayableOfCompanyClosingBalance</dataPath>
+				<field>AccountsPayableOfCompanyClosingBalance</field>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>AccountsPayableOfCompany</dcscom:balanceGroupName>
+					<dcscom:balanceType>ClosingBalance</dcscom:balanceType>
+				</role>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Format</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>OverdueCustomerDebtClosingBalance</dataPath>
+				<field>OverdueCustomerDebtClosingBalance</field>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>OverdueCustomerDebt</dcscom:balanceGroupName>
+					<dcscom:balanceType>ClosingBalance</dcscom:balanceType>
+				</role>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Format</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>OverdueCustomerDebtOpeningBalance</dataPath>
+				<field>OverdueCustomerDebtOpeningBalance</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>OverdueCustomerDebt</dcscom:balanceGroupName>
+					<dcscom:balanceType>OpeningBalance</dcscom:balanceType>
+				</role>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Format</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>CustomerAccountsReceivableClosingBalance</dataPath>
+				<field>CustomerAccountsReceivableClosingBalance</field>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>CustomerAccountsReceivable</dcscom:balanceGroupName>
+					<dcscom:balanceType>ClosingBalance</dcscom:balanceType>
+				</role>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Format</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>OurDebtOverdueClosingBalance</dataPath>
+				<field>OurDebtOverdueClosingBalance</field>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>OurDebtOverdue</dcscom:balanceGroupName>
+					<dcscom:balanceType>ClosingBalance</dcscom:balanceType>
+				</role>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Format</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>OurDebtOverdueOpeningBalance</dataPath>
+				<field>OurDebtOverdueOpeningBalance</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>OurDebtOverdue</dcscom:balanceGroupName>
+					<dcscom:balanceType>OpeningBalance</dcscom:balanceType>
+				</role>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Format</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Contract</dataPath>
+				<field>Contract</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ARAPObject</dataPath>
+				<field>ARAPObject</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>DeleteARAPObjectPurchaseOrder</dataPath>
+				<field>DeleteARAPObjectPurchaseOrder</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>SalesOrder</dataPath>
+				<field>SalesOrder</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Sales order</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>fa</v8:lang>
+						<v8:content>سفارش فروش</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>it</v8:lang>
+						<v8:content>Ordine del cliente</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>pl</v8:lang>
+						<v8:content>Zamówienie klienta</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Заказ клиента</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>tr</v8:lang>
+						<v8:content>Müşteri siparişi</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>vi</v8:lang>
+						<v8:content>Đơn hàng của khách</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<dataSource>DataSource1</dataSource>
+			<query>SELECT ALLOWED
+	RegisterAccountingAnalyticsForPartners.Organization AS Organization,
+	RegisterAccountingAnalyticsForPartners.Partner AS Partner,
+	RegisterAccountingAnalyticsForPartners.Counterparty AS Counterparty,
+	RegisterAccountingAnalyticsForPartners.Contract AS Contract,
+	RegisterAccountingAnalyticsForPartners.DimensionKey AS DimensionKey
+	
+INTO RevisingAccountingForPartners
+FROM
+	InformationRegister.AccountingDimensionByPartners AS RegisterAccountingAnalyticsForPartners
+;
+///////////////////////////////////////////////////////////////////////////////
+SELECT ALLOWED
+	CustomersARAPAccounting.Period AS Period,
+	CASE WHEN CustomersARAPAccounting.Recorder = UNDEFINED THEN 
+		NULL
+	ELSE
+			CustomersARAPAccounting.Recorder
+	END AS Recorder,
+	CustomersARAPAccounting.AccountingDimensionByPartners AS AccountingDimensionByPartners,
+	CustomersARAPAccounting.ARAPObject AS SalesOrder,
+	CustomersARAPAccounting.Currency AS Currency,
+	
+	DimensionByPartners.Partner AS Partner,
+	DimensionByPartners.Organization AS Organization,
+	DimensionByPartners.Counterparty AS Counterparty,
+	DimensionByPartners.Contract AS Contract,
+	
+	// Our duty	
+	CASE WHEN CustomersARAPAccounting.SumOpeningBalance &lt; 0 THEN
+		-CustomersARAPAccounting.SumOpeningBalance
+	ELSE
+		0
+	END AS AccountsPayableOfCompanyOpeningBalance,
+		
+	CASE WHEN CustomersARAPAccounting.SumClosingBalance &lt; 0 THEN
+		-CustomersARAPAccounting.SumClosingBalance
+	ELSE
+		0
+	END AS AccountsPayableOfCompanyClosingBalance,
+	
+	// Our debt (overdue)
+	CASE WHEN CustomersARAPAccounting.SumOpeningBalance &lt; 0
+		AND CustomersARAPAccounting.ToShipOpeningBalance &lt; 0
+	THEN
+		CASE WHEN (-CustomersARAPAccounting.SumOpeningBalance) &gt; (-CustomersARAPAccounting.ToShipOpeningBalance) THEN
+			-CustomersARAPAccounting.ToShipOpeningBalance
+		ELSE
+			-CustomersARAPAccounting.SumOpeningBalance
+		END
+	ELSE
+		0
+	END AS OurDebtOverdueOpeningBalance,
+	
+	CASE WHEN CustomersARAPAccounting.SumClosingBalance &lt; 0
+		AND CustomersARAPAccounting.ToShipClosingBalance &lt; 0
+	THEN
+		CASE WHEN (-CustomersARAPAccounting.SumClosingBalance) &gt; (-CustomersARAPAccounting.ToShipClosingBalance) THEN
+			-CustomersARAPAccounting.ToShipClosingBalance
+		ELSE
+			-CustomersARAPAccounting.SumClosingBalance
+		END
+	ELSE
+		0
+	END AS OurDebtOverdueClosingBalance,
+	
+	// The debt of the client
+	CASE WHEN CustomersARAPAccounting.SumOpeningBalance &gt; 0 THEN
+		CustomersARAPAccounting.SumOpeningBalance
+	ELSE
+		0
+	END AS CustomerAccountsReceivableOpeningBalance,
+	
+	CASE WHEN CustomersARAPAccounting.SumClosingBalance &gt; 0 THEN
+		CustomersARAPAccounting.SumClosingBalance
+	ELSE
+		0
+	END AS CustomerAccountsReceivableClosingBalance,
+	
+	// Customer's debt (overdue)
+	CASE WHEN CustomersARAPAccounting.SumOpeningBalance &gt; 0
+		AND CustomersARAPAccounting.AmountDueOpeningBalance &gt; 0
+	THEN
+		CASE WHEN CustomersARAPAccounting.SumOpeningBalance &gt; CustomersARAPAccounting.AmountDueOpeningBalance THEN
+			CustomersARAPAccounting.AmountDueOpeningBalance
+		ELSE
+			CustomersARAPAccounting.SumOpeningBalance
+		END
+	ELSE
+		0
+	END AS OverdueCustomerDebtOpeningBalance,
+	
+	CASE WHEN CustomersARAPAccounting.SumClosingBalance &gt; 0
+		AND CustomersARAPAccounting.AmountDueClosingBalance &gt; 0
+	THEN
+		CASE WHEN CustomersARAPAccounting.SumClosingBalance &gt; CustomersARAPAccounting.AmountDueClosingBalance THEN
+			CustomersARAPAccounting.AmountDueClosingBalance
+		ELSE
+			CustomersARAPAccounting.SumClosingBalance
+		END
+	ELSE
+		0
+	END AS OverdueCustomerDebtClosingBalance,
+	
+	CASE WHEN CustomersARAPAccounting.SumTurnover &lt; 0 THEN
+		-CustomersARAPAccounting.SumTurnover
+	ELSE
+		CustomersARAPAccounting.SumTurnover
+	END AS Sum
+	
+FROM
+	AccumulationRegister.CustomersARAPAccounting.BalanceAndTurnovers(, , Recorder, ,
+		AccountingDimensionByPartners IN (
+			SELECT
+				DimensionKey
+			FROM
+				RevisingAccountingForPartners AS RevisingAccountingForPartners
+			)
+	) AS CustomersARAPAccounting
+	
+	INNER JOIN
+		RevisingAccountingForPartners AS DimensionByPartners
+	ON
+		CustomersARAPAccounting.AccountingDimensionByPartners = DimensionByPartners.DimensionKey
+		
+WHERE
+	CustomersARAPAccounting.SumTurnover &lt;&gt; 0
+	AND DimensionByPartners.Partner &lt;&gt; VALUE(Catalog.Partners.OurEnterprise)</query>
+		</item>
+		<item xsi:type="DataSetQuery">
+			<name>AmountDue</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>AccountingDimensionByPartners</dataPath>
+				<field>AccountingDimensionByPartners</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:required>true</dcscom:required>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Currency</dataPath>
+				<field>Currency</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:required>true</dcscom:required>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Counterparty</dataPath>
+				<field>Counterparty</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:parentDimension>AccountingDimensionByPartners</dcscom:parentDimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Organization</dataPath>
+				<field>Organization</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:parentDimension>AccountingDimensionByPartners</dcscom:parentDimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Partner</dataPath>
+				<field>Partner</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:parentDimension>AccountingDimensionByPartners</dcscom:parentDimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Period</dataPath>
+				<field>Period</field>
+				<role>
+					<dcscom:periodNumber>1</dcscom:periodNumber>
+					<dcscom:periodType>Main</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Recorder</dataPath>
+				<field>Recorder</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Sum</dataPath>
+				<field>Sum</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Amount</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>fa</v8:lang>
+						<v8:content>مبلغ</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>it</v8:lang>
+						<v8:content>Importo</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>pl</v8:lang>
+						<v8:content>Wartość</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сумма</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>tr</v8:lang>
+						<v8:content>Tutar</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>vi</v8:lang>
+						<v8:content>Tổng số</v8:content>
+					</v8:item>
+				</title>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Format</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>CustomerAccountsReceivableOpeningBalance</dataPath>
+				<field>CustomerAccountsReceivableOpeningBalance</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<order>true</order>
+				</useRestriction>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>CustomerAccountsReceivable</dcscom:balanceGroupName>
+					<dcscom:balanceType>OpeningBalance</dcscom:balanceType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>AccountsPayableOfCompanyOpeningBalance</dataPath>
+				<field>AccountsPayableOfCompanyOpeningBalance</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>AccountsPayableOfCompany</dcscom:balanceGroupName>
+					<dcscom:balanceType>OpeningBalance</dcscom:balanceType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>AccountsPayableOfCompanyClosingBalance</dataPath>
+				<field>AccountsPayableOfCompanyClosingBalance</field>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>AccountsPayableOfCompany</dcscom:balanceGroupName>
+					<dcscom:balanceType>ClosingBalance</dcscom:balanceType>
+				</role>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Format</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>OverdueCustomerDebtClosingBalance</dataPath>
+				<field>OverdueCustomerDebtClosingBalance</field>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>OverdueCustomerDebt</dcscom:balanceGroupName>
+					<dcscom:balanceType>ClosingBalance</dcscom:balanceType>
+				</role>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Format</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>OverdueCustomerDebtOpeningBalance</dataPath>
+				<field>OverdueCustomerDebtOpeningBalance</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>OverdueCustomerDebt</dcscom:balanceGroupName>
+					<dcscom:balanceType>OpeningBalance</dcscom:balanceType>
+				</role>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Format</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>CustomerAccountsReceivableClosingBalance</dataPath>
+				<field>CustomerAccountsReceivableClosingBalance</field>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>CustomerAccountsReceivable</dcscom:balanceGroupName>
+					<dcscom:balanceType>ClosingBalance</dcscom:balanceType>
+				</role>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Format</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>OurDebtOverdueClosingBalance</dataPath>
+				<field>OurDebtOverdueClosingBalance</field>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>OurDebtOverdue</dcscom:balanceGroupName>
+					<dcscom:balanceType>ClosingBalance</dcscom:balanceType>
+				</role>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Format</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>OurDebtOverdueOpeningBalance</dataPath>
+				<field>OurDebtOverdueOpeningBalance</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>OurDebtOverdue</dcscom:balanceGroupName>
+					<dcscom:balanceType>OpeningBalance</dcscom:balanceType>
+				</role>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Format</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ThisIsPaymentStageAccordingToSchedule</dataPath>
+				<field>ThisIsPaymentStageAccordingToSchedule</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Contract</dataPath>
+				<field>Contract</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ARAPObject</dataPath>
+				<field>ARAPObject</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>DeleteARAPObjectPurchaseOrder</dataPath>
+				<field>DeleteARAPObjectPurchaseOrder</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>SalesOrder</dataPath>
+				<field>SalesOrder</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Sales order</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>fa</v8:lang>
+						<v8:content>سفارش فروش</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>it</v8:lang>
+						<v8:content>Ordine del cliente</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>pl</v8:lang>
+						<v8:content>Zamówienie klienta</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Заказ клиента</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>tr</v8:lang>
+						<v8:content>Satış siparişi</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>vi</v8:lang>
+						<v8:content>Đơn hàng của khách</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<dataSource>DataSource1</dataSource>
+			<query>SELECT ALLOWED
+	RegisterAccountingAnalyticsForPartners.Organization AS Organization,
+	RegisterAccountingAnalyticsForPartners.Partner AS Partner,
+	RegisterAccountingAnalyticsForPartners.Counterparty AS Counterparty,
+	RegisterAccountingAnalyticsForPartners.Contract AS Contract,
+	RegisterAccountingAnalyticsForPartners.DimensionKey AS DimensionKey
+	
+INTO RevisingAccountingForPartners
+FROM
+	InformationRegister.AccountingDimensionByPartners AS RegisterAccountingAnalyticsForPartners
+;
+///////////////////////////////////////////////////////////////////////////////
+SELECT ALLOWED
+	CustomersARAPAccounting.Period AS Period,
+	CASE WHEN CustomersARAPAccounting.Recorder = UNDEFINED THEN
+		NULL
+	ELSE
+		CustomersARAPAccounting.Recorder
+	END AS Recorder,
+	CustomersARAPAccounting.AccountingDimensionByPartners AS AccountingDimensionByPartners,
+	CustomersARAPAccounting.ARAPObject AS SalesOrder,
+	CustomersARAPAccounting.Currency AS Currency,
+	
+	DimensionByPartners.Partner AS Partner,
+	DimensionByPartners.Organization AS Organization,
+	DimensionByPartners.Counterparty AS Counterparty,
+	DimensionByPartners.Contract AS Contract,
+	
+	// Our duty	
+	0 AS AccountsPayableOfCompanyOpeningBalance,
+	0 AS AccountsPayableOfCompanyClosingBalance,
+	
+	// Our debt (overdue)
+	0 AS OurDebtOverdueOpeningBalance,
+	0 AS OurDebtOverdueClosingBalance,
+	
+	// The debt of the client
+	CASE WHEN CustomersARAPAccounting.SumOpeningBalance &gt; 0 THEN
+		CustomersARAPAccounting.SumOpeningBalance
+	ELSE
+		0
+	END AS CustomerAccountsReceivableOpeningBalance,
+	
+	CASE WHEN CustomersARAPAccounting.SumClosingBalance &gt; 0 THEN
+		CustomersARAPAccounting.SumClosingBalance
+	ELSE
+		0
+	END AS CustomerAccountsReceivableClosingBalance,
+	
+	// Customer's debt (overdue)
+	CASE WHEN CustomersARAPAccounting.Period &lt; &amp;ReportDate
+		AND CustomersARAPAccounting.SumOpeningBalance &gt; 0
+		AND CustomersARAPAccounting.AmountDueOpeningBalance &gt; 0
+	THEN
+		CASE WHEN CustomersARAPAccounting.SumOpeningBalance &gt; CustomersARAPAccounting.AmountDueOpeningBalance THEN
+			CustomersARAPAccounting.AmountDueOpeningBalance
+		ELSE
+			CustomersARAPAccounting.SumOpeningBalance
+		END
+	ELSE
+		0
+	END AS OverdueCustomerDebtOpeningBalance,
+	
+	CASE WHEN CustomersARAPAccounting.Period &lt; &amp;ReportDate
+		AND CustomersARAPAccounting.SumClosingBalance &gt; 0
+		AND CustomersARAPAccounting.AmountDueClosingBalance &gt; 0
+	THEN
+		CASE WHEN CustomersARAPAccounting.SumClosingBalance &gt; CustomersARAPAccounting.AmountDueClosingBalance THEN
+			CustomersARAPAccounting.AmountDueClosingBalance
+		ELSE
+			CustomersARAPAccounting.SumClosingBalance
+		END
+	ELSE
+		0
+	END AS OverdueCustomerDebtClosingBalance,
+	
+	CASE WHEN CustomersARAPAccounting.AmountDueReceipt &lt;&gt; 0 THEN
+		TRUE
+	ELSE
+		FALSE
+	END AS ThisIsPaymentStageAccordingToSchedule,
+	
+	0 AS Sum
+	
+FROM
+	AccumulationRegister.CustomersARAPAccounting.BalanceAndTurnovers(, , Recorder, ,
+		AccountingDimensionByPartners IN (
+			SELECT
+				DimensionKey
+			FROM
+				RevisingAccountingForPartners AS RevisingAccountingForPartners
+			)
+	) AS CustomersARAPAccounting
+	
+	INNER JOIN
+		RevisingAccountingForPartners AS DimensionByPartners
+	ON
+		CustomersARAPAccounting.AccountingDimensionByPartners = DimensionByPartners.DimensionKey
+		
+WHERE
+	CustomersARAPAccounting.AmountDueReceipt &gt; 0
+	AND CustomersARAPAccounting.SumClosingBalance &gt; 0
+	AND CustomersARAPAccounting.AmountDueClosingBalance &gt; 0
+	AND DimensionByPartners.Partner &lt;&gt; VALUE(Catalog.Partners.OurEnterprise)</query>
+		</item>
+		<item xsi:type="DataSetQuery">
+			<name>ToShip</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>AccountingDimensionByPartners</dataPath>
+				<field>AccountingDimensionByPartners</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:required>true</dcscom:required>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Currency</dataPath>
+				<field>Currency</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:required>true</dcscom:required>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Counterparty</dataPath>
+				<field>Counterparty</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:parentDimension>AccountingDimensionByPartners</dcscom:parentDimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Organization</dataPath>
+				<field>Organization</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:parentDimension>AccountingDimensionByPartners</dcscom:parentDimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Partner</dataPath>
+				<field>Partner</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:parentDimension>AccountingDimensionByPartners</dcscom:parentDimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Period</dataPath>
+				<field>Period</field>
+				<role>
+					<dcscom:periodNumber>1</dcscom:periodNumber>
+					<dcscom:periodType>Main</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Recorder</dataPath>
+				<field>Recorder</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Sum</dataPath>
+				<field>Sum</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Amount</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>fa</v8:lang>
+						<v8:content>مبلغ</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>it</v8:lang>
+						<v8:content>Importo</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>pl</v8:lang>
+						<v8:content>Wartość</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сумма</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>tr</v8:lang>
+						<v8:content>Tutar</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>vi</v8:lang>
+						<v8:content>Tổng số</v8:content>
+					</v8:item>
+				</title>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Format</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>CustomerAccountsReceivableOpeningBalance</dataPath>
+				<field>CustomerAccountsReceivableOpeningBalance</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<order>true</order>
+				</useRestriction>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>CustomerAccountsReceivable</dcscom:balanceGroupName>
+					<dcscom:balanceType>OpeningBalance</dcscom:balanceType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>AccountsPayableOfCompanyOpeningBalance</dataPath>
+				<field>AccountsPayableOfCompanyOpeningBalance</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>AccountsPayableOfCompany</dcscom:balanceGroupName>
+					<dcscom:balanceType>OpeningBalance</dcscom:balanceType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>AccountsPayableOfCompanyClosingBalance</dataPath>
+				<field>AccountsPayableOfCompanyClosingBalance</field>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>AccountsPayableOfCompany</dcscom:balanceGroupName>
+					<dcscom:balanceType>ClosingBalance</dcscom:balanceType>
+				</role>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Format</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>OverdueCustomerDebtClosingBalance</dataPath>
+				<field>OverdueCustomerDebtClosingBalance</field>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>OverdueCustomerDebt</dcscom:balanceGroupName>
+					<dcscom:balanceType>ClosingBalance</dcscom:balanceType>
+				</role>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Format</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>OverdueCustomerDebtOpeningBalance</dataPath>
+				<field>OverdueCustomerDebtOpeningBalance</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>OverdueCustomerDebt</dcscom:balanceGroupName>
+					<dcscom:balanceType>OpeningBalance</dcscom:balanceType>
+				</role>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Format</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>CustomerAccountsReceivableClosingBalance</dataPath>
+				<field>CustomerAccountsReceivableClosingBalance</field>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>CustomerAccountsReceivable</dcscom:balanceGroupName>
+					<dcscom:balanceType>ClosingBalance</dcscom:balanceType>
+				</role>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Format</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>OurDebtOverdueClosingBalance</dataPath>
+				<field>OurDebtOverdueClosingBalance</field>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>OurDebtOverdue</dcscom:balanceGroupName>
+					<dcscom:balanceType>ClosingBalance</dcscom:balanceType>
+				</role>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Format</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>OurDebtOverdueOpeningBalance</dataPath>
+				<field>OurDebtOverdueOpeningBalance</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>OurDebtOverdue</dcscom:balanceGroupName>
+					<dcscom:balanceType>OpeningBalance</dcscom:balanceType>
+				</role>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Format</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>NFD=2</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ThisIsStageOfShipmentOnSchedule</dataPath>
+				<field>ThisIsStageOfShipmentOnSchedule</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Contract</dataPath>
+				<field>Contract</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ARAPObject</dataPath>
+				<field>ARAPObject</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>DeleteARAPObjectPurchaseOrder</dataPath>
+				<field>DeleteARAPObjectPurchaseOrder</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>SalesOrder</dataPath>
+				<field>SalesOrder</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Sales order</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>fa</v8:lang>
+						<v8:content>سفارش فروش</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>it</v8:lang>
+						<v8:content>Ordine del cliente</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>pl</v8:lang>
+						<v8:content>Zamówienie klienta</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Заказ клиента</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>tr</v8:lang>
+						<v8:content>Müşteri siparişi</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>vi</v8:lang>
+						<v8:content>Đơn hàng của khách</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<dataSource>DataSource1</dataSource>
+			<query>SELECT ALLOWED
+	RegisterAccountingAnalyticsForPartners.Organization AS Organization,
+	RegisterAccountingAnalyticsForPartners.Partner AS Partner,
+	RegisterAccountingAnalyticsForPartners.Counterparty AS Counterparty,
+	RegisterAccountingAnalyticsForPartners.Contract AS Contract,
+	RegisterAccountingAnalyticsForPartners.DimensionKey AS DimensionKey
+	
+INTO RevisingAccountingForPartners
+FROM
+	InformationRegister.AccountingDimensionByPartners AS RegisterAccountingAnalyticsForPartners
+;
+///////////////////////////////////////////////////////////////////////////////
+SELECT ALLOWED
+	CustomersARAPAccounting.Period AS Period,
+	CASE WHEN CustomersARAPAccounting.Recorder = UNDEFINED THEN
+		NULL
+	ELSE
+		CustomersARAPAccounting.Recorder
+	END AS Recorder,
+	CustomersARAPAccounting.AccountingDimensionByPartners AS AccountingDimensionByPartners,
+	CustomersARAPAccounting.ARAPObject AS SalesOrder,
+	CustomersARAPAccounting.Currency AS Currency,
+	
+	DimensionByPartners.Partner AS Partner,
+	DimensionByPartners.Organization AS Organization,
+	DimensionByPartners.Counterparty AS Counterparty,
+	DimensionByPartners.Contract AS Contract,
+	
+	// Our duty	
+	CASE WHEN CustomersARAPAccounting.SumOpeningBalance &lt; 0 THEN
+		-CustomersARAPAccounting.SumOpeningBalance
+	ELSE
+		0
+	END AS AccountsPayableOfCompanyOpeningBalance,
+		
+	CASE WHEN CustomersARAPAccounting.SumClosingBalance &lt; 0 THEN
+		-CustomersARAPAccounting.SumClosingBalance
+	ELSE
+		0
+	END AS AccountsPayableOfCompanyClosingBalance,
+	
+	// Our debt (overdue)
+	CASE WHEN CustomersARAPAccounting.Period &lt; &amp;ReportDate
+		AND CustomersARAPAccounting.SumOpeningBalance &lt; 0
+		AND CustomersARAPAccounting.ToShipOpeningBalance &lt; 0
+	THEN
+		CASE WHEN (-CustomersARAPAccounting.SumOpeningBalance) &gt; (-CustomersARAPAccounting.ToShipOpeningBalance) THEN
+			-CustomersARAPAccounting.ToShipOpeningBalance
+		ELSE
+			-CustomersARAPAccounting.SumOpeningBalance
+		END
+	ELSE
+		0
+	END AS OurDebtOverdueOpeningBalance,
+	
+	CASE WHEN CustomersARAPAccounting.Period &lt; &amp;ReportDate
+		AND CustomersARAPAccounting.SumClosingBalance &lt; 0
+		AND CustomersARAPAccounting.ToShipClosingBalance &lt; 0
+	THEN
+		CASE WHEN (-CustomersARAPAccounting.SumClosingBalance) &gt; (-CustomersARAPAccounting.ToShipClosingBalance) THEN
+			-CustomersARAPAccounting.ToShipClosingBalance
+		ELSE
+			-CustomersARAPAccounting.SumClosingBalance
+		END
+	ELSE
+		0
+	END AS OurDebtOverdueClosingBalance,
+	
+	// The debt of the client
+	0 AS CustomerAccountsReceivableOpeningBalance,
+	0 AS CustomerAccountsReceivableClosingBalance,
+	
+	// Customer's debt (overdue)
+	0 AS OverdueCustomerDebtOpeningBalance,
+	0 AS OverdueCustomerDebtClosingBalance,
+	
+	TRUE AS ThisIsStageOfShipmentOnSchedule,
+	
+	0 AS Sum
+	
+FROM
+	AccumulationRegister.CustomersARAPAccounting.BalanceAndTurnovers(, , Recorder, ,
+		AccountingDimensionByPartners IN (
+			SELECT
+				DimensionKey
+			FROM
+				RevisingAccountingForPartners AS RevisingAccountingForPartners
+			)
+	) AS CustomersARAPAccounting
+	
+	INNER JOIN
+		RevisingAccountingForPartners AS DimensionByPartners
+	ON
+		CustomersARAPAccounting.AccountingDimensionByPartners = DimensionByPartners.DimensionKey
+		
+WHERE
+	CustomersARAPAccounting.Recorder REFS Document.SalesOrder
+	AND CustomersARAPAccounting.SumClosingBalance &lt; 0
+	AND CustomersARAPAccounting.ToShipClosingBalance &lt; 0
+	AND DimensionByPartners.Partner &lt;&gt; VALUE(Catalog.Partners.OurEnterprise)</query>
+		</item>
+	</dataSet>
+	<calculatedField>
+		<dataPath>RemainingAllowedCredit</dataPath>
+		<expression>&amp;AllowableAmountPayable - CustomerAccountsReceivableClosingBalance + AccountsPayableOfCompanyClosingBalance</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Allowed credit balance</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>مانده اعتبار مجاز</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Saldo del credito disponibile</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Resztę dopuszczalnej pożyczki</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Остаток допустимого кредита</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Mevcut kredi bakiyesi</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Số dư tín dụng cho phép</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Format</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>NFD=2; NZ=0.00</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>fa</v8:lang>
+						<v8:content>NFD=2; NZ=0.00</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>it</v8:lang>
+						<v8:content>NFD=2; NZ=0,00</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>pl</v8:lang>
+						<v8:content>NFD=2; NZ=0,00</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>NFD=2; NZ=0,00</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>tr</v8:lang>
+						<v8:content>NFD=2; NZ=0,00</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>vi</v8:lang>
+						<v8:content>NFD=2; NZ=0,00</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>MarkNegatives</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+			</dcscor:item>
+		</appearance>
+		<valueType>
+			<v8:TypeId>ae2f89b3-a2ce-4f0a-a0a9-61e5b32d3e81</v8:TypeId>
+		</valueType>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>AllowableAmountPayable</dataPath>
+		<expression>&amp;AllowableAmountPayable</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Allowable amount payable</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>مبلغ مجاز قابل پرداخت</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Importo di indebitamento ammissibile</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Dopuszczalna wartość należna</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Допустимая сумма задолженности</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>İzin verilen borç tutarı</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Số tiền nợ cho phép</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Format</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>NFD=2</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>fa</v8:lang>
+						<v8:content>NFD=2</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>it</v8:lang>
+						<v8:content>NFD=2</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>pl</v8:lang>
+						<v8:content>NFD=2</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>NFD=2</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>tr</v8:lang>
+						<v8:content>NFD=2</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>vi</v8:lang>
+						<v8:content>NFD=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>MarkNegatives</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+			</dcscor:item>
+		</appearance>
+		<valueType>
+			<v8:TypeId>ae2f89b3-a2ce-4f0a-a0a9-61e5b32d3e81</v8:TypeId>
+		</valueType>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>SalesAmount</dataPath>
+		<expression>&amp;SalesAmount</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Sales amount</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>مبلغ فروش</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Importo di vendita</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Wartość sprzedaży</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Сумма продажи</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Satış tutarı</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Số tiền bán hàng</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Format</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>NFD=2</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>fa</v8:lang>
+						<v8:content>NFD=2</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>it</v8:lang>
+						<v8:content>NFD=2</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>pl</v8:lang>
+						<v8:content>NFD=2</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>NFD=2</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>tr</v8:lang>
+						<v8:content>NFD=2</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>vi</v8:lang>
+						<v8:content>NFD=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>MarkNegatives</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+			</dcscor:item>
+		</appearance>
+		<valueType>
+			<v8:TypeId>ae2f89b3-a2ce-4f0a-a0a9-61e5b32d3e81</v8:TypeId>
+		</valueType>
+	</calculatedField>
+	<totalField>
+		<dataPath>AccountsPayableOfCompanyClosingBalance</dataPath>
+		<expression>Sum(AccountsPayableOfCompanyClosingBalance)</expression>
+		<group>Currency</group>
+		<group>Recorder</group>
+	</totalField>
+	<totalField>
+		<dataPath>AccountsPayableOfCompanyOpeningBalance</dataPath>
+		<expression>Sum(AccountsPayableOfCompanyOpeningBalance)</expression>
+		<group>Currency</group>
+		<group>Recorder</group>
+	</totalField>
+	<totalField>
+		<dataPath>Sum</dataPath>
+		<expression>Sum(Sum)</expression>
+		<group>Recorder</group>
+	</totalField>
+	<totalField>
+		<dataPath>OverdueCustomerDebtOpeningBalance</dataPath>
+		<expression>Sum(OverdueCustomerDebtOpeningBalance)</expression>
+		<group>Currency</group>
+		<group>Recorder</group>
+	</totalField>
+	<totalField>
+		<dataPath>OverdueCustomerDebtClosingBalance</dataPath>
+		<expression>Sum(OverdueCustomerDebtClosingBalance)</expression>
+		<group>Currency</group>
+		<group>Recorder</group>
+	</totalField>
+	<totalField>
+		<dataPath>CustomerAccountsReceivableClosingBalance</dataPath>
+		<expression>Sum(CustomerAccountsReceivableClosingBalance)</expression>
+		<group>Currency</group>
+		<group>Recorder</group>
+	</totalField>
+	<totalField>
+		<dataPath>OurDebtOverdueClosingBalance</dataPath>
+		<expression>Sum(OurDebtOverdueClosingBalance)</expression>
+		<group>Currency</group>
+		<group>Recorder</group>
+	</totalField>
+	<totalField>
+		<dataPath>OurDebtOverdueOpeningBalance</dataPath>
+		<expression>Sum(OurDebtOverdueOpeningBalance)</expression>
+		<group>Currency</group>
+		<group>Recorder</group>
+	</totalField>
+	<totalField>
+		<dataPath>RemainingAllowedCredit</dataPath>
+		<expression>&amp;AllowableAmountPayable - Sum(CustomerAccountsReceivableClosingBalance) + Sum(AccountsPayableOfCompanyClosingBalance)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>SalesAmount</dataPath>
+		<expression>SalesAmount</expression>
+	</totalField>
+	<totalField>
+		<dataPath>CustomerAccountsReceivableOpeningBalance</dataPath>
+		<expression>Sum(CustomerAccountsReceivableOpeningBalance)</expression>
+		<group>Currency</group>
+		<group>Recorder</group>
+	</totalField>
+	<totalField>
+		<dataPath>AllowableAmountPayable</dataPath>
+		<expression>AllowableAmountPayable</expression>
+	</totalField>
+	<parameter>
+		<name>ReportDate</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Report date</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>تاریخ گزارش</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Data del report</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Data sprawozdania</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата отчета</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Rapor tarihi</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Ngày tính</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<inputParameters>
+			<dcscor:item>
+				<dcscor:parameter>EditFormat</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">DLF=D</dcscor:value>
+			</dcscor:item>
+		</inputParameters>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>BeginOfPeriod</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period start</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>شروع دوره</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Inizio del periodo</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Początek okresu</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Dönem başı</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Đầu kỳ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>EndOfPeriod</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period end</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>پایان دوره</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Fine del periodo</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Koniec okresu</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Dönem sonu</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Cuối kỳ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>AllowableAmountPayable</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Allowable amount payable</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>مبلغ مجاز قابل پرداخت</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Importo di indebitamento ammissibile</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Dopuszczalna wartość należna</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Допустимая сумма задолженности</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>İzin verilen borç tutarı</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Số tiền nợ cho phép</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:TypeId>ae2f89b3-a2ce-4f0a-a0a9-61e5b32d3e81</v8:TypeId>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>SalesAmount</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Sales amount</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>مبلغ فروش</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Importo di vendita</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Wartość sprzedaży</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Сумма продажи</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Satış tutarı</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Số tiền bán hàng</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:TypeId>ae2f89b3-a2ce-4f0a-a0a9-61e5b32d3e81</v8:TypeId>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>ProhibitionOfShipmentOnCreditAndDelay</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Reason for delivery block by allowed credit and AR/AP overdue (context)</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>دلیل مسدودسازی تحویل بر اساس اعتبار مجاز و سررسیدگذشته دریافتنی/پرداختنی (زمینه)</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Causa del divieto di spedizione secondo il credito disponibile e il debito arretrato (contesto)</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Powód zakazu wysyłki według dopuszczalnej pożyczki i zaległego zobowiązania (kontekst)</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Причина запрета отгрузки по допустимому кредиту и просроченной задолженности (контекст)</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Mevcut krediye ve vadesi geçmiş borca göre sevkiyat engeli nedeni (bağlam)</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Nguyên nhân cấm giao hàng theo tín dụng được phép và công nợ quá hạn (ngữ cảnh)</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Period</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Date</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>تاریخ</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Data</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Data</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Tarih</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Ngày</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Recorder</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Transfer record (recorder)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>رکورد انتقال (ثبت‌کننده)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Documento di movimento (registratore)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Dokument przepływu rejestrator</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ движения (регистратор)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Transfer kaydı (kaydedici)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Chứng từ của bản ghi kết chuyển (nguồn ghi)</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Sum</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Document amount</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>مبلغ سند</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Importo del documento</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Wartość dokumentu</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма документа</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Belge tutarı</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Số tiền chứng từ</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Customer receivables</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>مطالبات از مشتری</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Debito del cliente</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Dług klienta</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Долг клиента</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Müşteri borcu</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Phải thu</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>CustomerAccountsReceivableClosingBalance</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Total</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>جمع کل</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>In totale</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Łącznie</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Всего</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Toplam</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Tổng số</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>OverdueCustomerDebtClosingBalance</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>including overdue</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>شامل سررسیدگذشته</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>incluso in ritardo</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>w tym przeterminowano</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>в т.ч. просрочено</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>vadesi geçmiş dahil</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>bao gồm quá hạn</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Payables</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>پرداختنی‌ها</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Il nostro debito</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Nasze zobowiązanie</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наш долг</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Borcumuz</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Chúng ta nợ</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>AccountsPayableOfCompanyClosingBalance</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Total</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>جمع کل</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>In totale</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Łącznie</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Всего</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Toplam</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Tổng số</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>OurDebtOverdueClosingBalance</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>including overdue</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>شامل سررسیدگذشته</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>incluso in ritardo</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>w tym przeterminowano</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>в т.ч. просрочено</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>vadesi geçmiş dahil</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>bao gồm quá hạn</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AllowableAmountPayable</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Allowable credit</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>اعتبار مجاز</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Credito disponibile</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Dopuszczalna pożyczka</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Допустимый кредит</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Mevcut kredi</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Tín dụng cho phép</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>RemainingAllowedCredit</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>SalesAmount</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Sales amount</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>مبلغ فروش</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Importo di vendita</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Wartość sprzedaży</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма продажи</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Satış tutarı</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Số tiền bán hàng</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>EndOfPeriod</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>a4c93782-997a-470d-af51-9ef74a7f450f</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>SalesAmount</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Period</dcsset:field>
+					<dcsset:orderType>Desc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>OverdueCustomerDebtClosingBalance</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">OverdueCustomerDebtClosingBalance</dcsset:left>
+							<dcsset:comparisonType>Filled</dcsset:comparisonType>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>TextColor</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">style:SpecialTextColor</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>RemainingAllowedCredit</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>SalesAmount</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">SalesAmount</dcsset:left>
+							<dcsset:comparisonType>Greater</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:Field">RemainingAllowedCredit</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>TextColor</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">style:SpecialTextColor</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection/>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>MinWidth</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>VerticalOverallPlacement</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">Begin</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Title</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Delivery block reasons</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>دلایل مسدودسازی تحویل</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Cause del divieto di spedizione</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Przyczyny zakazu wysyłki</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Причины запрета отгрузки</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Sevkiyat engeli nedenleri</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Nguyên nhân cấm giao hàng</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>DataParametersOutput</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:conditionalAppearance>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>AllowableAmountPayable</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>RemainingAllowedCredit</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>SalesAmount</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">Period</dcsset:left>
+								<dcsset:comparisonType>Filled</dcsset:comparisonType>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Text</dcscor:parameter>
+								<dcscor:value xsi:type="v8:LocalStringType"/>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>Recorder</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ThisIsPaymentStageAccordingToSchedule</dcsset:left>
+								<dcsset:comparisonType>Equal</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								<dcsset:presentation xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Scheduled payment milestone</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>fa</v8:lang>
+										<v8:content>مرحله پرداخت زمان‌بندی‌شده</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>it</v8:lang>
+										<v8:content>Fase di pagamento secondo il grafico</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>pl</v8:lang>
+										<v8:content>Etap płatności wg harmonogramu</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Этап оплаты по графику</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>tr</v8:lang>
+										<v8:content>Plana göre ödeme aşaması</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>vi</v8:lang>
+										<v8:content>Giai đoạn thanh toán theo lịch</v8:content>
+									</v8:item>
+								</dcsset:presentation>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>TextColor</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:Gray</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Text</dcscor:parameter>
+								<dcscor:value xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Scheduled payment milestone</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>fa</v8:lang>
+										<v8:content>مرحله پرداخت زمان‌بندی‌شده</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>it</v8:lang>
+										<v8:content>Fase di pagamento secondo il grafico</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>pl</v8:lang>
+										<v8:content>Etap płatności wg harmonogramu</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Этап оплаты по графику</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>tr</v8:lang>
+										<v8:content>Plana göre ödeme aşaması</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>vi</v8:lang>
+										<v8:content>Giai đoạn thanh toán theo lịch</v8:content>
+									</v8:item>
+								</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>Recorder</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ThisIsStageOfShipmentOnSchedule</dcsset:left>
+								<dcsset:comparisonType>Equal</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								<dcsset:presentation xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Shipment date on schedule</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>fa</v8:lang>
+										<v8:content>تاریخ ارسال طبق زمان‌بندی</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>it</v8:lang>
+										<v8:content>Data di spedizione secondo il grafico</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>pl</v8:lang>
+										<v8:content>Data wysyłki według harmonogramu</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Дата отгрузки по графику</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>tr</v8:lang>
+										<v8:content>Plana göre sevkiyat tarihi</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>vi</v8:lang>
+										<v8:content>Ngày giao hàng theo lịch</v8:content>
+									</v8:item>
+								</dcsset:presentation>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>TextColor</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:Gray</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Text</dcscor:parameter>
+								<dcscor:value xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Shipment date on schedule</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>fa</v8:lang>
+										<v8:content>تاریخ ارسال طبق زمان‌بندی</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>it</v8:lang>
+										<v8:content>Data di spedizione secondo il grafico</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>pl</v8:lang>
+										<v8:content>Data wysyłki według harmonogramu</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Дата отгрузки по графику</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>tr</v8:lang>
+										<v8:content>Plana göre sevkiyat tarihi</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>vi</v8:lang>
+										<v8:content>Ngày giao hàng theo lịch</v8:content>
+									</v8:item>
+								</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+				</dcsset:conditionalAppearance>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>FilterOutput</dcscor:parameter>
+						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ProhibitionOfCreditShipment</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Reason for delivery block by allowed credit(context)</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>دلیل مسدودسازی تحویل بر اساس اعتبار مجاز (زمینه)</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Causa del divieto di spedizione secondo il credito disponibile (contesto)</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Powód zakazu wysyłki według dopuszczalnej pożyczki (kontekst)</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Причина запрета отгрузки по допустимому кредиту (контекст)</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Mevcut krediye göre sevkiyat engeli nedeni (bağlam)</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Nguyên nhân cấm giao hàng theo tín dụng cho phép (ngữ cảnh)</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Period</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Date</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>تاریخ</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Data</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Data</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Tarih</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Ngày</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Recorder</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Transfer record (recorder)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>رکورد انتقال (ثبت‌کننده)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Documento di movimento (registratore)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Dokument przepływu rejestrator</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ движения (регистратор)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Transfer kaydı (kaydedici)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Chứng từ của bản ghi kết chuyển (nguồn ghi)</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Sum</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Document amount</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>مبلغ سند</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Importo del documento</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Wartość dokumentu</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма документа</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Belge tutarı</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Số tiền chứng từ</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>CustomerAccountsReceivableClosingBalance</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Customer receivables</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>مطالبات از مشتری</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Debito del cliente</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Dług klienta</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Долг клиента</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Müşteri borcu</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Phải thu</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AccountsPayableOfCompanyClosingBalance</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Payables</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>پرداختنی‌ها</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Il nostro debito</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Nasze zobowiązanie</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наш долг</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Borcumuz</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Chúng ta nợ</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AllowableAmountPayable</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Allowable credit</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>اعتبار مجاز</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Credito disponibile</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Dopuszczalna pożyczka</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Допустимый кредит</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Mevcut alacak</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Tín dụng cho phép</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>RemainingAllowedCredit</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>SalesAmount</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Sales amount</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>مبلغ فروش</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Importo di vendita</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Wartość sprzedaży</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма продажи</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Satış tutarı</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Số tiền bán hàng</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>EndOfPeriod</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>a4c93782-997a-470d-af51-9ef74a7f450f</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>SalesAmount</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Period</dcsset:field>
+					<dcsset:orderType>Desc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>OverdueCustomerDebtClosingBalance</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">OverdueCustomerDebtClosingBalance</dcsset:left>
+							<dcsset:comparisonType>Filled</dcsset:comparisonType>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>TextColor</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">style:SpecialTextColor</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>RemainingAllowedCredit</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>SalesAmount</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">SalesAmount</dcsset:left>
+							<dcsset:comparisonType>Greater</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:Field">RemainingAllowedCredit</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>TextColor</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">style:SpecialTextColor</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection/>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>MinWidth</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>VerticalOverallPlacement</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">Begin</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Title</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Delivery block reasons</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>دلایل مسدودسازی تحویل</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Cause del divieto di spedizione</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Przyczyny zakazu wysyłki</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Причины запрета отгрузки</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Teslimat engeli nedenleri</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Nguyên nhân cấm giao hàng</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>DataParametersOutput</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ThisIsPaymentStageAccordingToSchedule</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:conditionalAppearance>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>AllowableAmountPayable</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>RemainingAllowedCredit</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>SalesAmount</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">Period</dcsset:left>
+								<dcsset:comparisonType>Filled</dcsset:comparisonType>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Text</dcscor:parameter>
+								<dcscor:value xsi:type="v8:LocalStringType"/>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>Recorder</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ThisIsPaymentStageAccordingToSchedule</dcsset:left>
+								<dcsset:comparisonType>Equal</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								<dcsset:presentation xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Scheduled payment milestone</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>fa</v8:lang>
+										<v8:content>مرحله پرداخت زمان‌بندی‌شده</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>it</v8:lang>
+										<v8:content>Fase di pagamento secondo il grafico</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>pl</v8:lang>
+										<v8:content>Etap płatności wg harmonogramu</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Этап оплаты по графику</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>tr</v8:lang>
+										<v8:content>Plana göre ödeme aşaması</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>vi</v8:lang>
+										<v8:content>Giai đoạn thanh toán theo lịch</v8:content>
+									</v8:item>
+								</dcsset:presentation>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>TextColor</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:Gray</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Text</dcscor:parameter>
+								<dcscor:value xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Scheduled payment milestone</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>fa</v8:lang>
+										<v8:content>مرحله پرداخت زمان‌بندی‌شده</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>it</v8:lang>
+										<v8:content>Fase di pagamento secondo il grafico</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>pl</v8:lang>
+										<v8:content>Etap płatności wg harmonogramu</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Этап оплаты по графику</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>tr</v8:lang>
+										<v8:content>Plana göre ödeme aşaması</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>vi</v8:lang>
+										<v8:content>Giai đoạn thanh toán theo lịch</v8:content>
+									</v8:item>
+								</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>Recorder</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ThisIsStageOfShipmentOnSchedule</dcsset:left>
+								<dcsset:comparisonType>Equal</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								<dcsset:presentation xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Shipment date on schedule</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>fa</v8:lang>
+										<v8:content>تاریخ ارسال طبق زمان‌بندی</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>it</v8:lang>
+										<v8:content>Data di spedizione secondo il grafico</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>pl</v8:lang>
+										<v8:content>Data wysyłki według harmonogramu</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Дата отгрузки по графику</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>tr</v8:lang>
+										<v8:content>Plana göre sevkiyat tarihi</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>vi</v8:lang>
+										<v8:content>Ngày giao hàng theo lịch</v8:content>
+									</v8:item>
+								</dcsset:presentation>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>TextColor</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:Gray</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Text</dcscor:parameter>
+								<dcscor:value xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Shipment date on schedule</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>fa</v8:lang>
+										<v8:content>تاریخ ارسال طبق زمان‌بندی</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>it</v8:lang>
+										<v8:content>Data di spedizione secondo il grafico</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>pl</v8:lang>
+										<v8:content>Data wysyłki według harmonogramu</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Дата отгрузки по графику</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>tr</v8:lang>
+										<v8:content>Plana göre sevkiyat tarihi</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>vi</v8:lang>
+										<v8:content>Ngày giao hàng theo lịch</v8:content>
+									</v8:item>
+								</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+				</dcsset:conditionalAppearance>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>FilterOutput</dcscor:parameter>
+						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ProhibitionOfShipmentByDelay</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Reason for delivery block by AR/AP overdue (context)</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>دلیل مسدودسازی تحویل بر اساس سررسیدگذشته دریافتنی/پرداختنی (زمینه)</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Causa del divieto di spedizione secondo il debito arretrato (contesto)</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Powód zakazu wysyłki według zaległego zobowiązania (kontekst)</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Причина запрета отгрузки по просроченной задолженности (контекст)</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Vadesi geçmiş borca göre teslimat engeli nedeni (bağlam)</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Nguyên nhân cấm giao hàng theo công nợ quá hạn (ngữ cảnh)</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Period</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Date</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>تاریخ</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Data</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Data</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Tarih</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Ngày</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Recorder</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Transfer record (recorder)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>رکورد انتقال (ثبت‌کننده)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Documento di movimento (registratore)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Dokument przepływu rejestrator</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ движения (регистратор)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Transfer kaydı (kaydedici)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Chứng từ của bản ghi kết chuyển (nguồn ghi)</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Sum</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Document amount</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>مبلغ سند</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Importo del documento</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Wartość dokumentu</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма документа</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Belge tutarı</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Số tiền chứng từ</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Customer receivables</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>مطالبات از مشتری</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Debito del cliente</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Dług klienta</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Долг клиента</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Müşteri borcu</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Phải thu</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>CustomerAccountsReceivableClosingBalance</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Total</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>جمع کل</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>In totale</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Łącznie</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Всего</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Toplam</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Tổng số</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>OverdueCustomerDebtClosingBalance</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>including overdue</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>شامل سررسیدگذشته</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>incluso in ritardo</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>w tym przeterminowano</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>в т.ч. просрочено</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>vadesi geçmiş dahil</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>bao gồm quá hạn</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Payables</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>پرداختنی‌ها</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Il nostro debito</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Nasze zobowiązanie</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наш долг</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Borcumuz</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Chúng ta nợ</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>AccountsPayableOfCompanyClosingBalance</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Total</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>جمع کل</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>In totale</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>Łącznie</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Всего</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>Toplam</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>Tổng số</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>OurDebtOverdueClosingBalance</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>including overdue</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>fa</v8:lang>
+								<v8:content>شامل سررسیدگذشته</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>it</v8:lang>
+								<v8:content>incluso in ritardo</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>pl</v8:lang>
+								<v8:content>w tym przeterminowano</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>в т.ч. просрочено</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>tr</v8:lang>
+								<v8:content>vadesi geçmiş dahil</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>vi</v8:lang>
+								<v8:content>bao gồm quá hạn</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>EndOfPeriod</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>a4c93782-997a-470d-af51-9ef74a7f450f</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>SalesAmount</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Period</dcsset:field>
+					<dcsset:orderType>Desc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>OverdueCustomerDebtClosingBalance</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">OverdueCustomerDebtClosingBalance</dcsset:left>
+							<dcsset:comparisonType>Filled</dcsset:comparisonType>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>TextColor</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">style:SpecialTextColor</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>RemainingAllowedCredit</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>SalesAmount</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">SalesAmount</dcsset:left>
+							<dcsset:comparisonType>Greater</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:Field">RemainingAllowedCredit</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>TextColor</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">style:SpecialTextColor</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection/>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>MinWidth</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>VerticalOverallPlacement</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">Begin</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Title</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Delivery block reasons</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>دلایل مسدودسازی تحویل</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Cause del divieto di spedizione</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Przyczyny zakazu wysyłki</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Причины запрета отгрузки</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Sevkiyat engeli nedenleri</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Nguyên nhân cấm giao hàng</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>DataParametersOutput</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:conditionalAppearance>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>AllowableAmountPayable</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>RemainingAllowedCredit</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>SalesAmount</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">Period</dcsset:left>
+								<dcsset:comparisonType>Filled</dcsset:comparisonType>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Text</dcscor:parameter>
+								<dcscor:value xsi:type="v8:LocalStringType"/>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>Recorder</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ThisIsPaymentStageAccordingToSchedule</dcsset:left>
+								<dcsset:comparisonType>Equal</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								<dcsset:presentation xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Scheduled payment milestone</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>fa</v8:lang>
+										<v8:content>مرحله پرداخت زمان‌بندی‌شده</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>it</v8:lang>
+										<v8:content>Fase di pagamento secondo il grafico</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>pl</v8:lang>
+										<v8:content>Etap płatności wg harmonogramu</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Этап оплаты по графику</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>tr</v8:lang>
+										<v8:content>Plana göre ödeme aşaması</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>vi</v8:lang>
+										<v8:content>Giai đoạn thanh toán theo lịch</v8:content>
+									</v8:item>
+								</dcsset:presentation>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>TextColor</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:Gray</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Text</dcscor:parameter>
+								<dcscor:value xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Scheduled payment milestone</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>fa</v8:lang>
+										<v8:content>مرحله پرداخت زمان‌بندی‌شده</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>it</v8:lang>
+										<v8:content>Fase di pagamento secondo il grafico</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>pl</v8:lang>
+										<v8:content>Etap płatności wg harmonogramu</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Этап оплаты по графику</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>tr</v8:lang>
+										<v8:content>Plana göre ödeme aşaması</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>vi</v8:lang>
+										<v8:content>Giai đoạn thanh toán theo lịch</v8:content>
+									</v8:item>
+								</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>Recorder</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ThisIsStageOfShipmentOnSchedule</dcsset:left>
+								<dcsset:comparisonType>Equal</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+								<dcsset:presentation xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Shipment date on schedule</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>fa</v8:lang>
+										<v8:content>تاریخ ارسال طبق زمان‌بندی</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>it</v8:lang>
+										<v8:content>Data di spedizione secondo il grafico</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>pl</v8:lang>
+										<v8:content>Data wysyłki według harmonogramu</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Дата отгрузки по графику</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>tr</v8:lang>
+										<v8:content>Plana göre sevkiyat tarihi</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>vi</v8:lang>
+										<v8:content>Ngày giao hàng theo lịch</v8:content>
+									</v8:item>
+								</dcsset:presentation>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>TextColor</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:Gray</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>Text</dcscor:parameter>
+								<dcscor:value xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Shipment date on schedule</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>fa</v8:lang>
+										<v8:content>تاریخ ارسال طبق زمان‌بندی</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>it</v8:lang>
+										<v8:content>Data di spedizione secondo il grafico</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>pl</v8:lang>
+										<v8:content>Data wysyłki według harmonogramu</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Дата отгрузки по графику</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>tr</v8:lang>
+										<v8:content>Plana göre sevkiyat tarihi</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>vi</v8:lang>
+										<v8:content>Ngày giao hàng theo lịch</v8:content>
+									</v8:item>
+								</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+				</dcsset:conditionalAppearance>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>FilterOutput</dcscor:parameter>
+						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

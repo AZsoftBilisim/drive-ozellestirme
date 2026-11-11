@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form">
+  <items xsi:type="form:Table">
+    <name>BudgetFlowItems</name>
+    <id>16</id>
+    <title>
+      <key>en</key>
+      <value>Budget flow items</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>اقلام جریان بودجه</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Voci dei bilanci</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Pozycje budżetowe</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Статьи бюджетов</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Bütçe kalemleri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Khoản mục ngân sách</value>
+    </title>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <dataPath xsi:type="form:DataPath">
+      <segments>BudgetFlowItems</segments>
+    </dataPath>
+    <titleLocation>None</titleLocation>
+    <excludedCommands>MoveDown</excludedCommands>
+    <excludedCommands>MoveUp</excludedCommands>
+    <items xsi:type="form:FormField">
+      <name>BudgetFlowItemsBudgetFlowItem</name>
+      <id>20</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>BudgetFlowItems.BudgetFlowItem</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>BudgetFlowItemsBudgetFlowItemExtendedTooltip</name>
+        <id>22</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>BudgetFlowItemsBudgetFlowItemContextMenu</name>
+        <id>21</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>EnterOnInput</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+        <choiceForm>Catalog.BudgetFlowItems.Form.ChoiceFormByDimension</choiceForm>
+        <choiceParameters>
+          <name>Dimension</name>
+          <value xsi:type="form:FormChoiceListDesTimeValue">
+            <value xsi:type="core:ReferenceValue">
+              <value>ChartOfCharacteristicTypes.BudgetFlowItemDimensions.CashFlowReportItems</value>
+            </value>
+          </value>
+        </choiceParameters>
+      </extInfo>
+    </items>
+    <autoCommandBar>
+      <name>BudgetFlowItemsCommandBar</name>
+      <id>18</id>
+      <items xsi:type="form:Button">
+        <name>BudgetFlowItemsPick</name>
+        <id>23</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>BudgetFlowItemsPickExtendedTooltip</name>
+          <id>24</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.Command.Pick</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
+      <horizontalAlign>Left</horizontalAlign>
+      <autoFill>true</autoFill>
+    </autoCommandBar>
+    <handlers>
+      <event>ChoiceProcessing</event>
+      <name>BudgetFlowItemsChoiceProcessing</name>
+    </handlers>
+    <searchStringAddition>
+      <name>BudgetFlowItemsSearchString</name>
+      <id>25</id>
+      <extendedTooltip>
+        <name>BudgetFlowItemsSearchStringExtendedTooltip</name>
+        <id>27</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>BudgetFlowItemsSearchStringContextMenu</name>
+        <id>26</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <source>BudgetFlowItems</source>
+      <extInfo xsi:type="form:SearchStringAdditionExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+      </extInfo>
+    </searchStringAddition>
+    <viewStatusAddition>
+      <name>BudgetFlowItemsViewStatus</name>
+      <id>28</id>
+      <extendedTooltip>
+        <name>BudgetFlowItemsViewStatusExtendedTooltip</name>
+        <id>30</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>BudgetFlowItemsViewStatusContextMenu</name>
+        <id>29</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>ViewStatusAddition</type>
+      <source>BudgetFlowItems</source>
+      <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <horizontalLocation>Left</horizontalLocation>
+      </extInfo>
+    </viewStatusAddition>
+    <searchControlAddition>
+      <name>BudgetFlowItemsSearchControl</name>
+      <id>31</id>
+      <extendedTooltip>
+        <name>BudgetFlowItemsSearchControlExtendedTooltip</name>
+        <id>33</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>BudgetFlowItemsSearchControlContextMenu</name>
+        <id>32</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>SearchControlAddition</type>
+      <source>BudgetFlowItems</source>
+      <extInfo xsi:type="form:SearchControlAdditionExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+      </extInfo>
+    </searchControlAddition>
+    <extendedTooltip>
+      <name>BudgetFlowItemsExtendedTooltip</name>
+      <id>19</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>BudgetFlowItemsContextMenu</name>
+      <id>17</id>
+      <autoFill>true</autoFill>
+    </contextMenu>
+    <changeRowSet>true</changeRowSet>
+    <changeRowOrder>true</changeRowOrder>
+    <autoMaxWidth>true</autoMaxWidth>
+    <autoMaxHeight>true</autoMaxHeight>
+    <autoMaxRowsCount>true</autoMaxRowsCount>
+    <selectionMode>MultiRow</selectionMode>
+    <header>true</header>
+    <headerHeight>1</headerHeight>
+    <footerHeight>1</footerHeight>
+    <horizontalScrollBar>AutoUse</horizontalScrollBar>
+    <verticalScrollBar>AutoUse</verticalScrollBar>
+    <horizontalLines>true</horizontalLines>
+    <verticalLines>true</verticalLines>
+    <autoInsertNewRow>true</autoInsertNewRow>
+    <searchOnInput>Auto</searchOnInput>
+    <initialListView>Auto</initialListView>
+    <horizontalStretch>true</horizontalStretch>
+    <verticalStretch>true</verticalStretch>
+    <enableStartDrag>true</enableStartDrag>
+    <enableDrag>true</enableDrag>
+    <rowFilter xsi:type="core:UndefinedValue"/>
+  </items>
+  <items xsi:type="form:FormGroup">
+    <name>Group1</name>
+    <id>10</id>
+    <items xsi:type="form:Button">
+      <name>Save</name>
+      <id>14</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>SaveExtendedTooltip</name>
+        <id>15</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.Command.Save</commandName>
+      <representation>Auto</representation>
+      <defaultButton>true</defaultButton>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <items xsi:type="form:Button">
+      <name>Cancel</name>
+      <id>12</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>CancelExtendedTooltip</name>
+        <id>13</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.Command.Cancel</commandName>
+      <representation>Auto</representation>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <extendedTooltip>
+      <name>Group1ExtendedTooltip</name>
+      <id>11</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>CommandBar</type>
+    <extInfo xsi:type="form:CommandBarExtInfo">
+      <horizontalAlign>Right</horizontalAlign>
+    </extInfo>
+  </items>
+  <autoCommandBar>
+    <name>FormCommandBar</name>
+    <id>-1</id>
+    <horizontalAlign>Left</horizontalAlign>
+  </autoCommandBar>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>OnCreateAtServer</name>
+  </handlers>
+  <saveWindowSettings>true</saveWindowSettings>
+  <autoTitle>true</autoTitle>
+  <autoUrl>true</autoUrl>
+  <group>Vertical</group>
+  <autoFillCheck>true</autoFillCheck>
+  <allowFormCustomize>true</allowFormCustomize>
+  <enabled>true</enabled>
+  <showTitle>true</showTitle>
+  <showCloseButton>true</showCloseButton>
+  <attributes>
+    <name>AddressInTempStorage</name>
+    <title>
+      <key>en</key>
+      <value>Temporary storage address</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>آدرس حافظه موقت</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Indirizzo nell'archivio temporaneo</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Adres w pamięci tymczasowej</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Адрес во временном хранилище</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Geçici depolama adresi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Địa chỉ trong kho chứa tạm thời</value>
+    </title>
+    <id>2</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>BudgetFlowItems</name>
+    <title>
+      <key>en</key>
+      <value>Budget flow items</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>اقلام جریان بودجه</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Voci dei bilanci</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Pozycje budżetowe</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Статьи бюджетов</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Bütçe kalemleri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Khoản mục ngân sách</value>
+    </title>
+    <id>3</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+    <columns>
+      <name>BudgetFlowItem</name>
+      <title>
+        <key>en</key>
+        <value>Budget flow item</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>قلم جریان بودجه</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Voce di bilanci</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Pozycja budżetowa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Статья бюджетов</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>bütçe kalemi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Khoản mục ngân sách</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>CatalogRef.BudgetFlowItems</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <formCommands>
+    <name>Cancel</name>
+    <title>
+      <key>en</key>
+      <value>Cancel</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>انصراف</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Annulla</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Anuluj</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Отмена</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>İptal</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Hủy bỏ</value>
+    </title>
+    <id>1</id>
+    <toolTip>
+      <key>en</key>
+      <value>Cancel</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>انصراف</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Annulla</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Anuluj</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Отмена</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>İptal</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Hủy bỏ</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>Cancel</name>
+      </handler>
+    </action>
+    <representation>Text</representation>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>Save</name>
+    <title>
+      <key>en</key>
+      <value>Save</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>ذخیره</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Salvare</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Zapisz</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Сохранить</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Kaydet</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Lưu lại</value>
+    </title>
+    <id>2</id>
+    <toolTip>
+      <key>en</key>
+      <value>Save</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>ذخیره</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Salvare</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Zapisz</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Сохранить</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Kaydet</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Lưu lại</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>Save</name>
+      </handler>
+    </action>
+    <modifiesStoredData>true</modifiesStoredData>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>Pick</name>
+    <title>
+      <key>en</key>
+      <value>Pick</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>انتخاب</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Selezionare</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Wybierz</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Подобрать</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Seç</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Lựa chọn</value>
+    </title>
+    <id>3</id>
+    <toolTip>
+      <key>en</key>
+      <value>Pick</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>انتخاب</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Selezionare</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Wybierz</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Подобрать</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Seç</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Lựa chọn</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <picture xsi:type="core:PictureRef">
+      <picture>StdPicture.Properties</picture>
+    </picture>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>Pick</name>
+      </handler>
+    </action>
+    <representation>TextPicture</representation>
+    <modifiesStoredData>true</modifiesStoredData>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <commandInterface>
+    <navigationPanel/>
+    <commandBar/>
+  </commandInterface>
+</form:Form>

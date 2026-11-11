@@ -1,0 +1,42 @@
+#Region Variables
+
+&AtClient
+Var IdleHandlerParameters;
+
+&AtClient
+Var TimeConsumingOperationForm;
+
+#EndRegion
+
+#Region FormEventHandlers
+
+&AtServer
+Procedure OnCreateAtServer(Cancel, StandardProcessing)
+
+	If Parameters.Property("AutoTest_2") Then // Refund upon receipt of the form for analysis.
+		Return;
+	EndIf;
+
+	ConfigurationModificationOverridable.OnCreateAtServer(ThisForm, StandardProcessing, Cancel);
+
+EndProcedure
+
+#EndRegion
+
+#Region FormCommandsEventHandlers
+
+&AtClient
+Procedure EnableEdit(Command)
+
+	Close(True);
+
+EndProcedure
+
+&AtClient
+Procedure CheckObjectUsage(Command)
+	
+	ChangeLockOfTMObjectAttributesClient.CheckObjectUsage(ThisForm, IdleHandlerParameters);
+	
+EndProcedure
+
+#EndRegion

@@ -1,0 +1,606 @@
+<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" elementFormQualified="true" attributeFormQualified="false">
+	<valueType name="ДействияСоСтрокамиОрдеровНаОтгрузку" base="xs:string" variety="Atomic">
+		<enumeration/>
+		<enumeration>Отобрать</enumeration>
+		<enumeration>Отгрузить</enumeration>
+		<enumeration>НеОтгружать</enumeration>
+	</valueType>
+	<valueType name="ПорядокОбработкиСкладскогоЗадания" base="xs:string" variety="Atomic">
+		<enumeration/>
+		<enumeration>ЯчейкаТовар</enumeration>
+		<enumeration>ТоварЯчейка</enumeration>
+	</valueType>
+	<valueType name="СтатусыОтборовРазмещенийТоваров" base="xs:string" variety="Atomic">
+		<enumeration/>
+		<enumeration>Подготовлено</enumeration>
+		<enumeration>ВРаботе</enumeration>
+		<enumeration>ВыполненоБезОшибок</enumeration>
+		<enumeration>ВыполненоСОшибками</enumeration>
+	</valueType>
+	<valueType name="СтатусыПересчетовТоваров" base="xs:string" variety="Atomic">
+		<enumeration/>
+		<enumeration>Подготовлено</enumeration>
+		<enumeration>ВРаботе</enumeration>
+		<enumeration>ВнесениеРезультатов</enumeration>
+		<enumeration>Выполнено</enumeration>
+	</valueType>
+	<valueType name="СтатусыПриходныхОрдеров" base="xs:string" variety="Atomic">
+		<enumeration/>
+		<enumeration>КПоступлению</enumeration>
+		<enumeration>ВРаботе</enumeration>
+		<enumeration>ТребуетсяОбработка</enumeration>
+		<enumeration>Принят</enumeration>
+	</valueType>
+	<valueType name="СтатусыРасходныхОрдеров" base="xs:string" variety="Atomic">
+		<enumeration/>
+		<enumeration>КОтбору</enumeration>
+		<enumeration>КПроверке</enumeration>
+		<enumeration>ВПроцессеПроверки</enumeration>
+		<enumeration>КОтгрузке</enumeration>
+		<enumeration>Отгружен</enumeration>
+	</valueType>
+	<valueType name="ТипыЗаданий" base="xs:string" variety="Atomic">
+		<enumeration/>
+		<enumeration>Отбор</enumeration>
+		<enumeration>Размещение</enumeration>
+		<enumeration>Перемещение</enumeration>
+		<enumeration>Приемка</enumeration>
+		<enumeration>Пересчет</enumeration>
+		<enumeration>ПроверкаОтбора</enumeration>
+	</valueType>
+	<valueType name="ТипыИзмеряемыхВеличин" base="xs:string" variety="Atomic">
+		<enumeration/>
+		<enumeration>Вес</enumeration>
+		<enumeration>Объем</enumeration>
+		<enumeration>Длина</enumeration>
+		<enumeration>Площадь</enumeration>
+		<enumeration>КоличествоШтук</enumeration>
+		<enumeration>Упаковка</enumeration>
+	</valueType>
+	<valueType name="ТипыНоменклатуры" base="xs:string" variety="Atomic">
+		<enumeration/>
+		<enumeration>Товар</enumeration>
+		<enumeration>МногооборотнаяТара</enumeration>
+	</valueType>
+	<valueType name="ТипыСкладскихЯчеек" base="xs:string" variety="Atomic">
+		<enumeration/>
+		<enumeration>Приемка</enumeration>
+		<enumeration>Отгрузка</enumeration>
+		<enumeration>Хранение</enumeration>
+		<enumeration>Архив</enumeration>
+	</valueType>
+	<valueType name="ТочностиУказанияСрокаГодности" base="xs:string" variety="Atomic">
+		<enumeration/>
+		<enumeration>СТочностьюДоМесяцев</enumeration>
+		<enumeration>СТочностьюДоДней</enumeration>
+		<enumeration>СТочностьюДоЧасов</enumeration>
+	</valueType>
+	<valueType name="guid" base="xs:string">
+		<pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+	</valueType>
+	<valueType name="ТипЗначенияШтрихкодаМаркировки" base="xs:string" maxLength="200"/>
+	<valueType name="ТипыУпаковокМаркировки" base="xs:string" variety="Atomic">
+		<enumeration xsi:type="xs:string">ЕдиничныйТовар</enumeration>
+		<enumeration xsi:type="xs:string">МонотоварнаяУпаковка</enumeration>
+		<enumeration xsi:type="xs:string">МультитоварнаяУпаковка</enumeration>
+	</valueType>
+	<valueType name="РезультатыКонтроляМаркировки" base="xs:string" variety="Atomic">
+		<enumeration xsi:type="xs:string">Корректно</enumeration>
+		<enumeration xsi:type="xs:string">Вложенная</enumeration>
+		<enumeration xsi:type="xs:string">НеСоответсвуетТоварномуСоставу</enumeration>
+		<enumeration xsi:type="xs:string">НетДанных</enumeration>
+	</valueType>
+	<objectType name="ВидыНоменклатуры">
+		<property name="Ссылка" type="xs:string"/>
+		<property name="Наименование">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="50"/>
+		</property>
+		<property name="ИспользоватьНомерСерии" type="xs:boolean"/>
+		<property name="ИспользоватьСрокГодностиСерии" type="xs:boolean"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ТипНоменклатуры" type="d3p1:ТипыНоменклатуры"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ТочностьУказанияСрокаГодностиСерии" type="d3p1:ТочностиУказанияСрокаГодности"/>
+	</objectType>
+	<objectType name="ЕдиницыИзмерения">
+		<property name="Ссылка" type="xs:string"/>
+		<property name="Наименование">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="25"/>
+		</property>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ТипИзмеряемойВеличины" type="d3p1:ТипыИзмеряемыхВеличин" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="Назначения">
+		<property name="Ссылка" type="xs:string"/>
+		<property name="Наименование">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="100"/>
+		</property>
+	</objectType>
+	<objectType name="Номенклатура">
+		<property name="Ссылка" type="xs:string"/>
+		<property name="Наименование" lowerBound="0">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="100"/>
+		</property>
+		<property name="Артикул">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="50"/>
+		</property>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ВидНоменклатуры" type="d3p1:ВидыНоменклатуры" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ЕдиницаИзмерения" type="d3p1:ЕдиницыИзмерения"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ЕдиницаИзмеренияВеса" type="d3p1:ЕдиницыИзмерения" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ЕдиницаИзмеренияОбъема" type="d3p1:ЕдиницыИзмерения" lowerBound="0" nillable="true"/>
+		<property name="Описание">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="1024"/>
+		</property>
+		<property name="Штрихкод">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="360"/>
+		</property>
+	</objectType>
+	<objectType name="ОтборРазмещениеТоваров">
+		<property name="Ссылка" type="xs:string"/>
+		<property name="Дата" type="xs:dateTime"/>
+		<property name="Номер">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="256"/>
+		</property>
+		<property name="Проведен" type="xs:boolean"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Склад" type="d3p1:Склады"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Помещение" type="d3p1:Помещения"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Статус" type="d3p1:СтатусыОтборовРазмещенийТоваров"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Исполнитель" type="d3p1:Пользователи"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ЗонаОтгрузки" type="d3p1:СкладскиеЯчейки" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ЗонаПриемки" type="d3p1:СкладскиеЯчейки" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ТоварыОтбор" type="d3p1:ОтборРазмещениеТоваровТоварыОтбор" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ТоварыРазмещение" type="d3p1:ОтборРазмещениеТоваровТоварыРазмещение" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="МаркировкаВерхнегоУровня" type="d3p1:ТаблицаМаркировкиВерхнегоУровня" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="МаркировкаДетализированная" type="d3p1:ТаблицаМаркировкиДетализированная" nillable="true"/>
+	</objectType>
+	<objectType name="ОтборРазмещениеТоваровТоварыОтбор">
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Строка" type="d3p1:ОтборРазмещениеТоваровТоварыОтборСтрока" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ОтборРазмещениеТоваровТоварыОтборСтрока">
+		<property name="НомерСтроки">
+			<typeDef xsi:type="ValueType" base="xs:int" variety="Atomic" totalDigits="3"/>
+		</property>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Ячейка" type="d3p1:СкладскиеЯчейки"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Номенклатура" type="d3p1:Номенклатура"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Характеристика" type="d3p1:ХарактеристикиНоменклатуры" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Назначение" type="d3p1:Назначения" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Упаковка" type="d3p1:УпаковкиНоменклатуры" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Серия" type="d3p1:СерииНоменклатуры" lowerBound="0" nillable="true"/>
+		<property name="СтатусУказанияСерий">
+			<typeDef xsi:type="ValueType" base="xs:int" variety="Atomic" totalDigits="2" fractionDigits="0"/>
+		</property>
+		<property name="Количество">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоОтобрано">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоУпаковок">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоУпаковокОтобрано">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоУпаковокВДокументе">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+	</objectType>
+	<objectType name="ОтборРазмещениеТоваровТоварыРазмещение">
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Строка" type="d3p1:ОтборРазмещениеТоваровТоварыРазмещениеСтрока" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ОтборРазмещениеТоваровТоварыРазмещениеСтрока">
+		<property name="НомерСтроки">
+			<typeDef xsi:type="ValueType" base="xs:int" variety="Atomic" totalDigits="3"/>
+		</property>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Ячейка" type="d3p1:СкладскиеЯчейки"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Номенклатура" type="d3p1:Номенклатура"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Характеристика" type="d3p1:ХарактеристикиНоменклатуры" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Назначение" type="d3p1:Назначения" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Упаковка" type="d3p1:УпаковкиНоменклатуры" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Серия" type="d3p1:СерииНоменклатуры" lowerBound="0" nillable="true"/>
+		<property name="СтатусУказанияСерий">
+			<typeDef xsi:type="ValueType" base="xs:int" variety="Atomic" totalDigits="2" fractionDigits="0"/>
+		</property>
+		<property name="Количество">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоРазмещено">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоУпаковок">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоУпаковокРазмещено">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоУпаковокВДокументе">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+	</objectType>
+	<objectType name="ПараметрыЗавершенияПеремещения">
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ЗонаПриемки" type="d3p1:СкладскиеЯчейки" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ЗонаОтгрузки" type="d3p1:СкладскиеЯчейки" lowerBound="0" nillable="true"/>
+		<property name="ОтборОтсканирован" type="xs:boolean"/>
+	</objectType>
+	<objectType name="ПараметрыЗавершенияСкладскогоЗадания">
+		<property name="Успешно" type="xs:boolean"/>
+		<property name="ТекстСообщения" type="xs:string" lowerBound="0"/>
+		<property name="Задание" type="xs:string" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="НеотгружаемыеТовары" type="d3p1:ТаблицаНеотгружаемыхТоваров" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="РезультатПроверкиМаркировки" type="d3p1:ТаблицаПроверкиМарок" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="ПараметрыЗадания">
+		<property name="Успешно" type="xs:boolean"/>
+		<property name="ТекстСообщения" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ПорядокОбработки" type="d3p1:ПорядокОбработкиСкладскогоЗадания" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ИсходныйИсполнитель" type="d3p1:Пользователи" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ОтборРазмещениеТоваров" type="d3p1:ОтборРазмещениеТоваров" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ПересчетТоваров" type="d3p1:ПересчетТоваров" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ПриходныйОрдерНаТовары" type="d3p1:ПриходныйОрдерНаТовары" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="РасходныйОрдерНаТовары" type="d3p1:РасходныйОрдерНаТовары" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="ПараметрыОбработкиОтсканированныхТоваров">
+		<property name="Успешно" type="xs:boolean"/>
+		<property name="ТекстСообщения" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ТоварыОтбор" type="d3p1:ОтборРазмещениеТоваровТоварыОтбор" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="ПараметрыОтменыВыполненияЗадания">
+		<property name="Успешно" type="xs:boolean"/>
+		<property name="ТекстСообщения" type="xs:string" lowerBound="0"/>
+	</objectType>
+	<objectType name="ПараметрыСпискаЯчеек">
+		<property name="Успешно" type="xs:boolean"/>
+		<property name="ТекстСообщения" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ЗоныПриемкиОтгрузки" type="d3p1:СписокЯчеек" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="ПараметрыТоваровЯчейки">
+		<property name="Успешно" type="xs:boolean"/>
+		<property name="ТекстСообщения" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Ячейка" type="d3p1:СкладскиеЯчейки" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ТоварыЯчейки" type="d3p1:ТоварыЯчейки" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="ПересчетТоваров">
+		<property name="Ссылка" type="xs:string"/>
+		<property name="Дата" type="xs:dateTime"/>
+		<property name="Номер">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="256"/>
+		</property>
+		<property name="Проведен" type="xs:boolean"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Склад" type="d3p1:Склады"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Помещение" type="d3p1:Помещения"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Статус" type="d3p1:СтатусыПересчетовТоваров"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Исполнитель" type="d3p1:Пользователи"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Товары" type="d3p1:ПересчетТоваровТовары"/>
+	</objectType>
+	<objectType name="ПересчетТоваровТовары">
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Строка" type="d3p1:ПересчетТоваровТоварыСтрока" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ПересчетТоваровТоварыСтрока">
+		<property name="НомерСтроки">
+			<typeDef xsi:type="ValueType" base="xs:int" variety="Atomic" totalDigits="3"/>
+		</property>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Ячейка" type="d3p1:СкладскиеЯчейки"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Номенклатура" type="d3p1:Номенклатура"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Характеристика" type="d3p1:ХарактеристикиНоменклатуры" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Назначение" type="d3p1:Назначения" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Упаковка" type="d3p1:УпаковкиНоменклатуры" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Серия" type="d3p1:СерииНоменклатуры" lowerBound="0" nillable="true"/>
+		<property name="СтатусУказанияСерий">
+			<typeDef xsi:type="ValueType" base="xs:int" variety="Atomic" totalDigits="2" fractionDigits="0"/>
+		</property>
+		<property name="ИзлишекПорча" type="xs:boolean"/>
+		<property name="Количество">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоФакт">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоУпаковок">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоУпаковокФакт">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоУпаковокВДокументе">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+	</objectType>
+	<objectType name="Пользователи">
+		<property name="Ссылка" type="xs:string"/>
+		<property name="Наименование">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="100"/>
+		</property>
+	</objectType>
+	<objectType name="Помещения">
+		<property name="Ссылка" type="xs:string"/>
+		<property name="Наименование">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="50"/>
+		</property>
+	</objectType>
+	<objectType name="ПриходныйОрдерНаТовары">
+		<property name="Ссылка" type="xs:string"/>
+		<property name="Дата" type="xs:dateTime"/>
+		<property name="Номер">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="256"/>
+		</property>
+		<property name="Проведен" type="xs:boolean"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Склад" type="d3p1:Склады" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Помещение" type="d3p1:Помещения" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Статус" type="d3p1:СтатусыПриходныхОрдеров" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Ответственный" type="d3p1:Пользователи" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ЗонаПриемки" type="d3p1:СкладскиеЯчейки" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Товары" type="d3p1:ПриходныйОрдерНаТовары" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="МаркировкаВерхнегоУровня" type="d3p1:ТаблицаМаркировкиВерхнегоУровня" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="МаркировкаДетализированная" type="d3p1:ТаблицаМаркировкиДетализированная" nillable="true"/>
+	</objectType>
+	<objectType name="ПриходныйОрдерНаТоварыТовары">
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Строка" type="d3p1:ПриходныйОрдерНаТоварыТоварыСтрока" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ПриходныйОрдерНаТоварыТоварыСтрока">
+		<property name="НомерСтроки">
+			<typeDef xsi:type="ValueType" base="xs:int" variety="Atomic" totalDigits="3"/>
+		</property>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Номенклатура" type="d3p1:Номенклатура"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Характеристика" type="d3p1:ХарактеристикиНоменклатуры" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Назначение" type="d3p1:Назначения" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Упаковка" type="d3p1:УпаковкиНоменклатуры" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Серия" type="d3p1:СерииНоменклатуры" lowerBound="0" nillable="true"/>
+		<property name="СтатусУказанияСерий">
+			<typeDef xsi:type="ValueType" base="xs:int" variety="Atomic" totalDigits="2" fractionDigits="0"/>
+		</property>
+		<property name="Количество">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоУпаковок">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="УпаковочныйЛист" type="d3p1:УпаковочныйЛист"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="УпаковочныйЛистРодитель" type="d3p1:УпаковочныйЛист"/>
+		<property name="ЭтоУпаковочныйЛист" type="xs:boolean"/>
+	</objectType>
+	<objectType name="РасходныйОрдерНаТовары">
+		<property name="Ссылка" type="xs:string"/>
+		<property name="Дата" type="xs:dateTime"/>
+		<property name="Номер">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="256"/>
+		</property>
+		<property name="Проведен" type="xs:boolean"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Склад" type="d3p1:Склады"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Помещение" type="d3p1:Помещения"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Статус" type="d3p1:СтатусыРасходныхОрдеров"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Контролер" type="d3p1:Пользователи"/>
+		<property name="ДатаОтгрузки" type="xs:dateTime"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ОтгружаемыеТовары" type="d3p1:РасходныйОрдерНаТоварыОтгружаемыеТовары"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="МаркировкаВерхнегоУровня" type="d3p1:ТаблицаМаркировкиВерхнегоУровня" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="МаркировкаДетализированная" type="d3p1:ТаблицаМаркировкиДетализированная" nillable="true"/>
+	</objectType>
+	<objectType name="РасходныйОрдерНаТоварыОтгружаемыеТовары">
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Строка" type="d3p1:РасходныйОрдерНаТоварыОтгружаемыеТоварыСтрока" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="РасходныйОрдерНаТоварыОтгружаемыеТоварыСтрока">
+		<property name="НомерСтроки">
+			<typeDef xsi:type="ValueType" base="xs:int" variety="Atomic" totalDigits="3"/>
+		</property>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Номенклатура" type="d3p1:Номенклатура"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Характеристика" type="d3p1:ХарактеристикиНоменклатуры" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Назначение" type="d3p1:Назначения" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Упаковка" type="d3p1:УпаковкиНоменклатуры" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Серия" type="d3p1:СерииНоменклатуры" lowerBound="0" nillable="true"/>
+		<property name="СтатусУказанияСерий">
+			<typeDef xsi:type="ValueType" base="xs:int" variety="Atomic" totalDigits="2" fractionDigits="0"/>
+		</property>
+		<property name="НеОтгружать">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="1" fractionDigits="0"/>
+		</property>
+		<property name="Количество">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоНеОтгружать">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоВДокументе">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоУпаковок">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоУпаковокНеОтгружать">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоУпаковокВДокументе">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоУпаковокВДокументеНеотгружаемые">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="УпаковочныйЛист" type="d3p1:УпаковочныйЛист" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="УпаковочныйЛистРодитель" type="d3p1:УпаковочныйЛист" lowerBound="0" nillable="true"/>
+		<property name="ЭтоУпаковочныйЛист" type="xs:boolean" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="СерииНоменклатуры">
+		<property name="Ссылка" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Наименование">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="150"/>
+		</property>
+		<property name="Номер" lowerBound="0" nillable="true">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="200"/>
+		</property>
+		<property name="ГоденДо" type="xs:dateTime" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="СкладскиеЯчейки">
+		<property name="Ссылка" type="xs:string"/>
+		<property name="Код">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="19"/>
+		</property>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ТипСкладскойЯчейки" type="d3p1:ТипыСкладскихЯчеек" lowerBound="0" nillable="true"/>
+		<property name="Штрихкод" lowerBound="0" nillable="true">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="50"/>
+		</property>
+	</objectType>
+	<objectType name="Склады">
+		<property name="Ссылка" type="xs:string"/>
+		<property name="Наименование">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="50"/>
+		</property>
+	</objectType>
+	<objectType name="СписокЯчеек">
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Строка" type="d3p1:СписокЯчеекСтрока" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="СписокЯчеекСтрока">
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Ячейка" type="d3p1:СкладскиеЯчейки"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Склад" type="d3p1:Склады"/>
+	</objectType>
+	<objectType name="СтрокаТаблицыЗаданий">
+		<property name="Ссылка" type="xs:string"/>
+		<property name="Номер">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="256"/>
+		</property>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Исполнитель" type="d3p1:Пользователи"/>
+		<property name="ПорядокДоставки" lowerBound="0" nillable="true">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="150"/>
+		</property>
+		<property name="Вес" lowerBound="0">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ЕдиницаИзмерения" type="d3p1:ЕдиницыИзмерения" lowerBound="0" nillable="true"/>
+	</objectType>
+	<objectType name="ТаблицаЗаданий">
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Строка" type="d3p1:СтрокаТаблицыЗаданий" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ТаблицаНеотгружаемыхТоваров">
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Строка" type="d3p1:ТаблицаНеотгружаемыхТоваровСтрока" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ТаблицаНеотгружаемыхТоваровСтрока">
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Номенклатура" type="d3p1:Номенклатура"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Характеристика" type="d3p1:ХарактеристикиНоменклатуры" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Назначение" type="d3p1:Назначения" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Упаковка" type="d3p1:УпаковкиНоменклатуры" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Серия" type="d3p1:СерииНоменклатуры" lowerBound="0" nillable="true"/>
+		<property name="Количество">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоУпаковок">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+	</objectType>
+	<objectType name="ТаблицаОтсканированныхТоваров">
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Строка" type="d3p1:ТаблицаОтсканированныхТоваровСтрока" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ТаблицаОтсканированныхТоваровСтрока">
+		<property name="НомерСтроки">
+			<typeDef xsi:type="ValueType" base="xs:int" variety="Atomic" totalDigits="3"/>
+		</property>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Ячейка" type="d3p1:СкладскиеЯчейки"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Номенклатура" type="d3p1:Номенклатура"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Характеристика" type="d3p1:ХарактеристикиНоменклатуры" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Назначение" type="d3p1:Назначения" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Упаковка" type="d3p1:УпаковкиНоменклатуры" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Серия" type="d3p1:СерииНоменклатуры" lowerBound="0" nillable="true"/>
+		<property name="СтатусУказанияСерий">
+			<typeDef xsi:type="ValueType" base="xs:int" variety="Atomic" totalDigits="2" fractionDigits="0"/>
+		</property>
+		<property name="Количество">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоВДокументе">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоОтсканировано">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоУпаковок">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоУпаковокВДокументе">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоУпаковокОтсканировано">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоличествоУпаковокНеОтгружать">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+	</objectType>
+	<objectType name="ТаблицаТоваровЯчейки">
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Строка" type="d3p1:ТаблицаТоваровЯчейкиСтрока" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ТаблицаТоваровЯчейкиСтрока" open="true" sequenced="true">
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Номенклатура" type="d3p1:Номенклатура"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Характеристика" type="d3p1:ХарактеристикиНоменклатуры"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Упаковка" type="d3p1:УпаковкиНоменклатуры"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Серия" type="d3p1:СерииНоменклатуры"/>
+		<property name="Количество">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+	</objectType>
+	<objectType name="ТоварыЯчейки">
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Строка" type="d3p1:ТоварыЯчейкиСтрока" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ТоварыЯчейкиСтрока">
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Номенклатура" type="d3p1:Номенклатура"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Характеристика" type="d3p1:ХарактеристикиНоменклатуры" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Упаковка" type="d3p1:УпаковкиНоменклатуры" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Серия" type="d3p1:СерииНоменклатуры" lowerBound="0" nillable="true"/>
+		<property name="Количество">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+	</objectType>
+	<objectType name="УпаковкиНоменклатуры">
+		<property name="Ссылка" type="xs:string" lowerBound="0" nillable="true"/>
+		<property name="Наименование" lowerBound="0" nillable="true">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="50"/>
+		</property>
+		<property name="Вес">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="Коэффициент">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="10" fractionDigits="3"/>
+		</property>
+		<property name="КоэффициентЕдиницыИзмеренияВеса">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="КоэффициентЕдиницыИзмеренияОбъема">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="15" fractionDigits="3"/>
+		</property>
+		<property name="Объем">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="18" fractionDigits="6"/>
+		</property>
+	</objectType>
+	<objectType name="УпаковочныйЛист">
+		<property name="Ссылка" type="xs:string"/>
+		<property name="Дата" type="xs:dateTime"/>
+		<property name="Номер">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="256"/>
+		</property>
+		<property name="Проведен" type="xs:boolean"/>
+	</objectType>
+	<objectType name="ХарактеристикиНоменклатуры">
+		<property name="Ссылка" type="xs:string"/>
+		<property name="Наименование">
+			<typeDef xsi:type="ValueType" base="xs:string" variety="Atomic" maxLength="100"/>
+		</property>
+	</objectType>
+	<objectType name="ТаблицаМаркировкиВерхнегоУровня">
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ЗначениеШтрихкода" type="d3p1:ТипЗначенияШтрихкодаМаркировки" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ТаблицаМаркировкиДетализированная">
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Строка" type="d3p1:ТаблицаМаркировкиДетализированнаяСтрока" lowerBound="0" upperBound="-1" nillable="true"/>
+	</objectType>
+	<objectType name="ТаблицаМаркировкиДетализированнаяСтрока">
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ЗначениеШтрихкода" type="d3p1:ТипЗначенияШтрихкодаМаркировки"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="РодительскаяУпаковкаМаркировкиЗначениеШтрихкода" type="d3p1:ТипЗначенияШтрихкодаМаркировки" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ТипУпаковкиМаркировки" type="d3p1:ТипыУпаковокМаркировки"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Номенклатура" type="d3p1:Номенклатура" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Характеристика" type="d3p1:ХарактеристикиНоменклатуры" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Серия" type="d3p1:СерииНоменклатуры" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Упаковка" type="d3p1:УпаковкиНоменклатуры" lowerBound="0" nillable="true"/>
+		<property name="Количество" lowerBound="0" nillable="true">
+			<typeDef xsi:type="ValueType" base="xs:decimal" variety="Atomic" totalDigits="12" fractionDigits="0"/>
+		</property>
+	</objectType>
+	<objectType name="ТаблицаПроверкиМарок">
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="Строка" type="d3p1:ТаблицаПроверкиМарокСтрока" lowerBound="0" upperBound="-1"/>
+	</objectType>
+	<objectType name="ТаблицаПроверкиМарокСтрока">
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="ЗначениеШтрихкода" type="d3p1:ТипЗначенияШтрихкодаМаркировки"/>
+		<property name="ЗначениеПринято" type="xs:boolean"/>
+		<property xmlns:d3p1="http://v8.1c.ru/edi/edi_stnd/WMSMobileClientExchange_2_5_9" name="РезультатКонтроля" type="d3p1:РезультатыКонтроляМаркировки"/>
+	</objectType>
+</package>

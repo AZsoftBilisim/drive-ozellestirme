@@ -1,0 +1,18 @@
+////////////////////////////////////////////////////////////////////////////////
+// Procedures used to localize the document "Write-off of the OS".
+// 
+////////////////////////////////////////////////////////////////////////////////
+//
+
+#Region Private
+
+#Region DocumentForm
+
+Procedure TraceableGoodsOnStartEdit(Item, NewRow, Copy) Export
+	
+	
+EndProcedure
+
+#EndRegion
+
+#EndRegion

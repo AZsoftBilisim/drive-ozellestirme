@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form">
+  <items xsi:type="form:FormGroup">
+    <name>Header</name>
+    <id>24</id>
+    <items xsi:type="form:FormField">
+      <name>FilterWarehouse</name>
+      <id>22</id>
+      <title>
+        <key>en</key>
+        <value>Warehouse</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>انبار</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Magazzino</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Magazyn</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Склад</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Ambar</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Kho bãi</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>FilterWarehouse</segments>
+      </dataPath>
+      <handlers>
+        <event>OnChange</event>
+        <name>FilterWarehouseOnChange</name>
+      </handlers>
+      <extendedTooltip>
+        <name>FilterWarehouseExtendedTooltip</name>
+        <id>27</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>FilterWarehouseContextMenu</name>
+        <id>23</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <choiceFoldersAndItems>Items</choiceFoldersAndItems>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+        <choiceParameters>
+          <name>Filter.CustomizeBinLocationWarehousing</name>
+          <value xsi:type="form:FormChoiceListDesTimeValue">
+            <value xsi:type="core:FixedArrayValue">
+              <values xsi:type="form:FormChoiceListDesTimeValue">
+                <value xsi:type="core:ReferenceValue">
+                  <value>Enum.SettingsOfBinLocationWarehousing.EnumValue.DeterminedByWareroomsSettings</value>
+                </value>
+              </values>
+              <values xsi:type="form:FormChoiceListDesTimeValue">
+                <value xsi:type="core:ReferenceValue">
+                  <value>Enum.SettingsOfBinLocationWarehousing.EnumValue.CellsBalance</value>
+                </value>
+              </values>
+            </value>
+          </value>
+        </choiceParameters>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>FilterPremise</name>
+      <id>20</id>
+      <title>
+        <key>en</key>
+        <value>Wareroom</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>بخش انبار</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Locale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Pomieszczenie</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Помещение</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Depolama alanı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Nhà kho</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>FilterPremise</segments>
+      </dataPath>
+      <handlers>
+        <event>OnChange</event>
+        <name>FilterPremiseOnChange</name>
+      </handlers>
+      <extendedTooltip>
+        <name>FilterPremiseExtendedTooltip</name>
+        <id>28</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>FilterPremiseContextMenu</name>
+        <id>21</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+        <choiceParameterLinks>
+          <name>Filter.Owner</name>
+          <datapath xsi:type="form:DataPath">
+            <segments>FilterWarehouse</segments>
+          </datapath>
+        </choiceParameterLinks>
+        <choiceParameters>
+          <name>Filter.CustomizeBinLocationWarehousing</name>
+          <value xsi:type="form:FormChoiceListDesTimeValue">
+            <value xsi:type="core:ReferenceValue">
+              <value>Enum.SettingsOfBinLocationWarehousing.EnumValue.CellsBalance</value>
+            </value>
+          </value>
+        </choiceParameters>
+      </extInfo>
+    </items>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>en</key>
+      <value>Header</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>سرصفحه</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Testata</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Nagłówek</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Шапка</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Üst bilgi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Phần đầu</value>
+    </title>
+    <extendedTooltip>
+      <name>HeaderExtendedTooltip</name>
+      <id>26</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>UsualGroup</type>
+    <extInfo xsi:type="form:UsualGroupExtInfo">
+      <showLeftMargin>true</showLeftMargin>
+      <united>true</united>
+      <throughAlign>Auto</throughAlign>
+      <currentRowUse>Auto</currentRowUse>
+    </extInfo>
+  </items>
+  <items xsi:type="form:Table">
+    <name>List</name>
+    <id>1</id>
+    <title>
+      <key>en</key>
+      <value>List</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>فهرست</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Elenco</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Lista</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Список</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Liste</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Danh sách</value>
+    </title>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <dataPath xsi:type="form:DataPath">
+      <segments>List</segments>
+    </dataPath>
+    <defaultItem>true</defaultItem>
+    <skipOnInput>false</skipOnInput>
+    <titleLocation>None</titleLocation>
+    <items xsi:type="form:FormField">
+      <name>WarehouseGroupOfProducts</name>
+      <id>16</id>
+      <title>
+        <key>en</key>
+        <value>Items group</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>گروه اقلام</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Gruppo di articoli</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Grupa nomenklatur</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Группа номенклатуры</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Grup öğe</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Vụ việc</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>List.WarehouseGroupOfProducts</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>WarehouseGroupOfProductsExtendedTooltip</name>
+        <id>31</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>WarehouseGroupOfProductsContextMenu</name>
+        <id>17</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>LabelField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:LabelFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>WarehouseGroupOfPackages</name>
+      <id>18</id>
+      <title>
+        <key>en</key>
+        <value>Group of packaging units</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>گروه واحدهای بسته‌بندی</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Gruppo di imballaggi</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Grupa opakowań</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Группа упаковок</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Grup paket</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Nhóm đóng gói</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>List.WarehouseGroupOfPackages</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>WarehouseGroupOfPackagesExtendedTooltip</name>
+        <id>32</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>WarehouseGroupOfPackagesContextMenu</name>
+        <id>19</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>LabelField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:LabelFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>StorageArea</name>
+      <id>8</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>List.StorageArea</segments>
+      </dataPath>
+      <defaultItem>true</defaultItem>
+      <extendedTooltip>
+        <name>StorageAreaExtendedTooltip</name>
+        <id>33</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>StorageAreaContextMenu</name>
+        <id>9</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>LabelField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:LabelFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>Priority</name>
+      <id>10</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>List.Priority</segments>
+      </dataPath>
+      <defaultItem>true</defaultItem>
+      <extendedTooltip>
+        <name>PriorityExtendedTooltip</name>
+        <id>34</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>PriorityContextMenu</name>
+        <id>11</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>LabelField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:LabelFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+      </extInfo>
+    </items>
+    <autoCommandBar>
+      <name>ListCommandBar</name>
+      <id>3</id>
+      <items xsi:type="form:FormGroup">
+        <name>CommandBar</name>
+        <id>25</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>Command bar</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>نوار فرمان</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Barra dei comandi</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Panel poleceń</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Командная панель</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Komut çubuğu</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Thanh lệnh</value>
+        </title>
+        <extendedTooltip>
+          <name>CommandBarExtendedTooltip</name>
+          <id>29</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <extInfo xsi:type="form:ButtonGroupExtInfo">
+          <commandSource>Form</commandSource>
+        </extInfo>
+      </items>
+      <items xsi:type="form:Button">
+        <name>FormHelp</name>
+        <id>44</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>FormHelpExtendedTooltip</name>
+          <id>45</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.StandardCommand.Help</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
+      <horizontalAlign>Left</horizontalAlign>
+    </autoCommandBar>
+    <searchStringAddition>
+      <name>ListSearchString</name>
+      <id>35</id>
+      <extendedTooltip>
+        <name>ListSearchStringExtendedTooltip</name>
+        <id>37</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ListSearchStringContextMenu</name>
+        <id>36</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <source>List</source>
+      <extInfo xsi:type="form:SearchStringAdditionExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+      </extInfo>
+    </searchStringAddition>
+    <viewStatusAddition>
+      <name>ListViewStatus</name>
+      <id>38</id>
+      <extendedTooltip>
+        <name>ListViewStatusExtendedTooltip</name>
+        <id>40</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ListViewStatusContextMenu</name>
+        <id>39</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>ViewStatusAddition</type>
+      <source>List</source>
+      <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <horizontalLocation>Left</horizontalLocation>
+      </extInfo>
+    </viewStatusAddition>
+    <searchControlAddition>
+      <name>ListSearchControl</name>
+      <id>41</id>
+      <extendedTooltip>
+        <name>ListSearchControlExtendedTooltip</name>
+        <id>43</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ListSearchControlContextMenu</name>
+        <id>42</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>SearchControlAddition</type>
+      <source>List</source>
+      <extInfo xsi:type="form:SearchControlAdditionExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+      </extInfo>
+    </searchControlAddition>
+    <extendedTooltip>
+      <name>ListExtendedTooltip</name>
+      <id>30</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>ListContextMenu</name>
+      <id>2</id>
+      <autoFill>true</autoFill>
+    </contextMenu>
+    <changeRowSet>true</changeRowSet>
+    <changeRowOrder>true</changeRowOrder>
+    <autoMaxWidth>true</autoMaxWidth>
+    <autoMaxHeight>true</autoMaxHeight>
+    <autoMaxRowsCount>true</autoMaxRowsCount>
+    <selectionMode>MultiRow</selectionMode>
+    <header>true</header>
+    <headerHeight>1</headerHeight>
+    <footerHeight>1</footerHeight>
+    <horizontalScrollBar>AutoUse</horizontalScrollBar>
+    <verticalScrollBar>AutoUse</verticalScrollBar>
+    <horizontalLines>true</horizontalLines>
+    <verticalLines>true</verticalLines>
+    <useAlternationRowColor>true</useAlternationRowColor>
+    <searchOnInput>Auto</searchOnInput>
+    <initialListView>Auto</initialListView>
+    <initialTreeView>ExpandTopLevel</initialTreeView>
+    <horizontalStretch>true</horizontalStretch>
+    <verticalStretch>true</verticalStretch>
+    <enableStartDrag>true</enableStartDrag>
+    <rowPictureDataPath xsi:type="form:DataPath">
+      <segments>List.DefaultPicture</segments>
+    </rowPictureDataPath>
+    <extInfo xsi:type="form:DynamicListTableExtInfo">
+      <autoRefreshPeriod>60</autoRefreshPeriod>
+      <period>
+        <startDate>0001-01-01T00:00:00</startDate>
+        <endDate>0001-01-01T00:00:00</endDate>
+      </period>
+      <topLevelParent xsi:type="core:UndefinedValue"/>
+      <showRoot>true</showRoot>
+      <allowGettingCurrentRowURL>true</allowGettingCurrentRowURL>
+    </extInfo>
+  </items>
+  <autoCommandBar>
+    <name>FormCommandBar</name>
+    <id>-1</id>
+    <horizontalAlign>Left</horizontalAlign>
+  </autoCommandBar>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>OnCreateAtServer</name>
+  </handlers>
+  <handlers>
+    <event>OnClose</event>
+    <name>OnClose</name>
+  </handlers>
+  <autoSaveDataInSettings>Use</autoSaveDataInSettings>
+  <saveWindowSettings>true</saveWindowSettings>
+  <autoTitle>true</autoTitle>
+  <autoUrl>true</autoUrl>
+  <group>Vertical</group>
+  <autoFillCheck>true</autoFillCheck>
+  <allowFormCustomize>true</allowFormCustomize>
+  <enabled>true</enabled>
+  <showTitle>true</showTitle>
+  <showCloseButton>true</showCloseButton>
+  <attributes>
+    <name>List</name>
+    <id>1</id>
+    <valueType>
+      <types>DynamicList</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <main>true</main>
+    <extInfo xsi:type="form:DynamicListExtInfo">
+      <mainTable>InformationRegister.GoodsPlacementRules</mainTable>
+      <dynamicDataRead>true</dynamicDataRead>
+      <autoFillAvailableFields>true</autoFillAvailableFields>
+      <autoSaveUserSettings>true</autoSaveUserSettings>
+      <getInvisibleFieldPresentations>true</getInvisibleFieldPresentations>
+    </extInfo>
+  </attributes>
+  <attributes>
+    <name>FilterWarehouse</name>
+    <title>
+      <key>en</key>
+      <value>Filter warehouse</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>فیلتر انبار</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Selezione magazzino</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Filtr magazyn</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Отбор склад</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Ambarı filtrele</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Lọc kho bãi</value>
+    </title>
+    <id>2</id>
+    <valueType>
+      <types>CatalogRef.Warehouses</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes>
+    <name>FilterPremise</name>
+    <title>
+      <key>en</key>
+      <value>Filter wareroom</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>فیلتر انبارک</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Selezione locale</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Filtr pomieszczenie</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Отбор помещение</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Filtre alan</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Lọc nhà kho</value>
+    </title>
+    <id>3</id>
+    <valueType>
+      <types>CatalogRef.Warerooms</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <fillChecking>ShowError</fillChecking>
+    <functionalOptions>FunctionalOption.UseWarerooms</functionalOptions>
+  </attributes>
+  <attributes>
+    <name>FilterStorageArea</name>
+    <title>
+      <key>en</key>
+      <value>Filter storage area</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>فیلتر ناحیه ذخیره‌سازی</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Selezione area di stoccaggio</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Filtr obszar przechowywania</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Отбор область хранения</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Filtre depolama alanı</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Lọc khu vực lưu trữ</value>
+    </title>
+    <id>4</id>
+    <valueType>
+      <types>CatalogRef.StorageAreas</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <commandInterface>
+    <navigationPanel/>
+    <commandBar/>
+  </commandInterface>
+  <extInfo xsi:type="form:DynamicListFormExtInfo"/>
+</form:Form>

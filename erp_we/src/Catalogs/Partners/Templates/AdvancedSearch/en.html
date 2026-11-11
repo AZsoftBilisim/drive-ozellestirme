@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="__STYLE__"></link></head><body>
+  <p class="Usual" style="margin: 0.5em 0em 0em; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px;">Advanced search is performed not only in the "Partners" catalog but also in the related data, such as the "Contact persons", "Contracts", and other catalogs.</p>
+  <p class="Usual" style="margin: 0.5em 0em 0em; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px;">This search provides a wide range of capabilities. At the same time, it uses a query language of the full-text search, so certain results might seem unexpected.</p>
+  <p class="Usual" style="margin: 0.5em 0em 0em; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px;">For example, to search by a part of a string, you need to add an asterisk (*).  If you enter "docum", the word "document" will not be found. Instead, you need to enter "docum*" in the search bar.</p>
+  <p class="Usual" style="margin: 0.5em 0em 0em; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px;">You can search by several words, using search operators, or entering an exact phrase. </p>
+  <p class="Usual" style="margin: 0.5em 0em 0em; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px;">You can use the following search operators in the search bar:</p>
+  <table width="95%" style="color: rgb(0, 0, 0); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px;" border="1" cellspacing="1" cellpadding="0"><tbody><tr><td><strong>Operator</strong></td>
+     <td><strong> Example</strong></td>
+     <td><strong> Note</strong></td>
+    </tr><tr><td align="center">И<br>
+       AND<br>
+       &amp;</td>
+     <td> <em>record</em> И <em>document</em><br><em>record</em> AND <em>document</em><br><em>record</em> &amp; <em>document</em></td>
+     <td> The search results must contain both "<em>record</em>" and "<em>document</em>" (with all the word forms)</td>
+    </tr><tr><td width="80" align="center">ИЛИ<br>
+       OR<br>
+       |<br>
+       ,</td>
+     <td> <em>record</em> ИЛИ <em>document</em><br><em>record</em> OR <em>document</em><br><em>record</em> | <em>document</em><br><em>record</em> , <em>document</em></td>
+     <td> The search results must contain at least one of the words: "<em>record</em>" or "<em>document</em>".</td>
+    </tr><tr><td align="center">НЕ<br>
+       NOT<br><br></td>
+     <td> <em>closing</em> НЕ <em>month</em><br><em>closing</em> NOT <em>month</em><br></td>
+     <td> The search results will contain the word "<em>closing</em>" but will not contain the word "<em>month</em>". </td>
+    </tr><tr><td align="center">РЯДОМ/[±]n<br>
+       NEAR/[±]n</td>
+     <td>
+      <p style="margin-top: 0em;"> Example 1:<br>
+        sale NEAR/3 item</p>
+      <p style="margin-top: 0em;"> Example 2: <br>
+        sale NEAR/+3 item</p>
+      <p style="margin-top: 0em;"> Example 3: <br>
+        sale NEAR/-3 item</p></td>
+     <td> Search for data that contains specified words separated by <strong>n</strong> words in one attribute (with all the word forms).<br>
+        The sign indicates in which direction from the first word the second word will be searched for ("+" means after the first word, "-" means before the first word).<br>
+        If the sign is not specified, the search results will contain the specified words within <strong>n</strong> words both before and after the first word. The word order does not matter.<br>
+        In example 1, the search results will contain the word "item" located no further than 3 words before or after the word "sale".<br>
+        In example 2, the search results will contain the word "item" located no further than 3 words after the word "sale".<br>
+        In example 3, the search results will contain the word "item" located no further than 3 words before the word "sale".</td>
+    </tr><tr><td align="center">РЯДОМ<br>
+       NEAR</td>
+     <td> <em>post</em> РЯДОМ <em>document</em><br><em>post</em> NEAR <em>document</em></td>
+     <td> Simplified distance operator.<br>
+        The <span style="background-color: rgb(255, 255, 255);">query</span> results will contain the words located in the same attribute no further than 8 words apart in either direction.</td>
+    </tr><tr><td align="center">" "</td>
+     <td> "<em>post document</em>"</td>
+     <td> Search for the exact match with all the word forms (equivalent to: <em>post</em> NEAR/+1 <em>document</em>).</td>
+    </tr><tr><td align="center">()</td>
+     <td> (<em>post</em> | <em>issue</em>) &amp; <br>
+       (<em>invoice</em>,<em> document</em>) </td>
+     <td> Word grouping (the number of nesting levels is unlimited).</td>
+    </tr><tr><td>
+      <p align="center" style="margin-top: 0em;">*</p></td>
+     <td><em> docu</em>*</td>
+     <td> Search using a wildcard character (replacing the end of a word). <br>
+       You need to enter more than 1 relevant character. <br><span style="background-color: rgb(255, 255, 255);">The query string "</span><em>docu</em>*" will return "document", "documentary", and other. </td>
+    </tr><tr><td>
+      <p align="center" style="margin-top: 0em;">~</p></td>
+     <td>
+      <p style="margin-top: 0em;">~System<br>
+        System~2</p></td>
+     <td><b>This operator is used for the full-text search and is not used in search in Help.<br></b>Fuzzy search for words with a given number of differences from the specified one (if not specified, it equals 1). For example: <br><span style="background-color: rgb(255, 255, 255);">The query string "~System" will return "systam", "sistem", and other. <br>
+        The query string "System~2" will return "sisstem", "sittem", and other.<br></span></td>
+    </tr><tr><td align="center">
+      <p align="center" style="margin-top: 0em;"><span style="background-color: rgb(255, 255, 255);">!</span></p></td>
+     <td><span style="background-color: rgb(255, 255, 255);">!red</span></td>
+     <td><span style="background-color: rgb(255, 255, 255);">Search in Russian, English, and Ukrainian including synonyms. "</span>!" is placed before a word. For example, the query string "!red tile" will also return "scarlet tile" and "coral tile".</td>
+    </tr></tbody></table><p style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px; margin-top: 0em;"> </p>
+  <p style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px; margin-top: 0em;"><br></p>
+ </body></html>

@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>DataSource1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Header</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AnalyticsHeader_1</dataPath>
+			<field>Dimension1</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AnalyticsHeader_2</dataPath>
+			<field>Dimension2</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AnalyticsHeader_3</dataPath>
+			<field>Dimension3</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AnalyticsHeader_4</dataPath>
+			<field>Dimension4</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AnalyticsHeader_5</dataPath>
+			<field>Dimension5</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AnalyticsHeader_6</dataPath>
+			<field>Dimension6</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>BeginOfPeriod</dataPath>
+			<field>BeginOfPeriod</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>PeriodEnding</dataPath>
+			<field>PeriodEnding</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>OrganizationHeader</dataPath>
+			<field>Organization</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DivisionHeader</dataPath>
+			<field>Department</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ScenarioHeader</dataPath>
+			<field>Scenario</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>PeriodType</dataPath>
+			<field>PeriodType</field>
+		</field>
+		<dataSource>DataSource1</dataSource>
+		<query>SELECT
+	SetValuesForNonFinancialItems.PeriodType,
+	SetValuesForNonFinancialItems.BeginOfPeriod,
+	SetValuesForNonFinancialItems.PeriodEnding,
+	SetValuesForNonFinancialItems.Organization,
+	SetValuesForNonFinancialItems.Department,
+	SetValuesForNonFinancialItems.Scenario,
+	SetValuesForNonFinancialItems.Dimension1,
+	SetValuesForNonFinancialItems.Dimension2,
+	SetValuesForNonFinancialItems.Dimension3,
+	SetValuesForNonFinancialItems.Dimension4,
+	SetValuesForNonFinancialItems.Dimension5,
+	SetValuesForNonFinancialItems.Dimension6
+FROM
+	Document.SetValuesForNonFinancialItems AS SetValuesForNonFinancialItems
+WHERE
+	SetValuesForNonFinancialItems.Ref = &amp;Ref</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Rows</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AnalyticsLines1</dataPath>
+			<field>Dimension1</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AnalyticsLines2</dataPath>
+			<field>Dimension2</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AnalyticsLines3</dataPath>
+			<field>Dimension3</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AnalyticsLines4</dataPath>
+			<field>Dimension4</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AnalyticsLines5</dataPath>
+			<field>Dimension5</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AnalyticsLines6</dataPath>
+			<field>Dimension6</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>LinesNumberUnderPeriod</dataPath>
+			<field>SubperiodNumber</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DocumentRowNumber</dataPath>
+			<field>DocumentRowNumber</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>LinesOrganization</dataPath>
+			<field>Organization</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>RowsPeriod</dataPath>
+			<field>Period</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>UnitLines</dataPath>
+			<field>Department</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>StringsScript</dataPath>
+			<field>Scenario</field>
+		</field>
+		<dataSource>DataSource1</dataSource>
+		<query>SELECT
+	Rows.DocumentRowNumber,
+	Rows.Organization,
+	Rows.Department,
+	Rows.Scenario,
+	Rows.Period,
+	Rows.SubperiodNumber,
+	Rows.Dimension1,
+	Rows.Dimension2,
+	Rows.Dimension3,
+	Rows.Dimension4,
+	Rows.Dimension5,
+	Rows.Dimension6
+FROM
+	Document.SetValuesForNonFinancialItems.DocumentRows AS Rows
+WHERE
+	Rows.Ref = &amp;Ref</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Columns</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AnalyticsColumns1</dataPath>
+			<field>Dimension1</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AnalyticsColumns2</dataPath>
+			<field>Dimension2</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AnalyticsColumns3</dataPath>
+			<field>Dimension3</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AnalyticsColumns4</dataPath>
+			<field>Dimension4</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AnalyticsColumns5</dataPath>
+			<field>Dimension5</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AnalyticsColumns6</dataPath>
+			<field>Dimension6</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Currency</dataPath>
+			<field>Currency</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Value</dataPath>
+			<field>Value</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>NonFinancialItem</dataPath>
+			<field>NonFinancialItem</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DocumentRowNumber</dataPath>
+			<field>DocumentRowNumber</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ColumnOrganization</dataPath>
+			<field>Organization</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ColumnsPeriod</dataPath>
+			<field>Period</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ColumnsDivision</dataPath>
+			<field>Department</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ColumnScenario</dataPath>
+			<field>Scenario</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ColumnNumberUnderPeriod</dataPath>
+			<field>SubperiodNumber</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ValuePresence</dataPath>
+			<field>ValuePresence</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Value presence</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>وجود مقدار</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Presenza di valore</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Wartość</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наличие значения</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Değerin geçerliliği</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Giá trị sẵn có</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>DataSource1</dataSource>
+		<query>SELECT
+	Columns.DocumentRowNumber,
+	Columns.Organization,
+	Columns.Department,
+	Columns.Scenario,
+	Columns.Period,
+	Columns.SubperiodNumber,
+	Columns.Dimension1,
+	Columns.Dimension2,
+	Columns.Dimension3,
+	Columns.Dimension4,
+	Columns.Dimension5,
+	Columns.Dimension6,
+	Columns.NonFinancialItem,
+	Columns.Value,
+	Columns.Currency,
+	TRUE AS ValuePresence
+FROM
+	Document.SetValuesForNonFinancialItems.DocumentColumns AS Columns
+WHERE
+	Columns.Ref = &amp;Ref</query>
+	</dataSet>
+	<dataSetLink>
+		<sourceDataSet>Header</sourceDataSet>
+		<destinationDataSet>Rows</destinationDataSet>
+		<sourceExpression>True</sourceExpression>
+		<destinationExpression>True</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>Rows</sourceDataSet>
+		<destinationDataSet>Columns</destinationDataSet>
+		<sourceExpression>DocumentRowNumber</sourceExpression>
+		<destinationExpression>DocumentRowNumber</destinationExpression>
+	</dataSetLink>
+	<calculatedField>
+		<dataPath>Dimension1</dataPath>
+		<expression>Case 
+When ValueIsFilled(AnalyticsHeader_1) Then AnalyticsHeader_1 
+When ValueIsFilled(AnalyticsLines1) Then AnalyticsLines1 
+When ValueIsFilled(AnalyticsColumns1) Then AnalyticsColumns1
+End</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Dimension1</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>بُعد 1</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Analitica1</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Analityka1</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Аналитика1</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Boyut1</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Đối tượng phân tích1</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>Dimension2</dataPath>
+		<expression>Case 
+When ValueIsFilled(AnalyticsHeader_2) Then AnalyticsHeader_2
+When ValueIsFilled(AnalyticsLines2) Then AnalyticsLines2
+When ValueIsFilled(AnalyticsColumns2) Then AnalyticsColumns2
+End</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Dimension2</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>بُعد 2</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Analitica2</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Analityka2</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Аналитика2</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Boyut2</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Đối tượng phân tích2</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>Dimension3</dataPath>
+		<expression>Case 
+When ValueIsFilled(AnalyticsHeader_3) Then AnalyticsHeader_3
+When ValueIsFilled(AnalyticsLines3) Then AnalyticsLines3
+When ValueIsFilled(AnalyticsColumns3) Then AnalyticsColumns3
+End</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Dimension3</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>بُعد 3</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Analitica3</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Analityka3</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Аналитика3</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Boyut3</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Đối tượng phân tích3</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>Dimension4</dataPath>
+		<expression>Case 
+When ValueIsFilled(AnalyticsHeader_4) Then AnalyticsHeader_4
+When ValueIsFilled(AnalyticsLines4) Then AnalyticsLines4
+When ValueIsFilled(AnalyticsColumns4) Then AnalyticsColumns4
+End</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Dimension4</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>بُعد 4</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Analitica4</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Analityka4</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Аналитика4</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Boyut4</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Đối tượng phân tích4</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>Dimension5</dataPath>
+		<expression>Case 
+When ValueIsFilled(AnalyticsHeader_5) Then AnalyticsHeader_5
+When ValueIsFilled(AnalyticsLines5) Then AnalyticsLines5
+When ValueIsFilled(AnalyticsColumns5) Then AnalyticsColumns5
+End</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Dimension5</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>بُعد 5</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Analitica5</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Analityka5</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Аналитика5</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Boyut5</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Đối tượng phân tích5</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>Dimension6</dataPath>
+		<expression>Case 
+When ValueIsFilled(AnalyticsHeader_6) Then AnalyticsHeader_6
+When ValueIsFilled(AnalyticsLines6) Then AnalyticsLines6
+When ValueIsFilled(AnalyticsColumns6) Then AnalyticsColumns6
+End</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Dimension6</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>بُعد 6</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Analitica6</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Analityka6</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Аналитика6</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Boyut6</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Đối tượng phân tích6</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>Organization</dataPath>
+		<expression>Case 
+When ValueIsFilled(OrganizationHeader) Then OrganizationHeader
+When ValueIsFilled(LinesOrganization) Then LinesOrganization
+When ValueIsFilled(ColumnOrganization) Then ColumnOrganization
+End</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Company</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>شرکت</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Azienda</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Organizacja</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>İş yeri</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Doanh nghiệp</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>Department</dataPath>
+		<expression>Case 
+When ValueIsFilled(DivisionHeader) Then DivisionHeader
+When ValueIsFilled(UnitLines) Then UnitLines
+When ValueIsFilled(ColumnsDivision) Then ColumnsDivision
+End</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Business unit</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>واحد تجاری</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Reparto</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Dział</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Подразделение</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Departman</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Bộ phận</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>Scenario</dataPath>
+		<expression>Case 
+When ValueIsFilled(ScenarioHeader) Then ScenarioHeader
+When ValueIsFilled(StringsScript) Then StringsScript
+When ValueIsFilled(ColumnScenario) Then ColumnScenario
+End</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Scenario</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>سناریو</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Scenario</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Scenariusz</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Сценарий</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Senaryo</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Kịch bản</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>Period</dataPath>
+		<expression>Case 
+When ValueIsFilled(RowsPeriod) Then RowsPeriod
+When ValueIsFilled(ColumnsPeriod) Then ColumnsPeriod
+End</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>دوره</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Periodo</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Okres</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Dönem</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Kỳ</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>SubperiodNumber</dataPath>
+		<expression>Case 
+When ValueIsFilled(LinesNumberUnderPeriod) Then LinesNumberUnderPeriod
+When ValueIsFilled(ColumnNumberUnderPeriod) Then ColumnNumberUnderPeriod
+End</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Subperiod number</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>شماره زیردوره</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Numero del sottoperiodo</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Numer podokresu</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Номер под периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Alt dönem numarası</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Số theo kỳ</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<parameter>
+		<name>Ref</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Ref</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>مرجع</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Link</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Odnośnik</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Ссылка</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Bağlantı</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Tham chiếu</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.SetValuesForNonFinancialItems</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Main</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Main</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>اصلی</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Principale</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Podstawowej</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Основной</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Ana</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Chính</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>DocumentRowNumber</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>PeriodType</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Dimension1</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Dimension2</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Dimension3</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Dimension4</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Dimension5</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Dimension6</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Scenario</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Organization</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Department</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Period</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>NonFinancialItem</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Value</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Currency</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>SubperiodNumber</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">ValuePresence</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

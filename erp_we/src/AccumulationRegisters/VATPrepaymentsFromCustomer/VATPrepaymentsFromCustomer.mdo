@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="62915cff-ee5d-4503-b266-f1d2f86fc3f7">
+  <producedTypes>
+    <selectionType typeId="2183f93d-ddba-4f71-a101-c13e51a59414" valueTypeId="15bcffc4-b6e5-4e35-a7e8-d742a7a10580"/>
+    <listType typeId="cab2c17d-6460-44d4-a467-6b243364d115" valueTypeId="87390608-1937-46b6-921a-212d0f8eaa36"/>
+    <managerType typeId="5036dc7a-e00d-41d8-a33a-5b3a253ff8d5" valueTypeId="a16a491e-ae5d-4b7b-83a7-36de1906fc99"/>
+    <recordSetType typeId="5f66d482-0544-4c74-9a98-05b3da5990a1" valueTypeId="f088207b-b297-4b6d-867b-9b76cc02a472"/>
+    <recordKeyType typeId="65755b6e-81a1-4be1-b059-1c407a1b7373" valueTypeId="cc90f3d1-61ec-4d29-b7fc-db170abae0ea"/>
+    <recordType typeId="0047478c-21b5-4197-a4e4-97e648af6b0c" valueTypeId="16515933-cd7d-44f5-9ed0-ed1f675c5339"/>
+  </producedTypes>
+  <name>VATPrepaymentsFromCustomer</name>
+  <synonym>
+    <key>en</key>
+    <value>VAT from prepayments from customer</value>
+  </synonym>
+  <synonym>
+    <key>fa</key>
+    <value>مالیات بر ارزش افزوده پیش‌دریافت‌ها از مشتری</value>
+  </synonym>
+  <synonym>
+    <key>it</key>
+    <value>IVA dagli anticipi ricevuti</value>
+  </synonym>
+  <synonym>
+    <key>pl</key>
+    <value>VAT z zaliczek otrzymanych</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>НДС с авансов полученных</value>
+  </synonym>
+  <synonym>
+    <key>tr</key>
+    <value>Alınan avanslara ilişkin KDV</value>
+  </synonym>
+  <synonym>
+    <key>vi</key>
+    <value>Thuế GTGT từ khoản ứng trước nhận được</value>
+  </synonym>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>RecordType</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="7057f2c1-e09b-4ca5-bcf9-927681cd0acc">
+    <name>AmountExcludingVAT</name>
+    <synonym>
+      <key>en</key>
+      <value>Amount excluding VAT</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>مبلغ بدون مالیات بر ارزش افزوده</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Importo IVA esclusa</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Wartość bez VAT</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма без НДС</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>KDV hariç tutar</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Số tiền không thuế GTGT</value>
+    </synonym>
+    <type>
+      <types>DefinedType.MonetaryAmountPositiveNegative</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="4feebfda-73e6-4923-9f30-5533887c4727">
+    <name>VAT</name>
+    <synonym>
+      <key>en</key>
+      <value>VAT</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>مالیات بر ارزش افزوده</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>IVA</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>VAT</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>НДС</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>KDV</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Thuế GTGT</value>
+    </synonym>
+    <type>
+      <types>DefinedType.MonetaryAmountPositiveNegative</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="80ccd50e-436e-4206-b71d-7c692ca1769a">
+    <name>VATManag</name>
+    <synonym>
+      <key>en</key>
+      <value>VAT (mgmt)</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>مالیات بر ارزش افزوده (مدیریت)</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>IVA (gest.)</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>VAT (zarz.)</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>НДС (упр.)</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>KDV (yönetim)</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Thuế GTGT(qt)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.MonetaryAmountPositiveNegative</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="81cf7821-055a-4f48-bc41-299424326c75">
+    <name>Event</name>
+    <synonym>
+      <key>en</key>
+      <value>Event</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>رویداد</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Evento</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Wydarzenie</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Событие</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Etkinlik</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Sự kiện</value>
+    </synonym>
+    <type>
+      <types>EnumRef.EventsVATFromPrepayments</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="5bd74b2b-f1d4-42ea-a138-39c4fb59839a">
+    <name>PrepaymentsSettlementDocument</name>
+    <synonym>
+      <key>en</key>
+      <value>Prepayment offset (return) document</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>سند تهاتر (برگشت) پیش‌پرداخت</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Documento di imputazione (reso) dell'acconto</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Dokument zaliczania (zwrotu) zaliczki</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Документ зачета (возврата) аванса</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ön ödeme (iade) mahsubunun belgesi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Chứng từ đối trừ (trả lại) khoản ứng trước</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ARAPDocumentWithCustomer</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="6887dca7-27cc-4789-bc5e-daa3c36a419d">
+    <name>PeriodEndTransaction</name>
+    <synonym>
+      <key>en</key>
+      <value>Period-end transaction</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>تراکنش پایان دوره</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Operazione programmata</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Operacja reglamentacyjna</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Регламентная операция</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Dönem sonu işlemi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Giao dịch hàng kỳ</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="dd977ab8-8d56-4f4c-b1a0-286f7142335b">
+    <name>FinRecordID</name>
+    <synonym>
+      <key>en</key>
+      <value>Fin. record ID</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>شناسه رکورد مالی</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Identificativo della registrazione finanziaria</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Identyfikator wpisu finansowego</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор фин. записи</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Finansal kayıt kimliği</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Mã số định danh hồ sơ</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>36</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="6826e634-f2aa-4f71-ad3c-9a0c9a255e1f">
+    <name>BusinessTransactionSetting</name>
+    <synonym>
+      <key>en</key>
+      <value>Business transactions setting</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>تنظیم عملیات تجاری</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Impostazione delle operazioni gestionali</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Ustawienie operacji gospodarczej</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка хозяйственной операции</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ticari işlem ayarı</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Thiết lập giao dịch kinh doanh</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.BusinessTransactionsSettings</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="bc91116c-aa8d-4f37-8473-4774670b1e28">
+    <name>ReversingEntry</name>
+    <synonym>
+      <key>en</key>
+      <value>Storno</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>استورنو</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Storno</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Storno</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Сторно</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>İptal</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Đảo ngược</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="37a6316a-f94f-40e1-9e1b-cc3b4b9a47f3">
+    <name>Organization</name>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>شرکت</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Azienda</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Firma</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>İş yeri</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Doanh nghiệp</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Companies</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="f156a762-32dc-453b-95b4-5eff1f2ce802">
+    <name>DocumentPayments</name>
+    <synonym>
+      <key>en</key>
+      <value>AR/AP transaction</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>تراکنش دریافتنی/پرداختنی</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Documento di pagamento</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Dokument płatności</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Документ оплаты</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ödeme belgesi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Chứng từ thanh toán</value>
+    </synonym>
+    <type>
+      <types>DefinedType.BaseDocumentIssuedTaxInvoicePrepayment</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="8097a914-4dd3-40ad-9b13-10539b247ab8">
+    <name>Counterparty</name>
+    <synonym>
+      <key>en</key>
+      <value>Counterparty</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>طرف حساب</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Controparte</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Kontrahent</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Cari hesap</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Đối tác</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Companies</types>
+      <types>CatalogRef.Counterparties</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="60522400-8e9e-4910-8a08-d3f767e3f92d">
+    <name>ARAPObject</name>
+    <synonym>
+      <key>en</key>
+      <value>AR/AP object</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>موضوع دریافتنی/پرداختنی</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Oggetto di regolamenti</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Obiekt rozliczeń</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Объект расчетов</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Alacak/Borç nesnesi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Đối tượng hạch toán</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ARAPObjects</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="d8041001-4319-4811-aabd-ae6a8a4acce2">
+    <name>CorrectedTaxInvoice</name>
+    <synonym>
+      <key>en</key>
+      <value>Corrected tax invoice</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>فاکتور مالیاتی اصلاحی</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Fattura rettificata</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Poprawiona faktura</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Исправленный счет-фактура</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Düzeltilmiş vergi faturası</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Sửa hóa đơn GTGT</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.IssuedTaxInvoicePrepayment</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="934d16d0-8ce9-4335-930d-118377447d5c">
+    <name>Department</name>
+    <synonym>
+      <key>en</key>
+      <value>Business unit</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>واحد تجاری</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Reparto</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Dział</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Departman</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Bộ phận</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.BusinessStructure</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="80e959d9-833d-402d-9711-96b63b1b2235">
+    <name>LineOfBusiness</name>
+    <synonym>
+      <key>en</key>
+      <value>Line of business</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>خط کسب‌وکار</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Settore di attività</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Rodzaj działalności</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Направление деятельности</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>İş kolu</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Lĩnh vực hoạt động</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.LinesOfBusiness</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="b62830b7-fc6e-42e2-a113-c4445afa8598">
+    <name>VATRate</name>
+    <synonym>
+      <key>en</key>
+      <value>VAT rate</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>نرخ مالیات بر ارزش افزوده</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Aliquota IVA</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Stawka VAT</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Ставка НДС</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>KDV oranı</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Thuế suất GTGT</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.VATRates</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

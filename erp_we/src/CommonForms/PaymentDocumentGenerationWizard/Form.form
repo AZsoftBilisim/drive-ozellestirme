@@ -1,0 +1,5579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form" xmlns:schema="http://g5.1c.ru/v8/dt/data-composition-system/schema">
+  <title>
+    <key>en</key>
+    <value>Payment document generation wizard</value>
+  </title>
+  <title>
+    <key>fa</key>
+    <value>ویزارد ایجاد سند پرداخت</value>
+  </title>
+  <title>
+    <key>it</key>
+    <value>Assistente per la generazione dei documenti di pagamento</value>
+  </title>
+  <title>
+    <key>pl</key>
+    <value>Asystent tworzenia dokumentów płatniczych</value>
+  </title>
+  <title>
+    <key>ru</key>
+    <value>Помощник формирования платежных документов</value>
+  </title>
+  <title>
+    <key>tr</key>
+    <value>Ödeme belgelerinin oluşturulma sihirbazı</value>
+  </title>
+  <title>
+    <key>vi</key>
+    <value>Trợ lý cho việc Lập chứng từ thanh toán</value>
+  </title>
+  <items xsi:type="form:FormGroup">
+    <name>GroupPages</name>
+    <id>40</id>
+    <items xsi:type="form:FormGroup">
+      <name>PageControl</name>
+      <id>42</id>
+      <items xsi:type="form:FormGroup">
+        <name>ControlTeamGroup</name>
+        <id>134</id>
+        <items xsi:type="form:FormGroup">
+          <name>AGroupOfTeamControlLeft</name>
+          <id>139</id>
+          <items xsi:type="form:Button">
+            <name>RequestsMarkAll</name>
+            <id>130</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <extendedTooltip>
+              <name>RequestsMarkAllExtendedTooltip</name>
+              <id>131</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <type>UsualButton</type>
+            <commandName>Form.Command.SelectAllCommand</commandName>
+            <representation>Auto</representation>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <placementArea>UserCmds</placementArea>
+            <representationInContextMenu>Auto</representationInContextMenu>
+          </items>
+          <items xsi:type="form:Button">
+            <name>ApplicationsToRemoveMarks</name>
+            <id>132</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <extendedTooltip>
+              <name>ApplicationsToRemoveMarksExtendedTooltip</name>
+              <id>133</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <type>UsualButton</type>
+            <commandName>Form.Command.ClearAll</commandName>
+            <representation>Auto</representation>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <placementArea>UserCmds</placementArea>
+            <representationInContextMenu>Auto</representationInContextMenu>
+          </items>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <title>
+            <key>en</key>
+            <value>Control commands left</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>فرمان‌های کنترل چپ</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Comandi di controllo a sinistra</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Polecenia asystenta lewo</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Команды контроля лево</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Kontrol komutları sol</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Các lệnh điều khiển bên trái</value>
+          </title>
+          <horizontalStretch>true</horizontalStretch>
+          <extendedTooltip>
+            <name>AGroupOfTeamControlLeftExtendedTooltip</name>
+            <id>140</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <type>UsualGroup</type>
+          <extInfo xsi:type="form:UsualGroupExtInfo">
+            <showLeftMargin>true</showLeftMargin>
+            <united>true</united>
+            <throughAlign>Auto</throughAlign>
+            <currentRowUse>Auto</currentRowUse>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>SelectionBasedOnControlResults</name>
+          <id>136</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>SelectionBasedOnControlResults</segments>
+          </dataPath>
+          <titleLocation>None</titleLocation>
+          <handlers>
+            <event>OnChange</event>
+            <name>SelectionBasedOnControlResultsOnChange</name>
+          </handlers>
+          <extendedTooltip>
+            <name>SelectionBasedOnControlResultsExtendedTooltip</name>
+            <id>138</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>SelectionBasedOnControlResultsContextMenu</name>
+            <id>137</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>RadioButtonField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:RadioButtonsFieldExtInfo">
+            <radioButtonsType>Tumbler</radioButtonsType>
+            <columnsCount>3</columnsCount>
+            <choiceList>
+              <presentation>
+                <key>en</key>
+                <value>Control failed</value>
+              </presentation>
+              <presentation>
+                <key>fa</key>
+                <value>کنترل ناموفق</value>
+              </presentation>
+              <presentation>
+                <key>it</key>
+                <value>Controllo fallito</value>
+              </presentation>
+              <presentation>
+                <key>pl</key>
+                <value>Nieudana kontrola</value>
+              </presentation>
+              <presentation>
+                <key>ru</key>
+                <value>Контроль не пройден</value>
+              </presentation>
+              <presentation>
+                <key>tr</key>
+                <value>Kontrol başarısız oldu</value>
+              </presentation>
+              <presentation>
+                <key>vi</key>
+                <value>Kiểm soát thất bại</value>
+              </presentation>
+              <value xsi:type="core:NumberValue">
+                <value>0</value>
+              </value>
+            </choiceList>
+            <choiceList>
+              <presentation>
+                <key>en</key>
+                <value>Control passed</value>
+              </presentation>
+              <presentation>
+                <key>fa</key>
+                <value>کنترل موفق</value>
+              </presentation>
+              <presentation>
+                <key>it</key>
+                <value>Controllo riuscito</value>
+              </presentation>
+              <presentation>
+                <key>pl</key>
+                <value>Kontrola została zakończona</value>
+              </presentation>
+              <presentation>
+                <key>ru</key>
+                <value>Контроль пройден</value>
+              </presentation>
+              <presentation>
+                <key>tr</key>
+                <value>Kontrol tamamlandı</value>
+              </presentation>
+              <presentation>
+                <key>vi</key>
+                <value>Kiểm soát đã qua</value>
+              </presentation>
+              <value xsi:type="core:NumberValue">
+                <value>1</value>
+              </value>
+            </choiceList>
+            <choiceList>
+              <presentation>
+                <key>en</key>
+                <value>All requests</value>
+              </presentation>
+              <presentation>
+                <key>fa</key>
+                <value>همه درخواست‌ها</value>
+              </presentation>
+              <presentation>
+                <key>it</key>
+                <value>Tutte le richieste</value>
+              </presentation>
+              <presentation>
+                <key>pl</key>
+                <value>Wszystkie zgłoszenia</value>
+              </presentation>
+              <presentation>
+                <key>ru</key>
+                <value>Все заявки</value>
+              </presentation>
+              <presentation>
+                <key>tr</key>
+                <value>Tüm talepler</value>
+              </presentation>
+              <presentation>
+                <key>vi</key>
+                <value>Tất cả các đơn</value>
+              </presentation>
+              <value xsi:type="core:NumberValue">
+                <value>2</value>
+              </value>
+            </choiceList>
+          </extInfo>
+        </items>
+        <items xsi:type="form:Button">
+          <name>Help</name>
+          <id>167</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <extendedTooltip>
+            <name>HelpExtendedTooltip</name>
+            <id>168</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <type>UsualButton</type>
+          <commandName>Form.StandardCommand.Help</commandName>
+          <representation>Picture</representation>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <placementArea>UserCmds</placementArea>
+          <representationInContextMenu>Auto</representationInContextMenu>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>Control commands</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>فرمان‌های کنترل</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Comandi di controllo</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Polecenia kontroli</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Команды контроля</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Kontrol komutları</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Lệnh kiểm soát</value>
+        </title>
+        <extendedTooltip>
+          <name>ControlTeamGroupExtendedTooltip</name>
+          <id>135</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>UsualGroup</type>
+        <extInfo xsi:type="form:UsualGroupExtInfo">
+          <showLeftMargin>true</showLeftMargin>
+          <united>true</united>
+          <throughAlign>Auto</throughAlign>
+          <currentRowUse>Auto</currentRowUse>
+        </extInfo>
+      </items>
+      <items xsi:type="form:Table">
+        <name>Requests</name>
+        <id>79</id>
+        <title>
+          <key>en</key>
+          <value>Requests</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>درخواست‌ها</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Richieste</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Zgłoszenia</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Заявки</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Başvurular</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Đơn</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>Requests</segments>
+        </dataPath>
+        <titleLocation>None</titleLocation>
+        <items xsi:type="form:FormField">
+          <name>RequestsCheck</name>
+          <id>92</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Requests.Check</segments>
+          </dataPath>
+          <titleLocation>None</titleLocation>
+          <extendedTooltip>
+            <name>RequestsCheckExtendedTooltip</name>
+            <id>94</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>RequestsCheckContextMenu</name>
+            <id>93</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>CheckBoxField</type>
+          <editMode>EnterOnInput</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>RequestsAmountToPay</name>
+          <id>101</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Requests.AmountToPay</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>RequestsAmountToPayExtendedTooltip</name>
+            <id>103</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>RequestsAmountToPayContextMenu</name>
+            <id>102</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <readOnly>true</readOnly>
+          <editMode>EnterOnInput</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>RequestsCurrency</name>
+          <id>104</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Requests.Currency</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>RequestsCurrencyExtendedTooltip</name>
+            <id>106</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>RequestsCurrencyContextMenu</name>
+            <id>105</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <readOnly>true</readOnly>
+          <editMode>EnterOnInput</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormGroup">
+          <name>ApplicationGroupTheResultOfTheControl</name>
+          <id>116</id>
+          <items xsi:type="form:FormField">
+            <name>RequestsControlPicture</name>
+            <id>118</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>Requests.ControlPicture</segments>
+            </dataPath>
+            <titleLocation>None</titleLocation>
+            <extendedTooltip>
+              <name>RequestsControlPictureExtendedTooltip</name>
+              <id>120</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>RequestsControlPictureContextMenu</name>
+              <id>119</id>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>PictureField</type>
+            <readOnly>true</readOnly>
+            <editMode>EnterOnInput</editMode>
+            <headerHorizontalAlign>Left</headerHorizontalAlign>
+            <showInFooter>true</showInFooter>
+            <extInfo xsi:type="form:ImageFieldExtInfo">
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <horizontalStretch>true</horizontalStretch>
+              <verticalStretch>true</verticalStretch>
+              <valuesPicture xsi:type="core:PictureRef">
+                <picture>CommonPicture.IssueStatuses16</picture>
+              </valuesPicture>
+              <border xsi:type="core:BorderDef">
+                <style>Single</style>
+                <width>1</width>
+              </border>
+            </extInfo>
+          </items>
+          <items xsi:type="form:FormField">
+            <name>RequestsControlResult</name>
+            <id>107</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>Requests.ControlResult</segments>
+            </dataPath>
+            <titleLocation>None</titleLocation>
+            <extendedTooltip>
+              <name>RequestsControlResultExtendedTooltip</name>
+              <id>109</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>RequestsControlResultContextMenu</name>
+              <id>108</id>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>InputField</type>
+            <readOnly>true</readOnly>
+            <editMode>EnterOnInput</editMode>
+            <headerHorizontalAlign>Left</headerHorizontalAlign>
+            <showInFooter>true</showInFooter>
+            <extInfo xsi:type="form:InputFieldExtInfo">
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <wrap>true</wrap>
+              <chooseType>true</chooseType>
+              <typeDomainEnabled>true</typeDomainEnabled>
+              <textEdit>true</textEdit>
+            </extInfo>
+          </items>
+          <items xsi:type="form:FormField">
+            <name>RequestsControlPassed</name>
+            <id>141</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible/>
+            <dataPath xsi:type="form:DataPath">
+              <segments>Requests.ControlPassed</segments>
+            </dataPath>
+            <titleLocation>None</titleLocation>
+            <extendedTooltip>
+              <name>RequestsControlPassedExtendedTooltip</name>
+              <id>143</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>RequestsControlPassedContextMenu</name>
+              <id>142</id>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>CheckBoxField</type>
+            <readOnly>true</readOnly>
+            <editMode>EnterOnInput</editMode>
+            <headerHorizontalAlign>Left</headerHorizontalAlign>
+            <showInFooter>true</showInFooter>
+            <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+          </items>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <title>
+            <key>en</key>
+            <value>Control result </value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>نتیجه کنترل</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Risultato di controllo</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Wyniki kontroli</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Результат контроля</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Kontrol sonucu</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Kết quả kiểm soát</value>
+          </title>
+          <extendedTooltip>
+            <name>ApplicationGroupTheResultOfTheControlExtendedTooltip</name>
+            <id>117</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <type>ColumnGroup</type>
+          <extInfo xsi:type="form:ColumnGroupExtInfo">
+            <group>InCell</group>
+            <showTitle>true</showTitle>
+            <showInHeader>true</showInHeader>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>RequestsBankAccount</name>
+          <id>113</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Requests.BankAccount</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>RequestsBankAccountExtendedTooltip</name>
+            <id>115</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>RequestsBankAccountContextMenu</name>
+            <id>114</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <readOnly>true</readOnly>
+          <editMode>EnterOnInput</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>RequestsPayerBeneficiary</name>
+          <id>110</id>
+          <title>
+            <key>en</key>
+            <value>Recipient</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>گیرنده</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Destinatario</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Odbiorca</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Получатель</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Alıcı</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Người nhận</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Requests.PayerBeneficiary</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>RequestsPayerBeneficiaryExtendedTooltip</name>
+            <id>112</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>RequestsPayerBeneficiaryContextMenu</name>
+            <id>111</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <readOnly>true</readOnly>
+          <editMode>EnterOnInput</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>RequestsPaymentPurposes</name>
+          <id>124</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Requests.PaymentPurposes</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>RequestsPaymentPurposesExtendedTooltip</name>
+            <id>126</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>RequestsPaymentPurposesContextMenu</name>
+            <id>125</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <readOnly>true</readOnly>
+          <editMode>EnterOnInput</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>RequestsBusinessOperation</name>
+          <id>127</id>
+          <title>
+            <key>en</key>
+            <value>Transaction</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>تراکنش</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Operazione</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Operacja</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Операция</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>İşlem</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Giao dịch</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Requests.BusinessOperation</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>RequestsBusinessOperationExtendedTooltip</name>
+            <id>129</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>RequestsBusinessOperationContextMenu</name>
+            <id>128</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <readOnly>true</readOnly>
+          <editMode>EnterOnInput</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>RequestsRef</name>
+          <id>95</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible/>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Requests.Ref</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>RequestsRefExtendedTooltip</name>
+            <id>97</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>RequestsRefContextMenu</name>
+            <id>96</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>EnterOnInput</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <autoCommandBar>
+          <name>RequestsCommandBar</name>
+          <id>81</id>
+          <horizontalAlign>Left</horizontalAlign>
+        </autoCommandBar>
+        <handlers>
+          <event>Selection</event>
+          <name>RequestsSelection</name>
+        </handlers>
+        <handlers>
+          <event>OnActivateRow</event>
+          <name>RequestsOnActivateRow</name>
+        </handlers>
+        <searchStringAddition>
+          <name>RequestsSearchString</name>
+          <id>83</id>
+          <extendedTooltip>
+            <name>RequestsSearchStringExtendedTooltip</name>
+            <id>85</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>RequestsSearchStringContextMenu</name>
+            <id>84</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <source>Requests</source>
+          <extInfo xsi:type="form:SearchStringAdditionExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+          </extInfo>
+        </searchStringAddition>
+        <viewStatusAddition>
+          <name>RequestsViewStatus</name>
+          <id>86</id>
+          <extendedTooltip>
+            <name>RequestsViewStatusExtendedTooltip</name>
+            <id>88</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>RequestsViewStatusContextMenu</name>
+            <id>87</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>ViewStatusAddition</type>
+          <source>Requests</source>
+          <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <horizontalLocation>Left</horizontalLocation>
+          </extInfo>
+        </viewStatusAddition>
+        <searchControlAddition>
+          <name>RequestsSearchControl</name>
+          <id>89</id>
+          <extendedTooltip>
+            <name>RequestsSearchControlExtendedTooltip</name>
+            <id>91</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>RequestsSearchControlContextMenu</name>
+            <id>90</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>SearchControlAddition</type>
+          <source>Requests</source>
+          <extInfo xsi:type="form:SearchControlAdditionExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+          </extInfo>
+        </searchControlAddition>
+        <extendedTooltip>
+          <name>RequestsExtendedTooltip</name>
+          <id>82</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>RequestsContextMenu</name>
+          <id>80</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <changeRowSet>true</changeRowSet>
+        <changeRowOrder>true</changeRowOrder>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <autoMaxRowsCount>true</autoMaxRowsCount>
+        <selectionMode>MultiRow</selectionMode>
+        <header>true</header>
+        <headerHeight>1</headerHeight>
+        <footerHeight>1</footerHeight>
+        <horizontalScrollBar>AutoUse</horizontalScrollBar>
+        <verticalScrollBar>AutoUse</verticalScrollBar>
+        <horizontalLines>true</horizontalLines>
+        <verticalLines>true</verticalLines>
+        <autoInsertNewRow>true</autoInsertNewRow>
+        <searchOnInput>Auto</searchOnInput>
+        <initialListView>Auto</initialListView>
+        <horizontalStretch>true</horizontalStretch>
+        <verticalStretch>true</verticalStretch>
+        <enableStartDrag>true</enableStartDrag>
+        <enableDrag>true</enableDrag>
+        <rowFilter xsi:type="core:UndefinedValue"/>
+      </items>
+      <items xsi:type="form:FormGroup">
+        <name>TheResultsGroupControl</name>
+        <id>144</id>
+        <items xsi:type="form:Table">
+          <name>ControlResults</name>
+          <id>146</id>
+          <title>
+            <key>en</key>
+            <value>Control results</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>نتایج کنترل</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Risultati di controllo</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Wyniki kontroli</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Результаты контроля</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Kontrol sonuçları</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Kiểm soát kết quả</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>ControlResults</segments>
+          </dataPath>
+          <titleLocation>None</titleLocation>
+          <items xsi:type="form:FormGroup">
+            <name>GroupControlResultsPictureAndResult</name>
+            <id>159</id>
+            <items xsi:type="form:FormField">
+              <name>ResultsOfDocumentControlPictureOfControl</name>
+              <id>161</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>ControlResults.ControlPicture</segments>
+              </dataPath>
+              <extendedTooltip>
+                <name>ResultsOfDocumentControlPictureOfControlExtendedTooltip</name>
+                <id>163</id>
+                <type>Label</type>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <extInfo xsi:type="form:LabelDecorationExtInfo">
+                  <horizontalAlign>Left</horizontalAlign>
+                </extInfo>
+              </extendedTooltip>
+              <contextMenu>
+                <name>ResultsOfDocumentControlPictureOfControlContextMenu</name>
+                <id>162</id>
+                <autoFill>true</autoFill>
+              </contextMenu>
+              <type>PictureField</type>
+              <editMode>EnterOnInput</editMode>
+              <showInHeader>true</showInHeader>
+              <headerHorizontalAlign>Left</headerHorizontalAlign>
+              <showInFooter>true</showInFooter>
+              <extInfo xsi:type="form:ImageFieldExtInfo">
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <horizontalStretch>true</horizontalStretch>
+                <verticalStretch>true</verticalStretch>
+                <valuesPicture xsi:type="core:PictureRef">
+                  <picture>CommonPicture.IssueStatuses16</picture>
+                </valuesPicture>
+                <border xsi:type="core:BorderDef">
+                  <style>Single</style>
+                  <width>1</width>
+                </border>
+              </extInfo>
+            </items>
+            <items xsi:type="form:FormField">
+              <name>TheInspectionResultsDocumentTheResultOfMonitoring</name>
+              <id>164</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>ControlResults.ControlResult</segments>
+              </dataPath>
+              <extendedTooltip>
+                <name>TheInspectionResultsDocumentTheResultOfMonitoringExtendedTooltip</name>
+                <id>166</id>
+                <type>Label</type>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <extInfo xsi:type="form:LabelDecorationExtInfo">
+                  <horizontalAlign>Left</horizontalAlign>
+                </extInfo>
+              </extendedTooltip>
+              <contextMenu>
+                <name>TheInspectionResultsDocumentTheResultOfMonitoringContextMenu</name>
+                <id>165</id>
+                <autoFill>true</autoFill>
+              </contextMenu>
+              <type>InputField</type>
+              <editMode>EnterOnInput</editMode>
+              <showInHeader>true</showInHeader>
+              <headerHorizontalAlign>Left</headerHorizontalAlign>
+              <showInFooter>true</showInFooter>
+              <extInfo xsi:type="form:InputFieldExtInfo">
+                <autoMaxWidth>true</autoMaxWidth>
+                <height>2</height>
+                <autoMaxHeight>true</autoMaxHeight>
+                <wrap>true</wrap>
+                <chooseType>true</chooseType>
+                <typeDomainEnabled>true</typeDomainEnabled>
+                <textEdit>true</textEdit>
+              </extInfo>
+            </items>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <title>
+              <key>en</key>
+              <value>Control results picture and result</value>
+            </title>
+            <title>
+              <key>fa</key>
+              <value>تصویر و نتیجه نتایج کنترل</value>
+            </title>
+            <title>
+              <key>it</key>
+              <value>Risultati di controllo immagine e risultato</value>
+            </title>
+            <title>
+              <key>pl</key>
+              <value>Wyniki kontroli obrazek i wynik</value>
+            </title>
+            <title>
+              <key>ru</key>
+              <value>Результаты контроля картинка и результат</value>
+            </title>
+            <title>
+              <key>tr</key>
+              <value>Kontrol sonuçları resim ve sonuç</value>
+            </title>
+            <title>
+              <key>vi</key>
+              <value>Kiểm soát kết quả hình ảnh và kết quả</value>
+            </title>
+            <extendedTooltip>
+              <name>GroupControlResultsPictureAndResultExtendedTooltip</name>
+              <id>160</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <type>ColumnGroup</type>
+            <extInfo xsi:type="form:ColumnGroupExtInfo">
+              <group>InCell</group>
+              <showTitle>true</showTitle>
+            </extInfo>
+          </items>
+          <commandBarLocation>None</commandBarLocation>
+          <autoCommandBar>
+            <name>ControlResultsCommandBar</name>
+            <id>148</id>
+            <horizontalAlign>Left</horizontalAlign>
+            <autoFill>true</autoFill>
+          </autoCommandBar>
+          <handlers>
+            <event>Selection</event>
+            <name>ResultsOfDocumentControlSelection</name>
+          </handlers>
+          <searchStringAddition>
+            <name>ControlResultsSearchString</name>
+            <id>150</id>
+            <extendedTooltip>
+              <name>ControlResultsSearchStringExtendedTooltip</name>
+              <id>152</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>ControlResultsSearchStringContextMenu</name>
+              <id>151</id>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <source>ControlResults</source>
+            <extInfo xsi:type="form:SearchStringAdditionExtInfo">
+              <autoMaxWidth>true</autoMaxWidth>
+            </extInfo>
+          </searchStringAddition>
+          <viewStatusAddition>
+            <name>ControlResultsViewStatus</name>
+            <id>153</id>
+            <extendedTooltip>
+              <name>ControlResultsViewStatusExtendedTooltip</name>
+              <id>155</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>ControlResultsViewStatusContextMenu</name>
+              <id>154</id>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>ViewStatusAddition</type>
+            <source>ControlResults</source>
+            <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
+              <autoMaxWidth>true</autoMaxWidth>
+              <horizontalLocation>Left</horizontalLocation>
+            </extInfo>
+          </viewStatusAddition>
+          <searchControlAddition>
+            <name>ControlResultsSearchControl</name>
+            <id>156</id>
+            <extendedTooltip>
+              <name>ControlResultsSearchControlExtendedTooltip</name>
+              <id>158</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>ControlResultsSearchControlContextMenu</name>
+              <id>157</id>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>SearchControlAddition</type>
+            <source>ControlResults</source>
+            <extInfo xsi:type="form:SearchControlAdditionExtInfo">
+              <autoMaxWidth>true</autoMaxWidth>
+            </extInfo>
+          </searchControlAddition>
+          <extendedTooltip>
+            <name>ControlResultsExtendedTooltip</name>
+            <id>149</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>ControlResultsContextMenu</name>
+            <id>147</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <readOnly>true</readOnly>
+          <autoMaxWidth>true</autoMaxWidth>
+          <height>3</height>
+          <autoMaxHeight>true</autoMaxHeight>
+          <autoMaxRowsCount>true</autoMaxRowsCount>
+          <headerHeight>1</headerHeight>
+          <footerHeight>1</footerHeight>
+          <horizontalScrollBar>AutoUse</horizontalScrollBar>
+          <verticalScrollBar>AutoUse</verticalScrollBar>
+          <horizontalLines>true</horizontalLines>
+          <verticalLines>true</verticalLines>
+          <autoInsertNewRow>true</autoInsertNewRow>
+          <searchOnInput>Auto</searchOnInput>
+          <initialListView>Auto</initialListView>
+          <horizontalStretch>true</horizontalStretch>
+          <verticalStretch>true</verticalStretch>
+          <enableStartDrag>true</enableStartDrag>
+          <enableDrag>true</enableDrag>
+          <rowFilter xsi:type="core:UndefinedValue"/>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>Control results</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>نتایج کنترل</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Risultati di controllo</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Wyniki kontroli</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Результаты контроля</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Kontrol sonuçları</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Kiểm soát kết quả</value>
+        </title>
+        <toolTip>
+          <key>en</key>
+          <value>Results of payment control by requests for compliance with the SDO requirements</value>
+        </toolTip>
+        <toolTip>
+          <key>fa</key>
+          <value>نتایج کنترل پرداخت بر اساس درخواست‌ها برای انطباق با الزامات SDO</value>
+        </toolTip>
+        <toolTip>
+          <key>it</key>
+          <value>Risultati di controllo della conformità dei pagamenti in base alle richieste ai requisiti della Commessa Statale Militare</value>
+        </toolTip>
+        <toolTip>
+          <key>pl</key>
+          <value>Wyniki kontroli płatności wg zgłoszeń zgodności z wymaganiami zamówienia publicznego w dziedzinie obronności</value>
+        </toolTip>
+        <toolTip>
+          <key>ru</key>
+          <value>Результаты контроля платежей по заявкам соответствия требованиям ГОЗ</value>
+        </toolTip>
+        <toolTip>
+          <key>tr</key>
+          <value>Devlet Savunma Emri gerekliliklerine uygunluk başvurularında ödeme kontrolünün sonuçları</value>
+        </toolTip>
+        <toolTip>
+          <key>vi</key>
+          <value>Kết quả kiểm soát thanh toán trên các ứng dụng tuân thủ các yêu cầu của lệnh Quốc phòng</value>
+        </toolTip>
+        <extendedTooltip>
+          <name>TheResultsGroupControlExtendedTooltip</name>
+          <id>145</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>UsualGroup</type>
+        <extInfo xsi:type="form:UsualGroupExtInfo">
+          <group>HorizontalIfPossible</group>
+          <collapsed>true</collapsed>
+          <controlRepresentation>Picture</controlRepresentation>
+          <representation>WeakSeparation</representation>
+          <united>true</united>
+          <showTitle>true</showTitle>
+          <throughAlign>Auto</throughAlign>
+          <currentRowUse>Auto</currentRowUse>
+        </extInfo>
+      </items>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>en</key>
+        <value>Page control</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>صفحه کنترل</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Pagina controllo</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Strony kontrola</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Страница контроль</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Sayfa kontrol</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Thẻ kiểm soát</value>
+      </title>
+      <extendedTooltip>
+        <name>PageControlExtendedTooltip</name>
+        <id>43</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <type>Page</type>
+      <extInfo xsi:type="form:PageGroupExtInfo">
+        <group>Vertical</group>
+        <showTitle>true</showTitle>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormGroup">
+      <name>PageCreatedDocuments</name>
+      <id>44</id>
+      <items xsi:type="form:FormGroup">
+        <name>DocumentListCommandGroup</name>
+        <id>52</id>
+        <items xsi:type="form:Button">
+          <name>FormPost</name>
+          <id>1</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <extendedTooltip>
+            <name>FormPostExtendedTooltip</name>
+            <id>2</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <commandName>Form.Command.Post</commandName>
+          <representation>PictureAndText</representation>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <placementArea>UserCmds</placementArea>
+          <representationInContextMenu>Auto</representationInContextMenu>
+          <locationInCommandBar>InCommandBarAndInAdditionalSubmenu</locationInCommandBar>
+        </items>
+        <items xsi:type="form:FormGroup">
+          <name>PrintSubmenu</name>
+          <id>46</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <title>
+            <key>en</key>
+            <value>Print</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>چاپ</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Stampa</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Drukuj</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Печать</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Yazdır</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>In</value>
+          </title>
+          <extendedTooltip>
+            <name>PrintSubmenuExtendedTooltip</name>
+            <id>47</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <type>Popup</type>
+          <extInfo xsi:type="form:PopupGroupExtInfo">
+            <picture xsi:type="core:PictureRef">
+              <picture>StdPicture.Print</picture>
+            </picture>
+            <representation>Auto</representation>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormGroup">
+          <name>EDOSubmenu</name>
+          <id>77</id>
+          <items xsi:type="form:FormGroup">
+            <name>TeamAdvanoe</name>
+            <id>169</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <title>
+              <key>en</key>
+              <value>Commands EDI important</value>
+            </title>
+            <title>
+              <key>fa</key>
+              <value>فرمان‌های EDI مهم</value>
+            </title>
+            <title>
+              <key>it</key>
+              <value>Comandi Documento Digitale importante</value>
+            </title>
+            <title>
+              <key>pl</key>
+              <value>Zespoły EOD ważne</value>
+            </title>
+            <title>
+              <key>ru</key>
+              <value>Команды ЭДО важное</value>
+            </title>
+            <title>
+              <key>tr</key>
+              <value>EDI komutları önemli</value>
+            </title>
+            <title>
+              <key>vi</key>
+              <value>Lệnh Quản lý văn bản điện tử quan trọng</value>
+            </title>
+            <toolTip>
+              <key>en</key>
+              <value>EDI (important)</value>
+            </toolTip>
+            <toolTip>
+              <key>fa</key>
+              <value>EDI (مهم)</value>
+            </toolTip>
+            <toolTip>
+              <key>it</key>
+              <value>Documento Digitale (importante)</value>
+            </toolTip>
+            <toolTip>
+              <key>pl</key>
+              <value>EOD (ważne)</value>
+            </toolTip>
+            <toolTip>
+              <key>ru</key>
+              <value>ЭДО (важное)</value>
+            </toolTip>
+            <toolTip>
+              <key>tr</key>
+              <value>EDI (önemli)</value>
+            </toolTip>
+            <toolTip>
+              <key>vi</key>
+              <value>Quản lý văn bản điện tử (quan trọng)</value>
+            </toolTip>
+            <extendedTooltip>
+              <name>TeamAdvanoeExtendedTooltip</name>
+              <id>170</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <extInfo xsi:type="form:ButtonGroupExtInfo"/>
+          </items>
+          <items xsi:type="form:FormGroup">
+            <name>TeamEgoserve</name>
+            <id>171</id>
+            <items xsi:type="form:Button">
+              <name>SynchronizeWithBank</name>
+              <id>173</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <extendedTooltip>
+                <name>SynchronizeWithBankExtendedTooltip</name>
+                <id>174</id>
+                <type>Label</type>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <extInfo xsi:type="form:LabelDecorationExtInfo">
+                  <horizontalAlign>Left</horizontalAlign>
+                </extInfo>
+              </extendedTooltip>
+              <commandName>0</commandName>
+              <representation>Auto</representation>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <placementArea>UserCmds</placementArea>
+              <representationInContextMenu>Auto</representationInContextMenu>
+            </items>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <title>
+              <key>en</key>
+              <value>EDI (service)</value>
+            </title>
+            <title>
+              <key>fa</key>
+              <value>EDI (سرویس)</value>
+            </title>
+            <title>
+              <key>it</key>
+              <value>Documento Digitale (servizio)</value>
+            </title>
+            <title>
+              <key>pl</key>
+              <value>EOD (serwis)</value>
+            </title>
+            <title>
+              <key>ru</key>
+              <value>ЭДО (сервис)</value>
+            </title>
+            <title>
+              <key>tr</key>
+              <value>EDI (hizmet)</value>
+            </title>
+            <title>
+              <key>vi</key>
+              <value>Quản lý văn bản điện tử (service)</value>
+            </title>
+            <extendedTooltip>
+              <name>TeamEgoserveExtendedTooltip</name>
+              <id>172</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <extInfo xsi:type="form:ButtonGroupExtInfo">
+              <commandSource>Form</commandSource>
+            </extInfo>
+          </items>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <title>
+            <key>en</key>
+            <value>DirectBank</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>DirectBank</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>DirectBank</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>DirectBank</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>DirectBank</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>DirectBank</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>DirectBank</value>
+          </title>
+          <extendedTooltip>
+            <name>EDOSubmenuExtendedTooltip</name>
+            <id>78</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <type>Popup</type>
+          <extInfo xsi:type="form:PopupGroupExtInfo">
+            <picture xsi:type="core:PictureRef">
+              <picture>StdPicture.Print</picture>
+            </picture>
+            <representation>Auto</representation>
+            <commandSource>Form</commandSource>
+          </extInfo>
+        </items>
+        <items xsi:type="form:Button">
+          <name>FormCustomizeForm</name>
+          <id>38</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <extendedTooltip>
+            <name>FormCustomizeFormExtendedTooltip</name>
+            <id>39</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <commandName>Form.StandardCommand.CustomizeForm</commandName>
+          <representation>Auto</representation>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <placementArea>UserCmds</placementArea>
+          <representationInContextMenu>Auto</representationInContextMenu>
+        </items>
+        <items xsi:type="form:Button">
+          <name>FormHelp</name>
+          <id>36</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <extendedTooltip>
+            <name>FormHelpExtendedTooltip</name>
+            <id>37</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <commandName>Form.StandardCommand.Help</commandName>
+          <representation>Auto</representation>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <placementArea>UserCmds</placementArea>
+          <representationInContextMenu>Auto</representationInContextMenu>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>Document list commands</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>فرمان‌های فهرست اسناد</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Comandi dell'elenco dei documenti</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Polecenia listy dokumentów</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Команды списка документов</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Belge listesi komutları</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Lệnh danh sách chứng từ</value>
+        </title>
+        <extendedTooltip>
+          <name>DocumentListCommandGroupExtendedTooltip</name>
+          <id>53</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>CommandBar</type>
+        <extInfo xsi:type="form:CommandBarExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </items>
+      <items xsi:type="form:Table">
+        <name>CreatedDocuments</name>
+        <id>11</id>
+        <title>
+          <key>en</key>
+          <value>Created documents</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>اسناد ایجادشده</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Documenti creati</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Utworzone dokumenty</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Созданные документы</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Oluşturulmuş belgeler</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Chứng từ đã tạo mới</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>CreatedDocuments</segments>
+        </dataPath>
+        <titleLocation>None</titleLocation>
+        <excludedCommands>Copy</excludedCommands>
+        <excludedCommands>Create</excludedCommands>
+        <excludedCommands>Delete</excludedCommands>
+        <items xsi:type="form:FormField">
+          <name>CreatedDocumentsOperation</name>
+          <id>59</id>
+          <title>
+            <key>en</key>
+            <value>Transaction</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>تراکنش</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Operazione</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Operacja</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Операция</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>İşlem</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Giao dịch</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>CreatedDocuments.Operation</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>CreatedDocumentsOperationExtendedTooltip</name>
+            <id>61</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>CreatedDocumentsOperationContextMenu</name>
+            <id>60</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>LabelField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:LabelFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>CreatedDocumentsDocumentAmount</name>
+          <id>65</id>
+          <title>
+            <key>en</key>
+            <value>Document amount</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>مبلغ سند</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Importo del documento</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Wartość dokumentu</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Сумма документа</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Belge tutarı</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Số tiền chứng từ</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>CreatedDocuments.DocumentAmount</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>CreatedDocumentsDocumentAmountExtendedTooltip</name>
+            <id>67</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>CreatedDocumentsDocumentAmountContextMenu</name>
+            <id>66</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>LabelField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:LabelFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>CreatedDocumentsCurrency</name>
+          <id>68</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>CreatedDocuments.Currency</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>CreatedDocumentsCurrencyExtendedTooltip</name>
+            <id>70</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>CreatedDocumentsCurrencyContextMenu</name>
+            <id>69</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>LabelField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:LabelFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>CreatedDocumentsRecipientPayer</name>
+          <id>71</id>
+          <title>
+            <key>en</key>
+            <value>Recipient / Payer</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>گیرنده / پرداخت‌کننده</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Beneficiario / pagatore</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Odbiorca / Płatnik</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Получатель / Плательщик</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Alıcı / Ödeyen</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Người nhận / Người nộp</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>CreatedDocuments.RecipientPayer</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>CreatedDocumentsRecipientPayerExtendedTooltip</name>
+            <id>73</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>CreatedDocumentsRecipientPayerContextMenu</name>
+            <id>72</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>LabelField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:LabelFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>CreatedDocumentsBankAccountCashAccount</name>
+          <id>74</id>
+          <title>
+            <key>en</key>
+            <value>Bank account / cash account</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>حساب بانکی / صندوق</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Conto bancario / Cassa</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Rachunek bankowy / Kasa</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Банковский счет / Касса</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Banka hesabı / Kasa</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Tài khoản ngân hàng / Tiền mặt</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>CreatedDocuments.BankAccountCashAccount</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>CreatedDocumentsBankAccountCashAccountExtendedTooltip</name>
+            <id>76</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>CreatedDocumentsBankAccountCashAccountContextMenu</name>
+            <id>75</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>LabelField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:LabelFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>CreatedDocumentsOrganization</name>
+          <id>62</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>CreatedDocuments.Organization</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>CreatedDocumentsOrganizationExtendedTooltip</name>
+            <id>64</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>CreatedDocumentsOrganizationContextMenu</name>
+            <id>63</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>LabelField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:LabelFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>CreatedDocumentsNumber</name>
+          <id>24</id>
+          <title>
+            <key>en</key>
+            <value>Number</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>شماره</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Numero</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Numer</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Номер</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Numara</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Số</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>CreatedDocuments.Number</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>CreatedDocumentsNumberExtendedTooltip</name>
+            <id>26</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>CreatedDocumentsNumberContextMenu</name>
+            <id>25</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>LabelField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:LabelFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>CreatedDocumentsDate</name>
+          <id>33</id>
+          <title>
+            <key>en</key>
+            <value>Date</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>تاریخ</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Data</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Data</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Дата</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Tarih</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Ngày</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>CreatedDocuments.Date</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>CreatedDocumentsDateExtendedTooltip</name>
+            <id>35</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>CreatedDocumentsDateContextMenu</name>
+            <id>34</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>LabelField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:LabelFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>CreatedDocumentsType</name>
+          <id>56</id>
+          <title>
+            <key>en</key>
+            <value>Document</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>سند</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Documento</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Dokument</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Документ</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Belge</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Chứng từ</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>CreatedDocuments.Type</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>CreatedDocumentsTypeExtendedTooltip</name>
+            <id>58</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>CreatedDocumentsTypeContextMenu</name>
+            <id>57</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>LabelField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:LabelFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>CreatedDocumentsRef</name>
+          <id>175</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible/>
+          <dataPath xsi:type="form:DataPath">
+            <segments>CreatedDocuments.Ref</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>CreatedDocumentsRefExtendedTooltip</name>
+            <id>177</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>CreatedDocumentsRefContextMenu</name>
+            <id>176</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>LabelField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:LabelFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+          </extInfo>
+        </items>
+        <autoCommandBar>
+          <name>CreatedDocumentsCommandBar</name>
+          <id>13</id>
+          <horizontalAlign>Left</horizontalAlign>
+        </autoCommandBar>
+        <handlers>
+          <event>Selection</event>
+          <name>CreatedDocumentsSelection</name>
+        </handlers>
+        <handlers>
+          <event>OnActivateRow</event>
+          <name>CreatedDocumentsOnActivateRow</name>
+        </handlers>
+        <searchStringAddition>
+          <name>CreatedDocumentsSearchString</name>
+          <id>15</id>
+          <extendedTooltip>
+            <name>CreatedDocumentsSearchStringExtendedTooltip</name>
+            <id>17</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>CreatedDocumentsSearchStringContextMenu</name>
+            <id>16</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <source>CreatedDocuments</source>
+          <extInfo xsi:type="form:SearchStringAdditionExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+          </extInfo>
+        </searchStringAddition>
+        <viewStatusAddition>
+          <name>CreatedDocumentsViewStatus</name>
+          <id>18</id>
+          <extendedTooltip>
+            <name>CreatedDocumentsViewStatusExtendedTooltip</name>
+            <id>20</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>CreatedDocumentsViewStatusContextMenu</name>
+            <id>19</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>ViewStatusAddition</type>
+          <source>CreatedDocuments</source>
+          <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <horizontalLocation>Left</horizontalLocation>
+          </extInfo>
+        </viewStatusAddition>
+        <searchControlAddition>
+          <name>CreatedDocumentsSearchControl</name>
+          <id>21</id>
+          <extendedTooltip>
+            <name>CreatedDocumentsSearchControlExtendedTooltip</name>
+            <id>23</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>CreatedDocumentsSearchControlContextMenu</name>
+            <id>22</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>SearchControlAddition</type>
+          <source>CreatedDocuments</source>
+          <extInfo xsi:type="form:SearchControlAdditionExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+          </extInfo>
+        </searchControlAddition>
+        <extendedTooltip>
+          <name>CreatedDocumentsExtendedTooltip</name>
+          <id>14</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>CreatedDocumentsContextMenu</name>
+          <id>12</id>
+        </contextMenu>
+        <representation>HierarchicalList</representation>
+        <changeRowSet>true</changeRowSet>
+        <changeRowOrder>true</changeRowOrder>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <autoMaxRowsCount>true</autoMaxRowsCount>
+        <selectionMode>MultiRow</selectionMode>
+        <header>true</header>
+        <headerHeight>1</headerHeight>
+        <footerHeight>1</footerHeight>
+        <horizontalScrollBar>AutoUse</horizontalScrollBar>
+        <verticalScrollBar>AutoUse</verticalScrollBar>
+        <horizontalLines>true</horizontalLines>
+        <verticalLines>true</verticalLines>
+        <useAlternationRowColor>true</useAlternationRowColor>
+        <searchOnInput>Auto</searchOnInput>
+        <initialListView>Auto</initialListView>
+        <horizontalStretch>true</horizontalStretch>
+        <verticalStretch>true</verticalStretch>
+        <enableStartDrag>true</enableStartDrag>
+        <rowPictureDataPath xsi:type="form:DataPath">
+          <segments>CreatedDocuments.CustomPicture</segments>
+        </rowPictureDataPath>
+        <rowsPicture xsi:type="core:PictureRef">
+          <picture>CommonPicture.DocumentStates</picture>
+        </rowsPicture>
+        <extInfo xsi:type="form:DynamicListTableExtInfo">
+          <autoRefreshPeriod>60</autoRefreshPeriod>
+          <period>
+            <startDate>0001-01-01T00:00:00</startDate>
+            <endDate>0001-01-01T00:00:00</endDate>
+          </period>
+          <topLevelParent xsi:type="core:UndefinedValue"/>
+          <showRoot>true</showRoot>
+          <allowGettingCurrentRowURL>true</allowGettingCurrentRowURL>
+        </extInfo>
+      </items>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>en</key>
+        <value>Page created documents</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>صفحه اسناد ایجادشده</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Pagina documenti creati</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Strona tworzone dokumenty</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Страница созданные документы</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Sayfa oluşturulan belgeler</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Trang tạo chứng từ</value>
+      </title>
+      <extendedTooltip>
+        <name>PageCreatedDocumentsExtendedTooltip</name>
+        <id>45</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <type>Page</type>
+      <extInfo xsi:type="form:PageGroupExtInfo">
+        <group>Vertical</group>
+        <showTitle>true</showTitle>
+      </extInfo>
+    </items>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>en</key>
+      <value>Pages</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>صفحات</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Pagine</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Strony</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Страницы</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Sayfalar</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Thẻ</value>
+    </title>
+    <extendedTooltip>
+      <name>GroupPagesExtendedTooltip</name>
+      <id>41</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>Pages</type>
+    <extInfo xsi:type="form:PagesGroupExtInfo">
+      <currentRowUse>Auto</currentRowUse>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormGroup">
+    <name>Commands</name>
+    <id>31</id>
+    <items xsi:type="form:FormGroup">
+      <name>CommandsLeft</name>
+      <id>29</id>
+      <items xsi:type="form:Button">
+        <name>Close</name>
+        <id>50</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>CloseExtendedTooltip</name>
+          <id>51</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.StandardCommand.Close</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
+      <items xsi:type="form:Button">
+        <name>CancelAndDelete</name>
+        <id>5</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>CancelAndDeleteExtendedTooltip</name>
+          <id>6</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.Command.CancelAndDelete</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <groupHorizontalAlign>Left</groupHorizontalAlign>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>en</key>
+        <value>Commands left</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>فرمان‌های چپ</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Comandi sinistra</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Polecenia lewo</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Команды лево</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Komutlar sol</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Lệnh trái</value>
+      </title>
+      <extendedTooltip>
+        <name>CommandsLeftExtendedTooltip</name>
+        <id>30</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <type>CommandBar</type>
+      <extInfo xsi:type="form:CommandBarExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormGroup">
+      <name>CommandsRight</name>
+      <id>27</id>
+      <items xsi:type="form:Button">
+        <name>GeneratePayments</name>
+        <id>48</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>GeneratePaymentsExtendedTooltip</name>
+          <id>49</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.Command.GeneratePayments</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
+      <items xsi:type="form:Button">
+        <name>AcceptAndClose</name>
+        <id>7</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>AcceptAndCloseExtendedTooltip</name>
+          <id>8</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.Command.AcceptAndClose</commandName>
+        <representation>Auto</representation>
+        <defaultButton>true</defaultButton>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <groupHorizontalAlign>Right</groupHorizontalAlign>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
+      <items xsi:type="form:Button">
+        <name>AcceptAndExport</name>
+        <id>9</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>AcceptAndExportExtendedTooltip</name>
+          <id>10</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.Command.AcceptAndExport</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <groupHorizontalAlign>Right</groupHorizontalAlign>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>en</key>
+        <value>Commands right</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>فرمان‌های سمت راست</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Comandi destra</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Polecenia prawo</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Команды право</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Komutlar sağ</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Lệnh phải</value>
+      </title>
+      <extendedTooltip>
+        <name>CommandsRightExtendedTooltip</name>
+        <id>28</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <type>CommandBar</type>
+      <extInfo xsi:type="form:CommandBarExtInfo">
+        <horizontalAlign>Right</horizontalAlign>
+      </extInfo>
+    </items>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>en</key>
+      <value>Commands</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>فرمان‌ها</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Comandi</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Polecenia</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Команды</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Komutlar</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Lệnh</value>
+    </title>
+    <extendedTooltip>
+      <name>CommandsExtendedTooltip</name>
+      <id>32</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>UsualGroup</type>
+    <extInfo xsi:type="form:UsualGroupExtInfo">
+      <group>HorizontalIfPossible</group>
+      <showLeftMargin>true</showLeftMargin>
+      <united>true</united>
+      <throughAlign>Auto</throughAlign>
+      <currentRowUse>Auto</currentRowUse>
+    </extInfo>
+  </items>
+  <autoCommandBar>
+    <name>FormCommandBar</name>
+    <id>-1</id>
+    <horizontalAlign>Left</horizontalAlign>
+  </autoCommandBar>
+  <handlers>
+    <event>NotificationProcessing</event>
+    <name>NotificationProcessing</name>
+  </handlers>
+  <handlers>
+    <event>BeforeClose</event>
+    <name>BeforeClose</name>
+  </handlers>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>OnCreateAtServer</name>
+  </handlers>
+  <saveWindowSettings>true</saveWindowSettings>
+  <autoUrl>true</autoUrl>
+  <group>Vertical</group>
+  <autoFillCheck>true</autoFillCheck>
+  <allowFormCustomize>true</allowFormCustomize>
+  <enabled>true</enabled>
+  <showTitle>true</showTitle>
+  <showCloseButton>true</showCloseButton>
+  <attributes>
+    <name>CreatedDocuments</name>
+    <title>
+      <key>en</key>
+      <value>Created documents</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>اسناد ایجادشده</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Documenti creati</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Utworzone dokumenty</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Созданные документы</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Oluşturulmuş belgeler</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Chứng từ đã tạo mới</value>
+    </title>
+    <id>1</id>
+    <valueType>
+      <types>DynamicList</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>CreatedDocuments.BankAccount</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>CreatedDocuments.Ref</segments>
+    </notDefaultUseAlwaysAttributes>
+    <extInfo xsi:type="form:DynamicListExtInfo">
+      <queryText>SELECT
+	DocumentData.Posted                       AS Posted,
+	DocumentData.DeletionMark                AS DeletionMark,
+	DocumentData.IBDocumentNumber               AS Number,
+	DocumentData.IBDocumentDate                AS Date,
+	DocumentData.RefType                      AS Type,
+	DocumentData.BusinessOperation          AS Operation,
+	DocumentData.Sum                          AS DocumentAmount,
+	DocumentData.Currency                         AS Currency,
+	
+	DocumentData.Counterparty                     AS RecipientPayer,
+	DocumentData.StorageLocation                  AS BankAccountCashAccount,
+	DocumentData.StorageLocation                  AS BankAccount,
+	DocumentData.Organization                    AS Organization,
+	DocumentData.Ref                         AS Ref,
+	CASE
+		WHEN DocumentData.Posted
+			THEN 0
+		WHEN DocumentData.DeletionMark
+			THEN 1
+		ELSE 2
+	END AS CustomPicture
+FROM
+	InformationRegister.DocumentsRegistry AS DocumentData
+	
+WHERE
+	DocumentData.RefType IN (
+		&amp;IDOfTheObjectReceiptOfNonCashDS,
+		&amp;TheObjectIDOfTheNonCashWriteOffOfDS,
+		&amp;IDOfThePKOObject,
+		&amp;IDOfTheRKOObject,
+		&amp;TheObjectIDOfTheApplication)
+</queryText>
+      <mainTable>InformationRegister.DocumentsRegistry</mainTable>
+      <dynamicDataRead>true</dynamicDataRead>
+      <autoFillAvailableFields>true</autoFillAvailableFields>
+      <customQuery>true</customQuery>
+      <autoSaveUserSettings>true</autoSaveUserSettings>
+      <getInvisibleFieldPresentations>true</getInvisibleFieldPresentations>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>RefType</dataPath>
+        <field>RefType</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>BusinessOperation</dataPath>
+        <field>BusinessOperation</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>AdditionalRecord</dataPath>
+        <field>AdditionalRecord</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Currency</dataPath>
+        <field>Currency</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>EmployeeResponsible</dataPath>
+        <field>EmployeeResponsible</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Type</dataPath>
+        <field>Type</field>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Type</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>نوع</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Тип</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Tip</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Kiểu</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Type</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Type</value>
+            </content>
+          </localValue>
+        </title>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Status</dataPath>
+        <field>Status</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>StorageLocation</dataPath>
+        <field>StorageLocation</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Organization</dataPath>
+        <field>Organization</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Author</dataPath>
+        <field>Author</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Counterparty</dataPath>
+        <field>Counterparty</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Posted</dataPath>
+        <field>Posted</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>IBDocumentDate</dataPath>
+        <field>IBDocumentDate</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>IBDocumentNumber</dataPath>
+        <field>IBDocumentNumber</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>More</dataPath>
+        <field>More</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ReversedDocument</dataPath>
+        <field>ReversedDocument</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Comment</dataPath>
+        <field>Comment</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Date</dataPath>
+        <field>Date</field>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Date</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>تاریخ</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Data</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Data</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Дата</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Tarih</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Ngày</value>
+            </content>
+          </localValue>
+        </title>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>SourceDocumentDate</dataPath>
+        <field>SourceDocumentDate</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Sum</dataPath>
+        <field>Sum</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Contract</dataPath>
+        <field>Contract</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>ReverseTransactionCorrection</dataPath>
+        <field>ReverseTransactionCorrection</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>SourceDocumentNumber</dataPath>
+        <field>SourceDocumentNumber</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>LineOfBusiness</dataPath>
+        <field>LineOfBusiness</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>RecordingInAccountingDate</dataPath>
+        <field>RecordingInAccountingDate</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Priority</dataPath>
+        <field>Priority</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>CorrectedDocument</dataPath>
+        <field>CorrectedDocument</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>DeletionMark</dataPath>
+        <field>DeletionMark</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>SourceDocumentName</dataPath>
+        <field>SourceDocumentName</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Number</dataPath>
+        <field>Number</field>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Number</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>شماره</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Numero</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Numer</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Номер</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Numara</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Số</value>
+            </content>
+          </localValue>
+        </title>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>BankAccountCashAccount</dataPath>
+        <field>BankAccountCashAccount</field>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Bank account cash account</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>حساب بانکی / صندوق</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Conto bancario cassa</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Rachunek bankowy kasa</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Банковский счет касса</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Banka hesabı kasa</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Tiền mặt tiền gửi</value>
+            </content>
+          </localValue>
+        </title>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Operation</dataPath>
+        <field>Operation</field>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Operation</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>عملیات</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Operazione</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Operacja</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Операция</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>İşlem</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Giao dịch</value>
+            </content>
+          </localValue>
+        </title>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>CustomPicture</dataPath>
+        <field>CustomPicture</field>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Custom picture</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>تصویر سفارشی</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Immagine personalizzata</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Obrazek niestandardowy</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Нестандартная картинка</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Standart olmayan resim</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Hình ảnh tùy chỉnh</value>
+            </content>
+          </localValue>
+        </title>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>DocumentAmount</dataPath>
+        <field>DocumentAmount</field>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Document amount</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>مبلغ سند</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Importo del documento</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Wartość dokumentu</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Сумма документа</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Belge tutarı</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Số tiền chứng từ</value>
+            </content>
+          </localValue>
+        </title>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>RecipientPayer</dataPath>
+        <field>RecipientPayer</field>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Recipient payer</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>گیرنده پرداخت‌کننده</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Получатель плательщик</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Alıcı ödeyen</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Người nhận người nộp</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Recipient payer</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Recipient payer</value>
+            </content>
+          </localValue>
+        </title>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Department</dataPath>
+        <field>Department</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Partner</dataPath>
+        <field>Partner</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>BankAccount</dataPath>
+        <field>BankAccount</field>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Bank account</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>حساب بانکی</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Conto corrente bancario</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Rachunek bankowy</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Банковский счет</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Banka hesabı</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Tài khoản ngân hàng</value>
+            </content>
+          </localValue>
+        </title>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>Ref</dataPath>
+        <field>Ref</field>
+        <valueType>
+          <types>DocumentRef.CashVoucher</types>
+          <types>DocumentRef.CashAccountReceiptNote</types>
+          <types>DocumentRef.BankAccountIssue</types>
+          <types>DocumentRef.PaymentRequest</types>
+          <types>DocumentRef.BankAccountReceiptNote</types>
+        </valueType>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>RecordSeparator</dataPath>
+        <field>RecordSeparator</field>
+      </fields>
+      <fields xsi:type="schema:DataCompositionSchemaDataSetField">
+        <dataPath>RecordID</dataPath>
+        <field>RecordID</field>
+      </fields>
+      <parameters>
+        <name>TheObjectIDOfTheApplication</name>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Object ID request</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>درخواست شناسه شیء</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Ид объекта заявка</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Nesne ID'si talep</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Tên đối tượng giấy đề nghị</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Object ID request</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Object ID request</value>
+            </content>
+          </localValue>
+        </title>
+        <valueType>
+          <types>CatalogRef.MetadataObjectIDs</types>
+        </valueType>
+        <values xsi:type="core:UndefinedValue"/>
+        <useRestriction>true</useRestriction>
+        <valueListAllowed>true</valueListAllowed>
+      </parameters>
+      <parameters>
+        <name>IDOfThePKOObject</name>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Object ID Incoming payment — Cash account</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>شناسه شیء دریافت وجه — صندوق</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Ид объекта ПКО</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Nesne ID'si Gelen ödeme - kasa hesabı</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Tên đối tượng phiếu thu</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Object ID Incoming payment — Cash account</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Object ID Incoming payment — Cash account</value>
+            </content>
+          </localValue>
+        </title>
+        <valueType>
+          <types>CatalogRef.MetadataObjectIDs</types>
+        </valueType>
+        <values xsi:type="core:UndefinedValue"/>
+        <useRestriction>true</useRestriction>
+        <valueListAllowed>true</valueListAllowed>
+      </parameters>
+      <parameters>
+        <name>IDOfTheObjectReceiptOfNonCashDS</name>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Object ID Incoming payment — Bank account</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>شناسه شیء دریافت وجه — حساب بانکی</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Ид объекта поступление безналичных ДС</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Nesne ID'si nakit banka hesabı girişi</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Tên đối tượng thu tiền vào tài khoản ngân hàng</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Object ID Incoming payment — Bank account</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Object ID Incoming payment — Bank account</value>
+            </content>
+          </localValue>
+        </title>
+        <valueType>
+          <types>CatalogRef.MetadataObjectIDs</types>
+        </valueType>
+        <values xsi:type="core:UndefinedValue"/>
+        <useRestriction>true</useRestriction>
+        <valueListAllowed>true</valueListAllowed>
+      </parameters>
+      <parameters>
+        <name>IDOfTheRKOObject</name>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Object ID Outgoing payment — Cash account</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>شناسه شیء پرداخت خروجی — صندوق</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Ид объекта РКО</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Nesne ID'si NÇ</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Tên đối tượng phiếu thu</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Object ID Outgoing payment — Cash account</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Object ID Outgoing payment — Cash account</value>
+            </content>
+          </localValue>
+        </title>
+        <valueType>
+          <types>CatalogRef.MetadataObjectIDs</types>
+        </valueType>
+        <values xsi:type="core:UndefinedValue"/>
+        <useRestriction>true</useRestriction>
+        <valueListAllowed>true</valueListAllowed>
+      </parameters>
+      <parameters>
+        <name>TheObjectIDOfTheNonCashWriteOffOfDS</name>
+        <title>
+          <localValue>
+            <content>
+              <key>en</key>
+              <value>Object ID Outgoing payment — Bank account</value>
+            </content>
+            <content>
+              <key>fa</key>
+              <value>شناسه شیء پرداخت خروجی — حساب بانکی</value>
+            </content>
+            <content>
+              <key>ru</key>
+              <value>Ид объекта списание безналичных ДС</value>
+            </content>
+            <content>
+              <key>tr</key>
+              <value>Nesne ID'si giden ödeme — banka hesabı</value>
+            </content>
+            <content>
+              <key>vi</key>
+              <value>Tên đối tượng chi tiền từ tài khoản ngân hàng</value>
+            </content>
+            <content>
+              <key>it</key>
+              <value>Object ID Outgoing payment — Bank account</value>
+            </content>
+            <content>
+              <key>pl</key>
+              <value>Object ID Outgoing payment — Bank account</value>
+            </content>
+          </localValue>
+        </title>
+        <valueType>
+          <types>CatalogRef.MetadataObjectIDs</types>
+        </valueType>
+        <values xsi:type="core:UndefinedValue"/>
+        <useRestriction>true</useRestriction>
+        <valueListAllowed>true</valueListAllowed>
+      </parameters>
+    </extInfo>
+  </attributes>
+  <attributes>
+    <name>DocumentsList</name>
+    <title>
+      <key>en</key>
+      <value>Document list</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>فهرست اسناد</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Elenco di documenti</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Lista dokumentów</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Список документов</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Belge listesi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Danh sách chứng từ</value>
+    </title>
+    <id>2</id>
+    <valueType>
+      <types>ValueList</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <extInfo xsi:type="form:ValueListExtInfo">
+      <itemValueType/>
+    </extInfo>
+  </attributes>
+  <attributes>
+    <name>SDOControlIsRequired</name>
+    <title>
+      <key>en</key>
+      <value>SDO control is required</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>کنترل SDO لازم است</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>È richiesto il controllo della commessa statale militare</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Wymagana kontrola zamówienie publiczne w dziedzinie obronności</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Требуется контроль ГОЗ</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>DSE kontrolü gerekli</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Yêu cầu kiểm soát SCO</value>
+    </title>
+    <id>3</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>RequestList</name>
+    <title>
+      <key>en</key>
+      <value>Request list</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>فهرست درخواست‌ها</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Elenco delle richieste</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Lista wniosków</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Список заявок</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Başvuru listesi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Danh sách các đơn</value>
+    </title>
+    <id>4</id>
+    <valueType>
+      <types>ValueList</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <extInfo xsi:type="form:ValueListExtInfo">
+      <itemValueType/>
+    </extInfo>
+  </attributes>
+  <attributes>
+    <name>ThereArePaymentOrders</name>
+    <title>
+      <key>en</key>
+      <value>There are payment orders</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>دستورهای پرداخت وجود دارند</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Ci sono ordini di pagamento</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Są zlecenie płatnicze</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Есть платежные поручения</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Ödeme emirleri mevcut</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Có ủy nhiệm chi</value>
+    </title>
+    <id>5</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>CloseWithoutConfirmation</name>
+    <title>
+      <key>en</key>
+      <value>Close without confirmation</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>بستن بدون تأیید</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Chiudi senza domanda</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Zamknąć bez pytań</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Закрыть без вопроса</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Sorgusuz sualsiz kapat</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Đóng mà không có câu hỏi</value>
+    </title>
+    <id>6</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>Requests</name>
+    <title>
+      <key>en</key>
+      <value>Requests</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>درخواست‌ها</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Richieste</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Zgłoszenia</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Заявки</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Başvurular</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Đơn</value>
+    </title>
+    <id>7</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Check</name>
+      <title>
+        <key>en</key>
+        <value>Mark</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>علامت</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Contrassegno</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Zaznaczenie</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Пометка</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>İşaret</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Đánh dấu</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>Boolean</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Ref</name>
+      <title>
+        <key>en</key>
+        <value>Reference</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>مرجع</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Link</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Odnośnik</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Ссылка</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Bağlantı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Tham chiếu</value>
+      </title>
+      <id>3</id>
+      <valueType>
+        <types>DocumentRef.CashTransferReferenceOrder</types>
+        <types>DocumentRef.PaymentRequest</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Currency</name>
+      <title>
+        <key>en</key>
+        <value>Currency</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>ارز</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Valuta</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Waluta</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Валюта</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Para birimi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Tiền tệ</value>
+      </title>
+      <id>6</id>
+      <valueType>
+        <types>CatalogRef.Currencies</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>AmountToPay</name>
+      <title>
+        <key>en</key>
+        <value>Amount due</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>مبلغ سررسیدشده</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Da pagare</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Do płatności</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>К оплате</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Ödenecek</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cần thanh toán</value>
+      </title>
+      <id>8</id>
+      <valueType>
+        <types>DefinedType.MonetaryAmountPositiveNegative</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>BankAccount</name>
+      <title>
+        <key>en</key>
+        <value>Bank account</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>حساب بانکی</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Conto corrente bancario</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Rachunek bankowy</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Банковский счет</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Banka hesabı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Tài khoản ngân hàng</value>
+      </title>
+      <id>9</id>
+      <valueType>
+        <types>CatalogRef.CompaniesBankAccounts</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ErrorsCount</name>
+      <title>
+        <key>en</key>
+        <value>Number of errors</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>تعداد خطاها</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Numero di errori</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Liczba błędów</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Количество ошибок</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Hata sayısı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Số lượng lỗi</value>
+      </title>
+      <id>13</id>
+      <valueType>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>2</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ControlResult</name>
+      <title>
+        <key>en</key>
+        <value>Control result </value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>نتیجه کنترل</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Risultato di controllo</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Wyniki kontroli</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Результат контроля</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Kontrol sonucu</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Kết quả kiểm soát</value>
+      </title>
+      <id>14</id>
+      <valueType>
+        <types>String</types>
+        <stringQualifiers/>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ControlPicture</name>
+      <title>
+        <key>en</key>
+        <value>Control picture</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>تصویر کنترل</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Immagine controllo</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Obrazek kontroli</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Картинка контроля</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Kontrol resmi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Hình ảnh điều khiển</value>
+      </title>
+      <id>15</id>
+      <valueType>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>NumberOfRequests</name>
+      <title>
+        <key>en</key>
+        <value>Number of requests</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>تعداد درخواست‌ها</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Numero di richieste</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Ilość wniosków</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Количество заявок</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Başvuru sayısı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Số lượng đơn</value>
+      </title>
+      <id>16</id>
+      <valueType>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>PaymentPurposes</name>
+      <title>
+        <key>en</key>
+        <value>Purpose of payment</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>بابت پرداخت</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Assegnazione del pagamento</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Tytuł płatności</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Назначение платежа</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Ödeme amacı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Mục đích thanh toán</value>
+      </title>
+      <id>5</id>
+      <valueType>
+        <types>String</types>
+        <stringQualifiers>
+          <length>210</length>
+        </stringQualifiers>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Organization</name>
+      <title>
+        <key>en</key>
+        <value>Company</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>شرکت</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Azienda</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Firma</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Организация</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>İş yeri</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Doanh nghiệp</value>
+      </title>
+      <id>4</id>
+      <valueType>
+        <types>CatalogRef.Companies</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>PayerBeneficiary</name>
+      <title>
+        <key>en</key>
+        <value>Payer beneficiary</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>پرداخت‌کننده ذی‌نفع</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Pagatore destinatario</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Płatnik odbiorca</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Плательщик получатель</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Ödeyen alıcı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Người nộp người nhận</value>
+      </title>
+      <id>7</id>
+      <valueType>
+        <types>CatalogRef.Companies</types>
+        <types>CatalogRef.Counterparties</types>
+        <types>CatalogRef.Persons</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>BusinessOperation</name>
+      <title>
+        <key>en</key>
+        <value>Business transaction</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>عملیات تجاری</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Operazione economica</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Operacja gospodarcza</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Хозяйственная операция</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Ticari işlem</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Giao dịch kinh tế</value>
+      </title>
+      <id>10</id>
+      <valueType>
+        <types>EnumRef.BusinessTransactions</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ControlPassed</name>
+      <title>
+        <key>en</key>
+        <value>Control passed</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>کنترل موفق</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Controllo riuscito</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Kontrola została zakończona</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Контроль пройден</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Kontrol tamamlandı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Kiểm soát đã qua</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>Boolean</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>SelectionBasedOnControlResults</name>
+    <title>
+      <key>en</key>
+      <value>Requests</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>درخواست‌ها</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Richieste</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Zgłoszenia</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Заявки</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Başvurular</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Đơn</value>
+    </title>
+    <id>8</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>ControlResults</name>
+    <title>
+      <key>en</key>
+      <value>Control results</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>نتایج کنترل</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Risultati di controllo</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Wyniki kontroli</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Результаты контроля</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Kontrol sonuçları</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Kiểm soát kết quả</value>
+    </title>
+    <id>9</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>ControlResult</name>
+      <title>
+        <key>en</key>
+        <value>Control result </value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>نتیجه کنترل</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Risultato di controllo</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Wyniki kontroli</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Результат контроля</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Kontrol sonucu</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Kết quả kiểm soát</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>String</types>
+        <stringQualifiers/>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ControlPicture</name>
+      <title>
+        <key>en</key>
+        <value>Control picture</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>تصویر کنترل</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Immagine controllo</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Obrazek kontroli</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Картинка контроля</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Kontrol resmi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Hình ảnh điều khiển</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Ref</name>
+      <title>
+        <key>en</key>
+        <value>Reference</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>مرجع</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Link</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Odnośnik</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Ссылка</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Bağlantı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Tham chiếu</value>
+      </title>
+      <id>4</id>
+      <valueType/>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ControlPassed</name>
+      <title>
+        <key>en</key>
+        <value>Control passed</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>کنترل موفق</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Controllo riuscito</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Kontrola została zakończona</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Контроль пройден</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Kontrol tamamlandı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Kiểm soát đã qua</value>
+      </title>
+      <id>5</id>
+      <valueType>
+        <types>Boolean</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>ReceiptDocuments</name>
+    <title>
+      <key>en</key>
+      <value>Receipt documents</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>اسناد رسید</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Documenti di entrate</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Dokumenty przyjęcia</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Документы поступления</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Teslim alma belgesi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Chứng từ tiếp nhận</value>
+    </title>
+    <id>10</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>PaymentInCash</name>
+    <title>
+      <key>en</key>
+      <value>Payment in cash</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>پرداخت نقدی</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Pagamento in contanti</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Płatność gotówką</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Оплата наличными</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Nakit ödeme</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Thanh toán bằng tiền mặt</value>
+    </title>
+    <id>11</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>AttachableCommandsParameters</name>
+    <title>
+      <key>en</key>
+      <value>Attachable command parameters</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>پارامترهای فرمان قابل پیوست</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Parametri dei comandi da collegare</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Parametry podłączanych poleceń</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Параметры подключаемых команд</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Eklenebilir komutlar parametreleri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Tham số lệnh đã kết nối</value>
+    </title>
+    <id>17</id>
+    <valueType/>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <formCommands>
+    <name>Post</name>
+    <title>
+      <key>en</key>
+      <value>Post</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>ثبت</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Registrare</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Zaksięguj</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Провести</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Kaydet</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Kết chuyển</value>
+    </title>
+    <id>10</id>
+    <toolTip>
+      <key>en</key>
+      <value>Post</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>ثبت</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Registrare</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Zaksięguj</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Провести</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Kaydet</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Kết chuyển</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <picture xsi:type="core:PictureRef">
+      <picture>StdPicture.Post</picture>
+    </picture>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>Post</name>
+      </handler>
+    </action>
+    <representation>TextPicture</representation>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>CancelAndDelete</name>
+    <title>
+      <key>en</key>
+      <value>Cancel and delete</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>انصراف و حذف</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Annullare e cancellare</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Anulować i usunąć</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Отменить и удалить</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>İptal et ve sil</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Hủy bỏ và xóa</value>
+    </title>
+    <id>1</id>
+    <toolTip>
+      <key>en</key>
+      <value>Cancel and delete</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>انصراف و حذف</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Annullare e cancellare</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Anulować i usunąć</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Отменить и удалить</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>İptal et ve sil</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Hủy bỏ và xóa</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>CancelAndDelete</name>
+      </handler>
+    </action>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>AcceptAndClose</name>
+    <title>
+      <key>en</key>
+      <value>Accept and close</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>پذیرش و بستن</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Accettare e chiudere</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Przyjąć i zamknąć</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Принять и закрыть</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Kabul et ve kapat</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Chấp nhận và đóng</value>
+    </title>
+    <id>2</id>
+    <toolTip>
+      <key>en</key>
+      <value>Accept and close</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>پذیرش و بستن</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Accettare e chiudere</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Przyjąć i zamknąć</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Принять и закрыть</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Kabul et ve kapat</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Chấp nhận và đóng</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>AcceptAndClose</name>
+      </handler>
+    </action>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>AcceptAndExport</name>
+    <title>
+      <key>en</key>
+      <value>Accept and export to the bank</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>پذیرش و خروج به بانک</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Accettare e caricare sulla banca</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Przyjąć i eksportować w bank</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Принять и выгрузить в банк</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Kabul et ve bankaya aktar</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Chấp nhận và tải lên ngân hàng</value>
+    </title>
+    <id>3</id>
+    <toolTip>
+      <key>en</key>
+      <value>Accept and export</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>پذیرش و خروج</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Accettare e caricare</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Przyjąć i eksportować</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Принять и выгрузить</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Kabul et ve yükle</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Nhận và dỡ</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>AcceptAndExport</name>
+      </handler>
+    </action>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>GeneratePayments</name>
+    <title>
+      <key>en</key>
+      <value>Generate payments</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>ایجاد پرداخت‌ها</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Crea pagamento</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Utwórz płatności</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Сформировать платежи</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Ödemeleri oluştur</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Thanh toán</value>
+    </title>
+    <id>4</id>
+    <toolTip>
+      <key>en</key>
+      <value>Generate payments</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>ایجاد پرداخت‌ها</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Crea pagamento</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Utwórz płatności</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Сформировать платежи</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Ödemeleri oluştur</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Thanh toán</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <picture xsi:type="core:PictureRef">
+      <picture>CommonPicture.NextStep</picture>
+    </picture>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>GeneratePayments</name>
+      </handler>
+    </action>
+    <representation>TextPicture</representation>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>SelectAllCommand</name>
+    <title>
+      <key>en</key>
+      <value>Select all</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>انتخاب همه</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Selezionare tutto</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Zaznacz wszystkie</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Отметить все</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Tümünü işaretle</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Đánh dấu tất cả</value>
+    </title>
+    <id>5</id>
+    <toolTip>
+      <key>en</key>
+      <value>Select all</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>انتخاب همه</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Selezionare tutto</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Zaznacz wszystkie</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Отметить все</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Tümünü işaretle</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Đánh dấu tất cả</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <picture xsi:type="core:PictureRef">
+      <picture>StdPicture.CheckAll</picture>
+    </picture>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>SelectAllCommand</name>
+      </handler>
+    </action>
+    <representation>Picture</representation>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ClearAll</name>
+    <title>
+      <key>en</key>
+      <value>Clear all</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>پاک کردن همه</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Rimuovere i contrassegni</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Usuń zaznaczenia</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Снять отметки</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>İşaretleri kaldır</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Bỏ dấu</value>
+    </title>
+    <id>6</id>
+    <toolTip>
+      <key>en</key>
+      <value>Clear all</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>پاک کردن همه</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Rimuovere i contrassegni</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Usuń zaznaczenia</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Снять отметки</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>İşaretleri kaldır</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Bỏ dấu</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <picture xsi:type="core:PictureRef">
+      <picture>StdPicture.UncheckAll</picture>
+    </picture>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ClearAll</name>
+      </handler>
+    </action>
+    <representation>Picture</representation>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>SynchronizeWithBank</name>
+    <title>
+      <key>en</key>
+      <value>Synchronize with bank</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>همگام‌سازی با بانک</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Sincronizzare con la banca</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Synchronizacja z bankiem</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Синхронизировать с банком</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Banka ile senkronize et</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Đồng bộ hóa với ngân hàng</value>
+    </title>
+    <id>7</id>
+    <toolTip>
+      <key>en</key>
+      <value>Synchronize with bank</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>همگام‌سازی با بانک</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Sincronizzare con la banca</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Synchronizacja z bankiem</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Синхронизировать с банком</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Banka ile senkronize et</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Đồng bộ hóa với ngân hàng</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <picture xsi:type="core:PictureRef">
+      <picture>CommonPicture.DataSynchronization</picture>
+    </picture>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>SynchronizeWithBank</name>
+      </handler>
+    </action>
+    <representation>TextPicture</representation>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <commandInterface>
+    <navigationPanel/>
+    <commandBar/>
+  </commandInterface>
+</form:Form>

@@ -1,0 +1,2498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form">
+  <title>
+    <key>en</key>
+    <value>Rule of allocation between lines of business</value>
+  </title>
+  <title>
+    <key>fa</key>
+    <value>قاعده تسهیم بین خطوط کسب‌وکار</value>
+  </title>
+  <title>
+    <key>it</key>
+    <value>Regola di ripartizione tra i settori di attività</value>
+  </title>
+  <title>
+    <key>pl</key>
+    <value>Zasada dystrybucji między kierunkami działalności</value>
+  </title>
+  <title>
+    <key>ru</key>
+    <value>Правило распределения между направлениями деятельности</value>
+  </title>
+  <title>
+    <key>tr</key>
+    <value>İş kolları arasındaki dağıtım kuralı</value>
+  </title>
+  <title>
+    <key>vi</key>
+    <value>Quy tắc phân bổ giữa các lĩnh vực hoạt động</value>
+  </title>
+  <items xsi:type="form:FormGroup">
+    <name>GroupWhereToDistribute</name>
+    <id>698</id>
+    <items xsi:type="form:FormField">
+      <name>Description</name>
+      <id>762</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Object.Description</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>DescriptionExtendedTooltip</name>
+        <id>764</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>DescriptionContextMenu</name>
+        <id>763</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormGroup">
+      <name>GroupSelectionByDivisionDivisions</name>
+      <id>135</id>
+      <items xsi:type="form:FormField">
+        <name>AllocationDirection</name>
+        <id>140</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>Object.AllocationDirection</segments>
+        </dataPath>
+        <handlers>
+          <event>OnChange</event>
+          <name>AllocationDirectionOnChange</name>
+        </handlers>
+        <extendedTooltip>
+          <name>AllocationDirectionExtendedTooltip</name>
+          <id>142</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>AllocationDirectionContextMenu</name>
+          <id>141</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <maxWidth>35</maxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <listChoiceMode>true</listChoiceMode>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+          <choiceList>
+            <presentation>
+              <key>en</key>
+              <value>All lines of business in the base</value>
+            </presentation>
+            <presentation>
+              <key>fa</key>
+              <value>همه خطوط کسب‌وکار در پایه</value>
+            </presentation>
+            <presentation>
+              <key>it</key>
+              <value>Tutti i settori di attività per base</value>
+            </presentation>
+            <presentation>
+              <key>pl</key>
+              <value>Wszystkie kierunki działalności na podstawie bazy</value>
+            </presentation>
+            <presentation>
+              <key>ru</key>
+              <value>Все направления деятельности по базе</value>
+            </presentation>
+            <presentation>
+              <key>tr</key>
+              <value>Tabana göre tüm iş kollarına</value>
+            </presentation>
+            <presentation>
+              <key>vi</key>
+              <value>Tất cả lĩnh vực hoạt động trong cơ sở dữ liệu</value>
+            </presentation>
+            <value xsi:type="core:ReferenceValue">
+              <value>Enum.AllocationDirectionByBusinessUnits.EmptyRef</value>
+            </value>
+          </choiceList>
+          <choiceList>
+            <presentation>
+              <key>en</key>
+              <value>Specified lines of business in the base</value>
+            </presentation>
+            <presentation>
+              <key>fa</key>
+              <value>خطوط کسب‌وکار مشخص‌شده در پایه</value>
+            </presentation>
+            <presentation>
+              <key>it</key>
+              <value>Settori di attività specificati per base</value>
+            </presentation>
+            <presentation>
+              <key>pl</key>
+              <value>Określone kierunki działalności na podstawie bazy</value>
+            </presentation>
+            <presentation>
+              <key>ru</key>
+              <value>Указанные направления деятельности по базе</value>
+            </presentation>
+            <presentation>
+              <key>tr</key>
+              <value>Tabana göre belirtilen iş kollarına</value>
+            </presentation>
+            <presentation>
+              <key>vi</key>
+              <value>Các lĩnh vực hoạt động đã chỉ ra trong cơ sở dữ liệu</value>
+            </presentation>
+            <value xsi:type="core:ReferenceValue">
+              <value>Enum.AllocationDirectionByBusinessUnits.EnumValue.Specified</value>
+            </value>
+          </choiceList>
+          <choiceList>
+            <presentation>
+              <key>en</key>
+              <value>Lines of business manually</value>
+            </presentation>
+            <presentation>
+              <key>fa</key>
+              <value>خطوط کسب‌وکار به صورت دستی</value>
+            </presentation>
+            <presentation>
+              <key>it</key>
+              <value>Settori di attività manualmente</value>
+            </presentation>
+            <presentation>
+              <key>pl</key>
+              <value>Kierunki działalności ręcznie</value>
+            </presentation>
+            <presentation>
+              <key>ru</key>
+              <value>Направления деятельности вручную</value>
+            </presentation>
+            <presentation>
+              <key>tr</key>
+              <value>İş kollarına manuel olarak</value>
+            </presentation>
+            <presentation>
+              <key>vi</key>
+              <value>Các lĩnh vực hoạt động thủ công</value>
+            </presentation>
+            <value xsi:type="core:ReferenceValue">
+              <value>Enum.AllocationDirectionByBusinessUnits.EnumValue.ByRates</value>
+            </value>
+          </choiceList>
+        </extInfo>
+      </items>
+      <items xsi:type="form:Decoration">
+        <name>PresentationOfTheSpecifiedAreasOfActivity</name>
+        <id>143</id>
+        <title>
+          <key>en</key>
+          <value>&lt;colorstyle 0:ad87bd29-0ad1-4da4-ac62-38e714e0cb9f>Wholesale sales 
+and 3 more lines&lt;/>(&lt;link LinesOfBusiness>changes&lt;/>)</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>&lt;colorstyle 0:ad87bd29-0ad1-4da4-ac62-38e714e0cb9f>فروش عمده 
+و 3 سطر دیگر&lt;/>(&lt;link LinesOfBusiness>تغییرات&lt;/>)</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>&lt;colorstyle 0:ad87bd29-0ad1-4da4-ac62-38e714e0cb9f>Оптовые продажи
+и еще 3 направления&lt;/>(&lt;link LinesOfBusiness>изменить&lt;/>)</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>&lt;colorstyle 0:ad87bd29-0ad1-4da4-ac62-38e714e0cb9f>Toptan satışlar
+ve 3 kol daha&lt;/>(&lt;link LinesOfBusiness>değiştir&lt;/>)</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>&lt;colorstyle 0:ad87bd29-0ad1-4da4-ac62-38e714e0cb9f>Bán buôn
+và thêm 3 hướng&lt;/>(&lt;link LinesOfBusiness>thay đổi&lt;/>)</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>&lt;colorstyle 0:ad87bd29-0ad1-4da4-ac62-38e714e0cb9f>Wholesale sales 
+and 3 more lines&lt;/>(&lt;link LinesOfBusiness>changes&lt;/>)</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>&lt;colorstyle 0:ad87bd29-0ad1-4da4-ac62-38e714e0cb9f>Wholesale sales 
+and 3 more lines&lt;/>(&lt;link LinesOfBusiness>changes&lt;/>)</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>PresentationOfTheSpecifiedAreasOfActivityExtendedTooltip</name>
+          <id>145</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>PresentationOfTheSpecifiedAreasOfActivityContextMenu</name>
+          <id>144</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <formatted>true</formatted>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <handlers>
+            <event>URLProcessing</event>
+            <name>URLProcessing</name>
+          </handlers>
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </items>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>en</key>
+        <value>Filter by business units business units</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>فیلتر بر اساس واحدهای تجاری واحدهای تجاری</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Selezione per unità dell'unità</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Filtr według działów działy</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Отбор по подразделениям подразделения</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Departmanlara göre filtre departman</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Lọc theo bộ phận bộ phận</value>
+      </title>
+      <extendedTooltip>
+        <name>GroupSelectionByDivisionDivisionsExtendedTooltip</name>
+        <id>136</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <type>UsualGroup</type>
+      <extInfo xsi:type="form:UsualGroupExtInfo">
+        <group>HorizontalIfPossible</group>
+        <showLeftMargin>true</showLeftMargin>
+        <united>true</united>
+        <throughAlign>Auto</throughAlign>
+        <currentRowUse>Auto</currentRowUse>
+      </extInfo>
+    </items>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>en</key>
+      <value>Allocate</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>تسهیم</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Ripartire</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Podzielaj</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Распределять</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Dağıt</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Phân bổ</value>
+    </title>
+    <extendedTooltip>
+      <name>GroupWhereToDistributeExtendedTooltip</name>
+      <id>699</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>UsualGroup</type>
+    <extInfo xsi:type="form:UsualGroupExtInfo">
+      <group>Vertical</group>
+      <showLeftMargin>true</showLeftMargin>
+      <united>true</united>
+      <throughAlign>DontUse</throughAlign>
+      <currentRowUse>Auto</currentRowUse>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormGroup">
+    <name>GroupPages</name>
+    <id>25</id>
+    <items xsi:type="form:FormGroup">
+      <name>Rules</name>
+      <id>711</id>
+      <items xsi:type="form:FormField">
+        <name>AllocationIndicator</name>
+        <id>768</id>
+        <title>
+          <key>en</key>
+          <value>Allocation base</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>مبنای تسهیم</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Base di allocazione</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Baza  dystrybucji</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>База распределения</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Tahsisat tabanı</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Cơ sở phân bổ</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>AllocationIndicator</segments>
+        </dataPath>
+        <handlers>
+          <event>OnChange</event>
+          <name>AllocationIndicatorOnChange</name>
+        </handlers>
+        <extendedTooltip>
+          <name>AllocationIndicatorExtendedTooltip</name>
+          <id>770</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>AllocationIndicatorContextMenu</name>
+          <id>769</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <maxWidth>30</maxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <listChoiceMode>true</listChoiceMode>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+          <choiceList>
+            <presentation>
+              <key>en</key>
+              <value>Direct production costs</value>
+            </presentation>
+            <presentation>
+              <key>fa</key>
+              <value>هزینه‌های مستقیم تولید</value>
+            </presentation>
+            <presentation>
+              <key>it</key>
+              <value>Spese dirette di produzione</value>
+            </presentation>
+            <presentation>
+              <key>pl</key>
+              <value>Bezpośrednie wydatki produkcyjne</value>
+            </presentation>
+            <presentation>
+              <key>ru</key>
+              <value>Прямые производственные затраты</value>
+            </presentation>
+            <presentation>
+              <key>tr</key>
+              <value>Direkt üretim giderleri</value>
+            </presentation>
+            <presentation>
+              <key>vi</key>
+              <value>Chi phí sản xuất trực tiếp</value>
+            </presentation>
+            <value xsi:type="core:StringValue"/>
+          </choiceList>
+          <choiceList>
+            <presentation>
+              <key>en</key>
+              <value>Sales revenue</value>
+            </presentation>
+            <presentation>
+              <key>fa</key>
+              <value>درآمد فروش</value>
+            </presentation>
+            <presentation>
+              <key>it</key>
+              <value>Ricavo dalle vendite</value>
+            </presentation>
+            <presentation>
+              <key>pl</key>
+              <value>Przychód ze sprzedaży</value>
+            </presentation>
+            <presentation>
+              <key>ru</key>
+              <value>Выручка от продаж</value>
+            </presentation>
+            <presentation>
+              <key>tr</key>
+              <value>Satış geliri</value>
+            </presentation>
+            <presentation>
+              <key>vi</key>
+              <value>Doanh thu bán hàng</value>
+            </presentation>
+            <value xsi:type="core:StringValue">
+              <value>SalesRevenue</value>
+            </value>
+          </choiceList>
+          <choiceList>
+            <presentation>
+              <key>en</key>
+              <value>COGS</value>
+            </presentation>
+            <presentation>
+              <key>fa</key>
+              <value>بهای تمام‌شده کالای فروش‌رفته</value>
+            </presentation>
+            <presentation>
+              <key>it</key>
+              <value>Costo di produzione delle vendite</value>
+            </presentation>
+            <presentation>
+              <key>pl</key>
+              <value>Koszty własne sprzedaży</value>
+            </presentation>
+            <presentation>
+              <key>ru</key>
+              <value>Себестоимость продаж</value>
+            </presentation>
+            <presentation>
+              <key>tr</key>
+              <value>Satılan malların maliyeti</value>
+            </presentation>
+            <presentation>
+              <key>vi</key>
+              <value>Giá vốn hàng bán</value>
+            </presentation>
+            <value xsi:type="core:StringValue">
+              <value>SaleCost</value>
+            </value>
+          </choiceList>
+          <choiceList>
+            <presentation>
+              <key>en</key>
+              <value>Gross profit</value>
+            </presentation>
+            <presentation>
+              <key>fa</key>
+              <value>سود ناخالص</value>
+            </presentation>
+            <presentation>
+              <key>it</key>
+              <value>Profitto lordo</value>
+            </presentation>
+            <presentation>
+              <key>pl</key>
+              <value>Dochód brutto</value>
+            </presentation>
+            <presentation>
+              <key>ru</key>
+              <value>Валовая прибыль</value>
+            </presentation>
+            <presentation>
+              <key>tr</key>
+              <value>Brüt kâr</value>
+            </presentation>
+            <presentation>
+              <key>vi</key>
+              <value>Lợi nhuận gộp</value>
+            </presentation>
+            <value xsi:type="core:StringValue">
+              <value>GrossProfit</value>
+            </value>
+          </choiceList>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>DataSource</name>
+        <id>817</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>Object.DataSource</segments>
+        </dataPath>
+        <toolTipRepresentation>Button</toolTipRepresentation>
+        <extendedTooltip>
+          <name>DataSourceExtendedTooltip</name>
+          <id>819</id>
+          <title>
+            <key>en</key>
+            <value>Defines the data source (accumulation register) when analyzing the allocation base. For versions prior to 2.5.16, the Financial result accumulation register was always used, which corresponded to the management accounting principles. For versions later than 2.5.16, it can use the Revenue and COGS accumulation register, which allows allocation according to the local accounting data.</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>منبع داده (ثبات انباشت) را هنگام تحلیل مبنای تسهیم تعیین می‌کند. برای نسخه‌های پیش از 2.5.16، همیشه از ثبات انباشت نتیجه مالی استفاده می‌شد که با اصول حسابداری مدیریت مطابقت داشت. برای نسخه‌های پس از 2.5.16، می‌توان از ثبات انباشت درآمد و بهای تمام‌شده کالای فروش‌رفته استفاده کرد که امکان تسهیم بر اساس داده‌های حسابداری محلی را فراهم می‌کند.</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Определяет источник данных (регистр накопления) при анализе базы распределения. Для версий до 2.5.16 всегда использовался регистр накопления &quot;Финансовый результат&quot;, что соответствовало принципам упр. учета. Для версий позже 2.5.16 может использовать регистр накопления &quot;Выручка и себестоимость продаж&quot;, который позволяет распределять согласно данным регл. учета.</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Tahsisat tabanı analiz edilirken veri kaynağını (birikim kaydını) tanımlar. 2.5.16'dan önceki sürümler için her zaman yönetim muhasebesi ilkelerine karşılık gelen &quot;Finansal sonuç&quot; birikim kaydı kullanılmıştır. &quot;Satış geliri ve maliyeti&quot; birikim kaydı 2.5.16'dan sonraki sürümler için kullanılabilir, bu da yerel muhasebe verilerine göre dağıtımı mümkün kılar.</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Xác định nguồn dữ liệu (biểu ghi tích lũy) khi phân tích cơ sở phân bổ. Đối với các phiên bản trước 2.5.16, đã luôn sử dụng biểu ghi tích lũy &quot;Kết quả tài chính&quot; mà tương ứng với các quy tắc của kế toán quản trị. Đối với các phiên bản sau 2.5.16, có thể sử dụng biểu ghi tích lũy &quot;Doanh thu và giá vốn hàng bán&quot; mà cho phép phân bổ theo dữ liệu của kế toán tài chính.</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Defines the data source (accumulation register) when analyzing the allocation base. For versions prior to 2.5.16, the Financial result accumulation register was always used, which corresponded to the management accounting principles. For versions later than 2.5.16, it can use the Revenue and COGS accumulation register, which allows allocation according to the local accounting data.</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Defines the data source (accumulation register) when analyzing the allocation base. For versions prior to 2.5.16, the Financial result accumulation register was always used, which corresponded to the management accounting principles. For versions later than 2.5.16, it can use the Revenue and COGS accumulation register, which allows allocation according to the local accounting data.</value>
+          </title>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>DataSourceContextMenu</name>
+          <id>818</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <maxWidth>30</maxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormGroup">
+        <name>GroupBaseDistributionByBatch</name>
+        <id>89</id>
+        <items xsi:type="form:FormField">
+          <name>BaseOfAllocationByLots</name>
+          <id>93</id>
+          <title>
+            <key>en</key>
+            <value>Indicator</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>شاخص</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Indicatore</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Wskaźnik</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Показатель</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Gösterge</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Chỉ tiêu</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Object.BaseOfAllocationByLots</segments>
+          </dataPath>
+          <handlers>
+            <event>OnChange</event>
+            <name>BaseOfAllocationByLotsOnChange</name>
+          </handlers>
+          <extendedTooltip>
+            <name>BaseOfAllocationByLotsExtendedTooltip</name>
+            <id>95</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>BaseOfAllocationByLotsContextMenu</name>
+            <id>94</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <maxWidth>30</maxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <quickChoice>false</quickChoice>
+            <listChoiceMode>true</listChoiceMode>
+            <autoMarkIncomplete>false</autoMarkIncomplete>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+            <choiceList>
+              <presentation>
+                <key>en</key>
+                <value>Material costs and payroll expenses</value>
+              </presentation>
+              <presentation>
+                <key>fa</key>
+                <value>هزینه‌های مواد و هزینه‌های حقوق و دستمزد</value>
+              </presentation>
+              <presentation>
+                <key>it</key>
+                <value>Costo dei materiali e l'importo di ricompensa del lavoro</value>
+              </presentation>
+              <presentation>
+                <key>pl</key>
+                <value>Koszt materiałów i koszt pracy</value>
+              </presentation>
+              <presentation>
+                <key>ru</key>
+                <value>Стоимость материалов и сумма оплаты труда</value>
+              </presentation>
+              <presentation>
+                <key>tr</key>
+                <value>Malzeme maliyeti ve bordro tutarı</value>
+              </presentation>
+              <presentation>
+                <key>vi</key>
+                <value>Giá trị nguyên vật liệu và số tiền thù lao</value>
+              </presentation>
+              <value xsi:type="core:ReferenceValue">
+                <value>Enum.TypesOfCostAllocatingBase.EnumValue.AmountOfMaterialAndLaborCosts</value>
+              </value>
+            </choiceList>
+            <choiceList>
+              <presentation>
+                <key>en</key>
+                <value>Material cost</value>
+              </presentation>
+              <presentation>
+                <key>fa</key>
+                <value>بهای مواد</value>
+              </presentation>
+              <presentation>
+                <key>it</key>
+                <value>Costo dei materiali</value>
+              </presentation>
+              <presentation>
+                <key>pl</key>
+                <value>Koszt materiałów</value>
+              </presentation>
+              <presentation>
+                <key>ru</key>
+                <value>Стоимость материалов</value>
+              </presentation>
+              <presentation>
+                <key>tr</key>
+                <value>Malzeme maliyeti</value>
+              </presentation>
+              <presentation>
+                <key>vi</key>
+                <value>Giá trị nguyên vật liệu</value>
+              </presentation>
+              <value xsi:type="core:ReferenceValue">
+                <value>Enum.TypesOfCostAllocatingBase.EnumValue.MaterialCostsAmount</value>
+              </value>
+            </choiceList>
+            <choiceList>
+              <presentation>
+                <key>en</key>
+                <value>Payroll amount</value>
+              </presentation>
+              <presentation>
+                <key>fa</key>
+                <value>مبلغ حقوق و دستمزد</value>
+              </presentation>
+              <presentation>
+                <key>it</key>
+                <value>Importo di ricompensa del lavoro</value>
+              </presentation>
+              <presentation>
+                <key>pl</key>
+                <value>Suma płatności pracy</value>
+              </presentation>
+              <presentation>
+                <key>ru</key>
+                <value>Сумма оплаты труда</value>
+              </presentation>
+              <presentation>
+                <key>tr</key>
+                <value>İşçilik ücreti tutarı</value>
+              </presentation>
+              <presentation>
+                <key>vi</key>
+                <value>Số tiền thù lao</value>
+              </presentation>
+              <value xsi:type="core:ReferenceValue">
+                <value>Enum.TypesOfCostAllocatingBase.EnumValue.TotalPayrollExpenses</value>
+              </value>
+            </choiceList>
+            <choiceList>
+              <presentation>
+                <key>en</key>
+                <value>Standard payroll</value>
+              </presentation>
+              <presentation>
+                <key>fa</key>
+                <value>حقوق و دستمزد استاندارد</value>
+              </presentation>
+              <presentation>
+                <key>it</key>
+                <value>Salario normativo</value>
+              </presentation>
+              <presentation>
+                <key>pl</key>
+                <value>Normatywne wynagrodzenie</value>
+              </presentation>
+              <presentation>
+                <key>ru</key>
+                <value>Нормативная оплата труда</value>
+              </presentation>
+              <presentation>
+                <key>tr</key>
+                <value>Standart bordro</value>
+              </presentation>
+              <presentation>
+                <key>vi</key>
+                <value>Mức lương tiêu chuẩn</value>
+              </presentation>
+              <value xsi:type="core:ReferenceValue">
+                <value>Enum.TypesOfCostAllocatingBase.EnumValue.StandardRemunerationLevel</value>
+              </value>
+            </choiceList>
+            <choiceList>
+              <presentation>
+                <key>en</key>
+                <value>Number of activity kinds</value>
+              </presentation>
+              <presentation>
+                <key>fa</key>
+                <value>تعداد انواع فعالیت</value>
+              </presentation>
+              <presentation>
+                <key>it</key>
+                <value>Quantità di tipi dei lavori</value>
+              </presentation>
+              <presentation>
+                <key>pl</key>
+                <value>Liczba rodzajów prac</value>
+              </presentation>
+              <presentation>
+                <key>ru</key>
+                <value>Количество видов работ</value>
+              </presentation>
+              <presentation>
+                <key>tr</key>
+                <value>İş türlerinin miktarı</value>
+              </presentation>
+              <presentation>
+                <key>vi</key>
+                <value>Số lượng dạng công việc</value>
+              </presentation>
+              <value xsi:type="core:ReferenceValue">
+                <value>Enum.TypesOfCostAllocatingBase.EnumValue.NumberOfWorksOfSpecifiedKinds</value>
+              </value>
+            </choiceList>
+            <choiceList>
+              <presentation>
+                <key>en</key>
+                <value>Quantity of materials</value>
+              </presentation>
+              <presentation>
+                <key>fa</key>
+                <value>مقدار مواد</value>
+              </presentation>
+              <presentation>
+                <key>it</key>
+                <value>Quantità di materiali</value>
+              </presentation>
+              <presentation>
+                <key>pl</key>
+                <value>Ilość materiałów</value>
+              </presentation>
+              <presentation>
+                <key>ru</key>
+                <value>Количество материалов</value>
+              </presentation>
+              <presentation>
+                <key>tr</key>
+                <value>Malzemelerin miktarı</value>
+              </presentation>
+              <presentation>
+                <key>vi</key>
+                <value>Số lượng nguyên vật liệu</value>
+              </presentation>
+              <value xsi:type="core:ReferenceValue">
+                <value>Enum.TypesOfCostAllocatingBase.EnumValue.QuantityOfSpecifiedMaterials</value>
+              </value>
+            </choiceList>
+            <choiceList>
+              <presentation>
+                <key>en</key>
+                <value>Weight of materials</value>
+              </presentation>
+              <presentation>
+                <key>fa</key>
+                <value>وزن مواد</value>
+              </presentation>
+              <presentation>
+                <key>it</key>
+                <value>Peso dei materiali</value>
+              </presentation>
+              <presentation>
+                <key>pl</key>
+                <value>Waga materiałów</value>
+              </presentation>
+              <presentation>
+                <key>ru</key>
+                <value>Вес материалов</value>
+              </presentation>
+              <presentation>
+                <key>tr</key>
+                <value>Malzeme ağırlığı</value>
+              </presentation>
+              <presentation>
+                <key>vi</key>
+                <value>Trọng lượng nguyên vật liệu</value>
+              </presentation>
+              <value xsi:type="core:ReferenceValue">
+                <value>Enum.TypesOfCostAllocatingBase.EnumValue.WeightOfSpecifiedMaterials</value>
+              </value>
+            </choiceList>
+            <choiceList>
+              <presentation>
+                <key>en</key>
+                <value>Material volume</value>
+              </presentation>
+              <presentation>
+                <key>fa</key>
+                <value>حجم مواد</value>
+              </presentation>
+              <presentation>
+                <key>it</key>
+                <value>Volume dei materiali</value>
+              </presentation>
+              <presentation>
+                <key>pl</key>
+                <value>Wielkość materiałów</value>
+              </presentation>
+              <presentation>
+                <key>ru</key>
+                <value>Объем материалов</value>
+              </presentation>
+              <presentation>
+                <key>tr</key>
+                <value>Malzeme hacmi</value>
+              </presentation>
+              <presentation>
+                <key>vi</key>
+                <value>Khối lượng nguyên vật liệu</value>
+              </presentation>
+              <value xsi:type="core:ReferenceValue">
+                <value>Enum.TypesOfCostAllocatingBase.EnumValue.VolumeOfSpecifiedMaterials</value>
+              </value>
+            </choiceList>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormGroup">
+          <name>SelectionSettingsGroup</name>
+          <id>801</id>
+          <items xsi:type="form:Decoration">
+            <name>IndentSelectionSettingsGroup</name>
+            <id>803</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <extendedTooltip>
+              <name>IndentSelectionSettingsGroupExtendedTooltip</name>
+              <id>805</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>IndentSelectionSettingsGroupContextMenu</name>
+              <id>804</id>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </items>
+          <items xsi:type="form:FormField">
+            <name>TextAddEditSelectionOfTheBatchDistributionDatabase</name>
+            <id>806</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>TextAddEditSelectionOfTheBatchDistributionDatabase</segments>
+            </dataPath>
+            <titleLocation>None</titleLocation>
+            <extendedTooltip>
+              <name>TextAddEditSelectionOfTheBatchDistributionDatabaseExtendedTooltip</name>
+              <id>808</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>TextAddEditSelectionOfTheBatchDistributionDatabaseContextMenu</name>
+              <id>807</id>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>LabelField</type>
+            <editMode>Enter</editMode>
+            <showInHeader>true</showInHeader>
+            <headerHorizontalAlign>Left</headerHorizontalAlign>
+            <showInFooter>true</showInFooter>
+            <extInfo xsi:type="form:LabelFieldExtInfo">
+              <handlers>
+                <event>Click</event>
+                <name>TextAddEditSelectionOfTheBatchDistributionDatabaseClick</name>
+              </handlers>
+              <maxWidth>30</maxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <hyperlink>true</hyperlink>
+            </extInfo>
+          </items>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <title>
+            <key>en</key>
+            <value>Filter settings</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>تنظیمات فیلتر</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Impostazioni della selezione</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Ustawienia filtru</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Настройки отбора</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Filtre ayarları</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Cài đặt lọc</value>
+          </title>
+          <extendedTooltip>
+            <name>SelectionSettingsGroupExtendedTooltip</name>
+            <id>802</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <type>UsualGroup</type>
+          <extInfo xsi:type="form:UsualGroupExtInfo">
+            <group>HorizontalIfPossible</group>
+            <showLeftMargin>true</showLeftMargin>
+            <united>true</united>
+            <throughAlign>Auto</throughAlign>
+            <currentRowUse>Auto</currentRowUse>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormGroup">
+          <name>GroupSelectionByProductGroup</name>
+          <id>809</id>
+          <items xsi:type="form:Decoration">
+            <name>TitleOfSelectionByProductGroup</name>
+            <id>811</id>
+            <title>
+              <key>en</key>
+              <value>To all product groups</value>
+            </title>
+            <title>
+              <key>fa</key>
+              <value>به همه گروه‌های محصول</value>
+            </title>
+            <title>
+              <key>it</key>
+              <value>Per tutti i gruppi della produzione</value>
+            </title>
+            <title>
+              <key>pl</key>
+              <value>Na grupy produktów wg filtru</value>
+            </title>
+            <title>
+              <key>ru</key>
+              <value>На группы продукции по отбору</value>
+            </title>
+            <title>
+              <key>tr</key>
+              <value>Filtrelemeye göre imal edilen ürün gruplarına</value>
+            </title>
+            <title>
+              <key>vi</key>
+              <value>Đối với tất cả các nhóm sản phẩm</value>
+            </title>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <extendedTooltip>
+              <name>TitleOfSelectionByProductGroupExtendedTooltip</name>
+              <id>813</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>TitleOfSelectionByProductGroupContextMenu</name>
+              <id>812</id>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <textColor xsi:type="core:ColorRef">
+              <color>Style.NoteText</color>
+            </textColor>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </items>
+          <items xsi:type="form:FormField">
+            <name>TextAddChangeFilterByManufacturedProductsBatches</name>
+            <id>814</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>TextAddChangeFilterByManufacturedProductsBatches</segments>
+            </dataPath>
+            <titleLocation>None</titleLocation>
+            <extendedTooltip>
+              <name>TextAddChangeFilterByManufacturedProductsBatchesExtendedTooltip</name>
+              <id>816</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>TextAddChangeFilterByManufacturedProductsBatchesContextMenu</name>
+              <id>815</id>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>LabelField</type>
+            <editMode>Enter</editMode>
+            <showInHeader>true</showInHeader>
+            <headerHorizontalAlign>Left</headerHorizontalAlign>
+            <showInFooter>true</showInFooter>
+            <extInfo xsi:type="form:LabelFieldExtInfo">
+              <handlers>
+                <event>Click</event>
+                <name>TextAddChangeFilterByManufacturedProductsBatchesClick</name>
+              </handlers>
+              <maxWidth>30</maxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <hyperlink>true</hyperlink>
+            </extInfo>
+          </items>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <title>
+            <key>en</key>
+            <value>Filter by product groups</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>فیلتر بر اساس گروه‌های محصول</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Selezione per gruppi dei prodotti</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Filtr według grup towarów</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Отбор по группам продукции</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>İmal edilen ürün grubuna göre filtreleme</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Lọc theo nhóm sản phẩm</value>
+          </title>
+          <extendedTooltip>
+            <name>GroupSelectionByProductGroupExtendedTooltip</name>
+            <id>810</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <type>UsualGroup</type>
+          <extInfo xsi:type="form:UsualGroupExtInfo">
+            <group>HorizontalIfPossible</group>
+            <showLeftMargin>true</showLeftMargin>
+            <united>true</united>
+            <throughAlign>DontUse</throughAlign>
+            <currentRowUse>Auto</currentRowUse>
+          </extInfo>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>By lots</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>بر اساس بچ‌ها</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Per lotti</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Według partii</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>По партиям</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Lotlara göre</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Theo lô</value>
+        </title>
+        <extendedTooltip>
+          <name>GroupBaseDistributionByBatchExtendedTooltip</name>
+          <id>90</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>UsualGroup</type>
+        <extInfo xsi:type="form:UsualGroupExtInfo">
+          <group>Vertical</group>
+          <representation>WeakSeparation</representation>
+          <showLeftMargin>true</showLeftMargin>
+          <united>true</united>
+          <currentRowUse>Auto</currentRowUse>
+        </extInfo>
+      </items>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>en</key>
+        <value>Rules</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>قواعد</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Правила</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Kurallar</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Quy tắc</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Rules</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Rules</value>
+      </title>
+      <extendedTooltip>
+        <name>RulesExtendedTooltip</name>
+        <id>712</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <type>Page</type>
+      <extInfo xsi:type="form:PageGroupExtInfo">
+        <group>Vertical</group>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormGroup">
+      <name>Manually</name>
+      <id>178</id>
+      <items xsi:type="form:Table">
+        <name>LinesOfBusiness</name>
+        <id>771</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>Object.LinesOfBusiness</segments>
+        </dataPath>
+        <titleLocation>None</titleLocation>
+        <items xsi:type="form:FormField">
+          <name>BusinessLinesLineNumber</name>
+          <id>784</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Object.LinesOfBusiness.LineNumber</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>BusinessLinesLineNumberExtendedTooltip</name>
+            <id>786</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>BusinessLinesLineNumberContextMenu</name>
+            <id>785</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>LabelField</type>
+          <editMode>EnterOnInput</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:LabelFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>LinesOfBusinessLineOfBusiness</name>
+          <id>787</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Object.LinesOfBusiness.LineOfBusiness</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>LinesOfBusinessLineOfBusinessExtendedTooltip</name>
+            <id>789</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>LinesOfBusinessLineOfBusinessContextMenu</name>
+            <id>788</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>EnterOnInput</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>LinesOfBusinessCostShare</name>
+          <id>790</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Object.LinesOfBusiness.CostShare</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>LinesOfBusinessCostShareExtendedTooltip</name>
+            <id>792</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>LinesOfBusinessCostShareContextMenu</name>
+            <id>791</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>EnterOnInput</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <autoCommandBar>
+          <name>LinesOfBusinessCommandBar</name>
+          <id>773</id>
+          <horizontalAlign>Left</horizontalAlign>
+          <autoFill>true</autoFill>
+        </autoCommandBar>
+        <searchStringAddition>
+          <name>LinesOfBusinessSearchString</name>
+          <id>775</id>
+          <extendedTooltip>
+            <name>LinesOfBusinessSearchStringExtendedTooltip</name>
+            <id>777</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>LinesOfBusinessSearchStringContextMenu</name>
+            <id>776</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <source>LinesOfBusiness</source>
+          <extInfo xsi:type="form:SearchStringAdditionExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+          </extInfo>
+        </searchStringAddition>
+        <viewStatusAddition>
+          <name>LinesOfBusinessViewStatus</name>
+          <id>778</id>
+          <extendedTooltip>
+            <name>LinesOfBusinessViewStatusExtendedTooltip</name>
+            <id>780</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>LinesOfBusinessViewStatusContextMenu</name>
+            <id>779</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>ViewStatusAddition</type>
+          <source>LinesOfBusiness</source>
+          <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <horizontalLocation>Left</horizontalLocation>
+          </extInfo>
+        </viewStatusAddition>
+        <searchControlAddition>
+          <name>LinesOfBusinessSearchControl</name>
+          <id>781</id>
+          <extendedTooltip>
+            <name>LinesOfBusinessSearchControlExtendedTooltip</name>
+            <id>783</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>LinesOfBusinessSearchControlContextMenu</name>
+            <id>782</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>SearchControlAddition</type>
+          <source>LinesOfBusiness</source>
+          <extInfo xsi:type="form:SearchControlAdditionExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+          </extInfo>
+        </searchControlAddition>
+        <extendedTooltip>
+          <name>LinesOfBusinessExtendedTooltip</name>
+          <id>774</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>LinesOfBusinessContextMenu</name>
+          <id>772</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <representation>HierarchicalList</representation>
+        <changeRowSet>true</changeRowSet>
+        <changeRowOrder>true</changeRowOrder>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <autoMaxRowsCount>true</autoMaxRowsCount>
+        <selectionMode>MultiRow</selectionMode>
+        <header>true</header>
+        <headerHeight>1</headerHeight>
+        <footerHeight>1</footerHeight>
+        <horizontalScrollBar>AutoUse</horizontalScrollBar>
+        <verticalScrollBar>AutoUse</verticalScrollBar>
+        <horizontalLines>true</horizontalLines>
+        <verticalLines>true</verticalLines>
+        <autoInsertNewRow>true</autoInsertNewRow>
+        <searchOnInput>Auto</searchOnInput>
+        <initialListView>Auto</initialListView>
+        <horizontalStretch>true</horizontalStretch>
+        <verticalStretch>true</verticalStretch>
+        <enableStartDrag>true</enableStartDrag>
+        <enableDrag>true</enableDrag>
+        <rowFilter xsi:type="core:UndefinedValue"/>
+      </items>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>en</key>
+        <value>Line of business</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>خط کسب‌وکار</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Settori di attività</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Rodzaje działalności</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Направления деятельности</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>İş kolları</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Lĩnh vực hoạt động</value>
+      </title>
+      <extendedTooltip>
+        <name>ManuallyExtendedTooltip</name>
+        <id>179</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <type>Page</type>
+      <extInfo xsi:type="form:PageGroupExtInfo">
+        <group>Vertical</group>
+        <showTitle>true</showTitle>
+      </extInfo>
+    </items>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>en</key>
+      <value>Setting differences</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>تفاوت‌های تنظیم</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Differenze delle impostazioni</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Różnice w ustawieniach</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Отличия настроек</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Ayar farklılıkları</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Cài đặt khác biệt</value>
+    </title>
+    <toolTip>
+      <key>en</key>
+      <value>By infobase</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>بر اساس پایگاه اطلاعات</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Per base</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Według bazy</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>По базе</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Tabana göre</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Dựa</value>
+    </toolTip>
+    <horizontalStretch>true</horizontalStretch>
+    <verticalStretch>true</verticalStretch>
+    <extendedTooltip>
+      <name>GroupPagesExtendedTooltip</name>
+      <id>26</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>Pages</type>
+    <extInfo xsi:type="form:PagesGroupExtInfo">
+      <currentRowUse>Auto</currentRowUse>
+    </extInfo>
+  </items>
+  <autoCommandBar>
+    <name>FormCommandBar</name>
+    <id>-1</id>
+    <horizontalAlign>Left</horizontalAlign>
+    <autoFill>true</autoFill>
+  </autoCommandBar>
+  <handlers>
+    <event>NotificationProcessing</event>
+    <name>NotificationProcessing</name>
+  </handlers>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>OnCreateAtServer</name>
+  </handlers>
+  <handlers>
+    <event>URLProcessing</event>
+    <name>URLProcessing</name>
+  </handlers>
+  <excludedCommands>Delete</excludedCommands>
+  <saveWindowSettings>true</saveWindowSettings>
+  <autoUrl>true</autoUrl>
+  <group>Vertical</group>
+  <autoFillCheck>true</autoFillCheck>
+  <allowFormCustomize>true</allowFormCustomize>
+  <enabled>true</enabled>
+  <showTitle>true</showTitle>
+  <showCloseButton>true</showCloseButton>
+  <attributes>
+    <name>Object</name>
+    <title>
+      <key>en</key>
+      <value>Object</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>شیء</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Oggetto</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Obiekt</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Объект</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Nesne</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Đối tượng</value>
+    </title>
+    <id>67</id>
+    <valueType>
+      <types>CatalogObject.CostAllocationRules</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <main>true</main>
+    <savedData>true</savedData>
+    <additionalColumns>
+      <tablePath xsi:type="form:DataPath">
+        <segments>Object.WriteOff</segments>
+      </tablePath>
+      <columns>
+        <name>DimensionOfExpensesRequired_</name>
+        <title>
+          <key>en</key>
+          <value>Expense dimension is required</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>بُعد هزینه الزامی است</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Analitica di spese obbligatoria</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Analityka rozchodów jest wymagana</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Аналитика расходов обязательна</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Gider boyutu zorunludur</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Chỉ số chi phí bắt buộc</value>
+        </title>
+        <id>1</id>
+        <valueType>
+          <types>Boolean</types>
+        </valueType>
+        <view>
+          <common>true</common>
+        </view>
+        <edit>
+          <common>true</common>
+        </edit>
+      </columns>
+      <columns>
+        <name>DimensionOfExpensesOrderImplementation</name>
+        <title>
+          <key>en</key>
+          <value>Expense dimension sales order</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>بُعد هزینه سفارش فروش</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Analitica di spese ordine vendita</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Analityka rozchodów zamówienie realizacja</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Аналитика расходов заказ реализация</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Gider boyutu sipariş satış</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Chỉ số chi phí đơn hàng bán</value>
+        </title>
+        <id>2</id>
+        <valueType>
+          <types>Boolean</types>
+        </valueType>
+        <view>
+          <common>true</common>
+        </view>
+        <edit>
+          <common>true</common>
+        </edit>
+      </columns>
+      <columns>
+        <name>ArticleType</name>
+        <title>
+          <key>en</key>
+          <value>Item type</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>نوع قلم</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Tipo di articolo</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Typ pozycji</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Тип статьи</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Kalem türü</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Loại dạng</value>
+        </title>
+        <id>3</id>
+        <valueType>
+          <types>Number</types>
+          <numberQualifiers>
+            <precision>1</precision>
+            <nonNegative>true</nonNegative>
+          </numberQualifiers>
+        </valueType>
+        <view>
+          <common>true</common>
+        </view>
+        <edit>
+          <common>true</common>
+        </edit>
+      </columns>
+      <columns>
+        <name>PresentationOfRecordingInComplAccounting</name>
+        <title>
+          <key>en</key>
+          <value>Record in local accounting</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>ثبت در حسابداری محلی</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Visualizzazione nella contabilità regolatoria</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Odzwierciedlenie w ewidencji regl.</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Отражение в регл. учете</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Yerel muhasebeye yansıma</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Phản ánh vào kế toán pháp quy</value>
+        </title>
+        <id>4</id>
+        <valueType>
+          <types>String</types>
+          <stringQualifiers/>
+        </valueType>
+        <view>
+          <common>true</common>
+        </view>
+        <edit>
+          <common>true</common>
+        </edit>
+        <functionalOptions>FunctionalOption.UseAccountingOfOtherAssetsAndLiabilities</functionalOptions>
+      </columns>
+    </additionalColumns>
+  </attributes>
+  <attributes>
+    <name>AllocationIndicator</name>
+    <title>
+      <key>en</key>
+      <value>Allocation indicator</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>شاخص تسهیم</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Indice di ripartizione</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Wskaźnik dystrybucji</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Показатель распределения</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Dağıtım göstergesi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Chỉ tiêu phân bổ</value>
+    </title>
+    <id>74</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>FilterByLinesOfBusiness</name>
+    <title>
+      <key>en</key>
+      <value>Filter by lines of business</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>فیلتر بر اساس خطوط کسب‌وکار</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Selezione per settori di attività</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Filtr wg rodzajów działalności</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Отбор по направлениям деятельности</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>İş koluna göre filtreleme</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Lọc theo lĩnh vực hoạt động</value>
+    </title>
+    <id>1</id>
+    <valueType>
+      <types>ValueList</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <extInfo xsi:type="form:ValueListExtInfo">
+      <itemValueType>
+        <types>CatalogRef.LinesOfBusiness</types>
+      </itemValueType>
+    </extInfo>
+  </attributes>
+  <attributes>
+    <name>AnalyticalAccountingByProductsGroups</name>
+    <title>
+      <key>en</key>
+      <value>Analytical accounting by product groups</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>حسابداری تحلیلی بر اساس گروه‌های محصول</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Contabilità analitica per gruppi dei prodotti</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Ewidencja analityczna wg grup produkcji</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Аналитический учет по группам продукции</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>İmal edilen ürün gruplarına göre analitik muhasebe</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Kế toán phân tích theo nhóm sản phẩm</value>
+    </title>
+    <id>76</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>SettingsOfBaseOfAllocationByLots</name>
+    <title>
+      <key>en</key>
+      <value>Configure base of allocation by lots</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>پیکربندی مبنای تسهیم بر اساس بچ‌ها</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Impostazioni della base di ripartizione per lotti</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Ustawienia podstawy podziału wg partii</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Настройки базы распределения по партиям</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Lotlara göre tahsisat tabanı ayarları</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Thiết lập cơ sở phân bổ theo lô</value>
+    </title>
+    <id>78</id>
+    <valueType>
+      <types>DataCompositionSettingsComposer</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>CacheBaseOfAllocationByBatches</name>
+    <title>
+      <key>en</key>
+      <value>Cache base of allocation by lots</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>حافظه موقت مبنای تسهیم بر اساس بچ‌ها</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Base cache di ripartizione per lotti</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Pamięć podręczna podziału wg partii</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Кэш база распределения по партиям</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Lotlar bazında tahsisat tabanı önbellek</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Bộ nhớ cache cơ sở phân bổ theo lô</value>
+    </title>
+    <id>79</id>
+    <valueType>
+      <types>EnumRef.TypesOfCostAllocatingBase</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>TextAddEditSelectionOfTheBatchDistributionDatabase</name>
+    <id>80</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>FilterByActivityKind</name>
+    <title>
+      <key>en</key>
+      <value>Filter by activity kind</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>فیلتر بر اساس نوع فعالیت</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Selezione per tipi di lavori</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Filtr według rodzajów prac</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Отбор по видам работ</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>İş türüne göre filtreleme</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Lọc theo loại công việc</value>
+    </title>
+    <id>81</id>
+    <valueType>
+      <types>ValueList</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+    <extInfo xsi:type="form:ValueListExtInfo">
+      <itemValueType>
+        <types>CatalogRef.EmployeeWorkKinds</types>
+      </itemValueType>
+    </extInfo>
+  </attributes>
+  <attributes>
+    <name>FilterByProductsGroups</name>
+    <title>
+      <key>en</key>
+      <value>Filter by product groups</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>فیلتر بر اساس گروه‌های محصول</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Selezione per gruppi dei prodotti</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Filtr według grup towarów</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Отбор по группам продукции</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>İmal edilen ürün grubuna göre filtreleme</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Lọc theo nhóm sản phẩm</value>
+    </title>
+    <id>82</id>
+    <valueType>
+      <types>ValueList</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+    <extInfo xsi:type="form:ValueListExtInfo">
+      <itemValueType>
+        <types>CatalogRef.AnalyticalInventoryGroups</types>
+      </itemValueType>
+    </extInfo>
+  </attributes>
+  <attributes>
+    <name>FilterByMaterials</name>
+    <title>
+      <key>en</key>
+      <value>Filter by materials</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>فیلتر بر اساس مواد</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Selezione per materiali</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Filtr wg materiałów</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Отбор по материалам</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Malzemeye göre filtreleme</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Lọc theo nguyên vật liệu</value>
+    </title>
+    <id>83</id>
+    <valueType>
+      <types>ValueList</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+    <extInfo xsi:type="form:ValueListExtInfo">
+      <itemValueType>
+        <types>CatalogRef.Products</types>
+      </itemValueType>
+    </extInfo>
+  </attributes>
+  <attributes>
+    <name>BatchAccounting21</name>
+    <title>
+      <key>en</key>
+      <value>Lot accounting21</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>حسابداری بچ21</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Contabilità per lotti21</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Ewidencja partii21</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Партионный учет21</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Lot muhasebesi21</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Kế toán theo lô21</value>
+    </title>
+    <id>84</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>TextAddChangeFilterByManufacturedProductsBatches</name>
+    <title>
+      <key>en</key>
+      <value>Text add and edit filter by manufactured products batches</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>متن افزودن و ویرایش فیلتر بر اساس بچ‌های محصولات تولیدی</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Testo aggiungere modificare selezione per gruppi di prodotti</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Tekst dodaj zmień filtr wg grup produkcji</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Текст добавить изменить отбор по группам продукции</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Metin ekle imal edilen ürün gruplarına göre filtre değiştir</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Văn bản thêm thay đổi lọc theo nhóm sản phẩm</value>
+    </title>
+    <id>85</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <commandInterface>
+    <navigationPanel/>
+    <commandBar>
+      <cmiFragmentRecord>
+        <command>CommonCommand.IntegrationWith1CDocumentManagementCreateLetter</command>
+        <userVisible/>
+      </cmiFragmentRecord>
+      <cmiFragmentRecord>
+        <command>CommonCommand.IntegrationWith1CDocumentManagementCreateBusinessProcess</command>
+        <userVisible/>
+      </cmiFragmentRecord>
+      <cmiFragmentRecord>
+        <command>CommonCommand.RelatedObjectsCreation</command>
+        <userVisible/>
+      </cmiFragmentRecord>
+    </commandBar>
+  </commandInterface>
+  <extInfo xsi:type="form:CatalogFormExtInfo">
+    <handlers>
+      <event>AfterWriteAtServer</event>
+      <name>AfterWriteAtServer</name>
+    </handlers>
+    <handlers>
+      <event>BeforeWrite</event>
+      <name>BeforeWrite</name>
+    </handlers>
+    <handlers>
+      <event>BeforeWriteAtServer</event>
+      <name>BeforeWriteAtServer</name>
+    </handlers>
+  </extInfo>
+</form:Form>

@@ -1,0 +1,197 @@
+//@strict-types
+
+#Region FormEventHandlers
+
+&AtServer
+Procedure OnCreateAtServer(Cancel, StandardProcessing)
+	
+	If ExchangePlans.MasterNode() <> Undefined Then
+		
+		Items.List.ChangeRowSet = False;
+		
+	EndIf;
+	
+	// StandardSubsystems.AttachableCommands
+	AttachableCommands.OnCreateAtServer(ThisObject);
+	// End StandardSubsystems.AttachableCommands
+	
+	// IntegrationWith1CDocumentManagementSubsystem
+	IntegrationWith1CDocumentManagementCore.OnCreateAtServer(ThisObject, Items.GlobalCommandsGroup);
+	// End IntegrationWith1CDocumentManagementSubsystem
+	
+	ItemsNames = New Array; // Array of String
+	
+	If Not GetFunctionalOption("UseMultipleCompanies") Then
+		
+		ItemsNames.Add(Items.FilterOrganization.Name);
+		
+	EndIf;
+	
+	TMCommonUseClientServer.SetPropertyOfFormElements(
+		Items, ItemsNames, "Visible", False);
+	
+	QuickFilterStructure = Undefined;
+	Parameters.Property("QuickFilterStructure", QuickFilterStructure);
+	
+	ListSelectionsClientServer.SelectionByListValueWhenCreatedOnServer(
+		List, "Organization", Organization, QuickFilterStructure);
+	CommonClientServer.SetFormItemProperty(
+		Items, "Organization", "Visible", Not ValueIsFilled(Organization));
+	
+	ListSelectionsClientServer.SelectionByListValueWhenCreatedOnServer(
+		List, "EmployeeResponsible", EmployeeResponsible, QuickFilterStructure);
+	CommonClientServer.SetFormItemProperty(
+		Items, "EmployeeResponsible", "Visible", Not ValueIsFilled(EmployeeResponsible));
+	
+	FormEvents.OnCreateAtServer(ThisObject, Cancel, StandardProcessing);
+	
+	SetConditionalAppearance();
+	
+EndProcedure
+
+&AtServer
+Procedure OnLoadDataFromSettingsAtServer(Settings)
+	
+	ListSelectionsClientServer.SelectionByListValueWhenLoadingFromSettings(
+		List, "Organization", Organization, QuickFilterStructure, Settings);
+	ListSelectionsClientServer.SelectionByListValueWhenLoadingFromSettings(
+		List, "EmployeeResponsible", EmployeeResponsible, QuickFilterStructure, Settings);
+	
+EndProcedure
+
+#EndRegion
+
+#Region FormHeaderItemsEventHandlers
+
+&AtClient
+Procedure FilterOrganizationOnChange(Item)
+	
+	CompanyIsFull = ValueIsFilled(Organization);
+	
+	CommonClientServer.SetDynamicListFilterItem(
+		List,
+		"Organization",
+		Organization,
+		DataCompositionComparisonType.Equal,
+		,
+		CompanyIsFull);
+	
+	CommonClientServer.SetFormItemProperty(
+		Items, "Organization", "Visible", Not CompanyIsFull);
+	
+EndProcedure
+
+&AtClient
+Procedure FilterEmployeeResponsibleOnChange(Item)
+	
+	ResponsiblePersonFilledIn = ValueIsFilled(EmployeeResponsible);
+	
+	CommonClientServer.SetDynamicListFilterItem(
+		List,
+		"EmployeeResponsible",
+		EmployeeResponsible,
+		DataCompositionComparisonType.Equal,
+		,
+		ResponsiblePersonFilledIn);
+	
+	CommonClientServer.SetFormItemProperty(
+		Items, "EmployeeResponsible", "Visible", Not ResponsiblePersonFilledIn);
+	
+EndProcedure
+
+#EndRegion
+
+#Region FormTableItemsEventHandlersList
+
+&AtClient
+Procedure ListOnActivateRow(Item)
+	
+	// StandardSubsystems.AttachableCommands
+	AttachableCommandsClient.StartCommandUpdate(ThisObject);
+	// End StandardSubsystems.AttachableCommands
+	
+EndProcedure
+
+#EndRegion
+
+#Region FormCommandsEventHandlers
+
+// StandardSubsystems.AttachableCommands
+
+// Parameters:
+//   Command - FormCommand - executed command
+//
+&AtClient
+Procedure Attachable_ExecuteCommand(Command)
+	
+	AttachableCommandsClient.StartCommandExecution(ThisObject, Command, Items.List);
+	
+EndProcedure
+
+// End StandardSubsystems.AttachableCommands
+
+// IntegrationWith1CDocumentManagementSubsystem
+
+// Parameters:
+//   Command - FormCommand - executed command
+//
+&AtClient
+Procedure Attachable_ExecuteIntegrationCommand(Command)
+	
+	IntegrationWith1CDocumentManagementCoreClient.ExecutePlugInIntegrationCommand(Command, ThisObject, Items.List);
+	
+EndProcedure
+
+// End IntegrationWith1CDocumentManagementSubsystem
+
+#EndRegion
+
+#Region Private
+
+#Region Other
+
+&AtServer
+Procedure SetConditionalAppearance()
+	
+	StandardSubsystemsServer.SetDateFieldConditionalAppearance(ThisObject);
+	
+EndProcedure
+
+#EndRegion
+
+#Region StandardSubsystems_PlugInCommands
+
+// StandardSubsystems.AttachableCommands
+
+// The Attachable one continues to execute the Commands on the server.
+// 
+// Parameters:
+//  ExecutionParameters - Structure -
+//  AdditionalParameters - Structure -
+//
+&AtClient
+Procedure Attachable_ContinueCommandExecutionAtServer(ExecutionParameters, AdditionalParameters) Export
+	
+	ExecuteCommandAtServer(ExecutionParameters);
+	
+EndProcedure
+
+&AtServer
+Procedure ExecuteCommandAtServer(ExecutionParameters)
+	
+	AttachableCommands.ExecuteCommand(ThisObject, ExecutionParameters, Items.List);
+	
+EndProcedure
+
+&AtClient
+Procedure Attachable_UpdateCommands()
+	
+	AttachableCommandsClientServer.UpdateCommands(ThisObject, Items.List);
+	
+EndProcedure
+
+// End StandardSubsystems.AttachableCommands
+
+#EndRegion
+
+#EndRegion

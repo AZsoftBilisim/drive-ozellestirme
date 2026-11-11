@@ -1,0 +1,4243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form">
+  <title>
+    <key>en</key>
+    <value>Payment</value>
+  </title>
+  <title>
+    <key>fa</key>
+    <value>پرداخت</value>
+  </title>
+  <title>
+    <key>it</key>
+    <value>Pagamento</value>
+  </title>
+  <title>
+    <key>pl</key>
+    <value>Płatność</value>
+  </title>
+  <title>
+    <key>ru</key>
+    <value>Оплата</value>
+  </title>
+  <title>
+    <key>tr</key>
+    <value>Ödeme</value>
+  </title>
+  <title>
+    <key>vi</key>
+    <value>Thanh toán</value>
+  </title>
+  <items xsi:type="form:FormField">
+    <name>PaymentMethod</name>
+    <id>2</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Object.PaymentMethod</segments>
+    </dataPath>
+    <extendedTooltip>
+      <name>PaymentMethodExtendedTooltip</name>
+      <id>42</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>PaymentMethodContextMenu</name>
+      <id>3</id>
+      <autoFill>true</autoFill>
+    </contextMenu>
+    <type>InputField</type>
+    <editMode>Enter</editMode>
+    <showInHeader>true</showInHeader>
+    <headerHorizontalAlign>Left</headerHorizontalAlign>
+    <showInFooter>true</showInFooter>
+    <extInfo xsi:type="form:InputFieldExtInfo">
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <horizontalStretch>false</horizontalStretch>
+      <wrap>true</wrap>
+      <listChoiceMode>true</listChoiceMode>
+      <chooseType>true</chooseType>
+      <typeDomainEnabled>true</typeDomainEnabled>
+      <textEdit>true</textEdit>
+      <choiceList>
+        <value xsi:type="core:ReferenceValue">
+          <value>Enum.PaymentForms.EnumValue.CashAccountPayment_</value>
+        </value>
+      </choiceList>
+      <choiceList>
+        <value xsi:type="core:ReferenceValue">
+          <value>Enum.PaymentForms.EnumValue.BankAccountPayment</value>
+        </value>
+      </choiceList>
+      <choiceList>
+        <value xsi:type="core:ReferenceValue">
+          <value>Enum.PaymentForms.EnumValue.InstantPayments</value>
+        </value>
+      </choiceList>
+      <choiceList>
+        <presentation>
+          <key>en</key>
+          <value>Any</value>
+        </presentation>
+        <presentation>
+          <key>fa</key>
+          <value>هر</value>
+        </presentation>
+        <presentation>
+          <key>it</key>
+          <value>Qualsiasi</value>
+        </presentation>
+        <presentation>
+          <key>pl</key>
+          <value>Jakakolwiek</value>
+        </presentation>
+        <presentation>
+          <key>ru</key>
+          <value>Любая</value>
+        </presentation>
+        <presentation>
+          <key>tr</key>
+          <value>Herhangi</value>
+        </presentation>
+        <presentation>
+          <key>vi</key>
+          <value>Bất kỳ</value>
+        </presentation>
+        <value xsi:type="core:ReferenceValue">
+          <value>Enum.PaymentForms.EmptyRef</value>
+        </value>
+      </choiceList>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormGroup">
+    <name>GroupPages</name>
+    <id>62</id>
+    <items xsi:type="form:FormGroup">
+      <name>PageSimplifiedScheme</name>
+      <id>64</id>
+      <items xsi:type="form:FormGroup">
+        <name>PrepaymentCreditGroup</name>
+        <id>66</id>
+        <items xsi:type="form:FormGroup">
+          <name>PrepaymentGroup</name>
+          <id>68</id>
+          <items xsi:type="form:Decoration">
+            <name>DecorationPrepayment</name>
+            <id>70</id>
+            <title>
+              <key>en</key>
+              <value>Payment before shipment</value>
+            </title>
+            <title>
+              <key>fa</key>
+              <value>پرداخت پیش از ارسال</value>
+            </title>
+            <title>
+              <key>it</key>
+              <value>Pagamento prima della spedizione</value>
+            </title>
+            <title>
+              <key>pl</key>
+              <value>Płatność przed wysyłką</value>
+            </title>
+            <title>
+              <key>ru</key>
+              <value>Оплата до отгрузки</value>
+            </title>
+            <title>
+              <key>tr</key>
+              <value>Sevkiyattan önce ödeme</value>
+            </title>
+            <title>
+              <key>vi</key>
+              <value>Thanh toán trước khi giao hàng</value>
+            </title>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <extendedTooltip>
+              <name>DecorationPrepaymentExtendedTooltip</name>
+              <id>72</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>DecorationPrepaymentContextMenu</name>
+              <id>71</id>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>Label</type>
+            <autoMaxHeight>true</autoMaxHeight>
+            <font xsi:type="core:FontRef">
+              <font>System.DefaultGUIFont</font>
+              <bold>true</bold>
+              <italic>false</italic>
+              <underline>false</underline>
+              <strikeout>false</strikeout>
+            </font>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </items>
+          <items xsi:type="form:FormGroup">
+            <name>GroupShiftPrepayment</name>
+            <id>125</id>
+            <items xsi:type="form:FormField">
+              <name>ShiftPrepayment</name>
+              <id>73</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>ShiftPrepayment</segments>
+              </dataPath>
+              <toolTip>
+                <key>en</key>
+                <value>Only makes sense for order settlements. Specifies the payment date by offset in days in regard to the order date.</value>
+              </toolTip>
+              <toolTip>
+                <key>fa</key>
+                <value>فقط برای تسویه‌های سفارش معنادار است. تاریخ پرداخت را با جابه‌جایی به روز نسبت به تاریخ سفارش مشخص می‌کند.</value>
+              </toolTip>
+              <toolTip>
+                <key>it</key>
+                <value>Ha senso soltanto durante i calcoli per l'ordine. Determina lo scostamento della data di pagamento in giorni relativi alla data dell'ordine.</value>
+              </toolTip>
+              <toolTip>
+                <key>pl</key>
+                <value>Ma sens jedynie w przypadku obliczeń dot. zamówienia. Określa przesunięcie daty płatności w stosunku do dnia zamówienia.</value>
+              </toolTip>
+              <toolTip>
+                <key>ru</key>
+                <value>Имеет смысл только при расчетах по  заказу. Определяет дату платежа смещением в днях относительно даты заказа.</value>
+              </toolTip>
+              <toolTip>
+                <key>tr</key>
+                <value>Yalnızca bir sipariş üzerinde anlaşmaya varıldığında anlamlıdır. Ödeme tarihini, sipariş tarihine göre gün cinsinden hesaplama olarak tanımlar.</value>
+              </toolTip>
+              <toolTip>
+                <key>vi</key>
+                <value>Chỉ có ý nghĩa khi hạch toán theo đơn hàng. Xác định ngày thanh toán bằng cách thay đổi theo ngày trong đơn hàng.</value>
+              </toolTip>
+              <extendedTooltip>
+                <name>ShiftPrepaymentExtendedTooltip</name>
+                <id>75</id>
+                <type>Label</type>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <extInfo xsi:type="form:LabelDecorationExtInfo">
+                  <horizontalAlign>Left</horizontalAlign>
+                </extInfo>
+              </extendedTooltip>
+              <contextMenu>
+                <name>ShiftPrepaymentContextMenu</name>
+                <id>74</id>
+                <autoFill>true</autoFill>
+              </contextMenu>
+              <type>InputField</type>
+              <editMode>Enter</editMode>
+              <showInHeader>true</showInHeader>
+              <headerHorizontalAlign>Left</headerHorizontalAlign>
+              <showInFooter>true</showInFooter>
+              <extInfo xsi:type="form:InputFieldExtInfo">
+                <width>6</width>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <horizontalStretch>false</horizontalStretch>
+                <wrap>true</wrap>
+                <chooseType>true</chooseType>
+                <typeDomainEnabled>true</typeDomainEnabled>
+                <textEdit>true</textEdit>
+              </extInfo>
+            </items>
+            <items xsi:type="form:FormField">
+              <name>CountdownOptionPrepayment</name>
+              <id>127</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>CountdownOptionPrepayment</segments>
+              </dataPath>
+              <titleLocation>None</titleLocation>
+              <extendedTooltip>
+                <name>CountdownOptionPrepaymentExtendedTooltip</name>
+                <id>129</id>
+                <type>Label</type>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <extInfo xsi:type="form:LabelDecorationExtInfo">
+                  <horizontalAlign>Left</horizontalAlign>
+                </extInfo>
+              </extendedTooltip>
+              <contextMenu>
+                <name>CountdownOptionPrepaymentContextMenu</name>
+                <id>128</id>
+                <autoFill>true</autoFill>
+              </contextMenu>
+              <type>InputField</type>
+              <editMode>Enter</editMode>
+              <showInHeader>true</showInHeader>
+              <headerHorizontalAlign>Left</headerHorizontalAlign>
+              <showInFooter>true</showInFooter>
+              <extInfo xsi:type="form:InputFieldExtInfo">
+                <maxWidth>30</maxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <horizontalStretch>false</horizontalStretch>
+                <wrap>true</wrap>
+                <listChoiceMode>true</listChoiceMode>
+                <chooseType>true</chooseType>
+                <typeDomainEnabled>true</typeDomainEnabled>
+                <textEdit>true</textEdit>
+              </extInfo>
+            </items>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <title>
+              <key>en</key>
+              <value>Group shift prepayment</value>
+            </title>
+            <title>
+              <key>fa</key>
+              <value>گروه جابه‌جایی پیش‌پرداخت</value>
+            </title>
+            <title>
+              <key>it</key>
+              <value>Gruppo spostamento pagamento anticipato</value>
+            </title>
+            <title>
+              <key>pl</key>
+              <value>Grupa przesunięcie przedpłata</value>
+            </title>
+            <title>
+              <key>ru</key>
+              <value>Группа сдвиг предоплата</value>
+            </title>
+            <title>
+              <key>tr</key>
+              <value>Grup ön ödeme öteleme</value>
+            </title>
+            <title>
+              <key>vi</key>
+              <value>Nhóm dịch chuyển trả trước</value>
+            </title>
+            <extendedTooltip>
+              <name>GroupShiftPrepaymentExtendedTooltip</name>
+              <id>126</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <type>UsualGroup</type>
+            <extInfo xsi:type="form:UsualGroupExtInfo">
+              <group>AlwaysHorizontal</group>
+              <representation>WeakSeparation</representation>
+              <showLeftMargin>true</showLeftMargin>
+              <united>true</united>
+              <throughAlign>Auto</throughAlign>
+              <currentRowUse>Auto</currentRowUse>
+            </extInfo>
+          </items>
+          <items xsi:type="form:FormGroup">
+            <name>GroupPercentagePrepayment</name>
+            <id>130</id>
+            <items xsi:type="form:FormField">
+              <name>PaymentPercentagePrepayment</name>
+              <id>76</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>PaymentPercentagePrepayment</segments>
+              </dataPath>
+              <toolTip>
+                <key>en</key>
+                <value>Payment percentage of the purchase document total.</value>
+              </toolTip>
+              <toolTip>
+                <key>fa</key>
+                <value>درصد پرداخت از جمع کل سند خرید.</value>
+              </toolTip>
+              <toolTip>
+                <key>it</key>
+                <value>Percentuale di pagamento dell'importo totale del documento di acquisto.</value>
+              </toolTip>
+              <toolTip>
+                <key>pl</key>
+                <value>Procent płatności od całkowitej kwoty dokumentu zakupu.</value>
+              </toolTip>
+              <toolTip>
+                <key>ru</key>
+                <value>Процент платежа от общей суммы документа закупки.</value>
+              </toolTip>
+              <toolTip>
+                <key>tr</key>
+                <value>Satın alım belgesinin toplam tutarının ödeme yüzdesi.</value>
+              </toolTip>
+              <toolTip>
+                <key>vi</key>
+                <value>Phần trăm thanh toán trong tổng số tiền trên chứng từ mua hàng.</value>
+              </toolTip>
+              <handlers>
+                <event>OnChange</event>
+                <name>PaymentPercentagePrepaymentOnChange</name>
+              </handlers>
+              <extendedTooltip>
+                <name>PaymentPercentagePrepaymentExtendedTooltip</name>
+                <id>78</id>
+                <type>Label</type>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <extInfo xsi:type="form:LabelDecorationExtInfo">
+                  <horizontalAlign>Left</horizontalAlign>
+                </extInfo>
+              </extendedTooltip>
+              <contextMenu>
+                <name>PaymentPercentagePrepaymentContextMenu</name>
+                <id>77</id>
+                <autoFill>true</autoFill>
+              </contextMenu>
+              <type>InputField</type>
+              <editMode>Enter</editMode>
+              <showInHeader>true</showInHeader>
+              <headerHorizontalAlign>Left</headerHorizontalAlign>
+              <showInFooter>true</showInFooter>
+              <extInfo xsi:type="form:InputFieldExtInfo">
+                <width>5</width>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <wrap>true</wrap>
+                <choiceButton>false</choiceButton>
+                <chooseType>true</chooseType>
+                <typeDomainEnabled>true</typeDomainEnabled>
+                <textEdit>true</textEdit>
+                <maxValue xsi:type="core:NumberValue">
+                  <value>100</value>
+                </maxValue>
+              </extInfo>
+            </items>
+            <items xsi:type="form:FormField">
+              <name>PercentageOfTheDepositForTheContainerPrepayment</name>
+              <id>79</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>PercentageOfTheDepositForTheContainerPrepayment</segments>
+              </dataPath>
+              <toolTip>
+                <key>en</key>
+                <value>Percentage of the reusable packaging deposit of the total deposit value under the purchase document.</value>
+              </toolTip>
+              <toolTip>
+                <key>fa</key>
+                <value>درصد ودیعه بسته‌بندی قابل استفاده مجدد از کل ارزش ودیعه بر اساس سند خرید.</value>
+              </toolTip>
+              <toolTip>
+                <key>it</key>
+                <value>Percentuale di cauzione per l'imballaggio riutilizzabile dell'importo totale di cauzione in base al documento di acquisto.</value>
+              </toolTip>
+              <toolTip>
+                <key>pl</key>
+                <value>Procent zabezpieczenia dla tary wielokrotnego użytku od całkowitej kwoty kaucji wg. dokumentu zakupu.</value>
+              </toolTip>
+              <toolTip>
+                <key>ru</key>
+                <value>Процент залога за многооборотную тару от общей суммы залога по документу закупки.</value>
+              </toolTip>
+              <toolTip>
+                <key>tr</key>
+                <value>Yeniden kullanılabilir ambalajlar için depozitonun, satın alma belgesi depozitosunun toplam tutarına oranı.</value>
+              </toolTip>
+              <toolTip>
+                <key>vi</key>
+                <value>Tỷ lệ phần trăm ký cược bao bì luân chuyển trong tổng số tiền ký cược theo chứng từ mua hàng.</value>
+              </toolTip>
+              <handlers>
+                <event>OnChange</event>
+                <name>PercentageOfTheDepositForTheContainerPrepaymentOnChange</name>
+              </handlers>
+              <extendedTooltip>
+                <name>PercentageOfTheDepositForTheContainerPrepaymentExtendedTooltip</name>
+                <id>81</id>
+                <type>Label</type>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <extInfo xsi:type="form:LabelDecorationExtInfo">
+                  <horizontalAlign>Left</horizontalAlign>
+                </extInfo>
+              </extendedTooltip>
+              <contextMenu>
+                <name>PercentageOfTheDepositForTheContainerPrepaymentContextMenu</name>
+                <id>80</id>
+                <autoFill>true</autoFill>
+              </contextMenu>
+              <type>InputField</type>
+              <editMode>Enter</editMode>
+              <showInHeader>true</showInHeader>
+              <headerHorizontalAlign>Left</headerHorizontalAlign>
+              <showInFooter>true</showInFooter>
+              <extInfo xsi:type="form:InputFieldExtInfo">
+                <width>5</width>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <wrap>true</wrap>
+                <choiceButton>false</choiceButton>
+                <chooseType>true</chooseType>
+                <typeDomainEnabled>true</typeDomainEnabled>
+                <textEdit>true</textEdit>
+                <maxValue xsi:type="core:NumberValue">
+                  <value>100</value>
+                </maxValue>
+              </extInfo>
+            </items>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <title>
+              <key>en</key>
+              <value>Group percent prepayment</value>
+            </title>
+            <title>
+              <key>fa</key>
+              <value>گروه درصد پیش‌پرداخت</value>
+            </title>
+            <title>
+              <key>it</key>
+              <value>Gruppo percentuale pagamento anticipato</value>
+            </title>
+            <title>
+              <key>pl</key>
+              <value>Grupa procent przedpłata</value>
+            </title>
+            <title>
+              <key>ru</key>
+              <value>Группа процент предоплата</value>
+            </title>
+            <title>
+              <key>tr</key>
+              <value>Grup yüzde ön ödeme</value>
+            </title>
+            <title>
+              <key>vi</key>
+              <value>Nhóm phần trăm trả trước</value>
+            </title>
+            <extendedTooltip>
+              <name>GroupPercentagePrepaymentExtendedTooltip</name>
+              <id>131</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <type>UsualGroup</type>
+            <extInfo xsi:type="form:UsualGroupExtInfo">
+              <group>AlwaysHorizontal</group>
+              <representation>WeakSeparation</representation>
+              <showLeftMargin>true</showLeftMargin>
+              <united>true</united>
+              <throughAlign>Auto</throughAlign>
+              <currentRowUse>Auto</currentRowUse>
+            </extInfo>
+          </items>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <title>
+            <key>en</key>
+            <value>Cash before delivery</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>پرداخت نقد پیش از تحویل</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Pagamento anticipato (prima dell'arrivo)</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Przedpłata (przed odbiorem)</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Предоплата (до поступления)</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Ön ödeme (teslim almadan önce)</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Trả trước (trước khi tiếp nhận)</value>
+          </title>
+          <titleFont xsi:type="core:FontRef">
+            <font>System.DefaultGUIFont</font>
+            <bold>true</bold>
+            <italic>false</italic>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+          </titleFont>
+          <extendedTooltip>
+            <name>PrepaymentGroupExtendedTooltip</name>
+            <id>69</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <type>UsualGroup</type>
+          <extInfo xsi:type="form:UsualGroupExtInfo">
+            <group>Vertical</group>
+            <representation>NormalSeparation</representation>
+            <showLeftMargin>true</showLeftMargin>
+            <united>true</united>
+            <throughAlign>Auto</throughAlign>
+            <currentRowUse>Auto</currentRowUse>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormGroup">
+          <name>CreditGroup</name>
+          <id>82</id>
+          <items xsi:type="form:Decoration">
+            <name>DecorationCredit</name>
+            <id>84</id>
+            <title>
+              <key>en</key>
+              <value>Arbitrary payment</value>
+            </title>
+            <title>
+              <key>fa</key>
+              <value>پرداخت دلخواه</value>
+            </title>
+            <title>
+              <key>it</key>
+              <value>Pagamento arbitrario</value>
+            </title>
+            <title>
+              <key>pl</key>
+              <value>Dowolna płatność</value>
+            </title>
+            <title>
+              <key>ru</key>
+              <value>Произвольная оплата</value>
+            </title>
+            <title>
+              <key>tr</key>
+              <value>İsteğe bağlı ödeme</value>
+            </title>
+            <title>
+              <key>vi</key>
+              <value>Thanh toán tùy ý</value>
+            </title>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <extendedTooltip>
+              <name>DecorationCreditExtendedTooltip</name>
+              <id>86</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>DecorationCreditContextMenu</name>
+              <id>85</id>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>Label</type>
+            <autoMaxHeight>true</autoMaxHeight>
+            <font xsi:type="core:FontRef">
+              <font>System.DefaultGUIFont</font>
+              <bold>true</bold>
+              <italic>false</italic>
+              <underline>false</underline>
+              <strikeout>false</strikeout>
+            </font>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </items>
+          <items xsi:type="form:FormGroup">
+            <name>GroupShiftCredit</name>
+            <id>132</id>
+            <items xsi:type="form:FormField">
+              <name>ShiftCredit</name>
+              <id>87</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>ShiftCredit</segments>
+              </dataPath>
+              <toolTip>
+                <key>en</key>
+                <value>Determines the payment date as an offset from the receipt date (in days).</value>
+              </toolTip>
+              <toolTip>
+                <key>fa</key>
+                <value>تاریخ پرداخت را به صورت جابه‌جایی از تاریخ دریافت (به روز) تعیین می‌کند.</value>
+              </toolTip>
+              <toolTip>
+                <key>it</key>
+                <value>Determina lo scostamento della data di pagamento in giorni relativi alla data di arrivo.</value>
+              </toolTip>
+              <toolTip>
+                <key>pl</key>
+                <value>Określa przesunięcie daty płatności w stosunku do dnia wpływu.</value>
+              </toolTip>
+              <toolTip>
+                <key>ru</key>
+                <value>Определяет дату платежа смещением в днях относительно даты поступления.</value>
+              </toolTip>
+              <toolTip>
+                <key>tr</key>
+                <value>Ödeme tarihini, mal teslim tarihinden itibaren gün cinsinden bir hesaplama olarak tanımlar.</value>
+              </toolTip>
+              <toolTip>
+                <key>vi</key>
+                <value>Xác định ngày thanh toán bằng cách dịch chuyển sang ngày tương ứng với ngày tiếp nhận.</value>
+              </toolTip>
+              <extendedTooltip>
+                <name>ShiftCreditExtendedTooltip</name>
+                <id>89</id>
+                <type>Label</type>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <extInfo xsi:type="form:LabelDecorationExtInfo">
+                  <horizontalAlign>Left</horizontalAlign>
+                </extInfo>
+              </extendedTooltip>
+              <contextMenu>
+                <name>ShiftCreditContextMenu</name>
+                <id>88</id>
+                <autoFill>true</autoFill>
+              </contextMenu>
+              <type>InputField</type>
+              <editMode>Enter</editMode>
+              <showInHeader>true</showInHeader>
+              <headerHorizontalAlign>Left</headerHorizontalAlign>
+              <showInFooter>true</showInFooter>
+              <extInfo xsi:type="form:InputFieldExtInfo">
+                <width>6</width>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <horizontalStretch>false</horizontalStretch>
+                <wrap>true</wrap>
+                <chooseType>true</chooseType>
+                <typeDomainEnabled>true</typeDomainEnabled>
+                <textEdit>true</textEdit>
+              </extInfo>
+            </items>
+            <items xsi:type="form:FormField">
+              <name>CreditReferenceOption</name>
+              <id>134</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>CreditReferenceOption</segments>
+              </dataPath>
+              <titleLocation>None</titleLocation>
+              <extendedTooltip>
+                <name>CreditReferenceOptionExtendedTooltip</name>
+                <id>136</id>
+                <type>Label</type>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <extInfo xsi:type="form:LabelDecorationExtInfo">
+                  <horizontalAlign>Left</horizontalAlign>
+                </extInfo>
+              </extendedTooltip>
+              <contextMenu>
+                <name>CreditReferenceOptionContextMenu</name>
+                <id>135</id>
+                <autoFill>true</autoFill>
+              </contextMenu>
+              <type>InputField</type>
+              <editMode>Enter</editMode>
+              <showInHeader>true</showInHeader>
+              <headerHorizontalAlign>Left</headerHorizontalAlign>
+              <showInFooter>true</showInFooter>
+              <extInfo xsi:type="form:InputFieldExtInfo">
+                <maxWidth>30</maxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <horizontalStretch>false</horizontalStretch>
+                <wrap>true</wrap>
+                <listChoiceMode>true</listChoiceMode>
+                <chooseType>true</chooseType>
+                <typeDomainEnabled>true</typeDomainEnabled>
+                <textEdit>true</textEdit>
+              </extInfo>
+            </items>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <title>
+              <key>en</key>
+              <value>Group shift credit</value>
+            </title>
+            <title>
+              <key>fa</key>
+              <value>گروه جابه‌جایی اعتبار</value>
+            </title>
+            <title>
+              <key>it</key>
+              <value>Gruppo spostamento credito</value>
+            </title>
+            <title>
+              <key>pl</key>
+              <value>Grupa przesunięcie kredyt</value>
+            </title>
+            <title>
+              <key>ru</key>
+              <value>Группа сдвиг кредит</value>
+            </title>
+            <title>
+              <key>tr</key>
+              <value>Grup kredi öteleme</value>
+            </title>
+            <title>
+              <key>vi</key>
+              <value>Nhóm dịch chuyển trả sau</value>
+            </title>
+            <extendedTooltip>
+              <name>GroupShiftCreditExtendedTooltip</name>
+              <id>133</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <type>UsualGroup</type>
+            <extInfo xsi:type="form:UsualGroupExtInfo">
+              <group>HorizontalIfPossible</group>
+              <representation>WeakSeparation</representation>
+              <showLeftMargin>true</showLeftMargin>
+              <united>true</united>
+              <throughAlign>Auto</throughAlign>
+              <currentRowUse>Auto</currentRowUse>
+            </extInfo>
+          </items>
+          <items xsi:type="form:FormGroup">
+            <name>InterestCreditGroup</name>
+            <id>137</id>
+            <items xsi:type="form:FormField">
+              <name>PercentageOfPaymentCredit</name>
+              <id>90</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>PercentageOfPaymentCredit</segments>
+              </dataPath>
+              <toolTip>
+                <key>en</key>
+                <value>Payment percentage of the purchase document total.</value>
+              </toolTip>
+              <toolTip>
+                <key>fa</key>
+                <value>درصد پرداخت از جمع کل سند خرید.</value>
+              </toolTip>
+              <toolTip>
+                <key>it</key>
+                <value>Percentuale di pagamento dell'importo totale del documento di acquisto.</value>
+              </toolTip>
+              <toolTip>
+                <key>pl</key>
+                <value>Procent płatności od całkowitej kwoty dokumentu zakupu.</value>
+              </toolTip>
+              <toolTip>
+                <key>ru</key>
+                <value>Процент платежа от общей суммы документа закупки.</value>
+              </toolTip>
+              <toolTip>
+                <key>tr</key>
+                <value>Satın alım belgesinin toplam tutarının ödeme yüzdesi.</value>
+              </toolTip>
+              <toolTip>
+                <key>vi</key>
+                <value>Phần trăm thanh toán trong tổng số tiền trên chứng từ mua hàng.</value>
+              </toolTip>
+              <handlers>
+                <event>OnChange</event>
+                <name>PercentageOfPaymentCreditOnChange</name>
+              </handlers>
+              <extendedTooltip>
+                <name>PercentageOfPaymentCreditExtendedTooltip</name>
+                <id>92</id>
+                <type>Label</type>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <extInfo xsi:type="form:LabelDecorationExtInfo">
+                  <horizontalAlign>Left</horizontalAlign>
+                </extInfo>
+              </extendedTooltip>
+              <contextMenu>
+                <name>PercentageOfPaymentCreditContextMenu</name>
+                <id>91</id>
+                <autoFill>true</autoFill>
+              </contextMenu>
+              <type>InputField</type>
+              <editMode>Enter</editMode>
+              <showInHeader>true</showInHeader>
+              <headerHorizontalAlign>Left</headerHorizontalAlign>
+              <showInFooter>true</showInFooter>
+              <extInfo xsi:type="form:InputFieldExtInfo">
+                <width>5</width>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <wrap>true</wrap>
+                <choiceButton>false</choiceButton>
+                <chooseType>true</chooseType>
+                <typeDomainEnabled>true</typeDomainEnabled>
+                <textEdit>true</textEdit>
+                <maxValue xsi:type="core:NumberValue">
+                  <value>100</value>
+                </maxValue>
+              </extInfo>
+            </items>
+            <items xsi:type="form:FormField">
+              <name>ThePercentageOfTheDepositForTheContainerLoan</name>
+              <id>93</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>ThePercentageOfTheDepositForTheContainerLoan</segments>
+              </dataPath>
+              <toolTip>
+                <key>en</key>
+                <value>Percentage of the reusable packaging deposit of the total deposit value under the purchase document.</value>
+              </toolTip>
+              <toolTip>
+                <key>fa</key>
+                <value>درصد ودیعه بسته‌بندی قابل استفاده مجدد از کل ارزش ودیعه بر اساس سند خرید.</value>
+              </toolTip>
+              <toolTip>
+                <key>it</key>
+                <value>Percentuale di cauzione per l'imballaggio riutilizzabile dell'importo totale di cauzione in base al documento di acquisto.</value>
+              </toolTip>
+              <toolTip>
+                <key>pl</key>
+                <value>Procent zabezpieczenia dla tary wielokrotnego użytku od całkowitej kwoty kaucji wg. dokumentu zakupu.</value>
+              </toolTip>
+              <toolTip>
+                <key>ru</key>
+                <value>Процент залога за многооборотную тару от общей суммы залога по документу закупки.</value>
+              </toolTip>
+              <toolTip>
+                <key>tr</key>
+                <value>Yeniden kullanılabilir ambalajlar için depozitonun, satın alma belgesi depozitosunun toplam tutarına oranı.</value>
+              </toolTip>
+              <toolTip>
+                <key>vi</key>
+                <value>Tỷ lệ phần trăm ký cược bao bì luân chuyển trong tổng số tiền ký cược theo chứng từ mua hàng.</value>
+              </toolTip>
+              <handlers>
+                <event>OnChange</event>
+                <name>ThePercentageOfTheDepositForTheContainerLoanOnChange</name>
+              </handlers>
+              <extendedTooltip>
+                <name>ThePercentageOfTheDepositForTheContainerLoanExtendedTooltip</name>
+                <id>95</id>
+                <type>Label</type>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <extInfo xsi:type="form:LabelDecorationExtInfo">
+                  <horizontalAlign>Left</horizontalAlign>
+                </extInfo>
+              </extendedTooltip>
+              <contextMenu>
+                <name>ThePercentageOfTheDepositForTheContainerLoanContextMenu</name>
+                <id>94</id>
+                <autoFill>true</autoFill>
+              </contextMenu>
+              <type>InputField</type>
+              <editMode>Enter</editMode>
+              <showInHeader>true</showInHeader>
+              <headerHorizontalAlign>Left</headerHorizontalAlign>
+              <showInFooter>true</showInFooter>
+              <extInfo xsi:type="form:InputFieldExtInfo">
+                <width>5</width>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <wrap>true</wrap>
+                <choiceButton>false</choiceButton>
+                <chooseType>true</chooseType>
+                <typeDomainEnabled>true</typeDomainEnabled>
+                <textEdit>true</textEdit>
+                <maxValue xsi:type="core:NumberValue">
+                  <value>100</value>
+                </maxValue>
+              </extInfo>
+            </items>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <title>
+              <key>en</key>
+              <value>Group percent credit</value>
+            </title>
+            <title>
+              <key>fa</key>
+              <value>گروه درصد اعتبار</value>
+            </title>
+            <title>
+              <key>it</key>
+              <value>Gruppo percentuale credito</value>
+            </title>
+            <title>
+              <key>pl</key>
+              <value>Grupa procent kredyt</value>
+            </title>
+            <title>
+              <key>ru</key>
+              <value>Группа процент кредит</value>
+            </title>
+            <title>
+              <key>tr</key>
+              <value>Grup yüzde kredi</value>
+            </title>
+            <title>
+              <key>vi</key>
+              <value>Nhóm phần trăm trả sau</value>
+            </title>
+            <extendedTooltip>
+              <name>InterestCreditGroupExtendedTooltip</name>
+              <id>138</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <type>UsualGroup</type>
+            <extInfo xsi:type="form:UsualGroupExtInfo">
+              <group>HorizontalIfPossible</group>
+              <representation>WeakSeparation</representation>
+              <showLeftMargin>true</showLeftMargin>
+              <united>true</united>
+              <throughAlign>Auto</throughAlign>
+              <currentRowUse>Auto</currentRowUse>
+            </extInfo>
+          </items>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <title>
+            <key>en</key>
+            <value>Credit (after shipment)</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>اعتبار (پس از ارسال)</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Accreditamento (dopo la spedizione)</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Ma (po wysyłce)</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Кредит (после отгрузки)</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Kredili (sevkiyat sonrası)</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Trả sau (sau khi giao hàng)</value>
+          </title>
+          <titleFont xsi:type="core:FontRef">
+            <font>System.DefaultGUIFont</font>
+            <bold>true</bold>
+            <italic>false</italic>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+          </titleFont>
+          <extendedTooltip>
+            <name>CreditGroupExtendedTooltip</name>
+            <id>83</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <type>UsualGroup</type>
+          <extInfo xsi:type="form:UsualGroupExtInfo">
+            <group>Vertical</group>
+            <representation>NormalSeparation</representation>
+            <showLeftMargin>true</showLeftMargin>
+            <united>true</united>
+            <throughAlign>Auto</throughAlign>
+            <currentRowUse>Auto</currentRowUse>
+          </extInfo>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>Prepayment credit</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>اعتبار پیش‌پرداخت</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>L'anticipo del credito</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Przedpłata kredyt</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Предоплата кредит</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Ön ödeme kredisi</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Vay trả trước</value>
+        </title>
+        <extendedTooltip>
+          <name>PrepaymentCreditGroupExtendedTooltip</name>
+          <id>67</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>UsualGroup</type>
+        <extInfo xsi:type="form:UsualGroupExtInfo">
+          <showLeftMargin>true</showLeftMargin>
+          <united>true</united>
+          <throughAlign>Auto</throughAlign>
+          <currentRowUse>Auto</currentRowUse>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormGroup">
+        <name>GroupDeferredAccountingModeSimplified</name>
+        <id>96</id>
+        <items xsi:type="form:FormField">
+          <name>AccountingForDeferralByCalendarDays</name>
+          <id>98</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>DeferredPaymentMode</segments>
+          </dataPath>
+          <titleLocation>None</titleLocation>
+          <toolTip>
+            <key>en</key>
+            <value>Mode that allows for deferrals in the payment schedule.</value>
+          </toolTip>
+          <toolTip>
+            <key>fa</key>
+            <value>حالتی که امکان تعویق در برنامه پرداخت را فراهم می‌کند.</value>
+          </toolTip>
+          <toolTip>
+            <key>it</key>
+            <value>Contabilità di posticipazione nel grafico di pagamenti.</value>
+          </toolTip>
+          <toolTip>
+            <key>pl</key>
+            <value>Tryb ewidencji odroczenia w harmonogramie płatności.</value>
+          </toolTip>
+          <toolTip>
+            <key>ru</key>
+            <value>Режим учета отсрочки в графике оплат.</value>
+          </toolTip>
+          <toolTip>
+            <key>tr</key>
+            <value>Ödeme planında erteleme muhasebesi modu.</value>
+          </toolTip>
+          <toolTip>
+            <key>vi</key>
+            <value>Chế độ ghi nhận hoãn lại trong lịch biểu thanh toán.</value>
+          </toolTip>
+          <handlers>
+            <event>OnChange</event>
+            <name>DeferredPaymentModeOnChange</name>
+          </handlers>
+          <extendedTooltip>
+            <name>AccountingForDeferralByCalendarDaysExtendedTooltip</name>
+            <id>100</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>AccountingForDeferralByCalendarDaysContextMenu</name>
+            <id>99</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>RadioButtonField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:RadioButtonsFieldExtInfo">
+            <choiceList>
+              <presentation>
+                <key>en</key>
+                <value>calendar days</value>
+              </presentation>
+              <presentation>
+                <key>fa</key>
+                <value>روزهای تقویمی</value>
+              </presentation>
+              <presentation>
+                <key>it</key>
+                <value>giorni di calendario</value>
+              </presentation>
+              <presentation>
+                <key>pl</key>
+                <value>dni kalendarzowych</value>
+              </presentation>
+              <presentation>
+                <key>ru</key>
+                <value>календарным дням</value>
+              </presentation>
+              <presentation>
+                <key>tr</key>
+                <value>takvim günleri</value>
+              </presentation>
+              <presentation>
+                <key>vi</key>
+                <value>ngày theo lịch</value>
+              </presentation>
+              <value xsi:type="core:NumberValue">
+                <value>0</value>
+              </value>
+            </choiceList>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>AccountingForDeferralOnTheProductionCalendar</name>
+          <id>101</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>DeferredPaymentMode</segments>
+          </dataPath>
+          <titleLocation>None</titleLocation>
+          <toolTip>
+            <key>en</key>
+            <value>Mode that allows for deferrals in the payment schedule.</value>
+          </toolTip>
+          <toolTip>
+            <key>fa</key>
+            <value>حالتی که امکان تعویق در برنامه پرداخت را فراهم می‌کند.</value>
+          </toolTip>
+          <toolTip>
+            <key>it</key>
+            <value>Contabilità di posticipazione nel grafico di pagamenti.</value>
+          </toolTip>
+          <toolTip>
+            <key>pl</key>
+            <value>Tryb ewidencji odroczenia w harmonogramie płatności.</value>
+          </toolTip>
+          <toolTip>
+            <key>ru</key>
+            <value>Режим учета отсрочки в графике оплат.</value>
+          </toolTip>
+          <toolTip>
+            <key>tr</key>
+            <value>Ödeme planında erteleme muhasebesi modu.</value>
+          </toolTip>
+          <toolTip>
+            <key>vi</key>
+            <value>Chế độ ghi nhận hoãn lại trong lịch biểu thanh toán.</value>
+          </toolTip>
+          <handlers>
+            <event>OnChange</event>
+            <name>DeferredPaymentModeOnChange</name>
+          </handlers>
+          <extendedTooltip>
+            <name>AccountingForDeferralOnTheProductionCalendarExtendedTooltip</name>
+            <id>103</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>AccountingForDeferralOnTheProductionCalendarContextMenu</name>
+            <id>102</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>RadioButtonField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:RadioButtonsFieldExtInfo">
+            <choiceList>
+              <presentation>
+                <key>en</key>
+                <value>workdays of the business calendar</value>
+              </presentation>
+              <presentation>
+                <key>fa</key>
+                <value>روزهای کاری تقویم کاری</value>
+              </presentation>
+              <presentation>
+                <key>it</key>
+                <value>giorni lavorativi del calendario di produzione</value>
+              </presentation>
+              <presentation>
+                <key>pl</key>
+                <value>dni roboczych  zgodnie z kalendarzem czasu pracy</value>
+              </presentation>
+              <presentation>
+                <key>ru</key>
+                <value>рабочим дням производственного календаря</value>
+              </presentation>
+              <presentation>
+                <key>tr</key>
+                <value>üretim takvimindeki çalışma günleri</value>
+              </presentation>
+              <presentation>
+                <key>vi</key>
+                <value>ngày làm việc theo lịch sản xuất</value>
+              </presentation>
+              <value xsi:type="core:NumberValue">
+                <value>1</value>
+              </value>
+            </choiceList>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormGroup">
+          <name>CalendarGroup</name>
+          <id>104</id>
+          <items xsi:type="form:Decoration">
+            <name>IndentCalendar</name>
+            <id>106</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <extendedTooltip>
+              <name>IndentCalendarExtendedTooltip</name>
+              <id>108</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>IndentCalendarContextMenu</name>
+              <id>107</id>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </items>
+          <items xsi:type="form:FormField">
+            <name>CalendarSimplified</name>
+            <id>109</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>Object.Calendar</segments>
+            </dataPath>
+            <titleLocation>None</titleLocation>
+            <toolTip>
+              <key>en</key>
+              <value>Business calendar using which workdays are calculated.</value>
+            </toolTip>
+            <toolTip>
+              <key>fa</key>
+              <value>تقویم کاری که روزهای کاری بر اساس آن محاسبه می‌شوند.</value>
+            </toolTip>
+            <toolTip>
+              <key>it</key>
+              <value>Calendario di produzione in base al quale sono calcolati i giorni lavorativi.</value>
+            </toolTip>
+            <toolTip>
+              <key>pl</key>
+              <value>Kalendarz produkcji, wg którego są naliczane dni robocze.</value>
+            </toolTip>
+            <toolTip>
+              <key>ru</key>
+              <value>Производственный календарь, по которому считаются рабочие дни.</value>
+            </toolTip>
+            <toolTip>
+              <key>tr</key>
+              <value>Çalışma günlerinin sayıldığı üretim takvimi.</value>
+            </toolTip>
+            <toolTip>
+              <key>vi</key>
+              <value>Lịch sản xuất, theo đó có tính ngày làm việc.</value>
+            </toolTip>
+            <extendedTooltip>
+              <name>CalendarSimplifiedExtendedTooltip</name>
+              <id>111</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>CalendarSimplifiedContextMenu</name>
+              <id>110</id>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>InputField</type>
+            <editMode>Enter</editMode>
+            <showInHeader>true</showInHeader>
+            <headerHorizontalAlign>Left</headerHorizontalAlign>
+            <showInFooter>true</showInFooter>
+            <extInfo xsi:type="form:InputFieldExtInfo">
+              <width>38</width>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <horizontalStretch>false</horizontalStretch>
+              <wrap>true</wrap>
+              <chooseType>true</chooseType>
+              <typeDomainEnabled>true</typeDomainEnabled>
+              <textEdit>true</textEdit>
+            </extInfo>
+          </items>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <title>
+            <key>en</key>
+            <value>Calendar</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>تقویم</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Calendario</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Kalendarz</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Календарь</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Takvim</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Lịch</value>
+          </title>
+          <extendedTooltip>
+            <name>CalendarGroupExtendedTooltip</name>
+            <id>105</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <type>UsualGroup</type>
+          <extInfo xsi:type="form:UsualGroupExtInfo">
+            <showLeftMargin>true</showLeftMargin>
+            <united>true</united>
+            <throughAlign>Auto</throughAlign>
+            <currentRowUse>Auto</currentRowUse>
+          </extInfo>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>Calculate delay by:</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>محاسبه تأخیر بر اساس:</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Contabilità di posticipazione in base a:</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Ewidencja odroczenia wg:</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Учет отсрочки по:</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Erteleme muhasebesi:</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Ghi nhận hoãn lại đến:</value>
+        </title>
+        <toolTip>
+          <key>en</key>
+          <value>Deferred payment mode group</value>
+        </toolTip>
+        <toolTip>
+          <key>fa</key>
+          <value>گروه حالت پرداخت معوق</value>
+        </toolTip>
+        <toolTip>
+          <key>it</key>
+          <value>Gruppo del regime della contabilità di posticipazione</value>
+        </toolTip>
+        <toolTip>
+          <key>pl</key>
+          <value>Grupa tryb ewidencji odroczenia</value>
+        </toolTip>
+        <toolTip>
+          <key>ru</key>
+          <value>Группа режим учета отсрочки</value>
+        </toolTip>
+        <toolTip>
+          <key>tr</key>
+          <value>Grup erteleme muhasebesi modu</value>
+        </toolTip>
+        <toolTip>
+          <key>vi</key>
+          <value>Nhóm chế độ ghi nhận hoãn lại</value>
+        </toolTip>
+        <extendedTooltip>
+          <name>GroupDeferredAccountingModeSimplifiedExtendedTooltip</name>
+          <id>97</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>UsualGroup</type>
+        <extInfo xsi:type="form:UsualGroupExtInfo">
+          <group>Vertical</group>
+          <showLeftMargin>true</showLeftMargin>
+          <united>true</united>
+          <showTitle>true</showTitle>
+          <throughAlign>Auto</throughAlign>
+          <currentRowUse>Auto</currentRowUse>
+        </extInfo>
+      </items>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>en</key>
+        <value>Simplified scheme</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>طرح ساده‌شده</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Schema semplificato</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Uproszczony schemat</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Упрощенная схема</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Basitleştirilmiş şema</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Sơ đồ giản lược</value>
+      </title>
+      <extendedTooltip>
+        <name>PageSimplifiedSchemeExtendedTooltip</name>
+        <id>65</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <type>Page</type>
+      <extInfo xsi:type="form:PageGroupExtInfo">
+        <group>Vertical</group>
+        <showTitle>true</showTitle>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormGroup">
+      <name>AdvancedSetupPage</name>
+      <id>112</id>
+      <items xsi:type="form:Table">
+        <name>PaymentScheduleSteps</name>
+        <id>6</id>
+        <title>
+          <key>en</key>
+          <value>Payment milestones</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>مراحل پرداخت</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Fasi del grafico di pagamento</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Etapy harmonogramu płatności</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Этапы графика оплаты</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Ödeme planı aşamaları</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Giai đoạn lịch biểu thanh toán</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>Object.PaymentScheduleSteps</segments>
+        </dataPath>
+        <titleLocation>None</titleLocation>
+        <excludedCommands>CancelSearch</excludedCommands>
+        <excludedCommands>EndEdit</excludedCommands>
+        <excludedCommands>Find</excludedCommands>
+        <excludedCommands>MoveDown</excludedCommands>
+        <excludedCommands>MoveUp</excludedCommands>
+        <excludedCommands>OutputList</excludedCommands>
+        <excludedCommands>SortListAsc</excludedCommands>
+        <excludedCommands>SortListDesc</excludedCommands>
+        <items xsi:type="form:FormField">
+          <name>PaymentScheduleStepsLineNumber</name>
+          <id>18</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Object.PaymentScheduleSteps.LineNumber</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>PaymentScheduleStepsLineNumberExtendedTooltip</name>
+            <id>44</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>PaymentScheduleStepsLineNumberContextMenu</name>
+            <id>19</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>LabelField</type>
+          <editMode>EnterOnInput</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:LabelFieldExtInfo">
+            <width>2</width>
+            <autoMaxHeight>true</autoMaxHeight>
+            <horizontalStretch>false</horizontalStretch>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>PaymentScheduleStepsMove</name>
+          <id>22</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Object.PaymentScheduleSteps.Move</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>PaymentScheduleStepsMoveExtendedTooltip</name>
+            <id>46</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>PaymentScheduleStepsMoveContextMenu</name>
+            <id>23</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>EnterOnInput</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <width>7</width>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <horizontalStretch>false</horizontalStretch>
+            <wrap>true</wrap>
+            <format>
+              <key>en</key>
+              <value>NZ=0</value>
+            </format>
+            <format>
+              <key>fa</key>
+              <value>NZ=0</value>
+            </format>
+            <format>
+              <key>it</key>
+              <value>NZ=0</value>
+            </format>
+            <format>
+              <key>pl</key>
+              <value>NZ=0</value>
+            </format>
+            <format>
+              <key>ru</key>
+              <value>NZ=0</value>
+            </format>
+            <format>
+              <key>tr</key>
+              <value>NZ=0</value>
+            </format>
+            <format>
+              <key>vi</key>
+              <value>NZ=0</value>
+            </format>
+            <editFormat>
+              <key>en</key>
+              <value>NZ=0</value>
+            </editFormat>
+            <editFormat>
+              <key>fa</key>
+              <value>NZ=0</value>
+            </editFormat>
+            <editFormat>
+              <key>it</key>
+              <value>NZ=0</value>
+            </editFormat>
+            <editFormat>
+              <key>pl</key>
+              <value>NZ=0</value>
+            </editFormat>
+            <editFormat>
+              <key>ru</key>
+              <value>NZ=0</value>
+            </editFormat>
+            <editFormat>
+              <key>tr</key>
+              <value>NZ=0</value>
+            </editFormat>
+            <editFormat>
+              <key>vi</key>
+              <value>NZ=0</value>
+            </editFormat>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormGroup">
+          <name>PaymentScheduleStepsGroup</name>
+          <id>142</id>
+          <items xsi:type="form:FormField">
+            <name>PaymentScheduleStepsCalculateFrom</name>
+            <id>122</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>Object.PaymentScheduleSteps.CalculateFrom</segments>
+            </dataPath>
+            <handlers>
+              <event>OnChange</event>
+              <name>PaymentScheduleStepsCalculateFromOnChange</name>
+            </handlers>
+            <extendedTooltip>
+              <name>PaymentScheduleStepsCalculateFromExtendedTooltip</name>
+              <id>124</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>PaymentScheduleStepsCalculateFromContextMenu</name>
+              <id>123</id>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>InputField</type>
+            <editMode>Enter</editMode>
+            <showInHeader>true</showInHeader>
+            <headerHorizontalAlign>Left</headerHorizontalAlign>
+            <showInFooter>true</showInFooter>
+            <extInfo xsi:type="form:InputFieldExtInfo">
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <wrap>true</wrap>
+              <chooseType>true</chooseType>
+              <typeDomainEnabled>true</typeDomainEnabled>
+              <textEdit>true</textEdit>
+            </extInfo>
+          </items>
+          <items xsi:type="form:FormField">
+            <name>PaymentScheduleStepsFormula</name>
+            <id>139</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>Object.PaymentScheduleSteps.Formula</segments>
+            </dataPath>
+            <titleLocation>None</titleLocation>
+            <extendedTooltip>
+              <name>PaymentScheduleStepsFormulaExtendedTooltip</name>
+              <id>141</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>PaymentScheduleStepsFormulaContextMenu</name>
+              <id>140</id>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>InputField</type>
+            <editMode>EnterOnInput</editMode>
+            <showInHeader>true</showInHeader>
+            <headerHorizontalAlign>Left</headerHorizontalAlign>
+            <showInFooter>true</showInFooter>
+            <extInfo xsi:type="form:InputFieldExtInfo">
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <wrap>true</wrap>
+              <extendedEditMultipleValues>true</extendedEditMultipleValues>
+              <chooseType>true</chooseType>
+              <typeDomainEnabled>true</typeDomainEnabled>
+              <textEdit>true</textEdit>
+            </extInfo>
+          </items>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <title>
+            <key>en</key>
+            <value>Payment milestones group</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>گروه نقاط عطف پرداخت</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Этапы графика оплаты группа</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Aşamalar ödeme planı grup</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Giai đoạn trong lịch thanh toán nhóm</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Payment milestones group</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Payment milestones group</value>
+          </title>
+          <toolTip>
+            <key>en</key>
+            <value>Payment milestones group</value>
+          </toolTip>
+          <toolTip>
+            <key>fa</key>
+            <value>گروه نقاط عطف پرداخت</value>
+          </toolTip>
+          <toolTip>
+            <key>ru</key>
+            <value>Этапы графика оплаты группа</value>
+          </toolTip>
+          <toolTip>
+            <key>tr</key>
+            <value>Aşamalar ödeme planı grup</value>
+          </toolTip>
+          <toolTip>
+            <key>vi</key>
+            <value>Giai đoạn trong lịch thanh toán nhóm</value>
+          </toolTip>
+          <toolTip>
+            <key>it</key>
+            <value>Payment milestones group</value>
+          </toolTip>
+          <toolTip>
+            <key>pl</key>
+            <value>Payment milestones group</value>
+          </toolTip>
+          <extendedTooltip>
+            <name>PaymentScheduleStepsGroupExtendedTooltip</name>
+            <id>143</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <type>ColumnGroup</type>
+          <extInfo xsi:type="form:ColumnGroupExtInfo">
+            <group>InCell</group>
+            <showTitle>true</showTitle>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>PaymentScheduleStepsPaymentOption</name>
+          <id>20</id>
+          <title>
+            <key>en</key>
+            <value>Control</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>کنترل</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Controllo</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Kontrola</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Контроль</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Kontrol</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Kiểm soát</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Object.PaymentScheduleSteps.PaymentOption</segments>
+          </dataPath>
+          <handlers>
+            <event>OnChange</event>
+            <name>PaymentScheduleStepsPaymentOptionOnChange</name>
+          </handlers>
+          <extendedTooltip>
+            <name>PaymentScheduleStepsPaymentOptionExtendedTooltip</name>
+            <id>45</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>PaymentScheduleStepsPaymentOptionContextMenu</name>
+            <id>21</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>EnterOnInput</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <width>15</width>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <listChoiceMode>true</listChoiceMode>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>PaymentScheduleStepsPaymentPercentage</name>
+          <id>24</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Object.PaymentScheduleSteps.PaymentPercentage</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>PaymentScheduleStepsPaymentPercentageExtendedTooltip</name>
+            <id>47</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>PaymentScheduleStepsPaymentPercentageContextMenu</name>
+            <id>25</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>EnterOnInput</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <width>6</width>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>PaymentScheduleStepsPackageDepositPercentage</name>
+          <id>36</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Object.PaymentScheduleSteps.PackageDepositPercentage</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>PaymentScheduleStepsPackageDepositPercentageExtendedTooltip</name>
+            <id>48</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>PaymentScheduleStepsPackageDepositPercentageContextMenu</name>
+            <id>37</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>EnterOnInput</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <width>6</width>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <autoCommandBar>
+          <name>PaymentScheduleStepsCommandBar</name>
+          <id>8</id>
+          <items xsi:type="form:Button">
+            <name>PaymentScheduleStepsAdd</name>
+            <id>114</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <extendedTooltip>
+              <name>PaymentScheduleStepsAddExtendedTooltip</name>
+              <id>115</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <commandName>Form.Item.PaymentScheduleSteps.StandardCommand.Add</commandName>
+            <representation>Auto</representation>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <placementArea>UserCmds</placementArea>
+            <representationInContextMenu>Auto</representationInContextMenu>
+            <locationInCommandBar>InCommandBarAndInAdditionalSubmenu</locationInCommandBar>
+          </items>
+          <items xsi:type="form:Button">
+            <name>PaymentScheduleStepsCopy</name>
+            <id>116</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <extendedTooltip>
+              <name>PaymentScheduleStepsCopyExtendedTooltip</name>
+              <id>117</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <commandName>Form.Item.PaymentScheduleSteps.StandardCommand.Copy</commandName>
+            <representation>Auto</representation>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <placementArea>UserCmds</placementArea>
+            <representationInContextMenu>Auto</representationInContextMenu>
+            <locationInCommandBar>InCommandBarAndInAdditionalSubmenu</locationInCommandBar>
+          </items>
+          <items xsi:type="form:Button">
+            <name>PaymentScheduleStepsChange</name>
+            <id>118</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <extendedTooltip>
+              <name>PaymentScheduleStepsChangeExtendedTooltip</name>
+              <id>119</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <commandName>Form.Item.PaymentScheduleSteps.StandardCommand.Change</commandName>
+            <representation>Auto</representation>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <placementArea>UserCmds</placementArea>
+            <representationInContextMenu>Auto</representationInContextMenu>
+            <locationInCommandBar>InCommandBarAndInAdditionalSubmenu</locationInCommandBar>
+          </items>
+          <items xsi:type="form:Button">
+            <name>PaymentScheduleStepsDelete</name>
+            <id>120</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <extendedTooltip>
+              <name>PaymentScheduleStepsDeleteExtendedTooltip</name>
+              <id>121</id>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <commandName>Form.Item.PaymentScheduleSteps.StandardCommand.Delete</commandName>
+            <representation>Auto</representation>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <placementArea>UserCmds</placementArea>
+            <representationInContextMenu>Auto</representationInContextMenu>
+            <locationInCommandBar>InCommandBarAndInAdditionalSubmenu</locationInCommandBar>
+          </items>
+          <horizontalAlign>Left</horizontalAlign>
+        </autoCommandBar>
+        <handlers>
+          <event>OnEditEnd</event>
+          <name>PaymentScheduleStepsOnEditEnd</name>
+        </handlers>
+        <handlers>
+          <event>AfterDeleteRow</event>
+          <name>PaymentScheduleStepsAfterDeleteRow</name>
+        </handlers>
+        <searchStringAddition>
+          <name>PaymentScheduleStepsSearchString</name>
+          <id>53</id>
+          <extendedTooltip>
+            <name>PaymentScheduleStepsSearchStringExtendedTooltip</name>
+            <id>55</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>PaymentScheduleStepsSearchStringContextMenu</name>
+            <id>54</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <source>PaymentScheduleSteps</source>
+          <extInfo xsi:type="form:SearchStringAdditionExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+          </extInfo>
+        </searchStringAddition>
+        <viewStatusAddition>
+          <name>PaymentScheduleStepsViewStatus</name>
+          <id>56</id>
+          <extendedTooltip>
+            <name>PaymentScheduleStepsViewStatusExtendedTooltip</name>
+            <id>58</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>PaymentScheduleStepsViewStatusContextMenu</name>
+            <id>57</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>ViewStatusAddition</type>
+          <source>PaymentScheduleSteps</source>
+          <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <horizontalLocation>Left</horizontalLocation>
+          </extInfo>
+        </viewStatusAddition>
+        <searchControlAddition>
+          <name>PaymentScheduleStepsSearchControl</name>
+          <id>59</id>
+          <extendedTooltip>
+            <name>PaymentScheduleStepsSearchControlExtendedTooltip</name>
+            <id>61</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>PaymentScheduleStepsSearchControlContextMenu</name>
+            <id>60</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>SearchControlAddition</type>
+          <source>PaymentScheduleSteps</source>
+          <extInfo xsi:type="form:SearchControlAdditionExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+          </extInfo>
+        </searchControlAddition>
+        <extendedTooltip>
+          <name>PaymentScheduleStepsExtendedTooltip</name>
+          <id>43</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>PaymentScheduleStepsContextMenu</name>
+          <id>7</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <representation>HierarchicalList</representation>
+        <changeRowSet>true</changeRowSet>
+        <changeRowOrder>true</changeRowOrder>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <autoMaxRowsCount>true</autoMaxRowsCount>
+        <selectionMode>MultiRow</selectionMode>
+        <header>true</header>
+        <headerHeight>1</headerHeight>
+        <footerHeight>1</footerHeight>
+        <horizontalScrollBar>AutoUse</horizontalScrollBar>
+        <verticalScrollBar>AutoUse</verticalScrollBar>
+        <horizontalLines>true</horizontalLines>
+        <verticalLines>true</verticalLines>
+        <autoInsertNewRow>true</autoInsertNewRow>
+        <searchOnInput>Auto</searchOnInput>
+        <initialListView>Auto</initialListView>
+        <horizontalStretch>true</horizontalStretch>
+        <verticalStretch>true</verticalStretch>
+        <enableStartDrag>true</enableStartDrag>
+        <enableDrag>true</enableDrag>
+        <rowFilter xsi:type="core:UndefinedValue"/>
+      </items>
+      <items xsi:type="form:FormGroup">
+        <name>GroupDeferredAccountingModeExtended</name>
+        <id>29</id>
+        <items xsi:type="form:FormField">
+          <name>DeferredPaymentMode</name>
+          <id>32</id>
+          <title>
+            <key>en</key>
+            <value>Calculate delay by</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>محاسبه تأخیر بر اساس</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Contabilità di posticipazione in base a</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Ewidencja odroczenia wg</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Учет отсрочки по</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Erteleme muhasebesi:</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Ghi nhận hoãn lại đến</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>DeferredPaymentMode</segments>
+          </dataPath>
+          <toolTip>
+            <key>en</key>
+            <value>Mode that allows for deferrals in the payment schedule.</value>
+          </toolTip>
+          <toolTip>
+            <key>fa</key>
+            <value>حالتی که امکان تعویق در برنامه پرداخت را فراهم می‌کند.</value>
+          </toolTip>
+          <toolTip>
+            <key>it</key>
+            <value>Contabilità di posticipazione nel grafico di pagamenti.</value>
+          </toolTip>
+          <toolTip>
+            <key>pl</key>
+            <value>Tryb ewidencji odroczenia w harmonogramie płatności.</value>
+          </toolTip>
+          <toolTip>
+            <key>ru</key>
+            <value>Режим учета отсрочки в графике оплат.</value>
+          </toolTip>
+          <toolTip>
+            <key>tr</key>
+            <value>Ödeme planında erteleme muhasebesi modu.</value>
+          </toolTip>
+          <toolTip>
+            <key>vi</key>
+            <value>Chế độ ghi nhận hoãn lại trong lịch biểu thanh toán.</value>
+          </toolTip>
+          <handlers>
+            <event>OnChange</event>
+            <name>DeferredPaymentModeOnChange</name>
+          </handlers>
+          <extendedTooltip>
+            <name>DeferredPaymentModeExtendedTooltip</name>
+            <id>51</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>DeferredPaymentModeContextMenu</name>
+            <id>33</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>RadioButtonField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:RadioButtonsFieldExtInfo">
+            <choiceList>
+              <presentation>
+                <key>en</key>
+                <value>calendar days</value>
+              </presentation>
+              <presentation>
+                <key>fa</key>
+                <value>روزهای تقویمی</value>
+              </presentation>
+              <presentation>
+                <key>it</key>
+                <value>giorni di calendario</value>
+              </presentation>
+              <presentation>
+                <key>pl</key>
+                <value>dni kalendarzowych</value>
+              </presentation>
+              <presentation>
+                <key>ru</key>
+                <value>календарным дням</value>
+              </presentation>
+              <presentation>
+                <key>tr</key>
+                <value>takvim günleri</value>
+              </presentation>
+              <presentation>
+                <key>vi</key>
+                <value>ngày theo lịch</value>
+              </presentation>
+              <value xsi:type="core:NumberValue">
+                <value>0</value>
+              </value>
+            </choiceList>
+            <choiceList>
+              <presentation>
+                <key>en</key>
+                <value>workdays of the business calendar</value>
+              </presentation>
+              <presentation>
+                <key>fa</key>
+                <value>روزهای کاری تقویم کاری</value>
+              </presentation>
+              <presentation>
+                <key>it</key>
+                <value>giorni lavorativi del calendario di produzione</value>
+              </presentation>
+              <presentation>
+                <key>pl</key>
+                <value>dni roboczych  zgodnie z kalendarzem czasu pracy</value>
+              </presentation>
+              <presentation>
+                <key>ru</key>
+                <value>рабочим дням производственного календаря</value>
+              </presentation>
+              <presentation>
+                <key>tr</key>
+                <value>üretim takvimindeki çalışma günleri</value>
+              </presentation>
+              <presentation>
+                <key>vi</key>
+                <value>ngày làm việc theo lịch sản xuất</value>
+              </presentation>
+              <value xsi:type="core:NumberValue">
+                <value>1</value>
+              </value>
+            </choiceList>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>CalendarExtended</name>
+          <id>34</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Object.Calendar</segments>
+          </dataPath>
+          <titleLocation>None</titleLocation>
+          <toolTip>
+            <key>en</key>
+            <value>Business calendar using which workdays are calculated.</value>
+          </toolTip>
+          <toolTip>
+            <key>fa</key>
+            <value>تقویم کاری که روزهای کاری بر اساس آن محاسبه می‌شوند.</value>
+          </toolTip>
+          <toolTip>
+            <key>it</key>
+            <value>Calendario di produzione in base al quale sono calcolati i giorni lavorativi.</value>
+          </toolTip>
+          <toolTip>
+            <key>pl</key>
+            <value>Kalendarz produkcji, wg którego są naliczane dni robocze.</value>
+          </toolTip>
+          <toolTip>
+            <key>ru</key>
+            <value>Производственный календарь, по которому считаются рабочие дни.</value>
+          </toolTip>
+          <toolTip>
+            <key>tr</key>
+            <value>Çalışma günlerinin sayıldığı üretim takvimi.</value>
+          </toolTip>
+          <toolTip>
+            <key>vi</key>
+            <value>Lịch sản xuất, theo đó có tính ngày làm việc.</value>
+          </toolTip>
+          <extendedTooltip>
+            <name>CalendarExtendedExtendedTooltip</name>
+            <id>52</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>CalendarExtendedContextMenu</name>
+            <id>35</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>Deferred payment mode advanced</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>حالت پرداخت معوق پیشرفته</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Regime di contabilità di posticipazione avanzata</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Tryb ewidencji odroczenia rozszerzonego</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Режим учета отсрочки расширенная</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Erteleme muhasebesi modu gelişmiş</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Chế độ kế toán trì hoãn mở rộng</value>
+        </title>
+        <extendedTooltip>
+          <name>GroupDeferredAccountingModeExtendedExtendedTooltip</name>
+          <id>49</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>UsualGroup</type>
+        <extInfo xsi:type="form:UsualGroupExtInfo">
+          <showLeftMargin>true</showLeftMargin>
+          <united>true</united>
+          <throughAlign>Auto</throughAlign>
+          <currentRowUse>Auto</currentRowUse>
+        </extInfo>
+      </items>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>en</key>
+        <value>Advanced setting</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>تنظیم پیشرفته</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Impostazione avanzata</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Ustawienia rozszerzone</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Расширенная настройка</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Gelişmiş ayar</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Thiết lập nâng cao</value>
+      </title>
+      <extendedTooltip>
+        <name>AdvancedSetupPageExtendedTooltip</name>
+        <id>113</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <type>Page</type>
+      <extInfo xsi:type="form:PageGroupExtInfo">
+        <group>Vertical</group>
+        <showTitle>true</showTitle>
+      </extInfo>
+    </items>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>en</key>
+      <value>Pages</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>صفحات</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Pagine</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Strony</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Страницы</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Sayfalar</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Thẻ</value>
+    </title>
+    <extendedTooltip>
+      <name>GroupPagesExtendedTooltip</name>
+      <id>63</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>Pages</type>
+    <extInfo xsi:type="form:PagesGroupExtInfo">
+      <currentRowUse>Auto</currentRowUse>
+    </extInfo>
+  </items>
+  <commandBarLocation>Bottom</commandBarLocation>
+  <autoCommandBar>
+    <name>FormCommandBar</name>
+    <id>-1</id>
+    <items xsi:type="form:Button">
+      <name>FormOK</name>
+      <id>17</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>FormOKExtendedTooltip</name>
+        <id>38</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.Command.OK</commandName>
+      <representation>Auto</representation>
+      <defaultButton>true</defaultButton>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <items xsi:type="form:Button">
+      <name>FormCancel</name>
+      <id>26</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>FormCancelExtendedTooltip</name>
+        <id>39</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.Command.Cancel</commandName>
+      <representation>Auto</representation>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <items xsi:type="form:FormGroup">
+      <name>FormHelpGroup</name>
+      <id>28</id>
+      <items xsi:type="form:Button">
+        <name>FormHelp</name>
+        <id>27</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>FormHelpExtendedTooltip</name>
+          <id>41</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.StandardCommand.Help</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>en</key>
+        <value>Help group form</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>گروه فرم راهنما</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Modulo gruppo di guida in linea</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Formularz grupa pomoc</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Форма группа справка</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Form grup yardımı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Biểu mẫu nhóm trợ giúp</value>
+      </title>
+      <extendedTooltip>
+        <name>FormHelpGroupExtendedTooltip</name>
+        <id>40</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <extInfo xsi:type="form:ButtonGroupExtInfo"/>
+    </items>
+    <horizontalAlign>Right</horizontalAlign>
+  </autoCommandBar>
+  <handlers>
+    <event>BeforeClose</event>
+    <name>BeforeClose</name>
+  </handlers>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>OnCreateAtServer</name>
+  </handlers>
+  <excludedCommands>Abort</excludedCommands>
+  <excludedCommands>Cancel</excludedCommands>
+  <excludedCommands>Close</excludedCommands>
+  <excludedCommands>CustomizeForm</excludedCommands>
+  <excludedCommands>Ignore</excludedCommands>
+  <excludedCommands>No</excludedCommands>
+  <excludedCommands>OK</excludedCommands>
+  <excludedCommands>RestoreValues</excludedCommands>
+  <excludedCommands>Retry</excludedCommands>
+  <excludedCommands>SaveValues</excludedCommands>
+  <excludedCommands>Yes</excludedCommands>
+  <saveWindowSettings>true</saveWindowSettings>
+  <autoUrl>true</autoUrl>
+  <group>Vertical</group>
+  <autoFillCheck>true</autoFillCheck>
+  <allowFormCustomize>true</allowFormCustomize>
+  <enabled>true</enabled>
+  <showTitle>true</showTitle>
+  <showCloseButton>true</showCloseButton>
+  <attributes>
+    <name>Object</name>
+    <title>
+      <key>en</key>
+      <value>Object</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>شیء</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Oggetto</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Obiekt</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Объект</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Nesne</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Đối tượng</value>
+    </title>
+    <id>4</id>
+    <valueType>
+      <types>CatalogObject.TermsOfPurchaseFromVendors</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>Object.AdditionalAttributes</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>Object.Comment</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>Object.CommissionFeeCalculationMethod</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>Object.ContractsAreUsed</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>Object.ControlPurchasePrices</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>Object.Counterparty</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>Object.DeleteDeliveryPeriod</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>Object.FinancialAccountingGroup</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>Object.GoodsReceiptOption</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>Object.KeepCommissionFee</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>Object.Manager</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>Object.MaximumPercentageForManualMarkup</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>Object.Organization</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>Object.Partner</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>Object.PercentRateOfManualDiscount</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>Object.Predefined</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>Object.PriceIncludesVAT</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>Object.RegisterVendorPrices</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>Object.RemunerationPercentage</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>Object.ValidityEndDate</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>Object.ValidityStartDate</segments>
+    </notDefaultUseAlwaysAttributes>
+    <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
+      <segments>Object.Warehouse</segments>
+    </notDefaultUseAlwaysAttributes>
+    <savedData>true</savedData>
+    <additionalColumns>
+      <tablePath xsi:type="form:DataPath">
+        <segments>Object.PaymentScheduleSteps</segments>
+      </tablePath>
+      <columns>
+        <name>PercentageIsFilledInIncorrectly</name>
+        <title>
+          <key>en</key>
+          <value>Percentage is filled in incorrectly</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>درصد به درستی پر نشده است</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Percentuale compilata non correttamente</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Procent wypełniony błędnie</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Процент заполнен не верно</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Yüzde yanlış dolduruldu</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Điền sai phần trăm</value>
+        </title>
+        <id>2</id>
+        <valueType>
+          <types>Boolean</types>
+        </valueType>
+        <view>
+          <common>true</common>
+        </view>
+        <edit>
+          <common>true</common>
+        </edit>
+      </columns>
+      <columns>
+        <name>DepositPercentageIsFilledInIncorrectly</name>
+        <title>
+          <key>en</key>
+          <value>Deposit percentage is filled in incorrectly</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>درصد ودیعه به درستی پر نشده است</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>La percentuale di cauzione compilata non correttamente</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Procent kaucji jest nieprawidłowy</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Процент залога заполнен не верно</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Depozito yüzdesi doğru şekilde doldurulmamış</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Phần trăm ký cược đã điền không chính xác</value>
+        </title>
+        <id>3</id>
+        <valueType>
+          <types>Boolean</types>
+        </valueType>
+        <view>
+          <common>true</common>
+        </view>
+        <edit>
+          <common>true</common>
+        </edit>
+      </columns>
+      <columns>
+        <name>PaymentOptionNumber</name>
+        <title>
+          <key>en</key>
+          <value>Payment terms option number</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>شماره گزینه شرایط پرداخت</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Numero dell'opzione di pagamento</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Numer wariantu płatności</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Номер варианта оплаты</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Ödeme seçeneği numarası</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Số phương án thanh toán</value>
+        </title>
+        <id>1</id>
+        <valueType>
+          <types>Number</types>
+          <numberQualifiers>
+            <precision>10</precision>
+          </numberQualifiers>
+        </valueType>
+        <view>
+          <common>true</common>
+        </view>
+        <edit>
+          <common>true</common>
+        </edit>
+      </columns>
+    </additionalColumns>
+  </attributes>
+  <attributes>
+    <name>CalledFormID</name>
+    <title>
+      <key>en</key>
+      <value>Called form ID</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>شناسه فرم فراخوانده‌شده</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Identificativo del modulo attivato</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Identyfikator formularza wywołującego</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Идентификатор вызывающей формы</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Çağrı formu tanımlayıcısı</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Mã số định danh biểu mẫu gọi ra</value>
+    </title>
+    <id>5</id>
+    <valueType>
+      <types>UUID</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>LineNumberOfFullPayment</name>
+    <title>
+      <key>en</key>
+      <value>Line number of full payment</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>شماره سطر پرداخت کامل</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Numero della riga di pagamento completo</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Numer wiersza pełnej płatności</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Номер строки полной оплаты</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Tam ödeme satırı numarası</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Số dòng thanh toán đầy đủ</value>
+    </title>
+    <id>6</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>ForcefullyCloseTheForm</name>
+    <title>
+      <key>en</key>
+      <value>Can force-close the form</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>امکان بستن اجباری فرم</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Chiudere il modulo in maniera forzata</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Zamknij formularz przymusowo</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Закрыть форму принудительно</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Formu kapatmaya zorla</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Buộc phải đóng</value>
+    </title>
+    <id>1</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>DeferredPaymentMode</name>
+    <title>
+      <key>en</key>
+      <value>Deferred payment mode</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>حالت پرداخت معوق</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Regime di contabilità di posticipazione</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Tryb ewidencji odroczonej</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Режим учета отсрочки</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Erteleme muhasebesi modu</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Chế độ ghi nhận hoãn lại</value>
+    </title>
+    <id>3</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+  </attributes>
+  <attributes>
+    <name>LineNumberOfDepositFullPayment</name>
+    <title>
+      <key>en</key>
+      <value>Line number of deposit full payment</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>شماره سطر پرداخت کامل ودیعه</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Numero di stringa del pagamento completo della cauzione</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Numer wiersza pełnej płatności kaucji</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Номер строки полной оплаты залога</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Depozitonun tam ödeme satır numarası</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Số dòng thanh toán tiền gửi đầy đủ</value>
+    </title>
+    <id>7</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>UseSimplifiedPaymentScheme</name>
+    <title>
+      <key>en</key>
+      <value>Use simplified payment scheme</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>استفاده از طرح پرداخت ساده‌شده</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Utilizzare lo schema semplificato del pagamento</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Używaj uproszczonego schematu płatności</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Использовать упрощенную схему оплаты</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Basitleştirilmiş bir ödeme planı kullan</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Sử dụng sơ đồ thanh toán đơn giản</value>
+    </title>
+    <id>8</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>ThePercentageOfTheDepositForTheContainerLoan</name>
+    <title>
+      <key>en</key>
+      <value>% of packaging deposit</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>درصد ودیعه بسته‌بندی</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>% di cauzione per l'imballaggio</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>% kaucji za tarę</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>% залога за тару</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>% depozito</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>% ký cược bao bì</value>
+    </title>
+    <id>9</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+  </attributes>
+  <attributes>
+    <name>PercentageOfTheDepositForTheContainerPrepayment</name>
+    <title>
+      <key>en</key>
+      <value>% of packaging deposit</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>درصد ودیعه بسته‌بندی</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>% di cauzione per l'imballaggio</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>% kaucji za tarę</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>% залога за тару</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>% depozito</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>% ký cược bao bì</value>
+    </title>
+    <id>10</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+  </attributes>
+  <attributes>
+    <name>DepositPercentageTotal</name>
+    <title>
+      <key>en</key>
+      <value>% of packaging deposit, total</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>درصد ودیعه بسته‌بندی، کل</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>% di cauzione per l'imballaggio</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>% kaucji za tarę</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>% залога за тару общий</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>% toplam depozito</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>% ký cược bao bì tổng</value>
+    </title>
+    <id>11</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>PercentageOfPaymentCredit</name>
+    <title>
+      <key>en</key>
+      <value>% of payment</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>درصد پرداخت</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>% del pagamento</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>% płatności</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>% платежа</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>ödeme yüzdesi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>% thanh toán</value>
+    </title>
+    <id>12</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+  </attributes>
+  <attributes>
+    <name>PaymentPercentagePrepayment</name>
+    <title>
+      <key>en</key>
+      <value>% of payment</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>درصد پرداخت</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>% del pagamento</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>% płatności</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>% платежа</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>ödeme yüzdesi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>% thanh toán</value>
+    </title>
+    <id>13</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+  </attributes>
+  <attributes>
+    <name>TotalPaymentPercentage</name>
+    <title>
+      <key>en</key>
+      <value>% of total payments</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>درصد از کل پرداخت‌ها</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>% del pagamento totale</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>łączny % płatności</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>% платежей общий</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>ödeme yüzdesi toplamı</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>% tổng thanh toán</value>
+    </title>
+    <id>14</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>ShiftCredit</name>
+    <title>
+      <key>en</key>
+      <value>Period (days)</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>دوره (روز)</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Termine (giorni)</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Termin (dni)</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Срок (дн)</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Süre (gün)</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Thời hạn (ngày)</value>
+    </title>
+    <id>15</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+  </attributes>
+  <attributes>
+    <name>ShiftPrepayment</name>
+    <title>
+      <key>en</key>
+      <value>Period (days)</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>دوره (روز)</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Termine (giorni)</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Termin (dni)</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Срок (дн)</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Süre (gün)</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Thời hạn (ngày)</value>
+    </title>
+    <id>16</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+  </attributes>
+  <attributes>
+    <name>ThisIsACommission</name>
+    <title>
+      <key>en</key>
+      <value>This is a commission</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>این یک کارمزد است</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Commissione</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>To jest prowizja</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Это комиссия</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Bu komisyondur</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Đây là ký gửi</value>
+    </title>
+    <id>17</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>CountdownOptionPrepayment</name>
+    <title>
+      <key>en</key>
+      <value>Calculate from prepayment</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>محاسبه از پیش‌پرداخت</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Variante di calcolo pagamento anticipato</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Wariant odliczenia przedpłata</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Вариант отсчета предоплата</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Ön ödeme referans seçeneği </value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Phương án đếm ngược trả trước</value>
+    </title>
+    <id>18</id>
+    <valueType>
+      <types>EnumRef.PaymentDateCalculationOptions</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+  </attributes>
+  <attributes>
+    <name>CreditReferenceOption</name>
+    <title>
+      <key>en</key>
+      <value>Calculate from credit</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>محاسبه از اعتبار</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Variante di calcolo credito</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Wariant odliczenia kredyt</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Вариант отсчета кредит</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Kredi referans seçeneği</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Phương án đếm ngược trả sau</value>
+    </title>
+    <id>19</id>
+    <valueType>
+      <types>EnumRef.PaymentDateCalculationOptions</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+  </attributes>
+  <attributes>
+    <name>ThisIsReceptionForStorage</name>
+    <title>
+      <key>en</key>
+      <value>This is receipt for storage</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>این رسید برای نگهداری است</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Questa è la ricezione in archivio</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>To przyjęcie do przechowywania</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Это прием на хранение</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Depoya kabul</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Đây là tiếp nhận vào cất giữ</value>
+    </title>
+    <id>20</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>ARAPObjectSettings</name>
+    <title>
+      <key>en</key>
+      <value>Payment terms</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>شرایط پرداخت</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Modalità di regolamenti</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Sposób rozliczeń</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Порядок расчетов</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Uzlaşma prosedürü</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Quy trình thanh toán</value>
+    </title>
+    <id>21</id>
+    <valueType>
+      <types>EnumRef.ARAPObjectSettings</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <formCommands>
+    <name>OK</name>
+    <title>
+      <key>en</key>
+      <value>OK</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>تأیید</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>OK</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>OK</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>ОК</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Tamam</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Đồng ý</value>
+    </title>
+    <id>1</id>
+    <toolTip>
+      <key>en</key>
+      <value>OK</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>تأیید</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>OK</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>OK</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>ОК</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Tamam</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Đồng ý</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>OK</name>
+      </handler>
+    </action>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>Cancel</name>
+    <title>
+      <key>en</key>
+      <value>Cancel</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>انصراف</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Annulla</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Anuluj</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Отмена</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>İptal</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Hủy bỏ</value>
+    </title>
+    <id>2</id>
+    <toolTip>
+      <key>en</key>
+      <value>Cancel</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>انصراف</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Annulla</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Anuluj</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Отмена</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>İptal</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Hủy bỏ</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>Cancel</name>
+      </handler>
+    </action>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <parameters>
+    <name>PaymentMethod</name>
+    <valueType>
+      <types>EnumRef.PaymentForms</types>
+    </valueType>
+  </parameters>
+  <parameters>
+    <name>Calendar</name>
+    <valueType>
+      <types>CatalogRef.BusinessCalendars</types>
+    </valueType>
+  </parameters>
+  <parameters>
+    <name>UUID</name>
+    <valueType/>
+  </parameters>
+  <parameters>
+    <name>AddressInTempStorage</name>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+  </parameters>
+  <parameters>
+    <name>BusinessOperation</name>
+    <valueType>
+      <types>EnumRef.BusinessTransactions</types>
+    </valueType>
+  </parameters>
+  <parameters>
+    <name>Approved</name>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+  </parameters>
+  <commandInterface>
+    <navigationPanel>
+      <cmiFragmentRecord>
+        <command>CommonCommand.ChangeHistory</command>
+        <userVisible/>
+      </cmiFragmentRecord>
+      <cmiFragmentRecord>
+        <command>CommonCommand.TasksBySubject</command>
+        <userVisible/>
+      </cmiFragmentRecord>
+      <cmiFragmentRecord>
+        <command>CommonCommand.MyNotesOnSubject</command>
+        <userVisible/>
+      </cmiFragmentRecord>
+    </navigationPanel>
+    <commandBar>
+      <cmiFragmentRecord>
+        <command>CommonCommand.AdditionalInfoCommandBar</command>
+        <userVisible/>
+      </cmiFragmentRecord>
+      <cmiFragmentRecord>
+        <command>Document.PurchaseOrder.StandardCommand.CreateBasedOn</command>
+        <index>1</index>
+        <userVisible/>
+      </cmiFragmentRecord>
+      <cmiFragmentRecord>
+        <command>BusinessProcess.Job.StandardCommand.CreateBasedOn</command>
+        <index>2</index>
+        <userVisible/>
+      </cmiFragmentRecord>
+      <cmiFragmentRecord>
+        <command>Document.VendorInvoice.StandardCommand.CreateBasedOn</command>
+        <index>3</index>
+        <userVisible/>
+      </cmiFragmentRecord>
+      <cmiFragmentRecord>
+        <command>CommonCommand.RelatedObjectsCreation</command>
+        <index>6</index>
+        <userVisible/>
+      </cmiFragmentRecord>
+    </commandBar>
+  </commandInterface>
+</form:Form>

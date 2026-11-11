@@ -1,0 +1,208 @@
+
+#Region Public
+
+#Region Posting
+
+// The procedure complements the texts of requests for the document.
+//
+// Parameters:
+//  Query - Query - General request for document execution.
+//  QueryTexts - ValueList - List of texts of the request for holding.
+//  Registers - String, Structure - A comma-separated list of document execution registers or in structure keys.
+//
+Procedure AddRequestTexts(Query, QueryTexts, Registers) Export
+	
+	
+EndProcedure
+
+#EndRegion
+
+#Region EventHandlers
+
+// Called from the corresponding document handler
+//
+// Parameters:
+//  Object - DocumentObject.ReversingEntry - the document being processed.
+//  Cancel - Boolean - Indicates whether the document is being processed.
+//                   If this parameter is set to True in the body of the handler procedure,
+//                   the document will not be processed.
+//  PostingMode - DocumentPostingMode - this parameter is passed to the current mode of the event.
+//
+Procedure Posting(Object, Cancel, PostingMode) Export
+	
+	Return;
+	
+EndProcedure
+
+// Called from the corresponding document handler
+//
+// Parameters:
+//  Object - DocumentObject.ReversingEntry - processed object
+//  Cancel - Boolean - If this parameter is set to True in the body of the handler procedure,
+//                   it will refuse to continue working after completing the fill check.
+//  CheckedAttributes - Array - Array of paths to the details to be checked for.
+//
+Procedure FillCheckProcessing(Object, Cancel, CheckedAttributes) Export
+	
+	Return;
+	
+EndProcedure
+
+// Called from the corresponding document handler
+//
+// Parameters:
+//  Object - DocumentObject.ReversingEntry - The object being processed.
+//  FillingData - Arbitrary - The value that is used as the basis for filling in.
+//  StandardProcessing - Boolean - This parameter is passed to indicate that standard (system) event processing is performed.
+//
+Procedure Filling(Object, FillingData, StandardProcessing) Export
+	
+	Return;
+	
+EndProcedure
+
+// Called from the corresponding document handler
+//
+// Parameters:
+//  Object - DocumentObject.ReversingEntry - processed object
+//  Cancel - Boolean - Indicates that the recording was rejected.
+//                   If this parameter is set to True in the body of the handler procedure,
+//                   the record will not be executed and an exception will be thrown.
+//
+Procedure UndoPosting(Object, Cancel) Export
+	
+	Return;
+	
+EndProcedure
+
+// Called from the corresponding document handler
+//
+// Parameters:
+//  Object - DocumentObject.ReversingEntry - processed object
+//  Cancel - Boolean - Indicates that the recording was rejected.
+//                   If this parameter is set to True in the body of the handler procedure,
+//                   the record will not be executed and an exception will be thrown.
+//  WriteMode - DocumentWriteMode - The current document recording mode is passed to the parameter. Allows you to define the recording mode in the procedure body.
+//  PostingMode - DocumentPostingMode - this parameter is passed to the current mode of the event.
+//
+Procedure BeforeWrite(Object, Cancel, WriteMode, PostingMode) Export
+	
+	
+	Return;
+	
+EndProcedure
+
+// Called from the corresponding document handler
+//
+// Parameters:
+//  Object - DocumentObject.ReversingEntry - processed object
+//  Cancel - Boolean - Indicates that the recording was rejected.
+//                   If this parameter is set to True in the body of the handler procedure, the record will not be executed and an exception will be thrown.
+//
+Procedure OnWrite(Object, Cancel) Export
+	
+	Return;
+	
+EndProcedure
+
+#EndRegion
+
+#Region AttachableCommands
+
+// Defines a list of creation commands based on.
+//
+// Parameters:
+//	GenerationCommands - See GenerateFromOverridable.BeforeAddGenerationCommands.GenerationCommands
+//	Parameters - See GenerateFromOverridable.BeforeAddGenerationCommands.Parameters
+//
+Procedure AddGenerationCommands(GenerationCommands, Parameters) Export
+	
+	Return;
+	
+EndProcedure
+
+// Defines a list of report commands.
+//
+// Parameters:
+//	Creation commandsreferences - See GenerateFromOverridable.BeforeAddGenerationCommands.GenerationCommands
+//	Parameters - See GenerateFromOverridable.BeforeAddGenerationCommands.Parameters
+//
+Procedure AddReportCommands(ReportsCommands, Parameters) Export
+	
+	Return;
+	
+EndProcedure
+
+// Fills in the list of print commands.
+//
+// Parameters:
+//   PrintCommands - See PrintManagement.CreatePrintCommandsCollection.
+//
+Procedure AddPrintCommands(PrintCommands) Export
+	
+	
+EndProcedure
+
+#EndRegion
+
+#Region Print
+
+// Generates a printable form.
+//
+// Parameters:
+//  ObjectsArray  - Array of DocumentRef.ReversingEntry - references to objects that should be printed;
+//  PrintParameters - Structure - advanced print settings;
+//  PrintFormsCollection - ValueTable - generated table documents (output parameter)
+//  PrintObjects         - ValueList  - value - the object reference;
+//                                            view - name of the area where the object was output (output parameter);
+//  OutputParameters       - Structure       - additional parameters of generated table documents (output parameter).
+//
+Procedure Print(ObjectsArray, PrintParameters, PrintFormsCollection, PrintObjects, OutputParameters) Export
+	
+	Return;
+	
+EndProcedure
+
+
+#EndRegion
+
+#Region RegAccountingTransactions
+
+// The function returns the request text to reflect the document in regulated accounting.
+//
+// Returns:
+//	String - Query text
+//
+Function TextOfReflectionInLocalAccounting() Export
+	
+	ReflectionTexts = New Array;
+	
+	
+	Return StrConcat(ReflectionTexts, TMCommonUse.QuerySeparatorInJoin());
+	
+EndFunction
+
+// The function returns the request text for additional temporary tables
+// that are required for reflection in regulated accounting
+//
+// Returns:
+//   String - the generated request text.
+//
+Function RequestTextTTReflectedInLocalAccounting() Export
+	
+	QueryTexts = New Array;
+	
+	
+	QueryText = StrConcat(QueryTexts, Common.QueryBatchSeparator());
+	Return QueryText;
+	
+EndFunction
+
+#EndRegion
+
+#EndRegion
+
+#Region Private
+
+
+#EndRegion

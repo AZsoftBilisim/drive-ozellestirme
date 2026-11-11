@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c8f7b056-fc53-42ea-984e-86dc20c8554e">
+  <name>ClearOrderQueueToAdjustRowsOfMeasuringGoodsBeforeRemovingDocument</name>
+  <synonym>
+    <key>en</key>
+    <value>Clear order queue to adjust lines with measured goods before removing document</value>
+  </synonym>
+  <synonym>
+    <key>fa</key>
+    <value>پاک‌سازی صف سفارش برای تعدیل سطرهای دارای کالای وزنی پیش از حذف سند</value>
+  </synonym>
+  <synonym>
+    <key>it</key>
+    <value>Prima di eliminare il documento, cancellare la coda di ordini da correggere le righe delle merci misurate</value>
+  </synonym>
+  <synonym>
+    <key>pl</key>
+    <value>Wyczyść kolejkę zamówień do zapisu korygującego wierszy towarów wymiarowych przed usunięciem dokumentu</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>Очистить очередь заказов к корректировке строк мерных товаров перед удалением документа</value>
+  </synonym>
+  <synonym>
+    <key>tr</key>
+    <value>Belgeyi silmeden önce ölçülen ürün satırlarının düzeltilmesi için sipariş kuyruğunu temizle</value>
+  </synonym>
+  <synonym>
+    <key>vi</key>
+    <value>Xóa hàng đợi để điều chỉnh các dòng sản phẩm có kích thước trước khi xóa chứng từ</value>
+  </synonym>
+  <source>
+    <types>DocumentObject.PurchaseOrder</types>
+    <types>DocumentObject.OrderOfMaterialsForProduction</types>
+    <types>DocumentObject.TransferOrder</types>
+    <types>DocumentObject.MaterialProviderOrder2_5</types>
+    <types>DocumentObject.ByAssemblyDisassemblyOrder</types>
+    <types>DocumentObject.RMOrder</types>
+    <types>DocumentObject.SalesOrder</types>
+    <types>DocumentObject.ProductionStage2_2</types>
+    <types>DocumentObject.RequestForReturnOfGoodsFromCustomer</types>
+    <types>DocumentObject.InventoryConsumptionOrder</types>
+  </source>
+  <event>BeforeDelete</event>
+  <handler>CommonModule.OrdersServer.ClearOrderQueueToAdjustRowsOfMeasuringGoodsBeforeRemovingDocumentBeforeDelete</handler>
+</mdclass:EventSubscription>

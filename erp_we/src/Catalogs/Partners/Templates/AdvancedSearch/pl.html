@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="__STYLE__"></link></head><body>
+  <p class="Usual" style="margin: 0.5em 0em 0em; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px;">Расширенный поиск выполняется не только по справочнику "Партнеры", но и по связанным с ним данным, таким как справочники "Контактные лица", "Договоры"  и т.д.</p>
+  <p class="Usual" style="margin: 0.5em 0em 0em; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px;">Данный поиск обладает большим количеством возможностей, но в нем используется язык запросов полнотекстового поиска, и некоторые результаты могут быть неожиданными для пользователя.</p>
+  <p class="Usual" style="margin: 0.5em 0em 0em; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px;">Например, для поиска по части строки необходимо добавлять *.  Например, если ввести "докум", то слово "документ" найдено не будет, необходимо ввести в строку поиска "докум*"</p>
+  <p class="Usual" style="margin: 0.5em 0em 0em; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px;">Поиск может осуществляться по нескольким словам, с использованием поисковых операторов и поиском по точной фразе. </p>
+  <p class="Usual" style="margin: 0.5em 0em 0em; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px;">В строке ввода допускается использование следующих поисковых операторов:</p>
+  <table width="95%" style="color: rgb(0, 0, 0); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px;" border="1" cellspacing="1" cellpadding="0"><tbody><tr><td><strong>Оператор</strong></td>
+     <td><strong> Пример</strong></td>
+     <td><strong> Пояснение</strong></td>
+    </tr><tr><td align="center">И<br>
+       AND<br>
+       &amp;</td>
+     <td> <em>запись</em> И <em>документ</em><br>
+        <em>запись</em> AND <em>документ</em><br>
+        <em>запись</em> &amp; <em>документ</em></td>
+     <td> В описании должны быть и "<em>запись</em> " и "<em>документ</em>" (с учетом морфологии)</td>
+    </tr><tr><td width="80" align="center">ИЛИ<br>
+       OR<br>
+       |<br>
+       ,</td>
+     <td> <em>запись</em> ИЛИ <em>документ</em><br>
+        <em>запись</em> OR <em>документ</em><br>
+        <em>запись</em> | <em>документ</em><br>
+        <em>запись</em> , <em>документ</em></td>
+     <td> В описании должно быть хотя бы одно из слов "<em>запись</em>" или "<em>документ</em>"</td>
+    </tr><tr><td align="center">НЕ<br>
+       NOT<br><br></td>
+     <td> <em>закрытие</em> НЕ <em>месяц</em><br>
+        <em>закрытие</em> NOT <em>месяц</em><br></td>
+     <td> Будут найдены все, содержащие "<em>закрытие</em>", но не содержащие слова "<em>месяц</em>". </td>
+    </tr><tr><td align="center">РЯДОМ/[±]n<br>
+       NEAR/[±]n</td>
+     <td>
+      <p style="margin-top: 0em;"> Пример 1: <br>
+        продажа РЯДОМ/3 товар</p>
+      <p style="margin-top: 0em;"> Пример 2: <br>
+        продажа РЯДОМ/+3 товар</p>
+      <p style="margin-top: 0em;"> Пример 3: <br>
+        продажа РЯДОМ/-3 товар</p></td>
+     <td> Поиск данных, содержащих в одном реквизите указанные слова с учетом морфологии на расстоянии <strong>n</strong> слов между словами.<br>
+        Знак указывает, в каком направлении от первого слова будет искаться второе слово ("+" – после первого; "-" – до первого слова).<br>
+        Если знак не указан, то будет найдены данные, содержащие указанные слова на дистанции <strong>n</strong> слов друг о друга. Порядок слов не имеет значения.<br>
+        В примере 1 будут найдены данные, в которых "товар" находится не более 3-х слов до или после "продажа".<br>
+        В примере 2 будут найдены данные, в которых "товар" находится не более 3-х слов после "продажа".<br>
+        В примере 3 будут найдены данные, в которых "товар" находится не более 3-х слов перед "продажа".</td>
+    </tr><tr><td align="center">РЯДОМ<br>
+       NEAR</td>
+     <td> <em>проведение</em> РЯДОМ <em>документ</em><br>
+        <em>проведение</em> NEAR <em>документ</em></td>
+     <td> Упрощенный оператор дистанции.<br>
+        <span style="background-color: rgb(255, 255, 255);">Запрос</span> найдет элементы, в которых слова встречаются в одном реквизите не дальше, чем на 8 слов друг от друга в любую сторону.</td>
+    </tr><tr><td align="center">" "</td>
+     <td> "<em>проведение документа</em>"</td>
+     <td> Поиск точной с учетом морфологии фразы (эквивалентно: <em>проведение</em> РЯДОМ/+1 <em>документ</em>)</td>
+    </tr><tr><td align="center">()</td>
+     <td> (<em>проведение</em> | <em>выписка</em>) &amp; <br>
+        (<em>счета</em>,<em> документа</em>) </td>
+     <td> Группировка слов (число уровней вложенности не ограничено)</td>
+    </tr><tr><td>
+      <p align="center" style="margin-top: 0em;">*</p></td>
+     <td><em> доку</em>*</td>
+     <td> Поиск с использованием группового символа (замена окончания слова). <br>
+        Должно быть введено более 1 значащего символа. <br><span style="background-color: rgb(255, 255, 255);"> Запрос "</span><em>доку</em>*" найдет "документ", "документировать", "документальный" и др. </td>
+    </tr><tr><td>
+      <p align="center" style="margin-top: 0em;">~</p></td>
+     <td>
+      <p style="margin-top: 0em;">~Система<br>
+        Система~2</p></td>
+     <td><b>Данный оператор используется при полнотекстовом поиске и не используется при поиске по справке.<br></b>Нечеткий поиск слов с заданным количеством отличий от указанного (если не указано, то = 1); пример: <br><span style="background-color: rgb(255, 255, 255);">запрос "~Система" найдет "систама", "сивтема"; <br>
+        запрос "Система~2" найдет "ситтама", "сеттема"<br></span></td>
+    </tr><tr><td align="center">
+      <p align="center" style="margin-top: 0em;"><span style="background-color: rgb(255, 255, 255);">!</span></p></td>
+     <td><span style="background-color: rgb(255, 255, 255);">!красный</span></td>
+     <td><span style="background-color: rgb(255, 255, 255);">Поиск с учетом синонимов русского, английского и украинского языков. "</span>!" ставится перед соответствующим словом; пример: поиск "!красный кафель", найдет еще и "алый кафель" и "коралловый кафель"</td>
+    </tr></tbody></table><p style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px; margin-top: 0em;"> </p>
+  <p style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px; margin-top: 0em;"><br></p>
+ </body></html>

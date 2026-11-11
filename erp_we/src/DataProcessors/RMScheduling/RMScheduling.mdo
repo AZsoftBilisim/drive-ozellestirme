@@ -1,0 +1,2512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="00f87c77-862a-4fd8-b7cf-ba9cd9440227">
+  <producedTypes>
+    <objectType typeId="d2d8b5f2-ec17-43d4-a836-3a0a8bc3800b" valueTypeId="443823f1-9b5a-4419-81a7-33539082fcc0"/>
+    <managerType typeId="d66a30ce-038e-4b0f-b2d7-73b9a5e7e1f6" valueTypeId="b8399a13-b457-427c-90e8-2d8b555913a8"/>
+  </producedTypes>
+  <name>RMScheduling</name>
+  <synonym>
+    <key>en</key>
+    <value>Create planned R&amp;M orders</value>
+  </synonym>
+  <synonym>
+    <key>fa</key>
+    <value>ایجاد سفارش‌های برنامه‌ریزی‌شده تعمیر و نگهداری</value>
+  </synonym>
+  <synonym>
+    <key>it</key>
+    <value>Pianificazione dei lavori di riparazione</value>
+  </synonym>
+  <synonym>
+    <key>pl</key>
+    <value>Planowanie prac remontowych</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>Планирование ремонтных работ</value>
+  </synonym>
+  <synonym>
+    <key>tr</key>
+    <value>Onarım çalışmalarının planlanması</value>
+  </synonym>
+  <synonym>
+    <key>vi</key>
+    <value>Kế hoạch sửa chữa</value>
+  </synonym>
+  <defaultForm>DataProcessor.RMScheduling.Form.DataProcessorForm</defaultForm>
+  <tabularSections uuid="6f884af2-2fe0-45ed-98c4-4ca1fec68205">
+    <producedTypes>
+      <objectType typeId="8d553c60-44d4-4c87-83bc-c6f5e9425d88" valueTypeId="8343ffd2-da3f-4140-a750-0f7aef36d601"/>
+      <rowType typeId="e127748d-0814-448f-8dd5-0ede71e1894d" valueTypeId="548745bf-6bcc-42bc-9347-b39aa0c76422"/>
+    </producedTypes>
+    <name>ObjectsForRMScheduling</name>
+    <synonym>
+      <key>en</key>
+      <value>Objects for R&amp;M scheduling</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>اشیا برای زمان‌بندی تعمیر و نگهداری</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Oggetti di riparazione da pianificare</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Obiekty remontu do planowania</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Объекты ремонта к планированию</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Planlamaya yönelik onarım nesneleri</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Đối tượng sửa chữa để lập kế hoạch</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="7d2d7549-b4d4-4602-a7ac-1b7031ca1b30">
+      <name>Asset</name>
+      <synonym>
+        <key>en</key>
+        <value>Asset</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>دارایی</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Oggetto di esercizio</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Obiekt eksploatacji</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Объект эксплуатации</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Varlık</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Đối tượng vận hành</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Assets</types>
+        <types>CatalogRef.SubAssets</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>The object that requires scheduling of R&amp;M activities</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>شیئی که نیاز به زمان‌بندی فعالیت‌های تعمیر و نگهداری دارد</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Oggetto di riparazione, per il quale è necessario pianificare i lavori di riparazione</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Obiekt remontu, dla którego należy zaplanować prace remontowe</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Объект ремонта, по которому необходимо запланировать ремонтные работы</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Onarım işinin planlanması gereken onarım nesnesi</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Đối tượng sửa chữa mà công việc sửa chữa sẽ được lên lịch</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="f4458fbe-4549-4d3a-ad2f-0bb253896f63">
+    <producedTypes>
+      <objectType typeId="db1d70f5-b60f-46f2-a9cb-b6ca0ccd1160" valueTypeId="4a89e15b-edda-4028-a405-435a88b24ce3"/>
+      <rowType typeId="a7156770-a8d6-4426-9461-6d6ac49e8cf7" valueTypeId="67e9ae74-da6a-478f-aae5-3ce6785ef56a"/>
+    </producedTypes>
+    <name>GeneralRMTypesForPlanning</name>
+    <synonym>
+      <key>en</key>
+      <value>R&amp;M work types for planning</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>انواع کار تعمیر و نگهداری برای برنامه‌ریزی</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Tipi comuni di riparazioni da pianificare</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Ogólne rodzaje remontów do planowania</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Общие виды ремонтов к планированию</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Planlamaya yönelik genel onarım türleri</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Dạng sửa chữa chung để lập kế hoạch</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="12baa3eb-c21c-46b5-9b0c-baefd443f551">
+      <name>GeneralRMType</name>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M work type</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>نوع کار تعمیر و نگهداری</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Tipo generale di riparazione</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Ogólny rodzaj remontu</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Общий вид ремонта</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Genel bakım-onarım türü</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Dạng sửa chữa chung</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.GeneralRMTypes</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="6da0cef2-9149-45d3-8332-45410da84ae2">
+    <producedTypes>
+      <objectType typeId="7ad2d976-14ee-4ad4-a048-1d9195d83256" valueTypeId="5d46fd52-57dc-4a64-adc4-3092206de4a5"/>
+      <rowType typeId="1a3f1f87-a702-4728-891e-4330e9193677" valueTypeId="2cafc18c-6d5c-471f-a338-35e05dfe52e5"/>
+    </producedTypes>
+    <name>PlanningFrequency_</name>
+    <synonym>
+      <key>en</key>
+      <value>Planning frequency</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>تناوب برنامه‌ریزی</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Frequenza da pianificare</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Częstotliwości do planowania</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Частоты к планированию</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Planlamaya yönelik Frekanslar</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Tần suất lập kế hoạch</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="b4d08a3c-590d-4057-82f7-f9794cedbff2">
+      <name>PlanningFrequency</name>
+      <synonym>
+        <key>en</key>
+        <value>Planning frequency</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>تناوب برنامه‌ریزی</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Frequenza di pianificazione</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Częstotliwość planowania</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Частота планирования</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Planlama sıklığı</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Tần suất lập kế hoạch</value>
+      </synonym>
+      <type>
+        <types>EnumRef.RMPlanningFrequency</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="b02792a1-a850-44cc-b875-dbb49e0cb506">
+    <producedTypes>
+      <objectType typeId="3c255c98-4c20-4500-b7c0-0b216d359aef" valueTypeId="2412f7e9-4789-4e70-8d91-bf0bf1e40ad1"/>
+      <rowType typeId="e5dea208-d016-4770-a03a-30ac6c0e6765" valueTypeId="0956592c-0c3f-4515-a924-397bda4b3fb7"/>
+    </producedTypes>
+    <name>RMOrders</name>
+    <synonym>
+      <key>en</key>
+      <value>R&amp;M orders</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>سفارش‌های تعمیر و نگهداری</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Ordini di manutenzione</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Zamówienia na remont</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Заказы на ремонт</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Onarım siparişleri</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Phiếu yêu cầu sửa chữa</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="f743d5c7-84a1-4257-8068-879e61472c9e">
+      <name>RMOrderCode</name>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M order code</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>کد سفارش تعمیر و نگهداری</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Codice dell'ordine di riparazione</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Kod zamówienia na remont</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Код заказа на ремонт</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Onarım sipariş kodu</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Mã đặt hàng sửa chữa</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2cfd9cd8-66fb-4d0d-85af-8e722b0274ba">
+      <name>Asset</name>
+      <synonym>
+        <key>en</key>
+        <value>Asset</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>دارایی</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Oggetto di esercizio</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Obiekt eksploatacji</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Объект эксплуатации</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Varlık</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Đối tượng vận hành</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Assets</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>The asset that is being repaired according to the R&amp;M order</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>دارایی که طبق سفارش تعمیر و نگهداری تعمیر می‌شود</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Oggetto dell'utilizzo, per il quale si eseguono le riparazioni in base all'ordine</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Obiekt eksploatacji, dla którego są wykonywane remonty wg zamówienia</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Объект эксплуатации, для которого выполняются ремонты по заказу</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Emir üzerine onarımların yapıldığı varlık</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Đối tượng vận hành có thực hiện sửa chữa theo đơn hàng</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="938f24b0-40df-4b14-ba77-4b2765a05833">
+      <name>StartDate</name>
+      <synonym>
+        <key>en</key>
+        <value>Start date</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>تاریخ شروع</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Data di inizio</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Data rozpoczęcia</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Дата начала</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Başlangıç tarihi</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Ngày bắt đầu</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Date the R&amp;M order execution starts</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>تاریخ شروع اجرای سفارش تعمیر و نگهداری</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Data di inizio di esecuzione dell'ordine di riparazione</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Data rozpoczęcia wykonania zamówienia na remont</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Дата начала выполнения заказа на ремонт</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Onarım siparişinin başlama tarihi</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Ngày bắt đầu cho lệnh điều chỉnh</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f7dd3251-76aa-4737-825e-ba4a14f1d6e9">
+      <name>CompletedOn</name>
+      <synonym>
+        <key>en</key>
+        <value>End date</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>تاریخ پایان</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Data di fine</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Data zakończenia</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Дата завершения</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Tamamlanma tarihi</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Ngày kết thúc</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Date the R&amp;M order execution ends</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>تاریخ پایان اجرای سفارش تعمیر و نگهداری</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Data di completamento dell'ordine di riparazione</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Data zakończenia wykonania zamówienia naprawy</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Дата завершения выполнения заказа на ремонт</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Onarım emrinin tamamlanma tarihi</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Ngày hoàn thành đơn sửa chữa</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4c75991b-6032-4df9-8c14-55df8cd21ae1">
+      <name>Duration</name>
+      <synonym>
+        <key>en</key>
+        <value>Duration</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>مدت</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Durata</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Czas trwania</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Длительность</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Süre</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Thời lượng</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Duration of R&amp;M under order</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>مدت تعمیر و نگهداری طبق سفارش</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Durata di esecuzione delle riparazioni in base all'ordine</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Czas trwania wykonania remontów wg zamówienia</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Длительность выполнения ремонтов по заказу</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Emir üzerine yapılan onarımların süresi</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Thời lượng thực hiện đơn sửa chữa</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="50e6c22f-b54b-4c5a-a95b-0e38bc3caadc">
+      <name>UnitOfMeasureOfDuration</name>
+      <synonym>
+        <key>en</key>
+        <value>Duration unit of measure</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>واحد اندازه‌گیری مدت</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Unità di misura della durata</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Jednostka miary długotrwałości</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Единица измерения длительности</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Süre ölçü birimi.</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Đơn vị tính thời lượng</value>
+      </synonym>
+      <type>
+        <types>EnumRef.TimeMeasureUnits</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Duration unit of measure</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>واحد اندازه‌گیری مدت</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Unità di misura della durata</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Jednostka miary długotrwałości</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Единица измерения длительности</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Süre ölçü birimi.</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Đơn vị tính thời lượng</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameters>
+        <name>Filter.Ref</name>
+        <value xsi:type="core:FixedArrayValue">
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.TimeMeasureUnits.EnumValue.Minute</value>
+          </values>
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.TimeMeasureUnits.EnumValue.Hour</value>
+          </values>
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.TimeMeasureUnits.EnumValue.Day</value>
+          </values>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:ReferenceValue">
+        <value>Enum.TimeMeasureUnits.EnumValue.Day</value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="0562fc18-db42-49c7-afe1-6016882cd232">
+      <name>Department</name>
+      <synonym>
+        <key>en</key>
+        <value>Business unit</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>واحد تجاری</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Reparto</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Dział</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Departman</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Bộ phận</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.BusinessStructure</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Business unit that issued the R&amp;M order</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>واحد تجاری صادرکننده سفارش تعمیر و نگهداری</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Sezione del documento dell'ordine di riparazione</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Dział dokumentu zamówienia na remont</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Подразделение документа заказа на ремонт</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Onarım siparişinin belgesinin departmanı</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Bộ phận chứng từ đơn hàng sửa chữa</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f84d6911-fd37-404e-9576-89fca544b59e">
+      <name>RMActivity</name>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M activity</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>فعالیت تعمیر و نگهداری</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Lavoro di riparazione</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Przedsięwzięcia remontowe</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Ремонтное мероприятие</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Bakım-onarım faaliyetleri</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Sự kiện sửa chữa</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.RMActivities</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>R&amp;M order activity</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>فعالیت سفارش تعمیر و نگهداری</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Evento di riparazione dell'ordine di riparazione</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Przedsięwzięcia remontowe zamówienia na remont</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Ремонтное мероприятие заказа на ремонт</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Onarım siparişinin onarım faaliyeti</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Sự kiện sửa chữa đơn hàng sửa chữa</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9ac9a352-a90b-42e2-90a1-10c683b70669">
+      <name>GeneralRMType</name>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M work type</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>نوع کار تعمیر و نگهداری</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Tipo generale di riparazione</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Ogólny rodzaj remontu</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Общий вид ремонта</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Genel bakım-onarım türü</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Dạng sửa chữa chung</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.GeneralRMTypes</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>General R&amp;M for this type</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>تعمیر و نگهداری عمومی برای این نوع</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Riparazione generale per questo tipo</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Ogólny remont dla danego rodzaju</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Общий ремонт для данного вида </value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Bu tip cihazlar için genel onarım</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Sửa chữa chung cho dạng này</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="260dbd49-1991-47b9-81c3-551b1a297082">
+    <producedTypes>
+      <objectType typeId="4a887f28-8725-43b6-be62-225306f63e60" valueTypeId="ffa9b1e1-8ef8-4b74-a985-b5389503c65c"/>
+      <rowType typeId="3eddfbf4-14e9-4ed0-a2fa-0ba1c866e56a" valueTypeId="fb3f3b82-5e75-4957-8c2a-6630a754eb2a"/>
+    </producedTypes>
+    <name>RM</name>
+    <synonym>
+      <key>en</key>
+      <value>R&amp;M works</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>کارهای تعمیر و نگهداری</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Riparazioni</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Remonty</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Ремонты</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Bakım-onarım</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Sửa chữa</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="32115e9e-870b-40f1-899a-659039aef9cf">
+      <name>Asset</name>
+      <synonym>
+        <key>en</key>
+        <value>Asset</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>دارایی</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Oggetto di esercizio</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Obiekt eksploatacji</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Объект эксплуатации</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Varlık</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Đối tượng vận hành</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Assets</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="95a3fb89-8172-4284-bfea-45b0c5f1dcbb">
+      <name>Node</name>
+      <synonym>
+        <key>en</key>
+        <value>Sub-asset</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>زیردارایی</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Nodo</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Węzeł</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Узел</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Alt varlık</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Chi tiết máy</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.SubAssets</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="727f5e1e-e487-4afb-aedf-446169bdb875">
+      <name>RMType</name>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M work</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>کار تعمیر و نگهداری</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Tipo di riparazione</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Rodzaj remontu</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Вид ремонта</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Bakım-onarım türü</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Dạng sửa chữa</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.RMTypes</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="dca7360c-75ce-424a-9bb9-0579423fb186">
+      <name>StartDate</name>
+      <synonym>
+        <key>en</key>
+        <value>Start date</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>تاریخ شروع</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Data di inizio</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Data rozpoczęcia</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Дата начала</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Başlangıç tarihi</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Ngày bắt đầu</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="379ba1ad-1830-413c-96f3-7a3b3c655901">
+      <name>CompletedOn</name>
+      <synonym>
+        <key>en</key>
+        <value>End date</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>تاریخ پایان</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Data di fine</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Data zakończenia</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Дата завершения</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Tamamlanma tarihi</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Ngày kết thúc</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e1cdbd60-cb6a-4e23-bd43-f98c9f523ac9">
+      <name>Duration</name>
+      <synonym>
+        <key>en</key>
+        <value>Duration (days)</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>مدت (روز)</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Durata (giorni)</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Czas trwania (dni)</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Длительность (дней)</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Süre (gün)</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Thời lượng (ngày)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="759ba2f1-02d9-4b02-8950-facc50652785">
+      <name>UnitOfMeasureOfDuration</name>
+      <synonym>
+        <key>en</key>
+        <value>Duration Unit</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>واحد مدت</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Unità di misura di durata</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Jednostka miary długotrwałości</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Ед. изм. длительности</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Süre birimi</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Đơn vị tính thời lượng</value>
+      </synonym>
+      <type>
+        <types>EnumRef.TimeMeasureUnits</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameters>
+        <name>Filter.Ref</name>
+        <value xsi:type="core:FixedArrayValue">
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.TimeMeasureUnits.EnumValue.Minute</value>
+          </values>
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.TimeMeasureUnits.EnumValue.Hour</value>
+          </values>
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.TimeMeasureUnits.EnumValue.Day</value>
+          </values>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:ReferenceValue">
+        <value>Enum.TimeMeasureUnits.EnumValue.Day</value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="8e7f62e0-a1e2-48c5-a7ac-8cea4151bff9">
+      <name>Department</name>
+      <synonym>
+        <key>en</key>
+        <value>Business unit</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>واحد تجاری</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Reparto</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Dział</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Departman</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Bộ phận</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.BusinessStructure</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f70d0ce3-e3fb-4ba7-819e-5f8499b40c83">
+      <name>RMCode</name>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M code</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>کد تعمیر و نگهداری</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Codice riparazione</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Kod remontu</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Код ремонта</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Onarım kodu</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Mã sửa chữa</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="85b9549f-a453-4c96-b8e9-ce016cbe749c">
+      <name>RMOrderCode</name>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M order code</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>کد سفارش تعمیر و نگهداری</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Codice dell'ordine di riparazione</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Kod zamówienia na remont</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Код заказа на ремонт</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Onarım sipariş kodu</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Mã đặt hàng sửa chữa</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="eb98ffe6-1879-4dec-bba2-b1044c295e4d">
+      <name>RMCycle</name>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M cycle</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>چرخه تعمیر و نگهداری</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Ciclo di riparazione</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Cykl remontowy</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Ремонтный цикл</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Onarım döngüsü</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Chu kỳ sửa chữa</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9bd7c9e7-831e-4242-86de-a8ec13f4330a">
+      <name>GeneralRMType</name>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M work type</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>نوع کار تعمیر و نگهداری</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Tipo generale di riparazione</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Ogólny rodzaj remontu</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Общий вид ремонта</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Genel bakım-onarım türü</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Dạng sửa chữa chung</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.GeneralRMTypes</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>General R&amp;M for this type</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>تعمیر و نگهداری عمومی برای این نوع</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Riparazione generale per questo tipo</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Ogólny remont dla danego rodzaju</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Общий ремонт для данного вида </value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Bu tip cihazlar için genel onarım</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Sửa chữa chung cho dạng này</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="abd26005-e2fe-4cdf-8741-1a54975a9e94">
+      <name>WorkScheduleCalendar</name>
+      <synonym>
+        <key>en</key>
+        <value>Work schedule</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>برنامه کاری</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Orario di lavoro</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Harmonogram pracy</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>График работы</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Çalışma takvimi</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Lịch biểu làm việc</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Calendars</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="e4273782-1f6b-48a5-8e36-f11b78ac3060">
+    <producedTypes>
+      <objectType typeId="6b2f8a4d-0895-4298-9e16-4f92b2d95bd7" valueTypeId="7f71b411-5c31-4369-8a5f-f040c592064f"/>
+      <rowType typeId="3198bb27-9b90-4ce3-a29b-46b6e3a8ec39" valueTypeId="1645ffaa-e831-4c98-9407-c859865b99ea"/>
+    </producedTypes>
+    <name>MaterialsAndWorks</name>
+    <synonym>
+      <key>en</key>
+      <value>Materials and works</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>مواد و کارها</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Materiali e lavori</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Materiały i prace</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Материалы и работы</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Malzemeler ve işler</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Nguyên vật liệu và nhân công</value>
+    </synonym>
+    <toolTip>
+      <key>en</key>
+      <value>Materials consumed and labor performed during R&amp;M.</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>مواد مصرف‌شده و کار انجام‌شده در حین تعمیر و نگهداری.</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Materiali e lavori, che vengono consumati ed eseguiti per l'esecuzione della riparazione.</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Materiały i prace, które są wykorzystywane i wykonywane w celu przeprowadzenia remontu.</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Материалы и работы, которые потребляются и выполняются для проведения ремонта.</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Gerçekleştirilecek onarım için tüketilen/gerçekleştirilen malzeme ve iş.</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Nguyên vật liệu và nhân công được tiêu thụ và thực hiện sửa chữa.</value>
+    </toolTip>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="9ab67d8d-1be1-488d-a4d1-2784d9dd53aa">
+      <name>Products</name>
+      <synonym>
+        <key>en</key>
+        <value>Items</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>اقلام</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Articolo</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Pozycja</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Ürün</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Mặt hàng</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Products</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Material or service.</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>ماده یا خدمت.</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Materiale o servizio.</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Materiał lub usługa.</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Материал или услуга.</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Malzeme veya hizmet.</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Nguyên vật liệu hoặc dịch vụ.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameters>
+        <name>Filter.ItemsType</name>
+        <value xsi:type="core:FixedArrayValue">
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ItemsTypes.EnumValue.OwnGoods</value>
+          </values>
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ItemsTypes.EnumValue.ReusablePackage</value>
+          </values>
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ItemsTypes.EnumValue.Work_5</value>
+          </values>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="17c9c9c6-cf6d-4237-bcb7-03605b4dad0f">
+      <name>Characteristic</name>
+      <synonym>
+        <key>en</key>
+        <value>Variant</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>گونه</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Caratteristica</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Charakterystyka</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Varyant</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Đặc tính</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ItemsCharacteristics</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Variants of the material (service) if any.</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>گونه‌های ماده (خدمت) در صورت وجود.</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Caratteristica del materiale (del servizio), se presente.</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Charakterystyka materiału (usługi), jeśli istnieje.</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Характеристика материала (услуги), если есть.</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Varsa malzemenin (hizmetin) varyantı.</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Đặc tính của nguyên vật liệu (dịch vụ), nếu có.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameterLinks>
+        <name>Products</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.RMScheduling.TabularSection.MaterialsAndWorks.Attribute.Products</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ae15bcec-22fd-47ee-bc57-2562923d7a40">
+      <name>Package</name>
+      <synonym>
+        <key>en</key>
+        <value>Packaging unit</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>واحد بسته‌بندی</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Imballaggio</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Opakowanie</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Упаковка</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Paket</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Đóng gói</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.PackagesAndUnitsOfMeasure</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Packaging unit of material, if any.</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>واحد بسته‌بندی ماده، در صورت وجود.</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Imballaggio del materiale, se presente.</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Opakowanie materiału, jeśli istnieje.</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Упаковка материала, если есть.</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Varsa malzeme paketleme ünitesi.</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Đóng gói nguyên vật liệu, nếu có.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Products</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.RMScheduling.TabularSection.MaterialsAndWorks.Attribute.Products</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b2e75a73-4b4e-4d5e-88c5-5019bff94d2a">
+      <name>NumberOfPackages</name>
+      <synonym>
+        <key>en</key>
+        <value>Quantity</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>مقدار</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Numero di imballaggi</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Liczba opakowań</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Количество упаковок</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Paket sayısı</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Số lượng đóng gói</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Number of packaging units or units of the material.</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>تعداد واحدهای بسته‌بندی یا واحدهای ماده.</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Numero di imballaggi o unità del materiale.</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Ilość opakowań lub jednostek materiału.</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество упаковок или единиц материала.</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Paketleme ünitesi sayısı veya malzeme birimi.</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Số lượng các gói hoặc đơn vị nguyên vật liệu.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f4deabbf-0f22-4aa1-b5c3-1496f92c0fe8">
+      <name>Count</name>
+      <synonym>
+        <key>en</key>
+        <value>Quantity (Stock UOM)</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>مقدار (واحد انبار)</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Quantità (in unità di stoccaggio)</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Ilość (w jednostkach przechowywania)</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Количество (в единицах хранения)</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Miktar (stok ölçü biriminde)</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Số lượng (theo đơn vị lưu kho)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>The number of units is calculated automatically. If a packaging unit is specified for the items, editing the number of units will result in automatic recalculation of the number of packaging units.</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>تعداد واحدها به طور خودکار محاسبه می‌شود. اگر برای اقلام واحد بسته‌بندی مشخص شده باشد، ویرایش تعداد واحدها باعث محاسبه مجدد خودکار تعداد واحدهای بسته‌بندی می‌شود.</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Il numero delle unità viene calcolato automaticamente. Se per gli articoli è specificato l'imballaggio, il numero delle unità può essere modificato con il ricalcolo automatico del numero di imballaggi.</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Ilość jednostek jest obliczana automatycznie. Jeśli dla pozycji produktów wskazano opakowanie, to ilość jednostek można edytować z automatycznym przeliczeniem ilości opakowań.</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество единиц рассчитывается автоматически. Если для номенклатуры указана упаковка, то количество единиц можно отредактировать с автоматическим пересчетом количества упаковок.</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Birim miktarı otomatik olarak hesaplanır. Ürünler için paketleme ünitesi belirtilmişse, birim miktarını her düzenlediğinizde paketleme ünitesi sayısı otomatik olarak yeniden hesaplanacak.</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Số lượng đơn vị được tính tự động. Nếu đối với mặt hàng đã chỉ ra hộp thì số lượng đơn vị có sửa lại bằng cách tự động kiểm đếm số lượng hộp</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3fc8367b-8ac0-4a22-a489-61ff33c0288f">
+      <name>RMCode</name>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M code</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>کد تعمیر و نگهداری</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Codice riparazione</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Kod remontu</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Код ремонта</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Onarım kodu</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Mã sửa chữa</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>R&amp;M unique ID</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>شناسه یکتای تعمیر و نگهداری</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Identificativo unico della riparazione</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Unikalny identyfikator remontu</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Уникальный идентификатор ремонта</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Benzersiz onarım kimliği</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Mã định danh duy nhất sửa chữa</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="4b67c66e-ad9b-4822-b404-7ab8fe96e1b7">
+    <producedTypes>
+      <objectType typeId="7a32ac84-b3c1-46a2-9ce2-9ec8c6eb0b14" valueTypeId="af57823c-27b5-4c52-86d9-e8edb93a57fe"/>
+      <rowType typeId="7a217498-c367-4dc6-bdc0-2dfa4b7f0b49" valueTypeId="0725e0fc-1ada-4a81-af8b-6ff87cf7776c"/>
+    </producedTypes>
+    <name>LaborCosts</name>
+    <synonym>
+      <key>en</key>
+      <value>Labor costs</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>هزینه‌های دستمزد</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Costi di manodopera</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Nakłady pracy</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Трудозатраты</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>İş gücü maliyetleri</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Chi phí nhân công</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="4ff67d72-300e-409c-872a-939fc92fb580">
+      <name>WorkKind</name>
+      <synonym>
+        <key>en</key>
+        <value>Activity kind</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>نوع فعالیت</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Tipo di lavori</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Rodzaj prac</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Вид работ</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>İş türü</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Dạng công việc</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.EmployeeWorkKinds</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Labor costs type for the R&amp;M order</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>نوع هزینه‌های دستمزد برای سفارش تعمیر و نگهداری</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Tipo di manodopera, eseguita nell'ambito dell'ordine di riparazione</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Rodzaj nakłady pracy, wykonywaną w ramach zamówienia remontu</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Вид трудозатрат, выполняемых в рамках заказа на ремонт</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Onarım siparişinin bir parçası olarak gerçekleştirilen iş gücü maliyetleri türü.</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Dạng chi phí nhân công được thực hiện như một phần của lệnh sửa chữa</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b65d5824-5b7f-48a7-b241-1d280aa70f33">
+      <name>Count</name>
+      <synonym>
+        <key>en</key>
+        <value>Quantity (standard)</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>مقدار (استاندارد)</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Quantità (norma)</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Ilość (norma)</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Количество (норма)</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Miktar (norm)</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Số lượng (định mức)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Number of works of the type</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>تعداد کارهای این نوع</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Numero di lavori di questo tipo</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Ilość prac danego rodzaju</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество работ данного вида</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Bu tür işlerin sayısı</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Số lượng tác phẩm thuộc loại này</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1d8775ba-6b4d-4e62-8481-91227fc851f9">
+      <name>RMCode</name>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M code</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>کد تعمیر و نگهداری</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Codice riparazione</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Kod remontu</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Код ремонта</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Onarım kodu</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Mã sửa chữa</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Unique ID of the order line</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>شناسه یکتای سطر سفارش</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Identificativo unico della riga dell'ordine</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Unikalny identyfikator wiersza zamówienia</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Уникальный идентификатор строки заказа</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Benzersiz sipariş satırı tanımlayıcısı</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Mã định danh duy nhất của dòng trong đơn hàng</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="d4236e80-a9db-445e-a897-1765c41c1719">
+    <producedTypes>
+      <objectType typeId="a9486cc8-5cbd-498a-9136-4599cb064f5b" valueTypeId="85c62b80-7379-4a40-9394-a714088f004a"/>
+      <rowType typeId="cc5ab118-37b3-412d-b5e3-557a531cec1e" valueTypeId="24e4b68c-3490-4954-8ebc-5a84ac730e69"/>
+    </producedTypes>
+    <name>WorkCenters</name>
+    <synonym>
+      <key>en</key>
+      <value>Work centers</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>مراکز کاری</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Centri di lavoro</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Centr wykonania prac</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Рабочие центры</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>İş merkezleri</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Nguồn lực sản xuất</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="c78cbee8-3aaa-495e-bf68-02cb84dbeffe">
+      <name>WorkCenter</name>
+      <synonym>
+        <key>en</key>
+        <value>Work center</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>مرکز کاری</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Centro di lavoro</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Centrum pracy</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Рабочий центр</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>İş merkezi</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Nguồn lực sản xuất</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.WorkCenters</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Work center that is stopped during R&amp;M activities under order</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>مرکز کاری که در حین فعالیت‌های تعمیر و نگهداری طبق سفارش متوقف می‌شود</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Centro di lavoro che viene sospeso durante l'esecuzione delle riparazioni da ordine</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Centrum pracy zatrzymywane podczas wykonywania remontów na zamówienie</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Рабочий центр останавливаемый при выполнении ремонтов по заказу</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>İş merkezi, emir üzerine yapılan onarımlar sırasında durdurulabilir</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Nguồn lực sản xuất đã dừng khi thực hiện sửa chữa theo đơn hàng</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b5fe66c2-99f3-4d7a-b984-4bb5cac9fdcc">
+      <name>RMCode</name>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M code</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>کد تعمیر و نگهداری</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Codice riparazione</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Kod remontu</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Код ремонта</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Onarım kodu</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Mã sửa chữa</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="9246ed39-d711-41ad-9884-4f65e90be0a5">
+    <name>DataProcessorForm</name>
+    <synonym>
+      <key>en</key>
+      <value>Data processor form</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>فرم پردازشگر داده</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Modulo di elaborazione</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Formularz przetwarzania</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Форма обработки</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Veri İşlemcisi formu</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Biểu mẫu xử lý</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="a86f9a5c-4c7a-49c5-8d77-0b7947eb27bd">
+    <name>DataLayoutForServerFilters</name>
+    <synonym>
+      <key>en</key>
+      <value>Data layout for server filters</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>چیدمان داده برای فیلترهای سرور</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Layout raccolta dati per selezioni di server</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Makieta układu danych dla filtru serwera</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Макет компоновки данных для серверных отборов</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Sunucu filtreleri için şablon düzeni</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Khuôn in dàn dựng dữ liệu bố cục máy chủ</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <commands uuid="2386cddc-3f7b-4d93-b4e2-d320e9e5db82">
+    <name>RMScheduling</name>
+    <synonym>
+      <key>en</key>
+      <value>Create planned R&amp;M orders</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>ایجاد سفارش‌های برنامه‌ریزی‌شده تعمیر و نگهداری</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Pianificazione dei lavori di riparazione</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Planowanie prac remontowych</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Планирование ремонтных работ</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Onarım çalışmalarının planlanması</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Kế hoạch sửa chữa</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

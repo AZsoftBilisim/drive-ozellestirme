@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4f82c31e-bd7d-45e4-8f7d-1b310f4e0250">
+  <name>BeforeSavingExchangeRates</name>
+  <synonym>
+    <key>en</key>
+    <value>Before writing relative exchange rates</value>
+  </synonym>
+  <synonym>
+    <key>fa</key>
+    <value>پیش از نوشتن نرخ‌های ارز نسبی</value>
+  </synonym>
+  <synonym>
+    <key>it</key>
+    <value>Prima della registrazione dei tassi di cambio relativi delle valute</value>
+  </synonym>
+  <synonym>
+    <key>pl</key>
+    <value>Przed wpisem względnych kursów walut</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>Перед записью относительных курсов валют</value>
+  </synonym>
+  <synonym>
+    <key>tr</key>
+    <value>Bağıl döviz kurlarını kaydetmeden önce</value>
+  </synonym>
+  <synonym>
+    <key>vi</key>
+    <value>Trước khi ghi lại tỷ giá hối đoái tương đối</value>
+  </synonym>
+  <comment>Uploads the initial state of the register to the temporary table Manager. Used in subscribing to events to check the need to re-evaluate monetary Funds.</comment>
+  <source>
+    <types>InformationRegisterRecordSet.RelativeExchangeRates</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.MonthEndTransactionsServer.ReadCurrencyRatesBeforeRecording</handler>
+</mdclass:EventSubscription>

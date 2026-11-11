@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form">
+  <title>
+    <key>en</key>
+    <value>Select ledger account</value>
+  </title>
+  <title>
+    <key>fa</key>
+    <value>انتخاب حساب دفتر کل</value>
+  </title>
+  <title>
+    <key>it</key>
+    <value>Selezione della voce contabile</value>
+  </title>
+  <title>
+    <key>pl</key>
+    <value>Wybór rachunku ewidencji</value>
+  </title>
+  <title>
+    <key>ru</key>
+    <value>Выбор счета учета</value>
+  </title>
+  <title>
+    <key>tr</key>
+    <value>Defterikebir hesabı seçimi</value>
+  </title>
+  <title>
+    <key>vi</key>
+    <value>Chọn tài khoản hạch toán</value>
+  </title>
+  <items xsi:type="form:FormField">
+    <name>GLAccount</name>
+    <id>1</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <dataPath xsi:type="form:DataPath">
+      <segments>GLAccount</segments>
+    </dataPath>
+    <extendedTooltip>
+      <name>GLAccountExtendedTooltip</name>
+      <id>3</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>GLAccountContextMenu</name>
+      <id>2</id>
+      <autoFill>true</autoFill>
+    </contextMenu>
+    <type>InputField</type>
+    <editMode>Enter</editMode>
+    <showInHeader>true</showInHeader>
+    <headerHorizontalAlign>Left</headerHorizontalAlign>
+    <showInFooter>true</showInFooter>
+    <extInfo xsi:type="form:InputFieldExtInfo">
+      <width>12</width>
+      <autoMaxWidth>true</autoMaxWidth>
+      <maxWidth>15</maxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <wrap>true</wrap>
+      <chooseType>true</chooseType>
+      <typeDomainEnabled>true</typeDomainEnabled>
+      <textEdit>true</textEdit>
+      <choiceParameterLinks>
+        <name>Filter.ChartOfAccounts</name>
+        <datapath xsi:type="form:DataPath">
+          <segments>ChartOfAccounts.Ref</segments>
+        </datapath>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Filter.OffBalance</name>
+        <datapath xsi:type="form:DataPath">
+          <segments>ObjectOfAccountingForImproperValues</segments>
+        </datapath>
+      </choiceParameterLinks>
+      <choiceParameters>
+        <name>OnlyAllowed</name>
+        <value xsi:type="form:FormChoiceListDesTimeValue">
+          <value xsi:type="core:BooleanValue">
+            <value>true</value>
+          </value>
+        </value>
+      </choiceParameters>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormGroup">
+    <name>FooterCommandBar</name>
+    <id>6</id>
+    <items xsi:type="form:Button">
+      <name>Select</name>
+      <id>4</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>SelectExtendedTooltip</name>
+        <id>5</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.Command.Select</commandName>
+      <representation>Auto</representation>
+      <defaultButton>true</defaultButton>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>en</key>
+      <value>Command bar footer</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>پاصفحه نوار فرمان</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Barra dei comandi footer</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Panel poleceń stopka</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Командная панель подвал</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Komut çubuğu alt bilgi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Thanh lệnh phần đáy</value>
+    </title>
+    <extendedTooltip>
+      <name>FooterCommandBarExtendedTooltip</name>
+      <id>7</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>CommandBar</type>
+    <extInfo xsi:type="form:CommandBarExtInfo">
+      <horizontalAlign>Right</horizontalAlign>
+    </extInfo>
+  </items>
+  <autoCommandBar>
+    <name>FormCommandBar</name>
+    <id>-1</id>
+    <horizontalAlign>Left</horizontalAlign>
+  </autoCommandBar>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>OnCreateAtServer</name>
+  </handlers>
+  <windowOpeningMode>LockOwnerWindow</windowOpeningMode>
+  <saveWindowSettings>true</saveWindowSettings>
+  <autoUrl>true</autoUrl>
+  <group>Vertical</group>
+  <autoFillCheck>true</autoFillCheck>
+  <allowFormCustomize>true</allowFormCustomize>
+  <enabled>true</enabled>
+  <showTitle>true</showTitle>
+  <showCloseButton>true</showCloseButton>
+  <attributes>
+    <name>ChartOfAccounts</name>
+    <title>
+      <key>en</key>
+      <value>Chart of accounts</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>سرفصل حساب‌ها</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Azienda</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Plan kont</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>План счетов</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Hesap planı</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Hệ thống tài khoản</value>
+    </title>
+    <id>1</id>
+    <valueType>
+      <types>CatalogRef.FinancialAccountingChartsOfAccounts</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>GLAccount</name>
+    <title>
+      <key>en</key>
+      <value>Ledger account</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>حساب دفتر کل</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Conto di bilancio</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Konto księgowe</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Счет учета</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Defterikebir hesabı</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Tài khoản kế toán</value>
+    </title>
+    <id>2</id>
+    <valueType>
+      <types>ChartOfAccountsRef.International</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes>
+    <name>ObjectOfAccountingForImproperValues</name>
+    <title>
+      <key>en</key>
+      <value>Not owned value accounting object</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>شیء حسابداری مقدار غیرمالکیتی</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Oggetto di contabilità dei valori non propri</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Obiekt ewidencji niewłasnych wartości</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Объект учета несобственных ценностей</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Sahip olunmayan değerler muhasebe nesnesi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Đối tượng ghi nhận giá trị không thuộc sở hữu</value>
+    </title>
+    <id>3</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <formCommands>
+    <name>Select</name>
+    <title>
+      <key>en</key>
+      <value>Select</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>انتخاب</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Selezionare</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Wybierz</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Выбрать</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Seç</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Chọn</value>
+    </title>
+    <id>1</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>Select</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <parameters>
+    <name>ChartOfAccounts</name>
+    <valueType>
+      <types>CatalogRef.FinancialAccountingChartsOfAccounts</types>
+    </valueType>
+  </parameters>
+  <parameters>
+    <name>ObjectOfAccountingForImproperValues</name>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+  </parameters>
+  <commandInterface>
+    <navigationPanel/>
+    <commandBar/>
+  </commandInterface>
+</form:Form>

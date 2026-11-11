@@ -1,0 +1,1036 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3b200fc8-3b5f-4356-ab28-c1cb11024849">
+  <producedTypes>
+    <objectType typeId="dfc5264d-15c4-434b-a6f3-97ffbb7edc6d" valueTypeId="b427c2c2-8bd4-40d5-a5e9-4bb2c6d0f3b7"/>
+    <managerType typeId="585d4dae-d6a9-4090-b586-8cf7e7f64efb" valueTypeId="f1c3f8bc-4fe7-45ef-8c63-eceaf87278b3"/>
+  </producedTypes>
+  <name>GenerateShiftTasks</name>
+  <synonym>
+    <key>en</key>
+    <value>Generate shift tasks</value>
+  </synonym>
+  <synonym>
+    <key>fa</key>
+    <value>ایجاد وظایف شیفت</value>
+  </synonym>
+  <synonym>
+    <key>it</key>
+    <value>Generazione dei task del turno</value>
+  </synonym>
+  <synonym>
+    <key>pl</key>
+    <value>Tworzenie zadań zmiany</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>Формирование сменных заданий</value>
+  </synonym>
+  <synonym>
+    <key>tr</key>
+    <value>Vardiyalı görevler oluşturma</value>
+  </synonym>
+  <synonym>
+    <key>vi</key>
+    <value>Lập các nhiệm vụ thay đổi</value>
+  </synonym>
+  <defaultForm>DataProcessor.GenerateShiftTasks.Form.Workplace</defaultForm>
+  <tabularSections uuid="77586b62-0576-4e72-9de0-568f3908610a">
+    <producedTypes>
+      <objectType typeId="3343d78d-7996-4153-b6f6-e5704f56bf6f" valueTypeId="38798df0-7fc9-4788-8645-d617b46f1f4e"/>
+      <rowType typeId="fe4cd4e9-e7e9-4b29-84af-87ff2991b540" valueTypeId="417bfa31-bf79-42cc-938c-1318d6bf64d3"/>
+    </producedTypes>
+    <name>PickOperations</name>
+    <synonym>
+      <key>en</key>
+      <value>Pick operations</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>انتخاب عملیات</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Selezione operazioni</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Wybór operacji</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Подбор операций</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>İşlem seçimi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Lựa chọn giao dịch</value>
+    </synonym>
+    <fillChecking>ShowError</fillChecking>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="71ae1bea-09ec-477f-a5d2-ab35cbaf697b">
+      <name>ReferenceOrder</name>
+      <synonym>
+        <key>en</key>
+        <value>Reference</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>مرجع</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Распоряжение</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Talimat</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Lệnh</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Reference</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Reference</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ProductionOrder2_2</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="59d668a4-f869-4120-9b41-57b0f4f91bb8">
+      <name>Department</name>
+      <synonym>
+        <key>en</key>
+        <value>Business unit</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>واحد تجاری</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Reparto</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Dział</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Departman</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Bộ phận</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.BusinessStructure</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="54fa163a-b564-45a7-bfa7-70b18bc53cab">
+      <name>Stage</name>
+      <synonym>
+        <key>en</key>
+        <value>Stage</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>مرحله</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Fase</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Etap</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Этап</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Aşama</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Công đoạn</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ProductionStage2_2</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Production stage</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>مرحله تولید</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Fase di produzione</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Etap produkcji</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Этап производства</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Üretim aşaması</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Công đoạn sản xuất</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillFromFillingValue>true</fillFromFillingValue>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="27926fe0-59b8-4188-906d-4bfd48780e84">
+      <name>OperationID</name>
+      <synonym>
+        <key>en</key>
+        <value>Operation ID</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>شناسه عملیات</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Identificativo dell'operazione</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Identyfikator operacji</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Идентификатор операции</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>İşlem tanımlayıcısı</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Tên định danh giao dịch</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>25</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="39546860-01e7-4fd1-9a88-ad31a688d83d">
+      <name>Operation</name>
+      <synonym>
+        <key>en</key>
+        <value>Operation</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>عملیات</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Operazione</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Operacja</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Операция</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>İşlem</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Giao dịch</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ManufacturingOperations</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Technological operation</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>عملیات فناوری</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Operazione tecnologica</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Operacja technologiczna</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Технологическая операция</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Teknolojik işlem</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Thao tác chế tạo</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillFromFillingValue>true</fillFromFillingValue>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1bd55a3e-0c91-43b8-919a-50c9f2a88588">
+      <name>ProductionOperation</name>
+      <synonym>
+        <key>en</key>
+        <value>Routing operation</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>عملیات مسیر تولید</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Operazione produttiva</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Operacja produkcyjna</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Производственная операция</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Rota işlemi</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Hoạt động sản xuất</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ProductionOperation2_2</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d54460e9-3fa7-43f6-818f-c632640e581d">
+      <name>ProductionArea</name>
+      <synonym>
+        <key>en</key>
+        <value>Area</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>مساحت</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Sito</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Obszar</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Участок</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Saha</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Khu vực</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ProductionSites</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="34ef8b9a-9652-41c9-8ff5-2de54f3f7b9d">
+      <name>WorkCenterType</name>
+      <synonym>
+        <key>en</key>
+        <value>Work center type</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>نوع مرکز کاری</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Tipo di centro di lavoro</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Rodzaj centrum wykonania pracy</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Вид рабочего центра</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>İş merkezi türü</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Dạng nguồn lực sản xuất</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.WorkCenterTypes</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="89a32875-4fdf-47e9-937c-40d15be95e1c">
+      <name>WorkCenter</name>
+      <synonym>
+        <key>en</key>
+        <value>Work center</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>مرکز کاری</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Centro di lavoro</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Centrum pracy</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Рабочий центр</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>İş merkezi</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Nguồn lực sản xuất</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.WorkCenters</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Filter.WorkCenterType</name>
+        <field>DataProcessor.GenerateShiftTasks.TabularSection.PickOperations.Attribute.WorkCenterType</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8f82d941-0a02-4ef1-8590-0bee51ae5c7c">
+      <name>SetupSettings</name>
+      <synonym>
+        <key>en</key>
+        <value>Setup settings</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>تنظیمات راه‌اندازی</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Opzione di configurazione</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Wariant ustawienia</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Вариант наладки</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Ekipman kurulum ayarları</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Phương án thiết lập</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.SetupOptions</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e04ac7ef-84e0-45e5-a19d-14bf134e4dbc">
+      <name>Performer</name>
+      <synonym>
+        <key>en</key>
+        <value>Assignee</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>مجری</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Esecutore</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Wykonawca</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Исполнитель</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Atanan</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Người thực hiện</value>
+      </synonym>
+      <type>
+        <types>DefinedType.WorkAssignee</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Work team or worker who performed the work</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>تیم کاری یا کارگری که کار را انجام داده است</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Squadra o lavoratore che esegue il lavoro</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Brygada lub pracownik, wykonujący pracę</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Бригада или работник, выполняющий работу</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>İşi yapan çalışma ekibi veya çalışan</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Đội lao động hoặc lao động thực hiện</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8da694cd-0a91-464d-bf43-687a4420ebfb">
+      <name>Count</name>
+      <synonym>
+        <key>en</key>
+        <value>Quantity</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>مقدار</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Quantità</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Ilość</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Miktar</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Số lượng</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Scheduled operations count.</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>تعداد عملیات زمان‌بندی‌شده.</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Quantità delle operazioni pianificate.</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Ilość zaplanowanych operacji.</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество запланированных операций.</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Programlanan işlemler sayı.</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Số lượng các giao dịch theo lịch trình.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="dfaffa9b-bab4-49bf-a236-4ed45c69aba1">
+      <name>BOMStage</name>
+      <synonym>
+        <key>en</key>
+        <value>BOM stage</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>مرحله فهرست مواد</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Fase della specifica</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Etap specyfikacji</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Этап спецификации</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Ürün reçetesi aşaması</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Công đoạn bảng kê chi tiết các nguồn lực sản xuất</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ProductionStages</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="08cbb26f-2c85-498d-a9ad-183fbbcbf706">
+      <name>ProductionLot</name>
+      <synonym>
+        <key>en</key>
+        <value>Production lot</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>بچ تولید</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Lotto di produzione</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Partia produkcji</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Партия производства</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Üretim lotu</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Lô hàngsản xuất</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ProductionLots</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ac6c722e-4d13-4c96-846e-b1b838651cb7">
+      <name>JobTitle</name>
+      <synonym>
+        <key>en</key>
+        <value>Job title</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>عنوان شغلی</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Должность</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Unvan</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Chức vụ</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Job title</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Job title</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.JobTitles</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="061428a6-bbd3-4668-af2f-9321976ec4ba">
+      <name>Digit</name>
+      <synonym>
+        <key>en</key>
+        <value>Labor grade</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>رتبه شغلی</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Разряд</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Derece</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Cấp bậc</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Labor grade</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Labor grade</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.LaborGrades</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d195b8e2-fd7e-4b4c-b7a2-973afa2d9677">
+      <name>LaborGradeJobTitleMismatch</name>
+      <synonym>
+        <key>en</key>
+        <value>Labor grade position mismatch</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>عدم تطابق رده کاری و سمت</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Не соответствие должности разряда</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Unvan derecesiyle uyuşmama</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Không phù hợp với chức vụ cấp bậc</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Labor grade position mismatch</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Labor grade position mismatch</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="b4cf5b06-3314-4669-af39-956688f62d34">
+    <name>Workplace</name>
+    <synonym>
+      <key>en</key>
+      <value>Workplace</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>میز کار</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Posto di lavoro</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Miejsce pracy</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Рабочее место</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Çalışma alanı</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Chỗ làm</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="b3a053b4-3dfd-45c9-862b-730ff7ab0b47">
+    <name>SelectAssignees</name>
+    <synonym>
+      <key>en</key>
+      <value>Pick assignees</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>انتخاب مجریان</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Selezione esecutori</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Wybór wykonawców</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Подбор исполнителей</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Atanan seçimi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Chọn người thực hiện</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="3aa7f045-a5ee-42a6-8721-f2586cc781a1">
+    <name>OperationAssignment1</name>
+    <synonym>
+      <key>en</key>
+      <value>Operation assignment</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>تخصیص عملیات</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Assegnazione delle operazioni</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Przeznaczenie operacji</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Назначение операций</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>İşlemlerin atanması</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Chỉ định giao dịch</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="7dab7c3d-8a0f-4250-8eb2-576e1bfa79a1">
+    <name>AddOperationsToDocument</name>
+    <synonym>
+      <key>en</key>
+      <value>Add operations to document</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>افزودن عملیات به سند</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Aggiungere l'operazione al documento</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Dodawanie operacji do dokumentu</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Добавление операций в документ</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>İşlemi belgeye ekleme</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Thêm giao dịch vào một chứng từ</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="bbe5fca3-3c29-4da7-bac5-15314144d6c8">
+    <name>SelectAreas</name>
+    <synonym>
+      <key>en</key>
+      <value>Select areas</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>انتخاب نواحی</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Selezionare aree</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Wybór pionów</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Выбор участков</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Saha seçimi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Lựa chọn địa điểm</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="755e98d1-75b3-4da1-9075-0e8e52a5aeaa">
+    <name>GenerateShiftTasks</name>
+    <synonym>
+      <key>en</key>
+      <value>Generate shift tasks</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>ایجاد وظایف شیفت</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Generazione dei task del turno</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Tworzenie zadań zmiany</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Формирование сменных заданий</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Vardiyalı görevler oluşturma</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Lập các nhiệm vụ thay đổi</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

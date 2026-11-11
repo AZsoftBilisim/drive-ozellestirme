@@ -1,0 +1,1082 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form">
+  <title>
+    <key>en</key>
+    <value>Calculate taxes</value>
+  </title>
+  <title>
+    <key>fa</key>
+    <value>محاسبه مالیات‌ها</value>
+  </title>
+  <title>
+    <key>it</key>
+    <value>Calcolare imposte, tasse</value>
+  </title>
+  <title>
+    <key>pl</key>
+    <value>Rozlicz podatki, składki</value>
+  </title>
+  <title>
+    <key>ru</key>
+    <value>Рассчитать налоги, взносы</value>
+  </title>
+  <title>
+    <key>tr</key>
+    <value>Vergileri, primleri hesapla</value>
+  </title>
+  <title>
+    <key>vi</key>
+    <value>Tính thuế, đóng góp</value>
+  </title>
+  <items xsi:type="form:FormField">
+    <name>Taxpayer</name>
+    <id>38</id>
+    <title>
+      <key>en</key>
+      <value>Calculate taxes</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>محاسبه مالیات‌ها</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Calcolare imposte, tasse</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Rozlicz podatki, składki</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Рассчитать налоги, взносы</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Vergileri, primleri hesapla</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Tính thuế, đóng góp</value>
+    </title>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Taxpayer</segments>
+    </dataPath>
+    <handlers>
+      <event>OnChange</event>
+      <name>TaxTableOnChange</name>
+    </handlers>
+    <extendedTooltip>
+      <name>TaxpayerExtendedTooltip</name>
+      <id>40</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>TaxpayerContextMenu</name>
+      <id>39</id>
+      <autoFill>true</autoFill>
+    </contextMenu>
+    <type>RadioButtonField</type>
+    <editMode>Enter</editMode>
+    <showInHeader>true</showInHeader>
+    <headerHorizontalAlign>Left</headerHorizontalAlign>
+    <showInFooter>true</showInFooter>
+    <extInfo xsi:type="form:RadioButtonsFieldExtInfo">
+      <choiceList>
+        <presentation>
+          <key>en</key>
+          <value>from company</value>
+        </presentation>
+        <presentation>
+          <key>fa</key>
+          <value>از شرکت</value>
+        </presentation>
+        <presentation>
+          <key>it</key>
+          <value>dovuta dall'azienda</value>
+        </presentation>
+        <presentation>
+          <key>pl</key>
+          <value>z firmy</value>
+        </presentation>
+        <presentation>
+          <key>ru</key>
+          <value>с организации</value>
+        </presentation>
+        <presentation>
+          <key>tr</key>
+          <value>iş yerinden</value>
+        </presentation>
+        <presentation>
+          <key>vi</key>
+          <value>với doanh nghiệp</value>
+        </presentation>
+        <value xsi:type="core:StringValue">
+          <value>Organization</value>
+        </value>
+      </choiceList>
+      <choiceList>
+        <presentation>
+          <key>en</key>
+          <value>from employees</value>
+        </presentation>
+        <presentation>
+          <key>fa</key>
+          <value>از کارمندان</value>
+        </presentation>
+        <presentation>
+          <key>it</key>
+          <value>dovuta dai dipendenti</value>
+        </presentation>
+        <presentation>
+          <key>pl</key>
+          <value>z pracowników</value>
+        </presentation>
+        <presentation>
+          <key>ru</key>
+          <value>с сотрудников</value>
+        </presentation>
+        <presentation>
+          <key>tr</key>
+          <value>çalışanlardan</value>
+        </presentation>
+        <presentation>
+          <key>vi</key>
+          <value>với nhân viên</value>
+        </presentation>
+        <value xsi:type="core:StringValue">
+          <value>Employee</value>
+        </value>
+      </choiceList>
+    </extInfo>
+  </items>
+  <items xsi:type="form:Table">
+    <name>TaxesKinds</name>
+    <id>1</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <dataPath xsi:type="form:DataPath">
+      <segments>TaxesKinds</segments>
+    </dataPath>
+    <titleLocation>None</titleLocation>
+    <items xsi:type="form:FormField">
+      <name>TaxesKindsCheck</name>
+      <id>35</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>TaxesKinds.Check</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>TaxesKindsCheckExtendedTooltip</name>
+        <id>37</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>TaxesKindsCheckContextMenu</name>
+        <id>36</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>CheckBoxField</type>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>TaxesKindsTaxKind</name>
+      <id>14</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>TaxesKinds.TaxKind</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>TaxesKindsTaxKindExtendedTooltip</name>
+        <id>16</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>TaxesKindsTaxKindContextMenu</name>
+        <id>15</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <readOnly>true</readOnly>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>TaxesKindsCalculationMethod_2</name>
+      <id>20</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>TaxesKinds.CalculationMethod_2</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>TaxesKindsCalculationMethod_2ExtendedTooltip</name>
+        <id>22</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>TaxesKindsCalculationMethod_2ContextMenu</name>
+        <id>21</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <readOnly>true</readOnly>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <listChoiceMode>true</listChoiceMode>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <choiceList>
+          <presentation>
+            <key>en</key>
+            <value>Tax rate, %</value>
+          </presentation>
+          <presentation>
+            <key>fa</key>
+            <value>نرخ مالیات، درصد</value>
+          </presentation>
+          <presentation>
+            <key>it</key>
+            <value>Aliquota d'imposta, %</value>
+          </presentation>
+          <presentation>
+            <key>pl</key>
+            <value>Stawka podatku, %</value>
+          </presentation>
+          <presentation>
+            <key>ru</key>
+            <value>Ставка налога, %</value>
+          </presentation>
+          <presentation>
+            <key>tr</key>
+            <value>Vergi oranı, %</value>
+          </presentation>
+          <presentation>
+            <key>vi</key>
+            <value>Mức thuế, %</value>
+          </presentation>
+          <value xsi:type="core:StringValue">
+            <value>AsAPercent</value>
+          </value>
+        </choiceList>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>TaxesKindsValue</name>
+      <id>17</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>TaxesKinds.Value</segments>
+      </dataPath>
+      <handlers>
+        <event>OnChange</event>
+        <name>TaxesKindsValueOnChange</name>
+      </handlers>
+      <extendedTooltip>
+        <name>TaxesKindsValueExtendedTooltip</name>
+        <id>19</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>TaxesKindsValueContextMenu</name>
+        <id>18</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <autoCommandBar>
+      <name>TaxesKindsCommandBar</name>
+      <id>2</id>
+      <horizontalAlign>Left</horizontalAlign>
+    </autoCommandBar>
+    <searchStringAddition>
+      <name>TaxesKindsSearchString</name>
+      <id>5</id>
+      <extendedTooltip>
+        <name>TaxesKindsSearchStringExtendedTooltip</name>
+        <id>7</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>TaxesKindsSearchStringContextMenu</name>
+        <id>6</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <source>TaxesKinds</source>
+      <extInfo xsi:type="form:SearchStringAdditionExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+      </extInfo>
+    </searchStringAddition>
+    <viewStatusAddition>
+      <name>TaxesKindsViewStatus</name>
+      <id>11</id>
+      <extendedTooltip>
+        <name>TaxesKindsViewStatusExtendedTooltip</name>
+        <id>13</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>TaxesKindsViewStatusContextMenu</name>
+        <id>12</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>ViewStatusAddition</type>
+      <source>TaxesKinds</source>
+      <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <horizontalLocation>Left</horizontalLocation>
+      </extInfo>
+    </viewStatusAddition>
+    <searchControlAddition>
+      <name>TaxesKindsSearchControl</name>
+      <id>8</id>
+      <extendedTooltip>
+        <name>TaxesKindsSearchControlExtendedTooltip</name>
+        <id>10</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>TaxesKindsSearchControlContextMenu</name>
+        <id>9</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>SearchControlAddition</type>
+      <source>TaxesKinds</source>
+      <extInfo xsi:type="form:SearchControlAdditionExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+      </extInfo>
+    </searchControlAddition>
+    <extendedTooltip>
+      <name>TaxesKindsExtendedTooltip</name>
+      <id>4</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>TaxesKindsContextMenu</name>
+      <id>3</id>
+      <autoFill>true</autoFill>
+    </contextMenu>
+    <autoMaxWidth>true</autoMaxWidth>
+    <autoMaxHeight>true</autoMaxHeight>
+    <heightInTableRows>6</heightInTableRows>
+    <autoMaxRowsCount>true</autoMaxRowsCount>
+    <selectionMode>MultiRow</selectionMode>
+    <header>true</header>
+    <headerHeight>1</headerHeight>
+    <footerHeight>1</footerHeight>
+    <horizontalScrollBar>AutoUse</horizontalScrollBar>
+    <verticalScrollBar>AutoUse</verticalScrollBar>
+    <horizontalLines>true</horizontalLines>
+    <verticalLines>true</verticalLines>
+    <searchOnInput>Auto</searchOnInput>
+    <initialListView>Auto</initialListView>
+    <horizontalStretch>true</horizontalStretch>
+    <verticalStretch>true</verticalStretch>
+    <fileDragMode>AsFileRef</fileDragMode>
+    <rowFilter xsi:type="core:UndefinedValue"/>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>SelectedLinesOnly</name>
+    <id>26</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <dataPath xsi:type="form:DataPath">
+      <segments>SelectedLinesOnly</segments>
+    </dataPath>
+    <extendedTooltip>
+      <name>SelectedLinesOnlyExtendedTooltip</name>
+      <id>28</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>SelectedLinesOnlyContextMenu</name>
+      <id>27</id>
+      <autoFill>true</autoFill>
+    </contextMenu>
+    <type>RadioButtonField</type>
+    <editMode>Enter</editMode>
+    <showInHeader>true</showInHeader>
+    <headerHorizontalAlign>Left</headerHorizontalAlign>
+    <showInFooter>true</showInFooter>
+    <extInfo xsi:type="form:RadioButtonsFieldExtInfo">
+      <choiceList>
+        <presentation>
+          <key>en</key>
+          <value>All</value>
+        </presentation>
+        <presentation>
+          <key>fa</key>
+          <value>همه</value>
+        </presentation>
+        <presentation>
+          <key>it</key>
+          <value>Tutti</value>
+        </presentation>
+        <presentation>
+          <key>pl</key>
+          <value>Wszystkie</value>
+        </presentation>
+        <presentation>
+          <key>ru</key>
+          <value>Все</value>
+        </presentation>
+        <presentation>
+          <key>tr</key>
+          <value>Tümü</value>
+        </presentation>
+        <presentation>
+          <key>vi</key>
+          <value>Tất cả</value>
+        </presentation>
+        <value xsi:type="core:NumberValue">
+          <value>0</value>
+        </value>
+      </choiceList>
+      <choiceList>
+        <presentation>
+          <key>en</key>
+          <value>Only selected</value>
+        </presentation>
+        <presentation>
+          <key>fa</key>
+          <value>فقط انتخاب‌شده‌ها</value>
+        </presentation>
+        <presentation>
+          <key>it</key>
+          <value>Soltanto elementi selezionati</value>
+        </presentation>
+        <presentation>
+          <key>pl</key>
+          <value>Tylko wybrane</value>
+        </presentation>
+        <presentation>
+          <key>ru</key>
+          <value>Только выделенные</value>
+        </presentation>
+        <presentation>
+          <key>tr</key>
+          <value>Sadece belirtilenler</value>
+        </presentation>
+        <presentation>
+          <key>vi</key>
+          <value>Chỉ gồm giá đã chọn</value>
+        </presentation>
+        <value xsi:type="core:NumberValue">
+          <value>1</value>
+        </value>
+      </choiceList>
+    </extInfo>
+  </items>
+  <autoCommandBar>
+    <name>FormCommandBar</name>
+    <id>-1</id>
+    <items xsi:type="form:Button">
+      <name>FormAccept</name>
+      <id>29</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>FormAcceptExtendedTooltip</name>
+        <id>30</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.Command.Accept</commandName>
+      <representation>Auto</representation>
+      <defaultButton>true</defaultButton>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <items xsi:type="form:Button">
+      <name>FormCancel</name>
+      <id>33</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>FormCancelExtendedTooltip</name>
+        <id>34</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.StandardCommand.Cancel</commandName>
+      <representation>Auto</representation>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <horizontalAlign>Left</horizontalAlign>
+  </autoCommandBar>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>OnCreateAtServer</name>
+  </handlers>
+  <windowOpeningMode>LockOwnerWindow</windowOpeningMode>
+  <saveWindowSettings>true</saveWindowSettings>
+  <autoUrl>true</autoUrl>
+  <group>Vertical</group>
+  <autoFillCheck>true</autoFillCheck>
+  <enabled>true</enabled>
+  <showTitle>true</showTitle>
+  <showCloseButton>true</showCloseButton>
+  <attributes>
+    <name>TaxesKinds</name>
+    <title>
+      <key>en</key>
+      <value>Tax kinds</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>انواع مالیات</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Tipi di tasse</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Rodzaje podatków</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Виды налогов</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Vergi türleri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Dạng thuế</value>
+    </title>
+    <id>2</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>TaxKind</name>
+      <title>
+        <key>en</key>
+        <value>Tax kind</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>نوع مالیات</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Tipo di tassa</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Rodzaj podatku</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Вид налога</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Vergi türü</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Dạng thuế</value>
+      </title>
+      <id>3</id>
+      <valueType>
+        <types>CatalogRef.TaxContributionKinds</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Value</name>
+      <title>
+        <key>en</key>
+        <value>Rate</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>نرخ</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Valore</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Wartość</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Значение</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Değer</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Giá trị</value>
+      </title>
+      <id>5</id>
+      <valueType>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>5</precision>
+          <scale>2</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>CalculationMethod_2</name>
+      <title>
+        <key>en</key>
+        <value>Calculation method</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>روش محاسبه</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Metodo di calcolo</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Sposób obliczania</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Способ расчета</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Hesaplama yöntemi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Phương pháp hạch toán</value>
+      </title>
+      <id>7</id>
+      <valueType>
+        <types>String</types>
+        <stringQualifiers/>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Check</name>
+      <title>
+        <key>en</key>
+        <value>Mark</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>علامت</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Contrassegno</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Zaznaczenie</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Пометка</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>İşaret</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Đánh dấu</value>
+      </title>
+      <id>8</id>
+      <valueType>
+        <types>Boolean</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>SelectedLinesOnly</name>
+    <title>
+      <key>en</key>
+      <value>Change document lines</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>تغییر سطرهای سند</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Modifica le righe del documento</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Zmień wiersze dokumentu</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Изменить строки документа</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Belge satırlarını değiştir</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Thay đổi dòng chứng từ</value>
+    </title>
+    <id>4</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>SettlementMode</name>
+    <title>
+      <key>en</key>
+      <value>Settlement mode</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>حالت تسویه</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Modalità di regolamento</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Tryb rozliczenia</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Режим расчета</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Hesaplama modu</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Chế độ tính toán</value>
+    </title>
+    <id>9</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>Taxpayer</name>
+    <title>
+      <key>en</key>
+      <value>Taxpayer</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>مؤدی مالیاتی</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Налогоплательщик</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Vergi mükellefi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Người nộp thuế</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Taxpayer</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Taxpayer</value>
+    </title>
+    <id>11</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers>
+        <length>25</length>
+      </stringQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>CalculationMethods</name>
+    <title>
+      <key>en</key>
+      <value>Calculation methods</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>روش‌های محاسبه</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Metodo di calcolo</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Sposóby obliczania</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Способы расчета</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Hesaplama yöntemi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Phương pháp hạch toán</value>
+    </title>
+    <id>12</id>
+    <valueType>
+      <types>ValueList</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <extInfo xsi:type="form:ValueListExtInfo">
+      <itemValueType>
+        <types>String</types>
+        <stringQualifiers>
+          <length>25</length>
+        </stringQualifiers>
+      </itemValueType>
+    </extInfo>
+  </attributes>
+  <formCommands>
+    <name>Accept</name>
+    <title>
+      <key>en</key>
+      <value>Calculate</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>محاسبه</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Accettare</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Zastosuj</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Принять</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Kabul et</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Tiếp nhận</value>
+    </title>
+    <id>1</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>Accept</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <commandInterface>
+    <navigationPanel/>
+    <commandBar/>
+  </commandInterface>
+</form:Form>

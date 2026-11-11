@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="__STYLE__"></link></head><body>
+  <p class="Usual" style="margin: 0.5em 0em 0em; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px;">Gelişmiş arama sadece "İş Ortakları" dizininde değil, aynı zamanda "İrtibat Kişileri", "Sözleşmeler" dizinleri vb. gibi ilgili verilerde de gerçekleştirilmektedir.</p>
+  <p class="Usual" style="margin: 0.5em 0em 0em; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px;">Bu arama birçok özelliğe sahiptir, fakat tam metin arama sorgu dili kullanılmaktadır, ve buradaki bazı sonuçlar kullanıcı için beklenmedik olabilir.</p>
+  <p class="Usual" style="margin: 0.5em 0em 0em; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px;">Örneğin, bir dizenin bir kısmına göre arama yapmak için * eklemeniz gerekmektedir.  Örneğin, "belg" girerseniz, "belge" kelimesi bulunamayacaktır, arama satırına "belg*" olarak girmeniz gerekmektedir</p>
+  <p class="Usual" style="margin: 0.5em 0em 0em; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px;">Arama operatörlerini kullanarak ve tam ifadeye göre arama yaparak birden fazla kelimeyle arama yapabilirsiniz. </p>
+  <p class="Usual" style="margin: 0.5em 0em 0em; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px;">Giriş satırında aşağıdaki arama operatörleri kullanılmasına izin verilir:</p>
+  <table width="95%" style="color: rgb(0, 0, 0); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px;" border="1" cellspacing="1" cellpadding="0"><tbody><tr><td><strong>Operatör</strong></td>
+     <td><strong> Örnek</strong></td>
+     <td><strong> Not</strong></td>
+    </tr><tr><td align="center">Ve<br>
+      AND<br>
+       &amp;</td>
+     <td> <em>kayıt</em>Ve<em>belge</em><br><em>kayıt</em>AND<em>belge</em><br><em>kayıt</em>&amp;<em>belge</em></td>
+     <td> Açıklama hem “<em>kayıt</em>” hem de “<em>belge</em>” içermelidir (morfolojiye tabi)</td>
+    </tr><tr><td width="80" align="center">VEYA<br>
+       OR<br>
+       |<br>
+      ,</td>
+     <td> <em>kayıt</em>VEYA<em>belge</em><br><em>kayıt</em>OR<em>belge</em><br><em>kayıt</em> |<em>belge</em><br><em>kayıt</em>,<em>belge</em></td>
+     <td> Açıklama, "<em>kayıt</em>" veya "<em>belge</em>" kelimelerinden en az birini içermelidir</td>
+    </tr><tr><td align="center"><br>
+      NOT DEĞİL<br><br></td>
+     <td> <em>kapanış</em>DEĞİL<em>ay</em><br><em>kapanış</em>NOT<em>ay</em><br></td>
+     <td> "<em>kapanış</em>" kelimesini içeren fakat "<em>ay</em>" kelimesini içermeyen her şey bulunacaktır. </td>
+    </tr><tr><td align="center">YAKIN/[±]n<br>
+       NEAR/[±]n</td>
+     <td>
+      <p style="margin-top: 0em;"> 1. Örnek: 3 ürün/YAKIN <br>
+        satış</p>
+      <p style="margin-top: 0em;"> 2. Örnek: +3 ürün/YAKIN <br>
+        satış</p>
+      <p style="margin-top: 0em;"> 3. Örnek: -3 ürün/YAKIN <br>
+        satış</p></td>
+     <td> Kelimeler arasındaki <strong>n</strong> kelime mesafesindeki morfolojiyi dikkate alarak, belirtilen kelimeleri tek bir öznitelikte içeren verileri arama.<br>
+        İşaret, ilk kelimeden itibaren ikinci kelimenin hangi yönde aranacağını göstermektedir ("+" – ilk kelimeden sonra; "-" – ilk kelimeden önce).<br>
+        Herhangi bir işaret belirtilmezse, belirtilen kelimeleri içeren veriler birbirinden <strong>n</strong> kelime uzaklıkta bulunacaktır. Kelimelerin sırası önemli değildir. <br>
+        1. Örnekte "ürün" kelimesinin "satış" kelimesinden önce veya sonra en fazla 3 kelime olduğu veriler bulunacaktır.<br>
+        2. Örnekte "ürün" kelimesinin "satış" kelimesinden önce veya sonra en fazla 3 kelime olduğu veriler bulunacaktır.<br>
+        3. Örnekte "ürün" kelimesinin "satış" kelimesinden önce veya sonra en fazla 3 kelime olduğu veriler bulunacaktır.</td>
+    </tr><tr><td align="center">YAKIN<br>
+       NEAR</td>
+     <td> <em>kaydetme</em>YAKIN<em>belge</em><br><em>kaydetme</em>NEAR<em>belge</em></td>
+     <td> Basitleştirilmiş mesafe operatörü.<br>
+        <span style="background-color: rgb(255, 255, 255);">Sorgu</span>, aynı öznitelikteki kelimelerin herhangi bir yönde birbirinden en fazla 8 kelime uzakta olduğu öğeleri bulacaktır.</td>
+    </tr><tr><td align="center">" "</td>
+     <td> "<em>belgenin kaydedilmesi</em>"</td>
+     <td> Morfolojiyi dikkate alarak tam ifade araması (eşdeğer: <em>kaydetme</em> YAKIN/+1 <em>belge</em>)</td>
+    </tr><tr><td align="center">()</td>
+     <td> (<em>kaydetme</em>|<em>özet</em>) &amp;<br>
+       (<em>hesap</em>,<em>belgenin</em>) </td>
+     <td> Kelime gruplandırma (iç içe geçme seviyelerinin sayısı sınırsızdır)</td>
+    </tr><tr><td>
+      <p align="center" style="margin-top: 0em;">*</p></td>
+     <td><em>belg</em>*</td>
+     <td> Bir grup sembolü kullanarak arama (kelime sonlarını değiştirerek). <br>
+       1'den fazla anlamlı karakter girilmelidir. <br>
+      Yapılan <span style="background-color: rgb(255, 255, 255);">sorgu "</span><em>belg</em>*" doğrultusunda "belge", "belgele", "belgesel" vb. sözcükler bulacaktır. </td>
+    </tr><tr><td>
+      <p align="center" style="margin-top: 0em;">~</p></td>
+     <td>
+      <p style="margin-top: 0em;">~Sistem<br>
+        Sistem~2</p></td>
+     <td><b>Bu operatör tam metin aramaları için kullanılır, referans aramaları için kullanılmaz.<br></b>Bulanık belirtilen kelimeden belirtilen sayıda farkı olan kelimeleri arar (belirtilmemişse, = 1); örnek: “~System” <br><span style="background-color: rgb(255, 255, 255);">sorgusu “systama”, “sivtema” bulacaktır; “System~2” <br>
+        sorgusu “sittama”, “settema” bulacaktır <br></span></td>
+    </tr><tr><td align="center">
+      <p align="center" style="margin-top: 0em;"><span style="background-color: rgb(255, 255, 255);">!</span></p></td>
+     <td><span style="background-color: rgb(255, 255, 255);">!kırmızı</span></td>
+     <td><span style="background-color: rgb(255, 255, 255);">Rusça, İngilizce ve Ukraynaca dillerinin eşanlamlılarını dikkate alarak arama yapın. "</span>!" ilgili kelimenin önüne yerleştirilir; örnek: arama “!kırmızı “kiremit”, "kırmızı kiremit" ve "mercan kiremit" bulacaktır.</td>
+    </tr></tbody></table><p style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px; margin-top: 0em;"> </p>
+  <p style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.19px; margin-top: 0em;"><br></p>
+ </body></html>

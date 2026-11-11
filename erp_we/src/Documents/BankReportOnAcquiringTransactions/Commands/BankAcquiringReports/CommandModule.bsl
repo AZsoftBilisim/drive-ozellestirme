@@ -1,0 +1,11 @@
+
+&AtClient
+Procedure CommandProcessing(CommandParameter, CommandExecuteParameters)
+	
+	OpenForm("Document.BankReportOnAcquiringTransactions.Form.DocumentsListForm",
+		, // Form parametersreferences,
+		CommandExecuteParameters.Source,
+		CommandExecuteParameters.Uniqueness,
+		CommandExecuteParameters.Window);
+	
+EndProcedure

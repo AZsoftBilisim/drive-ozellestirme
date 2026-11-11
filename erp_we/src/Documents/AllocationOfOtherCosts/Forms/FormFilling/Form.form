@@ -1,0 +1,1134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form">
+  <title>
+    <key>en</key>
+    <value>Generate cost allocation documents</value>
+  </title>
+  <title>
+    <key>fa</key>
+    <value>ایجاد اسناد تسهیم بهای تمام‌شده</value>
+  </title>
+  <title>
+    <key>it</key>
+    <value>Formazione di documenti di assegnazione delle spese</value>
+  </title>
+  <title>
+    <key>pl</key>
+    <value>Tworzenie dokumentów podziału rozchodów</value>
+  </title>
+  <title>
+    <key>ru</key>
+    <value>Формирование документов распределения расходов</value>
+  </title>
+  <title>
+    <key>tr</key>
+    <value>Giderler tahsisi için belgelerin oluşturulması</value>
+  </title>
+  <title>
+    <key>vi</key>
+    <value>Tạo chứng từ phân bổ chi phí</value>
+  </title>
+  <items xsi:type="form:Decoration">
+    <name>CaptionCaption</name>
+    <id>51</id>
+    <title>
+      <key>en</key>
+      <value>When generating documents, the following expense item allocation settings will be used:</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>هنگام ایجاد اسناد، تنظیمات تسهیم قلم هزینه زیر استفاده خواهد شد:</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Quando si generano documenti, verranno utilizzate le seguenti impostazioni di ripartizione delle voci delle spese:</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Przy tworzeniu dokumentów zostaną wykorzystane następujące ustawienia podziału artykułu rozchodów:</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>При формировании документов будут использованы следующие настройки распределения статьи расходов:</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Belge oluştururken, gider kaleminin dağıtımı için aşağıdaki ayarlar kullanılacaktır:</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Khi tạo chứng từ, các cài đặt  phân bổ dạng chi phí sau sẽ được sử dụng:</value>
+    </title>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <extendedTooltip>
+      <name>CaptionCaptionExtendedTooltip</name>
+      <id>60</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>CaptionCaptionContextMenu</name>
+      <id>52</id>
+      <autoFill>true</autoFill>
+    </contextMenu>
+    <type>Label</type>
+    <autoMaxHeight>true</autoMaxHeight>
+    <extInfo xsi:type="form:LabelDecorationExtInfo">
+      <horizontalAlign>Left</horizontalAlign>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormGroup">
+    <name>GroupDistributionRule</name>
+    <id>91</id>
+    <items xsi:type="form:FormGroup">
+      <name>PageAllocationRulesGroup</name>
+      <id>96</id>
+      <items xsi:type="form:FormGroup">
+        <name>PageDepartmentsStages</name>
+        <id>98</id>
+        <items xsi:type="form:FormField">
+          <name>AllocationOption</name>
+          <id>93</id>
+          <title>
+            <key>en</key>
+            <value>Costs are allocated</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>هزینه‌ها تسهیم می‌شوند</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Spese si ripartono</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Rozchody dzielą się</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Расходы распределяются</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Giderler dağıtılıyor</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Chi phí được phân bổ</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>AllocationOption</segments>
+          </dataPath>
+          <handlers>
+            <event>OnChange</event>
+            <name>AllocationOptionOnChange</name>
+          </handlers>
+          <extendedTooltip>
+            <name>AllocationOptionExtendedTooltip</name>
+            <id>95</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>AllocationOptionContextMenu</name>
+            <id>94</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <handlers>
+              <event>Clearing</event>
+              <name>AllocationOptionClearing</name>
+            </handlers>
+            <width>28</width>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <horizontalStretch>false</horizontalStretch>
+            <wrap>true</wrap>
+            <dropListButton>true</dropListButton>
+            <listChoiceMode>true</listChoiceMode>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+            <choiceList>
+              <value xsi:type="core:ReferenceValue">
+                <value>Enum.MethodsOfExpenseItemAllocations.EnumValue.ByBusinessUnitsAndStagesAccToRules</value>
+              </value>
+            </choiceList>
+            <choiceList>
+              <value xsi:type="core:ReferenceValue">
+                <value>Enum.MethodsOfExpenseItemAllocations.EnumValue.ByStagesAccToRuleInBusinessUnit</value>
+              </value>
+            </choiceList>
+            <choiceList>
+              <value xsi:type="core:ReferenceValue">
+                <value>Enum.MethodsOfExpenseItemAllocations.EnumValue.ByStagesAccToRuleInAllBusinessUnits</value>
+              </value>
+            </choiceList>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>DivisionsStagesDivisionDistributionRule</name>
+          <id>105</id>
+          <title>
+            <key>en</key>
+            <value>By business units</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>بر اساس واحدهای تجاری</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Per reparti</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Wg działów</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>По подразделениям</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Departmanlara  göre</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Theo bộ phận</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>DivisionAllocationRule</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>DivisionsStagesDivisionDistributionRuleExtendedTooltip</name>
+            <id>107</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>DivisionsStagesDivisionDistributionRuleContextMenu</name>
+            <id>106</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <width>28</width>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <horizontalStretch>false</horizontalStretch>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+            <choiceParameters>
+              <name>Filter.AssignRule</name>
+              <value xsi:type="form:FormChoiceListDesTimeValue">
+                <value xsi:type="core:ReferenceValue">
+                  <value>Enum.AssignmentOfCostAllocationRules.EnumValue.CostAllocationBetweenBusinessUnits</value>
+                </value>
+              </value>
+            </choiceParameters>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>DivisionsStagesTheRuleOfDistributionByStages</name>
+          <id>113</id>
+          <title>
+            <key>en</key>
+            <value>By stages</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>بر اساس مراحل</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Per fasi</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Wg etapów</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>По этапам</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Aşamalara göre</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Theo công đoạn</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>TheRuleOfDistributionByStages</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>DivisionsStagesTheRuleOfDistributionByStagesExtendedTooltip</name>
+            <id>115</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>DivisionsStagesTheRuleOfDistributionByStagesContextMenu</name>
+            <id>114</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <width>28</width>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <horizontalStretch>false</horizontalStretch>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+            <choiceParameters>
+              <name>Filter.AssignRule</name>
+              <value xsi:type="form:FormChoiceListDesTimeValue">
+                <value xsi:type="core:ReferenceValue">
+                  <value>Enum.AssignmentOfCostAllocationRules.EnumValue.ExpenseAllocationOnManufacturingCostsByLots</value>
+                </value>
+              </value>
+            </choiceParameters>
+          </extInfo>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>Page business units stages</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>صفحه مراحل واحدهای تجاری</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Pagina dell'unità fasi</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Strona działu etapy</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Страница подразделения этапы</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Sayfa departman aşamalar</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Trang bộ phận công đoạn</value>
+        </title>
+        <extendedTooltip>
+          <name>PageDepartmentsStagesExtendedTooltip</name>
+          <id>99</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>Page</type>
+        <extInfo xsi:type="form:PageGroupExtInfo">
+          <group>Vertical</group>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormGroup">
+        <name>PageStages</name>
+        <id>116</id>
+        <items xsi:type="form:FormField">
+          <name>AllocationOption1</name>
+          <id>124</id>
+          <title>
+            <key>en</key>
+            <value>Costs are allocated</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>هزینه‌ها تسهیم می‌شوند</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Spese si ripartono</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Rozchody dzielą się</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Расходы распределяются</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Giderler dağıtılıyor</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Chi phí được phân bổ</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>AllocationOption</segments>
+          </dataPath>
+          <handlers>
+            <event>OnChange</event>
+            <name>AllocationOptionOnChange</name>
+          </handlers>
+          <extendedTooltip>
+            <name>AllocationOption1ExtendedTooltip</name>
+            <id>126</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>AllocationOption1ContextMenu</name>
+            <id>125</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <handlers>
+              <event>Clearing</event>
+              <name>AllocationOptionClearing</name>
+            </handlers>
+            <width>28</width>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <horizontalStretch>false</horizontalStretch>
+            <wrap>true</wrap>
+            <dropListButton>true</dropListButton>
+            <listChoiceMode>true</listChoiceMode>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+            <choiceList>
+              <value xsi:type="core:ReferenceValue">
+                <value>Enum.MethodsOfExpenseItemAllocations.EnumValue.ByBusinessUnitsAndStagesAccToRules</value>
+              </value>
+            </choiceList>
+            <choiceList>
+              <value xsi:type="core:ReferenceValue">
+                <value>Enum.MethodsOfExpenseItemAllocations.EnumValue.ByStagesAccToRuleInBusinessUnit</value>
+              </value>
+            </choiceList>
+            <choiceList>
+              <value xsi:type="core:ReferenceValue">
+                <value>Enum.MethodsOfExpenseItemAllocations.EnumValue.ByStagesAccToRuleInAllBusinessUnits</value>
+              </value>
+            </choiceList>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>StagesTheRuleOfDistributionByStages</name>
+          <id>121</id>
+          <title>
+            <key>en</key>
+            <value>By stages</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>بر اساس مراحل</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Per fasi</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Wg etapów</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>По этапам</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Aşamalara göre</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Theo công đoạn</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>TheRuleOfDistributionByStages</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>StagesTheRuleOfDistributionByStagesExtendedTooltip</name>
+            <id>123</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>StagesTheRuleOfDistributionByStagesContextMenu</name>
+            <id>122</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <width>28</width>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <horizontalStretch>false</horizontalStretch>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+            <choiceParameters>
+              <name>Filter.AssignRule</name>
+              <value xsi:type="form:FormChoiceListDesTimeValue">
+                <value xsi:type="core:ReferenceValue">
+                  <value>Enum.AssignmentOfCostAllocationRules.EnumValue.ExpenseAllocationOnManufacturingCostsByLots</value>
+                </value>
+              </value>
+            </choiceParameters>
+          </extInfo>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>Page stages</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>صفحه مراحل</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Pagina fasi</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Strona etapy</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Страница этапы</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Sayfa aşamalar</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Trang công đoạn</value>
+        </title>
+        <extendedTooltip>
+          <name>PageStagesExtendedTooltip</name>
+          <id>117</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>Page</type>
+        <extInfo xsi:type="form:PageGroupExtInfo">
+          <group>Vertical</group>
+        </extInfo>
+      </items>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>en</key>
+        <value>Allocation rules pages</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>صفحات قواعد تسهیم</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Regole di ripartizione pagine</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Zasady podziału strony</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Правила распределения страницы</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Dağıtım kuralı sayfaları</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Quy tắc phân bổ trang</value>
+      </title>
+      <extendedTooltip>
+        <name>PageAllocationRulesGroupExtendedTooltip</name>
+        <id>97</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <type>Pages</type>
+      <extInfo xsi:type="form:PagesGroupExtInfo">
+        <currentRowUse>Auto</currentRowUse>
+      </extInfo>
+    </items>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>en</key>
+      <value>Allocation rule</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>قاعده تسهیم</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Regola della ripartizione</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Zasada podziału</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Правило распределения</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Dağıtım kuralı</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Quy tắc phân bổ</value>
+    </title>
+    <extendedTooltip>
+      <name>GroupDistributionRuleExtendedTooltip</name>
+      <id>92</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>UsualGroup</type>
+    <extInfo xsi:type="form:UsualGroupExtInfo">
+      <group>Vertical</group>
+      <showLeftMargin>true</showLeftMargin>
+      <united>true</united>
+      <throughAlign>Auto</throughAlign>
+      <currentRowUse>Auto</currentRowUse>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormGroup">
+    <name>FooterGroup</name>
+    <id>26</id>
+    <items xsi:type="form:Button">
+      <name>CreateDocuments</name>
+      <id>27</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>CreateDocumentsExtendedTooltip</name>
+        <id>81</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.Command.GenerateDocuments</commandName>
+      <representation>Auto</representation>
+      <defaultButton>true</defaultButton>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <items xsi:type="form:Button">
+      <name>Close</name>
+      <id>28</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>CloseExtendedTooltip</name>
+        <id>82</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.StandardCommand.Close</commandName>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>en</key>
+      <value>Footer</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>پاصفحه</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Footer</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Stopka</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Подвал</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Alt bilgi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Phần đáy</value>
+    </title>
+    <extendedTooltip>
+      <name>FooterGroupExtendedTooltip</name>
+      <id>80</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>CommandBar</type>
+    <extInfo xsi:type="form:CommandBarExtInfo">
+      <horizontalAlign>Right</horizontalAlign>
+    </extInfo>
+  </items>
+  <commandBarLocation>None</commandBarLocation>
+  <autoCommandBar>
+    <name>FormCommandBar</name>
+    <id>-1</id>
+    <horizontalAlign>Left</horizontalAlign>
+    <autoFill>true</autoFill>
+  </autoCommandBar>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>OnCreateAtServer</name>
+  </handlers>
+  <handlers>
+    <event>FillCheckProcessingAtServer</event>
+    <name>FillCheckProcessingAtServer</name>
+  </handlers>
+  <autoSaveDataInSettings>Use</autoSaveDataInSettings>
+  <saveWindowSettings>true</saveWindowSettings>
+  <autoUrl>true</autoUrl>
+  <group>Vertical</group>
+  <autoFillCheck>true</autoFillCheck>
+  <allowFormCustomize>true</allowFormCustomize>
+  <enabled>true</enabled>
+  <showTitle>true</showTitle>
+  <showCloseButton>true</showCloseButton>
+  <attributes>
+    <name>TheRuleOfDistributionByStages</name>
+    <title>
+      <key>en</key>
+      <value>Indicator for allocation by stages</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>شاخص تسهیم بر اساس مراحل</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Indicatore per ripartizione per fasi</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Wskaźnik dla podziału na etapy</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Показатель для распределения по этапам</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Aşamalara göre dağıtım için gösterge</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Chỉ tiêu cho phân bổ theo giai đoạn</value>
+    </title>
+    <id>3</id>
+    <valueType>
+      <types>CatalogRef.CostAllocationRules</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <fillChecking>ShowError</fillChecking>
+    <settingsSavedData xsi:type="form:DataPath">
+      <segments>TheRuleOfDistributionByStages</segments>
+    </settingsSavedData>
+  </attributes>
+  <attributes>
+    <name>DivisionAllocationRule</name>
+    <title>
+      <key>en</key>
+      <value>Indicator for allocation by business units</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>شاخص تسهیم بر اساس واحدهای تجاری</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Indicatore per ripartizione per unità</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Wskaźnik dla podziału na działy</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Показатель для распределения по подразделениям</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Departmanlara göre dağıtım göstergesi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Chỉ tiêu phân bổ theo bộ phận</value>
+    </title>
+    <id>4</id>
+    <valueType>
+      <types>CatalogRef.CostAllocationRules</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <fillChecking>ShowError</fillChecking>
+    <settingsSavedData xsi:type="form:DataPath">
+      <segments>DivisionAllocationRule</segments>
+    </settingsSavedData>
+  </attributes>
+  <attributes>
+    <name>Period</name>
+    <title>
+      <key>en</key>
+      <value>Period</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>دوره</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Periodo</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Okres</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Период</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Dönem</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Kỳ</value>
+    </title>
+    <id>9</id>
+    <valueType>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>AnalyticalAccountingByProductsGroups</name>
+    <title>
+      <key>en</key>
+      <value>Analytical accounting by product groups</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>حسابداری تحلیلی بر اساس گروه‌های محصول</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Contabilità analitica per gruppi dei prodotti</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Ewidencja analityczna wg grup produkcji</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Аналитический учет по группам продукции</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>İmal edilen ürün gruplarına göre analitik muhasebe</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Kế toán phân tích theo nhóm sản phẩm</value>
+    </title>
+    <id>11</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>AllocationOption</name>
+    <title>
+      <key>en</key>
+      <value>Allocation option</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>گزینه تسهیم</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Opzione di ripartizione</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Wersja pakietów instalacyjnych</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Вариант распределения</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Dağıtım seçeneği</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Phương án phân bổ</value>
+    </title>
+    <id>12</id>
+    <valueType>
+      <types>EnumRef.MethodsOfExpenseItemAllocations</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <formCommands>
+    <name>GenerateDocuments</name>
+    <title>
+      <key>en</key>
+      <value>Generate documents</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>ایجاد اسناد</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Formare i documenti</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Generuj dokumenty</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Сформировать документы</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Belgeleri oluştur</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Tạo chứng từ</value>
+    </title>
+    <id>1</id>
+    <toolTip>
+      <key>en</key>
+      <value>Generate documents</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>ایجاد اسناد</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Formare i documenti</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Generuj dokumenty</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Сформировать документы</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Belgeleri oluştur</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Tạo chứng từ</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>GenerateDocuments</name>
+      </handler>
+    </action>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <commandInterface>
+    <navigationPanel/>
+    <commandBar/>
+  </commandInterface>
+</form:Form>

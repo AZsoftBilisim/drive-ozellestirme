@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form">
+  <title>
+    <key>en</key>
+    <value>Select a business transaction of balance entry</value>
+  </title>
+  <title>
+    <key>fa</key>
+    <value>انتخاب معامله تجاری ورود مانده</value>
+  </title>
+  <title>
+    <key>it</key>
+    <value>Selezione dell'operazione commerciale di inserimento dei saldi</value>
+  </title>
+  <title>
+    <key>pl</key>
+    <value>Wybór operacji gospodarczej wprowadzenia ostatków</value>
+  </title>
+  <title>
+    <key>ru</key>
+    <value>Выбор хозяйственной операции ввода остатков</value>
+  </title>
+  <title>
+    <key>tr</key>
+    <value>Bakiye girişi için ticari işlem seçimi</value>
+  </title>
+  <title>
+    <key>vi</key>
+    <value>Sự lựa chọn của hoạt động kinh doanh nhập số dư</value>
+  </title>
+  <items xsi:type="form:Table">
+    <name>TransactionKindList</name>
+    <id>1</id>
+    <title>
+      <key>en</key>
+      <value>Select an operation type to enter the opening balance</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>نوع عملیات را برای ورود مانده افتتاحیه انتخاب کنید</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Seleziona il tipo di operazione per inserire il saldo di apertura</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Wybierz typ operacji do wprowadzania ostatków początkowych</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Выберите тип операции для ввода начальных остатков</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Başlangıç bakiyelerini girmek için işlem türünü seçin</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Hãy chọn kiểu giao dịch để nhập số dư đầu</value>
+    </title>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <dataPath xsi:type="form:DataPath">
+      <segments>TransactionKindList</segments>
+    </dataPath>
+    <titleLocation>None</titleLocation>
+    <items xsi:type="form:FormField">
+      <name>AListOfTheTypesOfTransactionsTheValue</name>
+      <id>14</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>TransactionKindList.Value</segments>
+      </dataPath>
+      <defaultItem>true</defaultItem>
+      <extendedTooltip>
+        <name>AListOfTheTypesOfTransactionsTheValueExtendedTooltip</name>
+        <id>16</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>AListOfTheTypesOfTransactionsTheValueContextMenu</name>
+        <id>15</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <readOnly>true</readOnly>
+      <editMode>EnterOnInput</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <handlers>
+          <event>StartChoice</event>
+          <name>AListOfTheTypesOfTransactionsTheValueStartChoice</name>
+        </handlers>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+      </extInfo>
+    </items>
+    <commandBarLocation>None</commandBarLocation>
+    <autoCommandBar>
+      <name>TransactionKindListCommandBar</name>
+      <id>3</id>
+      <horizontalAlign>Left</horizontalAlign>
+    </autoCommandBar>
+    <handlers>
+      <event>Selection</event>
+      <name>TransactionKindListSelection</name>
+    </handlers>
+    <searchStringAddition>
+      <name>TransactionKindListSearchString</name>
+      <id>5</id>
+      <extendedTooltip>
+        <name>TransactionKindListSearchStringExtendedTooltip</name>
+        <id>7</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>TransactionKindListSearchStringContextMenu</name>
+        <id>6</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <source>TransactionKindList</source>
+      <extInfo xsi:type="form:SearchStringAdditionExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+      </extInfo>
+    </searchStringAddition>
+    <viewStatusAddition>
+      <name>TransactionKindListViewStatus</name>
+      <id>8</id>
+      <extendedTooltip>
+        <name>TransactionKindListViewStatusExtendedTooltip</name>
+        <id>10</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>TransactionKindListViewStatusContextMenu</name>
+        <id>9</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>ViewStatusAddition</type>
+      <source>TransactionKindList</source>
+      <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <horizontalLocation>Left</horizontalLocation>
+      </extInfo>
+    </viewStatusAddition>
+    <searchControlAddition>
+      <name>TransactionKindListSearchControl</name>
+      <id>11</id>
+      <extendedTooltip>
+        <name>TransactionKindListSearchControlExtendedTooltip</name>
+        <id>13</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>TransactionKindListSearchControlContextMenu</name>
+        <id>12</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>SearchControlAddition</type>
+      <source>TransactionKindList</source>
+      <extInfo xsi:type="form:SearchControlAdditionExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+      </extInfo>
+    </searchControlAddition>
+    <extendedTooltip>
+      <name>TransactionKindListExtendedTooltip</name>
+      <id>4</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>TransactionKindListContextMenu</name>
+      <id>2</id>
+      <autoFill>true</autoFill>
+    </contextMenu>
+    <autoMaxWidth>true</autoMaxWidth>
+    <autoMaxHeight>true</autoMaxHeight>
+    <autoMaxRowsCount>true</autoMaxRowsCount>
+    <choiceMode>true</choiceMode>
+    <headerHeight>1</headerHeight>
+    <footerHeight>1</footerHeight>
+    <horizontalScrollBar>AutoUse</horizontalScrollBar>
+    <verticalScrollBar>AutoUse</verticalScrollBar>
+    <autoInsertNewRow>true</autoInsertNewRow>
+    <searchOnInput>Auto</searchOnInput>
+    <initialListView>Auto</initialListView>
+    <horizontalStretch>true</horizontalStretch>
+    <verticalStretch>true</verticalStretch>
+    <rowPictureDataPath xsi:type="form:DataPath">
+      <segments>TransactionKindList.Picture</segments>
+    </rowPictureDataPath>
+    <searchStringLocation>None</searchStringLocation>
+    <viewStatusLocation>None</viewStatusLocation>
+    <searchControlLocation>None</searchControlLocation>
+  </items>
+  <commandBarLocation>Bottom</commandBarLocation>
+  <autoCommandBar>
+    <name>FormCommandBar</name>
+    <id>-1</id>
+    <items xsi:type="form:Button">
+      <name>FormOK</name>
+      <id>19</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>FormOKExtendedTooltip</name>
+        <id>20</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.Command.SelectOperation</commandName>
+      <representation>PictureAndText</representation>
+      <defaultButton>true</defaultButton>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <picture xsi:type="core:PictureRef">
+        <picture>StdPicture.ChooseValue</picture>
+      </picture>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <items xsi:type="form:Button">
+      <name>FormClose</name>
+      <id>21</id>
+      <title>
+        <key>en</key>
+        <value>Cancel</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>انصراف</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Annulla</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Anuluj</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Отмена</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>İptal</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Hủy bỏ</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>FormCloseExtendedTooltip</name>
+        <id>22</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.StandardCommand.Close</commandName>
+      <representation>PictureAndText</representation>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <items xsi:type="form:Button">
+      <name>FormHelp</name>
+      <id>17</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>FormHelpExtendedTooltip</name>
+        <id>18</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.StandardCommand.Help</commandName>
+      <representation>Auto</representation>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <horizontalAlign>Right</horizontalAlign>
+  </autoCommandBar>
+  <handlers>
+    <event>OnOpen</event>
+    <name>OnOpen</name>
+  </handlers>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>OnCreateAtServer</name>
+  </handlers>
+  <excludedCommands>Abort</excludedCommands>
+  <excludedCommands>Cancel</excludedCommands>
+  <excludedCommands>Ignore</excludedCommands>
+  <excludedCommands>No</excludedCommands>
+  <excludedCommands>OK</excludedCommands>
+  <excludedCommands>RestoreValues</excludedCommands>
+  <excludedCommands>Retry</excludedCommands>
+  <excludedCommands>SaveValues</excludedCommands>
+  <excludedCommands>Yes</excludedCommands>
+  <windowOpeningMode>LockOwnerWindow</windowOpeningMode>
+  <saveWindowSettings>true</saveWindowSettings>
+  <autoUrl>true</autoUrl>
+  <group>Vertical</group>
+  <autoFillCheck>true</autoFillCheck>
+  <enabled>true</enabled>
+  <showTitle>true</showTitle>
+  <showCloseButton>true</showCloseButton>
+  <attributes>
+    <name>Object</name>
+    <id>1</id>
+    <valueType>
+      <types>DataProcessorObject.JournalOfOBEntryDocuments</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <main>true</main>
+  </attributes>
+  <attributes>
+    <name>TransactionKindList</name>
+    <title>
+      <key>en</key>
+      <value>Transaction kind list</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>فهرست انواع معامله</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Elenco dei tipi di operazioni</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>LIsta rodzajów operacji</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Список видов операций</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Operasyon tür listesi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Danh sách dạng giao dịch</value>
+    </title>
+    <id>2</id>
+    <valueType>
+      <types>ValueList</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <extInfo xsi:type="form:ValueListExtInfo">
+      <itemValueType/>
+    </extInfo>
+  </attributes>
+  <attributes>
+    <name>ParametersOfDocumentFormOpening</name>
+    <title>
+      <key>en</key>
+      <value>Parameters of document form opening</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>پارامترهای باز کردن فرم سند</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Parametri di apertura del modulo del documento</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Parametry otwarcia formularza dokumentu</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Параметры открытия формы документа</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Belge formu açılış parametreleri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Tùy chọn để mở một mẫu chứng từ</value>
+    </title>
+    <id>3</id>
+    <valueType/>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>FillParameters</name>
+    <title>
+      <key>en</key>
+      <value>Population parameters</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>پارامترهای تکمیل</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Parametri di compilazione</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Parametry wypełnienia</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Параметры заполнения</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Doldurma parametreleri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Tham số điền</value>
+    </title>
+    <id>4</id>
+    <valueType/>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <formCommands>
+    <name>SelectOperation</name>
+    <title>
+      <key>en</key>
+      <value>Select</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>انتخاب</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Selezionare</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Wybierz</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Выбрать</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Seç</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Chọn</value>
+    </title>
+    <id>1</id>
+    <toolTip>
+      <key>en</key>
+      <value>Select operation</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>انتخاب عملیات</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Seleziona un'operazione</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Wybierz operację</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Выбрать операцию</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>İşlemi seç</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Chọn giao dịch</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>SelectTheOperationType</name>
+      </handler>
+    </action>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <commandInterface>
+    <navigationPanel/>
+    <commandBar/>
+  </commandInterface>
+  <extInfo xsi:type="form:ObjectFormExtInfo"/>
+</form:Form>

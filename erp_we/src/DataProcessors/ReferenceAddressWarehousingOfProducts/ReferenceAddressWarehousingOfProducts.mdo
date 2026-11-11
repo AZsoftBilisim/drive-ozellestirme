@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="20a0a5d4-0ae1-4fe5-87fd-8dfa4d9e8a56">
+  <producedTypes>
+    <objectType typeId="7436c3a3-573a-4fb1-93d8-190b513b3948" valueTypeId="acc7714d-a0cf-489e-91cc-de769900ed9f"/>
+    <managerType typeId="827390e6-6d8c-4e4b-b137-8515a42d1ea6" valueTypeId="a91fe85d-e526-430c-8eca-ad3a68441c24"/>
+  </producedTypes>
+  <name>ReferenceAddressWarehousingOfProducts</name>
+  <synonym>
+    <key>en</key>
+    <value>Put-away by bin-reference strategies</value>
+  </synonym>
+  <synonym>
+    <key>fa</key>
+    <value>جای‌گذاری بر اساس راهبردهای محل-مرجع</value>
+  </synonym>
+  <synonym>
+    <key>it</key>
+    <value>Posizionamento degli articoli per celle (come riferimento)</value>
+  </synonym>
+  <synonym>
+    <key>pl</key>
+    <value>rozmieszczenie towarów w komórkach (informacyjnie)</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>Размещение номенклатуры по ячейкам (справочно)</value>
+  </synonym>
+  <synonym>
+    <key>tr</key>
+    <value>Öğenin hücrelere göre yerleştirilmesi (referans olarak)</value>
+  </synonym>
+  <synonym>
+    <key>vi</key>
+    <value>Sắp xếp hàng hóa theo ô hàng (tra cứu)</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ReferenceAddressWarehousingOfProducts.Form.Form</defaultForm>
+  <attributes uuid="c166eaae-32f5-478f-b2dc-428c043b9214">
+    <name>Warehouse</name>
+    <synonym>
+      <key>en</key>
+      <value>Warehouse</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>انبار</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Magazzino</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Magazyn</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Склад</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ambar</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Kho bãi</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Warehouses</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="bb158367-d52a-450c-9b52-54fe252c59b2">
+    <name>Premise</name>
+    <synonym>
+      <key>en</key>
+      <value>Wareroom</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>بخش انبار</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Locale</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Pomieszczenie</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Помещение</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Tesis</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Nhà kho</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Warerooms</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Filter.Owner</name>
+      <field>DataProcessor.ReferenceAddressWarehousingOfProducts.Attribute.Warehouse</field>
+    </choiceParameterLinks>
+    <choiceParameters>
+      <name>Filter.UseBinLocationWarehousingForInformation</name>
+      <value xsi:type="core:BooleanValue">
+        <value>true</value>
+      </value>
+    </choiceParameters>
+  </attributes>
+  <attributes uuid="faac0641-abda-46d3-b9e5-5d3098b00c7a">
+    <name>Documentreceivings</name>
+    <synonym>
+      <key>en</key>
+      <value>Receiving document</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>سند دریافت</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Documento di accettazione</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Dokument odbioru</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Документ приемки</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Kabul belgesi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Chứng từ nhập kho</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.DiscrepancyReportFollowingTransfer</types>
+      <types>DocumentRef.DiscrepancyReportFollowingShipment</types>
+      <types>DocumentRef.ReturnOfGoodsFromCustomer</types>
+      <types>DocumentRef.VendorInvoice</types>
+      <types>DocumentRef.ProductionStage2_2</types>
+      <types>DocumentRef.DiscrepancyReportFollowingReceipt</types>
+      <types>DocumentRef.OBEntry</types>
+      <types>DocumentRef.ReceiptOfGoodsToWarehouse</types>
+      <types>DocumentRef.GoodsSurplusesNote</types>
+      <types>DocumentRef.ReceiptOfGoodsFromCustodian</types>
+      <types>DocumentRef.InventoryTransfer</types>
+      <types>DocumentRef.MovementOfProductsAndMaterials</types>
+      <types>DocumentRef.SaleAdjustment</types>
+      <types>DocumentRef.PurchaseAdjustment</types>
+      <types>DocumentRef.InventoryRecount</types>
+      <types>DocumentRef.RecyclableWasteAllocation</types>
+      <types>DocumentRef.InventorySurplusRecognition</types>
+      <types>DocumentRef.AssemblyFromComponents</types>
+      <types>DocumentRef.GoodsReceiptForStorage</types>
+      <types>DocumentRef.BackflushProduction</types>
+      <types>DocumentRef.OBEntryGoods</types>
+      <types>DocumentRef.GoodsReceiptNote</types>
+      <types>DocumentRef.OtherGoodsRecordingAsReceived</types>
+      <types>DocumentRef.GoodsTransferNote</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Filter.Premise</name>
+      <field>DataProcessor.ReferenceAddressWarehousingOfProducts.Attribute.Premise</field>
+    </choiceParameterLinks>
+    <choiceParameterLinks>
+      <name>Filter.Warehouse</name>
+      <field>DataProcessor.ReferenceAddressWarehousingOfProducts.Attribute.Warehouse</field>
+    </choiceParameterLinks>
+  </attributes>
+  <attributes uuid="03751b4c-7eb9-4dd2-a733-a2b69a47995d">
+    <name>Date</name>
+    <synonym>
+      <key>en</key>
+      <value>Date</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>تاریخ</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Data</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Data</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Дата</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Tarih</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Ngày</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="bad96d06-96cf-4359-9e6e-8d145b8c9025">
+    <producedTypes>
+      <objectType typeId="5750efd9-82a9-4dfc-9baa-d6b507b461dc" valueTypeId="dc60a698-b859-4994-8b5e-84a204264a49"/>
+      <rowType typeId="be7f9bdd-641a-436f-ad01-f567db42ad43" valueTypeId="061897c4-34d2-445e-b58b-b867ea996064"/>
+    </producedTypes>
+    <name>MainStorageBins</name>
+    <synonym>
+      <key>en</key>
+      <value>Main storage bins</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>محل‌های نگهداری اصلی</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Celle principali</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Podstawowe komórki</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Основные ячейки</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ana hücreler</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Ô chính</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="da8244e2-d060-4958-9be6-5e5285fb3596">
+      <name>Cell</name>
+      <synonym>
+        <key>en</key>
+        <value>Main storage bin</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>محل نگهداری اصلی</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Cella principale</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Główna komórka</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Основная ячейка</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Ana hücre</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Ô chính</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.StorageBins</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Filter.Owner</name>
+        <field>DataProcessor.ReferenceAddressWarehousingOfProducts.TabularSection.MainStorageBins.Attribute.Warehouse</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Filter.Premise</name>
+        <field>DataProcessor.ReferenceAddressWarehousingOfProducts.Attribute.Premise</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c091a786-34cd-4ad8-b5c6-6a70a6f49664">
+      <name>Products</name>
+      <synonym>
+        <key>en</key>
+        <value>Items</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>اقلام</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Articolo</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Pozycja</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Öğe</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Mặt hàng</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Products</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Select items of the Goods kind.</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>اقلامی از نوع کالا را انتخاب کنید.</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>È necessario selezionare un elenco di articoli con il tipo di prodotto.</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Należy wybrać produkt z rodzajem Towar.</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Необходимо выбрать номенклатуру с видом Товар.</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Türü ürün olan öğeler seçilmeli.</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Cần chọn mặt hàng có dạng Hàng hóa.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameters>
+        <name>Filter.ItemsType</name>
+        <value xsi:type="core:FixedArrayValue">
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ItemsTypes.EnumValue.OwnGoods</value>
+          </values>
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ItemsTypes.EnumValue.ReusablePackage</value>
+          </values>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="08610581-7ba5-418b-ba43-ff390d4dc390">
+      <name>Characteristic</name>
+      <synonym>
+        <key>en</key>
+        <value>Variant</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>گونه</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Caratteristica</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Charakterystyka</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Varyant</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Đặc tính</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ItemsCharacteristics</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1bf6de2c-a75f-4b08-860b-b0479adbc7dd">
+      <name>Warehouse</name>
+      <synonym>
+        <key>en</key>
+        <value>Warehouse</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>انبار</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Magazzino</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Magazyn</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Склад</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Ambar</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Kho bãi</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Warehouses</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="085827a6-976c-42ec-8f5e-6ec867dd60af">
+    <producedTypes>
+      <objectType typeId="9b327853-fb88-4407-83c3-9b817a560f68" valueTypeId="762907bc-4d92-4625-a1ef-70d0ded420c9"/>
+      <rowType typeId="aea23ebe-6ccc-400d-8548-0198a47c3da7" valueTypeId="3462a491-4765-4a04-bd8a-447b8aad55c4"/>
+    </producedTypes>
+    <name>AdditionalStorageBins</name>
+    <synonym>
+      <key>en</key>
+      <value>Additional storage bins</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>محل‌های نگهداری تکمیلی</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Celle aggiuntive</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Dodatkowe komórki</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Дополнительные ячейки</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ek hücreler</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Ô bổ sung</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="ed965b1c-2343-48c3-b85a-bb6f65b56a0f">
+      <name>Cell</name>
+      <synonym>
+        <key>en</key>
+        <value>Additional storage bin</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>محل نگهداری تکمیلی</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Cella aggiuntiva</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Dodatkowa komórka</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Дополнительная ячейка</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Ek hücre</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Ô bổ sung</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.StorageBins</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Filter.Owner</name>
+        <field>DataProcessor.ReferenceAddressWarehousingOfProducts.TabularSection.AdditionalStorageBins.Attribute.Warehouse</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Filter.Premise</name>
+        <field>DataProcessor.ReferenceAddressWarehousingOfProducts.Attribute.Premise</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4dd89f66-5d57-4721-9e9e-db91305e265c">
+      <name>Products</name>
+      <synonym>
+        <key>en</key>
+        <value>Items</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>اقلام</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Articolo</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Pozycja</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Öğe</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Mặt hàng</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Products</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Select items of the Goods kind.</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>اقلامی از نوع کالا را انتخاب کنید.</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>È necessario selezionare un elenco di articoli con il tipo di prodotto.</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Należy wybrać produkt z rodzajem Towar.</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Необходимо выбрать номенклатуру с видом Товар.</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Türü ürün olan öğeler seçilmeli.</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Cần chọn mặt hàng có dạng Hàng hóa.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameters>
+        <name>Filter.ItemsType</name>
+        <value xsi:type="core:FixedArrayValue">
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ItemsTypes.EnumValue.OwnGoods</value>
+          </values>
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ItemsTypes.EnumValue.ReusablePackage</value>
+          </values>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d0a97b4d-392d-4ca0-a066-746aec716705">
+      <name>Warehouse</name>
+      <synonym>
+        <key>en</key>
+        <value>Warehouse</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>انبار</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Magazzino</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Magazyn</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Склад</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Ambar</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Kho bãi</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Warehouses</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="ad5cbf9b-afb9-4a66-be51-d2f97176399e">
+    <name>Form</name>
+    <synonym>
+      <key>en</key>
+      <value>Form</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>فرم</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Modulo</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Formularz</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Form</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Biểu mẫu</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

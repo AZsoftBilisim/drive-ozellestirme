@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ea7c61ff-745c-4908-9a94-bba022d12de4">
+  <name>SetDeletionMarkForInteractionsDocumentAttachments</name>
+  <synonym>
+    <key>en</key>
+    <value>Mark attachments for deletion (Business Interactions)</value>
+  </synonym>
+  <synonym>
+    <key>fa</key>
+    <value>علامت‌گذاری پیوست‌ها برای حذف (تعاملات تجاری)</value>
+  </synonym>
+  <synonym>
+    <key>it</key>
+    <value>Impostare il flag di cancellazione dei file allegati di documenti (Interazioni)</value>
+  </synonym>
+  <synonym>
+    <key>pl</key>
+    <value>Ustaw zaznaczenie usunięcia załączonych plików dokumentów (Interakcje)</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>Установить пометку удаления присоединенных файлов документов (Взаимодействия)</value>
+  </synonym>
+  <synonym>
+    <key>tr</key>
+    <value>Ekli dosyaları silmek için işareti ayarla (İş Etkileşimleri)</value>
+  </synonym>
+  <synonym>
+    <key>vi</key>
+    <value>Đặt dấu xóa tệp đính kèm của tài liệu (Giao tiếp)</value>
+  </synonym>
+  <source>
+    <types>DocumentObject.Meeting</types>
+    <types>DocumentObject.IncomingEmail</types>
+    <types>DocumentObject.PlannedInteraction</types>
+    <types>DocumentObject.SMSMessage</types>
+    <types>DocumentObject.PhoneCall</types>
+    <types>DocumentObject.OutgoingEmail</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.FilesOperations.SetAttachedDocumentFilesDeletionMark</handler>
+</mdclass:EventSubscription>

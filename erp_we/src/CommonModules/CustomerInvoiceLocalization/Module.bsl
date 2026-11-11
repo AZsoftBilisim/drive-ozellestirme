@@ -1,0 +1,374 @@
+#Region Public
+
+#Region Posting
+
+// Describes the accounting mechanisms used in the document for registration in the transaction mechanism.
+//
+// Parameters:
+//  DocumentMechanisms - Array of String - list of names of accounting mechanisms that will be
+//              registered in the tracking mechanism.
+//
+Procedure RegisterAccountingMechanisms(DocumentMechanisms) Export
+	
+	
+EndProcedure
+
+#EndRegion
+
+#Region EventHandlers
+
+// Called from the corresponding document handler
+//
+// Parameters:
+//  Object - DocumentObject - the document being processed.
+//  Cancel - Boolean - Indicates whether the document is being processed.
+//                   If this parameter is set to True in the body of the handler procedure,
+//                   the document will not be processed.
+//  PostingMode - DocumentPostingMode - this parameter is passed to the current mode of the event.
+//
+Procedure Posting(Object, Cancel, PostingMode) Export
+	
+EndProcedure
+
+// Called from the corresponding document handler
+//
+// Parameters:
+//  Object - DocumentObject - processed object
+//  Cancel - Boolean - If this parameter is set to True in the body of the handler procedure,
+//                   it will refuse to continue working after completing the fill check.
+//  CheckedAttributes - Array of String - Array of paths to the details to be checked for.
+//
+Procedure FillCheckProcessing(Object, Cancel, CheckedAttributes) Export
+	
+EndProcedure
+
+// Called from the corresponding document handler
+//
+// Parameters:
+//  Object - DocumentObject - The object being processed.
+//  FillingData - Arbitrary - The value that is used as the basis for filling in.
+//  StandardProcessing - Boolean - This parameter is passed to indicate that standard (system) event processing is performed.
+//
+Procedure Filling(Object, FillingData, StandardProcessing) Export
+	
+	
+EndProcedure
+
+// Called from the corresponding document handler
+//
+// Parameters:
+//  Object - DocumentObject - processed object
+//  Cancel - Boolean - Indicates that the recording was rejected.
+//                   If this parameter is set to True in the body of the handler procedure,
+//                   the record will not be executed and an exception will be thrown.
+//
+Procedure UndoPosting(Object, Cancel) Export
+	
+	
+EndProcedure
+
+// Called from the corresponding document handler
+//
+// Parameters:
+//  Object - DocumentObject - processed object
+//  Cancel - Boolean - Indicates that the recording was rejected.
+//                   If this parameter is set to True in the body of the handler procedure,
+//                   the record will not be executed and an exception will be thrown.
+//  WriteMode - DocumentWriteMode - The current document recording mode is passed to the parameter. Allows you to define the recording mode in the procedure body.
+//  PostingMode - DocumentPostingMode - this parameter is passed to the current mode of the event.
+//
+Procedure BeforeWrite(Object, Cancel, WriteMode, PostingMode) Export
+	
+	
+EndProcedure
+
+// Called from the corresponding document handler
+//
+// Parameters:
+//  Object - DocumentObject - processed object
+//  Cancel - Boolean - Indicates that the recording was rejected.
+//                   If this parameter is set to True in the body of the handler procedure, the record will not be executed and an exception will be thrown.
+//
+Procedure OnWrite(Object, Cancel) Export
+	
+	Return;
+	
+EndProcedure
+
+// Called from the corresponding document handler
+//
+// Parameters:
+//  Object - DocumentObject - processed object
+//  CopiedObject - DocumentObject - The source document that is the copy source.
+//
+Procedure OnCopy(Object, CopiedObject) Export
+	
+	Return;
+	
+EndProcedure
+
+#EndRegion
+
+#Region AttachableCommands
+
+// Defines a list of creation commands based on.
+//
+// Parameters:
+//  GenerationCommands - See GenerateFromOverridable.BeforeAddGenerationCommands.GenerationCommands
+//  Parameters - See GenerateFromOverridable.BeforeAddGenerationCommands.Parameters
+//
+Procedure AddGenerationCommands(GenerationCommands, Parameters) Export
+	
+	
+EndProcedure
+
+// Adds a command of creation of the document "expense report".
+//
+// Parameters:
+//  GenerationCommands - See GenerateFromOverridable.BeforeAddGenerationCommands.GenerationCommands
+//
+Procedure AddGenerateCommand(GenerationCommands) Export
+
+
+EndProcedure
+
+// Defines a list of report commands.
+//
+// Parameters:
+//   ReportsCommands - See ReportsOptionsOverridable.BeforeAddReportCommands.ReportsCommands
+//   Parameters - See ReportsOptionsOverridable.BeforeAddReportCommands.Parameters
+//
+Procedure AddReportCommands(ReportsCommands, Parameters) Export
+	
+	
+EndProcedure
+
+// Fills in the list of print commands.
+//
+// Parameters:
+//   PrintCommands - See PrintManagement.CreatePrintCommandsCollection
+//
+Procedure AddPrintCommands(PrintCommands) Export
+EndProcedure
+
+#EndRegion
+
+#Region Print
+
+// Generates a printable form.
+//
+// Parameters:
+//  ObjectsArray  - Array    - references to objects that should be printed;
+//  PrintParameters - Structure - advanced print settings;
+//  PrintFormsCollection - ValueTable - generated table documents (output parameter)
+//  PrintObjects         - ValueList  - value - the object reference;
+//                                            view - name of the area where the object was output (output parameter);
+//  OutputParameters       - Structure       - additional parameters of generated table documents (output parameter).
+//
+Procedure Print(ObjectsArray, PrintParameters, PrintFormsCollection, PrintObjects, OutputParameters) Export
+	
+EndProcedure
+
+Procedure CreateSetOfPrintedForms(ObjectsArray, PrintParameters, PrintFormsCollection, PrintObjects, PrintFormsSet) Export
+	
+	
+EndProcedure
+
+Procedure PrintFormsSet(PrintFormsSet) Export
+	
+	
+EndProcedure
+
+#EndRegion
+#Region RegAccountingTransactions
+
+// The function returns the request text to reflect the document in regulated accounting.
+//
+// Returns:
+//	String - Query text
+//
+Function TextOfReflectionInLocalAccounting() Export
+	
+	Result = "";
+	Return Result
+	
+EndFunction
+
+// The function returns the request text for additional temporary tables
+// that are required for reflection in regulated accounting
+//
+// Returns:
+//   String - the generated request text.
+//
+Function RequestTextTTReflectedInLocalAccounting() Export
+	
+	QueryTexts = New Array;
+	
+	
+	QueryText = StrConcat(QueryTexts, Common.QueryBatchSeparator());
+	Return QueryText;
+	
+EndFunction
+
+#EndRegion
+#Region Fiscalization
+
+
+// Check and correct the availability of discounts for payments with bonus points in the document
+// 
+// Parameters:
+//  DocumentObject - DocumentObject.CustomerInvoice - The document object
+Procedure CheckCorrectAvailabilityOfDiscountsPaymentsWithBonusPointsForTobaccoProducts(DocumentObject) Export
+	
+	
+EndProcedure
+
+#EndRegion
+
+#Region MarkedProducts
+
+// Fill in the cache of barcode packages.
+// 
+// Parameters:
+//  Form - ClientApplicationForm
+Procedure FillInCacheOfBarcodesOfPackages(Form) Export
+	
+	
+EndProcedure
+
+// Get orders.
+// 
+// Parameters:
+//  DocumentUnderReview - DocumentRef.CustomerInvoice - Document order
+// 
+// Returns:
+//  Array of DocumentRef - Documents of the order
+Function ReceiveOrdersForDocument(DocumentUnderReview) Export
+	
+	ArrayOfShipmentOrders = New Array;
+	
+	
+	Return ArrayOfShipmentOrders;
+	
+EndFunction
+
+#Region FormationOfShippedMarkedProducts
+
+// Generate the shipped stamps.
+// 
+// Parameters:
+//  ArrayOfCustomersOrders - Array - customer orders
+//  ShippedStamps - ValueTable - Shipped stamps
+Procedure GenerateShippedStamps(ArrayOfCustomersOrders, ShippedStamps) Export
+
+	
+EndProcedure
+
+// Exclude from the selected brands included in other documents for the sale of goods
+// 
+// Parameters:
+//  SalesOrders - Array of DocumentRef.SalesOrder - Which should be used to exclude stamps.
+//  ShippedStamps - ValueTable - Shipped stamps.
+//
+Procedure ExcludeSoldBrands(SalesOrders, ShippedStamps) Export
+	
+	
+EndProcedure
+
+#EndRegion
+
+#EndRegion
+
+
+// Fills in an array of acceptable names for incoming documents.
+//
+// Parameters:
+//  ArrayOfNames	 - Array - an array of the names of incoming documents.
+//
+Procedure AddNamesOfIncomingDocuments(ArrayOfNames) Export
+	
+EndProcedure
+
+#EndRegion
+
+#Region Internal
+
+#Region DocumentForm
+
+Procedure CounterpartyOnChange(Form) Export
+
+	
+EndProcedure
+
+Procedure PartnerOnChange(Form) Export
+
+	
+EndProcedure
+
+#EndRegion
+
+#EndRegion
+
+#Region Private
+
+#Region Posting
+
+// The procedure complements the texts of requests for the document.
+//
+// Parameters:
+//  Query - Query - General request for document execution.
+//  QueryTexts - ValueList - List of texts of the request for holding.
+//  Registers - String, Structure - A comma-separated list of document execution registers or in structure keys.
+//
+Procedure AddRequestTexts(Query, QueryTexts, Registers, DocumentObject) Export
+	
+	
+EndProcedure
+
+
+#EndRegion
+
+
+#Region Fiscalization
+
+#EndRegion
+
+
+
+// Return Value Constructor
+// Returns:
+//	ValueTable:
+//	*RowIsSelected - Boolean
+//	*Products - CatalogRef.Products
+//	*Characteristic - CatalogRef.ItemsCharacteristics
+//	*Series - CatalogRef.ItemsBatches
+Function NewStructureOfBarcodesPackagesImplementation() Export
+	
+	Table = New ValueTable();
+	Table.Columns.Add("RowIsSelected", 	New TypeDescription("Boolean"));
+	Table.Columns.Add("Products", 	New TypeDescription("CatalogRef.Products"));
+	Table.Columns.Add("Characteristic", 	New TypeDescription("CatalogRef.ItemsCharacteristics"));
+	Table.Columns.Add("Series", 			New TypeDescription("CatalogRef.ItemsBatches"));
+	
+	
+	Return Table;
+	
+EndFunction
+
+// Parameters:
+//	DocumentRef - DocumentRef - 
+//	ScanningParameters - Structure, Undefined - 
+// Returns:
+//	See NewStructureOfBarcodesPackagesImplementation
+Function GetBarcodesOfImplementationPackages(
+	DocumentRef, ScanningParameters = Undefined) Export
+	
+	BarcodesOfImplementationPackages = NewStructureOfBarcodesPackagesImplementation();
+	
+	
+	Return BarcodesOfImplementationPackages;
+	
+EndFunction
+
+
+#EndRegion

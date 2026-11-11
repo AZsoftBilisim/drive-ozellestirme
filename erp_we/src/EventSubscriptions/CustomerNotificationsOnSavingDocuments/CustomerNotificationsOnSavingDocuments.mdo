@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3e4026ec-5878-4002-8e5c-70a3d5ead027">
+  <name>CustomerNotificationsOnSavingDocuments</name>
+  <synonym>
+    <key>en</key>
+    <value>Customer notifications on saving documents</value>
+  </synonym>
+  <synonym>
+    <key>fa</key>
+    <value>اعلان به مشتری هنگام ذخیره اسناد</value>
+  </synonym>
+  <synonym>
+    <key>it</key>
+    <value>Avvisi ai clienti alla registrazione documenti</value>
+  </synonym>
+  <synonym>
+    <key>pl</key>
+    <value>Powiadomienia klientom podczas zapisu dokumenty</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>Оповещения клиентам при записи документы</value>
+  </synonym>
+  <synonym>
+    <key>tr</key>
+    <value>Belge kaydı sırasında müşterilere bildirimler</value>
+  </synonym>
+  <synonym>
+    <key>vi</key>
+    <value>Thông báo cho khách hàng khi ghi lại chứng từ</value>
+  </synonym>
+  <source>
+    <types>DocumentObject.PaymentCardTransaction</types>
+    <types>DocumentObject.CustomerCommercialInvoice</types>
+    <types>DocumentObject.BankAccountReceiptNote</types>
+    <types>DocumentObject.CashAccountReceiptNote</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.MailoutsAndNotificationsToCustomers.SourceOfNotificationWhenRecordingDocuments</handler>
+</mdclass:EventSubscription>

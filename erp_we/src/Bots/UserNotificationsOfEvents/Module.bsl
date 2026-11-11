@@ -1,0 +1,8 @@
+#Region EventHandlers
+
+Procedure CollaborationSystemMessageProcessing(Message, AdditionalParameters)
+	UserNotificationsOfEventsServerCall.CollaborationSystemMessageProcessing(Message,
+		AdditionalParameters);
+EndProcedure
+
+#EndRegion

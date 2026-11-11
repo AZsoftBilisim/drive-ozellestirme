@@ -1,0 +1,49 @@
+#If Server Or ThickClientOrdinaryApplication Or ExternalConnection Then
+
+#Region EventHandlers
+
+Procedure BeforeWrite(Cancel, Replacing)
+	
+	If DataExchange.Load Then
+		Return;
+	EndIf;
+	
+	InfobaseUpdate.CheckObjectProcessed(ThisObject);
+	
+	If Not DocumentsPosting.MonitorChanges(AdditionalProperties) Then
+		Return;
+	EndIf;
+	
+	QueryTextsForGettingChangeTable = 
+		MonthEndTransactionsServer.QueryTextsForCaseChangeTable(Metadata(), Filter);
+	
+	Query = New Query;
+	Query.TempTablesManager = AdditionalProperties.TempTablesManager;
+	Query.Text = QueryTextsForGettingChangeTable.InitialDataSampleText;
+	Query.SetParameter("Recorder", Filter.Recorder.Value);
+	
+	Query.Execute();
+	
+	AdditionalProperties.Insert("SampleTextOfChangeTable",
+		QueryTextsForGettingChangeTable.SampleTextOfChangeTable);
+	
+EndProcedure
+
+Procedure OnWrite(Cancel, Replacing)
+	
+	If DataExchange.Load Or Not DocumentsPosting.MonitorChanges(AdditionalProperties) Then
+		Return;
+	EndIf;
+	
+	Query = New Query;
+	Query.Text = AdditionalProperties.SampleTextOfChangeTable;
+	Query.TempTablesManager = AdditionalProperties.TempTablesManager;
+	
+	Query.SetParameter("Recorder", Filter.Recorder.Value);
+	Query.Execute();
+	
+EndProcedure
+
+#EndRegion
+
+#EndIf

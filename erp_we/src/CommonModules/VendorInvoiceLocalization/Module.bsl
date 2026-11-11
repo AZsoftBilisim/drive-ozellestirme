@@ -1,0 +1,330 @@
+#Region Public
+
+#Region Posting
+
+// Describes the accounting mechanisms used in the document for registration in the transaction mechanism.
+//
+// Parameters:
+//  DocumentMechanisms - Array - list of names of accounting mechanisms that will be
+//              registered in the tracking mechanism.
+//
+Procedure RegisterAccountingMechanisms(DocumentMechanisms) Export
+	
+	
+EndProcedure
+
+#EndRegion
+
+#Region EventHandlers
+
+// Called from the corresponding document handler
+//
+// Parameters:
+//  Object - DocumentObject - the document being processed.
+//  Cancel - Boolean - Indicates whether the document is being processed.
+//                   If this parameter is set to True in the body of the handler procedure,
+//                   the document will not be processed.
+//  PostingMode - DocumentPostingMode - this parameter is passed to the current mode of the event.
+//
+Procedure Posting(Object, Cancel, PostingMode) Export
+	
+EndProcedure
+
+// Called from the corresponding document handler
+//
+// Parameters:
+//  Object - DocumentObject - processed object
+//  Cancel - Boolean - If this parameter is set to True in the body of the handler procedure,
+//                   it will refuse to continue working after completing the fill check.
+//  CheckedAttributes - Array - Array of paths to the details to be checked for.
+//
+Procedure FillCheckProcessing(Object, Cancel, CheckedAttributes) Export
+	
+	
+EndProcedure
+
+// Is called from the handler of the document form
+//
+// Parameters:
+//  Form - ClientApplicationForm - The document form being processed.
+//  Cancel - Boolean - If this parameter is set to True in the body of the handler procedure,
+//                   it will refuse to continue working after completing the fill check.
+//  CheckedAttributes - Array - Array of paths to the details to be checked for.
+//
+Procedure FillCheckProcessingAtServer(Form, Cancel, CheckedAttributes) Export
+	
+	
+EndProcedure
+
+// Called from the corresponding document handler
+//
+// Parameters:
+//  Object - DocumentObject - The object being processed.
+//  FillingData - Arbitrary - The value that is used as the basis for filling in.
+//  StandardProcessing - Boolean - This parameter is passed to indicate that standard (system) event processing is performed.
+//
+Procedure Filling(Object, FillingData, StandardProcessing) Export
+	
+	
+EndProcedure
+
+// Called from the corresponding document handler
+//
+// Parameters:
+//  Object - DocumentObject - processed object
+//  Cancel - Boolean - Indicates that the recording was rejected.
+//                   If this parameter is set to True in the body of the handler procedure,
+//                   the record will not be executed and an exception will be thrown.
+//
+Procedure UndoPosting(Object, Cancel) Export
+	
+	
+EndProcedure
+
+// Called from the corresponding document handler
+//
+// Parameters:
+//  Object - DocumentObject - processed object
+//  Cancel - Boolean - Indicates that the recording was rejected.
+//                   If this parameter is set to True in the body of the handler procedure,
+//                   the record will not be executed and an exception will be thrown.
+//  WriteMode - DocumentWriteMode - The current document recording mode is passed to the parameter. Allows you to define the recording mode in the procedure body.
+//  PostingMode - DocumentPostingMode - this parameter is passed to the current mode of the event.
+//
+Procedure BeforeWrite(Object, Cancel, WriteMode, PostingMode) Export
+	
+	
+EndProcedure
+
+// Called from the corresponding document handler
+//
+// Parameters:
+//  Object - DocumentObject - processed object
+//  Cancel - Boolean - Indicates that the recording was rejected.
+//                   If this parameter is set to True in the body of the handler procedure, the record will not be executed and an exception will be thrown.
+//
+Procedure OnWrite(Object, Cancel) Export
+	
+	
+EndProcedure
+
+// Called from the corresponding document handler
+//
+// Parameters:
+//  Object - DocumentObject - processed object
+//  CopiedObject - DocumentObject - The source document that is the copy source.
+//
+Procedure OnCopy(Object, CopiedObject) Export
+	
+	
+EndProcedure
+
+#EndRegion
+
+#Region AttachableCommands
+
+// Defines a list of creation commands based on.
+//
+// Parameters:
+//  GenerationCommands - See GenerateFromOverridable.BeforeAddGenerationCommands.GenerationCommands
+//  Parameters - See GenerateFromOverridable.BeforeAddGenerationCommands.Parameters
+//
+Procedure AddGenerationCommands(GenerationCommands, Parameters) Export
+	
+	
+EndProcedure
+
+// Adds the command to create the document "Purchase of goods and services".
+//
+// Parameters:
+//  GenerationCommands - See GenerateFromOverridable.BeforeAddGenerationCommands.GenerationCommands
+//
+Procedure AddGenerateCommand(GenerationCommands) Export
+
+
+EndProcedure
+
+// Defines a list of report commands.
+//
+// Parameters:
+//   ReportsCommands - See ReportsOptionsOverridable.BeforeAddReportCommands.ReportsCommands
+//   Parameters - See ReportsOptionsOverridable.BeforeAddReportCommands.Parameters
+//
+Procedure AddReportCommands(ReportsCommands, Parameters) Export
+	
+	
+EndProcedure
+
+// Fills in the list of print commands.
+//
+// Parameters:
+//   PrintCommands - See PrintManagement.CreatePrintCommandsCollection
+//
+Procedure AddPrintCommands(PrintCommands) Export
+	
+EndProcedure
+
+#EndRegion
+
+#Region Print
+
+// Generates a printable form.
+//
+// Parameters:
+//  ObjectsArray  - Array    - references to objects that should be printed;
+//  PrintParameters - Structure - advanced print settings;
+//  PrintFormsCollection - ValueTable - generated table documents (output parameter)
+//  PrintObjects         - ValueList  - value - the object reference;
+//                                            view - name of the area where the object was output (output parameter);
+//  OutputParameters       - Structure       - additional parameters of generated table documents (output parameter).
+//
+Procedure Print(ObjectsArray, PrintParameters, PrintFormsCollection, PrintObjects, OutputParameters) Export
+	
+	
+EndProcedure
+
+#EndRegion
+#Region RegAccountingTransactions
+
+// The function returns the request text to reflect the document in regulated accounting.
+//
+// Returns:
+//	String - Query text
+//
+Function TextOfReflectionInLocalAccounting() Export
+	
+	ReflectionTexts = New Array;
+	Return StrConcat(ReflectionTexts, TMCommonUse.QuerySeparatorInJoin());
+	
+EndFunction
+
+// The function returns the request text for additional temporary tables
+// that are required for reflection in regulated accounting
+//
+// Returns:
+//   String - the generated request text.
+//
+Function RequestTextTTReflectedInLocalAccounting() Export
+	
+	QueryTexts = New Array;
+	
+	
+	Return StrConcat(QueryTexts, Common.QueryBatchSeparator());
+	
+EndFunction
+
+#EndRegion
+
+// Initializes the parameters for registering notifications about the import of traceable goods
+//
+// Parameters:
+//  Object		- DocumentObject.VendorInvoice, FormDataStructure	- the document to get parameters for.
+//
+// Returns:
+// 	Structure - Structure of parameters with keys:
+// 	     * Ref - DocumentRef - Link to the purchase document.
+// 	     * Date - Date - Date on the purchase document.
+// 	     * Organization - CatalogRef.Companies - The organization that records the purchase or return of goods.
+// 	     * Counterparty - CatalogRef.Counterparties,
+// 	                    Reference link.Organizations - Counterparty or supplier organization.
+// 	                                                   The buyer of the goods upon return.
+//       * Warehouse - CatalogRef.Warehouses -
+// 	     * VATTaxation - EnumRef.VATTaxationTypes - VAT taxation of the purchase or refund document.
+// 	     [Operation parameters]
+// 	     * ImportOfGoodsFromCustomsUnion - Boolean - A sign that the operation of importing goods from the countries of the customs Union with the registration of an import application is reflected.
+//       * AccountingForTheRNPTIsMaintained - Boolean - Indicates that there are traceable products in the tabular part of the document
+//       * CorrectiveNotification - Boolean - Indicates which notification should be generated. If the correction notification = False, you need to generate an Initial notification.
+//
+Function ParametersForRegisteringImportNotificationsOfTraceableGoods(Object) Export
+	
+	RegistrationParameters = New Structure;
+	
+	RegistrationParameters.Insert("Ref",	Object.Ref);
+	RegistrationParameters.Insert("Date", Object.Date);
+	RegistrationParameters.Insert("Organization", Object.Organization);
+	RegistrationParameters.Insert("Counterparty",	Object.Counterparty);
+	RegistrationParameters.Insert("Warehouse",	Object.Warehouse);
+	RegistrationParameters.Insert("VATTaxation", Object.VATTaxation);
+	RegistrationParameters.Insert("ImportOfGoodsFromCustomsUnion", False);
+	RegistrationParameters.Insert("AccountingForTheRNPTIsMaintained", False);
+	RegistrationParameters.Insert("CorrectiveNotification", False);
+	
+	
+	Return RegistrationParameters;
+	
+EndFunction
+
+// Fills in an array of acceptable names for incoming documents.
+//
+// Parameters:
+//  ArrayOfNames	 - Array - an array of the names of incoming documents.
+//
+Procedure AddNamesOfIncomingDocuments(ArrayOfNames) Export
+EndProcedure
+
+// Fills in information about the details of the document, dependent and independent of the business transaction.
+//
+// Parameters:
+//	BusinessOperation - EnumRef.BusinessTransactions - business operation of the document.
+//	AllAttributes - Array of String - Bank details that do not depend on the business transaction.
+//	TransactionDetails - Array of String - Bank details that depend on the business transaction.
+//
+Procedure FillInNamesOfBusinessTransactionDetails(BusinessOperation, AllAttributes, TransactionDetails) Export
+	
+	
+EndProcedure
+
+#EndRegion
+
+#Region Private
+
+#Region Posting
+
+// The procedure complements the texts of requests for the document.
+//
+// Parameters:
+//  Query - Query - General request for document execution.
+//  QueryTexts - ValueList - List of texts of the request for holding.
+//  Registers - String, Structure - A list of registers for holding a document separated by commas or in structure keys.
+//  Object - Document object - Processed object.
+//
+Procedure AddRequestTexts(Query, QueryTexts, Registers, DocumentObject) Export
+	
+	
+EndProcedure
+
+// The procedure complements the texts of requests for the document.
+//
+// Parameters:
+//  Query - Query - General request for document execution.
+//  QueryTexts - ValueList - List of texts of the request for holding.
+//  Registers - String, Structure - A comma-separated list of document execution registers or in structure keys.
+//  DocumentObject - DocumentObject - The object being processed.
+//
+Procedure AddVATInclusiveQueryTexts(Query, QueryTexts, Registers, DocumentObject) Export
+	
+	
+EndProcedure
+
+
+// The procedure supplements the text of the request for the register of accumulation of goods and the registration of documents of the import
+//
+// Parameters:
+//  QueryText - String - The text of the request for an extension.
+//
+Procedure AddRequestTextTableProductsForImportDocuments(QueryText) Export
+EndProcedure
+
+#EndRegion
+
+#Region GosIs
+
+
+#EndRegion
+
+#Region FragmentsOfLocalAccountingTransactions
+
+
+#EndRegion
+
+#EndRegion

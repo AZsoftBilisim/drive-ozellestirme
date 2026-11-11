@@ -1,0 +1,2226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>DataSource1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>DataSet1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>BillOfMaterials</dataPath>
+			<field>BillOfMaterials</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Purpose</dataPath>
+			<field>Purpose</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ProductionStage</dataPath>
+			<field>ProductionStage</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Production stage</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>مرحله تولید</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Fase di produzione</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Etap produkcji</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Этап производства</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Üretim aşaması</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Công đoạn sản xuất</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Department</dataPath>
+			<field>Department</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>UnitOfMeasure</dataPath>
+			<field>UnitOfMeasure</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Unit</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>واحد</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Unità di misura</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>J. m.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ед. изм.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Ölçü birimi</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Đơn vị tính</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>StageProduction</dataPath>
+			<field>StageProduction</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Stage, semi-finished product, products</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>مرحله، محصول نیمه‌ساخته، محصولات</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Fase, semilavorato, prodotto</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Etap, półfabrykat, wiersze pozycji</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Этап, полуфабрикат, продукция</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Aşama, yarı mamul ürün, imal edilen ürünler</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Công đoạn, bán thành phẩm, sản phẩm</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<presentationExpression>Case
+	When StageProductionDesignation = &amp;DesignationStep
+		Then Case
+				When ValueIsFilled(StageProduction.StageName)
+					Then StageProduction.StageName
+				Else StageProduction.Description
+			End
+	When Not ValueIsFilled(Characteristic)
+		Then Presentation(Products)
+	Else Presentation(Products) + ", " + Presentation(Characteristic)
+End</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>StageProductsProcedure</dataPath>
+			<field>StageProductsProcedure</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Stage products procedure</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>رویه محصولات مرحله</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Fase prodotto ordine</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Tryb etapu produkcji</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Этап продукция порядок</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Aşama imal edilen ürünler sıra</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Công đoạn sản xuất thứ tự</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>StageProductionDesignation</dataPath>
+			<field>StageProductionDesignation</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Designation</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>نماد</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Simbolo</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Oznaczenie</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обозначение</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Miktar</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Ký hiệu</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DatePlan</dataPath>
+			<field>DatePlan</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Date plan</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>تاریخ برنامه</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата план</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Plan tarihi</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Ngày kế hoạch</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Date plan</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Date plan</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>Case
+    When &amp;ReportFrequency = Value(Enum.Periodicity.Week)
+        Then Format(DatePlan, "DLF=D") + " - " + Format(DatePlanEnd, "DLF=D")
+    When &amp;ReportFrequency = Value(Enum.Periodicity.Month)
+        Then Format(DatePlan, "DF='MMMM (yyyy)'")
+    Else Format(DatePlan, "DF='dd.MM.yyyy (ddd)'")
+End</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Count</dataPath>
+			<field>Count</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Quantity</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>مقدار</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Miktar</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Số lượng</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Quantity</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Quantity</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Products</dataPath>
+			<field>Products</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Characteristic</dataPath>
+			<field>Characteristic</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DurationBeforeProductionIssue</dataPath>
+			<field>DurationBeforeProductionIssue</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ReleaseDateIsOverdue</dataPath>
+			<field>ReleaseDateIsOverdue</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Release date is overdue</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>تاریخ خروجی سررسید گذشته است</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Data di produzione scaduta</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Data wydania przeterminowana</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата выпуска просрочена</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Çıkış tarihi vadesi geçmiş</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Ngày xuất đi đã hết hạn</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DatePlanEnd</dataPath>
+			<field>DatePlanEnd</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Date plan end</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>پایان تاریخ برنامه</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата план окончание</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Plan bitişinin tarihi</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Ngày kế hoạch kết thúc</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Date plan end</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Date plan end</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>KeyProducts</dataPath>
+			<field>KeyProducts</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Key item</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>قلم کلیدی</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Chiave articolo</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Klucz produkt</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ключ номенклатура</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Anahtar öğe</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Khóa mặt hàng</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>FinalScheduleDate</dataPath>
+			<field>FinalScheduleDate</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Release/launch</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>خروجی/اجرا</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выпуск/запуск</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Ürün çıkışı/başlangıç</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Xuất xưởng/bắt đầu</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Release/launch</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Release/launch</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ProductionOrder</dataPath>
+			<field>ProductionOrder</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<presentationExpression>NStr("ru = 'Заказ №'; vi = 'Đặt hàng số'; en = 'Order #'; it = 'Ordine №'; pl = 'Zamówienie nr'; tr = 'Sipariş №'") + ProductionOrder.Number + "; " + NStr("ru = 'дата потребности:'; vi = 'ngày yêu cầu:'; en = 'demand date:'; it = 'data del fabbisogno:'; pl = 'Data zapotrzebowania:'; tr = 'talep tarihi:'") + " " + Format(ProductionOrder.DemandDate, "DF='MM/dd/yy (ddd)'")</presentationExpression>
+		</field>
+		<dataSource>DataSource1</dataSource>
+		<query>SELECT
+	RegulatorySchedule.ProductionOrder                    AS ProductionOrder,
+	NULL                                                     AS KeyProducts,
+	RegulatorySchedule.Stage                                   AS ProductionStage,
+	OrderStructure.BillOfMaterials                             AS BillOfMaterials,
+	OrderStructure.Purpose                               AS Purpose,
+	OrderStructure.Department                            AS Department,
+	RegulatorySchedule.Stage                                   AS StageProduction,
+	CAST(&amp;DesignationStep AS STRING(25))                AS StageProductionDesignation,
+	1                                                        AS StageProductsProcedure,
+	OrderStructure.Products.UnitOfMeasure            AS UnitOfMeasure,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN CASE
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, DAY)
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, WEEK)
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, MONTH)
+					ELSE &amp;EndOfPeriod
+				END
+		ELSE CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, MONTH)
+				ELSE &amp;EndOfPeriod
+			END
+	END                                                    AS DatePlan,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, MONTH)
+				ELSE &amp;BeginOfPeriod
+			END
+		ELSE CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, MONTH)
+				ELSE &amp;EndOfPeriod
+			END
+	END                                                    AS DatePlanEnd,
+	SUM(OrderStructure.Scheduled +
+		OrderStructure.Launched)                            AS Count,
+	OrderStructure.Products                             AS Products,
+	OrderStructure.Characteristic                           AS Characteristic,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN BEGINOFPERIOD(RegulatorySchedule.Begin, DAY)
+		ELSE BEGINOFPERIOD(RegulatorySchedule.Ending, DAY)
+	END                                                    AS FinalScheduleDate,
+	OrderStructure.DurationBeforeProductionIssue                    AS DurationBeforeProductionIssue,
+	MAX(BEGINOFPERIOD(&amp;CurrentDate, DAY) &gt; 
+		BEGINOFPERIOD(OrderProducts_.DemandDate, DAY)) AS ReleaseDateIsOverdue
+FROM
+	InformationRegister.TargetOrderStructureSchedule AS RegulatorySchedule
+		LEFT JOIN InformationRegister.OrderStructure AS OrderStructure
+		ON OrderStructure.ProductionOrder = RegulatorySchedule.ProductionOrder
+		AND OrderStructure.KeyLot = RegulatorySchedule.KeyLot
+		AND OrderStructure.Stage = RegulatorySchedule.Stage
+		
+		LEFT JOIN Document.ProductionOrder2_2.ManufacturedProduct AS OrderProducts_
+		ON OrderProducts_.Ref = OrderStructure.ProductionOrder
+		AND OrderProducts_.KeyProducts = OrderStructure.KeyProducts
+		AND OrderProducts_.DemandDate &lt;&gt; DATETIME(1,1,1)
+WHERE
+	&amp;DisplayStages
+	AND RegulatorySchedule.Stage &lt;&gt; VALUE(Catalog.ProductionStages.EmptyRef)
+	AND (OrderStructure.Scheduled &lt;&gt; 0
+	OR OrderStructure.Launched &lt;&gt; 0
+	OR OrderStructure.AllocatedInFreeProductionLots &lt;&gt; 0
+	OR OrderStructure.AllocatedInAssignedProductionLots &lt;&gt; 0)
+	AND (&amp;ScheduleDateOption = 0
+			AND (&amp;BeginOfPeriod = DATETIME(1, 1, 1)
+				OR RegulatorySchedule.Begin &gt;= &amp;BeginOfPeriod)
+			AND (&amp;EndOfPeriod = DATETIME(1, 1, 1)
+				OR RegulatorySchedule.Begin &lt;= &amp;EndOfPeriod)
+		OR &amp;ScheduleDateOption = 1
+			AND (&amp;BeginOfPeriod = DATETIME(1, 1, 1)
+				OR RegulatorySchedule.Ending &gt;= &amp;BeginOfPeriod)
+			AND (&amp;EndOfPeriod = DATETIME(1, 1, 1)
+				OR RegulatorySchedule.Ending &lt;= &amp;EndOfPeriod))
+
+GROUP BY
+	RegulatorySchedule.ProductionOrder,
+	RegulatorySchedule.Stage,
+	OrderStructure.BillOfMaterials,
+	OrderStructure.Purpose,
+	OrderStructure.Department,
+	OrderStructure.Products.UnitOfMeasure,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN CASE
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, DAY)
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, WEEK)
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, MONTH)
+					ELSE &amp;EndOfPeriod
+				END
+		ELSE CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, MONTH)
+				ELSE &amp;EndOfPeriod
+			END
+	END,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, MONTH)
+				ELSE &amp;BeginOfPeriod
+			END
+		ELSE CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, MONTH)
+				ELSE &amp;EndOfPeriod
+			END
+	END,
+	OrderStructure.Products,
+	OrderStructure.Characteristic,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN BEGINOFPERIOD(RegulatorySchedule.Begin, DAY)
+		ELSE BEGINOFPERIOD(RegulatorySchedule.Ending, DAY)
+	END,
+	OrderStructure.DurationBeforeProductionIssue
+
+UNION ALL
+
+SELECT
+	OrderStructure.ProductionOrder                      AS ProductionOrder,
+	MAX(CASE
+				WHEN OrderStructure.LineKind IN (
+							VALUE(Enum.KindsOfProductionOrderStructureLines.ManufactureOfProducts),
+							VALUE(Enum.KindsOfProductionOrderStructureLines.ManufactureSemiFinishedProduct))
+					THEN OrderStructure.KeyProducts
+	END)                                                   AS KeyProducts,
+	OrderStructure.Stage                                     AS ProductionStage,
+	OrderStructure.BillOfMaterials                             AS BillOfMaterials,
+	OrderStructure.Purpose                               AS Purpose,
+	OrderStructure.Department                            AS Department,
+	OrderStructure.Products                             AS StageProduction,
+	CAST(&amp;DesignationProduct AS STRING(25))             AS StageProductionDesignation,
+	CASE
+		WHEN OrderStructure.LineKind = VALUE(Enum.KindsOfProductionOrderStructureLines.ManufactureOfProducts)
+			THEN 3
+		ELSE 2
+	END                                                    AS StageProductsProcedure,
+	OrderStructure.Products.UnitOfMeasure            AS UnitOfMeasure,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN CASE
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, DAY)
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, WEEK)
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, MONTH)
+					ELSE &amp;EndOfPeriod
+				END
+		ELSE CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, MONTH)
+				ELSE &amp;EndOfPeriod
+			END
+	END                                                    AS DatePlan,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, MONTH)
+				ELSE &amp;BeginOfPeriod
+			END
+		ELSE CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, MONTH)
+				ELSE &amp;EndOfPeriod
+			END
+	END                                                    AS DatePlanEnd,
+	SUM(OrderStructure.Scheduled)                     AS Count,
+	OrderStructure.Products                             AS Products,
+	OrderStructure.Characteristic                           AS Characteristic,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN BEGINOFPERIOD(RegulatorySchedule.Begin, DAY)
+		ELSE BEGINOFPERIOD(RegulatorySchedule.Ending, DAY)
+	END                                                    AS FinalScheduleDate,
+	OrderStructure.DurationBeforeProductionIssue                    AS DurationBeforeProductionIssue,
+	BEGINOFPERIOD(&amp;CurrentDate, DAY) &gt; 
+		BEGINOFPERIOD(OrderProducts_.DemandDate, DAY) AS ReleaseDateIsOverdue
+FROM
+	InformationRegister.OrderStructure AS OrderStructure
+	LEFT JOIN InformationRegister.TargetOrderStructureSchedule AS RegulatorySchedule
+		ON OrderStructure.ProductionOrder = RegulatorySchedule.ProductionOrder
+		AND OrderStructure.KeyLot = RegulatorySchedule.KeyLot
+		AND OrderStructure.Stage = RegulatorySchedule.Stage
+		
+		LEFT JOIN Document.ProductionOrder2_2.ManufacturedProduct AS OrderProducts_
+		ON OrderProducts_.Ref = OrderStructure.ProductionOrder
+		AND OrderProducts_.KeyProducts = OrderStructure.KeyProducts
+		AND OrderProducts_.DemandDate &lt;&gt; DATETIME(1,1,1)
+		
+		INNER JOIN Document.ProductionOrder2_2 AS Orders
+		ON Orders.Ref = OrderStructure.ProductionOrder
+		AND Orders.ProductionProcessType &lt;&gt; VALUE(Enum.ProductionProcessTypes.Disassembly)
+WHERE
+	&amp;DisplayProducts
+	AND OrderStructure.Scheduled &lt;&gt; 0
+	AND OrderStructure.LineKind &lt;&gt; VALUE(Enum.KindsOfProductionOrderStructureLines.Move)
+	AND (&amp;ScheduleDateOption = 0
+			AND (&amp;BeginOfPeriod = DATETIME(1, 1, 1)
+				OR RegulatorySchedule.Begin &gt;= &amp;BeginOfPeriod)
+			AND (&amp;EndOfPeriod = DATETIME(1, 1, 1)
+				OR RegulatorySchedule.Begin &lt;= &amp;EndOfPeriod)
+		OR &amp;ScheduleDateOption = 1
+			AND (&amp;BeginOfPeriod = DATETIME(1, 1, 1)
+				OR RegulatorySchedule.Ending &gt;= &amp;BeginOfPeriod)
+			AND (&amp;EndOfPeriod = DATETIME(1, 1, 1)
+				OR RegulatorySchedule.Ending &lt;= &amp;EndOfPeriod))
+
+GROUP BY
+	OrderStructure.ProductionOrder,
+	OrderStructure.Stage,
+	OrderStructure.BillOfMaterials,
+	OrderStructure.Purpose,
+	OrderStructure.Department,
+	OrderStructure.LineKind,
+	OrderStructure.Products.UnitOfMeasure,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN CASE
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, DAY)
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, WEEK)
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, MONTH)
+					ELSE &amp;EndOfPeriod
+				END
+		ELSE CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, MONTH)
+				ELSE &amp;EndOfPeriod
+			END
+	END,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, MONTH)
+				ELSE &amp;BeginOfPeriod
+			END
+		ELSE CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, MONTH)
+				ELSE &amp;EndOfPeriod
+			END
+	END,
+	OrderStructure.Products,
+	OrderStructure.Characteristic,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN BEGINOFPERIOD(RegulatorySchedule.Begin, DAY)
+		ELSE BEGINOFPERIOD(RegulatorySchedule.Ending, DAY)
+	END,
+	OrderStructure.DurationBeforeProductionIssue,
+	OrderProducts_.DemandDate
+
+UNION ALL
+
+SELECT
+	OrderStructure.ProductionOrder                      AS ProductionOrder,
+	MAX(OrderStructure.KeyProducts)               AS KeyProducts,
+	OrderStructure.Stage                                     AS ProductionStage,
+	OrderStructure.BillOfMaterials                             AS BillOfMaterials,
+	OrderStructure.Purpose                               AS Purpose,
+	OrderStructure.Department                            AS Department,
+	OrderStructure.Products                             AS StageProduction,
+	CAST(&amp;DesignationProduct AS STRING(25))             AS StageProductionDesignation,
+	3                                                        AS StageProductsProcedure,
+	OrderStructure.Products.UnitOfMeasure            AS UnitOfMeasure,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN CASE
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, DAY)
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, WEEK)
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, MONTH)
+					ELSE &amp;EndOfPeriod
+				END
+		ELSE CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, MONTH)
+				ELSE &amp;EndOfPeriod
+			END
+	END                                                    AS DatePlan,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, MONTH)
+				ELSE &amp;BeginOfPeriod
+			END
+		ELSE CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, MONTH)
+				ELSE &amp;EndOfPeriod
+			END
+	END                                                    AS DatePlanEnd,
+	SUM(OrderStructure.AllocatedInFreeProductionLots +
+		OrderStructure.AllocatedInAssignedProductionLots)     AS Count,
+	OrderStructure.Products                             AS Products,
+	OrderStructure.Characteristic                           AS Characteristic,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN BEGINOFPERIOD(RegulatorySchedule.Begin, DAY)
+		ELSE BEGINOFPERIOD(RegulatorySchedule.Ending, DAY)
+	END                                                    AS FinalScheduleDate,
+	OrderStructure.DurationBeforeProductionIssue                    AS DurationBeforeProductionIssue,
+	BEGINOFPERIOD(&amp;CurrentDate, DAY) &gt; 
+		BEGINOFPERIOD(OrderProducts_.DemandDate, DAY) AS ReleaseDateIsOverdue
+FROM
+	InformationRegister.OrderStructure AS OrderStructure
+	LEFT JOIN InformationRegister.TargetOrderStructureSchedule AS RegulatorySchedule
+		ON OrderStructure.ProductionOrder = RegulatorySchedule.ProductionOrder
+		AND OrderStructure.KeyLot = RegulatorySchedule.KeyLot
+		AND OrderStructure.Stage = RegulatorySchedule.Stage
+		
+		LEFT JOIN Document.ProductionOrder2_2.ManufacturedProduct AS OrderProducts_
+		ON OrderProducts_.Ref = OrderStructure.ProductionOrder
+		AND OrderProducts_.KeyProducts = OrderStructure.KeyProducts
+		AND OrderProducts_.DemandDate &lt;&gt; DATETIME(1,1,1)
+		
+		INNER JOIN Document.ProductionOrder2_2 AS Orders
+		ON Orders.Ref = OrderStructure.ProductionOrder
+		AND Orders.ProductionProcessType &lt;&gt; VALUE(Enum.ProductionProcessTypes.Disassembly)
+WHERE
+	&amp;DisplayProducts
+	AND (OrderStructure.AllocatedInFreeProductionLots &lt;&gt; 0
+	OR OrderStructure.AllocatedInAssignedProductionLots &lt;&gt; 0)
+	AND OrderStructure.LineKind &lt;&gt; VALUE(Enum.KindsOfProductionOrderStructureLines.Move)
+	AND (&amp;ScheduleDateOption = 0
+			AND (&amp;BeginOfPeriod = DATETIME(1, 1, 1)
+				OR RegulatorySchedule.Begin &gt;= &amp;BeginOfPeriod)
+			AND (&amp;EndOfPeriod = DATETIME(1, 1, 1)
+				OR RegulatorySchedule.Begin &lt;= &amp;EndOfPeriod)
+		OR &amp;ScheduleDateOption = 1
+			AND (&amp;BeginOfPeriod = DATETIME(1, 1, 1)
+				OR RegulatorySchedule.Ending &gt;= &amp;BeginOfPeriod)
+			AND (&amp;EndOfPeriod = DATETIME(1, 1, 1)
+				OR RegulatorySchedule.Ending &lt;= &amp;EndOfPeriod))
+
+GROUP BY
+	OrderStructure.ProductionOrder,
+	OrderStructure.Stage,
+	OrderStructure.BillOfMaterials,
+	OrderStructure.Purpose,
+	OrderStructure.Department,
+	OrderStructure.Products.UnitOfMeasure,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN CASE
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, DAY)
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, WEEK)
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, MONTH)
+					ELSE &amp;EndOfPeriod
+				END
+		ELSE CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, MONTH)
+				ELSE &amp;EndOfPeriod
+			END
+	END,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, MONTH)
+				ELSE &amp;BeginOfPeriod
+			END
+		ELSE CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, MONTH)
+				ELSE &amp;EndOfPeriod
+			END
+	END,
+	OrderStructure.Products,
+	OrderStructure.Characteristic,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN BEGINOFPERIOD(RegulatorySchedule.Begin, DAY)
+		ELSE BEGINOFPERIOD(RegulatorySchedule.Ending, DAY)
+	END,
+	OrderStructure.DurationBeforeProductionIssue,
+	OrderProducts_.DemandDate
+
+UNION ALL
+
+SELECT
+	OrderStructure.ProductionOrder                      AS ProductionOrder,
+	MAX(OrderStructure.KeyProducts)               AS KeyProducts,
+	OrderStructure.Stage                                     AS ProductionStage,
+	OrderStructure.BillOfMaterials                             AS BillOfMaterials,
+	OrderStructure.Purpose                               AS Purpose,
+	OrderStructure.Department                            AS Department,
+	OrderStructure.Products                             AS StageProduction,
+	CAST(&amp;DesignationProduct AS STRING(25))             AS StageProductionDesignation,
+	2                                                        AS StageProductsProcedure,
+	OrderStructure.Products.UnitOfMeasure            AS UnitOfMeasure,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN CASE
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, DAY)
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, WEEK)
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, MONTH)
+					ELSE &amp;EndOfPeriod
+				END
+		ELSE CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, MONTH)
+				ELSE &amp;EndOfPeriod
+			END
+	END                                                    AS DatePlan,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, MONTH)
+				ELSE &amp;BeginOfPeriod
+			END
+		ELSE CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, MONTH)
+				ELSE &amp;EndOfPeriod
+			END
+	END                                                    AS DatePlanEnd,
+	SUM(OrderStructure.Launched - (OrderStructure.AllocatedInFreeProductionLots +
+		OrderStructure.AllocatedInAssignedProductionLots))      AS Count,
+	OrderStructure.Products                             AS Products,
+	OrderStructure.Characteristic                           AS Characteristic,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN BEGINOFPERIOD(RegulatorySchedule.Begin, DAY)
+		ELSE BEGINOFPERIOD(RegulatorySchedule.Ending, DAY)
+	END                                                    AS FinalScheduleDate,
+	OrderStructure.DurationBeforeProductionIssue                    AS DurationBeforeProductionIssue,
+	FALSE AS ReleaseDateIsOverdue
+FROM
+	InformationRegister.OrderStructure AS OrderStructure
+	LEFT JOIN InformationRegister.TargetOrderStructureSchedule AS RegulatorySchedule
+		ON OrderStructure.ProductionOrder = RegulatorySchedule.ProductionOrder
+		AND OrderStructure.KeyLot = RegulatorySchedule.KeyLot
+		AND OrderStructure.Stage = RegulatorySchedule.Stage
+		
+		INNER JOIN Document.ProductionOrder2_2 AS Orders
+		ON Orders.Ref = OrderStructure.ProductionOrder
+		AND Orders.ProductionProcessType &lt;&gt; VALUE(Enum.ProductionProcessTypes.Disassembly)
+WHERE
+	&amp;DisplayProducts
+	AND (OrderStructure.Launched &lt;&gt; 0 OR OrderStructure.AllocatedInFreeProductionLots &lt;&gt; 0
+	OR OrderStructure.AllocatedInAssignedProductionLots &lt;&gt; 0)
+	AND OrderStructure.LineKind &lt;&gt; VALUE(Enum.KindsOfProductionOrderStructureLines.Move)
+	AND (&amp;ScheduleDateOption = 0
+			AND (&amp;BeginOfPeriod = DATETIME(1, 1, 1)
+				OR RegulatorySchedule.Begin &gt;= &amp;BeginOfPeriod)
+			AND (&amp;EndOfPeriod = DATETIME(1, 1, 1)
+				OR RegulatorySchedule.Begin &lt;= &amp;EndOfPeriod)
+		OR &amp;ScheduleDateOption = 1
+			AND (&amp;BeginOfPeriod = DATETIME(1, 1, 1)
+				OR RegulatorySchedule.Ending &gt;= &amp;BeginOfPeriod)
+			AND (&amp;EndOfPeriod = DATETIME(1, 1, 1)
+				OR RegulatorySchedule.Ending &lt;= &amp;EndOfPeriod)) 
+
+GROUP BY
+	OrderStructure.ProductionOrder,
+	OrderStructure.Stage,
+	OrderStructure.BillOfMaterials,
+	OrderStructure.Purpose,
+	OrderStructure.Department,
+	OrderStructure.Products.UnitOfMeasure,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN CASE
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, DAY)
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, WEEK)
+					WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+						THEN BEGINOFPERIOD(RegulatorySchedule.Begin, MONTH)
+					ELSE &amp;EndOfPeriod
+				END
+		ELSE CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN BEGINOFPERIOD(RegulatorySchedule.Ending, MONTH)
+				ELSE &amp;EndOfPeriod
+			END
+	END,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN ENDOFPERIOD(RegulatorySchedule.Begin, MONTH)
+				ELSE &amp;BeginOfPeriod
+			END
+		ELSE CASE
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.DAY)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, DAY)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.WEEK)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, WEEK)
+				WHEN &amp;ReportFrequency = VALUE(Enum.Periodicity.MONTH)
+					THEN ENDOFPERIOD(RegulatorySchedule.Ending, MONTH)
+				ELSE &amp;EndOfPeriod
+			END
+	END,
+	OrderStructure.Products,
+	OrderStructure.Characteristic,
+	CASE
+		WHEN &amp;ScheduleDateOption = 0
+			THEN BEGINOFPERIOD(RegulatorySchedule.Begin, DAY)
+		ELSE BEGINOFPERIOD(RegulatorySchedule.Ending, DAY)
+	END,
+	OrderStructure.DurationBeforeProductionIssue
+HAVING
+	SUM(OrderStructure.Launched - (OrderStructure.AllocatedInFreeProductionLots +
+		OrderStructure.AllocatedInAssignedProductionLots)) &gt; 0</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>TotalPlan</dataPath>
+		<expression>Count</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Total plan</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>کل برنامه</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Totale piano</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Łącznie plan</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Итого план</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Toplam plan</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Tổng kế hoạch</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<totalField>
+		<dataPath>DurationBeforeProductionIssue</dataPath>
+		<expression>Max(DurationBeforeProductionIssue)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>FinalScheduleDate</dataPath>
+		<expression>Case
+	When &amp;ScheduleDateOption = 0
+		Then Min(FinalScheduleDate)
+	Else Max(FinalScheduleDate)
+End</expression>
+		<group>StageProduction</group>
+	</totalField>
+	<totalField>
+		<dataPath>TotalPlan</dataPath>
+		<expression>Sum(TotalPlan)</expression>
+		<group>StageProduction</group>
+	</totalField>
+	<totalField>
+		<dataPath>StageProductsProcedure</dataPath>
+		<expression>Max(StageProductsProcedure)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ReleaseDateIsOverdue</dataPath>
+		<expression>Max(ReleaseDateIsOverdue)</expression>
+	</totalField>
+	<parameter>
+		<name>Period</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>دوره</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Periodo</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Okres</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Dönem</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Kỳ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>BeginOfPeriod</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period start</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>شروع دوره</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Inizio del periodo</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Początek okresu</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Dönem başı</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Đầu kỳ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Period.StartDate</expression>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>EndOfPeriod</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period end</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>پایان دوره</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Fine del periodo</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Koniec okresu</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Dönem sonu</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Cuối kỳ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Period.EndDate</expression>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ReportFrequency</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Generate every</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>تولید هر</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Periodicità del report</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Okresowość sprawozdania</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Периодичность отчета</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Rapor dönemselliği</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Tần suất báo cáo</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:EnumRef.Periodicity</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Enum.Periodicity.Day</value>
+		<useRestriction>false</useRestriction>
+		<availableValue>
+			<value xsi:type="dcscor:DesignTimeValue">Enum.Periodicity.Day</value>
+		</availableValue>
+		<availableValue>
+			<value xsi:type="dcscor:DesignTimeValue">Enum.Periodicity.Week</value>
+		</availableValue>
+		<availableValue>
+			<value xsi:type="dcscor:DesignTimeValue">Enum.Periodicity.Month</value>
+		</availableValue>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ScheduleDateOption</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Generate report on</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>تولید گزارش برای</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Genera il report in base</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Utworz raport według</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Формировать отчет по</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Rapor oluşturma tabanı</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Tạo một báo cáo theo</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<availableValue>
+			<value xsi:nil="true"/>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Launch</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>راه‌اندازی</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Al rilascio</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Uruchomienia</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запуску</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Başlatma</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Khởi động</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<availableValue>
+			<value xsi:type="xs:decimal">1</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Release</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>آزادسازی</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Alla produzione</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Wydania</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выпуску</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Ürün çıkışı</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Xuất xưởng</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>DisplayStages</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Display stages</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>نمایش مراحل</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Visualizza le fasi</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Wyświetlić etapy</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Выводить этапы</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Aşamaları görüntüle</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Hiển thị công đoạn</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">true</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>DisplayProducts</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Display products</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>نمایش محصولات</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Visualizza i prodotti</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Wyróżnić wyroby</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Выводить изделия</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Nihai ürünleri görüntüle</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Hiển thị sản phẩm</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">true</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>HighlightOverdueReleaseInRed</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Highlight overdue orders in red</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>برجسته‌سازی سفارش‌های سررسیدگذشته با رنگ قرمز</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Evidenziare in rosso gli ordini in ritardo</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Wyróżniaj opóźniające się zamówienia na czerwono</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Выделять опаздывающие заказы красным</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Geç kalınan siparişleri kırmızıyla vurgula</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Đánh dấu các đơn đặt hàng muộn bằng màu đỏ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">true</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>DesignationStep</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Designation stage</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>نشانگر مرحله</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Simbolo fase</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Oznaczenie etapu</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Обозначение этап</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Aşama tanımı</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Ký hiệu công đoạn</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>25</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>DesignationProduct</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Designation product</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>نشانگر محصول</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Simbolo prodotto</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Oznaczenie etapu</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Обозначение изделие</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Nihai ürün tanımı</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Ký hiệu sản phẩm</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>25</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>InTotal</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Total</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>جمع کل</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Totale</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Łącznie</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Итого</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Toplam</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Tổng số</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>25</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string"/>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<parameter>
+		<name>CurrentDate</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Current date</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>تاریخ فعلی</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Data corrente</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Bieżąca data</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Текущая дата</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Geçerli tarih</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Ngày hiện tại</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>CurrentSessionDate()</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>StandardProductionScheduleByOrders</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Standard production schedule by orders</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>زمان‌بندی استاندارد تولید بر اساس سفارش‌ها</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Нормативный график производства по заказам</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Siparişlere göre standart üretim programı</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Lịch biểu sản xuất tiêu chuẩn theo đơn hàng</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Standard production schedule by orders</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Standard production schedule by orders</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:userFields>
+				<dcsset:item xsi:type="dcsset:UserFieldExpression">
+					<dcsset:dataPath>UserFields.Field1</dcsset:dataPath>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Total</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>جمع کل</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Итого</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Toplam</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Tổng số</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Total</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Total</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:detailExpression>&amp;InTotal</dcsset:detailExpression>
+					<dcsset:detailExpressionPresentation>&amp;InTotal</dcsset:detailExpressionPresentation>
+					<dcsset:totalExpression/>
+					<dcsset:totalExpressionPresentation/>
+				</dcsset:item>
+			</dcsset:userFields>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ProductionOrder</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
+					<dcsset:userSettingID>e6d71aba-3dc3-421a-b060-87b0bdecb373</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Department</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Purpose</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Period</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>b1d8ebaf-6a9d-47ee-981e-b15687b978bc</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ReportFrequency</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DesignTimeValue">Enum.Periodicity.Day</dcscor:value>
+					<dcsset:userSettingID>f63177ed-8cee-4df4-9c10-3ca0ba04a95a</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ScheduleDateOption</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">1</dcscor:value>
+					<dcsset:userSettingID>e59e3f5b-c8b0-444c-a90a-a22eaa1004dd</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>DisplayStages</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					<dcsset:userSettingID>b0b6d1cf-2fdc-4685-bf4e-50fda8649bf3</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>DisplayProducts</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					<dcsset:userSettingID>20a3bd83-d180-432e-8de7-36bd1f73ed19</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>HighlightOverdueReleaseInRed</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					<dcsset:userSettingID>72e6eb92-6ede-41df-bdb7-e9b4f7638cd9</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>DesignationStep</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>DesignationProduct</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>InTotal</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ProductionOrder</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ReleaseDateIsOverdue</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">DataParameters.HighlightOverdueReleaseInRed</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>TextColor</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">style:SpecialTextColor</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>FinalScheduleDate</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Format</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>DF='MM/dd/yyyy (ddd)'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>fa</v8:lang>
+									<v8:content>DF='MM/dd/yyyy (ddd)'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>DF='dd.MM.yyyy (ddd)'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>tr</v8:lang>
+									<v8:content>DF="gg.AA.yy (ggg)"</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>vi</v8:lang>
+									<v8:content>DF='dd.MM.yyyy (ddd)'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>it</v8:lang>
+									<v8:content>DF='MM/dd/yyyy (ddd)'</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>pl</v8:lang>
+									<v8:content>DF='MM/dd/yyyy (ddd)'</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>HorizontalOverallPlacement</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>VerticalOverallPlacement</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Title</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Standard production schedule by orders</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>fa</v8:lang>
+							<v8:content>زمان‌بندی استاندارد تولید بر اساس سفارش‌ها</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Нормативный график производства по заказам</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>tr</v8:lang>
+							<v8:content>Siparişlere göre standart üretim programı</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>vi</v8:lang>
+							<v8:content>Lịch biểu sản xuất tiêu chuẩn theo đơn hàng</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>it</v8:lang>
+							<v8:content>Standard production schedule by orders</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>pl</v8:lang>
+							<v8:content>Standard production schedule by orders</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>UserFields.Field1</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>UserFields.Field1</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>TotalPlan</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Balance</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>fa</v8:lang>
+									<v8:content>مانده</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Остаток</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>tr</v8:lang>
+									<v8:content>Bakiye</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>vi</v8:lang>
+									<v8:content>Số dư</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>it</v8:lang>
+									<v8:content>Balance</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>pl</v8:lang>
+									<v8:content>Balance</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>FinalScheduleDate</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>DatePlan</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>DatePlan</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ProductionOrder</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:outputParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>TotalsPlacement</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>Title</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType"/>
+						</dcscor:item>
+					</dcsset:outputParameters>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>KeyProducts</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>StageProductionDesignation</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>StageProduction</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>UnitOfMeasure</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Department</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemField">
+								<dcsset:field>DurationBeforeProductionIssue</dcsset:field>
+								<dcsset:orderType>Desc</dcsset:orderType>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:OrderItemField">
+								<dcsset:field>StageProductsProcedure</dcsset:field>
+								<dcsset:orderType>Asc</dcsset:orderType>
+							</dcsset:item>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>StageProductionDesignation</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>StageProduction</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>UnitOfMeasure</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Department</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>TotalPlan</dcsset:field>
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content> </v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>it</v8:lang>
+										<v8:content> </v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>pl</v8:lang>
+										<v8:content> </v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content> </v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>tr</v8:lang>
+										<v8:content> </v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>vi</v8:lang>
+										<v8:content> </v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:conditionalAppearance>
+							<dcsset:item>
+								<dcsset:selection/>
+								<dcsset:filter>
+									<dcsset:item xsi:type="dcsset:FilterItemComparison">
+										<dcsset:left xsi:type="dcscor:Field">StageProductsProcedure</dcsset:left>
+										<dcsset:comparisonType>Equal</dcsset:comparisonType>
+										<dcsset:right xsi:type="xs:decimal">3</dcsset:right>
+									</dcsset:item>
+								</dcsset:filter>
+								<dcsset:appearance>
+									<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+										<dcscor:parameter>Font</dcscor:parameter>
+										<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+									</dcscor:item>
+								</dcsset:appearance>
+								<dcsset:presentation xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Highlight product</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>fa</v8:lang>
+										<v8:content>برجسته‌سازی محصول</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>it</v8:lang>
+										<v8:content>Evidenziare i prodotti</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>pl</v8:lang>
+										<v8:content>Wyróżnienie produkcji</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Выделение продукции</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>tr</v8:lang>
+										<v8:content>İmal edilen ürünler seçimi</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>vi</v8:lang>
+										<v8:content>Chọn sản phẩm</v8:content>
+									</v8:item>
+								</dcsset:presentation>
+								<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+								<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+							</dcsset:item>
+						</dcsset:conditionalAppearance>
+					</dcsset:item>
+				</dcsset:row>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

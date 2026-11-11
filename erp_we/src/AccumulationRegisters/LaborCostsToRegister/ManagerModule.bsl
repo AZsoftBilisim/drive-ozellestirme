@@ -1,0 +1,36 @@
+#If Server Or ThickClientOrdinaryApplication Or ExternalConnection Then
+
+#Region Public
+
+#Region InterfaceImplementation
+
+// StandardSubsystems.AccessManagement
+
+// Parameters:
+//   Restriction - See AccessManagementOverridable.OnFillAccessRestriction.Restriction.
+//
+Procedure OnFillAccessRestriction(Restriction) Export
+
+	Restriction.Text =
+	"AllowReadUpdate
+	|WHERE
+	|	ValueAllowed(Organization)
+	|	AND ValueAllowed(Department)";
+
+EndProcedure
+
+// End StandardSubsystems.AccessManagement
+
+#EndRegion
+
+#EndRegion
+
+#Region Private
+
+#Region InfobaseUpdate
+
+#EndRegion
+
+#EndRegion
+
+#EndIf

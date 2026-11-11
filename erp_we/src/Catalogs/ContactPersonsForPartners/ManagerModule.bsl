@@ -1,0 +1,296 @@
+#If Server Or ThickClientOrdinaryApplication Or ExternalConnection Then
+
+#Region Public
+
+#Region InterfaceImplementation
+
+// StandardSubsystems.AccessManagement
+
+// Parameters:
+//   Restriction - See AccessManagementOverridable.OnFillAccessRestriction.Restriction.
+//
+Procedure OnFillAccessRestriction(Restriction) Export
+
+	Restriction.Text =
+	"AllowReadUpdate
+	|WHERE
+	|	ValueAllowed(Owner)";
+	
+	Restriction.TextForExternalUsers1 =
+	"AttachAdditionalTables
+	|ThisList AS ThisList
+	|
+	|LEFT JOIN Catalog.ExternalUsers AS ExternalUsersPartners
+	|	ON ExternalUsersPartners.AuthorizationObject = ThisList.Owner
+	|
+	|LEFT JOIN Catalog.ContactPersonsForPartners AS ContactPersonsForPartners
+	|	ON ContactPersonsForPartners.Owner = ThisList.Owner
+	|
+	|LEFT JOIN Catalog.ExternalUsers AS ExternalUsersContactPersons
+	|	ON ExternalUsersContactPersons.AuthorizationObject = ContactPersonsForPartners.Ref
+	|;
+	|AllowReadUpdate
+	|WHERE
+	|	ValueAllowed(ExternalUsersPartners.Ref)
+	|	OR ValueAllowed(ExternalUsersContactPersons.Ref)";
+
+EndProcedure
+
+// End StandardSubsystems.AccessManagement
+
+#EndRegion
+
+#EndRegion
+
+#Region Public
+
+// StandardSubsystems.ObjectsVersioning
+
+// Defines object settings for the object Versioning subsystem.
+//
+// Parameters:
+//  Settings - Structure - subsystem settings.
+Procedure OnDefineObjectVersioningSettings(Settings) Export
+
+EndProcedure
+
+#Region GenerateFrom
+
+// End StandardSubsystems.ObjectsVersioning
+
+// Adds a command to create a directory "contact persons of partners".
+//
+// Parameters:
+//  GenerationCommands - See GenerateFromOverridable.BeforeAddGenerationCommands.GenerationCommands
+//
+// Returns:
+//   ValueTableRow - description of the command
+//
+Function AddGenerateCommand(GenerationCommands) Export
+	
+	CatalogMetadata = Metadata.Catalogs.ContactPersonsForPartners;
+	
+	If AccessRight("Insert", CatalogMetadata) Then
+		CreateBasedOnCommand = GenerationCommands.Add();
+		CreateBasedOnCommand.Manager = CatalogMetadata.FullName();
+		CreateBasedOnCommand.Presentation = TMCommonUse.ObjectPresentation(CatalogMetadata);
+		
+		Return CreateBasedOnCommand;
+		
+	EndIf;
+	
+	Return Undefined;
+	
+EndFunction
+
+// Defines a list of creation commands based on.
+//
+// Parameters:
+//  GenerationCommands - See GenerateFromOverridable.BeforeAddGenerationCommands.GenerationCommands
+//  Parameters - See GenerateFromOverridable.BeforeAddGenerationCommands.Parameters
+//
+Procedure AddGenerationCommands(GenerationCommands, Parameters) Export
+	
+	BusinessProcesses.Job.AddGenerateCommand(GenerationCommands);
+	
+EndProcedure
+
+#EndRegion
+
+#Region MessageTemplates
+
+// Called when preparing message templates and allows you to redefine the list of details and attachments.
+//
+// Parameters:
+//  Attributes               - ValueTree - list of template Attributes:
+//         * Name            - String - the unique name of the shared prop.
+//         * Presentation  - String - representation of general props.
+//         * Type            - Type    - Type of props. By default, a string.
+//         * Format         - String - Format for output values for numbers, dates, strings, and Boolean values.
+//  Attachments                - ValueTable - Printed forms and attachments:
+//         * Name            - String - the unique name of the attachment.
+//         * Presentation  - String - representation of the option.
+//         * FileType       - String - Attachment type that corresponds to the file extension: "pdf", "png", "jpg", mxl"
+//                                      , etc.
+//  AdditionalParameters - Structure - more information about the message template.
+//
+Procedure OnPrepareMessageTemplate(Attributes, Attachments, AdditionalParameters) Export
+	
+EndProcedure
+
+// Called when creating messages based on a template to fill in the values of details and attachments.
+//
+// Parameters:
+//  Message - Structure - structure with keys:
+//    * AttributesValues - Map of KeyAndValue- list of Attributes used in the template:
+//      * Key     - String - name of the prop in the template;
+//      * Value - String - the fill value in the template.
+//    * CommonAttributesValues - Map of KeyAndValue - list of common Attributes used in the template:
+//      * Key     - String - name of the prop in the template;
+//      * Value - String - the fill value in the template.
+//    * Attachments - Map of KeyAndValue - the values of the requisites
+//      * Key     - String - name of the attachment in the template;
+//      * Value - BinaryData, String - binary data or an address in the attachment's temporary storage.
+//  MessageSubject - AnyRef - a reference to the object that is the data source.
+//  AdditionalParameters - Structure -  additional information about the message template.
+//
+Procedure OnCreateMessage(Message, MessageSubject, AdditionalParameters) Export
+	
+EndProcedure
+
+// Fills in the list of SMS recipients when sending a message generated by a template.
+//
+// Parameters:
+//   SMSMessageRecipients - ValueTable - the list is received by SMS:
+//     * PhoneNumber - String - phone number where the SMS message will be sent.
+//     * Presentation - String - representation of the recipient of the SMS message.
+//     * Contact       - CatalogRef - the contact that the phone number belongs to.
+//  MessageSubject - AnyRef - a reference to the object that is the data source.
+//
+Procedure OnFillRecipientsPhonesInMessage(SMSMessageRecipients, MessageSubject) Export
+	
+EndProcedure
+
+// Fills in the list of email recipients when sending a message generated by a template.
+//
+// Parameters:
+//   EmailRecipients - ValueTable - list of received emails:
+//     * Address           - String - recipient's email address.
+//     * Presentation   - String - submission of the email message.
+//     * SendingOption - String - Options for sending emails: "To", "Copy", "Hidden Copy", " Reverse Address";
+//  MessageSubject - AnyRef - a reference to the object that is the data source.
+//
+Procedure OnFillRecipientsEmailsInMessage(EmailRecipients, MessageSubject) Export
+	
+EndProcedure
+
+#EndRegion
+
+#Region CreatingContactPerson
+
+// Creates a contact person according to the submitted data.
+//
+// Parameters:
+//  FillingData  - See ContactPersonCreationParameters
+//
+// Returns:
+//   Structure   - contains the following fields:
+//     * ContactPerson - CatalogRef.ContactPersonsForPartners - created directory element, 
+//     * Errors         - Array - contains errors that occurred when creating a contact person.
+//
+Function ResultOfCreatingContactPerson(FillingData) Export
+	
+	CreationResult = New Structure;
+	CreationResult.Insert("ContactPerson", Catalogs.ContactPersonsForPartners.EmptyRef());
+	CreationResult.Insert("Errors",         New Array);
+	
+	Cancel = False;
+	
+	If Not ValueIsFilled(FillingData.Description) Then
+		
+		ErrorText = NStr("vi = 'Chưa điền tên gọi';
+						|ru = 'Не заполнено наименование';
+						|en = 'Description is required'; fa = 'Description is required';
+						|it = 'Il nome non è compilato';
+						|pl = 'Nie została wypełniona nazwa';
+						|tr = 'Tanım doldurulmadı'");
+		CreationResult.Errors.Add(ErrorText);
+		Cancel = True;
+		
+	EndIf;
+	
+	If Not ValueIsFilled(FillingData.Partner) Then
+		
+		If GetFunctionalOption("UsePartnersAndCounterparties") Then
+			PartnerName_3 = NStr("vi = 'bạn hàng';
+								|ru = 'партнер';
+								|en = 'partner'; fa = 'شریک تجاری';
+								|it = 'partner';
+								|pl = 'partner';
+								|tr = 'iş ortağı'");
+		Else
+			PartnerName_3 = NStr("vi = 'đối tác';
+								|ru = 'контрагент';
+								|en = 'counterparty'; fa = 'طرف حساب';
+								|it = 'controparte';
+								|pl = 'kontrahent';
+								|tr = 'cari hesap'");
+		EndIf;
+		
+		ErrorText = StrTemplate(NStr("vi = 'Không điền %1';
+									|ru = 'Не заполнен %1';
+									|en = '%1 is required'; fa = '%1 is required';
+									|it = 'Non è compilato %1';
+									|pl = 'Nie wypełnione %1';
+									|tr = 'Doldurulmadı %1'"), PartnerName_3);
+		CreationResult.Errors.Add(ErrorText);
+		Cancel = True;
+		
+	EndIf;
+	
+	If Cancel Then
+		Return CreationResult;
+	EndIf;
+	
+	ContactPerson = Catalogs.ContactPersonsForPartners.CreateItem();
+	ContactPerson.Description       = FillingData.Description;
+	ContactPerson.Comment        = FillingData.Comment;
+	ContactPerson.JobTitleOnBusinessCard = FillingData.JobTitleOnBusinessCard;
+	ContactPerson.Gender                = FillingData.Gender;
+	ContactPerson.BirthDate       = FillingData.BirthDate;
+	ContactPerson.Owner           = FillingData.Partner;
+	
+	If ValueIsFilled(FillingData.Phone) Then
+		ContactsManager.AddContactInformation(ContactPerson,
+		                                                             FillingData.Phone, 
+		                                                             Catalogs.ContactInformationKinds.ContactPersonSPhoneNumber);
+	EndIf;
+	
+	If ValueIsFilled(FillingData.Phone) Then
+		ContactsManager.AddContactInformation(ContactPerson,
+		                                                             FillingData.Email, 
+		                                                             Catalogs.ContactInformationKinds.EmailContactPerson);
+	EndIf;
+	
+	ContactPerson.Write();
+	
+	CreationResult.ContactPerson = ContactPerson.Ref;
+	
+	Return CreationResult;
+	
+EndFunction
+
+// Creates an empty structure for creating a contact person
+//
+// Returns:
+//   Structure - contains the following fields:
+//    * Description          - String - name of the contact person,
+//    * Email - String - email address,
+//    * Phone               - String - phone number,
+//    * Comment           - String - custom comment,
+//    * JobTitleOnBusinessCard    - String - position of the contact person as indicated on the business card,
+//    * Gender                   - EnumRef.GenderPersons - contact person's gender,
+//    * BirthDate          - Date - date of birth,
+//    * Partner               - CatalogRef.Partners - owner of the contact person.
+//
+Function ContactPersonCreationParameters() Export
+	
+	CreationParameters = New Structure;
+	CreationParameters.Insert("Description",          "");
+	CreationParameters.Insert("Email", Undefined);
+	CreationParameters.Insert("Phone",               Undefined);
+	CreationParameters.Insert("Comment",           "");
+	CreationParameters.Insert("JobTitleOnBusinessCard",    "");
+	CreationParameters.Insert("Gender",                   Enums.GenderPersons.EmptyRef());
+	CreationParameters.Insert("BirthDate",          Date(1,1, 1));
+	CreationParameters.Insert("Partner",               Undefined);
+	
+	Return CreationParameters;
+	
+EndFunction
+
+#EndRegion
+
+#EndRegion
+
+#EndIf

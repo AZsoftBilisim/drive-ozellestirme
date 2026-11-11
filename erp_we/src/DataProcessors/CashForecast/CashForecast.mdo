@@ -1,0 +1,1771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cc6d899d-4bb0-41f0-89f7-c79ab22d4e8f">
+  <producedTypes>
+    <objectType typeId="aeec61d2-6a81-4c76-8605-fad0d27980d2" valueTypeId="c92f7705-7ae9-495f-a2af-e582084445a9"/>
+    <managerType typeId="468c46dc-793d-4b9d-9956-7023dadb3cbd" valueTypeId="c77bc1a9-d116-4103-9c0e-686f7324ac86"/>
+  </producedTypes>
+  <name>CashForecast</name>
+  <synonym>
+    <key>en</key>
+    <value>Cash forecast</value>
+  </synonym>
+  <synonym>
+    <key>fa</key>
+    <value>پیش‌بینی وجه نقد</value>
+  </synonym>
+  <synonym>
+    <key>it</key>
+    <value>Calendario pagamenti</value>
+  </synonym>
+  <synonym>
+    <key>pl</key>
+    <value>Kalendarz płatności</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>Платежный календарь</value>
+  </synonym>
+  <synonym>
+    <key>tr</key>
+    <value>Ödeme takvimi</value>
+  </synonym>
+  <synonym>
+    <key>vi</key>
+    <value>Lịch thanh toán</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.CashForecast.Form.Form</defaultForm>
+  <attributes uuid="cafacdb7-188d-43af-97d1-95dabd027e0e">
+    <name>PlanningDays</name>
+    <synonym>
+      <key>en</key>
+      <value>Planning days</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>روزهای برنامه‌ریزی</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Giorni pianificazione</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Dni planowania</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Дней планирования</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Planlanan günler</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Ngày kế hoạch</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>Number of days to which requests should be allocated</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>تعداد روزهایی که درخواست‌ها باید به آن‌ها تخصیص یابند</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Numero giorni nei quali serve ripartire l'applicazione</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Ilość dni, na które należy przydzielić wnioski</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Число дней, на которые требуется распределить заявки</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Başvuruların dağıtılacağı gün sayısı</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Số ngày phân bổ cho giấy đề nghị</value>
+    </toolTip>
+    <minValue xsi:type="core:StringValue">
+      <value>1</value>
+    </minValue>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="1402784b-574b-4be3-9164-f2617272314f">
+    <name>PlanFromDate</name>
+    <synonym>
+      <key>en</key>
+      <value>Plan from date</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>برنامه‌ریزی از تاریخ</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Pianificare dal giorno</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Planuj od dnia</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Планировать с даты</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Tarih itibariyle planla</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Kế hoạch từ ngày</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="6565e339-dacf-4c02-8025-de6f98c36745">
+    <name>LongTermPlanningPeriods</name>
+    <synonym>
+      <key>en</key>
+      <value>Long-term planning periods</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>دوره‌های برنامه‌ریزی بلندمدت</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Периодов долгосрочного планирования</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Uzun vadeli planlama dönemleri</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Long-term planning periods</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Long-term planning periods</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Long-term planning periods</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4cfd1152-6420-45b2-b814-e1849347de89">
+    <name>LongTermPlanningTimeFence</name>
+    <synonym>
+      <key>en</key>
+      <value>Long-term planning frequency</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>تناوب برنامه‌ریزی بلندمدت</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Периодичность долгосрочного планирования</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Uzun vadeli planlama sıklılığı</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Long-term planning frequency</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Long-term planning frequency</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Long-term planning frequency</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Periodicity</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="31a38019-a363-446d-831b-21360e55abbf">
+    <name>EndDateOfPlanningByDay</name>
+    <synonym>
+      <key>en</key>
+      <value>Planning end date by days</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>تاریخ پایان برنامه‌ریزی بر اساس روز</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Дата окончания планирования по дням</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Gün bazlı planlama bitiş tarihi</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Planning end date by days</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Planning end date by days</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Planning end date by days</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ea2be0d7-6a07-4137-bc34-7cf75faab13d">
+    <name>EndDateOfLongTermPlanning</name>
+    <synonym>
+      <key>en</key>
+      <value>Long-term planning end date</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>تاریخ پایان برنامه‌ریزی بلندمدت</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Дата окончания долгосрочного планирования</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Uzun vadeli planlama bitiş tarihi</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Long-term planning end date</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Long-term planning end date</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Long-term planning end date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="869d674e-badc-4119-a7ff-7e4ad673ef32">
+    <name>EndDate</name>
+    <synonym>
+      <key>en</key>
+      <value>End date</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>تاریخ پایان</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Data di fine</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Data zakończenia</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Дата окончания</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Bitiş tarihi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>End date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="90adcf34-9df8-4401-97c8-5350f10c36b1">
+    <name>HideDaysOff</name>
+    <synonym>
+      <key>en</key>
+      <value>Hide days off</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>پنهان کردن روزهای تعطیل</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Nascondi giorni festivi</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Ukryj dni wolne od pracy</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Скрывать выходные</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Hafta sonlarını gizle</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Ẩn cuối tuần</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a4168e21-03b0-4bdc-a2a0-3f2884c46de9">
+    <name>PaymentTree</name>
+    <synonym>
+      <key>en</key>
+      <value>Payment tree</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>درخت پرداخت</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Albero pagamenti</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Drzewo płatności</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Дерево платежей</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ödeme ağacı</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Cây thanh toán</value>
+    </synonym>
+    <type>
+      <types>ValueTree</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4cb673a1-d7fa-4974-960b-30b495d67999">
+    <name>RequestsPendingApproval</name>
+    <synonym>
+      <key>en</key>
+      <value>Unapproved payment requests</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>درخواست‌های پرداخت تأییدنشده</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Applicazioni non approvate di spesa</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Nieuzgodnione wnioski o wydatkowanie środków pieniężnych</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Несогласованные заявки на расходование денежных средств</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Onaylanmayan ödeme talepleri</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Thống nhất giấy đề nghị thanh toán</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="be4e5e40-8296-44c6-ae94-d78227bad405">
+    <name>SalesOrders</name>
+    <synonym>
+      <key>en</key>
+      <value>Sales orders</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>سفارش‌های فروش</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Ordini dei clienti</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Zamówienia od klientów</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Заказы клиентов</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Satış siparişİeri</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Đơn hàng của khách</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>Payment schedule according to payment terms</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>جدول پرداخت بر اساس شرایط پرداخت</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Grafico pagamenti in base ai termini di pagamento</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Harmonogram płatności zgodnie z warunkami płatności</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>График платежей согласно условиям оплаты</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Ödeme şartlarına göre ödeme planı</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Lịch thanh toán theo điều khoản thanh toán</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="21d92f63-f911-4994-84ae-5b5cacf712b5">
+    <name>PurchaseOrders</name>
+    <synonym>
+      <key>en</key>
+      <value>Purchase orders</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>سفارش‌های خرید</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Ordini ai fornitori</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Zamówienia do dostawcy</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Заказы поставщикам</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Satın alma siparişleri</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Đơn hàng đặt nhà cung cấp</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>Payment schedule according to payment terms</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>جدول پرداخت بر اساس شرایط پرداخت</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Grafico pagamenti in base ai termini di pagamento</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Harmonogram płatności zgodnie z warunkami płatności</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>График платежей согласно условиям оплаты</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Ödeme şartlarına göre ödeme planı</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Lịch thanh toán theo điều khoản thanh toán</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9fa63624-c16b-46fd-87e1-c5f7ca8c29e3">
+    <name>ReturnsToCustomers</name>
+    <synonym>
+      <key>en</key>
+      <value>Returns to customers</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>برگشت به مشتریان</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Restituzioni ai clienti</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Zwroty klientom</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Возвраты клиентам</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>İstemcilere iade</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Trả lại cho khách hàng</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>Planned payments on customer returns</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>پرداخت‌های برنامه‌ریزی‌شده بابت برگشت مشتریان</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Pagamenti previsti per restituzioni ai clienti</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Planowane płatności do zwrotów od klienta</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Плановые платежи по возвратам клиентам</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>İstemcilere iadeler için planlanan ödemeler</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Thanh toán trả lại của khách hàng theo lịch trình</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="537332c4-17ee-41db-9d4d-33f6959064ef">
+    <name>ReturnsFromVendors</name>
+    <synonym>
+      <key>en</key>
+      <value>Vendor refunds</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>بازپرداخت‌های تأمین‌کننده</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Restituzioni dai fornitori</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Zwroty od dostawców</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Возвраты от поставщиков</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Sağlayıcılardan iade</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Lợi nhuận từ nhà cung cấp</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>Planned payments on vendor refunds</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>پرداخت‌های برنامه‌ریزی‌شده بابت بازپرداخت‌های تأمین‌کننده</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Pagamenti previsti di restituzioni dai fornitori</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Planowane płatności do zwrotów od dostawców</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Плановые платежи по возвратам от поставщиков</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Sağlayıcılarda iadeler için planlanan ödemeler</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Thanh toán theo lịch trình cho lợi nhuận của nhà cung cấp</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="0d2a8234-8f46-4f06-b434-3fc623dd5f40">
+    <name>TotalCurrency</name>
+    <synonym>
+      <key>en</key>
+      <value>Total currency</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>ارز کل</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Valuta dei totali</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Waluta wyników</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта итогов</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Toplam para birimi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Tổng tiền tệ</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Currencies</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="6a7cf547-0b27-4d96-8ab8-fe38c53a5fc4">
+    <name>GroupByCurrencies</name>
+    <synonym>
+      <key>en</key>
+      <value>Group by currencies</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>گروه‌بندی بر اساس ارزها</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Raggruppare per valuta</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Grupuj wg walut</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Группировать по валютам</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Para birimlerine göre grupla</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Nhóm theo tiền tệ</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="81889a70-d1b8-4620-a889-045cb933cacb">
+    <name>FilterCompanies</name>
+    <synonym>
+      <key>en</key>
+      <value>Company filter</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>فیلتر شرکت</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Selezione società</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Filtr firm</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Отбор организации</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>İş yerleri filtresi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Lựa chọn doanh nghiệp</value>
+    </synonym>
+    <type>
+      <types>ValueList</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f65ad1ce-3b34-4900-9833-1348197a5b75">
+    <name>FilterCurrency</name>
+    <synonym>
+      <key>en</key>
+      <value>Currency</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>ارز</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Valuta</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Waluta</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Para birimi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Tiền tệ</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Currencies</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5c6afd8b-af20-4e66-b6ba-77b32801d463">
+    <name>FilterBankAccountsCashAccounts</name>
+    <synonym>
+      <key>en</key>
+      <value>Filter bank accounts cash accounts</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>فیلتر حساب‌های بانکی و صندوق‌ها</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Selezioni conti casse</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Filtr kont bankowych kasy</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Отбор банковские счета кассы</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Filtre banka hesapları kasa hesapları</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Lựa chọn tài khoản ngân hàng bàn tiền mặt</value>
+    </synonym>
+    <type>
+      <types>ValueList</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c3b0b59a-f66b-4ef2-8e6a-8fc2d3002042">
+    <name>ShowNotAllocatedByAccounts</name>
+    <synonym>
+      <key>en</key>
+      <value>Display non-allocated cash inflow and outflow</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>نمایش ورود و خروج وجه نقد تخصیص‌نیافته</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Visualizza ricevute e storni non allocati</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Pokazuj nieprzydzielone wpływy i spisania</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Отображать нераспределенные поступления и списания</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Dağıtılmayan giriş ve Gider yazmaları yansıt</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Hiển thị thu nhập giữ lại và ghi giảm</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="1040cfe8-3e91-4604-8067-4c1625d2fd2d">
+    <name>CalendarAccountFilter</name>
+    <synonym>
+      <key>en</key>
+      <value>Calendar account filter</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>فیلتر حساب تقویم</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Filtro dei conti del calendario</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Filtr rachunków kalendarza</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Фильтр счетов календаря</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Takvim hesapları filtresi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Bộ lọc hóa đơn lịch</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="3271388c-c2e6-4942-b637-fa6c6092edc6">
+    <name>TemplateStorageAddress</name>
+    <synonym>
+      <key>en</key>
+      <value>Template storage address</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>آدرس ذخیره‌سازی الگو</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Indirizzo archiviazione dell'originale</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Adres przechowywania szablonu</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Адрес хранилища макета</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Şablon depolama adresi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Địa chỉ kho chứa mẫu</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d580a7e5-3d64-4e23-963e-9fa2ccc78f0c">
+    <name>LoansOrBorrowingsReceived</name>
+    <synonym>
+      <key>en</key>
+      <value>Received credits or loans</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>اعتبارات یا وام‌های دریافتی</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Crediti o prestiti ricevuti</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Otrzymane kredyty lub pożyczki</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Кредиты или займы полученные</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Alınan borç ve krediler</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Nhận tín dụng hoặc các khoản vay</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>Received loan tranche and payment schedules</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>جداول قسط و پرداخت وام دریافتی</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Tranche e programmi di pagamento per prestiti e prestiti ricevuti</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Harmonogramy transz i płatności do otrzymanych kredytów i pożyczek</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Графики траншей и оплат по полученным кредитам и займам</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Alınan kredi ve borçlarda dilim ve ödeme programları</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Lịch trình của các đợt và thanh toán cho các khoản vay và các khoản vay nhận được</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a427d5ea-8455-4fbb-843a-57fef37a284b">
+    <name>Deposits</name>
+    <synonym>
+      <key>en</key>
+      <value>Deposits</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>سپرده‌ها</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Depositi</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Depozyty</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Депозиты</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Mevduatlar</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Tiền gửi (deposit)</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>Deposit tranche and payment schedules</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>جداول قسط و پرداخت سپرده</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Tranche e programmi di pagamento per depositi</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Harmonograny transz i płatności wg depozytów</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Графики траншей и оплат по депозитам</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Dilim programları ve mevduat ödemeleri</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Biểu đồ của tranches và thanh toán tiền gửi (deposit)</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="65018dc5-1100-4321-95bd-9871fc657806">
+    <name>IssuedBorrowings</name>
+    <synonym>
+      <key>en</key>
+      <value>Issued loans</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>وام‌های اعطایی</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Prestiti emessi</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Wyemitowane pożyczki</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Займы выданные</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Verilen borçlar</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Cho vay</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>Issued loans tranche and payment schedules</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>جداول قسط و پرداخت وام‌های پرداختی</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Tranche e programmi di pagamento per prestiti emessi</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Harmonogramy transz i płatności wg udzielonych pożyczek</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Графики траншей и оплат по выданным займам</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Verilen krediler için dilim ve ödeme programları</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Lịch trình của các đợt và thanh toán cho các khoản vay được ban hành</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="cea71c36-8e79-4bcf-ae6b-3d6089ac03dc">
+    <name>Lease</name>
+    <synonym>
+      <key>en</key>
+      <value>Rental</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>اجاره</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Affitto</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Dzierżawa</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Аренда</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Kira</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Thuê</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>Rental payment schedules</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>جداول پرداخت اجاره</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Grafici dei pagamenti di affitto</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Harmonogramy płatności dzierżawnych</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Графики арендных платежей</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Kiralama ödemelerinin programları</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Lịch thanh toán tiền thuê</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="1ec8f94f-455f-4ec9-a52c-7c62aa5d0a6c">
+    <name>PlannedCashReceipts</name>
+    <synonym>
+      <key>en</key>
+      <value>Expected cash inflow</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>ورود وجه نقد مورد انتظار</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Entrate previste</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Oczekiwane wpływy</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Ожидаемые поступления</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Beklenen girişler</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Hàng dự kiến</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>Planned cash inflow entered manually.</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>ورود وجه نقد برنامه‌ریزی‌شده که به‌صورت دستی وارد شده است.</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Entrate previste di denaro inserite manualmente.</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Oczekiwane wpływy środków pieniężnych, dodane ręcznie.</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Ожидаемые поступления денежных средств, введенные вручную.</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Beklenen nakit girişleri manuel olarak girildi.</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Biên lai tiền mặt dự kiến ​​nhập thủ công.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="1c960a95-0a27-4550-8100-541e75c2e418">
+    <name>PaymentTreeHash</name>
+    <synonym>
+      <key>en</key>
+      <value>Payment tree hash</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>هش درخت پرداخت</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Хеш сумма дерева платежей</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ödeme ağacının karma tutarı</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Tổng băm cây thanh toán</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Payment tree hash</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Payment tree hash</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>32</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="61c03803-9615-43af-903a-4da0c2b4e771">
+    <name>ZeroBalancesAndTurnover</name>
+    <synonym>
+      <key>en</key>
+      <value>Bank / Cash accounts with zero balances and turnovers</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>حساب‌های بانکی / صندوق‌های با مانده و گردش صفر</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Счета/кассы с нулевыми остатками и оборотами</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Sıfır bakiyeli ve cirolu hesaplar/kasalar</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Bank / Cash accounts with zero balances and turnovers</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Bank / Cash accounts with zero balances and turnovers</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Bank / Cash accounts with zero balances and turnovers</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="18259f67-50b5-4a26-bfa1-7e1cd57aa8e2">
+    <name>ReportDimensions</name>
+    <synonym>
+      <key>en</key>
+      <value>Report groupings</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>گروه‌بندی‌های گزارش</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Группировки отчета</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Rapor gruplamaları</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Report groupings</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Report groupings</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Report groupings</value>
+    </synonym>
+    <type>
+      <types>ValueList</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5198bbb3-7927-43bd-ab8f-af9d1be66fd1">
+    <name>LinkerSelection</name>
+    <synonym>
+      <key>en</key>
+      <value>Composer filter</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>فیلتر ترکیب‌کننده</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Linker selezione</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Kreator filtr</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Компоновщик отбор</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Bağlayıcı seçimi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Composer filter</value>
+    </synonym>
+    <type>
+      <types>DataCompositionSettingsComposer</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="34ff2441-47f8-4fe2-8239-a2eee71872ca">
+    <name>DepthOfDisplayOfOverduePayments</name>
+    <synonym>
+      <key>en</key>
+      <value>Days past due</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>روزهای سررسید گذشته</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Глубина отображения просроченных платежей (дн.)</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Gecikmiş ödemelerin gösterim derinliği (gün)</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Days past due</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Days past due</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Days past due</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>4</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="b2935e58-ac23-41ed-86a1-bafbeda198ca">
+    <name>GroupDocumentsWhenCreating</name>
+    <synonym>
+      <key>en</key>
+      <value>Group documents when creating</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>گروه‌بندی اسناد هنگام ایجاد</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Группировать документы при создании</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Oluşturma sırasında belgeleri grupla</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Group documents when creating</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Group documents when creating</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Group documents when creating</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="d9a05cd5-38c0-4222-8462-32590dbff583">
+    <name>Form</name>
+    <synonym>
+      <key>en</key>
+      <value>Form</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>فرم</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Modulo</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Formularz</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Form</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Biểu mẫu</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="36454dc5-ab04-4773-85cf-f634b17dfc4f">
+    <name>Settings</name>
+    <synonym>
+      <key>en</key>
+      <value>Settings</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>تنظیمات</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Impostazioni</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Ustawienia</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Настройки</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ayarlar</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Tùy chỉnh</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="69295e09-8cc2-4b62-9891-30f8a63aa5e2">
+    <name>PaymentSplit</name>
+    <synonym>
+      <key>en</key>
+      <value>Payment split</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>تقسیم پرداخت</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Scissione pagamento</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Podział płatności</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Разбиение оплаты</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ödemeleri bölme</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Chia tách thanh toán</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="564156a5-60ff-4353-9bb0-60c1201f973e">
+    <name>SettingUpDimensions</name>
+    <synonym>
+      <key>en</key>
+      <value>Customize groupings</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>سفارشی‌سازی گروه‌بندی‌ها</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка группировок</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Gruplama ayarları</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Customize groupings</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Customize groupings</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Customize groupings</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="2a2391f8-6157-4898-8d09-d99163251908">
+    <name>AdvancedFilter</name>
+    <synonym>
+      <key>en</key>
+      <value>Advanced filter</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>فیلتر پیشرفته</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Расширенный отбор</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Rozszerzony filtr</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Расширенный отбор</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Gelişmiş filtre</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Advanced filter</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="1cd06d60-0776-4e8f-a679-5dd37c87c53f">
+    <name>PaymentTree</name>
+    <synonym>
+      <key>en</key>
+      <value>Payment tree</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>درخت پرداخت</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Albero pagamenti</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Drzewo płatności</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Дерево платежей</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ödeme ağacı</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Cây thanh toán</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <commands uuid="c7d03eb9-88b4-4c44-9ba4-c89c6e30ad98">
+    <name>CashForecast</name>
+    <synonym>
+      <key>en</key>
+      <value>Cash forecast</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>پیش‌بینی وجه نقد</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Calendario pagamenti</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Kalendarz płatności</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Платежный календарь</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ödeme takvimi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Lịch thanh toán</value>
+    </synonym>
+    <group>NavigationPanelImportant</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

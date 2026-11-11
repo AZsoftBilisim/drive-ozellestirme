@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b46d5f6a-b98d-4505-9ef8-7cfac3887c2c">
+  <producedTypes>
+    <objectType typeId="663676ab-b889-41c7-b4d3-158d4be4de35" valueTypeId="c7cc1337-3815-4e67-9adc-b079c1240bb5"/>
+    <managerType typeId="4c20d325-0202-404d-bd09-d1ae09c6fc95" valueTypeId="95078786-30f6-4394-b8e7-d42a5926ae18"/>
+  </producedTypes>
+  <name>ImportVendorPricesFromFile</name>
+  <synonym>
+    <key>en</key>
+    <value>Import vendor prices from file</value>
+  </synonym>
+  <synonym>
+    <key>fa</key>
+    <value>ورود قیمت‌های تأمین‌کننده از فایل</value>
+  </synonym>
+  <synonym>
+    <key>it</key>
+    <value>Download di prezzi fornitore da file</value>
+  </synonym>
+  <synonym>
+    <key>pl</key>
+    <value>Import cen dostawcy z plików</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>Загрузка цен поставщика из файлов</value>
+  </synonym>
+  <synonym>
+    <key>tr</key>
+    <value>Tedarikçi fiyatlarını dosyalardan içe aktarma</value>
+  </synonym>
+  <synonym>
+    <key>vi</key>
+    <value>Kết nhập đơn giá nhà cung cấp từ tệp</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ImportVendorPricesFromFile.Form.Form</defaultForm>
+  <attributes uuid="3e4651d5-1ae6-4338-a181-1b8c75940278">
+    <name>Partner</name>
+    <synonym>
+      <key>en</key>
+      <value>Vendor</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>تأمین‌کننده</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Fornitore</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Dostawca</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Поставщик</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Tedarikçi</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Nhà cung cấp</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Partners</types>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>Existing or potential vendor or competitor of the enterprise whose prices are recorded.</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>تأمین‌کننده یا رقیب موجود یا بالقوه سازمان که قیمت‌های آن ثبت می‌شود.</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Esistente o potenziale fornitore oppure concorrente dell'impresa, i cui costi vengono registrati.</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Istniejący lub potencjalny dostawca lub konkurent przedsiębiorstwa, którego ceny są rejestrowane.</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Существующий или потенциальный поставщик или конкурент предприятия, цены которого регистрируются.</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Fiyatları kaydedilen bir işletmenin mevcut veya potansiyel tedarikçisi veya rakibi.</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Nhà cung cấp / đối thủ hiện tại hoặc tiềm năng của doanh nghiệp có ghi nhận đơn giá.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Filter.Competitor</name>
+      <value xsi:type="core:BooleanValue">
+        <value>true</value>
+      </value>
+    </choiceParameters>
+    <choiceParameters>
+      <name>Filter.Vendor</name>
+      <value xsi:type="core:BooleanValue">
+        <value>true</value>
+      </value>
+    </choiceParameters>
+    <choiceParameters>
+      <name>SetSelectionByPartnerTypeAsOR</name>
+      <value xsi:type="core:BooleanValue">
+        <value>true</value>
+      </value>
+    </choiceParameters>
+  </attributes>
+  <attributes uuid="70df40c5-390e-4a89-97d7-7b1d45e160ce">
+    <name>Comment</name>
+    <synonym>
+      <key>en</key>
+      <value>Comment</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>توضیحات</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Commento</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Komentarz</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Yorum</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Ghi chú</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>Arbitrary comment line.</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>سطر توضیحات دلخواه.</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Riga di commento arbitraria.</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Dowolny wiersz uwagi.</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Произвольная строка комментария.</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>İsteğe bağlı yorum satırı.</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Dòng ghi chú tùy ý.</value>
+    </toolTip>
+    <multiLine>true</multiLine>
+    <extendedEdit>true</extendedEdit>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ee98d08d-7cf0-4e77-9fd6-5687806aebd0">
+    <name>Date</name>
+    <synonym>
+      <key>en</key>
+      <value>Date</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>تاریخ</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Data</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Data</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Дата</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Tarih</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Ngày</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <tabularSections uuid="1325b4ba-fb86-44bd-828e-d077466fdda5">
+    <producedTypes>
+      <objectType typeId="9ac19153-61ed-4989-b620-44ee1ac86c0e" valueTypeId="61ff144e-d917-49d0-b489-c10066a6c10d"/>
+      <rowType typeId="92ab1ff5-1a38-480c-bfd7-14cc32536933" valueTypeId="b9f3a3e0-06d6-4d8a-a173-ba92c67d84ba"/>
+    </producedTypes>
+    <name>Goods</name>
+    <synonym>
+      <key>en</key>
+      <value>Goods</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>کالاها</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Merci</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Towary</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Товары</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ürünler</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Hàng hóa</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="078b73b7-2240-4f2c-9038-a9047241cda1">
+      <name>PartnerProducts</name>
+      <synonym>
+        <key>en</key>
+        <value>Partner products</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>کالاهای شرکا</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Articoli del partner</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Pozycja partnera</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура партнера</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>İş ortağı ürünleri</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Mặt hàng của bạn hàng</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ProductCrossReferences</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Vendor or competitor part number</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>شماره قطعه تأمین‌کننده یا رقیب</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Articolo del fornitore o concorrente</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Pozycja dostawcy lub konkurencji</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Номенклатура поставщика или конкурента</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Satıcı veya rakip parça numaraları</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Mặt hàng của nhà cung cấp hoặc đối thủ cạnh tranh</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Filter.ItemOwner</name>
+        <field>DataProcessor.ImportVendorPricesFromFile.Attribute.Partner</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Filter.Products</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ImportVendorPricesFromFile.TabularSection.Goods.Attribute.Products</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Filter.Characteristic</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ImportVendorPricesFromFile.TabularSection.Goods.Attribute.Characteristic</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="31efe0ac-c85a-48c2-83b5-898a39513014">
+      <name>Products</name>
+      <synonym>
+        <key>en</key>
+        <value>Items</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>اقلام</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Articolo</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Pozycja</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Ürün</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Mặt hàng</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Products</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Select items of Goods or Service kind.</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>اقلامی از نوع کالا یا خدمت را انتخاب کنید.</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Occorre selezionare gli articoli con il tipo di Prodotto o Servizio.</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Należy wybrać produkty rodzaju Towar lub Usługa.</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Необходимо выбрать номенклатуру с видом Товар или Услуга.</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Ürün veya Hizmet türü ile öğe seçilmeli.</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Cần chọn mặt hàng có dạng Hàng hóa hoặc Dịch vụ.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>PartnerProducts</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ImportVendorPricesFromFile.TabularSection.Goods.Attribute.PartnerProducts</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="53039452-e1a7-4325-9f91-f308e610b69e">
+      <name>Characteristic</name>
+      <synonym>
+        <key>en</key>
+        <value>Variant</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>گونه</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Caratteristica</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Charakterystyka</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Varyant</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Đặc tính</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ItemsCharacteristics</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>If variants are used for the selected item, select a variant.</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>اگر برای قلم انتخاب‌شده گونه‌ها استفاده می‌شوند، یک گونه انتخاب کنید.</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Se le caratteristiche dell'articolo selezionato sono in uso, è necessario selezionare la caratteristica dell'articolo.</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Jeśli dla wybranego towaru używane są charakterystyki, należy wybrać charakterystykę towaru.</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Если у выбранной номенклатуры используются характеристики, то необходимо выбрать характеристику номенклатуры.</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Seçili ürün için varyantlar kullanılıyorsa, o halde ürün varyantları seçilmesi gerekmektedir.</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Nếu mặt hàng đã chọn có sử dụng đặc tính thì cần chọn đặc tính mặt hàng.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameterLinks>
+        <name>Products</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ImportVendorPricesFromFile.TabularSection.Goods.Attribute.Products</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="37687260-44b2-4eeb-9fad-c02b249c8b1b">
+      <name>Package</name>
+      <synonym>
+        <key>en</key>
+        <value>Packaging unit</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>واحد بسته‌بندی</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Imballaggio</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Opakowanie</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Упаковка</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Paketleme ünitesi</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Bộ đóng gói</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.PackagesAndUnitsOfMeasure</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>If packaging units are used for the selected item, you can select a packaging unit for this product.</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>اگر برای قلم انتخاب‌شده واحدهای بسته‌بندی استفاده می‌شوند، می‌توانید یک واحد بسته‌بندی برای این محصول انتخاب کنید.</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Se imballaggi dell'articolo selezionato sono in uso, è possibile selezionare imballaggio dell'articolo.</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Jeśli dla wybranego produktu są używane opakowania, można wybrać opakowanie produktu.</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Если у выбранной номенклатуры используются упаковки, то можно выбрать упаковку номенклатуры.</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Seçili öğe için paketleme ünitesi kullanılıyorsa, o halde öğe paketleme ünitesi seçilebilir.</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Nếu mặt hàng đã chọn có sử dụng bộ đóng gói thì có thể chọn bộ đóng gói mặt hàng.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Products</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ImportVendorPricesFromFile.TabularSection.Goods.Attribute.Products</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ac92431c-dcd2-4333-819b-9ade5b3f750c">
+      <name>Price</name>
+      <synonym>
+        <key>en</key>
+        <value>Old price</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>قیمت قدیم</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Prezzo vecchio</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Stara cena</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Старая цена</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Eski fiyat</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Đơn giá cũ</value>
+      </synonym>
+      <type>
+        <types>DefinedType.Price</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Price of product item.</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>قیمت قلم محصول.</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Prezzo della voce articoli.</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Cena pozycji towarowej.</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Цена номенклатурной позиции.</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Ürün kaleminin fiyatı.</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Đơn giá mặt hàng.</value>
+      </toolTip>
+      <markNegatives>true</markNegatives>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c81f24c7-039e-4964-ac80-0606f232b46a">
+      <name>VendorPriceKind</name>
+      <synonym>
+        <key>en</key>
+        <value>Vendor price type</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>نوع قیمت تأمین‌کننده</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Tipo di prezzo del fornitore</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Rodzaj cen dostawcy</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Вид цены поставщика</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Tedarikçi fiyat türü</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Dạng giá nhà cung cấp</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.VendorPriceTypes</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Price type of the vendor used to fix the prices.</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>نوع قیمت تأمین‌کننده که برای ثبت قیمت‌ها استفاده می‌شود.</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Tipo di prezzo fornitore al quale sono fissati i prezzi.</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Rodzaj ceny dostawcy, dla którego zatwierdzane są ceny</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Вид цены поставщика, по которому фиксируются цены.</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Fiyatların sabitlendiği tedarikçi fiyat türü.</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Dạng giá nhà cung cấp mà có ghi nhận đơn giá.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Filter.Owner</name>
+        <field>DataProcessor.ImportVendorPricesFromFile.Attribute.Partner</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6bb729af-4230-4a94-9286-bc60de0b56c9">
+      <name>NewPrice</name>
+      <synonym>
+        <key>en</key>
+        <value>Price</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>قیمت</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Prezzo</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Cena</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Цена</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Fiyat</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Đơn giá</value>
+      </synonym>
+      <type>
+        <types>DefinedType.Price</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Price of product item.</value>
+      </toolTip>
+      <toolTip>
+        <key>fa</key>
+        <value>قیمت قلم محصول.</value>
+      </toolTip>
+      <toolTip>
+        <key>it</key>
+        <value>Prezzo della voce articoli.</value>
+      </toolTip>
+      <toolTip>
+        <key>pl</key>
+        <value>Cena pozycji towarowej.</value>
+      </toolTip>
+      <toolTip>
+        <key>ru</key>
+        <value>Цена номенклатурной позиции.</value>
+      </toolTip>
+      <toolTip>
+        <key>tr</key>
+        <value>Ürün kaleminin fiyatı.</value>
+      </toolTip>
+      <toolTip>
+        <key>vi</key>
+        <value>Đơn giá mặt hàng.</value>
+      </toolTip>
+      <markNegatives>true</markNegatives>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6e7abdc1-8da6-41a7-9f1f-16425288da16">
+      <name>OrderPackage</name>
+      <synonym>
+        <key>en</key>
+        <value>Order packaging unit</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>واحد بسته‌بندی سفارش</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Imballaggio di ordine</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Opakowanie zamówienia</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Упаковка заказа</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Sipariş paketleme ünitesi</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Bộ đóng gói đơn hàng</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.PackagesAndUnitsOfMeasure</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="98619c6a-b696-4bfe-9c2b-37c70e8f519e">
+      <name>MinimumDeliveryLot</name>
+      <synonym>
+        <key>en</key>
+        <value>Minimum delivery lot</value>
+      </synonym>
+      <synonym>
+        <key>fa</key>
+        <value>حداقل لات تحویل</value>
+      </synonym>
+      <synonym>
+        <key>it</key>
+        <value>Lotto minimo di consegna</value>
+      </synonym>
+      <synonym>
+        <key>pl</key>
+        <value>Minimalna partia dostawy</value>
+      </synonym>
+      <synonym>
+        <key>ru</key>
+        <value>Минимальная партия поставки</value>
+      </synonym>
+      <synonym>
+        <key>tr</key>
+        <value>Minimum teslimat lotu</value>
+      </synonym>
+      <synonym>
+        <key>vi</key>
+        <value>Lô hàng giao tối thiểu</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="f8a62293-3043-419c-9496-5fc583bf26a5">
+    <name>Form</name>
+    <synonym>
+      <key>en</key>
+      <value>Form</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>فرم</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Modulo</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Formularz</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Form</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Biểu mẫu</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="9ff03d51-0ed2-4d7a-ba46-1fdeed71c944">
+    <name>SelectionOfVendorPriceTypesForm</name>
+    <synonym>
+      <key>en</key>
+      <value>Selection of vendor price types form</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>فرم انتخاب انواع قیمت تأمین‌کننده</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Modulo della selezione tutti i tipi di prezzi dei fornitori</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Formularz wyboru rodzajów cen dostawcy</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора видов цен поставщика</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Tedarikçi fiyat türü seçimi formu</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Biểu mẫu chọn dạng giá nhà cung cấp</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="c522cbf2-d036-4396-a402-ad5316b6a73a">
+    <name>PriceRegistrationSetupForm</name>
+    <synonym>
+      <key>en</key>
+      <value>Price registration setup form</value>
+    </synonym>
+    <synonym>
+      <key>fa</key>
+      <value>فرم تنظیم ثبت قیمت</value>
+    </synonym>
+    <synonym>
+      <key>it</key>
+      <value>Form impostazione registrazione prezzi</value>
+    </synonym>
+    <synonym>
+      <key>pl</key>
+      <value>Formularz ustawienia rejestracji cen</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Форма настройки регистрации цен</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Fiyat kaydı ayarı formu</value>
+    </synonym>
+    <synonym>
+      <key>vi</key>
+      <value>Biểu mẫu tùy chỉnh ghi nhận đơn giá</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

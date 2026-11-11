@@ -1,0 +1,1306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form">
+  <items xsi:type="form:FormGroup">
+    <name>ResponsibleStorageGroup</name>
+    <id>11</id>
+    <items xsi:type="form:FormField">
+      <name>Safekeeping</name>
+      <id>13</id>
+      <title>
+        <key>en</key>
+        <value>Goods are put away for VMI operations</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>کالاها برای عملیات VMI جای‌گذاری می‌شوند</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Le merci vengono trasferite in custodia</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Towary są przekazywane na depozytowanie</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Товары передаются на ответственное хранение</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Ürünler satıcı tarafından yönetilen stoka transfer edilmektedir</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Hàng hóa chuyển giao để cất giữ hộ</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>CustodyWarehouse</segments>
+      </dataPath>
+      <titleLocation>Right</titleLocation>
+      <handlers>
+        <event>OnChange</event>
+        <name>SafekeepingOnChange</name>
+      </handlers>
+      <extendedTooltip>
+        <name>SafekeepingExtendedTooltip</name>
+        <id>15</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>SafekeepingContextMenu</name>
+        <id>14</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>CheckBoxField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+    </items>
+    <items xsi:type="form:FormGroup">
+      <name>GroupTypeOfLuggageHolder</name>
+      <id>16</id>
+      <items xsi:type="form:FormField">
+        <name>DepositoryKind</name>
+        <id>18</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>DepositoryKind</segments>
+        </dataPath>
+        <titleLocation>None</titleLocation>
+        <handlers>
+          <event>OnChange</event>
+          <name>DepositoryKindOnChange</name>
+        </handlers>
+        <extendedTooltip>
+          <name>DepositoryKindExtendedTooltip</name>
+          <id>20</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>DepositoryKindContextMenu</name>
+          <id>19</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <handlers>
+            <event>Clearing</event>
+            <name>DepositoryKindClearing</name>
+          </handlers>
+          <width>22</width>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <horizontalStretch>false</horizontalStretch>
+          <wrap>true</wrap>
+          <clearButton>false</clearButton>
+          <listChoiceMode>true</listChoiceMode>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+          <choiceList>
+            <presentation>
+              <key>en</key>
+              <value>own company</value>
+            </presentation>
+            <presentation>
+              <key>fa</key>
+              <value>شرکت خودی</value>
+            </presentation>
+            <presentation>
+              <key>it</key>
+              <value>della propria organizzazione</value>
+            </presentation>
+            <presentation>
+              <key>pl</key>
+              <value>własnej firmy</value>
+            </presentation>
+            <presentation>
+              <key>ru</key>
+              <value>собственной организации</value>
+            </presentation>
+            <presentation>
+              <key>tr</key>
+              <value>kendi iş yerinize</value>
+            </presentation>
+            <presentation>
+              <key>vi</key>
+              <value>doanh nghiệp riêng</value>
+            </presentation>
+            <value xsi:type="core:ReferenceValue">
+              <value>Enum.DepositaryKinds.EnumValue.OwnCompany</value>
+            </value>
+          </choiceList>
+          <choiceList>
+            <presentation>
+              <key>en</key>
+              <value>third party counterparty</value>
+            </presentation>
+            <presentation>
+              <key>fa</key>
+              <value>طرف حساب شخص ثالث</value>
+            </presentation>
+            <presentation>
+              <key>it</key>
+              <value>al terzo contraente</value>
+            </presentation>
+            <presentation>
+              <key>pl</key>
+              <value>zewnętrznemu kontrahentowi</value>
+            </presentation>
+            <presentation>
+              <key>ru</key>
+              <value>стороннему контрагенту</value>
+            </presentation>
+            <presentation>
+              <key>tr</key>
+              <value>üçüncü taraf cari hesaba</value>
+            </presentation>
+            <presentation>
+              <key>vi</key>
+              <value>đối tác bên ngoài</value>
+            </presentation>
+            <value xsi:type="core:ReferenceValue">
+              <value>Enum.DepositaryKinds.EnumValue.ExternalCounterparty</value>
+            </value>
+          </choiceList>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>Depository</name>
+        <id>21</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>Depository</segments>
+        </dataPath>
+        <titleLocation>None</titleLocation>
+        <extendedTooltip>
+          <name>DepositoryExtendedTooltip</name>
+          <id>23</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>DepositoryContextMenu</name>
+          <id>22</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <width>39</width>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <horizontalStretch>false</horizontalStretch>
+          <wrap>true</wrap>
+          <autoMarkIncomplete>true</autoMarkIncomplete>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>en</key>
+        <value>Depository kind</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>نوع امانت‌داری</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Tipo del depositario della merce</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Rodzaj posiadacza</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Вид поклажедержателя</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Yük tutucu türü</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Dạng bên thuê kho</value>
+      </title>
+      <extendedTooltip>
+        <name>GroupTypeOfLuggageHolderExtendedTooltip</name>
+        <id>17</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <type>UsualGroup</type>
+      <extInfo xsi:type="form:UsualGroupExtInfo">
+        <showLeftMargin>true</showLeftMargin>
+        <united>true</united>
+        <throughAlign>Auto</throughAlign>
+        <currentRowUse>Auto</currentRowUse>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormGroup">
+      <name>GroupDurationOfResponsibleStorage</name>
+      <id>24</id>
+      <items xsi:type="form:FormField">
+        <name>CustodyUntilCalledFor</name>
+        <id>26</id>
+        <title>
+          <key>en</key>
+          <value>Goods are transferred</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>کالاها منتقل می‌شوند</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Merci vengono trasferite</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Towary są przekazywane</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Товары передаются</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Ürünler transfer edilmektedir</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Hàng hóa đã chuyển</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>CustodyUntilCalledFor</segments>
+        </dataPath>
+        <titleLocation>None</titleLocation>
+        <handlers>
+          <event>OnChange</event>
+          <name>DurationOfStorageWhenChanging</name>
+        </handlers>
+        <extendedTooltip>
+          <name>CustodyUntilCalledForExtendedTooltip</name>
+          <id>28</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>CustodyUntilCalledForContextMenu</name>
+          <id>27</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <width>22</width>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <horizontalStretch>false</horizontalStretch>
+          <wrap>true</wrap>
+          <dropListButton>true</dropListButton>
+          <choiceButton>false</choiceButton>
+          <listChoiceMode>true</listChoiceMode>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+          <choiceList>
+            <presentation>
+              <key>en</key>
+              <value>until called for</value>
+            </presentation>
+            <presentation>
+              <key>fa</key>
+              <value>تا زمان درخواست</value>
+            </presentation>
+            <presentation>
+              <key>it</key>
+              <value>fermo posta</value>
+            </presentation>
+            <presentation>
+              <key>pl</key>
+              <value>poste restante</value>
+            </presentation>
+            <presentation>
+              <key>ru</key>
+              <value>до востребования</value>
+            </presentation>
+            <presentation>
+              <key>tr</key>
+              <value>postrestant öncesi</value>
+            </presentation>
+            <presentation>
+              <key>vi</key>
+              <value>theo yêu cầu</value>
+            </presentation>
+            <value xsi:type="core:BooleanValue">
+              <value>true</value>
+            </value>
+          </choiceList>
+          <choiceList>
+            <presentation>
+              <key>en</key>
+              <value>for period of</value>
+            </presentation>
+            <presentation>
+              <key>fa</key>
+              <value>برای دوره</value>
+            </presentation>
+            <presentation>
+              <key>it</key>
+              <value>per un termine</value>
+            </presentation>
+            <presentation>
+              <key>pl</key>
+              <value>na okres</value>
+            </presentation>
+            <presentation>
+              <key>ru</key>
+              <value>на срок</value>
+            </presentation>
+            <presentation>
+              <key>tr</key>
+              <value>süresi</value>
+            </presentation>
+            <presentation>
+              <key>vi</key>
+              <value>đúng hạn</value>
+            </presentation>
+            <value xsi:type="core:BooleanValue"/>
+          </choiceList>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>CustodyPeriod</name>
+        <id>29</id>
+        <title>
+          <key>en</key>
+          <value>days</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>روز</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>giorni</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>dn.</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>дн.</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>gün</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>ngày</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>CustodyPeriod</segments>
+        </dataPath>
+        <titleLocation>Right</titleLocation>
+        <extendedTooltip>
+          <name>CustodyPeriodExtendedTooltip</name>
+          <id>31</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>CustodyPeriodContextMenu</name>
+          <id>30</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <width>5</width>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <horizontalStretch>false</horizontalStretch>
+          <wrap>true</wrap>
+          <spinButton>true</spinButton>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>en</key>
+        <value>VMI operations duration</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>مدت عملیات VMI</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Durata di custodia</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Czas trwania depozytowania</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Длительность ответственного хранения</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Satıcı tarafından yönetilen stok uzunluğu</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Thời gian cất giữ hộ</value>
+      </title>
+      <extendedTooltip>
+        <name>GroupDurationOfResponsibleStorageExtendedTooltip</name>
+        <id>25</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <type>UsualGroup</type>
+      <extInfo xsi:type="form:UsualGroupExtInfo">
+        <showLeftMargin>true</showLeftMargin>
+        <united>true</united>
+        <throughAlign>Auto</throughAlign>
+        <currentRowUse>Auto</currentRowUse>
+      </extInfo>
+    </items>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>en</key>
+      <value>VMI operations</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>عملیات VMI</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Custodia</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Depozytowanie</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Ответственное хранение</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Satıcı tarafından yönetilen stok</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Cất giữ hộ</value>
+    </title>
+    <titleFont xsi:type="core:FontRef">
+      <font>System.DefaultGUIFont</font>
+      <bold>true</bold>
+      <italic>false</italic>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
+    </titleFont>
+    <extendedTooltip>
+      <name>ResponsibleStorageGroupExtendedTooltip</name>
+      <id>12</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>UsualGroup</type>
+    <extInfo xsi:type="form:UsualGroupExtInfo">
+      <group>Vertical</group>
+      <showLeftMargin>true</showLeftMargin>
+      <united>true</united>
+      <throughAlign>Auto</throughAlign>
+      <currentRowUse>Auto</currentRowUse>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>GoodsStorageConditions</name>
+    <id>1</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <dataPath xsi:type="form:DataPath">
+      <segments>GoodsStorageConditions</segments>
+    </dataPath>
+    <titleLocation>Top</titleLocation>
+    <extendedTooltip>
+      <name>GoodsStorageConditionsExtendedTooltip</name>
+      <id>3</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>GoodsStorageConditionsContextMenu</name>
+      <id>2</id>
+      <autoFill>true</autoFill>
+    </contextMenu>
+    <type>InputField</type>
+    <editMode>Enter</editMode>
+    <showInHeader>true</showInHeader>
+    <headerHorizontalAlign>Left</headerHorizontalAlign>
+    <showInFooter>true</showInFooter>
+    <extInfo xsi:type="form:InputFieldExtInfo">
+      <height>4</height>
+      <autoMaxHeight>true</autoMaxHeight>
+      <wrap>true</wrap>
+      <multiLine>true</multiLine>
+      <chooseType>true</chooseType>
+      <typeDomainEnabled>true</typeDomainEnabled>
+      <textEdit>true</textEdit>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>SpecialNotes</name>
+    <id>4</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <dataPath xsi:type="form:DataPath">
+      <segments>SpecialNotes</segments>
+    </dataPath>
+    <titleLocation>Top</titleLocation>
+    <extendedTooltip>
+      <name>SpecialNotesExtendedTooltip</name>
+      <id>6</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>SpecialNotesContextMenu</name>
+      <id>5</id>
+      <autoFill>true</autoFill>
+    </contextMenu>
+    <type>InputField</type>
+    <editMode>Enter</editMode>
+    <showInHeader>true</showInHeader>
+    <headerHorizontalAlign>Left</headerHorizontalAlign>
+    <showInFooter>true</showInFooter>
+    <extInfo xsi:type="form:InputFieldExtInfo">
+      <height>4</height>
+      <autoMaxHeight>true</autoMaxHeight>
+      <wrap>true</wrap>
+      <multiLine>true</multiLine>
+      <chooseType>true</chooseType>
+      <typeDomainEnabled>true</typeDomainEnabled>
+      <textEdit>true</textEdit>
+    </extInfo>
+  </items>
+  <autoCommandBar>
+    <name>FormCommandBar</name>
+    <id>-1</id>
+    <items xsi:type="form:Button">
+      <name>FormOK</name>
+      <id>7</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>FormOKExtendedTooltip</name>
+        <id>8</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.Command.OK</commandName>
+      <representation>Auto</representation>
+      <defaultButton>true</defaultButton>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <horizontalAlign>Left</horizontalAlign>
+    <autoFill>true</autoFill>
+  </autoCommandBar>
+  <handlers>
+    <event>BeforeClose</event>
+    <name>BeforeClose</name>
+  </handlers>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>OnCreateAtServer</name>
+  </handlers>
+  <handlers>
+    <event>OnClose</event>
+    <name>OnClose</name>
+  </handlers>
+  <windowOpeningMode>LockOwnerWindow</windowOpeningMode>
+  <saveWindowSettings>true</saveWindowSettings>
+  <autoTitle>true</autoTitle>
+  <autoUrl>true</autoUrl>
+  <group>Vertical</group>
+  <autoFillCheck>true</autoFillCheck>
+  <allowFormCustomize>true</allowFormCustomize>
+  <enabled>true</enabled>
+  <showTitle>true</showTitle>
+  <showCloseButton>true</showCloseButton>
+  <attributes>
+    <name>GoodsStorageConditions</name>
+    <title>
+      <key>en</key>
+      <value>Goods storage conditions</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>شرایط نگهداری کالا</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Termini di stoccaggio delle merci</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Warunki przechowywania towarów</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Условия хранения товаров</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Ürün depolama koşulları</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Điều kiện bảo quản hàng hóa</value>
+    </title>
+    <id>1</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+  </attributes>
+  <attributes>
+    <name>SpecialNotes</name>
+    <title>
+      <key>en</key>
+      <value>Special notes</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>یادداشت‌های ویژه</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Menzioni speciali</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Szczególne uwagi</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Особые отметки</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Özel işaretler</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Đánh dấu đặc biệt</value>
+    </title>
+    <id>2</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+  </attributes>
+  <attributes>
+    <name>SaveParameters</name>
+    <title>
+      <key>en</key>
+      <value>Save parameters</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>ذخیره پارامترها</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Salvare i parametri</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Zapisz parametry</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Сохранить параметры</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Parametreleri kaydet</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Lưu tham số</value>
+    </title>
+    <id>3</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+  </attributes>
+  <attributes>
+    <name>ForcefullyCloseTheForm</name>
+    <title>
+      <key>en</key>
+      <value>Can force-close the form</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>امکان بستن اجباری فرم</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Chiudere il modulo in maniera forzata</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Zamknij formularz przymusowo</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Закрыть форму принудительно</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Formu kapatmaya zorla</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Buộc đóng biểu mẫu</value>
+    </title>
+    <id>4</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>CustodyWarehouse</name>
+    <title>
+      <key>en</key>
+      <value>VMI warehouse</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>انبار VMI</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Magazzino di custodia</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Magazyn depozytowania</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Склад ответственного хранения</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Satıcı tarafından yönetilen stok ambarı</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Kho cất giữ hộ</value>
+    </title>
+    <id>5</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+  </attributes>
+  <attributes>
+    <name>DepositoryKind</name>
+    <title>
+      <key>en</key>
+      <value>Depository kind</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>نوع امانت‌داری</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Tipo del depositario della merce</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Rodzaj posiadacza</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Вид поклажедержателя</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Yük tutucu türü</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Dạng bên thuê kho</value>
+    </title>
+    <id>6</id>
+    <valueType>
+      <types>EnumRef.DepositaryKinds</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+  </attributes>
+  <attributes>
+    <name>Depository</name>
+    <title>
+      <key>en</key>
+      <value>Depository</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>امانت‌دار</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Depositario della merce</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Posiadacz</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Поклажедержатель</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Yük tutucu</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Bên thuê kho</value>
+    </title>
+    <id>7</id>
+    <valueType>
+      <types>CatalogRef.Companies</types>
+      <types>CatalogRef.Counterparties</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+  </attributes>
+  <attributes>
+    <name>CustodyUntilCalledFor</name>
+    <title>
+      <key>en</key>
+      <value>VMI operations until called for</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>عملیات VMI تا زمان درخواست</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Custodia fermo posta</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Depozytowanie poste restante</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Ответственное хранение до востребования</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Postrestant öncesi satıcı tarafından yönetilen stok</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Cất giữ hộ đến khi có nhu cầu</value>
+    </title>
+    <id>8</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+  </attributes>
+  <attributes>
+    <name>CustodyPeriod</name>
+    <title>
+      <key>en</key>
+      <value>VMI operations period</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>دوره عملیات VMI</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Periodo di custodia</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Termin depozytowania</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Срок ответственного хранения</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Satıcı tarafından yönetilen stok süresi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Thời hạn cất giữ hộ</value>
+    </title>
+    <id>9</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+  </attributes>
+  <attributes>
+    <name>UseMultipleCompanies</name>
+    <title>
+      <key>en</key>
+      <value>Use multiple companies</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>استفاده از چند شرکت</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Utilizzare alcune aziende</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Użyj kilku firm</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Использовать несколько организаций</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Birden fazla iş yeri kullan</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Sử dụng nhiều doanh nghiệp</value>
+    </title>
+    <id>10</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <formCommands>
+    <name>OK</name>
+    <title>
+      <key>en</key>
+      <value>OK</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>تأیید</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>OK</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>OK</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>ОК</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Tamam</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Đồng ý</value>
+    </title>
+    <id>1</id>
+    <toolTip>
+      <key>en</key>
+      <value>OK</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>تأیید</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>OK</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>OK</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>ОК</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Tamam</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Đồng ý</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>OK</name>
+      </handler>
+    </action>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <parameters>
+    <name>SpecialNotes</name>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+  </parameters>
+  <parameters>
+    <name>GoodsStorageConditions</name>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+  </parameters>
+  <parameters>
+    <name>Safekeeping</name>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+  </parameters>
+  <parameters>
+    <name>DepositoryKind</name>
+    <valueType>
+      <types>EnumRef.DepositaryKinds</types>
+    </valueType>
+  </parameters>
+  <parameters>
+    <name>Depository</name>
+    <valueType>
+      <types>CatalogRef.Companies</types>
+      <types>CatalogRef.Counterparties</types>
+    </valueType>
+  </parameters>
+  <parameters>
+    <name>CustodyUntilCalledFor</name>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+  </parameters>
+  <parameters>
+    <name>CustodyPeriod</name>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+  </parameters>
+  <parameters>
+    <name>CustodyWarehouse</name>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+  </parameters>
+  <commandInterface>
+    <navigationPanel/>
+    <commandBar/>
+  </commandInterface>
+</form:Form>

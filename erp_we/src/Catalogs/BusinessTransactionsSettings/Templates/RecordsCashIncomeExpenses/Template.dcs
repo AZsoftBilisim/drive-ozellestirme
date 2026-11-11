@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>DataSource1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>RegisterStructure</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>AssetsLiabilitiesDimension</dataPath>
+			<field>AssetsLiabilitiesDimension</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>PaymentType275FZ</dataPath>
+			<field>PaymentType275FZ</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Department</dataPath>
+			<field>Department</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>IncomeAndExpenseItem</dataPath>
+			<field>IncomeAndExpenseItem</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>VATRate</dataPath>
+			<field>VATRate</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CashType</dataPath>
+			<field>CashType</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DimensionOfRevenue</dataPath>
+			<field>DimensionOfRevenue</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ProductCostElement</dataPath>
+			<field>ProductCostElement</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Cash</dataPath>
+			<field>Cash</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CashFlowItem</dataPath>
+			<field>CashFlowItem</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>IncomeExpenseBusinessUnit</dataPath>
+			<field>IncomeExpenseBusinessUnit</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DimensionOfExpenses</dataPath>
+			<field>DimensionOfExpenses</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Currency</dataPath>
+			<field>Currency</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>DocumentType</dataPath>
+			<field>DocumentType</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Document type</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>fa</v8:lang>
+					<v8:content>نوع سند</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>it</v8:lang>
+					<v8:content>Tipo di documento</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>pl</v8:lang>
+					<v8:content>Typ dokumentu</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип документа</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>tr</v8:lang>
+					<v8:content>Belge türü</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>vi</v8:lang>
+					<v8:content>Kiểu văn bản</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>LineOfBusinessItems</dataPath>
+			<field>LineOfBusinessItems</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>LineOfBusinessCash</dataPath>
+			<field>LineOfBusinessCash</field>
+		</field>
+		<dataSource>DataSource1</dataSource>
+		<query>SELECT TOP 0
+	RecordsCashIncomeExpenses.Department AS Department,
+	RecordsCashIncomeExpenses.LineOfBusinessCash AS LineOfBusinessCash,
+	RecordsCashIncomeExpenses.IncomeExpenseBusinessUnit AS IncomeExpenseBusinessUnit,
+	RecordsCashIncomeExpenses.Cash AS Cash,
+	RecordsCashIncomeExpenses.CashType AS CashType,
+	RecordsCashIncomeExpenses.CashFlowItem AS CashFlowItem,
+	RecordsCashIncomeExpenses.ProductCostElement AS ProductCostElement,
+	RecordsCashIncomeExpenses.PaymentType275FZ AS PaymentType275FZ,
+	RecordsCashIncomeExpenses.Currency AS Currency,
+	RecordsCashIncomeExpenses.LineOfBusinessItems AS LineOfBusinessItems,
+	RecordsCashIncomeExpenses.IncomeAndExpenseItem AS IncomeAndExpenseItem,
+	RecordsCashIncomeExpenses.DimensionOfRevenue AS DimensionOfRevenue,
+	RecordsCashIncomeExpenses.DimensionOfExpenses AS DimensionOfExpenses,
+	RecordsCashIncomeExpenses.AssetsLiabilitiesDimension AS AssetsLiabilitiesDimension,
+	RecordsCashIncomeExpenses.VATRate AS VATRate,
+	VALUETYPE(RecordsCashIncomeExpenses.Recorder) AS DocumentType
+FROM
+	AccumulationRegister.RecordsCashIncomeExpenses AS RecordsCashIncomeExpenses</query>
+	</dataSet>
+	<settingsVariant>
+		<dcsset:name>Main</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Main</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>fa</v8:lang>
+				<v8:content>اصلی</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>it</v8:lang>
+				<v8:content>Principale</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>pl</v8:lang>
+				<v8:content>Podstawowej</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Основной</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>tr</v8:lang>
+				<v8:content>Ana</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>vi</v8:lang>
+				<v8:content>Chính</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows"/>
+	</settingsVariant>
+</DataCompositionSchema>

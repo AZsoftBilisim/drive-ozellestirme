@@ -1,0 +1,117 @@
+
+#Region FormEventHandlers
+
+&AtServer
+Procedure OnCreateAtServer(Cancel, StandardProcessing)
+	
+	If Parameters.Property("AutoTest_2") Then
+		Return;
+	EndIf;
+	
+	If Parameters.Property("Filter")
+		And Parameters.Filter.Property("Department") Then
+			
+		SetFormFunctionalOptionParameters(
+			New Structure("Department", Parameters.Filter.Department));
+			
+	EndIf;
+	
+	// Peripherals
+	TMCommonUse.CustomizePeripherals(ThisForm);
+	// End Peripherals
+	
+	// StandardSubsystems.AttachableCommands
+	AttachableCommands.OnCreateAtServer(ThisObject);
+	// End StandardSubsystems.AttachableCommands
+	
+	FormEvents.OnCreateAtServer(ThisForm, Cancel, StandardProcessing);
+	
+	ObjectsVersioning.OnCreateAtServer(ThisObject);
+	
+EndProcedure
+
+&AtClient
+Procedure OnOpen(Cancel)
+	
+	// Peripherals
+	EquipmentManagerClient.StartConnectingDevicesWhenYouOpenForm(Undefined, ThisForm, "BarcodeScanner");
+	// End Peripherals
+	
+EndProcedure
+
+&AtClient
+Procedure OnClose(Exit)
+	
+	// Peripherals
+	EquipmentManagerClient.StartDisablingHardwareWhenClosingForm(Undefined, ThisForm);
+	// End Peripherals
+	
+EndProcedure
+
+&AtClient
+Procedure NotificationProcessing(EventName, Parameter, Source)
+	
+	// Peripherals
+	If Source = "Peripherals" And IsInputAvailable() Then
+		If EventName = "ScanData" And EquipmentManagerTMClient.ThereIsRawEvent() Then
+			ProcessBarcodes(EquipmentManagerTMClient.ConvertDataFromScannerToStructure(Parameter));
+		EndIf;
+	EndIf;
+	// End Peripherals
+	
+EndProcedure
+
+#EndRegion
+
+#Region FormCommandsEventHandlers
+
+&AtClient
+Procedure Attachable_ExecuteOverridableCommand(Command)
+	
+	FormEventsClient.ExecuteOverridableCommand(ThisForm, Command);
+	
+EndProcedure
+
+// StandardSubsystems.AttachableCommands
+&AtClient
+Procedure Attachable_ExecuteCommand(Command)
+	AttachableCommandsClient.ExecuteCommand(ThisObject, Command, Items.List);
+EndProcedure
+
+&AtServer
+Procedure Attachable_ExecuteCommandAtServer(Context, Result) Export
+	AttachableCommands.ExecuteCommand(ThisObject, Context, Items.List, Result);
+EndProcedure
+
+&AtClient
+Procedure Attachable_UpdateCommands()
+	AttachableCommandsClientServer.UpdateCommands(ThisObject, Items.List);
+EndProcedure
+// End StandardSubsystems.AttachableCommands
+
+#EndRegion
+
+#Region Private
+
+&AtClient
+Procedure ProcessBarcodes(Data)
+	
+	ReferencesArrray = LinkToListItemByBarcode(Data.Barcode);
+	If ReferencesArrray.Count() > 0 Then
+		Items.List.CurrentRow = ReferencesArrray[0];
+	Else
+		BarcodingOfPrintFormsClient.ObjectIsNotFound(Data.Barcode);
+	EndIf;
+	
+EndProcedure
+
+&AtClient
+Function LinkToListItemByBarcode(Barcode)
+	
+	Managers = New Array();
+	Managers.Add(PredefinedValue("Document.ShiftTask.EmptyRef"));
+	Return BarcodingOfPrintFormsClient.GetLinkFromBarcodeOfTabularDocument(Barcode, Managers);
+	
+EndFunction
+
+#EndRegion

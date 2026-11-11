@@ -1,0 +1,38 @@
+#If Server Or ThickClientOrdinaryApplication Or ExternalConnection Then
+
+#Region Public
+
+#Region InterfaceImplementation
+
+// StandardSubsystems.AccessManagement
+
+Procedure OnFillAccessRestriction(Restriction) Export
+
+	Restriction.Text =
+	"AllowRead
+	|WHERE
+	|	ObjectReadingAllowed(FileOwner)
+	|;
+	|AllowUpdateIfReadingAllowed
+	|WHERE
+	|	ObjectUpdateAllowed(FileOwner)";
+
+EndProcedure
+
+// End StandardSubsystems.AccessManagement
+
+#EndRegion
+
+#EndRegion
+
+#Region Private
+
+Function AttributesToEditInBatchProcessing() Export
+	
+	Return FilesOperations.AttributesToEditInBatchProcessing();
+	
+EndFunction
+
+#EndRegion
+
+#EndIf

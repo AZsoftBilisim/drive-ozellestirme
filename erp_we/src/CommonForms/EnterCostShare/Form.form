@@ -1,0 +1,4367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form">
+  <items xsi:type="form:FormGroup">
+    <name>MethodsOfCostAllocatingOnProductCosts</name>
+    <id>4</id>
+    <items xsi:type="form:FormGroup">
+      <name>PageByCostShares</name>
+      <id>6</id>
+      <items xsi:type="form:Decoration">
+        <name>DecorationAMethodOfAllocatingTheCostOfOutputProductsByCostShares</name>
+        <id>229</id>
+        <title>
+          <key>en</key>
+          <value>Finished product costs are allocated by cost shares</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>هزینه‌های محصول نهایی بر اساس سهم‌های بها تسهیم می‌شوند</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>I costi per un fine settimana prodotti sono distribuiti ripartizioni costo</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Nakłady na wyroby wychodzące są przydzielane wg udziałów kosztów</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Затраты на выходные изделия распределяются по долям стоимости</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Nihai ürün üretim giderleri maliyet payına göre dağıtılmaktadır</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Chi phí cho sản phẩm đầu ra được phân bổ theo tỷ lệ chi phí</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>DecorationAMethodOfAllocatingTheCostOfOutputProductsByCostSharesExtendedTooltip</name>
+          <id>231</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>DecorationAMethodOfAllocatingTheCostOfOutputProductsByCostSharesContextMenu</name>
+          <id>230</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>Label</type>
+        <height>1</height>
+        <autoMaxHeight>true</autoMaxHeight>
+        <textColor xsi:type="core:ColorRef">
+          <color>Style.ReportsOptionsGroupColor</color>
+        </textColor>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>GroupingByCostShares</name>
+        <id>232</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>GroupCosts</segments>
+        </dataPath>
+        <extendedTooltip>
+          <name>GroupingByCostSharesExtendedTooltip</name>
+          <id>234</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>GroupingByCostSharesContextMenu</name>
+          <id>233</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <readOnly>true</readOnly>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormGroup">
+        <name>GroupShareOfCost</name>
+        <id>241</id>
+        <items xsi:type="form:FormField">
+          <name>CostShare</name>
+          <id>243</id>
+          <title>
+            <key>en</key>
+            <value>Cost share lines</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>سطرهای سهم بها</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Quota di costo della riga</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Udział kosztów wiersza</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Доля стоимости строки</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Satır maliyet payı</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Tỷ lệ giá trị hàng</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>CostShare</segments>
+          </dataPath>
+          <toolTipRepresentation>None</toolTipRepresentation>
+          <handlers>
+            <event>OnChange</event>
+            <name>CostShareOnChange</name>
+          </handlers>
+          <extendedTooltip>
+            <name>CostShareExtendedTooltip</name>
+            <id>245</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>CostShareContextMenu</name>
+            <id>244</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <maxWidth>10</maxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <autoMarkIncomplete>true</autoMarkIncomplete>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>Cost share</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>سهم بها</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Quota del costo</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Udział kosztów</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Доля стоимости</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Maliyet payı</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Tỷ lệ giá trị</value>
+        </title>
+        <toolTipRepresentation>None</toolTipRepresentation>
+        <extendedTooltip>
+          <name>GroupShareOfCostExtendedTooltip</name>
+          <id>242</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>UsualGroup</type>
+        <extInfo xsi:type="form:UsualGroupExtInfo">
+          <group>AlwaysHorizontal</group>
+          <showLeftMargin>true</showLeftMargin>
+          <united>true</united>
+          <throughAlign>Auto</throughAlign>
+          <currentRowUse>Auto</currentRowUse>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>ShareOfCostTotal</name>
+        <id>238</id>
+        <title>
+          <key>en</key>
+          <value>Cost shares of all lines</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>سهم‌های بهای همه سطرها</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Quote di costo di tutte le righe</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Udział kosztów wszystkich wierszy</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Доли стоимости всех строк</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Tüm satırların maliyet payı</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Chia sẻ chi phí của tất cả các hàng</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>CostShareTotalNew</segments>
+        </dataPath>
+        <skipOnInput>true</skipOnInput>
+        <toolTipRepresentation>None</toolTipRepresentation>
+        <extendedTooltip>
+          <name>ShareOfCostTotalExtendedTooltip</name>
+          <id>240</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>ShareOfCostTotalContextMenu</name>
+          <id>239</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <readOnly>true</readOnly>
+        <horizontalAlign>Right</horizontalAlign>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <maxWidth>10</maxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <horizontalStretch>true</horizontalStretch>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>CostSharePercentage</name>
+        <id>235</id>
+        <title>
+          <key>en</key>
+          <value>Cost share</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>سهم بها</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Quota del costo</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Udział kosztów</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Доля стоимости</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Maliyet payı</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Tỷ lệ giá trị</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>CostSharePercentage</segments>
+        </dataPath>
+        <skipOnInput>true</skipOnInput>
+        <toolTip>
+          <key>en</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>fa</key>
+          <value>درصد</value>
+        </toolTip>
+        <toolTip>
+          <key>it</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>pl</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>ru</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>tr</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>vi</key>
+          <value>%</value>
+        </toolTip>
+        <toolTipRepresentation>ShowRight</toolTipRepresentation>
+        <extendedTooltip>
+          <name>CostSharePercentageExtendedTooltip</name>
+          <id>237</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>CostSharePercentageContextMenu</name>
+          <id>236</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <readOnly>true</readOnly>
+        <horizontalAlign>Right</horizontalAlign>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <maxWidth>10</maxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>en</key>
+        <value>By cost share</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>بر اساس سهم بها</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Per la quota di costo</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Wg udziałów kosztów</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>По доле стоимости</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Maliyet payına göre</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Theo phần chi phí</value>
+      </title>
+      <extendedTooltip>
+        <name>PageByCostSharesExtendedTooltip</name>
+        <id>7</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <type>Page</type>
+      <extInfo xsi:type="form:PageGroupExtInfo">
+        <group>Vertical</group>
+        <showTitle>true</showTitle>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormGroup">
+      <name>PageByPlannedCost</name>
+      <id>8</id>
+      <items xsi:type="form:Decoration">
+        <name>DecorationAMethodOfAllocatingTheCostOfOutputProductsAtThePlannedCost</name>
+        <id>102</id>
+        <title>
+          <key>en</key>
+          <value>Finished product costs are allocated by standard cost</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>هزینه‌های محصول نهایی بر اساس بهای استاندارد تسهیم می‌شوند</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>I costi di uscita degli articoli vengono distribuiti a un costo pianificato</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Nakłady na wyroby wychodzące są przydzielane wg planowanych kosztów</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Затраты на выходные изделия распределяются по плановой стоимости</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Nihai ürün üretim giderleri standart maliyete göre dağıtılmaktadır</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Chi phí đầu ra được phân bổ theo chi phí kế hoạch.</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>DecorationAMethodOfAllocatingTheCostOfOutputProductsAtThePlannedCostExtendedTooltip</name>
+          <id>104</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>DecorationAMethodOfAllocatingTheCostOfOutputProductsAtThePlannedCostContextMenu</name>
+          <id>103</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>Label</type>
+        <height>1</height>
+        <autoMaxHeight>true</autoMaxHeight>
+        <textColor xsi:type="core:ColorRef">
+          <color>Style.ReportsOptionsGroupColor</color>
+        </textColor>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>GroupingByPlannedCost</name>
+        <id>217</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>GroupCosts</segments>
+        </dataPath>
+        <extendedTooltip>
+          <name>GroupingByPlannedCostExtendedTooltip</name>
+          <id>219</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>GroupingByPlannedCostContextMenu</name>
+          <id>218</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <readOnly>true</readOnly>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>PlannedPrice</name>
+        <id>47</id>
+        <title>
+          <key>en</key>
+          <value>Price</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>قیمت</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Prezzo</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Cena</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Цена</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Fiyat</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Đơn giá</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>CostSharePerUnit</segments>
+        </dataPath>
+        <toolTip>
+          <key>en</key>
+          <value>RUB</value>
+        </toolTip>
+        <toolTip>
+          <key>fa</key>
+          <value>RUB</value>
+        </toolTip>
+        <toolTip>
+          <key>it</key>
+          <value>RUB</value>
+        </toolTip>
+        <toolTip>
+          <key>pl</key>
+          <value>RUB</value>
+        </toolTip>
+        <toolTip>
+          <key>ru</key>
+          <value>RUB</value>
+        </toolTip>
+        <toolTip>
+          <key>tr</key>
+          <value>RUB</value>
+        </toolTip>
+        <toolTip>
+          <key>vi</key>
+          <value>RUB</value>
+        </toolTip>
+        <toolTipRepresentation>ShowRight</toolTipRepresentation>
+        <handlers>
+          <event>OnChange</event>
+          <name>AFractionOfTheCostPerUnitWhenChanging</name>
+        </handlers>
+        <extendedTooltip>
+          <name>PlannedPriceExtendedTooltip</name>
+          <id>49</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>PlannedPriceContextMenu</name>
+          <id>48</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <maxWidth>10</maxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <editFormat>
+            <key>en</key>
+            <value>NFD=2</value>
+          </editFormat>
+          <editFormat>
+            <key>fa</key>
+            <value>NFD=2</value>
+          </editFormat>
+          <editFormat>
+            <key>it</key>
+            <value>NFD=2</value>
+          </editFormat>
+          <editFormat>
+            <key>pl</key>
+            <value>NFD=2</value>
+          </editFormat>
+          <editFormat>
+            <key>ru</key>
+            <value>NFD=2</value>
+          </editFormat>
+          <editFormat>
+            <key>tr</key>
+            <value>NFD=2</value>
+          </editFormat>
+          <editFormat>
+            <key>vi</key>
+            <value>NFD=2</value>
+          </editFormat>
+          <autoMarkIncomplete>true</autoMarkIncomplete>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormGroup">
+        <name>PlannedCostGroup</name>
+        <id>76</id>
+        <items xsi:type="form:FormField">
+          <name>PlannedCost</name>
+          <id>59</id>
+          <title>
+            <key>en</key>
+            <value>Standard cost</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>بهای استاندارد</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Costo pianificato</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Wartość planowana</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Плановая стоимость</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Standart maliyet</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Giá dự tính</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>CostShare</segments>
+          </dataPath>
+          <toolTip>
+            <key>en</key>
+            <value>RUB</value>
+          </toolTip>
+          <toolTip>
+            <key>fa</key>
+            <value>RUB</value>
+          </toolTip>
+          <toolTip>
+            <key>it</key>
+            <value>RUB</value>
+          </toolTip>
+          <toolTip>
+            <key>pl</key>
+            <value>RUB</value>
+          </toolTip>
+          <toolTip>
+            <key>ru</key>
+            <value>RUB</value>
+          </toolTip>
+          <toolTip>
+            <key>tr</key>
+            <value>RUB</value>
+          </toolTip>
+          <toolTip>
+            <key>vi</key>
+            <value>RUB</value>
+          </toolTip>
+          <toolTipRepresentation>ShowRight</toolTipRepresentation>
+          <handlers>
+            <event>OnChange</event>
+            <name>CostShareOnChange</name>
+          </handlers>
+          <extendedTooltip>
+            <name>PlannedCostExtendedTooltip</name>
+            <id>61</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>PlannedCostContextMenu</name>
+            <id>60</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <maxWidth>10</maxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <editFormat>
+              <key>en</key>
+              <value>NFD=2</value>
+            </editFormat>
+            <editFormat>
+              <key>fa</key>
+              <value>NFD=2</value>
+            </editFormat>
+            <editFormat>
+              <key>it</key>
+              <value>NFD=2</value>
+            </editFormat>
+            <editFormat>
+              <key>pl</key>
+              <value>NFD=2</value>
+            </editFormat>
+            <editFormat>
+              <key>ru</key>
+              <value>NFD=2</value>
+            </editFormat>
+            <editFormat>
+              <key>tr</key>
+              <value>NFD=2</value>
+            </editFormat>
+            <editFormat>
+              <key>vi</key>
+              <value>NFD=2</value>
+            </editFormat>
+            <autoMarkIncomplete>true</autoMarkIncomplete>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>Standard cost</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>بهای استاندارد</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Costo pianificato</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Wartość planowana</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Плановая стоимость</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Standart maliyet</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Giá dự tính</value>
+        </title>
+        <toolTipRepresentation>Button</toolTipRepresentation>
+        <extendedTooltip>
+          <name>PlannedCostGroupExtendedTooltip</name>
+          <id>77</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>UsualGroup</type>
+        <extInfo xsi:type="form:UsualGroupExtInfo">
+          <group>AlwaysHorizontal</group>
+          <showLeftMargin>true</showLeftMargin>
+          <united>true</united>
+          <throughAlign>Auto</throughAlign>
+          <currentRowUse>Auto</currentRowUse>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>ShareOfCostTotalAtPlannedCost</name>
+        <id>226</id>
+        <title>
+          <key>en</key>
+          <value>Standard cost of all lines</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>بهای استاندارد همه سطرها</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Costo pianificato di tutte le righe</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Planowane koszty wszystkich wierszy</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Плановая стоимость всех строк</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Tüm satırların standart maliyeti</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Giá thành kế hoạch của tất cả các dòng</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>CostShareTotalNew</segments>
+        </dataPath>
+        <skipOnInput>true</skipOnInput>
+        <toolTip>
+          <key>en</key>
+          <value>RUB</value>
+        </toolTip>
+        <toolTip>
+          <key>fa</key>
+          <value>RUB</value>
+        </toolTip>
+        <toolTip>
+          <key>it</key>
+          <value>RUB</value>
+        </toolTip>
+        <toolTip>
+          <key>pl</key>
+          <value>RUB</value>
+        </toolTip>
+        <toolTip>
+          <key>ru</key>
+          <value>RUB</value>
+        </toolTip>
+        <toolTip>
+          <key>tr</key>
+          <value>RUB</value>
+        </toolTip>
+        <toolTip>
+          <key>vi</key>
+          <value>RUB</value>
+        </toolTip>
+        <toolTipRepresentation>ShowRight</toolTipRepresentation>
+        <extendedTooltip>
+          <name>ShareOfCostTotalAtPlannedCostExtendedTooltip</name>
+          <id>228</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>ShareOfCostTotalAtPlannedCostContextMenu</name>
+          <id>227</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <readOnly>true</readOnly>
+        <horizontalAlign>Right</horizontalAlign>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <maxWidth>10</maxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <horizontalStretch>true</horizontalStretch>
+          <wrap>true</wrap>
+          <editFormat>
+            <key>en</key>
+            <value>NFD=2</value>
+          </editFormat>
+          <editFormat>
+            <key>fa</key>
+            <value>NFD=2</value>
+          </editFormat>
+          <editFormat>
+            <key>it</key>
+            <value>NFD=2</value>
+          </editFormat>
+          <editFormat>
+            <key>pl</key>
+            <value>NFD=2</value>
+          </editFormat>
+          <editFormat>
+            <key>ru</key>
+            <value>NFD=2</value>
+          </editFormat>
+          <editFormat>
+            <key>tr</key>
+            <value>NFD=2</value>
+          </editFormat>
+          <editFormat>
+            <key>vi</key>
+            <value>NFD=2</value>
+          </editFormat>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>ThePercentageOfCostThePercentageOfPlannedValue</name>
+        <id>50</id>
+        <title>
+          <key>en</key>
+          <value>Cost share</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>سهم بها</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Quota del costo</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Udział kosztów</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Доля стоимости</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Maliyet payı</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Tỷ lệ giá trị</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>CostSharePercentage</segments>
+        </dataPath>
+        <skipOnInput>true</skipOnInput>
+        <toolTip>
+          <key>en</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>fa</key>
+          <value>درصد</value>
+        </toolTip>
+        <toolTip>
+          <key>it</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>pl</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>ru</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>tr</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>vi</key>
+          <value>%</value>
+        </toolTip>
+        <toolTipRepresentation>ShowRight</toolTipRepresentation>
+        <extendedTooltip>
+          <name>ThePercentageOfCostThePercentageOfPlannedValueExtendedTooltip</name>
+          <id>52</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>ThePercentageOfCostThePercentageOfPlannedValueContextMenu</name>
+          <id>51</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <readOnly>true</readOnly>
+        <horizontalAlign>Right</horizontalAlign>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <maxWidth>10</maxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormGroup">
+        <name>GroupErrorFillingInPrice</name>
+        <id>203</id>
+        <items xsi:type="form:Decoration">
+          <name>Attention1</name>
+          <id>205</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <extendedTooltip>
+            <name>Attention1ExtendedTooltip</name>
+            <id>207</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>Attention1ContextMenu</name>
+            <id>206</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:PictureDecorationExtInfo">
+            <picture xsi:type="core:PictureRef">
+              <picture>CommonPicture.Attention16</picture>
+            </picture>
+          </extInfo>
+        </items>
+        <items xsi:type="form:Decoration">
+          <name>TheTextOfTheFullErrorOnThePrice</name>
+          <id>208</id>
+          <title>
+            <key>en</key>
+            <value>Target &lt;link #PricesKind>price&lt;/> is not specified for item &quot;%1&quot; (&lt;link #Products>open&lt;/>)</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>&lt;link #PricesKind>قیمت&lt;/> هدف برای قلم «%1» مشخص نشده است (&lt;link #Products>باز کردن&lt;/>)</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Для номенклатуры &quot;%1&quot; (&lt;link #Products>открыть&lt;/>)  не задана плановая &lt;link #PricesKind>цена&lt;/></value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>&quot;%1&quot; öğesi için (&lt;link #Products>aç&lt;/>) planlanan &lt;link #PricesKind>fiyat&lt;/> belirtilmedi</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Đối với mặt hàng &quot;%1&quot; (&lt;link #Products>mở&lt;/>) không có &lt;link #PricesKind>giá&lt;/> dự kiến</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Target &lt;link #PricesKind>price&lt;/> is not specified for item &quot;%1&quot; (&lt;link #Products>open&lt;/>)</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Target &lt;link #PricesKind>price&lt;/> is not specified for item &quot;%1&quot; (&lt;link #Products>open&lt;/>)</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <extendedTooltip>
+            <name>TheTextOfTheFullErrorOnThePriceExtendedTooltip</name>
+            <id>210</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>TheTextOfTheFullErrorOnThePriceContextMenu</name>
+            <id>209</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <formatted>true</formatted>
+          <type>Label</type>
+          <autoMaxHeight>true</autoMaxHeight>
+          <textColor xsi:type="core:ColorRef">
+            <color>Style.SpecialTextColor</color>
+          </textColor>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>Price is not specified</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>قیمت مشخص نشده است</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Prezzo non specificato</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Nie ustalono cenę</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Не задана цена</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Fiyat belirtilmedi</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Giá không được đặt</value>
+        </title>
+        <verticalStretch>false</verticalStretch>
+        <extendedTooltip>
+          <name>GroupErrorFillingInPriceExtendedTooltip</name>
+          <id>204</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>UsualGroup</type>
+        <extInfo xsi:type="form:UsualGroupExtInfo">
+          <group>AlwaysHorizontal</group>
+          <showLeftMargin>true</showLeftMargin>
+          <united>true</united>
+          <throughAlign>Auto</throughAlign>
+          <currentRowUse>Auto</currentRowUse>
+        </extInfo>
+      </items>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>en</key>
+        <value>By standard cost</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>بر اساس بهای استاندارد</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Per costo pianificato</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Wg wartości planowanej</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>По плановой стоимости</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Standart maliyete göre</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Theo giá kế hoạch</value>
+      </title>
+      <extendedTooltip>
+        <name>PageByPlannedCostExtendedTooltip</name>
+        <id>9</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <type>Page</type>
+      <extInfo xsi:type="form:PageGroupExtInfo">
+        <group>Vertical</group>
+        <showTitle>true</showTitle>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormGroup">
+      <name>PageByWeight</name>
+      <id>10</id>
+      <items xsi:type="form:Decoration">
+        <name>DecorationAMethodOfDistributingTheCostOfOutputProductsByWeight</name>
+        <id>105</id>
+        <title>
+          <key>en</key>
+          <value>Finished product costs are allocated by weight</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>هزینه‌های محصول نهایی بر اساس وزن تسهیم می‌شوند</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Costi per un fine settimana prodotti sono distribuiti in peso</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Nakłady na wyroby wychodzące są przydzielane wg wagi</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Затраты на выходные изделия распределяются по весу</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Nihai ürün üretim giderleri ağırlığa göre dağıtılmaktadır</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Chi phí đầu ra được phân bổ theo trọng lượng.</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>DecorationAMethodOfDistributingTheCostOfOutputProductsByWeightExtendedTooltip</name>
+          <id>107</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>DecorationAMethodOfDistributingTheCostOfOutputProductsByWeightContextMenu</name>
+          <id>106</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>Label</type>
+        <autoMaxHeight>true</autoMaxHeight>
+        <textColor xsi:type="core:ColorRef">
+          <color>Style.ReportsOptionsGroupColor</color>
+        </textColor>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>GroupingByWeight</name>
+        <id>220</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>GroupCosts</segments>
+        </dataPath>
+        <extendedTooltip>
+          <name>GroupingByWeightExtendedTooltip</name>
+          <id>222</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>GroupingByWeightContextMenu</name>
+          <id>221</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <readOnly>true</readOnly>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>UnitOfMeasurementPageByWeight</name>
+        <id>14</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>Products.UnitOfMeasure</segments>
+        </dataPath>
+        <extendedTooltip>
+          <name>UnitOfMeasurementPageByWeightExtendedTooltip</name>
+          <id>16</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>UnitOfMeasurementPageByWeightContextMenu</name>
+          <id>15</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <readOnly>true</readOnly>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <maxWidth>10</maxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>Weight</name>
+        <id>154</id>
+        <title>
+          <key>en</key>
+          <value>Weight (1 unit)</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>وزن (1 واحد)</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Peso (1 unità)</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Waga (1 jed.)</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Вес (1 ед.)</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Ağırlık (1 br.)</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Trọng lượng (1 chiếc)</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>CostSharePerUnit</segments>
+        </dataPath>
+        <toolTip>
+          <key>en</key>
+          <value>kg</value>
+        </toolTip>
+        <toolTip>
+          <key>fa</key>
+          <value>kg</value>
+        </toolTip>
+        <toolTip>
+          <key>it</key>
+          <value>kg</value>
+        </toolTip>
+        <toolTip>
+          <key>pl</key>
+          <value>kg</value>
+        </toolTip>
+        <toolTip>
+          <key>ru</key>
+          <value>кг</value>
+        </toolTip>
+        <toolTip>
+          <key>tr</key>
+          <value>kg</value>
+        </toolTip>
+        <toolTip>
+          <key>vi</key>
+          <value>kg</value>
+        </toolTip>
+        <toolTipRepresentation>ShowRight</toolTipRepresentation>
+        <handlers>
+          <event>OnChange</event>
+          <name>AFractionOfTheCostPerUnitWhenChanging</name>
+        </handlers>
+        <extendedTooltip>
+          <name>WeightExtendedTooltip</name>
+          <id>156</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>WeightContextMenu</name>
+          <id>155</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <maxWidth>10</maxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <autoMarkIncomplete>true</autoMarkIncomplete>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormGroup">
+        <name>GroupRowWeight</name>
+        <id>157</id>
+        <items xsi:type="form:FormField">
+          <name>TheWeightOfARow</name>
+          <id>29</id>
+          <title>
+            <key>en</key>
+            <value>Current line weight</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>وزن سطر فعلی</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Peso della riga corrente</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Waga bieżącego wiersza</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Вес текущей строки</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Geçerli satır ağırlığı</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Trọng lượng của dòng hiện tại</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>CostShare</segments>
+          </dataPath>
+          <toolTip>
+            <key>en</key>
+            <value>kg</value>
+          </toolTip>
+          <toolTip>
+            <key>fa</key>
+            <value>kg</value>
+          </toolTip>
+          <toolTip>
+            <key>it</key>
+            <value>kg</value>
+          </toolTip>
+          <toolTip>
+            <key>pl</key>
+            <value>kg</value>
+          </toolTip>
+          <toolTip>
+            <key>ru</key>
+            <value>кг</value>
+          </toolTip>
+          <toolTip>
+            <key>tr</key>
+            <value>kg</value>
+          </toolTip>
+          <toolTip>
+            <key>vi</key>
+            <value>kg</value>
+          </toolTip>
+          <toolTipRepresentation>ShowRight</toolTipRepresentation>
+          <extendedTooltip>
+            <name>TheWeightOfARowExtendedTooltip</name>
+            <id>31</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>TheWeightOfARowContextMenu</name>
+            <id>30</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <readOnly>true</readOnly>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <maxWidth>10</maxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <autoMarkIncomplete>true</autoMarkIncomplete>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>Current line weight</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>وزن سطر فعلی</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Peso della riga corrente</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Waga bieżącego wiersza</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Вес текущей строки</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Geçerli satır ağırlığı</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Trọng lượng của dòng hiện tại</value>
+        </title>
+        <toolTipRepresentation>Button</toolTipRepresentation>
+        <extendedTooltip>
+          <name>GroupRowWeightExtendedTooltip</name>
+          <id>158</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>UsualGroup</type>
+        <extInfo xsi:type="form:UsualGroupExtInfo">
+          <group>AlwaysHorizontal</group>
+          <showLeftMargin>true</showLeftMargin>
+          <united>true</united>
+          <currentRowUse>Auto</currentRowUse>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>CostShareTotalByWeight</name>
+        <id>120</id>
+        <title>
+          <key>en</key>
+          <value>Weight of all lines</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>وزن همه سطرها</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Peso di tutte le righe</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Waga wszystkich wierszy</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Вес всех строк</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Tüm satırların ağırlığı</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Trọng lượng của tất cả các dòng</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>CostShareTotalNew</segments>
+        </dataPath>
+        <skipOnInput>true</skipOnInput>
+        <toolTip>
+          <key>en</key>
+          <value>kg</value>
+        </toolTip>
+        <toolTip>
+          <key>fa</key>
+          <value>kg</value>
+        </toolTip>
+        <toolTip>
+          <key>it</key>
+          <value>kg</value>
+        </toolTip>
+        <toolTip>
+          <key>pl</key>
+          <value>kg</value>
+        </toolTip>
+        <toolTip>
+          <key>ru</key>
+          <value>кг</value>
+        </toolTip>
+        <toolTip>
+          <key>tr</key>
+          <value>kg</value>
+        </toolTip>
+        <toolTip>
+          <key>vi</key>
+          <value>kg</value>
+        </toolTip>
+        <toolTipRepresentation>ShowRight</toolTipRepresentation>
+        <extendedTooltip>
+          <name>CostShareTotalByWeightExtendedTooltip</name>
+          <id>122</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>CostShareTotalByWeightContextMenu</name>
+          <id>121</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <readOnly>true</readOnly>
+        <horizontalAlign>Right</horizontalAlign>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <maxWidth>10</maxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <horizontalStretch>true</horizontalStretch>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>CostSharePercentageByWeight</name>
+        <id>112</id>
+        <title>
+          <key>en</key>
+          <value>Cost share</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>سهم بها</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Quota del costo</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Udział kosztów</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Доля стоимости</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Maliyet payı</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Tỷ lệ giá trị</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>CostSharePercentage</segments>
+        </dataPath>
+        <skipOnInput>true</skipOnInput>
+        <toolTip>
+          <key>en</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>fa</key>
+          <value>درصد</value>
+        </toolTip>
+        <toolTip>
+          <key>it</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>pl</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>ru</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>tr</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>vi</key>
+          <value>%</value>
+        </toolTip>
+        <toolTipRepresentation>ShowRight</toolTipRepresentation>
+        <extendedTooltip>
+          <name>CostSharePercentageByWeightExtendedTooltip</name>
+          <id>114</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>CostSharePercentageByWeightContextMenu</name>
+          <id>113</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <readOnly>true</readOnly>
+        <horizontalAlign>Right</horizontalAlign>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <maxWidth>10</maxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormGroup">
+        <name>GroupErrorFillingWeight</name>
+        <id>195</id>
+        <items xsi:type="form:Decoration">
+          <name>Attention2</name>
+          <id>197</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <extendedTooltip>
+            <name>Attention2ExtendedTooltip</name>
+            <id>199</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>Attention2ContextMenu</name>
+            <id>198</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:PictureDecorationExtInfo">
+            <picture xsi:type="core:PictureRef">
+              <picture>CommonPicture.Attention16</picture>
+            </picture>
+          </extInfo>
+        </items>
+        <items xsi:type="form:Decoration">
+          <name>TheTextErrorOfFillingWeight</name>
+          <id>200</id>
+          <title>
+            <key>en</key>
+            <value>Weight is not specified for the &quot;%1&quot; products (&lt;link #Products>open&lt;/>)</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>وزن برای محصولات «%1» مشخص نشده است (&lt;link #Products>باز کردن&lt;/>)</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Для номенклатуры &quot;%1&quot; (&lt;link #Products>открыть&lt;/>)  не задан вес</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>&quot;%1&quot; öğesi için (&lt;link #Products>aç&lt;/>) ağırlık belirtilmedi</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Đối với mặt hàng &quot;%1&quot; (&lt;link #Products>mở&lt;/>)  trọng lượng không được chỉ định</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Weight is not specified for the &quot;%1&quot; products (&lt;link #Products>open&lt;/>)</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Weight is not specified for the &quot;%1&quot; products (&lt;link #Products>open&lt;/>)</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <extendedTooltip>
+            <name>TheTextErrorOfFillingWeightExtendedTooltip</name>
+            <id>202</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>TheTextErrorOfFillingWeightContextMenu</name>
+            <id>201</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <formatted>true</formatted>
+          <type>Label</type>
+          <autoMaxHeight>true</autoMaxHeight>
+          <textColor xsi:type="core:ColorRef">
+            <color>Style.SpecialTextColor</color>
+          </textColor>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>Weight is not specified</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>وزن مشخص نشده است</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Peso non indicato</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Nie określono wagi</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Не задан вес</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Ağırlık belirtilmedi</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Trọng lượng không được đặt</value>
+        </title>
+        <verticalStretch>false</verticalStretch>
+        <extendedTooltip>
+          <name>GroupErrorFillingWeightExtendedTooltip</name>
+          <id>196</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>UsualGroup</type>
+        <extInfo xsi:type="form:UsualGroupExtInfo">
+          <group>AlwaysHorizontal</group>
+          <showLeftMargin>true</showLeftMargin>
+          <united>true</united>
+          <throughAlign>Auto</throughAlign>
+          <currentRowUse>Auto</currentRowUse>
+        </extInfo>
+      </items>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>en</key>
+        <value>By weight</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>بر اساس وزن</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Per peso</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Wg wagi</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>По весу</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Ağırlığa göre</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Theo trọng lượng</value>
+      </title>
+      <extendedTooltip>
+        <name>PageByWeightExtendedTooltip</name>
+        <id>11</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <type>Page</type>
+      <extInfo xsi:type="form:PageGroupExtInfo">
+        <group>Vertical</group>
+        <showTitle>true</showTitle>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormGroup">
+      <name>PageByVolume</name>
+      <id>12</id>
+      <items xsi:type="form:Decoration">
+        <name>DecorationAMethodOfAllocatingTheCostOfOutputProductsByVolume</name>
+        <id>126</id>
+        <title>
+          <key>en</key>
+          <value>Finished product costs are allocated by volume</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>هزینه‌های محصول نهایی بر اساس حجم تسهیم می‌شوند</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>I costi di uscita degli articoli vengono distribuiti in volume</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Nakłady na wyroby wychodzące są przydzielane wg objętości</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Затраты на выходные изделия распределяются по объему</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Nihai ürün üretim giderleri hacme göre dağıtılmaktadır</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Chi phí đầu ra được phân bổ theo khối lượng.</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>DecorationAMethodOfAllocatingTheCostOfOutputProductsByVolumeExtendedTooltip</name>
+          <id>128</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>DecorationAMethodOfAllocatingTheCostOfOutputProductsByVolumeContextMenu</name>
+          <id>127</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>Label</type>
+        <autoMaxHeight>true</autoMaxHeight>
+        <textColor xsi:type="core:ColorRef">
+          <color>Style.ReportsOptionsGroupColor</color>
+        </textColor>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>GroupingByVolume</name>
+        <id>223</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>GroupCosts</segments>
+        </dataPath>
+        <extendedTooltip>
+          <name>GroupingByVolumeExtendedTooltip</name>
+          <id>225</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>GroupingByVolumeContextMenu</name>
+          <id>224</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <readOnly>true</readOnly>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>UnitOfMeasurementPageByVolume</name>
+        <id>129</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>Products.UnitOfMeasure</segments>
+        </dataPath>
+        <extendedTooltip>
+          <name>UnitOfMeasurementPageByVolumeExtendedTooltip</name>
+          <id>131</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>UnitOfMeasurementPageByVolumeContextMenu</name>
+          <id>130</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <readOnly>true</readOnly>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <maxWidth>10</maxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>VolumeM3</name>
+        <id>181</id>
+        <title>
+          <key>en</key>
+          <value>Volume (1 unit)</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>حجم (1 واحد)</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Volume (1 unità)</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Objętość (1 jed.)</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Объем (1 ед.)</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Hacim (1 br.)</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Khối lượng (1 đơn vị)</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>CostSharePerUnit</segments>
+        </dataPath>
+        <toolTip>
+          <key>en</key>
+          <value>m3</value>
+        </toolTip>
+        <toolTip>
+          <key>fa</key>
+          <value>m3</value>
+        </toolTip>
+        <toolTip>
+          <key>it</key>
+          <value>m3</value>
+        </toolTip>
+        <toolTip>
+          <key>pl</key>
+          <value>m3</value>
+        </toolTip>
+        <toolTip>
+          <key>ru</key>
+          <value>м3</value>
+        </toolTip>
+        <toolTip>
+          <key>tr</key>
+          <value>m³</value>
+        </toolTip>
+        <toolTip>
+          <key>vi</key>
+          <value>m3</value>
+        </toolTip>
+        <toolTipRepresentation>ShowRight</toolTipRepresentation>
+        <handlers>
+          <event>OnChange</event>
+          <name>AFractionOfTheCostPerUnitWhenChanging</name>
+        </handlers>
+        <extendedTooltip>
+          <name>VolumeM3ExtendedTooltip</name>
+          <id>183</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>VolumeM3ContextMenu</name>
+          <id>182</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <maxWidth>10</maxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <autoMarkIncomplete>true</autoMarkIncomplete>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormGroup">
+        <name>GroupLineVolume</name>
+        <id>174</id>
+        <items xsi:type="form:FormField">
+          <name>LineSize_2</name>
+          <id>176</id>
+          <title>
+            <key>en</key>
+            <value>Current line volume</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>حجم سطر فعلی</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Volume della riga corrente</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Objętość bieżącego wiersza</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Объем текущей строки</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>Geçerli satır hacmi</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Khối lượng dòng hiện tại</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>CostShare</segments>
+          </dataPath>
+          <toolTip>
+            <key>en</key>
+            <value>m3</value>
+          </toolTip>
+          <toolTip>
+            <key>fa</key>
+            <value>m3</value>
+          </toolTip>
+          <toolTip>
+            <key>it</key>
+            <value>m3</value>
+          </toolTip>
+          <toolTip>
+            <key>pl</key>
+            <value>m3</value>
+          </toolTip>
+          <toolTip>
+            <key>ru</key>
+            <value>м3</value>
+          </toolTip>
+          <toolTip>
+            <key>tr</key>
+            <value>m³</value>
+          </toolTip>
+          <toolTip>
+            <key>vi</key>
+            <value>m3</value>
+          </toolTip>
+          <toolTipRepresentation>ShowRight</toolTipRepresentation>
+          <extendedTooltip>
+            <name>LineSize_2ExtendedTooltip</name>
+            <id>178</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>LineSize_2ContextMenu</name>
+            <id>177</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <readOnly>true</readOnly>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <maxWidth>10</maxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <autoMarkIncomplete>true</autoMarkIncomplete>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>Current line volume</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>حجم سطر فعلی</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Volume della riga corrente</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Objętość bieżącego wiersza</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Объем текущей строки</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Geçerli satır hacmi</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Khối lượng dòng hiện tại</value>
+        </title>
+        <toolTipRepresentation>Button</toolTipRepresentation>
+        <extendedTooltip>
+          <name>GroupLineVolumeExtendedTooltip</name>
+          <id>175</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>UsualGroup</type>
+        <extInfo xsi:type="form:UsualGroupExtInfo">
+          <group>AlwaysHorizontal</group>
+          <showLeftMargin>true</showLeftMargin>
+          <united>true</united>
+          <currentRowUse>Auto</currentRowUse>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>ShareOfCostTotalByVolume</name>
+        <id>171</id>
+        <title>
+          <key>en</key>
+          <value>Volume of all lines</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>حجم همه سطرها</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Volume di tutte le righe</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Objętość wszystkich wierszy</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Объем всех строк</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Tüm satırların hacmi</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Âm lượng của tất cả các dòng</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>CostShareTotalNew</segments>
+        </dataPath>
+        <skipOnInput>true</skipOnInput>
+        <toolTip>
+          <key>en</key>
+          <value>m3</value>
+        </toolTip>
+        <toolTip>
+          <key>fa</key>
+          <value>m3</value>
+        </toolTip>
+        <toolTip>
+          <key>it</key>
+          <value>m3</value>
+        </toolTip>
+        <toolTip>
+          <key>pl</key>
+          <value>m3</value>
+        </toolTip>
+        <toolTip>
+          <key>ru</key>
+          <value>м3</value>
+        </toolTip>
+        <toolTip>
+          <key>tr</key>
+          <value>m³</value>
+        </toolTip>
+        <toolTip>
+          <key>vi</key>
+          <value>m3</value>
+        </toolTip>
+        <toolTipRepresentation>ShowRight</toolTipRepresentation>
+        <extendedTooltip>
+          <name>ShareOfCostTotalByVolumeExtendedTooltip</name>
+          <id>173</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>ShareOfCostTotalByVolumeContextMenu</name>
+          <id>172</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <readOnly>true</readOnly>
+        <horizontalAlign>Right</horizontalAlign>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <maxWidth>10</maxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <horizontalStretch>true</horizontalStretch>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>ShareOfCostPercentageByVolume</name>
+        <id>166</id>
+        <title>
+          <key>en</key>
+          <value>Cost share</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>سهم بها</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Quota del costo</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Udział kosztów</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Доля стоимости</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Maliyet payı</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Tỷ lệ giá trị</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>CostSharePercentage</segments>
+        </dataPath>
+        <skipOnInput>true</skipOnInput>
+        <toolTip>
+          <key>en</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>fa</key>
+          <value>درصد</value>
+        </toolTip>
+        <toolTip>
+          <key>it</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>pl</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>ru</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>tr</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>vi</key>
+          <value>%</value>
+        </toolTip>
+        <toolTipRepresentation>ShowRight</toolTipRepresentation>
+        <extendedTooltip>
+          <name>ShareOfCostPercentageByVolumeExtendedTooltip</name>
+          <id>168</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>ShareOfCostPercentageByVolumeContextMenu</name>
+          <id>167</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <readOnly>true</readOnly>
+        <horizontalAlign>Right</horizontalAlign>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <maxWidth>10</maxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormGroup">
+        <name>GroupErrorFillingVolume</name>
+        <id>184</id>
+        <items xsi:type="form:Decoration">
+          <name>Attention3</name>
+          <id>186</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <extendedTooltip>
+            <name>Attention3ExtendedTooltip</name>
+            <id>188</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>Attention3ContextMenu</name>
+            <id>187</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:PictureDecorationExtInfo">
+            <picture xsi:type="core:PictureRef">
+              <picture>CommonPicture.Attention16</picture>
+            </picture>
+          </extInfo>
+        </items>
+        <items xsi:type="form:Decoration">
+          <name>TheTextOfTheErrorOfFillingVolume</name>
+          <id>192</id>
+          <title>
+            <key>en</key>
+            <value>Volume is not specified for the &quot;%1&quot; products (&lt;link #Products>open&lt;/>)</value>
+          </title>
+          <title>
+            <key>fa</key>
+            <value>حجم برای محصولات «%1» مشخص نشده است (&lt;link #Products>باز کردن&lt;/>)</value>
+          </title>
+          <title>
+            <key>ru</key>
+            <value>Для номенклатуры &quot;%1&quot; (&lt;link #Products>открыть&lt;/>) не задан объем</value>
+          </title>
+          <title>
+            <key>tr</key>
+            <value>&quot;%1&quot; öğesi için (&lt;link #Products>aç&lt;/>) hacim belirtilmedi</value>
+          </title>
+          <title>
+            <key>vi</key>
+            <value>Đối với mục &quot;%1&quot; (&lt;link #Products>mở&lt;/>) không chỉ định khối lượng</value>
+          </title>
+          <title>
+            <key>it</key>
+            <value>Volume is not specified for the &quot;%1&quot; products (&lt;link #Products>open&lt;/>)</value>
+          </title>
+          <title>
+            <key>pl</key>
+            <value>Volume is not specified for the &quot;%1&quot; products (&lt;link #Products>open&lt;/>)</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <extendedTooltip>
+            <name>TheTextOfTheErrorOfFillingVolumeExtendedTooltip</name>
+            <id>194</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>TheTextOfTheErrorOfFillingVolumeContextMenu</name>
+            <id>193</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <formatted>true</formatted>
+          <type>Label</type>
+          <autoMaxHeight>true</autoMaxHeight>
+          <textColor xsi:type="core:ColorRef">
+            <color>Style.SpecialTextColor</color>
+          </textColor>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </items>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>en</key>
+          <value>Volume is not specified</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>حجم مشخص نشده است</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Volume non indicato</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Nie określono objętości</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Не задан объем</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Hacim belirtilmedi</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Âm lượng không được đặt</value>
+        </title>
+        <verticalStretch>false</verticalStretch>
+        <extendedTooltip>
+          <name>GroupErrorFillingVolumeExtendedTooltip</name>
+          <id>185</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>UsualGroup</type>
+        <extInfo xsi:type="form:UsualGroupExtInfo">
+          <group>AlwaysHorizontal</group>
+          <showLeftMargin>true</showLeftMargin>
+          <united>true</united>
+          <throughAlign>Auto</throughAlign>
+          <currentRowUse>Auto</currentRowUse>
+        </extInfo>
+      </items>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>en</key>
+        <value>By volume</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>بر اساس حجم</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Per volume</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Wg objętości</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>По объему</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Hacme göre</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Theo khối lượng</value>
+      </title>
+      <extendedTooltip>
+        <name>PageByVolumeExtendedTooltip</name>
+        <id>13</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <type>Page</type>
+      <extInfo xsi:type="form:PageGroupExtInfo">
+        <group>Vertical</group>
+        <showTitle>true</showTitle>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormGroup">
+      <name>PageByQuantity</name>
+      <id>246</id>
+      <items xsi:type="form:Decoration">
+        <name>DecorationIsWayOfAllocatingCostOfOutputProductsByQuantity</name>
+        <id>248</id>
+        <title>
+          <key>en</key>
+          <value>Finished product costs are allocated by quantity in stock UOM</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>هزینه‌های محصول نهایی بر اساس مقدار به واحد انبار تسهیم می‌شوند</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Затраты на выходные изделия распределяются по количеству в единице хранения</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Çıkış kalemlerinin giderleri, stok ölçü birimi miktarına göre dağıtılır</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Chi phí cho sản phẩm đầu ra được phân bổ theo số lượng trong mỗi đơn vị lưu kho</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Finished product costs are allocated by quantity in stock UOM</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Finished product costs are allocated by quantity in stock UOM</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>DecorationIsWayOfAllocatingCostOfOutputProductsByQuantityExtendedTooltip</name>
+          <id>250</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>DecorationIsWayOfAllocatingCostOfOutputProductsByQuantityContextMenu</name>
+          <id>249</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>Label</type>
+        <height>1</height>
+        <autoMaxHeight>true</autoMaxHeight>
+        <textColor xsi:type="core:ColorRef">
+          <color>Style.ReportsOptionsGroupColor</color>
+        </textColor>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>GroupingByQuantity</name>
+        <id>251</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>GroupCosts</segments>
+        </dataPath>
+        <extendedTooltip>
+          <name>GroupingByQuantityExtendedTooltip</name>
+          <id>253</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>GroupingByQuantityContextMenu</name>
+          <id>252</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <readOnly>true</readOnly>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>ShareOfValuePercentageByQuantity</name>
+        <id>262</id>
+        <title>
+          <key>en</key>
+          <value>Cost share</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>سهم بها</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Quota del costo</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Udział kosztów</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Доля стоимости</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Maliyet payı</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Tỷ lệ giá trị</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>CostSharePercentage</segments>
+        </dataPath>
+        <skipOnInput>true</skipOnInput>
+        <toolTip>
+          <key>en</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>fa</key>
+          <value>درصد</value>
+        </toolTip>
+        <toolTip>
+          <key>it</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>pl</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>ru</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>tr</key>
+          <value>%</value>
+        </toolTip>
+        <toolTip>
+          <key>vi</key>
+          <value>%</value>
+        </toolTip>
+        <toolTipRepresentation>ShowRight</toolTipRepresentation>
+        <extendedTooltip>
+          <name>ShareOfValuePercentageByQuantityExtendedTooltip</name>
+          <id>264</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>ShareOfValuePercentageByQuantityContextMenu</name>
+          <id>263</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <readOnly>true</readOnly>
+        <horizontalAlign>Right</horizontalAlign>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <maxWidth>10</maxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>en</key>
+        <value>By cost share</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>بر اساس سهم بها</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Per la quota di costo</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Wg udziałów kosztów</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>По доле стоимости</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Maliyet payına göre</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Theo tỷ lệ giá trị</value>
+      </title>
+      <extendedTooltip>
+        <name>PageByQuantityExtendedTooltip</name>
+        <id>247</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <type>Page</type>
+      <extInfo xsi:type="form:PageGroupExtInfo">
+        <group>Vertical</group>
+        <showTitle>true</showTitle>
+      </extInfo>
+    </items>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>en</key>
+      <value>Allocate costs to finished products</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>تسهیم هزینه‌ها به محصولات نهایی</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Distribuire i costi per gli articoli di uscita</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Przydział kosztów na wyroby wychodzące</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Распределять затраты на выходные изделия</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Giderleri nihai ürün üretimine dağıt</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Phân bổ chi phí cho sản phẩm đầu ra</value>
+    </title>
+    <extendedTooltip>
+      <name>MethodsOfCostAllocatingOnProductCostsExtendedTooltip</name>
+      <id>5</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>Pages</type>
+    <extInfo xsi:type="form:PagesGroupExtInfo">
+      <currentRowUse>Auto</currentRowUse>
+    </extInfo>
+  </items>
+  <commandBarLocation>Bottom</commandBarLocation>
+  <autoCommandBar>
+    <name>FormCommandBar</name>
+    <id>-1</id>
+    <items xsi:type="form:FormGroup">
+      <name>FormButtonGroupEdit</name>
+      <id>215</id>
+      <items xsi:type="form:Button">
+        <name>FormOK</name>
+        <id>64</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>FormOKExtendedTooltip</name>
+          <id>65</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.Command.OK</commandName>
+        <representation>Auto</representation>
+        <defaultButton>true</defaultButton>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
+      <items xsi:type="form:Button">
+        <name>FormCancel</name>
+        <id>66</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>FormCancelExtendedTooltip</name>
+          <id>67</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.Command.Cancel</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>en</key>
+        <value>Form button group edit</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>ویرایش گروه دکمه فرم</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Modulo gruppo di pulsanti modifica</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Formularz grupa przycisków edytowanie</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Форма группа кнопок редактирование</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Form grup buton düzenleme</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Biểu mẫu nhóm nút điều chỉnh</value>
+      </title>
+      <extendedTooltip>
+        <name>FormButtonGroupEditExtendedTooltip</name>
+        <id>216</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <extInfo xsi:type="form:ButtonGroupExtInfo"/>
+    </items>
+    <items xsi:type="form:Button">
+      <name>FormClose</name>
+      <id>211</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>FormCloseExtendedTooltip</name>
+        <id>212</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.StandardCommand.Close</commandName>
+      <representation>Auto</representation>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <horizontalAlign>Right</horizontalAlign>
+  </autoCommandBar>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>OnCreateAtServer</name>
+  </handlers>
+  <windowOpeningMode>LockOwnerWindow</windowOpeningMode>
+  <saveWindowSettings>true</saveWindowSettings>
+  <autoTitle>true</autoTitle>
+  <autoUrl>true</autoUrl>
+  <group>Vertical</group>
+  <autoFillCheck>true</autoFillCheck>
+  <allowFormCustomize>true</allowFormCustomize>
+  <enabled>true</enabled>
+  <showTitle>true</showTitle>
+  <showCloseButton>true</showCloseButton>
+  <attributes>
+    <name>Products</name>
+    <title>
+      <key>en</key>
+      <value>Items</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>اقلام</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Articolo</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Pozycja</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Ürün</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Mặt hàng</value>
+    </title>
+    <id>1</id>
+    <valueType>
+      <types>CatalogRef.Products</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>Characteristic</name>
+    <title>
+      <key>en</key>
+      <value>Variant</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>گونه</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Caratteristica</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Charakterystyka</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Varyant</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Đặc tính</value>
+    </title>
+    <id>2</id>
+    <valueType>
+      <types>CatalogRef.ItemsCharacteristics</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>Package</name>
+    <title>
+      <key>en</key>
+      <value>Packaging unit</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>واحد بسته‌بندی</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Imballaggio</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Opakowanie</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Упаковка</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Paketleme ünitesi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Đóng gói</value>
+    </title>
+    <id>3</id>
+    <valueType>
+      <types>CatalogRef.PackagesAndUnitsOfMeasure</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>Count</name>
+    <title>
+      <key>en</key>
+      <value>Quantity</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>مقدار</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Quantità</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Ilość</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Количество</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Miktar</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Số lượng</value>
+    </title>
+    <id>4</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>NumberOfPackages</name>
+    <title>
+      <key>en</key>
+      <value>Quantity</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>مقدار</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Quantità</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Ilość</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Количество</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Miktar</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Số lượng</value>
+    </title>
+    <id>5</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>CostShare</name>
+    <title>
+      <key>en</key>
+      <value>Cost share</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>سهم بها</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Quota del costo</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Udział kosztów</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Доля стоимости</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Maliyet payı</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Tỷ lệ giá trị</value>
+    </title>
+    <id>6</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+  </attributes>
+  <attributes>
+    <name>CostSharePerUnit</name>
+    <title>
+      <key>en</key>
+      <value>Cost share (per unit)</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>سهم بها (به ازای هر واحد)</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Quota di costo (per unità)</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Udział kosztów (na jednostkę)</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Доля стоимости (на единицу)</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Maliyet payı (birim başına)</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Tỷ lệ giá trị(mỗi đơn vị)</value>
+    </title>
+    <id>7</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <savedData>true</savedData>
+  </attributes>
+  <attributes>
+    <name>CostSharePercentage</name>
+    <title>
+      <key>en</key>
+      <value>Cost share, %</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>سهم بها، درصد</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Parte del costo, %</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Udział kosztów, %</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Доля стоимости, %</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Maliyet payı, %</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Tỷ lệ giá trị,%</value>
+    </title>
+    <id>8</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>ShareOfCostTotal</name>
+    <title>
+      <key>en</key>
+      <value>Cost share (total)</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>سهم بها (کل)</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Quota di costo (totale)</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Udział kosztów (łącznie)</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Доля стоимости (итого)</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Maliyet payı (toplam)</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Tỷ lệ giá trị (tổng cộng)</value>
+    </title>
+    <id>9</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>PriceCurrency</name>
+    <title>
+      <key>en</key>
+      <value>Currency</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>ارز</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Valuta</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Waluta</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Валюта</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Para birimi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Tiền tệ</value>
+    </title>
+    <id>12</id>
+    <valueType>
+      <types>CatalogRef.Currencies</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>PriceKind</name>
+    <title>
+      <key>en</key>
+      <value>Price type</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>نوع قیمت</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Tipo di prezzo</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Rodzaj ceny</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Вид цены</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Fiyat türü</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Dạng giá</value>
+    </title>
+    <id>13</id>
+    <valueType>
+      <types>CatalogRef.TypesOfPrices</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>CostShareTotalNew</name>
+    <title>
+      <key>en</key>
+      <value>Cost share (total)</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>سهم بها (کل)</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Quota di costo (totale)</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Udział kosztów (łącznie)</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Доля стоимости (итого)</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Maliyet payı (toplam)</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Tỷ lệ giá trị (tổng cộng)</value>
+    </title>
+    <id>14</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>TotalCostShareWithoutTheCurrentOne</name>
+    <title>
+      <key>en</key>
+      <value>Total cost share without the current one</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>کل سهم بها بدون سطر فعلی</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Quota di costo totale senza corrente</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Udział kosztów łącznie bez bieżącego</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Доля стоимости итого без текущего</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Cari hariç toplam maliyet payı</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Tỷ lệ giá trị tổng không có hiện tại</value>
+    </title>
+    <id>15</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>MethodOfAllocatingFinishedProductCosts</name>
+    <title>
+      <key>en</key>
+      <value>Method of allocating finished product costs</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>روش تسهیم هزینه‌های محصول نهایی</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Metodo di ripartizione dei costi sui prodotti finali</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Sposób rozdzielenia kosztów na wyroby wyprodukowane</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Способ распределения затрат на выходные изделия</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Maliyetleri üretilen nihai ürünlere dağıtma yöntemi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Phương pháp phân bổ chi phí cho sản phẩm đầu ra</value>
+    </title>
+    <id>16</id>
+    <valueType>
+      <types>EnumRef.MethodsOfCostAllocatingOnProductCosts</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>GroupCosts</name>
+    <title>
+      <key>en</key>
+      <value>Cost grouping</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>گروه‌بندی بها</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Raggruppamento dei costi</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Grupowanie kosztów </value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Группировка затрат</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Gider gruplandırması</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Gom nhóm chi phí</value>
+    </title>
+    <id>17</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>ParameterizationIsUsed</name>
+    <title>
+      <key>en</key>
+      <value>Parameterization is used</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>پارامتری‌سازی استفاده می‌شود</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Utilizza la parametrizzazione</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Używana jest parametryzacja</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Используется параметризация</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Parametrelendirme kullanılmaktadır</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Tham số hóa được sử dụng</value>
+    </title>
+    <id>18</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>UsePriceManagementSystem25</name>
+    <title>
+      <key>en</key>
+      <value>Price management system 2.5 is used</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>سیستم مدیریت قیمت 2.5 استفاده می‌شود</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Utilizzare elaborazione di prezzo 2.5</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Jest używane tworzenie cen 2.5</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Используется ценообразование 2.5</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Fiyatlandırma kullanılıyor 2.5</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Sử dụng thiết lập giá 2.5</value>
+    </title>
+    <id>19</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>Series</name>
+    <title>
+      <key>en</key>
+      <value>Batch</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>بچ</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Serie</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Seria</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Серия</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Parti</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Sê-ri</value>
+    </title>
+    <id>20</id>
+    <valueType>
+      <types>CatalogRef.ItemsBatches</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>Date</name>
+    <title>
+      <key>en</key>
+      <value>Date</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>تاریخ</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Data</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Data</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Дата</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Tarih</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Ngày</value>
+    </title>
+    <id>21</id>
+    <valueType>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <formCommands>
+    <name>OK</name>
+    <title>
+      <key>en</key>
+      <value>OK</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>تأیید</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>OK</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>OK</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>ОК</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Tamam</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Đồng ý</value>
+    </title>
+    <id>1</id>
+    <toolTip>
+      <key>en</key>
+      <value>OK</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>تأیید</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>OK</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>OK</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>ОК</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Tamam</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Đồng ý</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>OK</name>
+      </handler>
+    </action>
+    <modifiesStoredData>true</modifiesStoredData>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>Cancel</name>
+    <title>
+      <key>en</key>
+      <value>Cancel</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>انصراف</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Annulla</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Anuluj</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Отмена</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>İptal</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Hủy bỏ</value>
+    </title>
+    <id>2</id>
+    <toolTip>
+      <key>en</key>
+      <value>Cancel</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>انصراف</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Annulla</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Anuluj</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Отмена</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>İptal</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Hủy bỏ</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>Cancel</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <parameters>
+    <name>MethodOfAllocatingFinishedProductCosts</name>
+    <valueType>
+      <types>EnumRef.MethodsOfCostAllocatingOnProductCosts</types>
+    </valueType>
+  </parameters>
+  <parameters>
+    <name>ItemData_3</name>
+    <valueType/>
+  </parameters>
+  <parameters>
+    <name>GroupCosts</name>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+  </parameters>
+  <parameters>
+    <name>CostSharePercentage</name>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+  </parameters>
+  <parameters>
+    <name>ShareOfCostTotal</name>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </valueType>
+  </parameters>
+  <parameters>
+    <name>ParameterizationIsUsed</name>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+  </parameters>
+  <commandInterface>
+    <navigationPanel/>
+    <commandBar/>
+  </commandInterface>
+</form:Form>

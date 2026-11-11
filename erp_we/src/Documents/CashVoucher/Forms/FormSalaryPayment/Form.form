@@ -1,0 +1,1042 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form">
+  <title>
+    <key>en</key>
+    <value>Employee list</value>
+  </title>
+  <title>
+    <key>fa</key>
+    <value>فهرست کارکنان</value>
+  </title>
+  <title>
+    <key>ru</key>
+    <value>Список работников</value>
+  </title>
+  <title>
+    <key>tr</key>
+    <value>Çalışan listesi</value>
+  </title>
+  <title>
+    <key>vi</key>
+    <value>Danh sách nhân viên</value>
+  </title>
+  <title>
+    <key>it</key>
+    <value>Employee list</value>
+  </title>
+  <title>
+    <key>pl</key>
+    <value>Employee list</value>
+  </title>
+  <items xsi:type="form:Decoration">
+    <name>DecorationInstructions</name>
+    <id>9</id>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <extendedTooltip>
+      <name>DecorationInstructionsExtendedTooltip</name>
+      <id>13</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>DecorationInstructionsContextMenu</name>
+      <id>10</id>
+      <autoFill>true</autoFill>
+    </contextMenu>
+    <type>Label</type>
+    <autoMaxWidth>true</autoMaxWidth>
+    <autoMaxHeight>true</autoMaxHeight>
+    <textColor xsi:type="core:ColorRef">
+      <color>Style.NoteText</color>
+    </textColor>
+    <extInfo xsi:type="form:LabelDecorationExtInfo">
+      <horizontalAlign>Left</horizontalAlign>
+    </extInfo>
+  </items>
+  <items xsi:type="form:Table">
+    <name>PayrollPayment</name>
+    <id>2</id>
+    <title>
+      <key>en</key>
+      <value>Payroll payment</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>پرداخت حقوق</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Pagamento dello stipendio</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Wypłata wynagrodzenia</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Выплата заработной платы</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Bordro ödemesi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Trả lương</value>
+    </title>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <dataPath xsi:type="form:DataPath">
+      <segments>PayrollPayment</segments>
+    </dataPath>
+    <titleLocation>None</titleLocation>
+    <excludedCommands>Copy</excludedCommands>
+    <excludedCommands>MoveDown</excludedCommands>
+    <excludedCommands>MoveUp</excludedCommands>
+    <items xsi:type="form:FormField">
+      <name>PaymentOfWagesByEmployee</name>
+      <id>5</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>PayrollPayment.Individual</segments>
+      </dataPath>
+      <handlers>
+        <event>OnChange</event>
+        <name>PaymentOfWagesByEmployeeOnChange</name>
+      </handlers>
+      <extendedTooltip>
+        <name>PaymentOfWagesByEmployeeExtendedTooltip</name>
+        <id>16</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>PaymentOfWagesByEmployeeContextMenu</name>
+        <id>6</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>EnterOnInput</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <autoMarkIncomplete>true</autoMarkIncomplete>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>PayrollPaymentSum</name>
+      <id>7</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>PayrollPayment.Sum</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>PayrollPaymentSumExtendedTooltip</name>
+        <id>17</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>PayrollPaymentSumContextMenu</name>
+        <id>8</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>EnterOnInput</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <autoMarkIncomplete>true</autoMarkIncomplete>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <autoCommandBar>
+      <name>PayrollPaymentCommandBar</name>
+      <id>4</id>
+      <items xsi:type="form:Button">
+        <name>PayrollPaymentFillInByBalance</name>
+        <id>11</id>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>PayrollPaymentFillInByBalanceExtendedTooltip</name>
+          <id>14</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.Command.FillInByBalance</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
+      <horizontalAlign>Left</horizontalAlign>
+      <autoFill>true</autoFill>
+    </autoCommandBar>
+    <handlers>
+      <event>OnChange</event>
+      <name>PayrollPaymentOnChange</name>
+    </handlers>
+    <searchStringAddition>
+      <name>PayrollPaymentSearchString</name>
+      <id>22</id>
+      <extendedTooltip>
+        <name>PayrollPaymentSearchStringExtendedTooltip</name>
+        <id>24</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>PayrollPaymentSearchStringContextMenu</name>
+        <id>23</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <source>PayrollPayment</source>
+      <extInfo xsi:type="form:SearchStringAdditionExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+      </extInfo>
+    </searchStringAddition>
+    <viewStatusAddition>
+      <name>PayrollPaymentViewStatus</name>
+      <id>25</id>
+      <extendedTooltip>
+        <name>PayrollPaymentViewStatusExtendedTooltip</name>
+        <id>27</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>PayrollPaymentViewStatusContextMenu</name>
+        <id>26</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>ViewStatusAddition</type>
+      <source>PayrollPayment</source>
+      <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <horizontalLocation>Left</horizontalLocation>
+      </extInfo>
+    </viewStatusAddition>
+    <searchControlAddition>
+      <name>PayrollPaymentSearchControl</name>
+      <id>28</id>
+      <extendedTooltip>
+        <name>PayrollPaymentSearchControlExtendedTooltip</name>
+        <id>30</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>PayrollPaymentSearchControlContextMenu</name>
+        <id>29</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>SearchControlAddition</type>
+      <source>PayrollPayment</source>
+      <extInfo xsi:type="form:SearchControlAdditionExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+      </extInfo>
+    </searchControlAddition>
+    <extendedTooltip>
+      <name>PayrollPaymentExtendedTooltip</name>
+      <id>15</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>PayrollPaymentContextMenu</name>
+      <id>3</id>
+      <autoFill>true</autoFill>
+    </contextMenu>
+    <changeRowSet>true</changeRowSet>
+    <changeRowOrder>true</changeRowOrder>
+    <autoMaxWidth>true</autoMaxWidth>
+    <autoMaxHeight>true</autoMaxHeight>
+    <autoMaxRowsCount>true</autoMaxRowsCount>
+    <selectionMode>MultiRow</selectionMode>
+    <header>true</header>
+    <headerHeight>1</headerHeight>
+    <footerHeight>1</footerHeight>
+    <horizontalScrollBar>AutoUse</horizontalScrollBar>
+    <verticalScrollBar>AutoUse</verticalScrollBar>
+    <horizontalLines>true</horizontalLines>
+    <verticalLines>true</verticalLines>
+    <autoInsertNewRow>true</autoInsertNewRow>
+    <searchOnInput>Auto</searchOnInput>
+    <initialListView>Auto</initialListView>
+    <horizontalStretch>true</horizontalStretch>
+    <verticalStretch>true</verticalStretch>
+    <enableStartDrag>true</enableStartDrag>
+    <enableDrag>true</enableDrag>
+    <rowFilter xsi:type="core:UndefinedValue"/>
+  </items>
+  <items xsi:type="form:FormGroup">
+    <name>GroupCommandBar</name>
+    <id>20</id>
+    <items xsi:type="form:Button">
+      <name>WriteAndClose</name>
+      <id>1</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>WriteAndCloseExtendedTooltip</name>
+        <id>12</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.Command.WriteAndClose</commandName>
+      <representation>Auto</representation>
+      <defaultButton>true</defaultButton>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <items xsi:type="form:Button">
+      <name>FormCancel</name>
+      <id>18</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>FormCancelExtendedTooltip</name>
+        <id>19</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.Command.Cancel</commandName>
+      <representation>Auto</representation>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>en</key>
+      <value>Command bar</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>نوار فرمان</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Barra dei comandi</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Panel poleceń</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Командная панель</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Komut çubuğu</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Thanh lệnh</value>
+    </title>
+    <extendedTooltip>
+      <name>GroupCommandBarExtendedTooltip</name>
+      <id>21</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>CommandBar</type>
+    <extInfo xsi:type="form:CommandBarExtInfo">
+      <horizontalAlign>Right</horizontalAlign>
+    </extInfo>
+  </items>
+  <autoCommandBar>
+    <name>FormCommandBar</name>
+    <id>-1</id>
+    <horizontalAlign>Left</horizontalAlign>
+  </autoCommandBar>
+  <handlers>
+    <event>BeforeClose</event>
+    <name>BeforeClose</name>
+  </handlers>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>OnCreateAtServer</name>
+  </handlers>
+  <saveWindowSettings>true</saveWindowSettings>
+  <autoUrl>true</autoUrl>
+  <group>Vertical</group>
+  <autoFillCheck>true</autoFillCheck>
+  <allowFormCustomize>true</allowFormCustomize>
+  <enabled>true</enabled>
+  <showTitle>true</showTitle>
+  <showCloseButton>true</showCloseButton>
+  <attributes>
+    <name>Statement</name>
+    <title>
+      <key>en</key>
+      <value>Paysheet</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>لیست پرداخت</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Ведомость</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Bordro</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Bảng thanh toán</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Paysheet</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Paysheet</value>
+    </title>
+    <id>1</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>PayrollPayment</name>
+    <title>
+      <key>en</key>
+      <value>Payroll payment</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>پرداخت حقوق</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Pagamento dello stipendio</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Wypłata wynagrodzenia</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Выплата заработной платы</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Bordro ödemesi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Trả lương</value>
+    </title>
+    <id>2</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <fillChecking>ShowError</fillChecking>
+    <savedData>true</savedData>
+    <columns>
+      <name>Individual</name>
+      <title>
+        <key>en</key>
+        <value>Employee</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>کارمند</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Dipendente</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Pracownik</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Сотрудник</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Çalışan</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Nhân viên</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>CatalogRef.Persons</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Sum</name>
+      <title>
+        <key>en</key>
+        <value>Amount</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>مبلغ</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Importo</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Wartość</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Сумма</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Tutar</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Tổng số</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DefinedType.MonetaryAmountNonNegative</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>FormModified</name>
+    <title>
+      <key>en</key>
+      <value>Form is modified</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>فرم تغییر کرده است</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Форма модифицирована</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Form değiştirildi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Đã thay đổi biểu mẫu</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Form is modified</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Form is modified</value>
+    </title>
+    <id>3</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>DocumentPayments</name>
+    <title>
+      <key>en</key>
+      <value>AR/AP transaction</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>تراکنش دریافتنی/پرداختنی</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Documento di pagamento</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Dokument płatności</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Документ оплаты</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Ödeme belgesi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Chứng từ thanh toán</value>
+    </title>
+    <id>4</id>
+    <valueType>
+      <types>DocumentRef.CashVoucher</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>Organization</name>
+    <title>
+      <key>en</key>
+      <value>Company</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>شرکت</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Организация</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>İş yeri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Doanh nghiệp</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Company</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Company</value>
+    </title>
+    <id>5</id>
+    <valueType>
+      <types>CatalogRef.Companies</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>UsePayroll</name>
+    <title>
+      <key>en</key>
+      <value>Use payroll accrual</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>استفاده از محاسبه حقوق و دستمزد</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Utilizza la contabilità salariale</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Używaj naliczenia wynagrodzenia</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Использовать начисление зарплаты</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Bordro tahakkuku kullan</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Sử dụng tính lương</value>
+    </title>
+    <id>6</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>UsePayrollAccrualZIKWE</name>
+    <title>
+      <key>en</key>
+      <value>Use payroll accrual</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>استفاده از محاسبه حقوق و دستمزد</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Использовать начисление зарплаты </value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Maaş tahakkukunu kullan </value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Sử dụng tính lương </value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Use payroll accrual</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Use payroll accrual</value>
+    </title>
+    <id>7</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <formCommands>
+    <name>WriteAndClose</name>
+    <title>
+      <key>en</key>
+      <value>OK</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>تأیید</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>OK</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>OK</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>ОК</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Tamam</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Đồng ý</value>
+    </title>
+    <id>1</id>
+    <toolTip>
+      <key>en</key>
+      <value>Save and close</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>ذخیره و بستن</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Salvare e chiudere</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Zapisz i zamknij</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Записать и закрыть</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Sakla ve kapat</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Ghi lại và đóng</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>WriteAndClose</name>
+      </handler>
+    </action>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>FillInByBalance</name>
+    <title>
+      <key>en</key>
+      <value>Fill in with the paysheet</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>تکمیل با لیست پرداخت</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Заполнить по ведомости</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Bordroya göre doldur</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Điền theo bảng thanh toán</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Fill in with the paysheet</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Fill in with the paysheet</value>
+    </title>
+    <id>2</id>
+    <toolTip>
+      <key>en</key>
+      <value>Fill in by balance</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>تکمیل بر اساس مانده</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Compilare per saldi</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Wypełnij wg ostatków</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Заполнить по остаткам</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Bakiyeye göre doldur</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Điền theo số dư</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>FillInByBalance</name>
+      </handler>
+    </action>
+    <modifiesStoredData>true</modifiesStoredData>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>Cancel</name>
+    <title>
+      <key>en</key>
+      <value>Cancel</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>انصراف</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Annulla</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Anuluj</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Отмена</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>İptal</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Hủy bỏ</value>
+    </title>
+    <id>3</id>
+    <toolTip>
+      <key>en</key>
+      <value>Cancel</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>انصراف</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Annulla</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Anuluj</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Отмена</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>İptal</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Hủy bỏ</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>Cancel</name>
+      </handler>
+    </action>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <commandInterface>
+    <navigationPanel/>
+    <commandBar/>
+  </commandInterface>
+</form:Form>

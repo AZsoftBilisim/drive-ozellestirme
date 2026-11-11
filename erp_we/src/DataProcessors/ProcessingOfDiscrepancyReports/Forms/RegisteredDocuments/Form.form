@@ -1,0 +1,7494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form">
+  <items xsi:type="form:FormField">
+    <name>SpreadsheetDocument</name>
+    <id>3</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <dataPath xsi:type="form:DataPath">
+      <segments>SpreadsheetDocument</segments>
+    </dataPath>
+    <titleLocation>None</titleLocation>
+    <extendedTooltip>
+      <name>SpreadsheetDocumentExtendedTooltip</name>
+      <id>5</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>SpreadsheetDocumentContextMenu</name>
+      <id>4</id>
+      <autoFill>true</autoFill>
+    </contextMenu>
+    <type>SpreadsheetDocumentField</type>
+    <editMode>Enter</editMode>
+    <showInHeader>true</showInHeader>
+    <headerHorizontalAlign>Left</headerHorizontalAlign>
+    <showInFooter>true</showInFooter>
+    <extInfo xsi:type="form:SpreadSheetDocFieldExtInfo">
+      <handlers>
+        <event>Selection</event>
+        <name>SpreadsheetDocumentSelection</name>
+      </handlers>
+      <width>50</width>
+      <autoMaxWidth>true</autoMaxWidth>
+      <height>10</height>
+      <autoMaxHeight>true</autoMaxHeight>
+      <horizontalStretch>true</horizontalStretch>
+      <verticalStretch>true</verticalStretch>
+      <pointerType>Special</pointerType>
+      <verticalScrollBar>ScrollAlways</verticalScrollBar>
+      <horizontalScrollBar>ScrollAlways</horizontalScrollBar>
+      <selectionShowMode>Always</selectionShowMode>
+      <drawingSelectionShowMode>Auto</drawingSelectionShowMode>
+      <showGroups>true</showGroups>
+      <enableStartDrag>true</enableStartDrag>
+      <enableDrag>true</enableDrag>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>DisplayLegend</name>
+    <id>8</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <dataPath xsi:type="form:DataPath">
+      <segments>DisplayLegend</segments>
+    </dataPath>
+    <titleLocation>Right</titleLocation>
+    <handlers>
+      <event>OnChange</event>
+      <name>DisplayLegendOnChange</name>
+    </handlers>
+    <extendedTooltip>
+      <name>DisplayLegendExtendedTooltip</name>
+      <id>10</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>DisplayLegendContextMenu</name>
+      <id>9</id>
+      <autoFill>true</autoFill>
+    </contextMenu>
+    <type>CheckBoxField</type>
+    <editMode>Enter</editMode>
+    <showInHeader>true</showInHeader>
+    <headerHorizontalAlign>Left</headerHorizontalAlign>
+    <showInFooter>true</showInFooter>
+    <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+  </items>
+  <autoCommandBar>
+    <name>FormCommandBar</name>
+    <id>-1</id>
+    <items xsi:type="form:Button">
+      <name>FormRefresh</name>
+      <id>6</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>FormRefreshExtendedTooltip</name>
+        <id>7</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.Command.Refresh</commandName>
+      <representation>PictureAndText</representation>
+      <defaultButton>true</defaultButton>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <items xsi:type="form:Button">
+      <name>Help</name>
+      <id>16</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>HelpExtendedTooltip</name>
+        <id>17</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.StandardCommand.Help</commandName>
+      <representation>Auto</representation>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <horizontalAlign>Left</horizontalAlign>
+  </autoCommandBar>
+  <handlers>
+    <event>NotificationProcessing</event>
+    <name>NotificationProcessing</name>
+  </handlers>
+  <handlers>
+    <event>OnOpen</event>
+    <name>OnOpen</name>
+  </handlers>
+  <handlers>
+    <event>OnReopen</event>
+    <name>OnReopen</name>
+  </handlers>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>OnCreateAtServer</name>
+  </handlers>
+  <autoSaveDataInSettings>Use</autoSaveDataInSettings>
+  <saveWindowSettings>true</saveWindowSettings>
+  <autoTitle>true</autoTitle>
+  <autoUrl>true</autoUrl>
+  <group>Vertical</group>
+  <autoFillCheck>true</autoFillCheck>
+  <allowFormCustomize>true</allowFormCustomize>
+  <enabled>true</enabled>
+  <verticalScroll>UseIfNecessary</verticalScroll>
+  <showTitle>true</showTitle>
+  <showCloseButton>true</showCloseButton>
+  <attributes>
+    <name>DiscrepancyCertificate</name>
+    <title>
+      <key>en</key>
+      <value>Discrepancy report</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>گزارش مغایرت</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Atto di discrepanza</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Protokoły o odchyleniu</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Акт о расхождениях</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Tutarsızlık raporu</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Biên bản chênh lệch</value>
+    </title>
+    <id>1</id>
+    <valueType>
+      <types>DocumentRef.DiscrepancyReportFollowingTransfer</types>
+      <types>DocumentRef.DiscrepancyReportFollowingShipment</types>
+      <types>DocumentRef.DiscrepancyReportFollowingReceipt</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>DiscrepanciesPostingMethod</name>
+    <title>
+      <key>en</key>
+      <value>Discrepancy record method</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>روش ثبت مغایرت</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Metodo di visualizzazione delle discrepanze</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Sposób odzwierciedlenia odchylenia</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Способ отражения расхождений</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Tutarsızlıkları kaydetme yöntemi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Phương thức phản ánh chênh lệch</value>
+    </title>
+    <id>2</id>
+    <valueType>
+      <types>EnumRef.MethodsOfRecordingDiscrepanciesCustomerReceivingNote</types>
+      <types>EnumRef.MethodsOfRecordingDiscrepancyReportsFollowingReceipt</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>SpreadsheetDocument</name>
+    <title>
+      <key>en</key>
+      <value>Spreadsheet document</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>سند صفحه‌گسترده</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Foglio elettronico</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Dokument tabelaryczny</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Табличный документ</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>E-tablo belgesi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Văn bản dạng bảng</value>
+    </title>
+    <id>3</id>
+    <valueType>
+      <types>SpreadsheetDocument</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <extInfo xsi:type="form:SpreadsheetDocumentExtInfo"/>
+  </attributes>
+  <attributes>
+    <name>HasError</name>
+    <title>
+      <key>en</key>
+      <value>There is error</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>خطا وجود دارد</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>C'è un errore</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Jest błąd</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Есть ошибка</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Hata mevcut</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Có lỗi</value>
+    </title>
+    <id>4</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>Actions</name>
+    <title>
+      <key>en</key>
+      <value>Actions</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>اقدامات</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Azioni</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Działania</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Действия</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Eylemler</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Thao tác</value>
+    </title>
+    <id>5</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.ReturnOfGoodsFromCustomer</types>
+        <types>DocumentRef.VendorInvoice</types>
+        <types>DocumentRef.ReturnOfGoodsToVendor</types>
+        <types>DocumentRef.GoodsShipmentFromStorage</types>
+        <types>DocumentRef.ReceiptOfGoodsFromCustodian</types>
+        <types>DocumentRef.InventoryTransfer</types>
+        <types>DocumentRef.CustomerInvoice</types>
+        <types>DocumentRef.TransferOfGoodsToBailee</types>
+        <types>DocumentRef.GoodsReceiptForStorage</types>
+        <types>DocumentRef.GoodsShipmentToCustomer</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ActionsOptions</name>
+      <title>
+        <key>en</key>
+        <value>Action options</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>گزینه‌های اقدام</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Opzioni di azioni</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Warianty działań</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Варианты действий</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Eylem seçenekleri</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Phương án thực hiện</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>ValueList</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ThereIsShortageRecord</name>
+      <title>
+        <key>en</key>
+        <value>There is shortage record</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سابقه کسری وجود دارد</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Ammanchi rilevati</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Istnieje odzwierciedlenie niedoboru</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Есть отражение недостач</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Eksiklik yansıtması mevcut</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Có phản ánh hàng thiếu</value>
+      </title>
+      <id>3</id>
+      <valueType>
+        <types>Boolean</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ThereIsSurplusesRecord</name>
+      <title>
+        <key>en</key>
+        <value>There is surpluses record</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سابقه مازاد وجود دارد</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Eccessi rilavati</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Istnieje odzwierciedlenie nadmiaru</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Есть отражение излишков</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Fazlalık yansıtması mevcut</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Có phản ánh hàng thừa</value>
+      </title>
+      <id>4</id>
+      <valueType>
+        <types>Boolean</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ByOrders</name>
+      <title>
+        <key>en</key>
+        <value>By orders</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>بر اساس سفارش‌ها</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Per ordini</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Wg zamówień</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>По заказам</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Siparişlere ilişkin</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Theo đơn hàng</value>
+      </title>
+      <id>5</id>
+      <valueType>
+        <types>Boolean</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>OrderDocument</name>
+      <title>
+        <key>en</key>
+        <value>Order</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سفارش</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Ordine</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Zamówienie</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Заказ</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Sipariş</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Đơn hàng</value>
+      </title>
+      <id>6</id>
+      <valueType>
+        <types>DocumentRef.RequestForReturnOfGoodsFromCustomer</types>
+        <types>DocumentRef.SubcontractOrder2_5</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ThirdPartyIsGuilty</name>
+      <title>
+        <key>en</key>
+        <value>Due to the fault of the third party</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>به دلیل تقصیر شخص ثالث</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Per colpa delle terze parti</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Z winy kompanii zewnętrznej</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>По вине сторонней компании</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Üçüncü taraf bir şirketin hatası nedeniyle</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Thông qua lỗi của một công ty bên thứ ba</value>
+      </title>
+      <id>7</id>
+      <valueType>
+        <types>Boolean</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ActionsWarehouses</name>
+      <title>
+        <key>en</key>
+        <value>Actions warehouses</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>اقدامات انبارها</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Azioni magazzini</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Działania magazyny</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Действия склады</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Ambar faaliyetleri</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Kho giao dịch</value>
+      </title>
+      <id>8</id>
+      <valueType>
+        <types>ValueTable</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ElectronicDocument</name>
+      <title>
+        <key>en</key>
+        <value>Electronic document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند الکترونیکی</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Documento elettronico</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Dokument elektroniczny</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Электронный документ</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>E-belge</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Chứng từ điện tử</value>
+      </title>
+      <id>36</id>
+      <valueType>
+        <types>String</types>
+        <stringQualifiers/>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>EDIStatus</name>
+      <title>
+        <key>en</key>
+        <value>EDI status</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>وضعیت EDI</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Stato di scambio documento elettronico</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Status EOD</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Статус ЭДО</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>EDI durumu</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Tình trạng EDI</value>
+      </title>
+      <id>37</id>
+      <valueType>
+        <types>String</types>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>AmountOfShortDelivery</name>
+      <title>
+        <key>en</key>
+        <value>Underdelivery amount</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>مبلغ کم‌تحویل</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Сумма недопоставки</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Eksik teslimat miktarı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Số tiền chưa giao hàng</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Underdelivery amount</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Underdelivery amount</value>
+      </title>
+      <id>9</id>
+      <valueType>
+        <types>DefinedType.MonetaryAmountPositiveNegative</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>AmountOfReDelivery</name>
+      <title>
+        <key>en</key>
+        <value>Underdelivery amount</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>مبلغ کم‌تحویل</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Сумма недопоставки</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Eksik teslimat miktarı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Số tiền chưa giao hàng</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Underdelivery amount</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Underdelivery amount</value>
+      </title>
+      <id>10</id>
+      <valueType>
+        <types>DefinedType.MonetaryAmountPositiveNegative</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ThisIsDiscrepancyReport2_5_12</name>
+      <title>
+        <key>en</key>
+        <value>This is a discrepancy report 2.5.12</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>این گزارش مغایرت 2.5.12 است</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Это акт о расхождениях2 5 12</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Bu tutarsızlık raporudur2 5 12</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Đây là biên bản về chênh lệnh2 5 12</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>This is a discrepancy report 2.5.12</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>This is a discrepancy report 2.5.12</value>
+      </title>
+      <id>53</id>
+      <valueType>
+        <types>Boolean</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>OptionsForActionsWithGoods</name>
+      <title>
+        <key>en</key>
+        <value>Item action options</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>گزینه‌های اقدام قلم</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Варианты действий с товаром</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Ürün eylemi seçenekleri</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Tùy chọn thao tác với hàng hóa</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Item action options</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Item action options</value>
+      </title>
+      <id>82</id>
+      <valueType>
+        <types>ValueTable</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <additionalColumns>
+      <tablePath xsi:type="form:DataPath">
+        <segments>Actions.ActionsWarehouses</segments>
+      </tablePath>
+      <columns>
+        <name>PossibleAction</name>
+        <title>
+          <key>en</key>
+          <value>Possible action</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>اقدام ممکن</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Azione possibile</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Wariant działania</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Вариант действия</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Eylem seçenekleri</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Phương án thực hiện</value>
+        </title>
+        <id>1</id>
+        <valueType>
+          <types>EnumRef.ActionOptionsOnDiscrepanciesInVendorInvoiceAfterGoodsReceipt</types>
+        </valueType>
+        <view>
+          <common>true</common>
+        </view>
+        <edit>
+          <common>true</common>
+        </edit>
+      </columns>
+      <columns>
+        <name>Warehouse</name>
+        <title>
+          <key>en</key>
+          <value>Warehouse</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>انبار</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Magazzino</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Magazyn</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Склад</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Ambar</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Kho bãi</value>
+        </title>
+        <id>2</id>
+        <valueType>
+          <types>CatalogRef.Warehouses</types>
+        </valueType>
+        <view>
+          <common>true</common>
+        </view>
+        <edit>
+          <common>true</common>
+        </edit>
+      </columns>
+      <columns>
+        <name>OrderDocument</name>
+        <title>
+          <key>en</key>
+          <value>Order</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>سفارش</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Ordine</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Zamówienie</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Заказ</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Sipariş</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Đơn hàng</value>
+        </title>
+        <id>52</id>
+        <valueType>
+          <types>DocumentRef.PurchaseOrder</types>
+        </valueType>
+        <view>
+          <common>true</common>
+        </view>
+        <edit>
+          <common>true</common>
+        </edit>
+      </columns>
+      <columns>
+        <name>VariantOfActionWithGoods</name>
+        <title>
+          <key>en</key>
+          <value>Item action option</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>گزینه اقدام قلم</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Вариант действия с товаром</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Ürün eylem seçeneği</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Tùy chọn thao tác với hàng hóa</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Item action option</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Item action option</value>
+        </title>
+        <id>83</id>
+        <valueType>
+          <types>EnumRef.OptionsForActionsOnGoodsInCustomerInvoiceAfterGoodsIssue</types>
+        </valueType>
+        <view>
+          <common>true</common>
+        </view>
+        <edit>
+          <common>true</common>
+        </edit>
+      </columns>
+    </additionalColumns>
+    <additionalColumns>
+      <tablePath xsi:type="form:DataPath">
+        <segments>Actions.OptionsForActionsWithGoods</segments>
+      </tablePath>
+      <columns>
+        <name>VariantOfActionWithDocument</name>
+        <title>
+          <key>en</key>
+          <value>Document action option</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>گزینه اقدام سند</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Вариант действия с документом</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Belge eylemi seçeneği</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Tùy chọn thao tác với chứng từ</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Document action option</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Document action option</value>
+        </title>
+        <id>85</id>
+        <valueType>
+          <types>EnumRef.ActionOptionsOnDiscrepanciesInCustomerInvoiceAfterGoodsIssue</types>
+        </valueType>
+        <view>
+          <common>true</common>
+        </view>
+        <edit>
+          <common>true</common>
+        </edit>
+      </columns>
+      <columns>
+        <name>VariantOfActionWithGoods</name>
+        <title>
+          <key>en</key>
+          <value>Item action option</value>
+        </title>
+        <title>
+          <key>fa</key>
+          <value>گزینه اقدام قلم</value>
+        </title>
+        <title>
+          <key>ru</key>
+          <value>Вариант действия с товаром</value>
+        </title>
+        <title>
+          <key>tr</key>
+          <value>Ürün eylem seçeneği</value>
+        </title>
+        <title>
+          <key>vi</key>
+          <value>Tùy chọn thao tác với hàng hóa</value>
+        </title>
+        <title>
+          <key>it</key>
+          <value>Item action option</value>
+        </title>
+        <title>
+          <key>pl</key>
+          <value>Item action option</value>
+        </title>
+        <id>86</id>
+        <valueType>
+          <types>EnumRef.OptionsForActionsOnGoodsInCustomerInvoiceAfterGoodsIssue</types>
+        </valueType>
+        <view>
+          <common>true</common>
+        </view>
+        <edit>
+          <common>true</common>
+        </edit>
+      </columns>
+    </additionalColumns>
+  </attributes>
+  <attributes>
+    <name>AdjustmentSales</name>
+    <title>
+      <key>en</key>
+      <value>Adjustment sales</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>تعدیل فروش</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Realizzazione rettifiche</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Realizacje korekt</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Реализации корректировки</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Satış düzeltmeleri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Giao hàng điều chỉnh</value>
+    </title>
+    <id>6</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>SaleOfGoodsAndServices</name>
+      <title>
+        <key>en</key>
+        <value>Sales</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>فروش</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Vendita</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Realizacja</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Реализация</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Satış</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Bán hàng</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.CustomerInvoice</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Adjusting</name>
+      <title>
+        <key>en</key>
+        <value>Adjustment</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>اصلاحی</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Rettifica</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Korekta</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Корректировка</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Düzeltme</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Điều chỉnh</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.SaleAdjustment</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>BusinessOperation</name>
+      <title>
+        <key>en</key>
+        <value>Business transaction</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>عملیات تجاری</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Operazione economica</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Operacja gospodarcza</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Хозяйственная операция</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Ticari işlem</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Giao dịch kinh tế</value>
+      </title>
+      <id>3</id>
+      <valueType>
+        <types>EnumRef.BusinessTransactions</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>UseReturnRequests</name>
+    <title>
+      <key>en</key>
+      <value>Use return requests</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>استفاده از درخواست‌های مرجوعی</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Utilizzare le richieste di reso</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Używaj zgłoszeń do zwrotu</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Использовать заявки на возврат</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>İade taleplerini kullanın</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Sử dụng giấy đề nghị trả hàng</value>
+    </title>
+    <id>7</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>SalesReturns</name>
+    <title>
+      <key>en</key>
+      <value>Sales returns</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>مرجوعی‌های فروش</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Smercio resi</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Realizacje zwroty</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Реализации возвраты</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>İadelerin satışı</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Giao hàng trả lại</value>
+    </title>
+    <id>8</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>SaleOfGoodsAndServices</name>
+      <title>
+        <key>en</key>
+        <value>Sales</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>فروش</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Vendita</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Realizacja</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Реализация</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Satış</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Bán hàng</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.CustomerInvoice</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>DocumentReturnPolicy</name>
+      <title>
+        <key>en</key>
+        <value>Returns document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند برگشت‌ها</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Documento di reso</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Dokument zwrotu</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Документ возврата</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>İade belgesi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Chứng từ trả lại</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.ReturnOfGoodsFromCustomer</types>
+        <types>DocumentRef.RequestForReturnOfGoodsFromCustomer</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>ImplementationsOrders</name>
+    <title>
+      <key>en</key>
+      <value>Sales orders</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>سفارش‌های فروش</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Smercio ordini</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Realizacja zamówienia</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Реализации заказы</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Siparişlerin satışı</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Giao hàng đơn hàng</value>
+    </title>
+    <id>9</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>SalesOrder</name>
+      <title>
+        <key>en</key>
+        <value>Sales order</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سفارش فروش</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Ordine del cliente</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Zamówienie klienta</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Заказ клиента</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Satış siparişi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Đơn hàng của khách</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.RequestForReturnOfGoodsFromCustomer</types>
+        <types>DocumentRef.SalesOrder</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>SaleOfGoodsAndServices</name>
+      <title>
+        <key>en</key>
+        <value>Sales</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>فروش</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Vendita</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Realizacja</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Реализация</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Satış</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Bán hàng</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.CustomerInvoice</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>SubsequentDeliveries</name>
+    <title>
+      <key>en</key>
+      <value>Subsequent deliveries</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>تحویل‌های بعدی</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Consegne aggiuntive</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Dodatkowe dostawy</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Допоставки</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Sarf Malzemeleri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Giao hàng tận nơi</value>
+    </title>
+    <id>10</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>RegisteredSales</name>
+      <title>
+        <key>en</key>
+        <value>Registered sales</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>فروش‌های ثبت‌شده</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Smercio formalizzato</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Zarejestrowana realizacja</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Оформленная реализация</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Satış düzenlenmesi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Chứng từ bán hàng đã lập</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.CustomerInvoice</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>SubsequentDeliveryBySale</name>
+      <title>
+        <key>en</key>
+        <value>Subsequent delivery by sale</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>تحویل بعدی بر اساس فروش</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Consegna aggiuntiva delle merci vendute </value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Dodatkowa dostawa wg realizacji</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Допоставка по реализации</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Satışlarda ek teslimat</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Giao thêm khi bán</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.CustomerInvoice</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>DisplayLegend</name>
+    <title>
+      <key>en</key>
+      <value>Display legend</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>نمایش راهنما</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Visualizzare la legenda</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Pokazuj legendę</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Выводить легенду</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Lejantı göster</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Hiển thị chú giải</value>
+    </title>
+    <id>11</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>BusinessTransactionOfCertificate</name>
+    <title>
+      <key>en</key>
+      <value>Business transaction of certificate</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>معامله تجاری گواهی</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Operazione economica verbale</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Operacja gospodarcza aktu</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Хозяйственная операция акта</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Raporun ticari işlemi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Giao dịch kinh tế biên bản</value>
+    </title>
+    <id>12</id>
+    <valueType>
+      <types>EnumRef.BusinessTransactions</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>ReturnsByReturnsToSupplier</name>
+    <title>
+      <key>en</key>
+      <value>Returns by returns to vendor</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>مرجوعی‌ها بر اساس مرجوعی به تأمین‌کننده</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Resi secondo i resi ai fornitori</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Zwroty wg zwrotów do dostawcy</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Возвраты по возвратам поставщику</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Tedarikçiye geri gönderimlerden iadeler</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Trả lại cho Nhà cung cấp</value>
+    </title>
+    <id>14</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>ReturnOfGoodsToVendor</name>
+      <title>
+        <key>en</key>
+        <value>Return of goods to vendor</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>برگشت کالا به تأمین‌کننده</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Reso delle merci al fornitore</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Zwrot towarów do dostawcy</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Возврат товаров поставщику</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Tedarikçiye mal iadesi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Trả lại hàng cho nhà cung cấp</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.ReturnOfGoodsToVendor</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.ReturnOfGoodsToVendor</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>SubsequentDeliveryBySupplierReturns</name>
+    <title>
+      <key>en</key>
+      <value>Subsequent delivery by vendor returns</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>تحویل بعدی بر اساس مرجوعی‌های تأمین‌کننده</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Arrivi aggiuntivi relativi ai resi al fornitori</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Dodatkowe przyjęcia wg zwrotów do dostawcy</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Допоступления по возвратам поставщику</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Tedarikçiye iadelere ilişkin ek makbuzlar</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Tiếp nhận thêm theo trả lại cho nhà cung cấp</value>
+    </title>
+    <id>15</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.ReturnOfGoodsToVendor</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>VendorInvoice</name>
+      <title>
+        <key>en</key>
+        <value>Vendor invoice</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>فاکتور تأمین‌کننده</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Acquisizione merci servizi</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Nabycie towarów usług</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Приобретение товаров услуг</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Satın alma faturası</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Mua dịch vụ hàng hóa</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.VendorInvoice</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>GoodsTransferTransferOrders</name>
+    <title>
+      <key>en</key>
+      <value>Goods transfer transfer orders</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>سفارش‌های انتقال انتقال کالا</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Trasferimento delle merci ordini di trasferimenti</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Przemieszczenia towarów zamówienia na przemieszczenia</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Перемещения товаров заказы на перемещения</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Taşınacak siparişlerin mal transferi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Điều chuyển hàng hóa đơn hàng điều chuyển</value>
+    </title>
+    <id>16</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>InventoryTransfer</name>
+      <title>
+        <key>en</key>
+        <value>Goods transfer</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>انتقال کالا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Trasferimento delle merci</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Przemieszczenie towarów</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Перемещение товаров</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Mal transferi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Điều chuyển hàng hóa nội bộ</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.InventoryTransfer</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>TransferOrder</name>
+      <title>
+        <key>en</key>
+        <value>Transfer order</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سفارش انتقال</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Ordine di trasferimento</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Zamówienie na przesunięcie</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Заказ на перемещение</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Transfer emri</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Đơn hàng điều chuyển nội bộ</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.TransferOrder</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>TransfersByTransfers</name>
+    <title>
+      <key>en</key>
+      <value>Transfers by transfers</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>انتقالات بر اساس انتقالات</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Trasferimenti secondo i trasferimenti</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Przemieszczenia wg przemieszczeń</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Перемещения по перемещениям</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Taşımalara göre taşıma</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Điều chuyển theo điều chuyển</value>
+    </title>
+    <id>17</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>InventoryTransfer</name>
+      <title>
+        <key>en</key>
+        <value>Goods transfer</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>انتقال کالا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Trasferimento delle merci</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Przemieszczenie towarów</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Перемещение товаров</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Mal transferi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Điều chuyển hàng hóa nội bộ</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.InventoryTransfer</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.InventoryTransfer</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Patch</name>
+      <id>39</id>
+      <valueType>
+        <types>Boolean</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>TransfersByReturnTransfers</name>
+    <title>
+      <key>en</key>
+      <value>Transfers by return transfers</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>انتقالات بر اساس انتقالات برگشتی</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Trasferimenti secondo i trasferimenti per il reso</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Przemieszczenia wg przemieszczeń na zwrot</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Перемещения по перемещениям на возврат</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>İade edilecek taşımalara göre taşıma</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Điều chuyển theo điều chuyển trả lại</value>
+    </title>
+    <id>18</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>InventoryTransfer</name>
+      <title>
+        <key>en</key>
+        <value>Goods transfer</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>انتقال کالا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Trasferimento delle merci</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Przemieszczenie towarów</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Перемещение товаров</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Mal transferi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Điều chuyển hàng hóa nội bộ</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.InventoryTransfer</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.InventoryTransfer</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>ReceiptsAdjustingEntries</name>
+    <title>
+      <key>en</key>
+      <value>Receipts adjusting entries</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>ثبت‌های تعدیلی دریافت‌ها</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Arrivi rettifiche</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Przyjęcia korekty</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Поступления корректировки</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Düzenleme makbuzu</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Thu nhập điều chỉnh</value>
+    </title>
+    <id>19</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.VendorInvoice</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Adjusting</name>
+      <title>
+        <key>en</key>
+        <value>Adjustment</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>اصلاحی</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Rettifica</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Korekta</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Корректировка</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Düzeltme</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Điều chỉnh</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.PurchaseAdjustment</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>ReceiptsReturns</name>
+    <title>
+      <key>en</key>
+      <value>Receipts returns</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>مرجوعی‌های دریافت‌ها</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Arrivi resi</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Przyjęcia zwroty</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Поступления возвраты</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>İade makbuzu</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Thu nhập</value>
+    </title>
+    <id>20</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>DocumentInflow</name>
+      <title>
+        <key>en</key>
+        <value>Receipt document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند دریافت</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Documento di arrivo</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Dokument wpływu</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Документ поступления</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Makbuz belgesi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Chứng từ tiếp nhận</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.VendorInvoice</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ReturnToVendor</name>
+      <title>
+        <key>en</key>
+        <value>Return to vendor</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>مرجوعی به تأمین‌کننده</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Reso al fornitore</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Zwrot do dostawcy </value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Возврат поставщику</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Tedarikçiye iade</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Trả lại hàng cho nhà cung cấp</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.ReturnOfGoodsToVendor</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Warehouse</name>
+      <title>
+        <key>en</key>
+        <value>Warehouse</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>انبار</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Magazzino</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Magazyn</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Склад</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Ambar</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Kho bãi</value>
+      </title>
+      <id>3</id>
+      <valueType>
+        <types>CatalogRef.Warehouses</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>ReceiptsOrders</name>
+    <title>
+      <key>en</key>
+      <value>Receipts orders</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>سفارش‌های دریافت‌ها</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Arrivi ordini</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Przyjęcia zamówienia</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Поступления заказы</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Sipariş makbuzu</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Biên lai đơn đặt hàng</value>
+    </title>
+    <id>21</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>PurchaseOrder</name>
+      <title>
+        <key>en</key>
+        <value>Purchase order</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سفارش خرید</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Ordine al fornitore</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Zamówienie do dostawcy</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Заказ поставщику</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Satın alma siparişi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Đơn hàng đặt nhà cung cấp</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.PurchaseOrder</types>
+        <types>DocumentRef.MaterialProviderOrder2_5</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>DocumentInflow</name>
+      <title>
+        <key>en</key>
+        <value>Receipt document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند دریافت</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Documento di arrivo</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Dokument wpływu</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Документ поступления</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Makbuz belgesi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Chứng từ tiếp nhận</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.VendorInvoice</types>
+        <types>DocumentRef.GoodsReceiptForStorage</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>ReceiptsReceipts</name>
+    <title>
+      <key>en</key>
+      <value>Receipts receipts</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>دریافت‌های دریافت‌ها</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Arrivi arrivi</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Przyjęcia przyjęcia</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Поступления поступления</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Teslim alım makbuzu</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Biên lai thu nhập</value>
+    </title>
+    <id>22</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>RegisteredReceipt</name>
+      <title>
+        <key>en</key>
+        <value>Registered receipt</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>دریافت ثبت‌شده</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Arrivo formalizzato</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Zarejestrowane przyjęcie</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Оформленное поступление</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Makbuz düzenlemesi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Lập tiếp nhận</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.VendorInvoice</types>
+        <types>DocumentRef.GoodsReceiptForStorage</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>SubsequentDeliveryByReceipt</name>
+      <title>
+        <key>en</key>
+        <value>Subsequent delivery by receipt</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>تحویل بعدی بر اساس دریافت</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Consegna aggiuntiva secondo l'arrivo</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Dodatkowa dostawa wg przyjęcia</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Допоставка по поступлению</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Makbuza ilişkin ek teslimat</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Giao hàng bổ sung</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.VendorInvoice</types>
+        <types>DocumentRef.GoodsReceiptForStorage</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>GroundsForWritingOffShortfalls</name>
+    <title>
+      <key>en</key>
+      <value>Base documents for shortage write-off</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>اسناد مبنا برای اسقاط کسری</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Causali di storno degli ammanchi</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Podstawy rozchodu wewnętrznego</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Основания списания недостач</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Eksikliklerin silinme gerekçeleri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Căn cứ để ghi tắt</value>
+    </title>
+    <id>23</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.ReturnOfGoodsFromCustomer</types>
+        <types>DocumentRef.VendorInvoice</types>
+        <types>DocumentRef.ReceiptOfGoodsFromCustodian</types>
+        <types>DocumentRef.GoodsReceiptForStorage</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>WriteOff</name>
+      <title>
+        <key>en</key>
+        <value>Write-off</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>اسقاط</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Storno</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Spisanie</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Списание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Gider yazma</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Chi</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.WriteOffOfGoodsShortages</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Warehouse</name>
+      <title>
+        <key>en</key>
+        <value>Warehouse</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>انبار</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Magazzino</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Magazyn</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Склад</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Ambar</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Kho bãi</value>
+      </title>
+      <id>3</id>
+      <valueType>
+        <types>CatalogRef.Warehouses</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>TheBasisOfRegistration</name>
+    <title>
+      <key>en</key>
+      <value>Base documents for recording surpluses as received</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>اسناد مبنا برای ثبت مازادها به‌عنوان دریافتی</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Causali di Registrazione in contabilità delle eccedenze</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Podstawy Rejestracja nadmiarów</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Основания Оприходования излишков</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Stok fazlası tahakkuku envanter kaydı gerekçeleri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Căn cứ để gửi thặng dư</value>
+    </title>
+    <id>24</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.ReturnOfGoodsFromCustomer</types>
+        <types>DocumentRef.VendorInvoice</types>
+        <types>DocumentRef.ReceiptOfGoodsFromCustodian</types>
+        <types>DocumentRef.GoodsReceiptForStorage</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>RecordingAsReceived</name>
+      <title>
+        <key>en</key>
+        <value>Recording as received</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>ثبت به‌عنوان دریافتی</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Registrazione in contabilità</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Rejestracja</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Оприходование</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Envanter Oluşturma</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Ghi tăng</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.InventorySurplusRecognition</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Warehouse</name>
+      <title>
+        <key>en</key>
+        <value>Warehouse</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>انبار</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Magazzino</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Magazyn</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Склад</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Ambar</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Kho bãi</value>
+      </title>
+      <id>3</id>
+      <valueType>
+        <types>CatalogRef.Warehouses</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>BaseDocumentsForDebtRelief</name>
+    <title>
+      <key>en</key>
+      <value>Base documents for debt relief</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>اسناد مبنا برای بخشودگی بدهی</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Causali di storno dei debiti</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Podstawy spisania zadłużeń</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Основания списания задолженностей</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Borçların silinme gerekçeleri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Căn cứ để xóa nợ</value>
+    </title>
+    <id>25</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.ReturnOfGoodsFromCustomer</types>
+        <types>DocumentRef.VendorInvoice</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>WriteOff</name>
+      <title>
+        <key>en</key>
+        <value>Write-off</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>اسقاط</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Storno</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Spisanie</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Списание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Gider yazma</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Ghi giảm</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.ARAPAdjustment</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>ReturnsFromCustomersSales</name>
+    <title>
+      <key>en</key>
+      <value>Returns from customers Sales</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>مرجوعی از مشتریان فروش</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Resi dai clienti smercio</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Zwroty od klientów realizacje</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Возвраты от клиентов реализации</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Müşteri satışlarından iadeler</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Trả lại từ khách hàng</value>
+    </title>
+    <id>26</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.ReturnOfGoodsFromCustomer</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>SaleOfGoodsAndServices</name>
+      <title>
+        <key>en</key>
+        <value>Sales</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>فروش</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Vendita</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Realizacja</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Реализация</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Satış</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Bán hàng</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.CustomerInvoice</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>ReturnsFromCustomersReturns</name>
+    <title>
+      <key>en</key>
+      <value>Returns from customers Returns</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>مرجوعی از مشتریان مرجوعی‌ها</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Resi dai clienti resi</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Zwroty od klientów zwroty</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Возвраты от клиентов возвраты</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Müşteri iadeleri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Trả lại từ khách hàng</value>
+    </title>
+    <id>27</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.ReturnOfGoodsFromCustomer</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Return</name>
+      <title>
+        <key>en</key>
+        <value>Return</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>مرجوعی</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Reso</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Zwrot</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Возврат</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>İade</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Trả lại</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.ReturnOfGoodsFromCustomer</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>SubsequentDeliveryByGoodsShipmentsFromStorage</name>
+    <title>
+      <key>en</key>
+      <value>Subsequent delivery by VMI pick-up requests from vendor</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>تحویل بعدی بر اساس درخواست‌های برداشت VMI از تأمین‌کننده</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Arrivi aggiuntivi relativi alle spedizioni delle merci depositate</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Dodatkowe dostawy towarów z przechowywania</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Допоступления по отгрузкам товаров с хранения</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Depodan mal sevkiyatlarında ek makbuzlar</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Tiếp nhận thêm theo giao hàng từ kho bảo quản</value>
+    </title>
+    <id>28</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.GoodsShipmentFromStorage</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>GoodsReceiptForStorage</name>
+      <title>
+        <key>en</key>
+        <value>VMI procurement</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>تدارکات VMI</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Accettazione delle merci per il deposito</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Przyjęcie towarów do przechowania</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Приемка товаров на хранение</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Malların depoya girişi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Nhập kho hàng hóa để lưu trữ</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.GoodsReceiptForStorage</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>ReturnsByGoodsShipmentsFromStorage</name>
+    <title>
+      <key>en</key>
+      <value>Returns by VMI pick-up requests from vendor</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>مرجوعی‌ها بر اساس درخواست‌های برداشت VMI از تأمین‌کننده</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Resi relativi alle spedizioni delle merci depositate</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Zwroty wg wysyłek towarów z przechowywania</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Возвраты по отгрузкам товаров с хранения</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Depodan malların transferine ilişkin iadeler</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Trả hàng từ lô hàng</value>
+    </title>
+    <id>29</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>GoodsShipmentFromStorage</name>
+      <title>
+        <key>en</key>
+        <value>VMI pick-up request from vendor</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>درخواست برداشت VMI از تأمین‌کننده</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Spedizione delle merci dal deposito</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Wysyłka towarów z przechowywania</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Отгрузка товаров с хранения</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Malların VMI'dan sevkiyat talebi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Xuất kho hàng hóa từ kho bảo quản</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.GoodsShipmentFromStorage</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.GoodsShipmentFromStorage</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>ShipmentBases</name>
+    <title>
+      <key>en</key>
+      <value>Shipment bases</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>مبانی ارسال</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Causali di spedizione</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Podstawy wysyłki</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Основания отгрузки</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Sevkiyat gerekçesi</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Lô hàng</value>
+    </title>
+    <id>30</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.DiscrepancyReportFollowingReceipt</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ShipFromStorage</name>
+      <title>
+        <key>en</key>
+        <value>Ship from storage</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>ارسال از انبار</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Spedizione dei merci depositate</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Wysyłka z przechowywania</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Отгрузка с хранения</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Depodan sevkiyat</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Xuất kho lô hàng từ kho</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.GoodsShipmentFromStorage</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Warehouse</name>
+      <title>
+        <key>en</key>
+        <value>Warehouse</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>انبار</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Magazzino</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Magazyn</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Склад</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Ambar</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Kho bãi</value>
+      </title>
+      <id>3</id>
+      <valueType>
+        <types>CatalogRef.Warehouses</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>ReturnsFromCustodiansTransfers</name>
+    <title>
+      <key>en</key>
+      <value>VMI pickup Transfers</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>برداشت VMI انتقالات</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Restiruzioni dai depositari trasferimenti</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Zwroty od opiekunów przekazywania</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Возвраты от хранителей передачи</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>VMI teslimleri transferler</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Trả lại từ người giám sát chuyển nhượng</value>
+    </title>
+    <id>31</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.ReceiptOfGoodsFromCustodian</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Transfer_</name>
+      <title>
+        <key>en</key>
+        <value>Transfer</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>انتقال</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Consegna</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Transfer</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Передача</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Transfer</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Chuyển giao</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.TransferOfGoodsToBailee</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>ReturnsFromCustodiansReceipts</name>
+    <title>
+      <key>en</key>
+      <value>VMI pickup Receipts</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>برداشت VMI دریافت‌ها</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Restituzioni dai depositari versamenti</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Zwroty od opiekunów wpływy</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Возвраты от хранителей поступления</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>VMI teslimleri girişler</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Trả lại từ người nhận giữ hộ</value>
+    </title>
+    <id>32</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.ReceiptOfGoodsFromCustodian</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Inpayment</name>
+      <title>
+        <key>en</key>
+        <value>Receipt</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>دریافت</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Arrivo</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Wpływ</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Поступление</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Giriş</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Nhập</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.ReceiptOfGoodsFromCustodian</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>AdditionalDeliveryToTheCustodian</name>
+    <title>
+      <key>en</key>
+      <value>Additional delivery to the custodian</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>تحویل تکمیلی به امین</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Fornitura aggiuntiva per la consegna al depositario</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Dostawy według przekazywania opiekunowi</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Допоставки по передаче хранителю</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Emanetçiye transferine ek teslimatlar</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Chuyển theo điều chuyển để lưu trữ</value>
+    </title>
+    <id>33</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>RegisteredTransfer</name>
+      <title>
+        <key>en</key>
+        <value>Registered transfer</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>انتقال ثبت‌شده</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Consegna formalizzata</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Sporządzone przekazywanie</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Оформленная передача</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Düzenlenmiş transfer</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Thiết bị trang trí</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.TransferOfGoodsToBailee</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>SubsequentDeliveryByTransfer</name>
+      <title>
+        <key>en</key>
+        <value>Subsequent delivery by transfer</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>تحویل بعدی بر اساس انتقال</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Fornitura aggiuntiva per la consegna</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Dodatkowa dostawa wg przekazu</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Допоставка по передаче</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Transfere ilişkin ek teslimatlar</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Giao hàng bổ sung</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.TransferOfGoodsToBailee</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>TransfersReturns</name>
+    <title>
+      <key>en</key>
+      <value>Transfers returns</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>مرجوعی‌های انتقالات</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Consegne restituzioni</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Przekazywania zwroty</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Передачи возвраты</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>İade transferleri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Chuyển khoản hoàn trả</value>
+    </title>
+    <id>34</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Transfer_</name>
+      <title>
+        <key>en</key>
+        <value>Transfer</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>انتقال</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Consegna</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Przekazywanie</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Передача</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Transfer</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Chuyển giao</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.TransferOfGoodsToBailee</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>DocumentReturnPolicy</name>
+      <title>
+        <key>en</key>
+        <value>Returns document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند برگشت‌ها</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Documento di reso</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Dokument zwrotu</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Документ возврата</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>İade belgesi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Chứng từ trả lại</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.RequestForReturnOfGoodsFromCustomer</types>
+        <types>DocumentRef.ReceiptOfGoodsFromCustodian</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>TransfersOrders</name>
+    <title>
+      <key>en</key>
+      <value>Transfers orders</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>سفارش‌های انتقالات</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Trasferimenti ordini</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Przekazywania zamówienia</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Передачи заказы</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Sipariş transferleri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Chuyển lệnh</value>
+    </title>
+    <id>35</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Transfer_</name>
+      <title>
+        <key>en</key>
+        <value>Transfer</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>انتقال</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Consegna</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Przekazywanie</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Передача</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Transfer</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Chuyển giao</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.TransferOfGoodsToBailee</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>SalesOrder</name>
+      <title>
+        <key>en</key>
+        <value>Sales order</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سفارش فروش</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Ordine del cliente</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Zamówienie klienta</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Заказ клиента</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Satış siparişi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Đơn hàng của khách</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.RequestForReturnOfGoodsFromCustomer</types>
+        <types>DocumentRef.SubcontractOrder2_5</types>
+        <types>DocumentRef.SalesOrder</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>ThereIsARightToExchangeEDI</name>
+    <title>
+      <key>en</key>
+      <value>There is a right to exchange EDI</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>حق تبادل EDI وجود دارد</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Esiste il diritto di scambio documenti elettronici</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Jest prawo wymiany EOD</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Есть право обмена ЭДО</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>EDI değişimi yapma hakkı vardır</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Có quyền trao đổi quản lý văn bản điện tử</value>
+    </title>
+    <id>38</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>ReceiptsReceiptsToTheWarehouse</name>
+    <title>
+      <key>en</key>
+      <value>Receipts receipts</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>دریافت‌های دریافت‌ها</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Arrivi arrivi</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Przyjęcia przyjęcia</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Поступления поступления</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Teslim alım makbuzu</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Biên lai thu nhập</value>
+    </title>
+    <id>40</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>RegisteredReceipt</name>
+      <title>
+        <key>en</key>
+        <value>Registered receipt</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>دریافت ثبت‌شده</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Arrivo formalizzato</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Zarejestrowane przyjęcie</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Оформленное поступление</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Makbuz düzenlemesi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Lập tiếp nhận</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.ReceiptOfGoodsToWarehouse</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>SubsequentDeliveryByReceipt</name>
+      <title>
+        <key>en</key>
+        <value>Subsequent delivery by receipt</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>تحویل بعدی بر اساس دریافت</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Consegna aggiuntiva secondo l'arrivo</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Dodatkowa dostawa wg przyjęcia</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Допоставка по поступлению</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Makbuza ilişkin ek teslimat</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Giao hàng bổ sung</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>Boolean</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Patch</name>
+      <title>
+        <key>en</key>
+        <value>Correction</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>اصلاح</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Modifica</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Poprawka</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Исправление</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Düzeltme</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Chỉnh sửa</value>
+      </title>
+      <id>43</id>
+      <valueType>
+        <types>Boolean</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>44</id>
+      <valueType>
+        <types>DocumentRef.VendorInvoice</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Warehouse</name>
+      <title>
+        <key>en</key>
+        <value>Warehouse</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>انبار</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Склад</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Ambar</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Kho bãi</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Warehouse</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Warehouse</value>
+      </title>
+      <id>53</id>
+      <valueType>
+        <types>CatalogRef.Warehouses</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>BasesForWritingOffShortagesInGoodsMovement</name>
+    <title>
+      <key>en</key>
+      <value>Reasons to recognize goods transfer shortages</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>دلایل شناسایی کسری‌های انتقال کالا</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Causale storno ammanchi per spostamento articoli</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Podstawy rozchodu niedoborów według przeniesienia towarów</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Основания списания недостач по перемещению товаров</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Malların transferine ilişkin eksikliklerin silinme gerekçeleri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Cơ sở ghi giảm hàng thiếu do điều chuyển hàng hóa</value>
+    </title>
+    <id>45</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Reason</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>دلیل</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.InventoryTransfer</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>WriteOff</name>
+      <title>
+        <key>en</key>
+        <value>Shortage recognition</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>شناسایی کسری</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Storno</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Rozchód</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Списание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Gider yazma</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Ghi giảm</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.WriteOffOfGoodsShortages</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Warehouse</name>
+      <title>
+        <key>en</key>
+        <value>Warehouse</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>انبار</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Magazzino</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Magazyn</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Склад</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Ambar</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Kho bãi</value>
+      </title>
+      <id>3</id>
+      <valueType>
+        <types>CatalogRef.Warehouses</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>BasesForGoodsMovementRecordingAsReceived</name>
+    <title>
+      <key>en</key>
+      <value>Reasons to recognize goods transfer surplus</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>دلایل شناسایی مازاد انتقال کالا</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Causale Accettazione eccedenze per lo spostamento degli articoli </value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Podstawy Rejestracja nadwyżek według przeniesienia towarów</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Основания Оприходования излишков по перемещению товаров</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Stok fazlası tahakkuku transferlerinin envanter kaydı gerekçeleri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Cơ sở Ghi tăng hàng thừa do điều chuyển hàng hóa</value>
+    </title>
+    <id>47</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Reason</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>دلیل</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.InventoryTransfer</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>RecordingAsReceived</name>
+      <title>
+        <key>en</key>
+        <value>Stock surplus recognition</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>شناسایی مازاد موجودی</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Registrazione in contabilità</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Rejestracja</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Оприходование</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Envanter Oluşturma</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Ghi tăng</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.InventorySurplusRecognition</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Warehouse</name>
+      <title>
+        <key>en</key>
+        <value>Warehouse</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>انبار</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Magazzino</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Magazyn</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Склад</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Ambar</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Kho bãi</value>
+      </title>
+      <id>3</id>
+      <valueType>
+        <types>CatalogRef.Warehouses</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>WriteOffOfDiscrepanciesReceiptPurchase</name>
+    <title>
+      <key>en</key>
+      <value>Write off discrepancies receipt purchase</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>اسقاط مغایرت‌های دریافت خرید</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Списания расхождений поступление приобретение</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Tutarsızlıkların gider yazılması giriş edinme</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Ghi giảm chênh lệch tiếp nhận mua hàng</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Write off discrepancies receipt purchase</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Write off discrepancies receipt purchase</value>
+    </title>
+    <id>48</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Purchase</name>
+      <title>
+        <key>en</key>
+        <value>Purchase</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>خرید</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Приобретение</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Satın alma</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Mua</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Purchase</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Purchase</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.VendorInvoice</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>WriteOff</name>
+      <title>
+        <key>en</key>
+        <value>Write-off</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>اسقاط</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Storno</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Spisanie</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Списание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Gider yazma</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Chi</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.WriteOffDiscrepanciesBetweenReceiptAndPurchase</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Warehouse</name>
+      <title>
+        <key>en</key>
+        <value>Warehouse</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>انبار</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Magazzino</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Magazyn</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Склад</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Ambar</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Kho bãi</value>
+      </title>
+      <id>50</id>
+      <valueType>
+        <types>CatalogRef.Warehouses</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>OrderDocument</name>
+      <title>
+        <key>en</key>
+        <value>Order</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سفارش</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Заказ</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Sipariş</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Đơn hàng</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Order</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Order</value>
+      </title>
+      <id>51</id>
+      <valueType>
+        <types>DocumentRef.PurchaseOrder</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>Complaints</name>
+    <title>
+      <key>en</key>
+      <value>Complaints</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>شکایات</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Претензии</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Şikayetler</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Khiếu nại</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Complaints</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Complaints</value>
+    </title>
+    <id>13</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Claim</name>
+      <title>
+        <key>en</key>
+        <value>Complaint</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>شکایت</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Претензия</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Şikayet</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Khiếu nại</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Complaint</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Complaint</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>CatalogRef.Complaints</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Base document</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.VendorInvoice</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>DebtAdjustments</name>
+    <title>
+      <key>en</key>
+      <value>Write off discrepancies receipt purchase</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>اسقاط مغایرت‌های دریافت خرید</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Списания расхождений поступление приобретение</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Tutarsızlıkların gider yazılması giriş edinme</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Ghi giảm chênh lệch tiếp nhận mua hàng</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Write off discrepancies receipt purchase</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Write off discrepancies receipt purchase</value>
+    </title>
+    <id>36</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Purchase</name>
+      <title>
+        <key>en</key>
+        <value>Purchase</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>خرید</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Приобретение</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Satın alma</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Mua</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Purchase</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Purchase</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.VendorInvoice</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Claim</name>
+      <title>
+        <key>en</key>
+        <value>Complaint</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>شکایت</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Претензия</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Şikayet</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Khiếu nại</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Complaint</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Complaint</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>CatalogRef.Complaints</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Adjusting</name>
+      <title>
+        <key>en</key>
+        <value>Adjustment</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>اصلاحی</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Корректировка</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Düzeltme</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Điều chỉnh</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Adjustment</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Adjustment</value>
+      </title>
+      <id>3</id>
+      <valueType>
+        <types>DocumentRef.ARAPAdjustment</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>ShipmentsForShipmentsOfItemsToCustomer</name>
+    <title>
+      <key>en</key>
+      <value>Shipments by goods shipments to customer</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>ارسال‌ها بر اساس ارسال کالا به مشتری</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Отгрузки по отгрузкам товаров клиенту</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Müşteriye sevk edilen ürünlerin sevkiyatı</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Giao hàng theo giao hàng cho khách</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Shipments by goods shipments to customer</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Shipments by goods shipments to customer</value>
+    </title>
+    <id>55</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>GoodsShipmentToCustomer</name>
+      <title>
+        <key>en</key>
+        <value>Goods shipment to customer</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>ارسال کالا به مشتری</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Отгрузка товаров клиенту</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Müşteriye ürün sevkiyatı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Giao hàng cho khách</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Goods shipment to customer</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Goods shipment to customer</value>
+      </title>
+      <id>56</id>
+      <valueType>
+        <types>DocumentRef.GoodsShipmentToCustomer</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>57</id>
+      <valueType>
+        <types>DocumentRef.CustomerInvoice</types>
+        <types>DocumentRef.GoodsShipmentToCustomer</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Patch</name>
+      <title>
+        <key>en</key>
+        <value>Correction</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>اصلاح</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Modifica</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Poprawka</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Исправление</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Düzeltme</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Chỉnh sửa</value>
+      </title>
+      <id>58</id>
+      <valueType>
+        <types>Boolean</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>AdditionalDelivery</name>
+      <title>
+        <key>en</key>
+        <value>Subsequent delivery</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>تحویل بعدی</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Допоставка</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Ek teslimat</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Giao bổ sung</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Subsequent delivery</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Subsequent delivery</value>
+      </title>
+      <id>59</id>
+      <valueType>
+        <types>Boolean</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>ShipmentsOfItemsToCustomerOrders</name>
+    <title>
+      <key>en</key>
+      <value>Goods shipments to customer orders</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>سفارش‌های ارسال کالا به مشتری</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Отгрузки товаров клиенту заказы</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Müşterinin sipariş ürünlerinin sevkiyatı</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Đơn hàng, giao hàng cho khách</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Goods shipments to customer orders</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Goods shipments to customer orders</value>
+    </title>
+    <id>77</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>GoodsShipmentToCustomer</name>
+      <title>
+        <key>en</key>
+        <value>Goods shipment to customer</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>ارسال کالا به مشتری</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Отгрузка товаров клиенту</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Müşteriye ürün sevkiyatı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Giao hàng cho khách</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Goods shipment to customer</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Goods shipment to customer</value>
+      </title>
+      <id>61</id>
+      <valueType>
+        <types>DocumentRef.GoodsShipmentToCustomer</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>SalesOrder</name>
+      <title>
+        <key>en</key>
+        <value>Sales order</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سفارش فروش</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Ordine del cliente</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Zamówienie klienta</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Заказ клиента</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Satış siparişi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Đơn hàng của khách</value>
+      </title>
+      <id>62</id>
+      <valueType>
+        <types>DocumentRef.RequestForReturnOfGoodsFromCustomer</types>
+        <types>DocumentRef.SalesOrder</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>GroundsForReceiptOfGoodsFromClient</name>
+    <title>
+      <key>en</key>
+      <value>Base documents for goods receipts from customers</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>اسناد مبنا برای دریافت کالا از مشتریان</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Основания поступлений товаров от клиента</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Müşteriden teslim alımlarının gerekçeleri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Cơ sở tiếp nhận hàng hóa từ khách hàng</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Base documents for goods receipts from customers</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Base documents for goods receipts from customers</value>
+    </title>
+    <id>63</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Gerekçe</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Base document</value>
+      </title>
+      <id>64</id>
+      <valueType>
+        <types>DocumentRef.CustomerInvoice</types>
+        <types>DocumentRef.GoodsShipmentToCustomer</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>GoodsReceiptFromCustomer</name>
+      <title>
+        <key>en</key>
+        <value>Goods receipt from customer</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>دریافت کالا از مشتری</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Поступление товаров от клиента</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Müşteriden ürün alımı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Tiếp nhận hàng hóa từ khách</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Goods receipt from customer</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Goods receipt from customer</value>
+      </title>
+      <id>65</id>
+      <valueType>
+        <types>DocumentRef.GoodsReceiptFromCustomer</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ReduceShipmentByReference</name>
+      <title>
+        <key>en</key>
+        <value>Reduce shipment by reference</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>کاهش ارسال بر اساس مرجع</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Уменьшить отгрузку по распоряжению</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Siparişe göre sevkiyatı azalt</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Ghi giảm giao hàng theo lệnh</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Reduce shipment by reference</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Reduce shipment by reference</value>
+      </title>
+      <id>84</id>
+      <valueType>
+        <types>Boolean</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>GroundsForRegisteringSurplusShippedItems</name>
+    <title>
+      <key>en</key>
+      <value>Base documents of stock surplus of shipped goods</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>اسناد مبنای مازاد موجودی کالای ارسال‌شده</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Основания оприходования излишков отгруженных товаров</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Sevk edilen stok fazlası tahakkuku teslim alınma gerekçeleri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Cơ sở ghi tăng hàng thừa đã giao</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Base documents of stock surplus of shipped goods</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Base documents of stock surplus of shipped goods</value>
+    </title>
+    <id>69</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>RecordingAsReceived</name>
+      <title>
+        <key>en</key>
+        <value>Recording as received</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>ثبت به‌عنوان دریافتی</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Registrazione in contabilità</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Rejestracja</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Оприходование</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Envanter Oluşturma</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Ghi tăng</value>
+      </title>
+      <id>70</id>
+      <valueType>
+        <types>DocumentRef.RecognitionOfStockSurplusShippedToCustomer</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>71</id>
+      <valueType>
+        <types>DocumentRef.CustomerInvoice</types>
+        <types>DocumentRef.GoodsShipmentToCustomer</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>GroundsForWriteOffOfItemsShippedToCustomer</name>
+    <title>
+      <key>en</key>
+      <value>Base documents of write-offs of goods shipped to customer</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>اسناد مبنای اسقاط کالای ارسال‌شده به مشتری</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Основания списания товаров отгруженных клиенту</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Müşteriye sevk edilen ürünlerin gider yazma gerekçeleri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Cơ sở ghi giảm hàng hóa đã giao cho khách</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Base documents of write-offs of goods shipped to customer</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Base documents of write-offs of goods shipped to customer</value>
+    </title>
+    <id>72</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>WriteOff</name>
+      <title>
+        <key>en</key>
+        <value>Write-off</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>اسقاط</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Storno</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Spisanie</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Списание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Gider yazma</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Ghi giảm</value>
+      </title>
+      <id>70</id>
+      <valueType>
+        <types>DocumentRef.WriteOffOfShippedGoods</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>71</id>
+      <valueType>
+        <types>DocumentRef.CustomerInvoice</types>
+        <types>DocumentRef.GoodsShipmentToCustomer</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ReduceShipmentByReference</name>
+      <title>
+        <key>en</key>
+        <value>Reduce shipment by reference</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>کاهش ارسال بر اساس مرجع</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Уменьшить отгрузку по распоряжению</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Siparişe göre sevkiyatı azalt</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Ghi giảm giao hàng theo lệnh</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Reduce shipment by reference</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Reduce shipment by reference</value>
+      </title>
+      <id>76</id>
+      <valueType>
+        <types>Boolean</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>ImplementationsOfAdjustmentGetBackOnTrack</name>
+    <title>
+      <key>en</key>
+      <value>Adjustment sales</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>تعدیل فروش</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Realizzazione rettifiche</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Realizacje korekt</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Реализации корректировки</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Satış düzeltmeleri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Giao hàng điều chỉnh</value>
+    </title>
+    <id>73</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>SaleOfGoodsAndServices</name>
+      <title>
+        <key>en</key>
+        <value>Sales</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>فروش</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Vendita</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Realizacja</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Реализация</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Satış</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Bán hàng</value>
+      </title>
+      <id>1</id>
+      <valueType>
+        <types>DocumentRef.CustomerInvoice</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Adjusting</name>
+      <title>
+        <key>en</key>
+        <value>Adjustment</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>اصلاحی</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Rettifica</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Korekta</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Корректировка</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Düzeltme</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Điều chỉnh</value>
+      </title>
+      <id>2</id>
+      <valueType>
+        <types>DocumentRef.SaleAdjustment</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>ShipmentOfItemsToClientUponTransferOfOwnership2_5</name>
+    <title>
+      <key>en</key>
+      <value>Goods shipments to customer by transfer of title to goods 2.5</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>ارسال کالا به مشتری بر اساس انتقال مالکیت کالا 2.5</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Отгрузки товаров клиенту по переходу права собственности 2.5</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Mülkiyet hakkının devri üzerine müşteriye ürün sevkiyatı 2.5</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Giao hàng cho khách khi chuyển quyền sở hữu 2.5</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Goods shipments to customer by transfer of title to goods 2.5</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Goods shipments to customer by transfer of title to goods 2.5</value>
+    </title>
+    <id>74</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>GoodsShipmentToCustomer</name>
+      <title>
+        <key>en</key>
+        <value>Goods shipment to customer</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>ارسال کالا به مشتری</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Отгрузка товаров клиенту</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Müşteriye ürün sevkiyatı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Giao hàng cho khách</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Goods shipment to customer</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Goods shipment to customer</value>
+      </title>
+      <id>75</id>
+      <valueType>
+        <types>DocumentRef.GoodsShipmentToCustomer</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>CorrectionTransfers</name>
+    <title>
+      <key>en</key>
+      <value>Transfers adjustments</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>تعدیلات انتقالات</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Передачи исправления</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Yama aktarımları</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Truyền dữ liệu điều chỉnh</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Transfers adjustments</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Transfers adjustments</value>
+    </title>
+    <id>54</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Transfer_</name>
+      <title>
+        <key>en</key>
+        <value>Transfer</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>انتقال</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Передача</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Transfer</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Truyền</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Transfer</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Transfer</value>
+      </title>
+      <id>55</id>
+      <valueType>
+        <types>DocumentRef.TransferOfGoodsToBailee</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Transfer_Correction</name>
+      <title>
+        <key>en</key>
+        <value>Transfer adjustment</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>تعدیل انتقال</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Передача исправление</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Yama aktarımı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Chuyển giao điều chỉnh</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Transfer adjustment</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Transfer adjustment</value>
+      </title>
+      <id>56</id>
+      <valueType>
+        <types>DocumentRef.TransferOfGoodsToBailee</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>CorrectionsReceived</name>
+    <title>
+      <key>en</key>
+      <value>Receipts adjustments</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>تعدیلات دریافت‌ها</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Поступления исправления</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Yama alımları</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Tiếp nhận điều chỉnh</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Receipts adjustments</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Receipts adjustments</value>
+    </title>
+    <id>57</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Inpayment</name>
+      <title>
+        <key>en</key>
+        <value>Incoming</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>ورودی</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Поступление</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Tahsilat</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Tiếp nhận</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Incoming</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Incoming</value>
+      </title>
+      <id>58</id>
+      <valueType>
+        <types>DocumentRef.ReceiptOfGoodsFromCustodian</types>
+        <types>DocumentRef.GoodsReceiptForStorage</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ReceiptCorrection</name>
+      <title>
+        <key>en</key>
+        <value>Receipt adjustment</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>تعدیل دریافت</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Поступление исправление</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Yama alımı</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Tiếp nhận điều chỉnh</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Receipt adjustment</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Receipt adjustment</value>
+      </title>
+      <id>59</id>
+      <valueType>
+        <types>DocumentRef.ReceiptOfGoodsFromCustodian</types>
+        <types>DocumentRef.GoodsReceiptForStorage</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>CorrectionsOnShipmentsOfGoodsFromStorage</name>
+    <title>
+      <key>en</key>
+      <value>Adjustments by VMI pick-up requests from vendor</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>تعدیلات بر اساس درخواست‌های برداشت VMI از تأمین‌کننده</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Исправления по отгрузкам товаров с хранения</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Ürünlerin VMI'dan sevkiyat talebine yönelik yamalar</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Điều chỉnh xuất hàng từ kho</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Adjustments by VMI pick-up requests from vendor</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Adjustments by VMI pick-up requests from vendor</value>
+    </title>
+    <id>60</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>GoodsShipmentFromStorage</name>
+      <title>
+        <key>en</key>
+        <value>VMI pick-up request from vendor</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>درخواست برداشت VMI از تأمین‌کننده</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Spedizione delle merci dal deposito</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Wysyłka towarów z przechowywania</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Отгрузка товаров с хранения</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Malların VMI'dan sevkiyat talebi</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Xuất kho hàng hóa từ kho cất giữ</value>
+      </title>
+      <id>61</id>
+      <valueType>
+        <types>DocumentRef.GoodsShipmentFromStorage</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ShipmentOfGoodsFromStorageCorrection</name>
+      <title>
+        <key>en</key>
+        <value>VMI pick-up request from vendor adjustment</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>تعدیل درخواست برداشت VMI از تأمین‌کننده</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Отгрузка товаров с хранения исправление</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Ürünlerin VMI'dan sevkiyat talebi yaması</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Xuất kho hàng hóa từ kho cất giữ điều chỉnh</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>VMI pick-up request from vendor adjustment</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>VMI pick-up request from vendor adjustment</value>
+      </title>
+      <id>62</id>
+      <valueType>
+        <types>DocumentRef.GoodsShipmentFromStorage</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <attributes>
+    <name>GroundsForWriteOffOfShortagesOnShipmentDocuments</name>
+    <title>
+      <key>en</key>
+      <value>Base documents for shortage write-off by shipping documents</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>اسناد مبنا برای اسقاط کسری بر اساس اسناد ارسال</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Основания списания недостач по документам отгрузки</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Sevkiyat belgelerine göre eksiklik gidermenin gerekçeleri</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Cơ sở ghi giảm hàng thiếu theo chứng từ giao hàng</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Base documents for shortage write-off by shipping documents</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Base documents for shortage write-off by shipping documents</value>
+    </title>
+    <id>78</id>
+    <valueType>
+      <types>ValueTable</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <columns>
+      <name>Basis</name>
+      <title>
+        <key>en</key>
+        <value>Base document</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>سند مبنا</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Causale</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Podstawa</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Основание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Temel</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Cơ sở</value>
+      </title>
+      <id>79</id>
+      <valueType>
+        <types>DocumentRef.ReturnOfGoodsToVendor</types>
+        <types>DocumentRef.CustomerInvoice</types>
+        <types>DocumentRef.TransferOfGoodsToBailee</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>WriteOff</name>
+      <title>
+        <key>en</key>
+        <value>Write-off</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>اسقاط</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Storno</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Spisanie</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Списание</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Gider yazma</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Ghi giảm</value>
+      </title>
+      <id>80</id>
+      <valueType>
+        <types>DocumentRef.WriteOffOfGoodsShortages</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Warehouse</name>
+      <title>
+        <key>en</key>
+        <value>Warehouse</value>
+      </title>
+      <title>
+        <key>fa</key>
+        <value>انبار</value>
+      </title>
+      <title>
+        <key>it</key>
+        <value>Magazzino</value>
+      </title>
+      <title>
+        <key>pl</key>
+        <value>Magazyn</value>
+      </title>
+      <title>
+        <key>ru</key>
+        <value>Склад</value>
+      </title>
+      <title>
+        <key>tr</key>
+        <value>Ambar</value>
+      </title>
+      <title>
+        <key>vi</key>
+        <value>Kho bãi</value>
+      </title>
+      <id>81</id>
+      <valueType>
+        <types>CatalogRef.Warehouses</types>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+  </attributes>
+  <formCommands>
+    <name>Refresh</name>
+    <title>
+      <key>en</key>
+      <value>Refresh</value>
+    </title>
+    <title>
+      <key>fa</key>
+      <value>بازخوانی</value>
+    </title>
+    <title>
+      <key>it</key>
+      <value>Aggiornare</value>
+    </title>
+    <title>
+      <key>pl</key>
+      <value>Zaktualizuj</value>
+    </title>
+    <title>
+      <key>ru</key>
+      <value>Обновить</value>
+    </title>
+    <title>
+      <key>tr</key>
+      <value>Yenile</value>
+    </title>
+    <title>
+      <key>vi</key>
+      <value>Cập nhật</value>
+    </title>
+    <id>1</id>
+    <toolTip>
+      <key>en</key>
+      <value>Refresh</value>
+    </toolTip>
+    <toolTip>
+      <key>fa</key>
+      <value>بازخوانی</value>
+    </toolTip>
+    <toolTip>
+      <key>it</key>
+      <value>Aggiornare</value>
+    </toolTip>
+    <toolTip>
+      <key>pl</key>
+      <value>Zaktualizuj</value>
+    </toolTip>
+    <toolTip>
+      <key>ru</key>
+      <value>Обновить</value>
+    </toolTip>
+    <toolTip>
+      <key>tr</key>
+      <value>Yenile</value>
+    </toolTip>
+    <toolTip>
+      <key>vi</key>
+      <value>Cập nhật</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <picture xsi:type="core:PictureRef">
+      <picture>StdPicture.Refresh</picture>
+    </picture>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>Refresh</name>
+      </handler>
+    </action>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <commandInterface>
+    <navigationPanel/>
+    <commandBar/>
+  </commandInterface>
+</form:Form>
